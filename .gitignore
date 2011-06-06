@@ -4,3 +4,5 @@
 wp-content/*
 !wp-content/themes/
 !wp-content/themes/*
+!wp-content/themes/taniaellis
+!wp-content/themes/taniaellis/*
