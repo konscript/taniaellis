@@ -3,8 +3,21 @@ body {
 
 html > body {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px; }
+  font-size: 12px; }
+
+#navigation-top li a {
+  text-decoration: none; }
+
+#shop-link {
+  font-size: 0.9em;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+#navigation-pages li a {
+  font-size: 0.9em;
+  text-decoration: none;
+  text-transform: uppercase; }
 
 #footer-bar li {
-  font-size: 0.923em;
+  font-size: 1em;
   font-weight: 500; }
