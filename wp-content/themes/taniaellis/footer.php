@@ -1,5 +1,7 @@
-<?php
+		</content>
 
-/* FOOTER */
-
-?>
+		<footer>
+			
+		</footer>
+	</body>
+</html>
