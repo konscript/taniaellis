@@ -8,7 +8,7 @@ Version: 0.1
 Tags: konscript, tania, ellis
 */
 
-@import url('style/reset.css');
-@import url('style/page-structure.css');
-@import url('style/text-styles.css');
-@import url('style/misc.css');
+@import url('style/compiled/reset.css');
+@import url('style/compiled/page-structure.css');
+@import url('style/compiled/text-styles.css');
+@import url('style/compiled/misc.css');
