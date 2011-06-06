@@ -1,0 +1,16 @@
+#footer-bar {
+	background-color: #B0ADA6;
+	color: #FFF;
+	float: left;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+
+#footer-bar li {
+	float: left;
+}
+
+.clearer {
+	clear: both;
+}
