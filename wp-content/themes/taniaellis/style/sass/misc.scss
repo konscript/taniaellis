@@ -1,0 +1,89 @@
+#header-top-container {
+	// border: 1px solid #000;
+	float: right;
+	width: 100%;
+	
+	#navigation-top {
+		float: right;
+		margin-right: 10px;
+
+		li {
+			float: left;
+			padding: 15px 20px 15px 0;
+
+			a {
+				color: #9D9C97;
+			}
+		}
+	}
+
+	#searchbar {
+		border: 1px solid #94918A;
+		float: right;
+		padding: 2px;
+		width: 130px;
+	}
+}
+
+#header-menu-logo-container {
+	background-color: #B0ADA6;
+	clear: right;
+	float: right;
+	width: 100%;
+	
+	#logo {
+		float: left;
+	}
+	
+	#shop-link {
+		background-color: #93B897;
+		color: #FFF;
+		float: left;
+		line-height: 36px;
+		padding: 0 15px;	
+		
+		&:hover {
+			background-color: #93B897 / 1.2;
+		}	
+	}
+
+	#navigation-pages {
+		float: right;
+
+		li {
+			float: left;
+			a {
+				background-color: #B0ADA6;
+				color: #FFF;
+				display: block;
+				float: left;
+				line-height: 36px;
+				padding: 0 12px;
+				
+				&:hover {
+					background-color: #B0ADA6 / 2;
+				}
+			}
+		}
+	}
+}
+
+
+
+#footer-bar {
+	background-color: #B0ADA6;
+	color: #FFF;
+	margin: 0 auto;
+	padding: 0.764em 0;
+	text-align: center;
+	width: 100%;
+	
+	li {
+		display: inline;
+		padding: 0 10px;
+	}
+}
+
+.clearer {
+	clear: both;
+}

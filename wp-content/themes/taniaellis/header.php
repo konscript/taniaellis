@@ -17,26 +17,30 @@
 	</head>
 	
 	<body>
-		<header>
-			<div id="header-top-container">
-				<?php wp_nav_menu(array(
-					'theme_location'		=> 'navigation-top',
-					'container'				=> 'nav',
-					'menu_id'				=> 'navigation-top',
-					'menu_class'			=> ''
-				)); ?>
-				<div id="search"></div>
-			</div>
-			<div id="header-menu-logo-container">
-				<div id="logo"></div>
-				<?php wp_nav_menu(array(
-					'theme_location'		=> 'navigation-pages',
-					'container'				=> 'nav',
-					'menu_id'				=> 'navigation-pages',
-					'menu_class'			=> ''
-				)); ?>
-			</div>
+	    <div id="page-wrapper">
+    		<header>
+    			<div id="header-top-container">
+    			    <input type="text" name="searchbar" value="" id="searchbar" />
+    				<?php wp_nav_menu(array(
+    					'theme_location'		=> 'navigation-top',
+    					'container'				=> 'nav',
+    					'menu_id'				=> 'navigation-top',
+    					'menu_class'			=> ''
+    				)); ?>
+    			</div>
+    			
+    			<div id="header-menu-logo-container">
+    			    
+                    <?php wp_nav_menu(array(
+                        'theme_location'        => 'navigation-pages',
+                        'container'             => 'nav',
+                        'menu_id'               => 'navigation-pages',
+                        'menu_class'            => ''
+                    )); ?>
+    				<img id="logo" src="<?php bloginfo('template_url')?>/images/logo.png" />
+    				<a id="shop-link" href="javascript:void(0)">Shop</a>
+    			</div>
 
-		</header>
+    		</header>
 		
-		<content>
+    		<content>

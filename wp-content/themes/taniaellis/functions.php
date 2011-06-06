@@ -2,9 +2,10 @@
 
 if(function_exists( 'register_nav_menus')) {
 	register_nav_menus(array(
-		"navigation-top" => "Top Menu", 
-		"navigation-pages" => "Page Menu"
-	));
+	    'navigation-top'        => 'Top Menu',
+	    'navigation-pages'      => 'Page Menu'
+	    )
+	);
 }
 
 function get_navigation_for_menu_location($location) {
