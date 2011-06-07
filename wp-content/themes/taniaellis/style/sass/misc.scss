@@ -1,3 +1,6 @@
+@import "compass/css3";
+@import "compass/layout/stretching";
+
 #header-top-container {
 	float: right;
 	width: 100%;
@@ -48,6 +51,8 @@
 	}
 	
 	#shop-link {
+		@include transition(background-color, 0.1s, ease-in-out);
+		
 		background-color: #93B897;
 		float: left;
 		line-height: 36px;
@@ -64,6 +69,7 @@
 		li {
 			float: left;
 			a {
+				@include transition(background-color, 0.1s, ease-in-out);
 				background-color: #B0ADA6;
 				color: #FFF;
 				display: block;
@@ -79,59 +85,73 @@
 	}
 }
 
+
 #header-content {
 	#language-picker {
 		float: right;
 		margin-bottom: 30px;
 	}
 	
-	/* FRONT PAGE HEADER MENU */
-	#social-business-menu {
-		float: left;		
+	
+	#frontpage-header-container {
+		width: 100%;
+		float: left;
 		
-		li {
-			border-radius: 5px;
-			margin-top: 5px;
+		/* FRONT PAGE HEADER MENU */
+		#social-business-menu {
+			float: left;		
+		
+			li {
+				margin-top: 5px;
 			
-			&:first-child {
-				margin-top: 0;
-			}
-			
-			a {
-				border-radius: 10px;
-				background-color: #94918A;
-				display: block;
-				padding: 10px;
-				width: 140px;
-				
-				.term {
-					display: block;
-					margin-top: 2px;
+				&:first-child {
+					margin-top: 0;
 				}
-			}			
+			
+				a {
+					@include border-radius(10px);
+					@include transition(background-color, 0.1s, ease-in-out);
+					background-color: #94918A;
+					display: block;
+					padding: 10px;
+					width: 140px;
+				
+					.term {
+						display: block;
+						margin-top: 1px;
+					}
+				}			
+			}
+		
+			li.grey a { background-color: #94918A; }
+			li.grey a:hover { background-color: #94918A / 1.2; }
+		
+			li.green a { background-color: #9CC1A2; }
+			li.green a:hover { background-color: #9CC1A2 / 1.2; }
+		
+			li.blue a { background-color: #83A9C0; }
+			li.blue a:hover { background-color: #83A9C0 / 1.2; }
+		
+			li.purple a { background-color: #A8A6CD; }
+			li.purple a:hover { background-color: #A8A6CD / 1.2; }
+		
+			li.orange a { background-color: #D4B690; }
+			li.orange a:hover { background-color: #D4B690 / 1.2; }
 		}
 		
-		li.grey a { background-color: #94918A; }
-		li.grey a:hover { background-color: #94918A / 1.2; }
-		
-		li.green a { background-color: #9CC1A2; }
-		li.green a:hover { background-color: #9CC1A2 / 1.2; }
-		
-		li.blue a { background-color: #83A9C0; }
-		li.blue a:hover { background-color: #83A9C0 / 1.2; }
-		
-		li.purple a { background-color: #A8A6CD; }
-		li.purple a:hover { background-color: #A8A6CD / 1.2; }
-		
-		li.orange a { background-color: #D4B690; }
-		li.orange a:hover { background-color: #D4B690 / 1.2; }
+		#frontpage-header-content {
+			@include border-radius(10px);
+			background-color: #EAE6E3;
+			float: right;
+			height: 245px;
+			padding: 10px;
+			width: 775px;
+		}
 	}
 	
 	#page {
 	}
 }
-
-
 
 footer {
 	#footer-bar {

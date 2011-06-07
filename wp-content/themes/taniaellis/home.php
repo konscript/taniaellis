@@ -12,17 +12,22 @@
 	</p>
 	<div class="clearer"></div>
 
-
-
-	<?php wp_nav_menu(array(
-	    'theme_location' => 'social-business-menu',
-	    'container' => false,
-	    'menu_id' => 'social-business-menu',
-	    'menu-class' => false,
-	    'link_before' => '<span class="social">Social</span> Business <br><span class="term">',
-	    'link_after' => '</span>'
-	    )); 
-	?>
+<div id="frontpage-header-container">    
+    <?php wp_nav_menu(array(
+        'theme_location' => 'social-business-menu',
+        'container' => false,
+        'menu_id' => 'social-business-menu',
+        'menu-class' => false,
+        'link_before' => '<span class="social">Social</span> Business <br><span class="term">',
+        'link_after' => '</span>'
+        )); 
+    ?>
+    
+    <div id="frontpage-header-content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    
+</div>
 
 </div>
 <div class="clearer"></div>

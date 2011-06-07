@@ -45,7 +45,7 @@ html, body {
   box-shadow: #888888 -3px 5px 25px 5px;
 }
 
-/* line 45, ../sass/page-structure.scss */
+/* line 44, ../sass/page-structure.scss */
 footer, #push {
   height: 142px;
   /* .push must be the same height as .footer */
