@@ -45,7 +45,7 @@ content {
     content #social-business-menu li a .social {
       font-weight: bold; }
     content #social-business-menu li a .term {
-      font-family: "Arial Black", sans-serif;
+      font-family: "Arial Black", Arial, sans-serif;
       font-size: 1.4em;
       font-weight: bold;
       line-height: 1em; }
