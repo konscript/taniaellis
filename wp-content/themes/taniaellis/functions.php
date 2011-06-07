@@ -8,17 +8,21 @@ if(function_exists( 'register_nav_menus')) {
 	);
 }
 
-function get_navigation_for_menu_location($location) {
-	$locations = get_nav_menu_locations();
-	$menu = wp_get_nav_menu_object($locations[$location]);
-	$term_id = $menu->term_id;
-	
-	$s = "";
-	foreach((array) wp_get_nav_menu_items($term_id) as $key => $item) {
-		$s .= '<a href="'.$item->url.'">'.$item->title.'</a>';
-	}
-	
-	return $s;
+if(function_exists('register_sidebar')) {
+	register_sidebar(array(
+		'name'				=> 'Right Sidebar',
+		'before_widget'		=> '<div class="widget">',
+		'after_widget'		=> '</div>',
+		'before_title'		=> '<h2>',
+		'after´_title'		=> '</h2>',
+	));
+	register_sidebar(array(
+		'name'				=> 'Left Sidebar',
+		'before_widget'		=> '<div class="widget>"',
+		'after_widget'		=> '</div>',
+		'before_title'		=> '<h2>',
+		'after´_title'		=> '</h2>',
+	));
 }
 
 ?>

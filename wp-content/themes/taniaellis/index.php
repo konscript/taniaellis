@@ -10,6 +10,14 @@
     <a class="current" href="javascript:void(0)">ENG</a> / <a href="javascript:void(0)">DK</a>
 </p>
 
+<div id="page">
+	<section id="right-sidebar">
+		<?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(1); ?>
+	</section>
+	<section id="left-sidebar">
+		<?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(2); ?>
+	</section>
+</div>
 
 
 <?php get_footer(); ?>
