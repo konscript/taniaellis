@@ -20,7 +20,11 @@
 	    <div id="page-wrapper">
     		<header>
     			<div id="header-top-container">
-    			    <input type="text" name="searchbar" value="" id="searchbar" />
+					<form method="get" action="<?php bloginfo('siteurl') ?>/search/">
+						<input type="submit" value="" />    			    	
+						<input type="text" name="searchbar" value="" id="searchbar" />
+						
+					</form>
     				<?php wp_nav_menu(array(
     					'theme_location'		=> 'navigation-top',
     					'container'				=> 'nav',

@@ -1,5 +1,4 @@
 #header-top-container {
-	// border: 1px solid #000;
 	float: right;
 	width: 100%;
 	
@@ -14,14 +13,31 @@
 			a {
 				color: #9D9C97;
 			}
+			
+			a:active {
+				text-decoration: underline;
+			}
 		}
 	}
-
-	#searchbar {
-		border: 1px solid #94918A;
+	
+	form {
 		float: right;
-		padding: 2px;
-		width: 130px;
+		margin-top: 11px;
+		
+		#searchbar {
+			border: 1px solid #94918A;
+			float: right;
+			padding: 1px;
+			width: 130px;
+		}
+		
+		input[type=submit] {
+			background: #B0ADA6 url('../../images/searchbar_icon.png');
+			cursor: pointer;
+			float: right;
+			height: 18px;
+			width: 21px;
+		}
 	}
 }
 
@@ -70,17 +86,24 @@
 
 
 
-#footer-bar {
-	background-color: #B0ADA6;
-	color: #FFF;
-	margin: 0 auto;
-	padding: 0.764em 0;
-	text-align: center;
-	width: 100%;
+footer {
+	#footer-bar {
+		background-color: #B0ADA6;
+		color: #FFF;
+		margin: 0 auto;
+		padding: 0.764em 0;
+		text-align: center;
+		width: 100%;
+
+		li {
+			display: inline;
+			padding: 0 10px;
+		}
+	}
 	
-	li {
-		display: inline;
-		padding: 0 10px;
+	#co2-link {
+		float: right;
+		margin-top: 15px;
 	}
 }
 
