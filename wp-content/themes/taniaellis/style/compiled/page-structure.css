@@ -7,45 +7,54 @@ html, body {
 #page-wrapper {
   height: auto !important;
   height: 100%;
-  margin: 0 auto -142px;
-  /* the bottom margin is the negative value of the footer's height */
   min-height: 100%;
 }
-/* line 13, ../sass/page-structure.scss */
+/* line 12, ../sass/page-structure.scss */
 #page-wrapper header {
   margin: 0 auto;
   width: 960px;
 }
-/* line 17, ../sass/page-structure.scss */
+/* line 16, ../sass/page-structure.scss */
 #page-wrapper header #header-menu-logo-container {
   margin-bottom: 4px;
 }
-/* line 22, ../sass/page-structure.scss */
+/* line 21, ../sass/page-structure.scss */
 #page-wrapper #header-content {
   clear: both;
   margin: 0 auto;
   width: 960px;
 }
-/* line 28, ../sass/page-structure.scss */
+/* line 27, ../sass/page-structure.scss */
 #page-wrapper #page-content {
   background: url("../../images/background_gradient.png") repeat-x;
-  margin-top: 20px;
-  min-height: 232px;
+  margin: 20px 0px;
   padding-top: 30px;
 }
-/* line 34, ../sass/page-structure.scss */
+/* line 32, ../sass/page-structure.scss */
 #page-wrapper #page-content #page {
   background: #fff;
-  margin: 0 auto;
-  width: 960px;
   height: 100%;
+  margin: 0 auto;
+  padding: 30px 0;
+  width: 960px;
   -moz-box-shadow: #888888 -3px 5px 25px 5px;
   -webkit-box-shadow: #888888 -3px 5px 25px 5px;
   -o-box-shadow: #888888 -3px 5px 25px 5px;
   box-shadow: #888888 -3px 5px 25px 5px;
 }
+/* line 40, ../sass/page-structure.scss */
+#page-wrapper #page-content #page section.left-sidebar, #page-wrapper #page-content #page section.right-sidebar {
+  float: left;
+  height: 100%;
+}
+/* line 45, ../sass/page-structure.scss */
+#page-wrapper #page-content #page section.left-sidebar {
+  border-right: 1px solid #c6c2b7;
+  padding-right: 20px;
+  width: 300px;
+}
 
-/* line 44, ../sass/page-structure.scss */
+/* line 58, ../sass/page-structure.scss */
 footer, #push {
   height: 142px;
   /* .push must be the same height as .footer */

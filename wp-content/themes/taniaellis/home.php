@@ -35,10 +35,10 @@
 
 <div id="page-content">
 	<div id="page">
-		<section id="right-sidebar">
+		<section class="right-sidebar">
 			<?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(1); ?>
 		</section>
-		<section id="left-sidebar">
+		<section class="left-sidebar">
 			<?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(2); ?>
 		</section>
 	</div>
