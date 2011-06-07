@@ -78,7 +78,7 @@
 				padding: 0 12px;
 				
 				&:hover {
-					background-color: #B0ADA6 / 2;
+					background-color: #B0ADA6 / 1.2;
 				}
 			}
 		}
@@ -113,6 +113,7 @@
 					@include transition(background-color, 0.1s, ease-in-out);
 					background-color: #94918A;
 					display: block;
+					height: 30px;
 					padding: 10px;
 					width: 140px;
 				
@@ -143,9 +144,26 @@
 			@include border-radius(10px);
 			background-color: #EAE6E3;
 			float: right;
-			height: 245px;
+			height: 250px;
 			padding: 10px;
+			position: relative;
 			width: 775px;
+			
+			img {				
+				float: left;
+				left: 35px;
+				position: relative;
+				top: -35px;
+				z-index: 999;
+			}
+			
+			iframe {
+				@include border-radius(10px);
+				position: relative;
+				left: -250px;
+				top: 70px;
+				z-index: 1000;
+			}
 		}
 	}
 	

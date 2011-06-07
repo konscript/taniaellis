@@ -103,7 +103,7 @@
 }
 /* line 80, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages li a:hover {
-  background-color: #585653;
+  background-color: #92908a;
 }
 
 /* line 90, ../sass/misc.scss */
@@ -151,55 +151,56 @@
   transition-timing-function: ease-in-out;
   background-color: #94918A;
   display: block;
+  height: 30px;
   padding: 10px;
   width: 140px;
 }
-/* line 119, ../sass/misc.scss */
+/* line 120, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li a .term {
   display: block;
   margin-top: 1px;
 }
-/* line 126, ../sass/misc.scss */
+/* line 127, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.grey a {
   background-color: #94918A;
 }
-/* line 127, ../sass/misc.scss */
+/* line 128, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.grey a:hover {
   background-color: #7b7873;
 }
-/* line 129, ../sass/misc.scss */
+/* line 130, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.green a {
   background-color: #9CC1A2;
 }
-/* line 130, ../sass/misc.scss */
+/* line 131, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.green a:hover {
   background-color: #82a087;
 }
-/* line 132, ../sass/misc.scss */
+/* line 133, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.blue a {
   background-color: #83A9C0;
 }
-/* line 133, ../sass/misc.scss */
+/* line 134, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.blue a:hover {
   background-color: #6d8ca0;
 }
-/* line 135, ../sass/misc.scss */
+/* line 136, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.purple a {
   background-color: #A8A6CD;
 }
-/* line 136, ../sass/misc.scss */
+/* line 137, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.purple a:hover {
   background-color: #8c8aaa;
 }
-/* line 138, ../sass/misc.scss */
+/* line 139, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.orange a {
   background-color: #D4B690;
 }
-/* line 139, ../sass/misc.scss */
+/* line 140, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.orange a:hover {
   background-color: #b09778;
 }
-/* line 142, ../sass/misc.scss */
+/* line 143, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -209,12 +210,34 @@
   border-radius: 10px;
   background-color: #EAE6E3;
   float: right;
-  height: 245px;
+  height: 250px;
   padding: 10px;
+  position: relative;
   width: 775px;
 }
+/* line 152, ../sass/misc.scss */
+#header-content #frontpage-header-container #frontpage-header-content img {
+  float: left;
+  left: 35px;
+  position: relative;
+  top: -35px;
+  z-index: 999;
+}
+/* line 160, ../sass/misc.scss */
+#header-content #frontpage-header-container #frontpage-header-content iframe {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  position: relative;
+  left: -250px;
+  top: 70px;
+  z-index: 1000;
+}
 
-/* line 157, ../sass/misc.scss */
+/* line 175, ../sass/misc.scss */
 footer #footer-bar {
   background-color: #B0ADA6;
   color: #FFF;
@@ -223,18 +246,18 @@ footer #footer-bar {
   text-align: center;
   width: 100%;
 }
-/* line 165, ../sass/misc.scss */
+/* line 183, ../sass/misc.scss */
 footer #footer-bar li {
   display: inline;
   padding: 0 10px;
 }
-/* line 171, ../sass/misc.scss */
+/* line 189, ../sass/misc.scss */
 footer #co2-link {
   float: right;
   margin-top: 15px;
 }
 
-/* line 177, ../sass/misc.scss */
+/* line 195, ../sass/misc.scss */
 .clearer {
   clear: both;
 }
