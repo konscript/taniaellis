@@ -3,7 +3,8 @@
 if(function_exists( 'register_nav_menus')) {
 	register_nav_menus(array(
 	    'navigation-top'        => 'Top Menu',
-	    'navigation-pages'      => 'Page Menu'
+	    'navigation-pages'      => 'Page Menu',
+	    'social-business-menu'  => 'Social Business Menu'
 	    )
 	);
 }

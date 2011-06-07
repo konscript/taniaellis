@@ -10,24 +10,34 @@ html>body {
 #navigation-top {
 	li {
 		a {
+			color: #9D9C97;
 			font-weight: bold;
 			text-decoration: none;
+		}
+		
+		a:active {
+			text-decoration: underline;
 		}
 	}
 }
 
-#shop-link {
-	font-size: 0.9em;
-	text-decoration: none;
-	text-transform: uppercase;
-	}
+#header-menu-logo-container {
+	
+	
+	#shop-link {
+		color: #FFF;
+		font-size: 0.9em;
+		text-decoration: none;
+		text-transform: uppercase;
+		}
 
-#navigation-pages {
-	li {
-		a {
-			font-size: 0.9em;
-			text-decoration: none;
-			text-transform: uppercase;
+	#navigation-pages {
+		li {
+			a {
+				font-size: 0.9em;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
 		}
 	}
 }
@@ -45,7 +55,6 @@ content {
 	
 	#language-picker {
 		color: #9D9C97;
-		font-weight: bold;
 		text-transform: uppercase;
 		
 		a {
@@ -55,6 +64,28 @@ content {
 		
 		a.current {
 			color: #93B897;
+		}
+	}
+	
+	/* FRONT PAGE HEADER MENU */
+	#social-business-menu {
+		li {
+			a {
+				color: #FFF;
+				text-decoration: none;
+				text-transform: uppercase;
+				
+				.social {
+					font-weight: bold;
+				}
+				
+				.term {
+					font-family: "Arial Black", sans-serif;
+					font-size: 1.4em;
+					font-weight: bold;
+					line-height: 1em;
+				}
+			}
 		}
 	}
 }
