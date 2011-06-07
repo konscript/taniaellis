@@ -18,6 +18,22 @@ html > body {
   text-decoration: none;
   text-transform: uppercase; }
 
+content #sub-heading {
+  text-transform: uppercase;
+  color: #94918A; }
+  content #sub-heading span {
+    color: #7D7A73;
+    font-weight: bold; }
+content #language-picker {
+  color: #9D9C97;
+  font-weight: bold;
+  text-transform: uppercase; }
+  content #language-picker a {
+    color: #9D9C97;
+    text-decoration: none; }
+  content #language-picker a.current {
+    color: #93B897; }
+
 #footer-bar li {
   font-size: 1em;
   font-weight: 500; }

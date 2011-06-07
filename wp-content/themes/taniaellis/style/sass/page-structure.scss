@@ -8,6 +8,10 @@ html, body {
 	height: 100%;
 	margin: 0 auto -142px;  /* the bottom margin is the negative value of the footer's height */
 	width: 960px;
+	
+	#header-menu-logo-container {
+		margin-bottom: 4px;
+	}
 }
 
 footer, #push {

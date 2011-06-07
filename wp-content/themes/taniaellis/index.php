@@ -1,17 +1,15 @@
 <?php
 
 /*
-Theme Name: Tania Ellis
-Theme URI: http://taniaellis.com/
-Description: Default theme for the Tania Ellis website.
-Author: Konscript
-Author URI: http://konscript.com/
-Version: 0.1
-Tags: konscript, tania, ellis
+    Template Name: Forside
 */
+    get_header(); 
+?>
+<p id="sub-heading">The <span>Social</span> Business Company</p>
+<p id="language-picker">
+    <a class="current" href="javascript:void(0)">ENG</a> / <a href="javascript:void(0)">DK</a>
+</p>
 
-get_header(); ?>
 
-<h1>It's a trap!</h1>
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

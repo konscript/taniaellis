@@ -44,6 +44,9 @@
         #header-menu-logo-container #navigation-pages li a:hover {
           background-color: #585653; }
 
+content #language-picker {
+  float: right; }
+
 #footer-bar {
   background-color: #B0ADA6;
   color: #FFF;
