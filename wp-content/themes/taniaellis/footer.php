@@ -1,4 +1,5 @@
 		</div>
+		<div class="clearer"></div>
     	<footer>
 			<ul id="footer-bar">
 			    <li>Address: Larsbjornsstraede 13, 1454 Copenhagen</li>
