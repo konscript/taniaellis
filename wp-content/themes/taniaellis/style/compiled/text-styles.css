@@ -79,8 +79,31 @@ html > body {
   font-weight: bold;
   line-height: 1em;
 }
-
 /* line 94, ../sass/text-styles.scss */
+#header-content #frontpage-header-content .header-quote h6 {
+  color: #7C7972;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.1em;
+  margin-bottom: 10px;
+}
+/* line 102, ../sass/text-styles.scss */
+#header-content #frontpage-header-content .header-quote p {
+  color: #7C7972;
+  line-height: 1.5em;
+}
+/* line 108, ../sass/text-styles.scss */
+#header-content #frontpage-header-content .header-quote div a {
+  color: #7C7972;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 113, ../sass/text-styles.scss */
+#header-content #frontpage-header-content .header-quote div a:hover {
+  color: #67645f;
+}
+
+/* line 123, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: 500;

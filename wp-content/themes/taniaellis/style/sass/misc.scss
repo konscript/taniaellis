@@ -82,6 +82,8 @@
 				}
 			}
 		}
+		
+		li.current-menu-item a { background-color: #B0ADA6 / 1.2; }
 	}
 }
 
@@ -144,16 +146,17 @@
 			@include border-radius(10px);
 			background-color: #EAE6E3;
 			float: right;
-			height: 250px;
-			padding: 10px;
+			height: 245px;
+			padding: 15px 10px 10px;
 			position: relative;
 			width: 775px;
 			
-			img {				
+			img#intro-movie {				
 				float: left;
 				left: 35px;
+				margin-right: 50px;
 				position: relative;
-				top: -35px;
+				top: -40px;
 				z-index: 999;
 			}
 			
@@ -163,6 +166,24 @@
 				left: -250px;
 				top: 70px;
 				z-index: 1000;
+			}
+			
+			.header-quote {
+				background: url('../../images/header_frontpage_quotes.png') top left no-repeat;
+				float: left;
+				padding: 14px 0 0 35px;
+				width: 250px;
+				
+				p {
+					margin-bottom: 10px;
+				}
+				
+				div {
+					background: url('../../images/header_frontpage_signature.png') right center no-repeat;
+					height: 35px;
+					line-height: 35px;
+					width: 100%;
+				}
 			}
 		}
 	}

@@ -24,10 +24,19 @@
     ?>
     
     <div id="frontpage-header-content">
-        <img src="<?php bloginfo('template_url'); ?>/images/header_frontpage_tania_telly.png" />
-        <iframe src="http://player.vimeo.com/video/23945339?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" width="276" height="177" frameborder="0"></iframe>
+        <img id="intro-movie" src="<?php bloginfo('template_url'); ?>/images/header_frontpage_tania_telly.png" />
+        <!-- Video goes here! -->
+        
+        <div class="header-quote">
+            <h6>Heartcore business for social and economic value!</h6>
+            <p>
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            </p>
+            <div>
+                <a href="javascript:void(0)">Read more</a>
+            </div>
+        </div>
     </div>
-    
 </div>
 
 </div>
