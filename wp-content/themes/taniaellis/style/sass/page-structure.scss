@@ -1,18 +1,46 @@
+@import "compass/css3";
+
 html, body {
 	height: 100%;
 }
 
 #page-wrapper {
-	min-height: 100%;
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -142px;  /* the bottom margin is the negative value of the footer's height */
-	width: 960px;
+	min-height: 100%;
 	
-	#header-menu-logo-container {
-		margin-bottom: 4px;
+	header {
+		margin: 0 auto;
+		width: 960px;
+
+		#header-menu-logo-container {
+			margin-bottom: 4px;
+		}
+	}
+	
+	#header-content {
+		clear: both;
+		margin: 0 auto;
+		width: 960px;
+	}
+	
+	#page-content{
+		background: url('../../images/background_gradient.png') repeat-x;
+		margin-top: 20px;
+		min-height : 232px;
+		padding-top: 30px;
+		
+		#page {
+			background: #fff;
+			margin: 0 auto;
+			width: 960px;
+			height: 100%;
+			@include box-shadow(#888 -3px 5px 25px 5px);
+		}
 	}
 }
+
 
 footer, #push {
 	height: 142px; /* .push must be the same height as .footer */

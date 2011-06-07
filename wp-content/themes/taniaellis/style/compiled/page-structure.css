@@ -1,20 +1,56 @@
+/* line 3, ../sass/page-structure.scss */
 html, body {
-  height: 100%; }
+  height: 100%;
+}
 
+/* line 7, ../sass/page-structure.scss */
 #page-wrapper {
-  min-height: 100%;
   height: auto !important;
   height: 100%;
   margin: 0 auto -142px;
   /* the bottom margin is the negative value of the footer's height */
-  width: 960px; }
-  #page-wrapper #header-menu-logo-container {
-    margin-bottom: 4px; }
+  min-height: 100%;
+}
+/* line 13, ../sass/page-structure.scss */
+#page-wrapper header {
+  margin: 0 auto;
+  width: 960px;
+}
+/* line 17, ../sass/page-structure.scss */
+#page-wrapper header #header-menu-logo-container {
+  margin-bottom: 4px;
+}
+/* line 22, ../sass/page-structure.scss */
+#page-wrapper #header-content {
+  clear: both;
+  margin: 0 auto;
+  width: 960px;
+}
+/* line 28, ../sass/page-structure.scss */
+#page-wrapper #page-content {
+  background: url("../../images/background_gradient.png") repeat-x;
+  margin-top: 20px;
+  min-height: 232px;
+  padding-top: 30px;
+}
+/* line 34, ../sass/page-structure.scss */
+#page-wrapper #page-content #page {
+  background: #fff;
+  margin: 0 auto;
+  width: 960px;
+  height: 100%;
+  -moz-box-shadow: #888888 -3px 5px 25px 5px;
+  -webkit-box-shadow: #888888 -3px 5px 25px 5px;
+  -o-box-shadow: #888888 -3px 5px 25px 5px;
+  box-shadow: #888888 -3px 5px 25px 5px;
+}
 
+/* line 45, ../sass/page-structure.scss */
 footer, #push {
   height: 142px;
   /* .push must be the same height as .footer */
   width: 960px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 /* Sticky Footer by Ryan Fait http://ryanfait.com/ */

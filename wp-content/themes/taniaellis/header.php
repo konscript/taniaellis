@@ -47,4 +47,4 @@
 
     		</header>
 		
-    		<content>
+    		<div id="header-content">

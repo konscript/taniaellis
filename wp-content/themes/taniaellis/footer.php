@@ -1,4 +1,3 @@
-    		</content>
 		</div>
     	<footer>
 			<ul id="footer-bar">
