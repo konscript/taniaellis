@@ -1,55 +1,87 @@
+/* line 1, ../sass/text-styles.scss */
 body {
-  font-size: 75%; }
+  font-size: 75%;
+}
 
+/* line 5, ../sass/text-styles.scss */
 html > body {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px; }
+  font-size: 12px;
+}
 
+/* line 12, ../sass/text-styles.scss */
 #navigation-top li a {
   color: #9D9C97;
   font-weight: bold;
-  text-decoration: none; }
+  text-decoration: none;
+}
+/* line 18, ../sass/text-styles.scss */
 #navigation-top li a:active {
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
+/* line 27, ../sass/text-styles.scss */
 #header-menu-logo-container #shop-link {
   color: #FFF;
   font-size: 0.9em;
   text-decoration: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
+/* line 36, ../sass/text-styles.scss */
 #header-menu-logo-container #navigation-pages li a {
   font-size: 0.9em;
   text-decoration: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
+/* line 45, ../sass/text-styles.scss */
 content {
-  /* FRONT PAGE HEADER MENU */ }
-  content #sub-heading {
-    text-transform: uppercase;
-    color: #94918A; }
-    content #sub-heading span {
-      color: #7D7A73;
-      font-weight: bold; }
-  content #language-picker {
-    color: #9D9C97;
-    text-transform: uppercase; }
-    content #language-picker a {
-      color: #9D9C97;
-      text-decoration: none; }
-    content #language-picker a.current {
-      color: #93B897; }
-  content #social-business-menu li a {
-    color: #FFF;
-    text-decoration: none;
-    text-transform: uppercase; }
-    content #social-business-menu li a .social {
-      font-weight: bold; }
-    content #social-business-menu li a .term {
-      font-family: "Arial Black", Arial, sans-serif;
-      font-size: 1.4em;
-      font-weight: bold;
-      line-height: 1em; }
+  /* FRONT PAGE HEADER MENU */
+}
+/* line 46, ../sass/text-styles.scss */
+content #sub-heading {
+  text-transform: uppercase;
+  color: #94918A;
+}
+/* line 50, ../sass/text-styles.scss */
+content #sub-heading span {
+  color: #7D7A73;
+  font-weight: bold;
+}
+/* line 56, ../sass/text-styles.scss */
+content #language-picker {
+  color: #9D9C97;
+  text-transform: uppercase;
+}
+/* line 60, ../sass/text-styles.scss */
+content #language-picker a {
+  color: #9D9C97;
+  text-decoration: none;
+}
+/* line 65, ../sass/text-styles.scss */
+content #language-picker a.current {
+  color: #93B897;
+}
+/* line 73, ../sass/text-styles.scss */
+content #social-business-menu li a {
+  color: #FFF;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 78, ../sass/text-styles.scss */
+content #social-business-menu li a .social {
+  font-weight: bold;
+}
+/* line 82, ../sass/text-styles.scss */
+content #social-business-menu li a .term {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 1em;
+}
 
+/* line 94, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
-  font-weight: 500; }
+  font-weight: 500;
+}

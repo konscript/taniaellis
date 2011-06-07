@@ -1,112 +1,240 @@
+/* line 4, ../sass/misc.scss */
 #header-top-container {
   float: right;
-  width: 100%; }
-  #header-top-container #navigation-top {
-    float: right;
-    margin-right: 10px; }
-    #header-top-container #navigation-top li {
-      float: left;
-      padding: 15px 20px 15px 0; }
-  #header-top-container form {
-    float: right;
-    margin-top: 11px; }
-    #header-top-container form #searchbar {
-      border: 1px solid #94918A;
-      float: right;
-      padding: 1px;
-      width: 130px; }
-      #header-top-container form #searchbar:focus {
-        outline: none; }
-    #header-top-container form input[type=submit] {
-      background: #b0ada6 url("../../images/searchbar_icon.png");
-      cursor: pointer;
-      float: right;
-      height: 18px;
-      width: 21px; }
+  width: 100%;
+}
+/* line 8, ../sass/misc.scss */
+#header-top-container #navigation-top {
+  float: right;
+  margin-right: 10px;
+}
+/* line 12, ../sass/misc.scss */
+#header-top-container #navigation-top li {
+  float: left;
+  padding: 15px 20px 15px 0;
+}
+/* line 18, ../sass/misc.scss */
+#header-top-container form {
+  float: right;
+  margin-top: 11px;
+}
+/* line 22, ../sass/misc.scss */
+#header-top-container form #searchbar {
+  border: 1px solid #94918A;
+  float: right;
+  padding: 1px;
+  width: 130px;
+}
+/* line 28, ../sass/misc.scss */
+#header-top-container form #searchbar:focus {
+  outline: none;
+}
+/* line 33, ../sass/misc.scss */
+#header-top-container form input[type=submit] {
+  background: #b0ada6 url("../../images/searchbar_icon.png");
+  cursor: pointer;
+  float: right;
+  height: 18px;
+  width: 21px;
+}
 
+/* line 43, ../sass/misc.scss */
 #header-menu-logo-container {
   background-color: #B0ADA6;
   clear: right;
   float: right;
-  width: 100%; }
-  #header-menu-logo-container #logo {
-    float: left; }
-  #header-menu-logo-container #shop-link {
-    background-color: #93B897;
-    float: left;
-    line-height: 36px;
-    padding: 0 15px; }
-    #header-menu-logo-container #shop-link:hover {
-      background-color: #7a997d; }
-  #header-menu-logo-container #navigation-pages {
-    float: right; }
-    #header-menu-logo-container #navigation-pages li {
-      float: left; }
-      #header-menu-logo-container #navigation-pages li a {
-        background-color: #B0ADA6;
-        color: #FFF;
-        display: block;
-        float: left;
-        line-height: 36px;
-        padding: 0 12px; }
-        #header-menu-logo-container #navigation-pages li a:hover {
-          background-color: #585653; }
+  width: 100%;
+}
+/* line 49, ../sass/misc.scss */
+#header-menu-logo-container #logo {
+  float: left;
+}
+/* line 53, ../sass/misc.scss */
+#header-menu-logo-container #shop-link {
+  -moz-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-color: #93B897;
+  float: left;
+  line-height: 36px;
+  padding: 0 15px;
+}
+/* line 61, ../sass/misc.scss */
+#header-menu-logo-container #shop-link:hover {
+  background-color: #7a997d;
+}
+/* line 66, ../sass/misc.scss */
+#header-menu-logo-container #navigation-pages {
+  float: right;
+}
+/* line 69, ../sass/misc.scss */
+#header-menu-logo-container #navigation-pages li {
+  float: left;
+}
+/* line 71, ../sass/misc.scss */
+#header-menu-logo-container #navigation-pages li a {
+  -moz-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-color: #B0ADA6;
+  color: #FFF;
+  display: block;
+  float: left;
+  line-height: 36px;
+  padding: 0 12px;
+}
+/* line 80, ../sass/misc.scss */
+#header-menu-logo-container #navigation-pages li a:hover {
+  background-color: #585653;
+}
 
-content {
-  /* FRONT PAGE HEADER MENU */ }
-  content #language-picker {
-    float: right;
-    margin-bottom: 30px; }
-  content #social-business-menu {
-    float: left; }
-    content #social-business-menu li {
-      border-radius: 5px;
-      margin-top: 5px; }
-      content #social-business-menu li:first-child {
-        margin-top: 0; }
-      content #social-business-menu li a {
-        border-radius: 10px;
-        background-color: #94918A;
-        display: block;
-        padding: 10px;
-        width: 140px; }
-        content #social-business-menu li a .term {
-          display: block;
-          margin-top: 2px; }
-    content #social-business-menu li.grey a {
-      background-color: #94918A; }
-    content #social-business-menu li.grey a:hover {
-      background-color: #7b7873; }
-    content #social-business-menu li.green a {
-      background-color: #9CC1A2; }
-    content #social-business-menu li.green a:hover {
-      background-color: #82a087; }
-    content #social-business-menu li.blue a {
-      background-color: #83A9C0; }
-    content #social-business-menu li.blue a:hover {
-      background-color: #6d8ca0; }
-    content #social-business-menu li.purple a {
-      background-color: #A8A6CD; }
-    content #social-business-menu li.purple a:hover {
-      background-color: #8c8aaa; }
-    content #social-business-menu li.orange a {
-      background-color: #D4B690; }
-    content #social-business-menu li.orange a:hover {
-      background-color: #b09778; }
+/* line 89, ../sass/misc.scss */
+content #language-picker {
+  float: right;
+  margin-bottom: 30px;
+}
+/* line 95, ../sass/misc.scss */
+content #frontpage-header-container {
+  width: 100%;
+  float: left;
+  /* FRONT PAGE HEADER MENU */
+}
+/* line 100, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu {
+  float: left;
+}
+/* line 103, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li {
+  margin-top: 5px;
+}
+/* line 106, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li:first-child {
+  margin-top: 0;
+}
+/* line 110, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li a {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  -moz-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-color: #94918A;
+  display: block;
+  padding: 10px;
+  width: 140px;
+}
+/* line 118, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li a .term {
+  display: block;
+  margin-top: 1px;
+}
+/* line 125, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li.grey a {
+  background-color: #94918A;
+}
+/* line 126, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li.grey a:hover {
+  background-color: #7b7873;
+}
+/* line 128, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li.green a {
+  background-color: #9CC1A2;
+}
+/* line 129, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li.green a:hover {
+  background-color: #82a087;
+}
+/* line 131, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li.blue a {
+  background-color: #83A9C0;
+}
+/* line 132, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li.blue a:hover {
+  background-color: #6d8ca0;
+}
+/* line 134, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li.purple a {
+  background-color: #A8A6CD;
+}
+/* line 135, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li.purple a:hover {
+  background-color: #8c8aaa;
+}
+/* line 137, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li.orange a {
+  background-color: #D4B690;
+}
+/* line 138, ../sass/misc.scss */
+content #frontpage-header-container #social-business-menu li.orange a:hover {
+  background-color: #b09778;
+}
+/* line 141, ../sass/misc.scss */
+content #frontpage-header-container #frontpage-header-content {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #EAE6E3;
+  float: right;
+  height: 245px;
+  padding: 10px;
+  width: 775px;
+}
 
+/* line 155, ../sass/misc.scss */
 footer #footer-bar {
   background-color: #B0ADA6;
   color: #FFF;
   margin: 0 auto;
   padding: 0.764em 0;
   text-align: center;
-  width: 100%; }
-  footer #footer-bar li {
-    display: inline;
-    padding: 0 10px; }
+  width: 100%;
+}
+/* line 163, ../sass/misc.scss */
+footer #footer-bar li {
+  display: inline;
+  padding: 0 10px;
+}
+/* line 169, ../sass/misc.scss */
 footer #co2-link {
   float: right;
-  margin-top: 15px; }
+  margin-top: 15px;
+}
 
+/* line 175, ../sass/misc.scss */
 .clearer {
-  clear: both; }
+  clear: both;
+}
