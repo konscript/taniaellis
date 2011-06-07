@@ -9,14 +9,6 @@
 		li {
 			float: left;
 			padding: 15px 20px 15px 0;
-
-			a {
-				color: #9D9C97;
-			}
-			
-			a:active {
-				text-decoration: underline;
-			}
 		}
 	}
 	
@@ -29,6 +21,10 @@
 			float: right;
 			padding: 1px;
 			width: 130px;
+			
+			&:focus {
+				outline: none;
+			}
 		}
 		
 		input[type=submit] {
@@ -53,7 +49,6 @@
 	
 	#shop-link {
 		background-color: #93B897;
-		color: #FFF;
 		float: left;
 		line-height: 36px;
 		padding: 0 15px;	
@@ -87,6 +82,49 @@
 content {
 	#language-picker {
 		float: right;
+		margin-bottom: 30px;
+	}
+	
+	/* FRONT PAGE HEADER MENU */
+	#social-business-menu {
+		float: left;		
+		
+		li {
+			border-radius: 5px;
+			margin-top: 5px;
+			
+			&:first-child {
+				margin-top: 0;
+			}
+			
+			a {
+				border-radius: 10px;
+				background-color: #94918A;
+				display: block;
+				padding: 10px;
+				width: 140px;
+				
+				.term {
+					display: block;
+					margin-top: 3px;
+				}
+			}			
+		}
+		
+		li.grey a { background-color: #94918A; }
+		li.grey a:hover { background-color: #94918A / 1.2; }
+		
+		li.green a { background-color: #9CC1A2; }
+		li.green a:hover { background-color: #9CC1A2 / 1.2; }
+		
+		li.blue a { background-color: #83A9C0; }
+		li.blue a:hover { background-color: #83A9C0 / 1.2; }
+		
+		li.purple a { background-color: #A8A6CD; }
+		li.purple a:hover { background-color: #A8A6CD / 1.2; }
+		
+		li.orange a { background-color: #D4B690; }
+		li.orange a:hover { background-color: #D4B690 / 1.2; }
 	}
 }
 
