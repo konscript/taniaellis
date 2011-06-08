@@ -173,16 +173,76 @@
 				float: left;
 				padding: 14px 0 0 35px;
 				width: 250px;
+				height: 186px;
 				
-				p {
+				p#header-quote-text {
 					margin-bottom: 10px;
 				}
 				
-				div {
+				div#read-more-signature {
 					background: url('../../images/header_frontpage_signature.png') right center no-repeat;
-					height: 35px;
-					line-height: 35px;
+					height: 33px;
+					line-height: 33px;
+					//margin-bottom: 11px;
 					width: 100%;
+					
+					a {
+						@include transition(color, 0.1s, ease-in-out);
+					}
+				}
+			}
+			
+			#newsletter-signup-box {
+				@include border-radius(10px);
+				background-color: #9CC1A2;
+				float: left;
+				margin-left: 35px;
+				padding-bottom: 10px;
+				width: 250px;
+				
+				#header {
+					@include border-top-radius(10px);
+					
+					background-color: #94918A;
+					padding: 15px 0 10px 20px;
+					
+					span#social-business-trends {
+						display: block;
+						height: 12px;
+					}
+					
+					span#newsletter {
+						display: block;
+						height: 18px;
+					}
+					
+				}
+				
+				#content {
+					margin-bottom: 15px;
+					padding: 10px 20px 0;
+				}
+				
+				#newsletter-signup-button {					
+					@include border-radius(5px);
+					@include background-image(linear-gradient(top, #A4A19C, #7C7972));
+					
+					background-color: #7C7972;					
+					display: block;
+					float: right;
+					margin-right: 20px;
+					padding: 5px 20px;
+					
+					&:hover {
+						background-color: #7C7972 / 1.2;						
+						color: #FFF / 1.1;
+						@include background-image(linear-gradient(top, #A4A19C / 1.2, #7C7972 / 1.2));
+					}
+					
+					&:active {
+						color: #FFF / 1.2;
+						@include background-image(linear-gradient(top, #7C7972 / 1.2, #A4A19C / 1.2));
+					}
 				}
 			}
 		}

@@ -99,21 +99,48 @@ html>body {
 				margin-bottom: 10px;
 			}
 			
-			p {
+			p#header-quote-text {
 				color: #7C7972;
 				line-height: 1.5em;
 			}
 			
-			div {
+			div#read-more-signature {
+				
 				a {
 					color: #7C7972;
 					font-weight: bold;
 					text-decoration: none;
 					
 					&:hover {
-						color: #7C7972 / 1.2;
+						color: #7C7972 / 1.3;
 					}
 				}
+			}
+		}
+		
+		#newsletter-signup-box {			
+			#header {
+				color: #FFF;
+				text-transform: uppercase;
+				
+				#social-business-trends {
+				}
+				
+				#newsletter {
+					font-family: "Arial Black", Arial, Helvetica, sans-serif;
+					font-size: 1.3em;
+				}
+			}
+			
+			#content {
+				color: #FFF;
+				font-size: 1em;
+				line-height: 1.2em;
+			}
+			
+			#newsletter-signup-button {
+				color: #FFF;
+				text-decoration: none;
 			}
 		}
 	}

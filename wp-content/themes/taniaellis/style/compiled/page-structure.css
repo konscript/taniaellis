@@ -27,7 +27,7 @@ html, body {
 /* line 27, ../sass/page-structure.scss */
 #page-wrapper #page-content {
   background: url("../../images/background_gradient.png") repeat-x;
-  margin: 20px 0px;
+  margin: 75px 0px 20;
   padding-top: 30px;
 }
 /* line 32, ../sass/page-structure.scss */

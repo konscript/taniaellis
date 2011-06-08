@@ -88,22 +88,43 @@ html > body {
   margin-bottom: 10px;
 }
 /* line 102, ../sass/text-styles.scss */
-#header-content #frontpage-header-content .header-quote p {
+#header-content #frontpage-header-content .header-quote p#header-quote-text {
   color: #7C7972;
   line-height: 1.5em;
 }
-/* line 108, ../sass/text-styles.scss */
-#header-content #frontpage-header-content .header-quote div a {
+/* line 109, ../sass/text-styles.scss */
+#header-content #frontpage-header-content .header-quote div#read-more-signature a {
   color: #7C7972;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 113, ../sass/text-styles.scss */
-#header-content #frontpage-header-content .header-quote div a:hover {
-  color: #67645f;
+/* line 114, ../sass/text-styles.scss */
+#header-content #frontpage-header-content .header-quote div#read-more-signature a:hover {
+  color: #5f5d57;
+}
+/* line 122, ../sass/text-styles.scss */
+#header-content #frontpage-header-content #newsletter-signup-box #header {
+  color: #FFF;
+  text-transform: uppercase;
+}
+/* line 129, ../sass/text-styles.scss */
+#header-content #frontpage-header-content #newsletter-signup-box #header #newsletter {
+  font-family: "Arial Black", Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+}
+/* line 135, ../sass/text-styles.scss */
+#header-content #frontpage-header-content #newsletter-signup-box #content {
+  color: #FFF;
+  font-size: 1em;
+  line-height: 1.2em;
+}
+/* line 141, ../sass/text-styles.scss */
+#header-content #frontpage-header-content #newsletter-signup-box #newsletter-signup-button {
+  color: #FFF;
+  text-decoration: none;
 }
 
-/* line 123, ../sass/text-styles.scss */
+/* line 150, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: 500;

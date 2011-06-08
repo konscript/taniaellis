@@ -29,12 +29,22 @@
         
         <div class="header-quote">
             <h6>Heartcore business for social and economic value!</h6>
-            <p>
+            <p id="header-quote-text">
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
             </p>
-            <div>
+            <div id="read-more-signature">
                 <a href="javascript:void(0)">Read more</a>
             </div>
+        </div>
+        <div id="newsletter-signup-box">
+            <p id="header">
+                <span id="social-business-trends">Social business trends</span>
+                <span id="newsletter">Newsletter</span>
+            </p>
+            <p id="content">
+                Sign up for my newsletter and get the FREE bonus guide along with monthly inspiration on social business and heartcore value. Sign up and I will email you the guide.            
+            </p>
+            <a id="newsletter-signup-button" href="javascript:void(0)">Subscribe</a>
         </div>
     </div>
 </div>
@@ -45,10 +55,12 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
 <div id="page-content">
 	<div id="page">
 		<section class="right-sidebar">
-			<?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(1); ?>
+		    Hej
+            <!-- <?php //if(function_exists('dynamic_sidebar')) dynamic_sidebar(1); ?> -->
 		</section>
 		<section class="left-sidebar">
-			<?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(2); ?>
+		    Hej
+            <!-- <?php //if(function_exists('dynamic_sidebar')) dynamic_sidebar(2); ?> -->
 		</section>
 	</div>
 </div>
