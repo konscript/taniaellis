@@ -5,29 +5,29 @@ html, body {
 
 /* line 7, ../sass/page-structure.scss */
 #page-wrapper {
-  clear: both;
   height: auto !important;
   height: 100%;
   min-height: 100%;
 }
-/* line 13, ../sass/page-structure.scss */
+/* line 12, ../sass/page-structure.scss */
 #page-wrapper header {
   margin: 0 auto;
   width: 960px;
 }
-/* line 17, ../sass/page-structure.scss */
+/* line 16, ../sass/page-structure.scss */
 #page-wrapper header #header-menu-logo-container {
   margin-bottom: 4px;
 }
-/* line 22, ../sass/page-structure.scss */
+/* line 21, ../sass/page-structure.scss */
 #page-wrapper #header-content {
   clear: both;
   margin: 0 auto;
   width: 960px;
 }
-/* line 28, ../sass/page-structure.scss */
+/* line 27, ../sass/page-structure.scss */
 #page-wrapper #page-content {
   background: url("../../images/background_gradient.png") repeat-x;
+  clear: both;
   margin: 75px 0px 20;
   padding-top: 30px;
 }

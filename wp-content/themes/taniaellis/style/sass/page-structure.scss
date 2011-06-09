@@ -5,7 +5,6 @@ html, body {
 }
 
 #page-wrapper {
-	clear: both;
 	height: auto !important;
 	height: 100%;
 	min-height: 100%;
@@ -27,6 +26,7 @@ html, body {
 	
 	#page-content{
 		background: url('../../images/background_gradient.png') repeat-x;
+		clear: both;
 		margin: 75px 0px 20;
 		padding-top: 30px;
 		
