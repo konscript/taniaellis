@@ -21,7 +21,7 @@
     		<header>
     			<div id="header-top-container">
 					<form method="get" action="<?php bloginfo('siteurl') ?>/search/">
-						<input type="submit" class="submit" value="" />    			    	
+						<input type="submit" value="" />    			    	
 						<input type="text" name="searchbar" value="" id="searchbar" />
 						
 					</form>

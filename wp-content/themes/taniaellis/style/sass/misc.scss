@@ -23,6 +23,7 @@
 			border: 1px solid #94918A;
 			float: right;
 			height: 18px;
+			line-height: 18px;
 			padding: 1px;
 			width: 130px;
 			
@@ -31,13 +32,11 @@
 			}
 		}
 		
-		input.submit {
+		input[type=submit] {
 			background-color: #B0ADA6;
 			background-image: url('../../images/searchbar_icon.png');
 			cursor: pointer;
 			float: right;
-			line-height: 18px;
-			padding: 0px;
 			height: 18px;
 			width: 21px;
 		}
