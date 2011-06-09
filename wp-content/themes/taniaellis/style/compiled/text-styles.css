@@ -165,7 +165,7 @@ html > body {
   line-height: 1.4em;
 }
 /* line 196, ../sass/text-styles.scss */
-#page .widget-container-left .options .read-more, #page .widget-container-right .options .read-more {
+#page .widget-container-left .options .read-more, #page .widget-container-left .options .view-cases, #page .widget-container-left .options .view-clients, #page .widget-container-right .options .read-more, #page .widget-container-right .options .view-cases, #page .widget-container-right .options .view-clients {
   -moz-transition-property: color;
   -webkit-transition-property: color;
   -o-transition-property: color;
@@ -183,7 +183,7 @@ html > body {
   text-decoration: none;
 }
 /* line 203, ../sass/text-styles.scss */
-#page .widget-container-left .options .read-more:hover, #page .widget-container-right .options .read-more:hover {
+#page .widget-container-left .options .read-more:hover, #page .widget-container-left .options .view-cases:hover, #page .widget-container-left .options .view-clients:hover, #page .widget-container-right .options .read-more:hover, #page .widget-container-right .options .view-cases:hover, #page .widget-container-right .options .view-clients:hover {
   color: #608169;
 }
 /* line 209, ../sass/text-styles.scss */
