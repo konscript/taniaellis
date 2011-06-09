@@ -287,10 +287,11 @@
   float: left;
   margin-left: 35px;
   padding-bottom: 10px;
+  position: relative;
   width: 250px;
   z-index: 500;
 }
-/* line 204, ../sass/misc.scss */
+/* line 205, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -307,22 +308,22 @@
   background-color: #94918A;
   padding: 15px 0 10px 20px;
 }
-/* line 210, ../sass/misc.scss */
+/* line 211, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header span#social-business-trends {
   display: block;
   height: 12px;
 }
-/* line 215, ../sass/misc.scss */
+/* line 216, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header span#newsletter {
   display: block;
   height: 18px;
 }
-/* line 222, ../sass/misc.scss */
+/* line 223, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #content {
   margin-bottom: 15px;
   padding: 10px 20px 0;
 }
-/* line 227, ../sass/misc.scss */
+/* line 228, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -341,7 +342,7 @@
   margin-right: 20px;
   padding: 5px 20px;
 }
-/* line 237, ../sass/misc.scss */
+/* line 238, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button:hover {
   background-color: #67645f;
   color: #e7e7e7;
@@ -351,7 +352,7 @@
   background-image: -o-linear-gradient(top, #888682, #67645f);
   background-image: linear-gradient(top, #888682, #67645f);
 }
-/* line 243, ../sass/misc.scss */
+/* line 244, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button:active {
   color: #d4d4d4;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #67645f), color-stop(100%, #888682));
@@ -361,7 +362,7 @@
   background-image: linear-gradient(top, #67645f, #888682);
 }
 
-/* line 255, ../sass/misc.scss */
+/* line 256, ../sass/misc.scss */
 #page .left-sidebar .widget-container {
   background: url("../../images/post_type_icon_books.png") top left no-repeat;
   float: left;
@@ -369,7 +370,7 @@
   width: 100%;
 }
 
-/* line 276, ../sass/misc.scss */
+/* line 277, ../sass/misc.scss */
 footer #footer-bar {
   background-color: #B0ADA6;
   color: #FFF;
@@ -378,18 +379,18 @@ footer #footer-bar {
   text-align: center;
   width: 100%;
 }
-/* line 284, ../sass/misc.scss */
+/* line 285, ../sass/misc.scss */
 footer #footer-bar li {
   display: inline;
   padding: 0 10px;
 }
-/* line 290, ../sass/misc.scss */
+/* line 291, ../sass/misc.scss */
 footer #co2-link {
   float: right;
   margin-top: 15px;
 }
 
-/* line 296, ../sass/misc.scss */
+/* line 297, ../sass/misc.scss */
 .clearer {
   clear: both;
 }
