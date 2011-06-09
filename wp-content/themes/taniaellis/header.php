@@ -42,7 +42,12 @@
 						<input type="text" name="searchbar" value="" id="searchbar" />
 						
 					</form>
-    				
+    				<?php wp_nav_menu(array(
+    					'theme_location'		=> 'navigation-top',
+    					'container'				=> 'nav',
+    					'menu_id'				=> 'navigation-top',
+    					'menu_class'			=> ''
+    				)); ?>
     			</div>
     			
     			<div id="header-menu-logo-container">
