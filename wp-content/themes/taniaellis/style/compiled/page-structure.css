@@ -20,14 +20,14 @@ html, body {
 }
 /* line 21, ../sass/page-structure.scss */
 #page-wrapper #header-content {
+  border: 1px solid #000;
   clear: both;
   margin: 0 auto;
   width: 960px;
 }
-/* line 27, ../sass/page-structure.scss */
+/* line 28, ../sass/page-structure.scss */
 #page-wrapper #page-content {
   background: url("../../images/background_gradient.png") repeat-x;
-  clear: both;
   margin: 0px 0px 20px;
   padding-top: 30px;
   position: relative;
