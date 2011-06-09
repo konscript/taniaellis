@@ -10,10 +10,15 @@
 		
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_url') ?>" />
 		
-		<script src="<?php bloginfo('template_url') ?>/js/eCSStender.js"></script>
+		<script src="<?php bloginfo('template_url') ?>/js/jquery.min.js"></script>
+		<script src="<?php bloginfo('template_url') ?>/js/jquery.corner.js"></script>
 		<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+		
+		<script type="text/javascript">
+			$("#social-business-menu li a").corner("round 10px");
+		</script>
 	</head>
 	
 	<body>
