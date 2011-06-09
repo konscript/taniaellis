@@ -51,8 +51,6 @@
 							<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
 						</ul>
 						
-						<div class="clearer"></div>
-						
 						<img src="<?php bloginfo('template_url') ?>/images/newsletter_bonus_sticker.png" alt="" id="bouns-sticker" />
 	    			</div> <!-- #frontpage-header-content -->
 				</div> <!-- #frontpage-header-container -->
