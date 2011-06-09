@@ -23,7 +23,7 @@
   border: 1px solid #94918A;
   float: right;
   height: 18px;
-  line-height: 18px;
+  padding: 0px;
   width: 130px;
 }
 /* line 29, ../sass/misc.scss */
