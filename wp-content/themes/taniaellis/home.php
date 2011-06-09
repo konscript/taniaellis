@@ -143,7 +143,7 @@
                         <a class="read-more" href="javascript:void(0)">Read more</a>
 		            </div>
 		        </div>
-		        
+		        <a class="view-all" href="javascript:void(0)">More blog posts</a>
 		    </div>
 		</section>
 		<section class="right-sidebar">
