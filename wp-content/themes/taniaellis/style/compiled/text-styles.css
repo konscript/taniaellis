@@ -1,85 +1,85 @@
-/* line 1, ../sass/text-styles.scss */
+/* line 3, ../sass/text-styles.scss */
 body {
   font-size: 75%;
 }
 
-/* line 5, ../sass/text-styles.scss */
+/* line 7, ../sass/text-styles.scss */
 html > body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
 }
 
-/* line 12, ../sass/text-styles.scss */
+/* line 14, ../sass/text-styles.scss */
 #navigation-top li a {
   color: #9D9C97;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 18, ../sass/text-styles.scss */
+/* line 20, ../sass/text-styles.scss */
 #navigation-top li a:active {
   text-decoration: underline;
 }
 
-/* line 27, ../sass/text-styles.scss */
+/* line 29, ../sass/text-styles.scss */
 #header-menu-logo-container #shop-link {
   color: #FFF;
   font-size: 0.9em;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 36, ../sass/text-styles.scss */
+/* line 38, ../sass/text-styles.scss */
 #header-menu-logo-container #navigation-pages li a {
   font-size: 0.9em;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-/* line 45, ../sass/text-styles.scss */
+/* line 47, ../sass/text-styles.scss */
 #header-content {
   /* FRONT PAGE HEADER MENU */
 }
-/* line 46, ../sass/text-styles.scss */
+/* line 48, ../sass/text-styles.scss */
 #header-content #sub-heading {
   text-transform: uppercase;
   color: #94918A;
 }
-/* line 50, ../sass/text-styles.scss */
+/* line 52, ../sass/text-styles.scss */
 #header-content #sub-heading span {
   color: #7D7A73;
   font-weight: bold;
 }
-/* line 56, ../sass/text-styles.scss */
+/* line 58, ../sass/text-styles.scss */
 #header-content #language-picker {
   color: #9D9C97;
   text-transform: uppercase;
 }
-/* line 60, ../sass/text-styles.scss */
+/* line 62, ../sass/text-styles.scss */
 #header-content #language-picker a {
   color: #9D9C97;
   text-decoration: none;
 }
-/* line 65, ../sass/text-styles.scss */
+/* line 67, ../sass/text-styles.scss */
 #header-content #language-picker a.current {
   color: #93B897;
 }
-/* line 73, ../sass/text-styles.scss */
+/* line 75, ../sass/text-styles.scss */
 #header-content #social-business-menu li a {
   color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 78, ../sass/text-styles.scss */
+/* line 80, ../sass/text-styles.scss */
 #header-content #social-business-menu li a .social {
   font-weight: bold;
 }
-/* line 82, ../sass/text-styles.scss */
+/* line 84, ../sass/text-styles.scss */
 #header-content #social-business-menu li a .term {
   font-family: "Arial Black", Arial, sans-serif;
   font-size: 1.4em;
   font-weight: bold;
   line-height: 1em;
 }
-/* line 94, ../sass/text-styles.scss */
+/* line 96, ../sass/text-styles.scss */
 #header-content #frontpage-header-content .header-quote h6 {
   color: #7C7972;
   font-size: 1.2em;
@@ -87,63 +87,117 @@ html > body {
   line-height: 1.1em;
   margin-bottom: 10px;
 }
-/* line 102, ../sass/text-styles.scss */
+/* line 104, ../sass/text-styles.scss */
 #header-content #frontpage-header-content .header-quote p#header-quote-text {
   color: #7C7972;
   line-height: 1.5em;
 }
-/* line 109, ../sass/text-styles.scss */
+/* line 111, ../sass/text-styles.scss */
 #header-content #frontpage-header-content .header-quote div#read-more-signature a {
   color: #7C7972;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 114, ../sass/text-styles.scss */
+/* line 116, ../sass/text-styles.scss */
 #header-content #frontpage-header-content .header-quote div#read-more-signature a:hover {
   color: #5f5d57;
 }
-/* line 122, ../sass/text-styles.scss */
+/* line 124, ../sass/text-styles.scss */
 #header-content #frontpage-header-content #newsletter-signup-box #header {
   color: #FFF;
   text-transform: uppercase;
 }
-/* line 129, ../sass/text-styles.scss */
+/* line 131, ../sass/text-styles.scss */
 #header-content #frontpage-header-content #newsletter-signup-box #header #newsletter {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.3em;
 }
-/* line 135, ../sass/text-styles.scss */
+/* line 137, ../sass/text-styles.scss */
 #header-content #frontpage-header-content #newsletter-signup-box #content {
   color: #FFF;
   font-size: 1em;
   line-height: 1.2em;
 }
-/* line 141, ../sass/text-styles.scss */
+/* line 143, ../sass/text-styles.scss */
 #header-content #frontpage-header-content #newsletter-signup-box #newsletter-signup-button {
   color: #FFF;
   text-decoration: none;
 }
 
-/* line 152, ../sass/text-styles.scss */
-#page .left-sidebar .widget-container .header-container {
+/* line 154, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .header-container, #page .left-sidebar .widget-container-right .header-container {
   color: #B0ADA6;
 }
-/* line 155, ../sass/text-styles.scss */
-#page .left-sidebar .widget-container .header-container .first-line {
+/* line 157, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .header-container .first-line, #page .left-sidebar .widget-container-right .header-container .first-line {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 0.699em;
   text-transform: uppercase;
 }
-/* line 163, ../sass/text-styles.scss */
-#page .left-sidebar .widget-container .header-container .second-line {
+/* line 165, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .header-container .second-line, #page .left-sidebar .widget-container-right .header-container .second-line {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 1.65em;
   text-transform: uppercase;
 }
+/* line 173, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .by-line, #page .left-sidebar .widget-container-left .meta-data, #page .left-sidebar .widget-container-right .by-line, #page .left-sidebar .widget-container-right .meta-data {
+  color: #94918A;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+/* line 179, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .by-line, #page .left-sidebar .widget-container-right .by-line {
+  font-weight: bold;
+}
+/* line 183, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .title, #page .left-sidebar .widget-container-right .title {
+  color: #94918A;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 190, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .excerpt, #page .left-sidebar .widget-container-right .excerpt {
+  color: #94918A;
+  line-height: 1.3em;
+  margin-bottom: 20px;
+}
+/* line 197, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .options .read-more, #page .left-sidebar .widget-container-right .options .read-more {
+  -moz-transition-property: color;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  color: #749B7F;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+/* line 204, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .options .read-more:hover, #page .left-sidebar .widget-container-right .options .read-more:hover {
+  color: #608169;
+}
+/* line 210, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .view-all, #page .left-sidebar .widget-container-right .view-all {
+  color: #FFF;
+  text-decoration: none;
+}
+/* line 214, ../sass/text-styles.scss */
+#page .left-sidebar .widget-container-left .view-all:hover, #page .left-sidebar .widget-container-right .view-all:hover {
+  color: #e7e7e7;
+}
 
-/* line 175, ../sass/text-styles.scss */
+/* line 224, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: 500;

@@ -1,3 +1,5 @@
+@import "compass/css3/transition";
+
 body {
 	font-size: 75%;
 }
@@ -148,7 +150,7 @@ html>body {
 
 #page {
 	.left-sidebar {
-		.widget-container {
+		.widget-container-left, .widget-container-right {			
 			.header-container {
 				color: #B0ADA6;
 
@@ -167,6 +169,53 @@ html>body {
 					text-transform: uppercase;
 				}
 			}
+
+			.by-line, .meta-data {
+				color: #94918A;
+				font-size: 0.9em;
+				text-transform: uppercase;
+			}
+			
+			.by-line {
+				font-weight: bold;
+			}
+			
+			.title {
+				color: #94918A;
+				font-size: 1.3em;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			
+			.excerpt {
+				color: #94918A;
+				line-height: 1.3em;
+				margin-bottom: 20px;
+			}
+			
+			.options {
+				.read-more {
+					@include transition(color, 0.1s, ease-in-out);
+					
+					color: #749B7F;
+					font-size: 1.1em;
+					text-decoration: none;
+					
+					&:hover {
+						color: #749B7F / 1.2;
+					}
+				}
+			}
+			
+			.view-all {				
+				color: #FFF;
+				text-decoration: none;
+				
+				&:hover {
+					color: #FFF / 1.1;
+				}	
+			}
+			
 		}
 	}
 }

@@ -251,21 +251,105 @@
 
 #page {
 	.left-sidebar {
-		.widget-container {
-			background: url('../../images/post_type_icon_books.png') top left no-repeat;
+		.widget-container-left {
 			float: left;
-			padding-left: 50px;
+			margin-bottom: 50px;
+			width: 320px;
+			
+			// .header-container {
+			// 	margin-left: 50px;
+			// 	margin-bottom: 20px;
+			// }
+			.item {
+				border-bottom: 1px solid #CCC;
+				float: left;
+				margin-bottom: 20px;
+				padding-left: 40px;
+				padding-bottom: 20px;
+				width: 260px;
+			}
+		}
+		
+		.header-container {
+			margin-left: 50px;
+			margin-bottom: 20px;
+		}
+		
+		.widget-books {
+			background: url('../../images/post_type_icon_books.png') top left no-repeat;
+		}
+		
+		.book {
+			img.featured-image {
+				float: left;
+				border: 5px solid #E1DCD8;
+				margin-right: 20px;
+				width: 60px;
+			}
+		}
+		
+		.widget-blog {
+			background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
+		}
+		
+		.blog {
+			img.featured-image {
+				border: 5px solid #E1DCD8;
+				width: 250px;
+			}
+			
+			.excerpt {
+				width: 260px;
+			}
+		}
+		
+		.by-line {
+			float: left;
+			margin-top: 3px;
+		}
+		
+		.meta-data {
+			float: right;
+			margin-top: 3px;
+			margin-bottom: 12px;
+		}
+		
+		.title {
+			clear: right;
+			margin-bottom: 12px;
+		}
+		
+		.excerpt {
+			clear: right;
+			float: right;
+			width: 170px;
+		}
+		
+		.options {
+			float: left;
+			height: 16px;
+			line-height: 16px;
 			width: 100%;
 			
-			.header-container {
-				
-				.first-line {
-					
-				}
-				
-				.second-line {
-					
-				}
+			.sharing {
+				float: left;
+			}
+			
+			.read-more {
+				float: right;
+			}
+		}
+		
+		.view-all {
+			@include transition(all, 0.1s, ease-in-out);
+			
+			background-color: #B1ACA6;
+			float: right;
+			margin-right: 20px;
+			padding: 5px 15px;
+			
+			&:hover {
+				background-color: #B1ACA6 / 1.2;
 			}
 		}
 	}
