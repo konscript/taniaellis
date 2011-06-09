@@ -66,6 +66,7 @@
 		<section class="right-sidebar">
 		    Hej
 		</section>
+		<div class="clearer"></div>
 	</div>
 </div>
 
