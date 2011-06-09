@@ -10,6 +10,7 @@
 		
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_url') ?>" />
 		
+		<script src="<?php bloginfo('template_url') ?>/js/modernizr.js"></script>
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.min.js"></script>
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.corner.js"></script>
 		<!--[if lt IE 9]>
@@ -17,7 +18,10 @@
 		<![endif]-->
 		
 		<script type="text/javascript">
-			$("#social-business-menu li a").corner("round 10px");
+		Modernizr.load({
+		  test: Modernizr.borderradius,
+		  nope: 'js/css_support.js'
+		});
 		</script>
 	</head>
 	
