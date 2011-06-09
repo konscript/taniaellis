@@ -46,6 +46,7 @@
 	            </p>
 	            <a id="newsletter-signup-button" href="javascript:void(0)">Subscribe</a>
 	        </div>
+			<div class="clearer"></div>
 	    </div>
 	</div>
 	<div class="clearer"></div>
