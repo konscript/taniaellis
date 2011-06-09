@@ -22,7 +22,7 @@
 	    			<div id="frontpage-header-content">
 	        			<img id="intro-movie" src="<?php bloginfo('template_url'); ?>/images/header_frontpage_tania_telly.png" />
 	        			<!-- Video goes here! -->
-        
+
 	        			<div class="header-quote">
 	            			<h6>Heartcore business for social and economic value!</h6>
 	            			<p id="header-quote-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
@@ -52,12 +52,95 @@
 			<div id="page-content">
 				<div id="page">
 					<section class="left-sidebar">
-		    			<div class="widget-container">
-		        			<div class="header-container">
-		            			<h2 class="first-line">My Books</h2>
-    		        			<h2 class="second-line">On Social Business</h2>
-		        			</div>
-		    			</div>
+		    			<div class="widget-container-left widget-books">
+					        <div class="header-container">
+					            <h2 class="first-line">My Books</h2>
+			    		        <h2 class="second-line">On Social Business</h2>
+					        </div>
+
+					        <div class="item book">
+					            <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/books_new_pioneers.png" />
+					            <p class="meta-data">
+					                20 jun 2010
+					            <p>
+
+					            <h2 class="title">The New Pioneers</h2>
+
+					            <p class="excerpt">
+					                The Net Pioneers is a book about the new lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					            </p>
+
+					            <div class="options">
+			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
+			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+					            </div>
+					        </div>
+					        <div class="item book">
+					            <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/books_de_nye_pionerer.png" />
+					            <p class="meta-data">
+					                20 jun 2010
+					            <p>
+
+					            <h2 class="title">De Nye Pionerer</h2>
+
+					            <p class="excerpt">
+					                The Net Pioneers is a book about the new lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					            </p>
+
+					            <div class="options">
+			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
+			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+					            </div>
+					        </div>
+					        <div class="item book">
+					            <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/ebooks_igreen.png" />
+					            <p class="meta-data">
+					                20 jun 2010
+					            <p>
+
+					            <h2 class="title">E-book On Green Business Ideas</h2>
+
+					            <p class="excerpt">
+			                        Green Ideas have started to flourish all over the world, and the concept keeps growing. Get started with my e-book on the matter.
+					            </p>
+
+					            <div class="options">
+			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
+			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+					            </div>
+					        </div>
+					        <a class="view-all" href="javascript:void(0)">View all books</a>
+					    </div>
+
+					    <div class="widget-container-left widget-blog">
+					        <div class="header-container">
+					            <h2 class="first-line">My Blog</h2>
+			    		        <h2 class="second-line">On Social Business</h2>
+					        </div>
+
+					        <div class="item blog">
+					            <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/social_business_blog_bio.png" />
+					            <p class="meta-data">
+					                20 jun 2010
+					            <p>
+
+					            <span class="by-line">
+					                By Tania Ellis
+					            </span>
+
+					            <h2 class="title">The New Pioneers</h2>
+
+					            <p class="excerpt">
+					                The Net Pioneers is a book about the new lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					            </p>
+
+					            <div class="options">
+			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
+			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+					            </div>
+					        </div>
+
+					    </div>
 					</section>
 					
 					<section class="right-sidebar">
@@ -68,5 +151,5 @@
 				</div> <!-- #page -->
 				
 			</div> <!-- #page-content -->
-			
+
 <?php get_footer(); ?>
