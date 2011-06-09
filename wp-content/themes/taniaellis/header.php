@@ -21,8 +21,13 @@
 		<script type="text/javascript">
 		if(!Modernizr.borderradius) {
 			$("#social-business-menu li a").corner("round 10px");
+			$("#frontpage-header-content").corner("round 10px");
 			$("#newsletter-signup-box").corner("round 10px");
 			$("#newsletter-signup-button").corner("round 5px");
+		}
+		
+		if(!Modernizr.boxshadow) {
+			$("#page-content").box
 		}
 		</script>
 	</head>
