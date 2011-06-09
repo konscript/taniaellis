@@ -32,7 +32,8 @@
 		}
 		
 		input[type=submit] {
-			background: #B0ADA6 url('../../images/searchbar_icon.png');
+			background-color: #B0ADA6;
+			background-image: url('../../images/searchbar_icon.png');
 			cursor: pointer;
 			float: right;
 			height: 18px;
