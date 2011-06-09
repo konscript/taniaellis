@@ -199,6 +199,7 @@
 				margin-left: 35px;
 				padding-bottom: 10px;
 				width: 250px;
+				z-index: 500;
 				
 				#header {
 					@include border-top-radius(10px);
