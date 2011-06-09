@@ -247,6 +247,22 @@
   z-index: 1000;
 }
 /* line 176, ../sass/misc.scss */
+#header-content #frontpage-header-container #frontpage-header-content #social-bar {
+  background: #9CC1A2;
+  height: 30px;
+  width: 320px;
+  float: right;
+  position: relative;
+  top: -30px;
+  right: 287px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -o-border-bottom-left-radius: 10px;
+  -ms-border-bottom-left-radius: 10px;
+  -khtml-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+/* line 187, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote {
   background: url("../../images/header_frontpage_quotes.png") top left no-repeat;
   float: left;
@@ -254,18 +270,18 @@
   width: 250px;
   height: 186px;
 }
-/* line 183, ../sass/misc.scss */
+/* line 194, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote p#header-quote-text {
   margin-bottom: 10px;
 }
-/* line 187, ../sass/misc.scss */
+/* line 198, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote div#read-more-signature {
   background: url("../../images/header_frontpage_signature.png") right center no-repeat;
   height: 33px;
   line-height: 33px;
   width: 100%;
 }
-/* line 194, ../sass/misc.scss */
+/* line 205, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote div#read-more-signature a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -280,14 +296,26 @@
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-/* line 200, ../sass/misc.scss */
+/* line 211, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -o-border-top-left-radius: 10px;
+  -ms-border-top-left-radius: 10px;
+  -khtml-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -o-border-top-right-radius: 10px;
+  -ms-border-top-right-radius: 10px;
+  -khtml-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -o-border-bottom-right-radius: 10px;
+  -ms-border-bottom-right-radius: 10px;
+  -khtml-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   background-color: #9CC1A2;
   float: left;
   margin-left: 35px;
@@ -296,7 +324,7 @@
   width: 250px;
   z-index: 10;
 }
-/* line 210, ../sass/misc.scss */
+/* line 222, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -313,22 +341,22 @@
   background-color: #94918A;
   padding: 15px 0 10px 20px;
 }
-/* line 216, ../sass/misc.scss */
+/* line 228, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header span#social-business-trends {
   display: block;
   height: 12px;
 }
-/* line 221, ../sass/misc.scss */
+/* line 233, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header span#newsletter {
   display: block;
   height: 18px;
 }
-/* line 228, ../sass/misc.scss */
+/* line 240, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #content {
   margin-bottom: 15px;
   padding: 10px 20px 0;
 }
-/* line 233, ../sass/misc.scss */
+/* line 245, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -347,7 +375,7 @@
   margin-right: 20px;
   padding: 5px 20px;
 }
-/* line 243, ../sass/misc.scss */
+/* line 255, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button:hover {
   background-color: #67645f;
   color: #e7e7e7;
@@ -357,7 +385,7 @@
   background-image: -o-linear-gradient(top, #888682, #67645f);
   background-image: linear-gradient(top, #888682, #67645f);
 }
-/* line 249, ../sass/misc.scss */
+/* line 261, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button:active {
   color: #d4d4d4;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #67645f), color-stop(100%, #888682));
@@ -367,13 +395,13 @@
   background-image: linear-gradient(top, #67645f, #888682);
 }
 
-/* line 261, ../sass/misc.scss */
+/* line 273, ../sass/misc.scss */
 #page .left-sidebar .widget-container-left {
   float: left;
   margin-bottom: 50px;
   width: 320px;
 }
-/* line 270, ../sass/misc.scss */
+/* line 282, ../sass/misc.scss */
 #page .left-sidebar .widget-container-left .item {
   border-bottom: 1px solid #CCC;
   float: left;
@@ -382,73 +410,73 @@
   padding-bottom: 20px;
   width: 260px;
 }
-/* line 280, ../sass/misc.scss */
+/* line 292, ../sass/misc.scss */
 #page .left-sidebar .header-container {
   margin-left: 50px;
   margin-bottom: 20px;
 }
-/* line 285, ../sass/misc.scss */
+/* line 297, ../sass/misc.scss */
 #page .left-sidebar .widget-books {
   background: url("../../images/post_type_icon_books.png") top left no-repeat;
 }
-/* line 290, ../sass/misc.scss */
+/* line 302, ../sass/misc.scss */
 #page .left-sidebar .book img.featured-image {
   float: left;
   border: 5px solid #E1DCD8;
   margin-right: 20px;
   width: 60px;
 }
-/* line 298, ../sass/misc.scss */
+/* line 310, ../sass/misc.scss */
 #page .left-sidebar .widget-blog {
   background: url("../../images/post_type_icon_featured_blog.png") top left no-repeat;
 }
-/* line 303, ../sass/misc.scss */
+/* line 315, ../sass/misc.scss */
 #page .left-sidebar .blog img.featured-image {
   border: 5px solid #E1DCD8;
   width: 250px;
 }
-/* line 308, ../sass/misc.scss */
+/* line 320, ../sass/misc.scss */
 #page .left-sidebar .blog .excerpt {
   width: 260px;
 }
-/* line 313, ../sass/misc.scss */
+/* line 325, ../sass/misc.scss */
 #page .left-sidebar .by-line {
   float: left;
   margin-top: 3px;
 }
-/* line 318, ../sass/misc.scss */
+/* line 330, ../sass/misc.scss */
 #page .left-sidebar .meta-data {
   float: right;
   margin-top: 3px;
   margin-bottom: 12px;
 }
-/* line 324, ../sass/misc.scss */
+/* line 336, ../sass/misc.scss */
 #page .left-sidebar .title {
   clear: right;
   margin-bottom: 12px;
 }
-/* line 329, ../sass/misc.scss */
+/* line 341, ../sass/misc.scss */
 #page .left-sidebar .excerpt {
   clear: right;
   float: right;
   width: 170px;
 }
-/* line 335, ../sass/misc.scss */
+/* line 347, ../sass/misc.scss */
 #page .left-sidebar .options {
   float: left;
   height: 16px;
   line-height: 16px;
   width: 100%;
 }
-/* line 341, ../sass/misc.scss */
+/* line 353, ../sass/misc.scss */
 #page .left-sidebar .options .sharing {
   float: left;
 }
-/* line 345, ../sass/misc.scss */
+/* line 357, ../sass/misc.scss */
 #page .left-sidebar .options .read-more {
   float: right;
 }
-/* line 350, ../sass/misc.scss */
+/* line 362, ../sass/misc.scss */
 #page .left-sidebar .view-all {
   -moz-transition-property: all;
   -webkit-transition-property: all;
@@ -467,12 +495,12 @@
   margin-right: 20px;
   padding: 5px 15px;
 }
-/* line 358, ../sass/misc.scss */
+/* line 370, ../sass/misc.scss */
 #page .left-sidebar .view-all:hover {
   background-color: #938f8a;
 }
 
-/* line 366, ../sass/misc.scss */
+/* line 378, ../sass/misc.scss */
 footer #footer-bar {
   background-color: #B0ADA6;
   color: #FFF;
@@ -480,18 +508,18 @@ footer #footer-bar {
   text-align: center;
   width: 100%;
 }
-/* line 374, ../sass/misc.scss */
+/* line 386, ../sass/misc.scss */
 footer #footer-bar li {
   display: inline;
   padding: 0 10px;
 }
-/* line 380, ../sass/misc.scss */
+/* line 392, ../sass/misc.scss */
 footer #co2-link {
   float: right;
   margin-top: 15px;
 }
 
-/* line 386, ../sass/misc.scss */
+/* line 398, ../sass/misc.scss */
 .clearer {
   clear: both;
 }

@@ -173,6 +173,17 @@
 				z-index: 1000;
 			}
 			
+			#social-bar {
+				background: #9CC1A2;
+				height: 30px;
+				width: 320px;
+				float: right;
+				position: relative;
+				top: -30px;
+				right: 287px;
+				@include border-bottom-left-radius(10px);
+			}
+			
 			.header-quote {
 				background: url('../../images/header_frontpage_quotes.png') top left no-repeat;
 				float: left;
@@ -198,7 +209,8 @@
 			}
 			
 			#newsletter-signup-box {
-				@include border-radius(10px);
+				@include border-top-radius(10px);
+				@include border-bottom-right-radius(10px);
 				background-color: #9CC1A2;
 				float: left;
 				margin-left: 35px;

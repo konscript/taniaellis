@@ -22,6 +22,7 @@
 	    			<div id="frontpage-header-content">
 	        			<img id="intro-movie" src="<?php bloginfo('template_url'); ?>/images/header_frontpage_tania_telly.png" />
 	        			<!-- Video goes here! -->
+	
 
 	        			<div class="header-quote">
 	            			<h6>Heartcore business for social and economic value!</h6>
@@ -41,6 +42,8 @@
 							<p id="content">Sign up for my newsletter and get the FREE bonus guide along with monthly inspiration on social business and heartcore value. Sign up and I will email you the guide.</p>
 	            			<a id="newsletter-signup-button" href="javascript:void(0)">Subscribe</a>
 	        			</div>
+	
+						<div id="social-bar"></div>
 	    			</div> <!-- #frontpage-header-content -->
 				</div> <!-- #frontpage-header-container -->
 				
