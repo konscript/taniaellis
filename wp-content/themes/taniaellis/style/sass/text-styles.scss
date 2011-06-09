@@ -149,7 +149,7 @@ html>body {
 }
 
 #page {
-	.left-sidebar {
+	//.left-sidebar {
 		.widget-container-left, .widget-container-right {			
 			.header-container {
 				color: #B0ADA6;
@@ -189,8 +189,7 @@ html>body {
 			
 			.excerpt {
 				color: #94918A;
-				line-height: 1.3em;
-				margin-bottom: 20px;
+				line-height: 1.4em;
 			}
 			
 			.options {
@@ -217,7 +216,7 @@ html>body {
 			}
 			
 		}
-	}
+	//}
 }
 
 #footer-bar { 

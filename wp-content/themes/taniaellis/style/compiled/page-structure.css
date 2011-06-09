@@ -28,7 +28,7 @@ html, body {
 #page-wrapper #page-content #page {
   background: #fff;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 60px 0 30px;
   width: 960px;
   -moz-box-shadow: #888888 -3px 20px 25px 5px;
   -webkit-box-shadow: #888888 -3px 20px 25px 5px;
