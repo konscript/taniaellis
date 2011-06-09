@@ -31,7 +31,7 @@
   outline: none;
 }
 /* line 34, ../sass/misc.scss */
-#header-top-container form input[type=submit] {
+#header-top-container form input.submit {
   background-color: #B0ADA6;
   background-image: url("../../images/searchbar_icon.png");
   cursor: pointer;
