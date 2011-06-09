@@ -36,22 +36,23 @@
   background-image: url("../../images/searchbar_icon.png");
   cursor: pointer;
   float: right;
+  line-height: 18px;
   height: 18px;
   width: 21px;
 }
 
-/* line 45, ../sass/misc.scss */
+/* line 46, ../sass/misc.scss */
 #header-menu-logo-container {
   background-color: #B0ADA6;
   clear: right;
   float: right;
   width: 100%;
 }
-/* line 51, ../sass/misc.scss */
+/* line 52, ../sass/misc.scss */
 #header-menu-logo-container #logo {
   float: left;
 }
-/* line 55, ../sass/misc.scss */
+/* line 56, ../sass/misc.scss */
 #header-menu-logo-container #shop-link {
   -moz-transition-property: background-color;
   -webkit-transition-property: background-color;
@@ -70,19 +71,19 @@
   line-height: 36px;
   padding: 0 15px;
 }
-/* line 63, ../sass/misc.scss */
+/* line 64, ../sass/misc.scss */
 #header-menu-logo-container #shop-link:hover {
   background-color: #7a997d;
 }
-/* line 68, ../sass/misc.scss */
+/* line 69, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages {
   float: right;
 }
-/* line 71, ../sass/misc.scss */
+/* line 72, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages li {
   float: left;
 }
-/* line 73, ../sass/misc.scss */
+/* line 74, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages li a {
   -moz-transition-property: background-color;
   -webkit-transition-property: background-color;
@@ -103,39 +104,39 @@
   line-height: 36px;
   padding: 0 12px;
 }
-/* line 82, ../sass/misc.scss */
+/* line 83, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages li a:hover {
   background-color: #92908a;
 }
-/* line 88, ../sass/misc.scss */
+/* line 89, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages li.current-menu-item a {
   background-color: #92908a;
 }
 
-/* line 94, ../sass/misc.scss */
+/* line 95, ../sass/misc.scss */
 #header-content #language-picker {
   float: right;
   margin-bottom: 30px;
 }
-/* line 100, ../sass/misc.scss */
+/* line 101, ../sass/misc.scss */
 #header-content #frontpage-header-container {
   width: 100%;
   float: left;
   /* FRONT PAGE HEADER MENU */
 }
-/* line 105, ../sass/misc.scss */
+/* line 106, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu {
   float: left;
 }
-/* line 108, ../sass/misc.scss */
+/* line 109, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li {
   margin-top: 5px;
 }
-/* line 111, ../sass/misc.scss */
+/* line 112, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li:first-child {
   margin-top: 0;
 }
-/* line 115, ../sass/misc.scss */
+/* line 116, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li a {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -161,52 +162,52 @@
   padding: 10px;
   width: 140px;
 }
-/* line 124, ../sass/misc.scss */
+/* line 125, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li a .term {
   display: block;
   margin-top: 1px;
 }
-/* line 131, ../sass/misc.scss */
+/* line 132, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.grey a {
   background-color: #94918A;
 }
-/* line 132, ../sass/misc.scss */
+/* line 133, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.grey a:hover {
   background-color: #7b7873;
 }
-/* line 134, ../sass/misc.scss */
+/* line 135, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.green a {
   background-color: #9CC1A2;
 }
-/* line 135, ../sass/misc.scss */
+/* line 136, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.green a:hover {
   background-color: #82a087;
 }
-/* line 137, ../sass/misc.scss */
+/* line 138, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.blue a {
   background-color: #83A9C0;
 }
-/* line 138, ../sass/misc.scss */
+/* line 139, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.blue a:hover {
   background-color: #6d8ca0;
 }
-/* line 140, ../sass/misc.scss */
+/* line 141, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.purple a {
   background-color: #A8A6CD;
 }
-/* line 141, ../sass/misc.scss */
+/* line 142, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.purple a:hover {
   background-color: #8c8aaa;
 }
-/* line 143, ../sass/misc.scss */
+/* line 144, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.orange a {
   background-color: #D4B690;
 }
-/* line 144, ../sass/misc.scss */
+/* line 145, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.orange a:hover {
   background-color: #b09778;
 }
-/* line 147, ../sass/misc.scss */
+/* line 148, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -221,7 +222,7 @@
   position: relative;
   width: 775px;
 }
-/* line 156, ../sass/misc.scss */
+/* line 157, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content img#intro-movie {
   float: left;
   left: 35px;
@@ -230,7 +231,7 @@
   top: -40px;
   z-index: 999;
 }
-/* line 165, ../sass/misc.scss */
+/* line 166, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content iframe {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -243,7 +244,7 @@
   top: 70px;
   z-index: 1000;
 }
-/* line 173, ../sass/misc.scss */
+/* line 174, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote {
   background: url("../../images/header_frontpage_quotes.png") top left no-repeat;
   float: left;
@@ -251,18 +252,18 @@
   width: 250px;
   height: 186px;
 }
-/* line 180, ../sass/misc.scss */
+/* line 181, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote p#header-quote-text {
   margin-bottom: 10px;
 }
-/* line 184, ../sass/misc.scss */
+/* line 185, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote div#read-more-signature {
   background: url("../../images/header_frontpage_signature.png") right center no-repeat;
   height: 33px;
   line-height: 33px;
   width: 100%;
 }
-/* line 191, ../sass/misc.scss */
+/* line 192, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote div#read-more-signature a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -277,7 +278,7 @@
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-/* line 197, ../sass/misc.scss */
+/* line 198, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -293,7 +294,7 @@
   width: 250px;
   z-index: 500;
 }
-/* line 207, ../sass/misc.scss */
+/* line 208, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -310,22 +311,22 @@
   background-color: #94918A;
   padding: 15px 0 10px 20px;
 }
-/* line 213, ../sass/misc.scss */
+/* line 214, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header span#social-business-trends {
   display: block;
   height: 12px;
 }
-/* line 218, ../sass/misc.scss */
+/* line 219, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header span#newsletter {
   display: block;
   height: 18px;
 }
-/* line 225, ../sass/misc.scss */
+/* line 226, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #content {
   margin-bottom: 15px;
   padding: 10px 20px 0;
 }
-/* line 230, ../sass/misc.scss */
+/* line 231, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -344,7 +345,7 @@
   margin-right: 20px;
   padding: 5px 20px;
 }
-/* line 240, ../sass/misc.scss */
+/* line 241, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button:hover {
   background-color: #67645f;
   color: #e7e7e7;
@@ -354,7 +355,7 @@
   background-image: -o-linear-gradient(top, #888682, #67645f);
   background-image: linear-gradient(top, #888682, #67645f);
 }
-/* line 246, ../sass/misc.scss */
+/* line 247, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button:active {
   color: #d4d4d4;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #67645f), color-stop(100%, #888682));
@@ -364,7 +365,7 @@
   background-image: linear-gradient(top, #67645f, #888682);
 }
 
-/* line 258, ../sass/misc.scss */
+/* line 259, ../sass/misc.scss */
 #page .left-sidebar .widget-container {
   background: url("../../images/post_type_icon_books.png") top left no-repeat;
   float: left;
@@ -372,7 +373,7 @@
   width: 100%;
 }
 
-/* line 279, ../sass/misc.scss */
+/* line 280, ../sass/misc.scss */
 footer #footer-bar {
   background-color: #B0ADA6;
   color: #FFF;
@@ -381,18 +382,18 @@ footer #footer-bar {
   text-align: center;
   width: 100%;
 }
-/* line 287, ../sass/misc.scss */
+/* line 288, ../sass/misc.scss */
 footer #footer-bar li {
   display: inline;
   padding: 0 10px;
 }
-/* line 293, ../sass/misc.scss */
+/* line 294, ../sass/misc.scss */
 footer #co2-link {
   float: right;
   margin-top: 15px;
 }
 
-/* line 299, ../sass/misc.scss */
+/* line 300, ../sass/misc.scss */
 .clearer {
   clear: both;
 }
