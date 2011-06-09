@@ -12,9 +12,7 @@
 		
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.min.js"></script>
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.corner.js"></script>
-		
 		<script src="<?php bloginfo('template_url') ?>/js/modernizr.js"></script>
-		<script src="<?php bloginfo('template_url') ?>/js/css_support.js"></script>
 		
 		<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,9 +20,9 @@
 		
 		<script type="text/javascript">
 		if(!Modernizr.borderradius) {
-			alert();
 			$("#social-business-menu li a").corner("round 10px");
-			$("#newsletter-signup-button").corner("round 10px");
+			$("#newsletter-signup-box").corner("round 10px");
+			$("#newsletter-signup-button").corner("round 5px");
 		}
 		</script>
 	</head>
