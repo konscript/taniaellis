@@ -10,9 +10,12 @@
 		
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_url') ?>" />
 		
-		<script src="<?php bloginfo('template_url') ?>/js/modernizr.js"></script>
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.min.js"></script>
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.corner.js"></script>
+		
+		<script src="<?php bloginfo('template_url') ?>/js/modernizr.js"></script>
+		<script src="<?php bloginfo('template_url') ?>/js/css_support.js"></script>
+		
 		<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
