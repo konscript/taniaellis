@@ -61,11 +61,6 @@
 					</section>
 					
 					<section class="right-sidebar">
-		    			Hej<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-		    			Hej<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-		    			Hej<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-		    			Hej<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-		    			Hej<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 					</section>
 					
 					<div class="clearer"></div>

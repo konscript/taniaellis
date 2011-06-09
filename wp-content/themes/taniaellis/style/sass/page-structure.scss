@@ -27,7 +27,7 @@ html, body {
 		
 		#page {
 			background: #fff;
-			//height: 100%;
+			height: 100%;
 			margin: 0 auto;
 			padding: 30px 0;
 			width: 960px;
@@ -35,7 +35,7 @@ html, body {
 			
 			section.left-sidebar, section.right-sidebar {
 				float: left;
-				//height: 100%;
+				height: 100%;
 			}
 			
 			section.left-sidebar {
@@ -45,7 +45,7 @@ html, body {
 			}
 			
 			section.right-sidebar {
-				//padding-left: 20px;
+				padding-left: 20px;
 			}
 		}
 	}
