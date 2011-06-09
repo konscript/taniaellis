@@ -11,10 +11,10 @@
 </p>
 
 <div id="page">
-	<section id="right-sidebar">
+	<section id="left-sidebar">
 		<?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(1); ?>
 	</section>
-	<section id="left-sidebar">
+	<section id="right-sidebar">
 		<?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(2); ?>
 	</section>
 </div>

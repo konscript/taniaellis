@@ -247,8 +247,27 @@
 			}
 		}
 	}
-	
-	#page {
+}
+
+#page {
+	.left-sidebar {
+		.widget-container {
+			background: url('../../images/post_type_icon_books.png') top left no-repeat;
+			float: left;
+			padding-left: 50px;
+			width: 100%;
+			
+			.header-container {
+				
+				.first-line {
+					
+				}
+				
+				.second-line {
+					
+				}
+			}
+		}
 	}
 }
 

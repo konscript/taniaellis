@@ -360,7 +360,15 @@
   background-image: linear-gradient(top, #67645f, #888682);
 }
 
-/* line 256, ../sass/misc.scss */
+/* line 254, ../sass/misc.scss */
+#page .left-sidebar .widget-container {
+  background: url("../../images/post_type_icon_books.png") top left no-repeat;
+  float: left;
+  padding-left: 50px;
+  width: 100%;
+}
+
+/* line 275, ../sass/misc.scss */
 footer #footer-bar {
   background-color: #B0ADA6;
   color: #FFF;
@@ -369,18 +377,18 @@ footer #footer-bar {
   text-align: center;
   width: 100%;
 }
-/* line 264, ../sass/misc.scss */
+/* line 283, ../sass/misc.scss */
 footer #footer-bar li {
   display: inline;
   padding: 0 10px;
 }
-/* line 270, ../sass/misc.scss */
+/* line 289, ../sass/misc.scss */
 footer #co2-link {
   float: right;
   margin-top: 15px;
 }
 
-/* line 276, ../sass/misc.scss */
+/* line 295, ../sass/misc.scss */
 .clearer {
   clear: both;
 }

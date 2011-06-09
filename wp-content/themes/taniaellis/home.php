@@ -54,15 +54,85 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
 
 <div id="page-content">
 	<div id="page">
+		<section class="left-sidebar">
+		    <div class="widget-container">
+		        <div class="header-container">
+		            <h2 class="first-line">My Books</h2>
+    		        <h2 class="second-line">On Social Business</h2>
+		        </div>
+		    </div>
+		</section>
 		<section class="right-sidebar">
 		    Hej
-            <!-- <?php //if(function_exists('dynamic_sidebar')) dynamic_sidebar(1); ?> -->
-		</section>
-		<section class="left-sidebar">
-		    Hej
-            <!-- <?php //if(function_exists('dynamic_sidebar')) dynamic_sidebar(2); ?> -->
 		</section>
 	</div>
 </div>
 
 <?php get_footer(); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
