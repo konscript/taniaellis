@@ -24,6 +24,7 @@
 			$("#frontpage-header-content").corner("round 10px");
 			$("#newsletter-signup-box").corner("round 10px");
 			$("#newsletter-signup-button").corner("round 5px");
+			
 		}
 		
 		if(!Modernizr.boxshadow) {
