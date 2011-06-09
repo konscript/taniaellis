@@ -22,8 +22,8 @@
 		if(!Modernizr.borderradius) {
 			$("#social-business-menu li a").corner("round 10px");
 			$("#frontpage-header-content").corner("round 10px");
-			$("#newsletter-signup-box").corner("round top 10px cc:#fff");
-			$("#newsletter-signup-box").corner("round br 10px");
+			$("#newsletter-signup-box").corner("round top 10px");
+			$("#newsletter-signup-box").corner("round br 10px cc:#fff");
 			$("#social-bar").corner("round bl 10px cc:#fff");
 			$("#newsletter-signup-button").corner("round 5px");
 			
