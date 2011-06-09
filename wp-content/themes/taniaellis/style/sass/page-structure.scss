@@ -27,8 +27,10 @@ html, body {
 	#page-content{
 		background: url('../../images/background_gradient.png') repeat-x;
 		clear: both;
-		margin: 75px 0px 20px;
+		margin: 0px 0px 20px;
 		padding-top: 30px;
+		position: relative;
+		top: 75px;
 		
 		#page {
 			background: #fff;

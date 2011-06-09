@@ -28,10 +28,12 @@ html, body {
 #page-wrapper #page-content {
   background: url("../../images/background_gradient.png") repeat-x;
   clear: both;
-  margin: 75px 0px 20px;
+  margin: 0px 0px 20px;
   padding-top: 30px;
+  position: relative;
+  top: 75px;
 }
-/* line 33, ../sass/page-structure.scss */
+/* line 35, ../sass/page-structure.scss */
 #page-wrapper #page-content #page {
   background: #fff;
   height: 100%;
@@ -43,19 +45,19 @@ html, body {
   -o-box-shadow: #888888 -3px 5px 25px 5px;
   box-shadow: #888888 -3px 5px 25px 5px;
 }
-/* line 41, ../sass/page-structure.scss */
+/* line 43, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.left-sidebar, #page-wrapper #page-content #page section.right-sidebar {
   float: left;
   height: 100%;
 }
-/* line 46, ../sass/page-structure.scss */
+/* line 48, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.left-sidebar {
   border-right: 1px solid #c6c2b7;
   padding-right: 20px;
   width: 300px;
 }
 
-/* line 59, ../sass/page-structure.scss */
+/* line 61, ../sass/page-structure.scss */
 footer, #push {
   height: 142px;
   /* .push must be the same height as .footer */
