@@ -43,7 +43,15 @@
 	            			<a id="newsletter-signup-button" href="javascript:void(0)">Subscribe</a>
 	        			</div>
 	
-						<div id="social-bar"></div>
+						<ul id="social-bar">
+							<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_youtube.png" alt="YouTube" title="YouTube" /><a></li>
+							<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_rss.png" alt="RSS" title="RSS" /><a></li>
+							<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_twitter.png" alt="Twitter" title="Twitter" /><a></li>
+							<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_facebook.png" alt="Facebook" title="Facebook" /><a></li>
+							<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /><a></li>
+						</ul>
+						
+						<img src="<?php bloginfo('template_url') ?>/images/newsletter_bonus_sticker.png" alt="" id="bouns-sticker" />
 	    			</div> <!-- #frontpage-header-content -->
 				</div> <!-- #frontpage-header-container -->
 				
