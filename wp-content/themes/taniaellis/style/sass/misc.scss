@@ -16,13 +16,17 @@
 	}
 	
 	form {
+		border: 1px solid #94918A;
 		float: right;
+		height: 18px;
 		margin-top: 11px;
+		width: 153px;
 		
 		#searchbar {
-			border: 1px solid #94918A;
 			float: right;
-			padding: 1px;
+			height: 100%;
+			line-height: 16px;
+			padding-left: 1px;
 			width: 130px;
 			
 			&:focus {
@@ -31,10 +35,11 @@
 		}
 		
 		input[type=submit] {
-			background: #B0ADA6 url('../../images/searchbar_icon.png');
+			background-color: #B0ADA6;
+			background-image: url('../../images/searchbar_icon.png');
 			cursor: pointer;
 			float: right;
-			height: 18px;
+			height: 100%;
 			width: 21px;
 		}
 	}
@@ -198,7 +203,9 @@
 				float: left;
 				margin-left: 35px;
 				padding-bottom: 10px;
+				position: relative;
 				width: 250px;
+				z-index: 10;
 				
 				#header {
 					@include border-top-radius(10px);
@@ -250,107 +257,180 @@
 }
 
 #page {
-	.left-sidebar {
-		.widget-container-left {
-			float: left;
-			margin-bottom: 50px;
-			width: 320px;
-			
-			// .header-container {
-			// 	margin-left: 50px;
-			// 	margin-bottom: 20px;
-			// }
-			.item {
-				border-bottom: 1px solid #CCC;
-				float: left;
-				margin-bottom: 20px;
-				padding-left: 40px;
-				padding-bottom: 20px;
-				width: 260px;
-			}
-		}
+	.widget-container-left {
+		clear: left;
+		float: left;
+		margin-bottom: 50px;
+		width: 320px;
 		
-		.header-container {
-			margin-left: 50px;
+		.item {
+			border-bottom: 1px solid #CCC;
+			float: left;
 			margin-bottom: 20px;
+			padding-left: 40px;
+			padding-bottom: 20px;
+			width: 260px;
 		}
+	}
+	
+	.widget-container-right {
+		clear: left;
+		float: left;
+		margin-bottom: 50px;
+		width: 560px;
 		
-		.widget-books {
-			background: url('../../images/post_type_icon_books.png') top left no-repeat;
-		}
-		
-		.book {
-			img.featured-image {
-				float: left;
-				border: 5px solid #E1DCD8;
-				margin-right: 20px;
-				width: 60px;
-			}
-		}
-		
-		.widget-blog {
-			background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
-		}
-		
-		.blog {
-			img.featured-image {
-				border: 5px solid #E1DCD8;
-				width: 250px;
-			}
-			
-			.excerpt {
-				width: 260px;
-			}
-		}
-		
-		.by-line {
+		.item {
 			float: left;
-			margin-top: 3px;
-		}
+			margin-bottom: 20px;
+			padding-left: 40px;
+			padding-bottom: 20px;
+			width: 520px;
 		
-		.meta-data {
-			float: right;
-			margin-top: 3px;
-			margin-bottom: 12px;
-		}
-		
-		.title {
-			clear: right;
-			margin-bottom: 12px;
+			.item-content {
+				float: left;
+				border-bottom: 1px solid #CCC;
+			}
 		}
 		
 		.excerpt {
-			clear: right;
-			float: right;
-			width: 170px;
-		}
-		
-		.options {
 			float: left;
-			height: 16px;
-			line-height: 16px;
-			width: 100%;
-			
-			.sharing {
-				float: left;
-			}
-			
-			.read-more {
-				float: right;
-			}
 		}
 		
 		.view-all {
-			@include transition(all, 0.1s, ease-in-out);
-			
-			background-color: #B1ACA6;
-			float: right;
-			margin-right: 20px;
-			padding: 5px 15px;
-			
-			&:hover {
-				background-color: #B1ACA6 / 1.2;
+			margin-right: 0;
+		}
+		
+		.widget-event {
+			background-image: url('../../images/post_type_icon_events.png') top left no-repeat;
+		}
+		
+		.event {
+			img.featured-image {
+				border: 5px solid #E1DCD8;
+				float: left;
+				height: 100px;
+				margin-right: 20px;
+				width: 100px;
 			}
+			
+			.meta-data {
+				float: left;
+				width: 390px;
+			}
+			
+			// Probably not needed?
+			.title {
+				float: left;
+				width: 390px;
+			}
+			
+			.excerpt {
+				width: 390px;
+			}
+			
+			.options {
+				float: right;
+				width: 390px;
+			}
+			
+		}
+	}
+	
+	.header-container {
+		margin-left: 50px;
+		margin-bottom: 20px;
+	}
+	
+	.widget-books {
+		background: url('../../images/post_type_icon_books.png') top left no-repeat;
+	}
+	
+	.book {
+		img.featured-image {
+			float: left;
+			border: 5px solid #E1DCD8;
+			margin-right: 20px;
+			width: 60px;
+		}
+	}
+	
+	.widget-blog {
+		background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
+	}
+	
+	.blog {
+		img.featured-image {
+			border: 5px solid #E1DCD8;
+			float: left;
+			width: 250px;
+		}
+		
+		.excerpt {
+			width: 260px;
+		}
+	}
+	
+	.widget-reading-room {
+		background: url('../../images/post_type_icon_reading_room.png') top left no-repeat;
+	}
+	
+	.reading-room {
+		img.featured-image {
+			float: left;
+			border: 5px solid #E1DCD8;
+			margin-right: 20px;
+			width: 60px;
+		}
+	}
+	
+	.by-line {
+		float: left;
+		margin-top: 3px;
+	}
+	
+	.meta-data {
+		float: right;
+		margin-top: 3px;
+		margin-bottom: 12px;
+	}
+	
+	.title {
+		clear: right;
+		margin-bottom: 12px;
+	}
+	
+	.excerpt {
+		clear: right;
+		float: right;
+		width: 170px;
+	}
+	
+	.options {
+		float: left;
+		height: 16px;
+		line-height: 16px;
+		margin-top: 20px;
+		width: 100%;
+		
+		.sharing {
+			float: left;
+		}
+		
+		.read-more {
+			float: right;
+		}
+	}
+	
+	.view-all {
+		@include transition(all, 0.1s, ease-in-out);
+		
+		background-color: #B1ACA6;
+		float: right;
+		margin-right: 20px;
+		padding: 5px 15px;
+		
+		&:hover {
+			background-color: #B1ACA6 / 1.2;
 		}
 	}
 }
@@ -359,7 +439,7 @@ footer {
 	#footer-bar {
 		background-color: #B0ADA6;
 		color: #FFF;
-		margin: 0 auto;
+		//margin: 0 auto;
 		padding: 0.764em 0;
 		text-align: center;
 		width: 100%;

@@ -5,10 +5,6 @@ html, body {
 }
 
 #page-wrapper {
-	height: auto !important;
-	height: 100%;
-	min-height: 100%;
-	
 	header {
 		margin: 0 auto;
 		width: 960px;
@@ -19,22 +15,21 @@ html, body {
 	}
 	
 	#header-content {
-		clear: both;
 		margin: 0 auto;
 		width: 960px;
 	}
 	
 	#page-content{
 		background: url('../../images/background_gradient.png') repeat-x;
-		clear: both;
-		margin: 75px 0px 20;
+		margin-top: 75px;
 		padding-top: 30px;
+		z-index: 1;
 		
 		#page {
 			background: #fff;
 			//height: 100%;
 			margin: 0 auto;
-			padding: 30px 0;
+			padding: 60px 0 30px;
 			width: 960px;
 			@include box-shadow(#888 -3px 5px 25px 5px);
 			
@@ -49,16 +44,15 @@ html, body {
 			}
 			
 			section.right-sidebar {
-				//padding-left: 20px;
+				padding-left: 20px;
 			}
 		}
 	}
 }
 
-footer, #push {
-	height: 142px; /* .push must be the same height as .footer */
+footer {
+	position: relative;
+	top: 50px;
 	width: 960px;
 	margin: 0 auto;
 }
-
-/* Sticky Footer by Ryan Fait http://ryanfait.com/ */

@@ -15,41 +15,46 @@
 }
 /* line 18, ../sass/misc.scss */
 #header-top-container form {
-  float: right;
-  margin-top: 11px;
-}
-/* line 22, ../sass/misc.scss */
-#header-top-container form #searchbar {
   border: 1px solid #94918A;
   float: right;
-  padding: 1px;
+  height: 18px;
+  margin-top: 11px;
+  width: 153px;
+}
+/* line 25, ../sass/misc.scss */
+#header-top-container form #searchbar {
+  float: right;
+  height: 100%;
+  line-height: 16px;
+  padding-left: 1px;
   width: 130px;
 }
-/* line 28, ../sass/misc.scss */
+/* line 32, ../sass/misc.scss */
 #header-top-container form #searchbar:focus {
   outline: none;
 }
-/* line 33, ../sass/misc.scss */
+/* line 37, ../sass/misc.scss */
 #header-top-container form input[type=submit] {
-  background: #b0ada6 url("../../images/searchbar_icon.png");
+  background-color: #B0ADA6;
+  background-image: url("../../images/searchbar_icon.png");
   cursor: pointer;
   float: right;
-  height: 18px;
+  height: 100%;
   width: 21px;
 }
 
-/* line 43, ../sass/misc.scss */
+/* line 48, ../sass/misc.scss */
 #header-menu-logo-container {
   background-color: #B0ADA6;
   clear: right;
   float: right;
   width: 100%;
 }
-/* line 49, ../sass/misc.scss */
+/* line 54, ../sass/misc.scss */
 #header-menu-logo-container #logo {
   float: left;
 }
-/* line 53, ../sass/misc.scss */
+/* line 58, ../sass/misc.scss */
 #header-menu-logo-container #shop-link {
   -moz-transition-property: background-color;
   -webkit-transition-property: background-color;
@@ -68,19 +73,19 @@
   line-height: 36px;
   padding: 0 15px;
 }
-/* line 61, ../sass/misc.scss */
+/* line 66, ../sass/misc.scss */
 #header-menu-logo-container #shop-link:hover {
   background-color: #7a997d;
 }
-/* line 66, ../sass/misc.scss */
+/* line 71, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages {
   float: right;
 }
-/* line 69, ../sass/misc.scss */
+/* line 74, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages li {
   float: left;
 }
-/* line 71, ../sass/misc.scss */
+/* line 76, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages li a {
   -moz-transition-property: background-color;
   -webkit-transition-property: background-color;
@@ -101,39 +106,39 @@
   line-height: 36px;
   padding: 0 12px;
 }
-/* line 80, ../sass/misc.scss */
+/* line 85, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages li a:hover {
   background-color: #92908a;
 }
-/* line 86, ../sass/misc.scss */
+/* line 91, ../sass/misc.scss */
 #header-menu-logo-container #navigation-pages li.current-menu-item a {
   background-color: #92908a;
 }
 
-/* line 92, ../sass/misc.scss */
+/* line 97, ../sass/misc.scss */
 #header-content #language-picker {
   float: right;
   margin-bottom: 30px;
 }
-/* line 98, ../sass/misc.scss */
+/* line 103, ../sass/misc.scss */
 #header-content #frontpage-header-container {
   width: 100%;
   float: left;
   /* FRONT PAGE HEADER MENU */
 }
-/* line 103, ../sass/misc.scss */
+/* line 108, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu {
   float: left;
 }
-/* line 106, ../sass/misc.scss */
+/* line 111, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li {
   margin-top: 5px;
 }
-/* line 109, ../sass/misc.scss */
+/* line 114, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li:first-child {
   margin-top: 0;
 }
-/* line 113, ../sass/misc.scss */
+/* line 118, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li a {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -159,52 +164,52 @@
   padding: 10px;
   width: 140px;
 }
-/* line 122, ../sass/misc.scss */
+/* line 127, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li a .term {
   display: block;
   margin-top: 1px;
 }
-/* line 129, ../sass/misc.scss */
+/* line 134, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.grey a {
   background-color: #94918A;
 }
-/* line 130, ../sass/misc.scss */
+/* line 135, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.grey a:hover {
   background-color: #7b7873;
 }
-/* line 132, ../sass/misc.scss */
+/* line 137, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.green a {
   background-color: #9CC1A2;
 }
-/* line 133, ../sass/misc.scss */
+/* line 138, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.green a:hover {
   background-color: #82a087;
 }
-/* line 135, ../sass/misc.scss */
+/* line 140, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.blue a {
   background-color: #83A9C0;
 }
-/* line 136, ../sass/misc.scss */
+/* line 141, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.blue a:hover {
   background-color: #6d8ca0;
 }
-/* line 138, ../sass/misc.scss */
+/* line 143, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.purple a {
   background-color: #A8A6CD;
 }
-/* line 139, ../sass/misc.scss */
+/* line 144, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.purple a:hover {
   background-color: #8c8aaa;
 }
-/* line 141, ../sass/misc.scss */
+/* line 146, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.orange a {
   background-color: #D4B690;
 }
-/* line 142, ../sass/misc.scss */
+/* line 147, ../sass/misc.scss */
 #header-content #frontpage-header-container #social-business-menu li.orange a:hover {
   background-color: #b09778;
 }
-/* line 145, ../sass/misc.scss */
+/* line 150, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -219,7 +224,7 @@
   position: relative;
   width: 775px;
 }
-/* line 154, ../sass/misc.scss */
+/* line 159, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content img#intro-movie {
   float: left;
   left: 35px;
@@ -228,7 +233,7 @@
   top: -40px;
   z-index: 999;
 }
-/* line 163, ../sass/misc.scss */
+/* line 168, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content iframe {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -241,7 +246,7 @@
   top: 70px;
   z-index: 1000;
 }
-/* line 171, ../sass/misc.scss */
+/* line 176, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote {
   background: url("../../images/header_frontpage_quotes.png") top left no-repeat;
   float: left;
@@ -249,18 +254,18 @@
   width: 250px;
   height: 186px;
 }
-/* line 178, ../sass/misc.scss */
+/* line 183, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote p#header-quote-text {
   margin-bottom: 10px;
 }
-/* line 182, ../sass/misc.scss */
+/* line 187, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote div#read-more-signature {
   background: url("../../images/header_frontpage_signature.png") right center no-repeat;
   height: 33px;
   line-height: 33px;
   width: 100%;
 }
-/* line 189, ../sass/misc.scss */
+/* line 194, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content .header-quote div#read-more-signature a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -275,7 +280,7 @@
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-/* line 195, ../sass/misc.scss */
+/* line 200, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -287,9 +292,11 @@
   float: left;
   margin-left: 35px;
   padding-bottom: 10px;
+  position: relative;
   width: 250px;
+  z-index: 10;
 }
-/* line 203, ../sass/misc.scss */
+/* line 210, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -306,22 +313,22 @@
   background-color: #94918A;
   padding: 15px 0 10px 20px;
 }
-/* line 209, ../sass/misc.scss */
+/* line 216, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header span#social-business-trends {
   display: block;
   height: 12px;
 }
-/* line 214, ../sass/misc.scss */
+/* line 221, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #header span#newsletter {
   display: block;
   height: 18px;
 }
-/* line 221, ../sass/misc.scss */
+/* line 228, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #content {
   margin-bottom: 15px;
   padding: 10px 20px 0;
 }
-/* line 226, ../sass/misc.scss */
+/* line 233, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -340,7 +347,7 @@
   margin-right: 20px;
   padding: 5px 20px;
 }
-/* line 236, ../sass/misc.scss */
+/* line 243, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button:hover {
   background-color: #67645f;
   color: #e7e7e7;
@@ -350,7 +357,7 @@
   background-image: -o-linear-gradient(top, #888682, #67645f);
   background-image: linear-gradient(top, #888682, #67645f);
 }
-/* line 242, ../sass/misc.scss */
+/* line 249, ../sass/misc.scss */
 #header-content #frontpage-header-container #frontpage-header-content #newsletter-signup-box #newsletter-signup-button:active {
   color: #d4d4d4;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #67645f), color-stop(100%, #888682));
@@ -360,14 +367,15 @@
   background-image: linear-gradient(top, #67645f, #888682);
 }
 
-/* line 254, ../sass/misc.scss */
-#page .left-sidebar .widget-container-left {
+/* line 260, ../sass/misc.scss */
+#page .widget-container-left {
+  clear: left;
   float: left;
   margin-bottom: 50px;
   width: 320px;
 }
-/* line 263, ../sass/misc.scss */
-#page .left-sidebar .widget-container-left .item {
+/* line 266, ../sass/misc.scss */
+#page .widget-container-left .item {
   border-bottom: 1px solid #CCC;
   float: left;
   margin-bottom: 20px;
@@ -375,74 +383,146 @@
   padding-bottom: 20px;
   width: 260px;
 }
-/* line 273, ../sass/misc.scss */
-#page .left-sidebar .header-container {
+/* line 276, ../sass/misc.scss */
+#page .widget-container-right {
+  clear: left;
+  float: left;
+  margin-bottom: 50px;
+  width: 560px;
+}
+/* line 282, ../sass/misc.scss */
+#page .widget-container-right .item {
+  float: left;
+  margin-bottom: 20px;
+  padding-left: 40px;
+  padding-bottom: 20px;
+  width: 520px;
+}
+/* line 289, ../sass/misc.scss */
+#page .widget-container-right .item .item-content {
+  float: left;
+  border-bottom: 1px solid #CCC;
+}
+/* line 295, ../sass/misc.scss */
+#page .widget-container-right .excerpt {
+  float: left;
+}
+/* line 299, ../sass/misc.scss */
+#page .widget-container-right .view-all {
+  margin-right: 0;
+}
+/* line 303, ../sass/misc.scss */
+#page .widget-container-right .widget-event {
+  background-image: url("../../images/post_type_icon_events.png") top left no-repeat;
+}
+/* line 308, ../sass/misc.scss */
+#page .widget-container-right .event img.featured-image {
+  border: 5px solid #E1DCD8;
+  float: left;
+  height: 100px;
+  margin-right: 20px;
+  width: 100px;
+}
+/* line 316, ../sass/misc.scss */
+#page .widget-container-right .event .meta-data {
+  float: left;
+  width: 390px;
+}
+/* line 322, ../sass/misc.scss */
+#page .widget-container-right .event .title {
+  float: left;
+  width: 390px;
+}
+/* line 327, ../sass/misc.scss */
+#page .widget-container-right .event .excerpt {
+  width: 390px;
+}
+/* line 331, ../sass/misc.scss */
+#page .widget-container-right .event .options {
+  float: right;
+  width: 390px;
+}
+/* line 339, ../sass/misc.scss */
+#page .header-container {
   margin-left: 50px;
   margin-bottom: 20px;
 }
-/* line 278, ../sass/misc.scss */
-#page .left-sidebar .widget-books {
+/* line 344, ../sass/misc.scss */
+#page .widget-books {
   background: url("../../images/post_type_icon_books.png") top left no-repeat;
 }
-/* line 283, ../sass/misc.scss */
-#page .left-sidebar .book img.featured-image {
+/* line 349, ../sass/misc.scss */
+#page .book img.featured-image {
   float: left;
   border: 5px solid #E1DCD8;
   margin-right: 20px;
   width: 60px;
 }
-/* line 291, ../sass/misc.scss */
-#page .left-sidebar .widget-blog {
+/* line 357, ../sass/misc.scss */
+#page .widget-blog {
   background: url("../../images/post_type_icon_featured_blog.png") top left no-repeat;
 }
-/* line 296, ../sass/misc.scss */
-#page .left-sidebar .blog img.featured-image {
+/* line 362, ../sass/misc.scss */
+#page .blog img.featured-image {
   border: 5px solid #E1DCD8;
+  float: left;
   width: 250px;
 }
-/* line 301, ../sass/misc.scss */
-#page .left-sidebar .blog .excerpt {
+/* line 368, ../sass/misc.scss */
+#page .blog .excerpt {
   width: 260px;
 }
-/* line 306, ../sass/misc.scss */
-#page .left-sidebar .by-line {
+/* line 373, ../sass/misc.scss */
+#page .widget-reading-room {
+  background: url("../../images/post_type_icon_reading_room.png") top left no-repeat;
+}
+/* line 378, ../sass/misc.scss */
+#page .reading-room img.featured-image {
+  float: left;
+  border: 5px solid #E1DCD8;
+  margin-right: 20px;
+  width: 60px;
+}
+/* line 386, ../sass/misc.scss */
+#page .by-line {
   float: left;
   margin-top: 3px;
 }
-/* line 311, ../sass/misc.scss */
-#page .left-sidebar .meta-data {
+/* line 391, ../sass/misc.scss */
+#page .meta-data {
   float: right;
   margin-top: 3px;
   margin-bottom: 12px;
 }
-/* line 317, ../sass/misc.scss */
-#page .left-sidebar .title {
+/* line 397, ../sass/misc.scss */
+#page .title {
   clear: right;
   margin-bottom: 12px;
 }
-/* line 322, ../sass/misc.scss */
-#page .left-sidebar .excerpt {
+/* line 402, ../sass/misc.scss */
+#page .excerpt {
   clear: right;
   float: right;
   width: 170px;
 }
-/* line 328, ../sass/misc.scss */
-#page .left-sidebar .options {
+/* line 408, ../sass/misc.scss */
+#page .options {
   float: left;
   height: 16px;
   line-height: 16px;
+  margin-top: 20px;
   width: 100%;
 }
-/* line 334, ../sass/misc.scss */
-#page .left-sidebar .options .sharing {
+/* line 415, ../sass/misc.scss */
+#page .options .sharing {
   float: left;
 }
-/* line 338, ../sass/misc.scss */
-#page .left-sidebar .options .read-more {
+/* line 419, ../sass/misc.scss */
+#page .options .read-more {
   float: right;
 }
-/* line 343, ../sass/misc.scss */
-#page .left-sidebar .view-all {
+/* line 424, ../sass/misc.scss */
+#page .view-all {
   -moz-transition-property: all;
   -webkit-transition-property: all;
   -o-transition-property: all;
@@ -460,32 +540,31 @@
   margin-right: 20px;
   padding: 5px 15px;
 }
-/* line 351, ../sass/misc.scss */
-#page .left-sidebar .view-all:hover {
+/* line 432, ../sass/misc.scss */
+#page .view-all:hover {
   background-color: #938f8a;
 }
 
-/* line 359, ../sass/misc.scss */
+/* line 439, ../sass/misc.scss */
 footer #footer-bar {
   background-color: #B0ADA6;
   color: #FFF;
-  margin: 0 auto;
   padding: 0.764em 0;
   text-align: center;
   width: 100%;
 }
-/* line 367, ../sass/misc.scss */
+/* line 447, ../sass/misc.scss */
 footer #footer-bar li {
   display: inline;
   padding: 0 10px;
 }
-/* line 373, ../sass/misc.scss */
+/* line 453, ../sass/misc.scss */
 footer #co2-link {
   float: right;
   margin-top: 15px;
 }
 
-/* line 379, ../sass/misc.scss */
+/* line 459, ../sass/misc.scss */
 .clearer {
   clear: both;
 }

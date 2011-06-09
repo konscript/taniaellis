@@ -3,61 +3,56 @@ html, body {
   height: 100%;
 }
 
-/* line 7, ../sass/page-structure.scss */
-#page-wrapper {
-  height: auto !important;
-  height: 100%;
-  min-height: 100%;
-}
-/* line 12, ../sass/page-structure.scss */
+/* line 8, ../sass/page-structure.scss */
 #page-wrapper header {
   margin: 0 auto;
   width: 960px;
 }
-/* line 16, ../sass/page-structure.scss */
+/* line 12, ../sass/page-structure.scss */
 #page-wrapper header #header-menu-logo-container {
   margin-bottom: 4px;
 }
-/* line 21, ../sass/page-structure.scss */
+/* line 17, ../sass/page-structure.scss */
 #page-wrapper #header-content {
-  clear: both;
   margin: 0 auto;
   width: 960px;
 }
-/* line 27, ../sass/page-structure.scss */
+/* line 22, ../sass/page-structure.scss */
 #page-wrapper #page-content {
   background: url("../../images/background_gradient.png") repeat-x;
-  clear: both;
-  margin: 75px 0px 20;
+  margin-top: 75px;
   padding-top: 30px;
+  z-index: 1;
 }
-/* line 33, ../sass/page-structure.scss */
+/* line 28, ../sass/page-structure.scss */
 #page-wrapper #page-content #page {
   background: #fff;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 60px 0 30px;
   width: 960px;
   -moz-box-shadow: #888888 -3px 5px 25px 5px;
   -webkit-box-shadow: #888888 -3px 5px 25px 5px;
   -o-box-shadow: #888888 -3px 5px 25px 5px;
   box-shadow: #888888 -3px 5px 25px 5px;
 }
-/* line 41, ../sass/page-structure.scss */
+/* line 36, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.left-sidebar, #page-wrapper #page-content #page section.right-sidebar {
   float: left;
 }
-/* line 46, ../sass/page-structure.scss */
+/* line 41, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.left-sidebar {
   border-right: 1px solid #c6c2b7;
   width: 330px;
 }
+/* line 46, ../sass/page-structure.scss */
+#page-wrapper #page-content #page section.right-sidebar {
+  padding-left: 20px;
+}
 
-/* line 58, ../sass/page-structure.scss */
-footer, #push {
-  height: 142px;
-  /* .push must be the same height as .footer */
+/* line 53, ../sass/page-structure.scss */
+footer {
+  position: relative;
+  top: 50px;
   width: 960px;
   margin: 0 auto;
 }
-
-/* Sticky Footer by Ryan Fait http://ryanfait.com/ */

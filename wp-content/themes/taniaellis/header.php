@@ -10,10 +10,27 @@
 		
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_url') ?>" />
 		
-		<script src="<?php bloginfo('template_url') ?>/js/eCSStender.js"></script>
+		<script src="<?php bloginfo('template_url') ?>/js/jquery.min.js"></script>
+		<script src="<?php bloginfo('template_url') ?>/js/jquery.corner.js"></script>
+		<script src="<?php bloginfo('template_url') ?>/js/modernizr.js"></script>
+		
 		<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+		
+		<script type="text/javascript">
+		if(!Modernizr.borderradius) {
+			$("#social-business-menu li a").corner("round 10px");
+			$("#frontpage-header-content").corner("round 10px");
+			$("#newsletter-signup-box").corner("round 10px");
+			$("#newsletter-signup-button").corner("round 5px");
+			
+		}
+		
+		if(!Modernizr.boxshadow) {
+			$("#page-content").box
+		}
+		</script>
 	</head>
 	
 	<body>
@@ -46,5 +63,3 @@
     			</div>
 
     		</header>
-		
-    		<div id="header-content">
