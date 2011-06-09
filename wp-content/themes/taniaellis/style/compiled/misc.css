@@ -367,7 +367,11 @@
   background-image: linear-gradient(top, #67645f, #888682);
 }
 
-/* line 261, ../sass/misc.scss */
+/* line 259, ../sass/misc.scss */
+#page {
+  z-index: 100;
+}
+/* line 262, ../sass/misc.scss */
 #page .left-sidebar .widget-container {
   background: url("../../images/post_type_icon_books.png") top left no-repeat;
   float: left;
@@ -375,7 +379,7 @@
   width: 100%;
 }
 
-/* line 282, ../sass/misc.scss */
+/* line 283, ../sass/misc.scss */
 footer #footer-bar {
   background-color: #B0ADA6;
   color: #FFF;
@@ -384,18 +388,18 @@ footer #footer-bar {
   text-align: center;
   width: 100%;
 }
-/* line 290, ../sass/misc.scss */
+/* line 291, ../sass/misc.scss */
 footer #footer-bar li {
   display: inline;
   padding: 0 10px;
 }
-/* line 296, ../sass/misc.scss */
+/* line 297, ../sass/misc.scss */
 footer #co2-link {
   float: right;
   margin-top: 15px;
 }
 
-/* line 302, ../sass/misc.scss */
+/* line 303, ../sass/misc.scss */
 .clearer {
   clear: both;
 }

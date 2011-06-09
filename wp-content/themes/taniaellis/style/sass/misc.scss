@@ -257,6 +257,7 @@
 }
 
 #page {
+	z-index: 100;
 	.left-sidebar {
 		.widget-container {
 			background: url('../../images/post_type_icon_books.png') top left no-repeat;
