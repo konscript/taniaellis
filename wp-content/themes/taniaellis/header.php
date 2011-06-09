@@ -21,10 +21,11 @@
 		<![endif]-->
 		
 		<script type="text/javascript">
-		Modernizr.load({
-		  test: Modernizr.borderradius,
-		  nope: 'js/css_support.js'
-		});
+		if(!Modernizr.borderradius) {
+			alert();
+			$("#social-business-menu li a").corner("round 10px");
+			$("#newsletter-signup-button").corner("round 10px");
+		}
 		</script>
 	</head>
 	
