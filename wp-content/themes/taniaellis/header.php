@@ -56,7 +56,7 @@
                         'menu_id'               => 'navigation-pages',
                         'menu_class'            => ''
                     )); ?>
-    				<img id="logo" src="<?php bloginfo('template_url')?>/images/logo.png" />
+    				<a href="<?php bloginfo('siteurl') ?>" id="logo"><img src="<?php bloginfo('template_url')?>/images/logo.png" /></a>
     				<a id="shop-link" href="javascript:void(0)">Shop</a>
     			</div>
 

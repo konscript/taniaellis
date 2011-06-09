@@ -608,9 +608,10 @@ footer #footer-bar li {
 footer #co2-link {
   float: right;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-/* line 489, ../sass/misc.scss */
+/* line 490, ../sass/misc.scss */
 .clearer {
   clear: both;
 }

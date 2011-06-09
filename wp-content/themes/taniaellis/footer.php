@@ -9,6 +9,7 @@
 	    	<li>www.taniaellis.dk</li>
 		</ul>
 		<a href="http://www.ingenco2.dk/" target="_blank" id="co2-link"><img src="<?php bloginfo('template_url') ?>/images/co2_neutral_website.png" alt="CO2 neutral hjemmeside" /></a>
+		<div class="clearer"></div>
 	</footer>
 	</body>
 </html>

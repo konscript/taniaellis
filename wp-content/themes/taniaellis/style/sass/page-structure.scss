@@ -29,9 +29,10 @@ html, body {
 			background: #fff;
 			//height: 100%;
 			margin: 0 auto;
-			padding: 60px 0 30px;
-			width: 960px;
-			@include box-shadow(#888 -3px 20px 25px 5px);
+			padding: 60px 22px 30px;
+			width: 962px;
+			//@include box-shadow(#888 -3px 20px 25px 5px);
+			background: url('../../images/gradient_box.png') top left no-repeat;
 			
 			section.left-sidebar, section.right-sidebar {
 				float: left;
@@ -51,8 +52,8 @@ html, body {
 }
 
 footer {
-	position: relative;
-	top: 50px;
-	width: 960px;
 	margin: 0 auto;
+	position: relative;
+	top: 30px;
+	width: 960px;
 }

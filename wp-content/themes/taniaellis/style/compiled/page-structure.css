@@ -28,31 +28,28 @@ html, body {
 #page-wrapper #page-content #page {
   background: #fff;
   margin: 0 auto;
-  padding: 60px 0 30px;
-  width: 960px;
-  -moz-box-shadow: #888888 -3px 20px 25px 5px;
-  -webkit-box-shadow: #888888 -3px 20px 25px 5px;
-  -o-box-shadow: #888888 -3px 20px 25px 5px;
-  box-shadow: #888888 -3px 20px 25px 5px;
+  padding: 60px 22px 30px;
+  width: 962px;
+  background: url("../../images/gradient_box.png") top left no-repeat;
 }
-/* line 36, ../sass/page-structure.scss */
+/* line 37, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.left-sidebar, #page-wrapper #page-content #page section.right-sidebar {
   float: left;
 }
-/* line 41, ../sass/page-structure.scss */
+/* line 42, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.left-sidebar {
   border-right: 1px solid #c6c2b7;
   width: 330px;
 }
-/* line 46, ../sass/page-structure.scss */
+/* line 47, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.right-sidebar {
   padding-left: 20px;
 }
 
-/* line 53, ../sass/page-structure.scss */
+/* line 54, ../sass/page-structure.scss */
 footer {
-  position: relative;
-  top: 50px;
-  width: 960px;
   margin: 0 auto;
+  position: relative;
+  top: 30px;
+  width: 960px;
 }
