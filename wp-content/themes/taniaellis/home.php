@@ -191,51 +191,206 @@
 					</section>
 					
 					<section class="right-sidebar">
-					    <div class="widget-container-right widget-reading-room">
+					    <div class="widget-container-right widget-event">
 					        <div class="header-container">
 					            <h2 class="first-line">Upcoming</h2>
 			    		        <h2 class="second-line">Events</h2>
 					        </div>
 
 					        <div class="item event">
-					            <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/events_icon_1.png" />
+					            <div class="item-content">
+					                <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/events_icon_1.png" />
 					            
-					            <p class="meta-data">
-					                Event Date: 11 Feb 2011, 9-5 P.M.
-					            </p>
+    					            <p class="meta-data">
+    					                Event Date: 11 Feb 2011, 9-5 P.M.
+    					            </p>
 
-					            <h2 class="title">Lorem Ipsum Dolor Sit Amet</h2>
+    					            <h2 class="title">Lorem Ipsum Dolor Sit Amet</h2>
 
-					            <p class="excerpt">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					            </p>
+    					            <p class="excerpt">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    					            </p>
 
-					            <div class="options">
-			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
-			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+    					            <div class="options">
+    			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
+    			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+    					            </div>
 					            </div>
 					        </div>
 					        
 					        <div class="item event">
-					            <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/events_icon_2.png" />
+					            <div class="item-content">
+					                <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/events_icon_2.png" />
 					            
-					            <p class="meta-data">
-					                Event Date: 11 Feb 2011, 9-5 P.M.
-					            </p>
+    					            <p class="meta-data">
+    					                Event Date: 11 Feb 2011, 9-5 P.M.
+    					            </p>
 
-					            <h2 class="title">Lorem Ipsum Dolor Sit Amet</h2>
+    					            <h2 class="title">Lorem Ipsum Dolor Sit Amet</h2>
 
-					            <p class="excerpt">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					            </p>
+    					            <p class="excerpt">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    					            </p>
 
-					            <div class="options">
-			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
-			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+    					            <div class="options">
+    			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
+    			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+    					            </div>
 					            </div>
 					        </div>
 					        
 					        <a class="view-all" href="javascript:void(0)">View more events</a>
+					    </div>
+					    
+					    <div class="widget-container-right widget-featured-blog">
+					        <div class="header-container">
+					            <h2 class="first-line">Featured</h2>
+			    		        <h2 class="second-line">Blog Posts By Tania Ellis</h2>
+					        </div>
+
+					        <div class="item featured-blog">
+					            <div class="item-content">
+					                <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/featured_blog_post_1.png" />
+					            
+    					            <p class="meta-data">
+    					                13 Mar 2011
+    					            </p>
+
+    					            <h2 class="title">Lorem Ipsum Dolor</h2>
+
+    					            <p class="excerpt">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+    					            </p>
+
+    					            <div class="options">
+    			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
+    			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+    					            </div>
+					            </div>
+					        </div>
+					        
+					        <div class="item featured-blog">
+					            <div class="item-content">
+					                <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/featured_blog_post_2.png" />
+					            
+    					            <p class="meta-data">
+    					                12 Feb 2011
+    					            </p>
+
+    					            <h2 class="title">Lorem Ipsum Dolor Sit Amet</h2>
+
+    					            <p class="excerpt">
+                                        Lorem ipsum dolor sit amet, et consectetur adipisicing elit, sed do eiusmod es tempor incididunt ut labore et dolore magna.
+    					            </p>
+
+    					            <div class="options">
+    			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
+    			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+    					            </div>
+					            </div>
+					        </div>
+					        
+					        <div class="item featured-blog">
+					            <div class="item-content">
+					                <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/featured_blog_post_3.png" />
+					            
+    					            <p class="meta-data">
+    					                11 Feb 2011
+    					            </p>
+
+    					            <h2 class="title">Lorem Ipsum Dolor Sit Amet</h2>
+
+    					            <p class="excerpt">
+                                        Lorem ipsum dolor sit amet, et consectetur adipisicing elit, sed do eiusmod es tempor incididunt ut labore et dolore magna.
+    					            </p>
+
+    					            <div class="options">
+    			                        <img class="sharing" src="<?php bloginfo('template_url'); ?>/images/share_options.png" />
+    			                        <a class="read-more" href="javascript:void(0)">Read more</a>
+    					            </div>
+					            </div>
+					        </div>
+					        
+					        <a class="view-all" href="javascript:void(0)">View more blog posts</a>
+					    </div>
+					    <div class="widget-container-right widget-clients">
+					        <div class="header-container">
+					            <h2 class="first-line">Featured Clients</h2>
+			    		        <h2 class="second-line">Click And Read The Cases</h2>
+					        </div>
+
+					        <div class="item client">
+					            <div class="item-content">
+					            
+                                    <ul id="clients-viewer">
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_1.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_2.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_3.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_4.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_5.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_6.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_7.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_8.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_9.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_10.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_11.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="<?php bloginfo('template_url') ?>/images/clients_case_12.png" />
+                                            </a>
+                                        </li>
+                                    </ul>
+
+    					            <div class="options">
+    					                <a class="view-clients" href="javascript:void(0)">View all clients</a>
+    			                        <a class="view-cases" href="javascript:void(0)">View all cases</a>
+    					            </div>
+					            </div>
+					        </div>					        
 					    </div>
 					</section>
 					
