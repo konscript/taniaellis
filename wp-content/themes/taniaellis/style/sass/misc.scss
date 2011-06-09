@@ -16,13 +16,14 @@
 	}
 	
 	form {
+		border: 1px solid #94918A;
 		float: right;
+		height: 18px;
 		margin-top: 11px;
 		
 		#searchbar {
-			border: 1px solid #94918A;
 			float: right;
-			height: 16px;
+			height: 100%;
 			padding: 0px;
 			width: 130px;
 			
@@ -36,7 +37,7 @@
 			background-image: url('../../images/searchbar_icon.png');
 			cursor: pointer;
 			float: right;
-			height: 18px;
+			height: 100%;
 			width: 21px;
 		}
 	}
