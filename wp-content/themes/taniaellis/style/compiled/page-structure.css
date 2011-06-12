@@ -43,10 +43,12 @@ html, body {
 }
 /* line 47, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.right-sidebar {
+  border-left: 1px solid #c6c2b7;
+  margin-left: -1px;
   padding-left: 20px;
 }
 
-/* line 54, ../sass/page-structure.scss */
+/* line 56, ../sass/page-structure.scss */
 footer {
   margin: 0 auto;
   position: relative;
