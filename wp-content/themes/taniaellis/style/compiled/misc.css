@@ -144,7 +144,7 @@
 /* line 134, ../sass/misc.scss */
 #header #header-container #navigation-header-standard li a {
   display: table-cell;
-  text-indent: 5px;
+  text-indent: 100px;
   vertical-align: middle;
 }
 /* line 139, ../sass/misc.scss */
