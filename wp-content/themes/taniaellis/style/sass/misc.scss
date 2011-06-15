@@ -133,7 +133,6 @@
 				
 				a {
 					display: table-cell;
-					text-indent: 100px;
 					vertical-align: middle;
 					
 					&:hover span {
@@ -145,6 +144,7 @@
 					background: #ccc;
 					float: left;
 					height: 1em;
+					margin-right: 5px;
 					line-height: 1em;
 					width: 1em;
 				}

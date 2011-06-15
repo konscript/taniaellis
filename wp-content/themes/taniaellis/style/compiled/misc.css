@@ -144,18 +144,18 @@
 /* line 134, ../sass/misc.scss */
 #header #header-container #navigation-header-standard li a {
   display: table-cell;
-  text-indent: 100px;
   vertical-align: middle;
 }
-/* line 139, ../sass/misc.scss */
+/* line 138, ../sass/misc.scss */
 #header #header-container #navigation-header-standard li a:hover span {
   background: #7C7973;
 }
-/* line 144, ../sass/misc.scss */
+/* line 143, ../sass/misc.scss */
 #header #header-container #navigation-header-standard li span {
   background: #ccc;
   float: left;
   height: 1em;
+  margin-right: 5px;
   line-height: 1em;
   width: 1em;
 }
