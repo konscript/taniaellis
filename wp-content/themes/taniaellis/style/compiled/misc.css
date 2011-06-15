@@ -141,13 +141,10 @@
 #header #header-container #navigation-header-standard {
   width: 260px;
 }
-/* line 132, ../sass/misc.scss */
-#header #header-container #navigation-header-standard li {
-  text-indent: 5px;
-}
-/* line 135, ../sass/misc.scss */
+/* line 134, ../sass/misc.scss */
 #header #header-container #navigation-header-standard li a {
   display: table-cell;
+  text-indent: 5px;
   vertical-align: middle;
 }
 /* line 139, ../sass/misc.scss */

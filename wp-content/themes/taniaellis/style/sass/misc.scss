@@ -130,10 +130,10 @@
 			width: 260px;
 			
 			li {
-				text-indent: 5px;
 				
 				a {
 					display: table-cell;
+					text-indent: 5px;
 					vertical-align: middle;
 					
 					&:hover span {
