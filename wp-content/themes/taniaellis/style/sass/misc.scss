@@ -103,26 +103,18 @@
 }
 
 
-#header-content {
+#header {
 	#language-picker {
 		float: right;
 		margin-bottom: 30px;
 	}
 	
 	
-	#frontpage-header-container {
+	#header-container {
 		width: 100%;
 		float: left;
 		
-		/* PAGE MENU */
-		#page-menu {
-			float: left;
-			list-style-type: square;
-			width: 260px;
-		}
-		
-		/* FRONT PAGE HEADER MENU */
-		#social-business-menu {
+		.navigation-header {
 			float: left;		
 		
 			li {
@@ -130,8 +122,37 @@
 			
 				&:first-child {
 					margin-top: 0;
-				}
+				}			
+			}
+		}
+		
+		#navigation-header-standard {
+			width: 260px;
 			
+			li {
+				text-indent: 5px;
+				
+				a {
+					display: table-cell;
+					vertical-align: middle;
+					
+					&:hover span {
+						background: #7C7973;
+					}
+				}
+				
+				span {
+					background: #ccc;
+					float: left;
+					height: 1em;
+					line-height: 1em;
+					width: 1em;
+				}
+			}
+		}
+		
+		#navigation-social-business {
+			li {
 				a {
 					@include border-radius(10px);
 					@include transition(background-color, 0.1s, ease-in-out);
@@ -164,6 +185,20 @@
 			li.orange a:hover { background-color: #D4B690 / 1.2; }
 		}
 		
+		.front-page {
+			
+		}
+		
+		.header-content {
+			@include border-radius(10px);
+			background-color: #EAE6E3;
+			float: right;
+			height: 245px;
+			padding: 15px 10px 10px;
+			position: relative;
+			width: 680px;
+		}
+		
 		#frontpage-header-content {
 			@include border-radius(10px);
 			background-color: #EAE6E3;
@@ -172,7 +207,7 @@
 			padding: 15px 10px 10px;
 			position: relative;
 			width: 775px;
-			
+
 			img#intro-movie {				
 				float: left;
 				left: 35px;
@@ -181,7 +216,7 @@
 				top: -40px;
 				z-index: 999;
 			}
-			
+
 			iframe {
 				@include border-radius(10px);
 				position: relative;
@@ -189,7 +224,7 @@
 				top: 70px;
 				z-index: 1000;
 			}
-			
+
 			#social-bar {
 				background: #9CC1A2;
 				@include border-bottom-left-radius(10px);
@@ -199,18 +234,18 @@
 				right: 287px;
 				top: -40px;
 				width: 265px;
-				
+
 				li {
 					display: block;
 					float: left;
 					margin-right: 10px;
 				}
-				
+
 				li:first-child {
 					margin-left: 15px;
 				}
 			}
-			
+
 			#bouns-sticker {
 				float: right;
 				position: relative;
@@ -218,31 +253,31 @@
 				top: -37px;
 				z-index: 15;
 			}
-			
+
 			.header-quote {
 				background: url('../../images/header_frontpage_quotes.png') top left no-repeat;
 				float: left;
 				padding: 14px 0 0 35px;
 				width: 250px;
 				height: 186px;
-				
+
 				p#header-quote-text {
 					margin-bottom: 10px;
 				}
-				
+
 				div#read-more-signature {
 					background: url('../../images/header_frontpage_signature.png') right center no-repeat;
 					height: 33px;
 					line-height: 33px;
 					//margin-bottom: 11px;
 					width: 100%;
-					
+
 					a {
 						@include transition(color, 0.1s, ease-in-out);
 					}
 				}
 			}
-			
+
 			#newsletter-signup-box {
 				@include border-top-radius(10px);
 				@include border-bottom-right-radius(10px);
@@ -253,46 +288,46 @@
 				position: relative;
 				width: 250px;
 				z-index: 10;
-				
-				#header {
+
+				#newsletter-header {
 					@include border-top-radius(10px);
-					
+
 					background-color: #94918A;
 					padding: 15px 0 10px 20px;
-					
+
 					span#social-business-trends {
 						display: block;
 						height: 12px;
 					}
-					
+
 					span#newsletter {
 						display: block;
 						height: 18px;
 					}
-					
+
 				}
-				
-				#content {
+
+				#newsletter-content {
 					margin-bottom: 15px;
 					padding: 10px 20px 0;
 				}
-				
+
 				#newsletter-signup-button {					
 					@include border-radius(5px);
 					@include background-image(linear-gradient(top, #A4A19C, #7C7972));
-					
+
 					background-color: #7C7972;					
 					display: block;
 					float: right;
 					margin-right: 20px;
 					padding: 5px 20px;
-					
+
 					&:hover {
 						background-color: #7C7972 / 1.2;						
 						color: #FFF / 1.1;
 						@include background-image(linear-gradient(top, #A4A19C / 1.2, #7C7972 / 1.2));
 					}
-					
+
 					&:active {
 						color: #FFF / 1.2;
 						@include background-image(linear-gradient(top, #7C7972 / 1.2, #A4A19C / 1.2));

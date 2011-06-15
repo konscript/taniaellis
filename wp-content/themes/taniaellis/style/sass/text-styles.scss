@@ -44,7 +44,7 @@ html>body {
 	}
 }
 
-#header-content {
+#header {
 	#sub-heading {
 		text-transform: uppercase;
 		color: #94918A;
@@ -69,8 +69,26 @@ html>body {
 		}
 	}
 	
+	#navigation-header-standard {
+		li {
+			a {
+				color: #B0ADA6;
+				text-decoration: none;
+				text-transform: uppercase;
+				
+				&:hover {
+					color: #7C7973;
+				}
+			}
+			
+			.current {
+				color: #7C7973;
+			}
+		}
+	}
+	
 	/* FRONT PAGE HEADER MENU */
-	#social-business-menu {
+	#navigation-social-business {
 		li {
 			a {
 				color: #FFF;
@@ -91,7 +109,7 @@ html>body {
 		}
 	}
 	
-	#frontpage-header-content {
+	.header-content {
 		.header-quote {
 			h6 {
 				color: #7C7972;
@@ -121,7 +139,7 @@ html>body {
 		}
 		
 		#newsletter-signup-box {			
-			#header {
+			#newsletter-header {
 				color: #FFF;
 				text-transform: uppercase;
 				
@@ -134,7 +152,7 @@ html>body {
 				}
 			}
 			
-			#content {
+			#newsletter-content {
 				color: #FFF;
 				font-size: 1em;
 				line-height: 1.2em;
