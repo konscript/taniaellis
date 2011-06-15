@@ -132,21 +132,25 @@
 			li {
 				
 				a {
+					@include transition(color, 0.1s, ease-in-out);
+					
 					display: table-cell;
 					vertical-align: middle;
+					
+					span {
+						@include transition(background, 0.1s, ease-in-out);
+						
+						background: #ccc;
+						float: left;
+						height: 1em;
+						margin-right: 5px;
+						line-height: 1em;
+						width: 1em;
+					}
 					
 					&:hover span {
 						background: #7C7973;
 					}
-				}
-				
-				span {
-					background: #ccc;
-					float: left;
-					height: 1em;
-					margin-right: 5px;
-					line-height: 1em;
-					width: 1em;
 				}
 			}
 		}
@@ -197,6 +201,12 @@
 			padding: 15px 10px 10px;
 			position: relative;
 			width: 680px;
+			
+			.box {				
+				bottom: 10px;
+				right: 10px;
+				position: absolute;
+			}
 		}
 		
 		#frontpage-header-content {
