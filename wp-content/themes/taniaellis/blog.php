@@ -27,6 +27,34 @@
 	            <h2 class="first-line">Social Business</h2>
 		        <h2 class="second-line">Blog</h2>
 	        </div>
+	
+			<div class="header-left-box">
+				<h3 id="tagcloud-title">Join the conversation...</h3>
+				<div id="tagcloud">
+					<?php
+					
+					$default_colors = array(
+						'#a8a6cd',
+						'#91b997',
+						'#e7cd30',
+						'#83a8c2',
+						'#d7b590'
+					);
+					
+					$options = array();
+				    $options['color_names']     = $default_colors;
+					$options['min_size']        = 14;
+				    $options['max_size']        = 22;
+					$options['use_colors']      = true;
+					
+					if (function_exists('ilwp_tag_cloud'))
+						ilwp_tag_cloud($options);
+					
+					?>
+				</div>
+			</div>
+			
+			<div class="clearer"></div>
 
             <div class="box">                       
             </div>
