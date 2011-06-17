@@ -202,6 +202,16 @@
 			position: relative;
 			width: 680px;
 			
+			.header-title {
+				background: #7c7972;
+				@include border-bottom-right-radius(10px);
+				@include border-top-right-radius(10px);
+				height: 68px;
+				margin: 15px 0 0 -10px;
+				padding: 20px 0 0 20px;
+				width: 302px;
+			}
+			
 			.box {				
 				bottom: 10px;
 				right: 10px;

@@ -23,9 +23,12 @@
 	        )); 
 	    ?>
 		<div class="header-content">
+			<div class="header-title">
+	            <h2 class="first-line">Social Business</h2>
+		        <h2 class="second-line">Blog</h2>
+	        </div>
 
-            <div class="box">
-                Kristian skriger af epicness!	                       
+            <div class="box">                       
             </div>
 
 		</div> <!-- .header-content -->
