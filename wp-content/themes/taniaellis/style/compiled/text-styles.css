@@ -79,17 +79,43 @@ html > body {
   text-transform: uppercase;
 }
 /* line 90, ../sass/text-styles.scss */
-#header .header-content .header-left-box #tagcloud-title {
+#header .header-content .left-column #tagcloud-title {
   color: #7d7a75;
   font-size: 1.3em;
   text-transform: uppercase;
 }
 /* line 97, ../sass/text-styles.scss */
-#header .header-content .header-left-box #tagcloud a {
+#header .header-content .left-column #tagcloud a {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 107, ../sass/text-styles.scss */
+/* line 105, ../sass/text-styles.scss */
+#header .header-content .right-column h2 {
+  color: #7d7a75;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.2em;
+  margin-bottom: 5px;
+}
+/* line 113, ../sass/text-styles.scss */
+#header .header-content .right-column p {
+  color: #7d7a75;
+  line-height: 1.3em;
+  margin-bottom: 10px;
+}
+/* line 119, ../sass/text-styles.scss */
+#header .header-content .right-column a {
+  color: #7d7a75;
+  font-size: 1.1em;
+  font-weight: bold;
+  float: right;
+  text-decoration: none;
+}
+/* line 126, ../sass/text-styles.scss */
+#header .header-content .right-column a:hover {
+  text-decoration: underline;
+}
+/* line 135, ../sass/text-styles.scss */
 #header #navigation-header-standard li a {
   color: #b0ada6;
   font-size: 1em;
@@ -97,32 +123,32 @@ html > body {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 114, ../sass/text-styles.scss */
+/* line 142, ../sass/text-styles.scss */
 #header #navigation-header-standard li a:hover {
   color: #7C7973;
 }
-/* line 119, ../sass/text-styles.scss */
+/* line 147, ../sass/text-styles.scss */
 #header #navigation-header-standard li .current {
   color: #7C7973;
 }
-/* line 128, ../sass/text-styles.scss */
+/* line 156, ../sass/text-styles.scss */
 #header #navigation-social-business li a {
   color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 133, ../sass/text-styles.scss */
+/* line 161, ../sass/text-styles.scss */
 #header #navigation-social-business li a .social {
   font-weight: bold;
 }
-/* line 137, ../sass/text-styles.scss */
+/* line 165, ../sass/text-styles.scss */
 #header #navigation-social-business li a .term {
   font-family: "Arial Black", Arial, sans-serif;
   font-size: 1.4em;
   font-weight: bold;
   line-height: 1em;
 }
-/* line 149, ../sass/text-styles.scss */
+/* line 177, ../sass/text-styles.scss */
 #header .header-content .header-quote h6 {
   color: #7C7972;
   font-size: 1.2em;
@@ -130,84 +156,84 @@ html > body {
   line-height: 1.1em;
   margin-bottom: 10px;
 }
-/* line 157, ../sass/text-styles.scss */
+/* line 185, ../sass/text-styles.scss */
 #header .header-content .header-quote p#header-quote-text {
   color: #7C7972;
   line-height: 1.5em;
 }
-/* line 164, ../sass/text-styles.scss */
+/* line 192, ../sass/text-styles.scss */
 #header .header-content .header-quote div#read-more-signature a {
   color: #7C7972;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 169, ../sass/text-styles.scss */
+/* line 197, ../sass/text-styles.scss */
 #header .header-content .header-quote div#read-more-signature a:hover {
   color: #5f5d57;
 }
-/* line 177, ../sass/text-styles.scss */
+/* line 205, ../sass/text-styles.scss */
 #header .header-content #newsletter-signup-box #newsletter-header {
   color: #FFF;
   text-transform: uppercase;
 }
-/* line 184, ../sass/text-styles.scss */
+/* line 212, ../sass/text-styles.scss */
 #header .header-content #newsletter-signup-box #newsletter-header #newsletter {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.3em;
 }
-/* line 190, ../sass/text-styles.scss */
+/* line 218, ../sass/text-styles.scss */
 #header .header-content #newsletter-signup-box #newsletter-content {
   color: #FFF;
   font-size: 1em;
   line-height: 1.2em;
 }
-/* line 196, ../sass/text-styles.scss */
+/* line 224, ../sass/text-styles.scss */
 #header .header-content #newsletter-signup-box #newsletter-signup-button {
   color: #FFF;
   text-decoration: none;
 }
 
-/* line 207, ../sass/text-styles.scss */
+/* line 235, ../sass/text-styles.scss */
 #page .widget-container-left .header-container, #page .widget-container-right .header-container {
   color: #B0ADA6;
 }
-/* line 210, ../sass/text-styles.scss */
+/* line 238, ../sass/text-styles.scss */
 #page .widget-container-left .header-container .first-line, #page .widget-container-right .header-container .first-line {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 0.699em;
   text-transform: uppercase;
 }
-/* line 218, ../sass/text-styles.scss */
+/* line 246, ../sass/text-styles.scss */
 #page .widget-container-left .header-container .second-line, #page .widget-container-right .header-container .second-line {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 1.65em;
   text-transform: uppercase;
 }
-/* line 226, ../sass/text-styles.scss */
+/* line 254, ../sass/text-styles.scss */
 #page .widget-container-left .by-line, #page .widget-container-left .meta-data, #page .widget-container-right .by-line, #page .widget-container-right .meta-data {
   color: #94918A;
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 232, ../sass/text-styles.scss */
+/* line 260, ../sass/text-styles.scss */
 #page .widget-container-left .by-line, #page .widget-container-right .by-line {
   font-weight: bold;
 }
-/* line 236, ../sass/text-styles.scss */
+/* line 264, ../sass/text-styles.scss */
 #page .widget-container-left .title, #page .widget-container-right .title {
   color: #94918A;
   font-size: 1.3em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 243, ../sass/text-styles.scss */
+/* line 271, ../sass/text-styles.scss */
 #page .widget-container-left .excerpt, #page .widget-container-right .excerpt {
   color: #94918A;
   line-height: 1.4em;
 }
-/* line 249, ../sass/text-styles.scss */
+/* line 277, ../sass/text-styles.scss */
 #page .widget-container-left .options .read-more, #page .widget-container-left .options .view-cases, #page .widget-container-left .options .view-clients, #page .widget-container-right .options .read-more, #page .widget-container-right .options .view-cases, #page .widget-container-right .options .view-clients {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -225,21 +251,21 @@ html > body {
   font-size: 1.1em;
   text-decoration: none;
 }
-/* line 256, ../sass/text-styles.scss */
+/* line 284, ../sass/text-styles.scss */
 #page .widget-container-left .options .read-more:hover, #page .widget-container-left .options .view-cases:hover, #page .widget-container-left .options .view-clients:hover, #page .widget-container-right .options .read-more:hover, #page .widget-container-right .options .view-cases:hover, #page .widget-container-right .options .view-clients:hover {
   color: #608169;
 }
-/* line 262, ../sass/text-styles.scss */
+/* line 290, ../sass/text-styles.scss */
 #page .widget-container-left .view-all, #page .widget-container-right .view-all {
   color: #FFF;
   text-decoration: none;
 }
-/* line 266, ../sass/text-styles.scss */
+/* line 294, ../sass/text-styles.scss */
 #page .widget-container-left .view-all:hover, #page .widget-container-right .view-all:hover {
   color: #e7e7e7;
 }
 
-/* line 276, ../sass/text-styles.scss */
+/* line 304, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: 500;

@@ -23,12 +23,12 @@
 	        )); 
 	    ?>
 		<div class="header-content">
-			<div class="header-title">
-	            <h2 class="first-line">Social Business</h2>
-		        <h2 class="second-line">Blog</h2>
-	        </div>
-	
-			<div class="header-left-box">
+			<div class="left-column">
+				<div class="header-title">
+		            <h2 class="first-line">Social Business</h2>
+			        <h2 class="second-line">Blog</h2>
+		        </div>
+		
 				<h3 id="tagcloud-title">Join the conversation...</h3>
 				<div id="tagcloud">
 					<?php
@@ -53,11 +53,14 @@
 					?>
 				</div>
 			</div>
-			
-			<div class="clearer"></div>
+			<div class="right-column">
+				<div class="header-right-box">
+					<h2>What are the focus of change that are opening up for new business opportunities and social innovations?</h2>
+					<p>Lorem ipsum dolor sit amet, doalr sit consec tetuer adipscing elit, sed diam nonum my nibh euismod.</p>
 
-            <div class="box">                       
-            </div>
+					<a class="join" href="#">Join the conversation</a>
+				</div>
+			</div>
 
 		</div> <!-- .header-content -->
 	</div> <!-- #.header-container -->
