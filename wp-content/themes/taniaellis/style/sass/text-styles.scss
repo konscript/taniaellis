@@ -69,10 +69,71 @@ html>body {
 		}
 	}
 	
+	.header-content {
+		.header-title {
+			color: #fff;
+			
+			.first-line {
+				font-size: 1.8em;
+				text-transform: uppercase;
+			}
+			
+			.second-line {
+				font-family: "Arial Black", Arial, sans-serif;
+				font-size: 2.6em;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+		
+		.left-column {
+			#tagcloud-title {
+				color: #7d7a75;
+				font-size: 1.3em;
+				text-transform: uppercase;
+			}
+			
+			#tagcloud {
+				a {
+					text-decoration: none;
+					text-transform: uppercase;
+				}
+			}
+		}
+		
+		.right-column {
+			h2 {
+				color: #7d7a75;
+				font-size: 1.2em;
+				font-weight: bold;
+				line-height: 1.2em;
+				margin-bottom: 5px;
+			}
+			
+			p {
+				color: #7d7a75;
+				line-height: 1.3em;
+				margin-bottom: 10px;
+			}
+			
+			a {
+				color: #7d7a75;
+				font-size: 1.1em;
+				font-weight: bold;
+				float: right;
+				text-decoration: none;
+				
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	
 	#navigation-header-standard {
 		li {
 			a {
-				color: #B0ADA6;
+				color: #b0ada6;
 				font-size: 1em;
 				line-height: 1em;
 				text-decoration: none;

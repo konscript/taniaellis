@@ -5,7 +5,8 @@ if(function_exists( 'register_nav_menus')) {
 	    'navigation-top'        => 'Top Menu',
 	    'navigation-pages'      => 'Page Menu',
 	    'social-business-menu'  => 'Social Business Menu',
-	    'club-menu'             => 'Club Menu'
+	    'club-menu'             => 'Club Menu',
+		'blog-menu'				=> 'Blog Menu'
 	    )
 	);
 }
