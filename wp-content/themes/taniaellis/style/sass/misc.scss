@@ -243,15 +243,15 @@
 				
 				.box-header {
 					@include border-top-radius(10px);
-
+			
 					background-color: #93B897;
 					padding: 15px 20px 10px 20px;
-
+			
 					span.box-first-line {
 						display: block;
 						height: 12px;
 					}
-
+			
 					span.box-second-line {
 						display: block;
 						height: 18px;
@@ -295,6 +295,7 @@
 				right: 287px;
 				top: -40px;
 				width: 265px;
+				z-index: 999; 
 
 				li {
 					display: block;
@@ -400,6 +401,55 @@
 }
 
 #page {
+	position: relative;
+	
+	#social-bar {
+		background-color: #C7C2BB;
+		@include border-bottom-radius(10px);
+		height: 40px;
+		position: absolute;
+		right: 50px;
+		top: -20px;
+		width: 500px;
+	
+		li {
+			display: block;
+			float: left;
+			margin-right: 10px;
+		}
+	
+		li:first-child {
+			margin-left: 15px;
+		}
+	}
+	
+	.box {
+		@include border-radius(10px);
+		background-color: #C7C2BB;
+		bottom: 0px;
+		height: 200px;
+		right: 0px;
+		position: absolute;
+		width: 250px;
+		
+		.box-header {
+			@include border-top-radius(10px);
+
+			background-color: #93B897;
+			padding: 15px 20px 10px 20px;
+
+			span.box-first-line {
+				display: block;
+				height: 12px;
+			}
+
+			span.box-second-line {
+				display: block;
+				height: 18px;
+			}
+		}
+	}
+	
 	.widget-container-left {
 		clear: left;
 		float: left;
