@@ -44,7 +44,9 @@
 	                			<span id="newsletter">Newsletter</span>
 	            			</p>
 	            			
-							<p id="newsletter-content">Sign up for my newsletter and get the FREE bonus guide along with monthly inspiration on social business and heartcore value. Sign up and I will email you the guide.</p>
+							<p id="newsletter-content">
+                            Sign up for my newsletter and get the FREE bonus guide along with monthly inspiration on social business and heartcore value. Sign up and I will email you the guide.
+							</p>
 	            			<a id="newsletter-signup-button" href="javascript:void(0)">Subscribe</a>
 	        			</div>
 	

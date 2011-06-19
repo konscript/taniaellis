@@ -25,7 +25,13 @@
 	    			<div class="header-content">
 
 	                    <div class="box">
-	                        Tomas er pisse nice!	                       
+	                        <p class="box-header">
+	                			<span class="box-first-line">Become a Member</span>
+	                			<span class="box-second-line">Of the Club</span>
+	            			</p>
+	            			
+							<p class="box-content"></p>
+	            			<a class="box-button" href="javascript:void(0)">Join the Club</a>	                       
 	                    </div>
 
 	    			</div> <!-- #frontpage-header-content -->

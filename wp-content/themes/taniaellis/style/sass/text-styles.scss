@@ -140,6 +140,23 @@ html>body {
 			}
 		}
 		
+		.box {				
+			
+			.box-header {
+				color: #FFF;
+				text-transform: uppercase;
+
+				span.box-first-line {
+
+				}
+
+				span.box-second-line {
+					font-family: "Arial Black", Arial, Helvetica, sans-serif;
+					font-size: 1.3em;
+				}
+			}
+		}
+		
 		#newsletter-signup-box {			
 			#newsletter-header {
 				color: #FFF;

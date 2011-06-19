@@ -206,6 +206,24 @@
 				bottom: 10px;
 				right: 10px;
 				position: absolute;
+				width: 250px;
+				
+				.box-header {
+					@include border-top-radius(10px);
+
+					background-color: #93B897;
+					padding: 15px 20px 10px 20px;
+
+					span.box-first-line {
+						display: block;
+						height: 12px;
+					}
+
+					span.box-second-line {
+						display: block;
+						height: 18px;
+					}
+				}
 			}
 		}
 		
