@@ -30,6 +30,8 @@
 	                			<span class="box-second-line">Of the Club</span>
 	            			</p>
 	            			
+	            			<!-- Test -->
+	            			
 							<p class="box-content"></p>
 	            			<a class="box-button" href="javascript:void(0)">Join the Club</a>	                       
 	                    </div>
