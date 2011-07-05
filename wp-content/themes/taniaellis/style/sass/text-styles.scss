@@ -201,6 +201,23 @@ html>body {
 			}
 		}
 		
+		.box {				
+			
+			.box-header {
+				color: #FFF;
+				text-transform: uppercase;
+
+				span.box-first-line {
+
+				}
+
+				span.box-second-line {
+					font-family: "Arial Black", Arial, Helvetica, sans-serif;
+					font-size: 1.3em;
+				}
+			}
+		}
+		
 		#newsletter-signup-box {			
 			#newsletter-header {
 				color: #FFF;
@@ -230,74 +247,89 @@ html>body {
 }
 
 #page {
-	//.left-sidebar {
-		.widget-container-left, .widget-container-right {			
-			.header-container {
-				color: #B0ADA6;
+	
+	.box {				
+		
+		.box-header {
+			color: #FFF;
+			text-transform: uppercase;
 
-				.first-line {
-					font-family: "Arial Black", Arial, Helvetica, sans-serif;
-					font-size: 1.8em;
-					
-					line-height: 0.699em;
-					text-transform: uppercase;
-				}
-				
-				.second-line {
-					font-family: Arial, Helvetica, sans-serif;
-					font-size: 1.8em;
-					line-height: 1.65em;
-					text-transform: uppercase;
-				}
+			span.box-first-line {
+
 			}
 
-			.by-line, .meta-data {
-				color: #94918A;
-				font-size: 0.9em;
-				text-transform: uppercase;
-			}
-			
-			.by-line {
-				font-weight: bold;
-			}
-			
-			.title {
-				color: #94918A;
+			span.box-second-line {
+				font-family: "Arial Black", Arial, Helvetica, sans-serif;
 				font-size: 1.3em;
-				font-weight: bold;
+			}
+		}
+	}
+	
+	.widget-container-left, .widget-container-right {			
+		.header-container {
+			color: #B0ADA6;
+
+			.first-line {
+				font-family: "Arial Black", Arial, Helvetica, sans-serif;
+				font-size: 1.8em;
+				
+				line-height: 0.699em;
 				text-transform: uppercase;
 			}
 			
-			.excerpt {
-				color: #94918A;
-				line-height: 1.4em;
+			.second-line {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 1.8em;
+				line-height: 1.65em;
+				text-transform: uppercase;
 			}
-			
-			.options {
-				.read-more, .view-cases, .view-clients {
-					@include transition(color, 0.1s, ease-in-out);
-					
-					color: #749B7F;
-					font-size: 1.1em;
-					text-decoration: none;
-					
-					&:hover {
-						color: #749B7F / 1.2;
-					}
-				}
-			}
-			
-			.view-all {				
-				color: #FFF;
+		}
+
+		.by-line, .meta-data {
+			color: #94918A;
+			font-size: 0.9em;
+			text-transform: uppercase;
+		}
+		
+		.by-line {
+			font-weight: bold;
+		}
+		
+		.title {
+			color: #94918A;
+			font-size: 1.3em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		
+		.excerpt {
+			color: #94918A;
+			line-height: 1.4em;
+		}
+		
+		.options {
+			.read-more, .view-cases, .view-clients {
+				@include transition(color, 0.1s, ease-in-out);
+				
+				color: #749B7F;
+				font-size: 1.1em;
 				text-decoration: none;
 				
 				&:hover {
-					color: #FFF / 1.1;
-				}	
+					color: #749B7F / 1.2;
+				}
 			}
-			
 		}
-	//}
+		
+		.view-all {				
+			color: #FFF;
+			text-decoration: none;
+			
+			&:hover {
+				color: #FFF / 1.1;
+			}	
+		}	
+	}
 }
 
 #footer-bar { 
