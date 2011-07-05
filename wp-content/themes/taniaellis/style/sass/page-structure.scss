@@ -29,14 +29,13 @@ html, body {
 			background: #fff;
 			//height: 100%;
 			margin: 0 auto;
-			padding: 60px 22px 30px;
-			width: 962px;
-			//@include box-shadow(#888 -3px 20px 25px 5px);
-			background: url('../../images/gradient_box.png') top left no-repeat;
+			padding: 60px 0 30px;
+			width: 960px;
+			@include box-shadow(#888 -3px 20px 25px 5px);
+			background: #fff;
 			
 			section.left-sidebar, section.right-sidebar {
 				float: left;
-				//min-height: 100%;
 			}
 			
 			section.left-sidebar {
