@@ -228,11 +228,23 @@
 			}
 			
 			.right-column {
-				
 				float: left;
 				height: 100%;
-				width: 230px;
-				padding: 38px 0 0 90px;
+				width: 250px;
+				padding: 23px 0 0 90px;
+				
+				h2 {
+					margin-bottom: 10px;
+				}
+				
+				a {
+					@include transition(color, 0.1s, ease-in-out);
+					color: #7d7a75;
+					
+					&:hover {
+						color: #7d7a75 / 1.2;
+					}
+				}
 			}
 			
 			.box {				
@@ -408,7 +420,7 @@
 		@include border-bottom-radius(10px);
 		height: 40px;
 		position: absolute;
-		right: 50px;
+		right: 60px;
 		top: -20px;
 		width: 500px;
 	

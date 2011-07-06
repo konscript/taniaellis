@@ -104,10 +104,9 @@ html>body {
 		.right-column {
 			h2 {
 				color: #7d7a75;
-				font-size: 1.2em;
+				font-size: 1.1em;
 				font-weight: bold;
 				line-height: 1.2em;
-				margin-bottom: 5px;
 			}
 			
 			p {
@@ -122,10 +121,6 @@ html>body {
 				font-weight: bold;
 				float: right;
 				text-decoration: none;
-				
-				&:hover {
-					text-decoration: underline;
-				}
 			}
 		}
 	}
