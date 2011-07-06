@@ -27,35 +27,39 @@ html, body {
 #page-wrapper #page-content #page, #page-wrapper #page-content-frontpage #page {
   background: #fff;
   margin: 0 auto;
-  padding: 60px 22px 30px;
-  width: 962px;
-  background: url("../../images/gradient_box.png") top left no-repeat;
+  padding: 60px 0 30px;
+  width: 960px;
+  -moz-box-shadow: #888888 -3px 20px 25px 5px;
+  -webkit-box-shadow: #888888 -3px 20px 25px 5px;
+  -o-box-shadow: #888888 -3px 20px 25px 5px;
+  box-shadow: #888888 -3px 20px 25px 5px;
+  background: #fff;
 }
 /* line 36, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.left-sidebar, #page-wrapper #page-content #page section.right-sidebar, #page-wrapper #page-content-frontpage #page section.left-sidebar, #page-wrapper #page-content-frontpage #page section.right-sidebar {
   float: left;
 }
-/* line 41, ../sass/page-structure.scss */
+/* line 40, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.left-sidebar, #page-wrapper #page-content-frontpage #page section.left-sidebar {
   border-right: 1px solid #c6c2b7;
   width: 330px;
 }
-/* line 46, ../sass/page-structure.scss */
+/* line 45, ../sass/page-structure.scss */
 #page-wrapper #page-content #page section.right-sidebar, #page-wrapper #page-content-frontpage #page section.right-sidebar {
   border-left: 1px solid #c6c2b7;
   margin-left: -1px;
   padding-left: 20px;
 }
-/* line 54, ../sass/page-structure.scss */
+/* line 53, ../sass/page-structure.scss */
 #page-wrapper #page-content {
   margin-top: 30px;
 }
-/* line 58, ../sass/page-structure.scss */
+/* line 57, ../sass/page-structure.scss */
 #page-wrapper #page-content-frontpage {
   margin-top: 75px;
 }
 
-/* line 63, ../sass/page-structure.scss */
+/* line 62, ../sass/page-structure.scss */
 footer {
   margin: 0 auto;
   position: relative;
