@@ -18,12 +18,12 @@ html, body {
   width: 960px;
 }
 /* line 22, ../sass/page-structure.scss */
-#page-wrapper #page-content, #page-wrapper #page-content-frontpage {
+#page-wrapper #page-content, #page-wrapper #page-content-frontpage, #page-wrapper #page-content-single {
   padding-top: 30px;
   z-index: 1;
 }
 /* line 26, ../sass/page-structure.scss */
-#page-wrapper #page-content #page, #page-wrapper #page-content-frontpage #page {
+#page-wrapper #page-content #page, #page-wrapper #page-content-frontpage #page, #page-wrapper #page-content-single #page {
   background: #fff;
   margin: 0 auto;
   padding: 60px 0 30px;
@@ -35,16 +35,16 @@ html, body {
   background: #fff;
 }
 /* line 35, ../sass/page-structure.scss */
-#page-wrapper #page-content #page section.left-sidebar, #page-wrapper #page-content #page section.right-sidebar, #page-wrapper #page-content-frontpage #page section.left-sidebar, #page-wrapper #page-content-frontpage #page section.right-sidebar {
+#page-wrapper #page-content #page section.left-sidebar, #page-wrapper #page-content #page section.right-sidebar, #page-wrapper #page-content-frontpage #page section.left-sidebar, #page-wrapper #page-content-frontpage #page section.right-sidebar, #page-wrapper #page-content-single #page section.left-sidebar, #page-wrapper #page-content-single #page section.right-sidebar {
   float: left;
 }
 /* line 39, ../sass/page-structure.scss */
-#page-wrapper #page-content #page section.left-sidebar, #page-wrapper #page-content-frontpage #page section.left-sidebar {
+#page-wrapper #page-content #page section.left-sidebar, #page-wrapper #page-content-frontpage #page section.left-sidebar, #page-wrapper #page-content-single #page section.left-sidebar {
   border-right: 1px solid #c6c2b7;
   width: 330px;
 }
 /* line 44, ../sass/page-structure.scss */
-#page-wrapper #page-content #page section.right-sidebar, #page-wrapper #page-content-frontpage #page section.right-sidebar {
+#page-wrapper #page-content #page section.right-sidebar, #page-wrapper #page-content-frontpage #page section.right-sidebar, #page-wrapper #page-content-single #page section.right-sidebar {
   border-left: 1px solid #c6c2b7;
   margin-left: -1px;
   padding-left: 20px;
@@ -57,10 +57,15 @@ html, body {
 /* line 57, ../sass/page-structure.scss */
 #page-wrapper #page-content-frontpage {
   background: url("../../images/background_gradient.png") repeat-x;
-  margin-top: 75px;
+  margin-top: 35px;
+}
+/* line 62, ../sass/page-structure.scss */
+#page-wrapper #page-content-single {
+  background: url("../../images/background_gradient_grey.png") repeat-x;
+  margin-top: 30px;
 }
 
-/* line 63, ../sass/page-structure.scss */
+/* line 68, ../sass/page-structure.scss */
 footer {
   margin: 0 auto;
   position: relative;

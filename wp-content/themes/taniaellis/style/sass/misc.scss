@@ -111,8 +111,9 @@
 	
 	
 	#header-container {
-		width: 100%;
 		float: left;
+		height: 310px;
+		width: 100%;
 		
 		.navigation-header {
 			float: left;		
@@ -446,8 +447,8 @@
 		
 		.box-header {
 			@include border-top-radius(10px);
-
-			background-color: #93B897;
+			
+			background-color: #7C7972;
 			padding: 15px 20px 10px 20px;
 
 			span.box-first-line {

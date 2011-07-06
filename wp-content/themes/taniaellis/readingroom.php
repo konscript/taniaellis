@@ -64,7 +64,15 @@
                         <span class="box-first-line">Buy The Latest Book</span>
                         <span class="box-second-line">The New Pioneers</span>
                     </p>
-                    <p class="box-content"></p>
+                    <p class="box-content">
+                      <?php
+                      
+                      
+                      echo get_post_meta($post->ID, 'Newsletter', true);
+                      
+                      ?>
+                      
+                    </p>
                     <a class="box-button" href="javascript:void(0)">Join the Club</a>                       
                 </div>
     </div>
