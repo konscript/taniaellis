@@ -444,6 +444,7 @@
 		right: 0px;
 		position: absolute;
 		width: 250px;
+		z-index: 999;
 		
 		.box-header {
 			@include border-top-radius(10px);
