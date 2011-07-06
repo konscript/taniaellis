@@ -72,23 +72,24 @@ Template Name: Home
         
         <!-- id="newsletter-signup-box" -->
         
-        <ul id="social-bar">
+        <ul id="social-bar-frontpage">
           <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_youtube.png" alt="YouTube" title="YouTube" /></a></li>
           <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_rss.png" alt="RSS" title="RSS" /></a></li>
           <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_twitter.png" alt="Twitter" title="Twitter" /></a></li>
           <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_facebook.png" alt="Facebook" title="Facebook" /></a></li>
           <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
         
-          <div class="box">
-            <p id="newsletter-header">
-              <span id="social-business-trends">Social business trends</span>
-              <span id="newsletter">Newsletter</span>
+          <div class="box" id="box-frontpage">
+            <p class="box-header">
+              <span class="box-first-line">Social business trends</span>
+              <span class="box-second-line">Newsletter</span>
             </p>
 
-            <p id="newsletter-content">
+            <p class="box-content">
               Sign up for my newsletter and get the FREE bonus guide along with monthly inspiration on social business and heartcore value. Sign up and I will email you the guide.
             </p>
-            <a id="newsletter-signup-button" href="javascript:void(0)">Subscribe</a>
+            
+            <a class="box-button" href="javascript:void(0)">Subscribe</a>
           </div>
         </ul>
         

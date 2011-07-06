@@ -285,7 +285,7 @@
 			img#intro-movie {				
 				float: left;
 				left: 35px;
-				margin-right: 50px;
+				margin-right: 58px;
 				position: relative;
 				top: -40px;
 				z-index: 999;
@@ -416,8 +416,7 @@
 #page {
 	position: relative;
 	
-	#social-bar {
-		background-color: #C7C2BB;
+	#social-bar, #social-bar-frontpage {
 		@include border-bottom-radius(10px);
 		height: 40px;
 		position: absolute;
@@ -436,11 +435,19 @@
 		}
 	}
 	
+	#social-bar {
+		background-color: #C7C2BB;
+	}
+	
+	#social-bar-frontpage {
+		background-color: #9CC1A2;
+	}
+	
 	.box {
 		@include border-radius(10px);
 		background-color: #C7C2BB;
 		bottom: 0px;
-		height: 200px;
+		height: 180px;
 		right: 0px;
 		position: absolute;
 		width: 250px;
@@ -462,6 +469,37 @@
 				height: 18px;
 			}
 		}
+		
+		.box-content {
+			margin-bottom: 15px;
+			padding: 10px 20px 0;
+		}
+		
+		.box-button {					
+			@include border-radius(5px);
+			@include background-image(linear-gradient(top, #A4A19C, #7C7972));
+
+			background-color: #7C7972;					
+			display: block;
+			float: right;
+			margin-right: 20px;
+			padding: 5px 20px;
+
+			&:hover {
+				background-color: #7C7972 / 1.2;						
+				color: #FFF / 1.1;
+				@include background-image(linear-gradient(top, #A4A19C / 1.2, #7C7972 / 1.2));
+			}
+
+			&:active {
+				color: #FFF / 1.2;
+				@include background-image(linear-gradient(top, #7C7972 / 1.2, #A4A19C / 1.2));
+			}
+		}
+	}
+	
+	#box-frontpage {
+		background-color: #9CC1A2;
 	}
 	
 	.widget-container-left {

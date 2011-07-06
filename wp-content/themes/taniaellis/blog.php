@@ -72,6 +72,25 @@
 
 <div id="page-content">
 	<div id="page">
+	  
+	  <div id="social-bar">
+      <ul>
+        <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_youtube.png" alt="YouTube" title="YouTube" /></a></li>
+        <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_rss.png" alt="RSS" title="RSS" /></a></li>
+        <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_twitter.png" alt="Twitter" title="Twitter" /></a></li>
+        <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_facebook.png" alt="Facebook" title="Facebook" /></a></li>
+        <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
+      </ul>
+      <div class="box">
+        <p class="box-header">
+          <span class="box-first-line">Become a Member</span>
+          <span class="box-second-line">Of the Club</span>
+        </p>
+        <p class="box-content"></p>
+        <a class="box-button" href="javascript:void(0)">Join the Club</a>                       
+      </div>
+    </div>
+	  
 		<section class="left-sidebar">
 			&nbsp;
 		</section>
