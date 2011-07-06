@@ -87,6 +87,7 @@ Template Name: Home
 
             <p class="box-content">
               Sign up for my newsletter and get the FREE bonus guide along with monthly inspiration on social business and heartcore value. Sign up and I will email you the guide.
+              
             </p>
             
             <a class="box-button" href="javascript:void(0)">Subscribe</a>

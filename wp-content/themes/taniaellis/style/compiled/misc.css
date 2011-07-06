@@ -627,7 +627,7 @@
   border-radius: 10px;
   background-color: #C7C2BB;
   bottom: 0px;
-  height: 180px;
+  min-height: 180px;
   right: 0px;
   position: absolute;
   width: 250px;
