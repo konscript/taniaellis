@@ -20,7 +20,6 @@ html, body {
 	}
 	
 	#page-content, #page-content-frontpage {
-		background: url('../../images/background_gradient.png') repeat-x;
 		padding-top: 30px;
 		z-index: 1;
 		
@@ -51,10 +50,12 @@ html, body {
 	}
 	
 	#page-content {
+		background: url('../../images/background_gradient_grey.png') repeat-x;
 		margin-top: 30px;
 	}
 	
 	#page-content-frontpage {
+		background: url('../../images/background_gradient.png') repeat-x;
 		margin-top: 75px;
 	}
 }
