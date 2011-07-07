@@ -39,6 +39,15 @@ Template Name: Article Single
 
     <div id="page-content-single">
       <div id="page">
+        <div id="social-bar">
+          <ul>
+            <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_youtube.png" alt="YouTube" title="YouTube" /></a></li>
+            <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_rss.png" alt="RSS" title="RSS" /></a></li>
+            <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_twitter.png" alt="Twitter" title="Twitter" /></a></li>
+            <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_facebook.png" alt="Facebook" title="Facebook" /></a></li>
+            <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
+          </ul>
+        </div>
         <section class="left-sidebar">
           <div class="widget-container-left widget-books">
             <div class="header-container">
@@ -162,7 +171,7 @@ Template Name: Article Single
 
                             </section>
 
-                            <section class="right-sidebar">
+                            <section class="right-sidebar-single">
                               <div class="widget-container-right widget-event">
                                 <div class="header-container">
                                   <h2 class="first-line">Upcoming</h2>
