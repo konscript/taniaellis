@@ -58,7 +58,7 @@ Template Name: Home
             <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
           </ul> -->
 
-          <img src="<?php bloginfo('template_url') ?>/images/newsletter_bonus_sticker.png" alt="" id="bouns-sticker" />
+          <!-- <img src="<?php bloginfo('template_url') ?>/images/newsletter_bonus_sticker.png" alt="" id="bouns-sticker" /> -->
         </div> <!-- #frontpage-header-content -->
       </div> <!-- #frontpage-header-container -->
 
@@ -86,8 +86,10 @@ Template Name: Home
             </p>
 
             <p class="box-content">
-              Sign up for my newsletter and get the FREE bonus guide along with monthly inspiration on social business and heartcore value. Sign up and I will email you the guide.            </p>
+              Sign up for my newsletter and get the FREE bonus guide along with monthly inspiration on social business and heartcore value. Sign up and I will email you the guide.
+            </p>
             
+            <img src="<?php bloginfo('template_url') ?>/images/newsletter_bonus_sticker.png" alt="" id="bonus-sticker" />
             <a class="box-button" href="javascript:void(0)">Subscribe</a>
           </div>
         </ul>
