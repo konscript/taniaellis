@@ -92,11 +92,13 @@
     </div>
 	  
 		<section class="left-sidebar">
+			<?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(2); ?>
 			&nbsp;
 		</section>
 		
 		<section class="right-sidebar">
-		    &nbsp;
+		    <?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(1); ?>
+			&nbsp;
 		</section>
 		
 		<div class="clearer"></div>

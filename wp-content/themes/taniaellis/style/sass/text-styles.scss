@@ -271,7 +271,7 @@ html>body {
 		}
 	}
 	
-	.widget-container-left, .widget-container-right {			
+	.widget {			
 		.header-container {
 			color: #B0ADA6;
 
@@ -290,50 +290,54 @@ html>body {
 				text-transform: uppercase;
 			}
 		}
+		
+		.item {
 
-		.by-line, .meta-data {
-			color: #94918A;
-			font-size: 0.9em;
-			text-transform: uppercase;
-		}
+			.by-line, .meta-data {
+				color: #94918A;
+				font-size: 0.9em;
+				text-transform: uppercase;
+			}
 		
-		.by-line {
-			font-weight: bold;
-		}
+			.by-line {
+				font-weight: bold;
+			}
 		
-		.title {
-			color: #94918A;
-			font-size: 1.3em;
-			font-weight: bold;
-			text-transform: uppercase;
-		}
+			.title {
+				color: #94918A;
+				font-size: 1.3em;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
 		
-		.excerpt {
-			color: #94918A;
-			line-height: 1.4em;
-		}
+			.excerpt {
+				color: #94918A;
+				line-height: 1.4em;
+			}
 		
-		.options {
-			.read-more, .view-cases, .view-clients {
-				@include transition(color, 0.1s, ease-in-out);
+			.options {
+				.read-more, .view-cases, .view-clients {
+					@include transition(color, 0.1s, ease-in-out);
 				
-				color: #749B7F;
-				font-size: 1.1em;
-				text-decoration: none;
+					color: #749B7F;
+					font-size: 1.1em;
+					text-decoration: none;
 				
-				&:hover {
-					color: #749B7F / 1.2;
+					&:hover {
+						color: #749B7F / 1.2;
+					}
 				}
 			}
-		}
 		
-		.view-all {				
-			color: #FFF;
-			text-decoration: none;
+			.view-all {				
+				color: #FFF;
+				text-decoration: none;
 			
-			&:hover {
-				color: #FFF / 1.1;
-			}	
+				&:hover {
+					color: #FFF / 1.1;
+				}	
+			}
+		
 		}	
 	}
 }

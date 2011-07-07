@@ -511,108 +511,124 @@
 		background-color: #9CC1A2;
 	}
 	
-	.widget-container-left {
-		clear: left;
-		float: left;
-		margin-top: 50px;
-		width: 320px;
-		
-		&:first-child {
-			margin-top: 0;
-		} 
-		
-		.item {
-			border-bottom: 1px solid #CCC;
+	.left-sidebar {
+		.widget {
+			clear: left;
 			float: left;
-			margin-bottom: 20px;
-			padding-left: 40px;
-			padding-bottom: 20px;
-			width: 260px;
-		}
-	}
-	
-	.widget-container-right {
-		clear: left;
-		float: left;
-		margin-top: 50px;
-		width: 560px;
-		
-		&:first-child {
-			margin-top: 0px;
-		}
-		
-		.item {
-			float: left;
-			margin-bottom: 20px;
-			padding-left: 40px;
-			width: 520px;
-		
-			.item-content {
-				float: left;
+			margin-top: 50px;
+			width: 320px;
+
+			&:first-child {
+				margin-top: 0;
+			} 
+
+			.item {
 				border-bottom: 1px solid #CCC;
+				float: left;
+				margin-bottom: 20px;
+				padding-left: 40px;
 				padding-bottom: 20px;
+				width: 260px;
 			}
 		}
 		
-		.excerpt {
+		.widget-blog {
+			background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
+
+			.blog {
+				@include featured-image(250px, 0);
+
+				.excerpt {
+					width: 260px;
+				}
+			}
+		}
+	}
+	
+	.right-sidebar {
+		.widget {
+			clear: left;
 			float: left;
+			margin-top: 50px;
+			width: 560px;
+
+			&:first-child {
+				margin-top: 0px;
+			}
+
+			.item {
+				float: left;
+				margin-bottom: 20px;
+				padding-left: 40px;
+				width: 520px;
+
+				.item-content {
+					float: left;
+					border-bottom: 1px solid #CCC;
+					padding-bottom: 20px;
+				}
+			}
+
+			.excerpt {
+				float: left;
+			}
+
+			.view-all {
+				margin-right: 0;
+			}
 		}
 		
-		.view-all {
-			margin-right: 0;
+		.widget-blog {
+			background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
+
+			.blog {
+				@include featured-image(240px, 20px);
+
+				.meta-data {
+					float: right;
+					width: 250px;
+				}
+
+				.title, .excerpt {
+					clear: right;
+					float: right;
+					width: 250px;
+				}
+
+				.options {
+					clear: right;
+					float: right;
+					width: 250px;
+				}
+			}
 		}
 	}
 	
 	.widget-event {
 		background: url('../../images/post_type_icon_events.png') top left no-repeat;
-	}
-	
-	.event {
-		@include featured-image(100px, 20px);
 		
-		.meta-data {
-			//float: left;
-			width: 390px;
-		}
-		
-		// Probably not needed?
-		.title {
-			//float: left;
-			width: 390px;
-		}
-		
-		.excerpt {
-			width: 390px;
-		}
-		
-		.options {
-			float: right;
-			width: 390px;
-		}
-	}
-	
-	.widget-featured-blog {
-		background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
-	}
-	
-	.featured-blog {
-		@include featured-image(240px, 20px);
-		
-		.meta-data {
-			float: right;
-			width: 250px;
-		}
-		
-		.title, .excerpt {
-			clear: right;
-			float: right;
-			width: 250px;
-		}
-		
-		.options {
-			clear: right;
-			float: right;
-			width: 250px;
+		.event {
+			@include featured-image(100px, 20px);
+
+			.meta-data {
+				//float: left;
+				width: 390px;
+			}
+
+			// Probably not needed?
+			.title {
+				//float: left;
+				width: 390px;
+			}
+
+			.excerpt {
+				width: 390px;
+			}
+
+			.options {
+				float: right;
+				width: 390px;
+			}
 		}
 	}
 	
@@ -676,30 +692,18 @@
 	
 	.widget-books {
 		background: url('../../images/post_type_icon_books.png') top left no-repeat;
-	}
-	
-	.book {
-		@include featured-image(60px, 20px);
-	}
-	
-	.widget-blog {
-		background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
-	}
-	
-	.blog {
-		@include featured-image(250px, 0);
 		
-		.excerpt {
-			width: 260px;
+		.book {
+			@include featured-image(60px, 20px);
 		}
 	}
 	
 	.widget-reading-room {
 		background: url('../../images/post_type_icon_reading_room.png') top left no-repeat;
-	}
-	
-	.reading-room {
-		@include featured-image(60px, 20px);
+		
+		.reading-room {
+			@include featured-image(60px, 20px);
+		}
 	}
 	
 	.by-line {

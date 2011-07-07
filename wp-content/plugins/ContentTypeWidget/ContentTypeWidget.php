@@ -36,10 +36,10 @@ class ContentTypeWidget extends WP_Widget {
 		
 		switch($instance['postType']) {
 			default:
-				$class = 'widget-books';
+				$widget_class = 'blog';
 				break;
 			case 'te_article':
-				$class = 'widget-reading-room';
+				$widget_class = 'reading-room';
 				break;
 		}
 		
@@ -48,7 +48,7 @@ class ContentTypeWidget extends WP_Widget {
 		else
 			$side = 'left';
 		
-		echo "<div class=\"widget-container-$side $class\">";
+		echo "<div class=\"widget widget-$widget_class\">";
 		
 		// START -> Title
 		
@@ -62,6 +62,39 @@ class ContentTypeWidget extends WP_Widget {
 	 	
 		</div><?php
 		
+		// START -> Post
+		
+		for($i = 1; $i <= $instance['itemCount']; $i++) {
+			echo "<div class=\"item $widget_class\"><div class='item-content'>";
+			$item = "item_$i";
+			$postId = $instance[$item];
+			
+			$attr = array(
+				'class'	=> "featured-image"
+			);
+			
+			echo get_the_post_thumbnail($postId, 'post-wide-thumbnail', $attr);
+			
+			$qpost = get_post($postId);
+			
+			echo "<p class=\"meta-data\">13 Mar 2011</p>";
+			
+			$title = $qpost->post_title;
+			$title = apply_filters('post_title', $title);
+			$title = str_replace(']]>', ']]&gt;', $title);
+			
+			echo "<h2 class=\"title\">$title</h2>";
+			
+			
+			$content = $qpost->post_content;
+			$content = str_replace(']]>', ']]&gt;', $content);
+			
+			echo "<p class=\"excerpt\">$content</p>";
+			
+			echo "<div class=\"options\"><a class=\"read-more\" href=\"#\">Read more</a></div>";
+			
+			echo "</div></div>";
+		}
 
 		echo $after_widget;
 		

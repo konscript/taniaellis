@@ -1,6 +1,9 @@
 <?php
 
-add_theme_support('post-thumbnails', array('article'));
+add_theme_support('post-thumbnails', array('post'));
+set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
+add_image_size('post-square-small-thumbnail', 50, 50);
+add_image_size('post-wide-thumbnail', 240, 100);
 
 if(function_exists( 'register_nav_menus')) {
 	register_nav_menus(array(
@@ -16,17 +19,17 @@ if(function_exists( 'register_nav_menus')) {
 if(function_exists('register_sidebar')) {
 	register_sidebar(array(
 		'name'				=> 'Right Sidebar',
-		'before_widget'		=> '<div class="widget">',
-		'after_widget'		=> '</div>',
-		'before_title'		=> '<h2>',
-		'after´_title'		=> '</h2>',
+		'before_widget'		=> '',
+		'after_widget'		=> '',
+		'before_title'		=> '',
+		'after´_title'		=> '',
 	));
 	register_sidebar(array(
 		'name'				=> 'Left Sidebar',
-		'before_widget'		=> '<div class="widget>"',
-		'after_widget'		=> '</div>',
-		'before_title'		=> '<h2>',
-		'after´_title'		=> '</h2>',
+		'before_widget'		=> '',
+		'after_widget'		=> '',
+		'before_title'		=> '',
+		'after´_title'		=> '',
 	));
 }
 /*
