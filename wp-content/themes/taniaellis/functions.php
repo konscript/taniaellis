@@ -80,7 +80,7 @@ function event_register() {
 		'show_ui'				=> true,
 		'query_var'				=> true,
 		'menu_position'			=> 5,
-		'menu_icon'				=> get_stylesheet_directory_uri() . '/images/icon_event.png',
+		'menu_icon'				=> get_stylesheet_directory_uri() . '/images/icon_event.gif',
 		'rewrite'				=> true,
 		'capability_type'		=> 'post',
 		'herarchical'			=> false,
