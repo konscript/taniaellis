@@ -77,7 +77,9 @@ class ContentTypeWidget extends WP_Widget {
 			
 			$qpost = get_post($postId);
 			
-			echo "<p class=\"meta-data\">13 Mar 2011</p>";
+			$post_date = $qpost->post_date;
+			$date = date_format(new DateTime($post_date), 'j M Y');
+			echo "<p class=\"meta-data\">$date</p>";
 			
 			$title = $qpost->post_title;
 			$title = apply_filters('post_title', $title);
