@@ -774,61 +774,61 @@
   width: 260px;
 }
 /* line 575, ../sass/misc.scss */
-#page .right-sidebar .widget {
+#page .right-sidebar .widget, #page .right-sidebar-single .widget {
   clear: left;
   float: left;
   margin-top: 50px;
   width: 560px;
 }
 /* line 581, ../sass/misc.scss */
-#page .right-sidebar .widget:first-child {
+#page .right-sidebar .widget:first-child, #page .right-sidebar-single .widget:first-child {
   margin-top: 0px;
 }
 /* line 585, ../sass/misc.scss */
-#page .right-sidebar .widget .item {
+#page .right-sidebar .widget .item, #page .right-sidebar-single .widget .item {
   float: left;
   margin-bottom: 20px;
   padding-left: 40px;
   width: 520px;
 }
 /* line 591, ../sass/misc.scss */
-#page .right-sidebar .widget .item .item-content {
+#page .right-sidebar .widget .item .item-content, #page .right-sidebar-single .widget .item .item-content {
   float: left;
   border-bottom: 1px solid #CCC;
   padding-bottom: 20px;
 }
 /* line 598, ../sass/misc.scss */
-#page .right-sidebar .widget .excerpt {
+#page .right-sidebar .widget .excerpt, #page .right-sidebar-single .widget .excerpt {
   float: left;
 }
 /* line 602, ../sass/misc.scss */
-#page .right-sidebar .widget .view-all {
+#page .right-sidebar .widget .view-all, #page .right-sidebar-single .widget .view-all {
   margin-right: 0;
 }
 /* line 607, ../sass/misc.scss */
-#page .right-sidebar .widget-blog {
+#page .right-sidebar .widget-blog, #page .right-sidebar-single .widget-blog {
   background: url("../../images/post_type_icon_featured_blog.png") top left no-repeat;
 }
 /* line 5, ../sass/misc.scss */
-#page .right-sidebar .widget-blog .blog img.featured-image {
+#page .right-sidebar .widget-blog .blog img.featured-image, #page .right-sidebar-single .widget-blog .blog img.featured-image {
   float: left;
   border: 5px solid #E1DCD8;
   margin-right: 20px;
   width: 240px;
 }
 /* line 613, ../sass/misc.scss */
-#page .right-sidebar .widget-blog .blog .meta-data {
+#page .right-sidebar .widget-blog .blog .meta-data, #page .right-sidebar-single .widget-blog .blog .meta-data {
   float: right;
   width: 250px;
 }
 /* line 618, ../sass/misc.scss */
-#page .right-sidebar .widget-blog .blog .title, #page .right-sidebar .widget-blog .blog .excerpt {
+#page .right-sidebar .widget-blog .blog .title, #page .right-sidebar .widget-blog .blog .excerpt, #page .right-sidebar-single .widget-blog .blog .title, #page .right-sidebar-single .widget-blog .blog .excerpt {
   clear: right;
   float: right;
   width: 250px;
 }
 /* line 624, ../sass/misc.scss */
-#page .right-sidebar .widget-blog .blog .options {
+#page .right-sidebar .widget-blog .blog .options, #page .right-sidebar-single .widget-blog .blog .options {
   clear: right;
   float: right;
   width: 250px;

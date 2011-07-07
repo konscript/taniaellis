@@ -328,17 +328,16 @@ html>body {
 					}
 				}
 			}
-		
-			.view-all {				
-				color: #FFF;
-				text-decoration: none;
-			
-				&:hover {
-					color: #FFF / 1.1;
-				}	
-			}
-		
 		}	
+		
+		.view-all {				
+			color: #FFF;
+			text-decoration: none;
+		
+			&:hover {
+				color: #FFF / 1.1;
+			}	
+		}
 	}
 }
 

@@ -49,7 +49,7 @@ Template Name: Article Single
           </ul>
         </div>
         <section class="left-sidebar">
-          <div class="widget-container-left widget-books">
+          <div class="widget widget-books">
             <div class="header-container">
               <h2 class="first-line">My Books</h2>
               <h2 class="second-line">On Social Business</h2>
@@ -109,7 +109,7 @@ Template Name: Article Single
                         <a class="view-all" href="javascript:void(0)">View all books</a>
                       </div>
 
-                      <div class="widget-container-left widget-blog">
+                      <div class="widget widget-blog">
                         <div class="header-container">
                           <h2 class="first-line">My Blog</h2>
                           <h2 class="second-line">On Social Business</h2>
@@ -139,7 +139,7 @@ Template Name: Article Single
                             <a class="view-all" href="javascript:void(0)">More blog posts</a>
                           </div>
 
-                          <div class="widget-container-left widget-reading-room">
+                          <div class="widget widget-reading-room">
                             <div class="header-container">
                               <h2 class="first-line">Reading Room</h2>
                               <h2 class="second-line">To Social Business</h2>
@@ -172,7 +172,7 @@ Template Name: Article Single
                             </section>
 
                             <section class="right-sidebar-single">
-                              <div class="widget-container-right widget-event">
+                              <div class="widget widget-event">
                                 <div class="header-container">
                                   <h2 class="first-line">Upcoming</h2>
                                   <h2 class="second-line">Events</h2>
@@ -223,13 +223,13 @@ Template Name: Article Single
                                 <a class="view-all" href="javascript:void(0)">View more events</a>
                               </div>
 
-                              <div class="widget-container-right widget-featured-blog">
+                              <div class="widget widget-blog">
                                 <div class="header-container">
                                   <h2 class="first-line">Featured</h2>
                                   <h2 class="second-line">Blog Posts By Tania Ellis</h2>
                                 </div>
 
-                                <div class="item featured-blog">
+                                <div class="item blog">
                                   <div class="item-content">
                                     <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/featured_blog_post_1.png" />
 
@@ -250,7 +250,7 @@ Template Name: Article Single
                                   </div>
                                 </div>
 
-                                <div class="item featured-blog">
+                                <div class="item blog">
                                   <div class="item-content">
                                     <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/featured_blog_post_2.png" />
 
@@ -271,7 +271,7 @@ Template Name: Article Single
                                   </div>
                                 </div>
 
-                                <div class="item featured-blog">
+                                <div class="item blog">
                                   <div class="item-content">
                                     <img class="featured-image" src="<?php bloginfo('template_url'); ?>/images/featured_blog_post_3.png" />
 
@@ -294,7 +294,7 @@ Template Name: Article Single
 
                                 <a class="view-all" href="javascript:void(0)">View more blog posts</a>
                               </div>
-                              <div class="widget-container-right widget-clients">
+                              <div class="widget widget-clients">
                                 <div class="header-container">
                                   <h2 class="first-line">Featured Clients</h2>
                                   <h2 class="second-line">Click And Read The Cases</h2>

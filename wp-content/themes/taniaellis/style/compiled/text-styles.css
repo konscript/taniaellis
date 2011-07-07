@@ -281,17 +281,17 @@ html > body {
 #page .widget .item .options .read-more:hover, #page .widget .item .options .view-cases:hover, #page .widget .item .options .view-clients:hover {
   color: #608169;
 }
-/* line 332, ../sass/text-styles.scss */
-#page .widget .item .view-all {
+/* line 333, ../sass/text-styles.scss */
+#page .widget .view-all {
   color: #FFF;
   text-decoration: none;
 }
-/* line 336, ../sass/text-styles.scss */
-#page .widget .item .view-all:hover {
+/* line 337, ../sass/text-styles.scss */
+#page .widget .view-all:hover {
   color: #e7e7e7;
 }
 
-/* line 346, ../sass/text-styles.scss */
+/* line 345, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: 500;
