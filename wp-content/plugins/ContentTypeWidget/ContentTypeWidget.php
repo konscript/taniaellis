@@ -41,12 +41,15 @@ class ContentTypeWidget extends WP_Widget {
 			case 'te_article':
 				$widget_class = 'reading-room';
 				break;
+			case 'te_event':
+				$widget_class = 'event';
+				break;
 		}
 		
 		if($instance['format'] === "wide")
-			$side = 'right';
+			$thumbnailSize = 'post-wide-thumbnail';
 		else
-			$side = 'left';
+			$thumbnailSize = 'thumbnail';
 		
 		echo "<div class=\"widget widget-$widget_class\">";
 		
@@ -73,12 +76,17 @@ class ContentTypeWidget extends WP_Widget {
 				'class'	=> "featured-image"
 			);
 			
-			echo get_the_post_thumbnail($postId, 'post-wide-thumbnail', $attr);
+			if($instance['thumbnailEnabled'] && has_post_thumbnail($postId))
+				echo get_the_post_thumbnail($postId, $thumbnailSize, $attr);
 			
 			$qpost = get_post($postId);
 			
-			$post_date = $qpost->post_date;
-			$date = date_format(new DateTime($post_date), 'j M Y');
+			if($widget_class == "event") {
+				$date = "Event Date: " . get_post_meta($postId, 'event_date', true);
+			} else {
+				$post_date = $qpost->post_date;
+				$date = date_format(new DateTime($post_date), 'j M Y');
+			}
 			echo "<p class=\"meta-data\">$date</p>";
 			
 			$title = $qpost->post_title;
@@ -111,6 +119,7 @@ class ContentTypeWidget extends WP_Widget {
 		$instance['postType'] = strip_tags($new_instance['postType']);
 		$instance['format'] = strip_tags($new_instance['format']);
 		$instance['itemCount'] = strip_tags($new_instance['itemCount']);
+		$instance['thumbnailEnabled'] = strip_tags($new_instance['thumbnailEnabled']);
 	
 		for($i = 1; $i <= $instance['itemCount']; $i++) {
 			$instance["item_$i"] = strip_tags($new_instance["item_$i"]);
@@ -124,8 +133,9 @@ class ContentTypeWidget extends WP_Widget {
 			'titleA'	=> '',
 			'titleB'	=> '',
 			'postType'	=> 'te_article',
-			'format'	=> 'thin',
-			'itemCount'	=> 1
+			'format'	=> 'wide',
+			'itemCount'	=> 1,
+			'thumbnailEnabled' => true
 		);
 		
 		$instnace = wp_parse_args((array) $instance, $defaults);
@@ -135,6 +145,7 @@ class ContentTypeWidget extends WP_Widget {
 		$postTypeId = $this->get_field_id('postType');
 		$formatId = $this->get_field_id('format');
 		$itemCountId = $this->get_field_id('itemCount');
+		$thumbnailEnabledId = $this->get_field_id('thumbnailEnabled');
 		
 		?>
 		
@@ -149,10 +160,15 @@ class ContentTypeWidget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $formatId; ?>">Format:</label>
+			<label for="<?php echo $thumbnailEnabledId; ?>">Show thumbnails:</label>
+			<input type="checkbox" id="<?php echo $thumbnailEnabledId; ?>" name="<?php echo $this->get_field_name( 'thumbnailEnabled' ); ?>"<?php if($instance['thumbnailEnabled']) echo ' checked="checked"'; ?> />
+		</p>
+		
+		<p>
+			<label for="<?php echo $formatId; ?>">Image Format:</label>
 			<select id="<?php echo $formatId; ?>" name="<?php echo $this->get_field_name('format'); ?>">
 				<option value="wide"<?php if($instance['format'] == 'wide') echo ' selected="selected"'; ?>>Wide</option>
-				<option value="thin"<?php if($instance['format'] == 'thin') echo ' selected="selected"'; ?>>Thin</option>
+				<option value="thin"<?php if($instance['format'] == 'square') echo ' selected="selected"'; ?>>Square</option>
 			</select>
 		</p>
 		
@@ -160,21 +176,7 @@ class ContentTypeWidget extends WP_Widget {
 			<label for="<?php echo $postTypeId; ?>">Post type:</label>
 			<select id="<?php echo $postTypeId; ?>" name="<?php echo $this->get_field_name('postType'); ?>">
 				<?php
-								// 
-								// $args = array('public'   => true,'_builtin' => false);
-								// 
-								// foreach(get_post_types($args, 'objects') as $key => $value) {
-								// 	$labels = (array) $value->labels;
-								// 	$name = $labels['singular_name'];
-								// 	if($instance['postType'] == $key)
-								// 		$selected = 'selected="selected"';
-								// 	else
-								// 		$selected = '';
-								// 		
-								// 	echo "<option value=\"$key\" $selected>" . $name. "</option>";
-								// }
-								
-					$list = array("post" => "Post", "te_article" => "Article");
+					$list = array("post" => "Post", "te_article" => "Article", 'te_event' => 'Event');
 					foreach($list as $key => $value) {
 						$selected = ($instance['postType'] == $key) ? ' selected="selected"' : '';
 						echo "<option value=\"$key\"$selected>$value</option>";
