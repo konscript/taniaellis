@@ -46,7 +46,7 @@ class ContentTypeWidget extends WP_Widget {
 				break;
 		}
 		
-		if($instance['format'] === "wide")
+		if($instance['format'] == "wide")
 			$thumbnailSize = 'post-wide-thumbnail';
 		else
 			$thumbnailSize = 'thumbnail';
@@ -67,10 +67,23 @@ class ContentTypeWidget extends WP_Widget {
 		
 		// START -> Post
 		
+		if($instance['streamEnabled'])
+			$posts = get_posts(array(
+				'numberposts'	=> $instance['itemCount'],
+				'post_type'		=> $instance['postType'],
+				'order_by'		=> 'post_date',
+				'order'			=> 'DESC',
+				'post_status'	=> 'publish'
+			));
+		
 		for($i = 1; $i <= $instance['itemCount']; $i++) {
+			if($instance['streamEnabled']){
+				$postId = $posts[$i-1]->ID;
+			}else
+				$postId = $instance["item_$i"];
+			
 			echo "<div class=\"item $widget_class\"><div class='item-content'>";
-			$item = "item_$i";
-			$postId = $instance[$item];
+			
 			
 			$attr = array(
 				'class'	=> "featured-image"
@@ -82,7 +95,24 @@ class ContentTypeWidget extends WP_Widget {
 			$qpost = get_post($postId);
 			
 			if($widget_class == "event") {
-				$date = "Event Date: " . get_post_meta($postId, 'event_date', true);
+				$end_day = get_post_meta($postId, '_day', true);
+				$end_month = get_post_meta($postId, '_month', true);
+				$end_year = get_post_meta($postId, '_year', true);
+				$end_hour = get_post_meta($postId, '_hour', true);
+				$end_minute = get_post_meta($postId, '_minute', true);
+				
+				$end_date = new DateTime($end_year."-".$end_month."-".$end_day." ".$end_hour.":".$end_minute);
+				
+				$post_date = $qpost->post_date;
+				$start_date = new DateTime($post_date);
+				
+				$gs_date = getdate($start_date->getTimestamp());
+				
+				if($gs_date['year'] == $end_year && $gs_date['mon'] == $end_month && $gs_date['mday'] == $end_day) {
+					$date = "Event Date: ". date_format($start_date, 'j M Y H:i - ') . date_format($start_date, 'H:i');
+				} else {
+					$date = "Event Date: ". date_format($start_date, 'j M Y H:i') . " - " . date_format($end_date, 'j M Y H:i');
+				}
 			} else {
 				$post_date = $qpost->post_date;
 				$date = date_format(new DateTime($post_date), 'j M Y');
@@ -120,6 +150,7 @@ class ContentTypeWidget extends WP_Widget {
 		$instance['format'] = strip_tags($new_instance['format']);
 		$instance['itemCount'] = strip_tags($new_instance['itemCount']);
 		$instance['thumbnailEnabled'] = strip_tags($new_instance['thumbnailEnabled']);
+		$instance['streamEnabled'] = strip_tags($new_instance['streamEnabled']);
 	
 		for($i = 1; $i <= $instance['itemCount']; $i++) {
 			$instance["item_$i"] = strip_tags($new_instance["item_$i"]);
@@ -130,12 +161,13 @@ class ContentTypeWidget extends WP_Widget {
 	
 	function form($instance) {
 		$defaults = array(
-			'titleA'	=> '',
-			'titleB'	=> '',
-			'postType'	=> 'te_article',
-			'format'	=> 'wide',
-			'itemCount'	=> 1,
-			'thumbnailEnabled' => true
+			'titleA'			=> '',
+			'titleB'			=> '',
+			'postType'			=> 'te_article',
+			'format'			=> 'wide',
+			'itemCount'			=> 1,
+			'thumbnailEnabled'	=> true,
+			'streamEnabled'		=> false
 		);
 		
 		$instnace = wp_parse_args((array) $instance, $defaults);
@@ -146,6 +178,7 @@ class ContentTypeWidget extends WP_Widget {
 		$formatId = $this->get_field_id('format');
 		$itemCountId = $this->get_field_id('itemCount');
 		$thumbnailEnabledId = $this->get_field_id('thumbnailEnabled');
+		$streamEnabledId = $this->get_field_id('streamEnabled');
 		
 		?>
 		
@@ -165,10 +198,15 @@ class ContentTypeWidget extends WP_Widget {
 		</p>
 		
 		<p>
+			<label for="<?php echo $streamEnabledId; ?>">Show recent items:</label>
+			<input type="checkbox" id="<?php echo $streamEnabledId; ?>" name="<?php echo $this->get_field_name( 'streamEnabled' ); ?>"<?php if($instance['streamEnabled']) echo ' checked="checked"'; ?> />
+		</p>
+		
+		<p>
 			<label for="<?php echo $formatId; ?>">Image Format:</label>
 			<select id="<?php echo $formatId; ?>" name="<?php echo $this->get_field_name('format'); ?>">
 				<option value="wide"<?php if($instance['format'] == 'wide') echo ' selected="selected"'; ?>>Wide</option>
-				<option value="thin"<?php if($instance['format'] == 'square') echo ' selected="selected"'; ?>>Square</option>
+				<option value="square"<?php if($instance['format'] == 'square') echo ' selected="selected"'; ?>>Square</option>
 			</select>
 		</p>
 		
@@ -206,31 +244,34 @@ class ContentTypeWidget extends WP_Widget {
 			
 		<?php
 		
-		for($i = 1; $i <= (int)$instance['itemCount']; $i++) {
-			?>
+		if(!$instance['streamEnabled']) {
+		
+			for($i = 1; $i <= (int)$instance['itemCount']; $i++) {
+				?>
 			
-			<p>
-				<label for="<?php echo $this->get_field_id("item_$i"); ?>">Item <?php echo $i; ?>:</label>
-				<select id="<?php echo $this->get_field_id("item_$i"); ?>" name="<?php echo $this->get_field_name("item_$i"); ?>">
-					<?php
+				<p>
+					<label for="<?php echo $this->get_field_id("item_$i"); ?>">Item <?php echo $i; ?>:</label>
+					<select id="<?php echo $this->get_field_id("item_$i"); ?>" name="<?php echo $this->get_field_name("item_$i"); ?>">
+						<?php
 
-					$args = array(
-						'post_type'		=> $instance['postType'],
-						'numberposts'	=> -1
-					);
+						$args = array(
+							'post_type'		=> $instance['postType'],
+							'numberposts'	=> -1
+						);
 
-					foreach(get_posts($args) as $key => $value) {
-						$item = "item_$i";
-						$post = (array) $value;
-						$selected = ($instance[$item] == $post['ID']) ? ' selected="selected"' : '';
-						echo "<option value=\"".$post['ID']."\"$selected>" . $post['post_title']. "</option>";
-					}
+						foreach(get_posts($args) as $key => $value) {
+							$item = "item_$i";
+							$post = (array) $value;
+							$selected = ($instance[$item] == $post['ID']) ? ' selected="selected"' : '';
+							echo "<option value=\"".$post['ID']."\"$selected>" . $post['post_title']. "</option>";
+						}
 
-					?>
-				</select>
-			</p>
+						?>
+					</select>
+				</p>
 			
-			<?
+				<?
+			}
 		}
 	}
 }
