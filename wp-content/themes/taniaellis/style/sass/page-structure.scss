@@ -23,33 +23,34 @@ html, body {
 		z-index: 1;
 		
 		#page {
-			background: #fff;
-			//height: 100%;
+			background: url('../../images/page-background.png') repeat-y 330px #fff;
 			margin: 0 auto;
-			padding: 60px 0 30px;
+			padding: /*60px*/ 0 0 30px;
 			width: 960px;
-			@include box-shadow(#888 -3px 20px 25px 5px);
-			background: #fff;
 			
-			section.left-sidebar, section.right-sidebar, section.right-sidebar-single {
-				float: left;
+			section.left-sidebar, section.right-sidebar {
+				padding-top: 60px;
 			}
 			
 			section.left-sidebar {
-				border-right: 1px solid #c6c2b7;
+				//border-right: 1px solid #c6c2b7;
+				float: left;
 				width: 330px;
 			}
 			
 			section.right-sidebar, section.right-sidebar-single {
 				//border-left: 1px solid #c6c2b7;
-				//margin-left: -1px;
-				padding-left: 20px;
+				float: right;
+				margin-right: -16px;
+				padding-right: 16px;
+				
+				.sidebar-background {
+					//border-left: 1px solid #c6c2b7;
+				}
 			}
 			
 			section.right-sidebar-single {
-				background-color: #FFF;
-				margin-top: -450px;
-				padding-right: 49px;
+				margin-top: -390px;
 			}
 		}
 	}

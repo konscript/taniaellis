@@ -218,6 +218,7 @@ Template Name: Home
                             </section>
 
                             <section class="right-sidebar">
+                              <div class="sidebar-background">
                               <div class="widget widget-event">
                                 <div class="header-container">
                                   <h2 class="first-line">Upcoming</h2>
@@ -418,6 +419,7 @@ Template Name: Home
                                     </div>
                                   </div>
                                 </div>					        
+                              </div>
                               </div>
                             </section>
 

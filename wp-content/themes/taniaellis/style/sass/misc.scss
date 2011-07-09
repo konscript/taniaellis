@@ -538,6 +538,10 @@
 	}
 	
 	.left-sidebar {
+		background: url('../../images/left-fade-background.png') top left no-repeat;
+		margin-left: -16px;
+		padding-left: 16px;
+		
 		.widget {
 			clear: left;
 			float: left;
@@ -572,6 +576,17 @@
 	}
 	
 	.right-sidebar, .right-sidebar-single {
+		background: url('../../images/right-fade-background.png') top right no-repeat;
+				
+		.sidebar-background {
+			background-color: #FFF;
+			//border: 1px solid #000;
+			float: right;
+			padding-left: 20px;
+			padding-right: 15px;
+			width: 594px;
+		}
+		
 		.widget {
 			clear: left;
 			float: left;
