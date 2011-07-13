@@ -98,7 +98,8 @@ class ContentTypeWidget extends WP_Widget {
 			);
 			
 			if($instance['thumbnailEnabled'] && has_post_thumbnail($post->ID))
-				echo get_the_post_thumbnail($post->ID, $thumbnailSize, $attr);
+				echo "<a href=\"". get_permalink($post->ID)."\">" . get_the_post_thumbnail($post->ID, $thumbnailSize, $attr) . "</a>";
+				//echo get_the_post_thumbnail($post->ID, $thumbnailSize, $attr);
 			
 			if($widget_class == "event") {
 				$end_day = get_post_meta($post->ID, '_day', true);
@@ -115,9 +116,9 @@ class ContentTypeWidget extends WP_Widget {
 				$gs_date = getdate($start_date->getTimestamp());
 				
 				if($gs_date['year'] == $end_year && $gs_date['mon'] == $end_month && $gs_date['mday'] == $end_day) {
-					$date = "Event Date: ". date_format($start_date, 'j M Y H:i - ') . date_format($start_date, 'H:i');
+					$date = "". date_format($start_date, 'j M Y H:i - ') . date_format($start_date, 'H:i');
 				} else {
-					$date = "Event Date: ". date_format($start_date, 'j M Y H:i') . " - " . date_format($end_date, 'j M Y H:i');
+					$date = "". date_format($start_date, 'j M Y H:i') . " - " . date_format($end_date, 'j M Y H:i');
 				}
 			} else {
 				$post_date = $post->post_date;
@@ -125,11 +126,17 @@ class ContentTypeWidget extends WP_Widget {
 			}
 			echo "<p class=\"meta-data\">$date</p>";
 			
+			if($widget_class == "reading-room") {
+				echo "<span class=\"by-line\">Article</span>";
+			} else if($widget_class == "blog") {
+				echo "<span class=\"by-line\">By Tania Ellis</span>";
+			}
+			
 			$title = $post->post_title;
 			$title = apply_filters('post_title', $title);
 			$title = str_replace(']]>', ']]&gt;', $title);
 			
-			echo "<h2 class=\"title\">$title</h2>";
+			echo "<a href=\"". get_permalink($post->ID)."\" class=\"title\">$title</a>";
 			
 			
 			$content = $post->post_excerpt;
@@ -137,7 +144,7 @@ class ContentTypeWidget extends WP_Widget {
 			
 			echo "<p class=\"excerpt\">$content</p>";
 			
-			echo "<div class=\"options\"><a class=\"read-more\" href=\"#\">Read more</a></div>";
+			echo "<div class=\"options\"><a class=\"read-more\" href=\"". get_permalink($post->ID)."\">Read more</a></div>";
 			
 			echo "</div></div>";
 		}

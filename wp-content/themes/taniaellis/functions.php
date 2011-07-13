@@ -225,7 +225,7 @@ function event_register() {
 		'query_var'				=> true,
 		'menu_position'			=> 5,
 		'menu_icon'				=> get_stylesheet_directory_uri() . '/images/icon_event.gif',
-		'rewrite'				=> array('slug' => 'event'),
+		'rewrite'				=> array('slug' => 'event', 'with_front' => false),
 		'capability_type'		=> 'post',
 		'herarchical'			=> false,
 		'supports'				=> array(
