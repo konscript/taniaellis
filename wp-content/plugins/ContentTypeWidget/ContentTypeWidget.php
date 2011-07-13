@@ -49,7 +49,7 @@ class ContentTypeWidget extends WP_Widget {
 		if($instance['format'] == "wide")
 			$thumbnailSize = 'post-wide-thumbnail';
 		else
-			$thumbnailSize = 'thumbnail';
+			$thumbnailSize = 'post-square-small-thumbnail';
 		
 		echo "<div class=\"widget widget-$widget_class\">";
 		
