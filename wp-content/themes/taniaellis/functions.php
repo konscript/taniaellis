@@ -258,6 +258,7 @@ function article_register() {
 	);
 	
 	$args = array(
+	  '_builtin' => false,
 		'labels' => $labels,
 		'public' => true,
 		'publicly_queryable' => true,
@@ -265,7 +266,7 @@ function article_register() {
 		'query_var' => true,
 		'menu_position' => 5,
 		'menu_icon' => get_stylesheet_directory_uri() . '/images/icon_article.png',
-		'rewrite' => array('slug' => 'article'),
+		'rewrite' => array('slug' => 'articles', 'with_front' => false),
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'supports' => array('title', 'author', 'excerpt', 'editor', 'thumbnail', 'comments')

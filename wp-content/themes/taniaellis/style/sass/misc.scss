@@ -582,9 +582,141 @@
 			background-color: #FFF;
 			//border: 1px solid #000;
 			float: right;
+			min-height: 992px; // This may cause trouble...
 			padding-left: 20px;
 			padding-right: 15px;
 			width: 594px;
+		}
+		
+		.post-header, .comments-header {
+			//float: left;
+			background: url('../../images/post_type_icon_article.png') top left no-repeat;
+			border-bottom: 1px solid #CCC;
+			margin-bottom: 40px;
+			margin-right: 20px;
+			padding-left: 50px;
+			padding-bottom: 10px;
+		}
+		
+		.comments-header {
+			background: url(../../images/comments_icon.png) top left no-repeat;
+			border-bottom: none;
+			margin-bottom: 10px;
+			margin-left: -40px;
+		}
+		
+		.post {
+			float: left;
+			padding-left: 40px;
+			padding-right: 20px;
+			
+			.meta {
+				float: left;
+				margin-bottom: 20px;
+				width: 100%;
+				
+				.byline {
+					float: left;
+				}
+				
+				.date {
+					float: right;
+				}
+			}
+			
+			.title {
+				margin-bottom: 25px;
+			}
+			
+			.entry {			
+				.wp-post-image {
+					border: 5px solid #E1DCD8;
+					float: left;
+					margin: 0 20px 10px 0;
+				}
+			}
+		}
+		
+		#respond {
+			padding-left: 40px;
+			
+			.comment-notes {
+				margin-bottom: 20px;
+			}
+			
+			p {
+				margin-bottom: 10px;
+				
+				label {
+					float: left;
+					height: 20px;
+					line-height: 20px;
+					width: 100px;
+				}
+			}
+			
+			input {
+				border: 1px solid #7D7872;
+				height: 20px;
+				padding: 2px;
+				width: 340px;
+			}
+			
+			textarea {
+				margin: 0px;
+				height: 80px;
+				padding: 2px;
+				resize: none;
+				width: 390px;
+			}
+			
+			input[type=submit] {
+				@include border-radius(5px);
+				@include background-image(linear-gradient(top, #9EBAA3, #7EA382));
+
+				background-color: #A0B9A3;	
+				border: none;				
+				margin-left: 340px;
+				width: 150px;
+
+				&:hover {
+					background-color: #7C7972 / 1.2;						
+					color: #FFF / 1.1;
+					@include background-image(linear-gradient(top, #9EBAA3 / 1.2, #7EA382 / 1.2));
+				}
+
+				&:active {
+					color: #FFF / 1.2;
+					@include background-image(linear-gradient(top, #7EA382 / 1.2, #9EBAA3 / 1.2));
+				}
+			}
+		}
+		
+		.comment {
+			background: url('../../images/comment_icon.png') top left no-repeat;
+			border-bottom: 1px solid #CCC;
+			float: left;
+			margin-bottom: 30px;
+			margin-left: 40px;
+			padding-bottom: 30px;
+			padding-left: 50px;
+			width: 440px;
+			
+			.comment-meta {
+				margin-bottom: 22px;
+				
+				.comment-author-url {
+					float: right;
+				}
+			
+				.comment-date-time {
+					float: left;
+				}
+			}
+			
+			.comment-author {
+				margin-bottom: 15px;
+			}
 		}
 		
 		.widget {
