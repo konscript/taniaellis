@@ -2,8 +2,8 @@
 
 add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article'));
 set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
-add_image_size('post-square-small-thumbnail', 50, 50);
-add_image_size('post-wide-thumbnail', 240, 100);
+add_image_size('post-square-small-thumbnail', 50, 50, true);
+add_image_size('post-wide-thumbnail', 240, 100, true);
 
 if(function_exists( 'register_nav_menus')) {
 	register_nav_menus(array(

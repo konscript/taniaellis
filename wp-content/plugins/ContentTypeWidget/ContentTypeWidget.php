@@ -67,21 +67,29 @@ class ContentTypeWidget extends WP_Widget {
 		
 		// START -> Post
 		
-		if($instance['streamEnabled'])
+		if($instance['streamEnabled']) {
 			$posts = get_posts(array(
 				'numberposts'	=> $instance['itemCount'],
 				'post_type'		=> $instance['postType'],
 				'order_by'		=> 'post_date',
 				'order'			=> 'DESC',
-				'post_status'	=> 'publish'
+				'post_status'	=> 'publish,future'
 			));
-		
-		for($i = 1; $i <= $instance['itemCount']; $i++) {
-			if($instance['streamEnabled']){
-				$postId = $posts[$i-1]->ID;
-			}else
-				$postId = $instance["item_$i"];
+		} else {
+			$posts = array();
 			
+			for($i = 1; $i <= $instance['itemCount']; $i++) {
+				if(isset($instance["item_$i"]) && !empty($instance["item_$i"])) {
+					$post = get_post($instance["item_$i"]); // Returns null if post not found
+					if(isset($post)) {
+						$posts[] = $post;
+						unset($post);
+					}
+				}
+			}
+		}
+		
+		foreach($posts as $key => $post) {
 			echo "<div class=\"item $widget_class\"><div class='item-content'>";
 			
 			
@@ -89,21 +97,19 @@ class ContentTypeWidget extends WP_Widget {
 				'class'	=> "featured-image"
 			);
 			
-			if($instance['thumbnailEnabled'] && has_post_thumbnail($postId))
-				echo get_the_post_thumbnail($postId, $thumbnailSize, $attr);
-			
-			$qpost = get_post($postId);
+			if($instance['thumbnailEnabled'] && has_post_thumbnail($post->ID))
+				echo get_the_post_thumbnail($post->ID, $thumbnailSize, $attr);
 			
 			if($widget_class == "event") {
-				$end_day = get_post_meta($postId, '_day', true);
-				$end_month = get_post_meta($postId, '_month', true);
-				$end_year = get_post_meta($postId, '_year', true);
-				$end_hour = get_post_meta($postId, '_hour', true);
-				$end_minute = get_post_meta($postId, '_minute', true);
+				$end_day = get_post_meta($post->ID, '_day', true);
+				$end_month = get_post_meta($post->ID, '_month', true);
+				$end_year = get_post_meta($post->ID, '_year', true);
+				$end_hour = get_post_meta($post->ID, '_hour', true);
+				$end_minute = get_post_meta($post->ID, '_minute', true);
 				
 				$end_date = new DateTime($end_year."-".$end_month."-".$end_day." ".$end_hour.":".$end_minute);
 				
-				$post_date = $qpost->post_date;
+				$post_date = $post->post_date;
 				$start_date = new DateTime($post_date);
 				
 				$gs_date = getdate($start_date->getTimestamp());
@@ -114,19 +120,19 @@ class ContentTypeWidget extends WP_Widget {
 					$date = "Event Date: ". date_format($start_date, 'j M Y H:i') . " - " . date_format($end_date, 'j M Y H:i');
 				}
 			} else {
-				$post_date = $qpost->post_date;
+				$post_date = $post->post_date;
 				$date = date_format(new DateTime($post_date), 'j M Y');
 			}
 			echo "<p class=\"meta-data\">$date</p>";
 			
-			$title = $qpost->post_title;
+			$title = $post->post_title;
 			$title = apply_filters('post_title', $title);
 			$title = str_replace(']]>', ']]&gt;', $title);
 			
 			echo "<h2 class=\"title\">$title</h2>";
 			
 			
-			$content = $qpost->post_content;
+			$content = $post->post_excerpt;
 			$content = str_replace(']]>', ']]&gt;', $content);
 			
 			echo "<p class=\"excerpt\">$content</p>";
@@ -138,7 +144,7 @@ class ContentTypeWidget extends WP_Widget {
 
 		echo $after_widget;
 		
-		?></div><?php
+		echo "</div>";
 	}
 	
 	function update($new_instance, $old_instance) {
