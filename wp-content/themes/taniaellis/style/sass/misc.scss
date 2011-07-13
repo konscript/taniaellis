@@ -638,6 +638,7 @@
 		}
 		
 		#respond {
+			margin-bottom: 20px;
 			padding-left: 40px;
 			
 			.comment-notes {
@@ -690,6 +691,12 @@
 					@include background-image(linear-gradient(top, #7EA382 / 1.2, #9EBAA3 / 1.2));
 				}
 			}
+		}
+		
+		.recent-comments {
+			border-bottom: 1px solid #CCC;
+			margin-left: 40px;
+			width: 490px;
 		}
 		
 		.comment {

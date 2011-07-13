@@ -20,7 +20,7 @@
   </div> <!-- #header-container -->
 
 
-</div> <!-- #header -->
+</div> <!-- #header --> 
 
 <div class="clearer"></div>
 
