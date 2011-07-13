@@ -258,6 +258,7 @@ function article_register() {
 	);
 	
 	$args = array(
+	  '_builtin' => false,
 		'labels' => $labels,
 		'public' => true,
 		'publicly_queryable' => true,

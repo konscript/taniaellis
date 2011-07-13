@@ -1,5 +1,3 @@
-<?php
-
 /*
 	Template Name: Single Post
 */
@@ -10,4 +8,4 @@ echo "single";
 
 get_footer();
 
-?>
+
