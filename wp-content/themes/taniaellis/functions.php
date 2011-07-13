@@ -264,8 +264,9 @@ function article_register() {
 		'show_ui' => true,
 		'query_var' => true,
 		'menu_position' => 5,
+		'_builtin' => false, // It's a custom post type, not built in!
 		'menu_icon' => get_stylesheet_directory_uri() . '/images/icon_article.png',
-		'rewrite' => array('slug' => 'article'),
+		'rewrite' => array('slug' => 'articles', 'with_front' => false),
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'supports' => array('title', 'author', 'excerpt', 'editor', 'thumbnail', 'comments')
