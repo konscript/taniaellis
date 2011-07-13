@@ -29,8 +29,8 @@ if(have_comments($post->ID)) {
   $comments = get_comments(array('post_id' => $post->ID));
   
   ?>
-  <p class="recent-commnts">
-    Recent comments (<?php echo count($comments); ?>)
+  <p class="recent-comments">
+    Recent comments <span>(<?php echo count($comments); ?>)</span>
   </p>
   <?php
   
