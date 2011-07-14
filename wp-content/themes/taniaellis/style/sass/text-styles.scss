@@ -351,6 +351,16 @@ html>body {
 		}
 	}
 	
+	.recent-comments {
+		color: #7D7872;
+		font-size: 1.3em;
+		text-transform: uppercase;
+		
+		span {
+			color: #7FB987;	
+		}
+	}
+	
 	.comment {
 		.comment-author-url {
 			color: #7FB987;
