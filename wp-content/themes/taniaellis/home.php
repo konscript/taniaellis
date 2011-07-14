@@ -94,7 +94,7 @@ Template Name: Home
           </div>
         </ul>
         
-        <section class="left-sidebar">
+        <section class="left-sidebar"> 
           <div class="widget widget-books">
             <div class="header-container">
               <h2 class="first-line">My Books</h2>
