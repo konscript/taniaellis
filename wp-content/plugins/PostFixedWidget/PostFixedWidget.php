@@ -229,9 +229,15 @@ class PostFixedWidget extends WP_Widget {
 					<label for="<?php echo $this->get_field_id("item_$i"); ?>">Post #<?php echo $i; ?>:</label>
 					<select id="<?php echo $this->get_field_id("item_$i"); ?>" name="<?php echo $this->get_field_name("item_$i"); ?>">
 						<?php
+						
+						$ptype = array(
+							'post'		=> 'post',
+							'event'		=> 'te_event',
+							'article'	=> 'te_article'
+						);
 
 						$args = array(
-							'post_type'		=> $instance['type'],
+							'post_type'		=> $ptype[$instance['type']],
 							'numberposts'	=> -1,
 							'post_status'	=> array('publish', 'future')
 						);
