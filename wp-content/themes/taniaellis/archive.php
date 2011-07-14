@@ -161,37 +161,42 @@
 
                         <section class="right-sidebar-single">
                           <div class="sidebar-background">
-                              
-                              <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
-                                <div class="post-header">
-                                  <h2 class="first-line">Articles</h2>
-                                  <h2 class="second-line">Ethics / Sustainability</h2>
-                                </div>
-                                
-                                <div class="post">
-                                  <div class="meta">
+                            
+                              <div class="post-header">
+                                <h2 class="first-line">Articles</h2>
+                                <h2 class="second-line">Ethics / Sustainability</h2>
+                              </div>
+                              <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                                
+                                <div class="post-feed">
+                                  <?php
+                                    switch (get_post_type($post->ID)) {
+                                      case 'te_article':
+                                        the_post_thumbnail(array(100, 100));
+                                        break;
+
+                                      default:
+                                        # code...
+                                        break;
+                                    }
+                                  ?>
+                                  <!-- <div class="meta"> -->
                                     <p class="byline">
                                       By <?php the_author(); ?>
                                     </p>
                                     <p class="date">
                                       <?php the_date('F j Y'); ?>
                                     </p>
-                                  </div>    
+                                  <!-- </div>     -->
                                   <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                   <div class="entry">
-                                    <?php
-                                      the_post_thumbnail(array(240, 240));
-                                    ?>
-                                    <?php the_content(); ?>
+                                    <?php the_excerpt(); ?>
                                   </div>
+                                  
+                                  <p class="comment-count">
+                                    <?php comments_number('No comments', '1 comment', '% comments') ?>
+                                  </p>
+                                  
                                 </div>
-                                
-                                <p class="post-categories">
-                                  <?php echo get_the_term_list($post->ID, 'te_article-category', 'Posted in |&nbsp;', '&nbsp;|&nbsp;', ''); ?>
-                                </p>
-                                <p class="post-tags">
-                                  <?php echo get_the_term_list($post->ID, 'te_article-tag', 'Tagged |&nbsp;', '&nbsp;|&nbsp;', ''); ?>
-                                </p>
                                 
                                 
                               <?php endwhile; ?>
@@ -199,7 +204,6 @@
                               
                               <div class="clearer"></div>
                               
-                              <?php comments_template(); ?>
                           </div>
                         </section>
 

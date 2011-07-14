@@ -338,6 +338,57 @@ html>body {
 		}
 	}
 	
+	.post-feed {
+		color: #7D7872;
+		
+			
+		.byline {
+			font-size: 0.9em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		
+		.date {
+			font-size: 0.9em;
+			text-transform: uppercase;
+		}
+		
+		.title {
+			font-size: 1.3em;
+			font-weight: bold;
+			text-transform: uppercase;
+			
+			a {
+				color: #7D7872;
+				text-decoration: none;
+			}
+		}
+		
+		.entry {
+			line-height: 1.3em;
+		}
+		
+		.comment-count {
+			
+		}
+	}
+	
+	.post-categories, .post-tags {
+		color: #7D7872;
+		font-weight: bold;
+		
+		a {
+			@include transition(color, 0.1s, ease-in-out);
+			color: #7FB987;
+			font-weight: normal;
+			text-decoration: none;
+			
+			&:hover {
+				color: #7FB987 / 1.2; 
+			}
+		}
+	}
+	
 	#respond {
 		color: #7D7872;
 		font-weight: bold;

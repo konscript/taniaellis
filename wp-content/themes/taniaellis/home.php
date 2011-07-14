@@ -1,4 +1,3 @@
-
 <?php get_header(); ?>
 
 <div id="header">
@@ -79,5 +78,3 @@
 
 	</div> <!-- #page -->
 </div> <!-- #page-content -->
-
-<?php get_footer(); ?>

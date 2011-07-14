@@ -12,7 +12,8 @@ if(function_exists( 'register_nav_menus')) {
 	    'navigation-pages'      => 'Page Menu',
 	    'social-business-menu'  => 'Social Business Menu',
 	    'club-menu'             => 'Club Menu',
-		'blog-menu'				=> 'Blog Menu'
+		  'blog-menu'				      => 'Blog Menu',
+		  'reading-room-menu'     => 'Reading Room Menu'
 	    )
 	);
 }

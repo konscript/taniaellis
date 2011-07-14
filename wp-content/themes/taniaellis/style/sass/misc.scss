@@ -131,7 +131,7 @@
 			width: 260px;
 
 			li {
-
+				margin-bottom: 10px;
 				a {
 					@include transition(color, 0.1s, ease-in-out);
 
@@ -152,6 +152,11 @@
 					&:hover span {
 						background: #7C7973;
 					}
+				}
+				
+				ul {
+					margin-top: 10px;
+					margin-left: 30px;
 				}
 			}
 		}
@@ -644,8 +649,11 @@
 		}
 		
 		.post {
+			border-bottom: 1px solid #CCC;
 			float: left;
-			padding-left: 40px;
+			margin-bottom: 20px;
+			margin-left: 40px;
+			padding-bottom: 50px;
 			padding-right: 20px;
 			
 			.meta {
@@ -673,6 +681,56 @@
 					margin: 0 20px 10px 0;
 				}
 			}
+		}
+		
+		.post-feed {
+			border-bottom: 1px solid #CCC;
+			float: left;
+			margin-bottom: 20px;
+			margin-left: 40px;
+			padding-bottom: 50px;
+			padding-right: 20px;
+			
+			
+			.wp-post-image {
+				border: 5px solid #E1DCD8;
+				float: left;
+				margin: 0 20px 10px 0;
+			}
+			
+				
+			.byline {
+				float: left;
+				margin-bottom: 15px;
+			}
+			
+			.date {
+				float: right;
+				margin-bottom: 15px;
+			}
+			
+			.wrap {
+				float: right;
+			
+				.entry {
+				
+				}
+			}
+
+			
+			
+		}
+		
+		.post-categories {
+			margin-bottom: 3px;
+			margin-left: 40px;
+		}
+		
+		.post-tags {
+			border-bottom: 1px solid #CCC;
+			margin-bottom: 50px;
+			margin-left: 40px;
+			padding-bottom: 20px;			
 		}
 		
 		#respond {
