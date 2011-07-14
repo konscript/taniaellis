@@ -298,58 +298,68 @@ html > body {
 #page #respond input[type=submit] {
   color: #FFF;
 }
-/* line 355, ../sass/text-styles.scss */
+/* line 354, ../sass/text-styles.scss */
+#page .recent-comments {
+  color: #7D7872;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+/* line 359, ../sass/text-styles.scss */
+#page .recent-comments span {
+  color: #7FB987;
+}
+/* line 365, ../sass/text-styles.scss */
 #page .comment .comment-author-url {
   color: #7FB987;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 361, ../sass/text-styles.scss */
+/* line 371, ../sass/text-styles.scss */
 #page .comment .comment-date-time {
   color: #7D7872;
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 367, ../sass/text-styles.scss */
+/* line 377, ../sass/text-styles.scss */
 #page .comment .comment-author {
   color: #7D7872;
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 373, ../sass/text-styles.scss */
+/* line 383, ../sass/text-styles.scss */
 #page .comment .comment-content {
   color: #7D7872;
   line-height: 1.3em;
 }
-/* line 380, ../sass/text-styles.scss */
+/* line 390, ../sass/text-styles.scss */
 #page .widget .header-container {
   color: #B0ADA6;
 }
-/* line 383, ../sass/text-styles.scss */
+/* line 393, ../sass/text-styles.scss */
 #page .widget .header-container .first-line {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 0.699em;
   text-transform: uppercase;
 }
-/* line 391, ../sass/text-styles.scss */
+/* line 401, ../sass/text-styles.scss */
 #page .widget .header-container .second-line {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 1.65em;
   text-transform: uppercase;
 }
-/* line 400, ../sass/text-styles.scss */
+/* line 410, ../sass/text-styles.scss */
 #page .widget .item .by-line, #page .widget .item .meta-data {
   color: #94918A;
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 406, ../sass/text-styles.scss */
+/* line 416, ../sass/text-styles.scss */
 #page .widget .item .by-line {
   font-weight: bold;
 }
-/* line 410, ../sass/text-styles.scss */
+/* line 420, ../sass/text-styles.scss */
 #page .widget .item .title {
   color: #94918A;
   display: block;
@@ -358,16 +368,16 @@ html > body {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 418, ../sass/text-styles.scss */
+/* line 428, ../sass/text-styles.scss */
 #page .widget .item .title:hover {
   text-decoration: underline;
 }
-/* line 423, ../sass/text-styles.scss */
+/* line 433, ../sass/text-styles.scss */
 #page .widget .item .excerpt {
   color: #94918A;
   line-height: 1.4em;
 }
-/* line 429, ../sass/text-styles.scss */
+/* line 439, ../sass/text-styles.scss */
 #page .widget .item .options .read-more, #page .widget .item .options .view-cases, #page .widget .item .options .view-clients {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -385,21 +395,21 @@ html > body {
   font-size: 1.1em;
   text-decoration: none;
 }
-/* line 436, ../sass/text-styles.scss */
+/* line 446, ../sass/text-styles.scss */
 #page .widget .item .options .read-more:hover, #page .widget .item .options .view-cases:hover, #page .widget .item .options .view-clients:hover {
   color: #608169;
 }
-/* line 443, ../sass/text-styles.scss */
+/* line 453, ../sass/text-styles.scss */
 #page .widget .view-all {
   color: #FFF;
   text-decoration: none;
 }
-/* line 447, ../sass/text-styles.scss */
+/* line 457, ../sass/text-styles.scss */
 #page .widget .view-all:hover {
   color: #e7e7e7;
 }
 
-/* line 455, ../sass/text-styles.scss */
+/* line 465, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: 500;

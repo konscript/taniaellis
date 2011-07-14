@@ -1,8 +1,4 @@
 <?php
-/*
-Template Name: Article Single
-*/
-?>
 
   <?php get_header(); ?>
 

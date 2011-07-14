@@ -1,5 +1,5 @@
 @import "compass/css3/transition";
-
+ 
 body {
 	font-size: 75%;
 }
@@ -348,6 +348,16 @@ html>body {
 		
 		input[type=submit] {
 			color: #FFF;
+		}
+	}
+	
+	.recent-comments {
+		color: #7D7872;
+		font-size: 1.3em;
+		text-transform: uppercase;
+		
+		span {
+			color: #7FB987;	
 		}
 	}
 	

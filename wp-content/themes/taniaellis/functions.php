@@ -271,10 +271,72 @@ function article_register() {
 		'rewrite' => array('slug' => 'articles', 'with_front' => false),
 		'capability_type' => 'post',
 		'hierarchical' => false,
-		'supports' => array('title', 'author', 'excerpt', 'editor', 'thumbnail', 'comments')
+		'supports' => array('title', 'author', 'excerpt', 'editor', 'thumbnail', 'comments'),
+		//'taxonomies' => array('category', 'post_tag')
 	  );
 	  
 	  register_post_type('te_article', $args);
+}
+
+add_action('init', 'create_article_taxonomies');
+
+function create_article_taxonomies() {
+  $te_article_category_labels = array(
+    'name'                => _x('Article Categories', 'taxonomy general name'),
+    'singular_name'       => _x('Article Category', 'taxonomy singular name'),
+    'search_items'        => __('Search Categories'),
+    'popular_items'       => __('Popular Categories'),
+    'all_items'           => __('All Categories'),
+    'parent_item'         => __('Parent Category'),
+    'parent_item_colon'   => __('Parent Category:'),
+    'edit_item'           => __('Edit Category'),
+    'update_item'         => __('Update Category'),
+    'add_new_item'        => __('Add New Category'),
+    'new_item_name'       => __('New Category Name')  
+  );
+  
+  $te_article_category_args = array(
+    'labels'            => $te_article_category_labels,
+    'public'            => true,
+    'show_in_nav_menus' => true,
+    'show_ui'           => true,
+    'show_tagcloud'     => true,
+    'hierarchical'      => true,
+    'rewrite'           => array('slug' => 'article-categories', 'with_front' => false),
+    '_builtin'          => false
+  );
+  
+  register_taxonomy('te_article-category', 'te_article', $te_article_category_args);
+  
+  $te_article_tag_labels = array(
+    'name'                  => _x('Article Tags', 'taxonomy general name'),
+    'singular_name'         => _x('Article Tag', 'taxonomy singular name'),
+    'search_items'          => __('Search Tags'),
+    'popular_items'         => __('Popular Tags'),
+    'all_items'             => __('All Tags'),
+    'parent_item'           => __('Parent Tags'),
+    'parent_item_colon'     => __('Parent Tags:'),
+    'edit_item'             => __('Edit Tag'),
+    'update_item'           => __('Update Tag'),
+    'add_new_item'          => __('Add New Tag'),
+    'new_item_name'         => __('New Tag Name'),
+    'add_or_remove_items'   => __('Add or remove tags'),
+    'choose_from_most_used' => __('Choose from most used tags')
+  );
+  
+  $te_article_tag_args = array(
+    'labels'            => $te_article_tag_labels,
+    'public'            => true,
+    'show_in_nav_menus' => true,
+    'show_ui'           => true,
+    'show_tagcloud'     => true,
+    'hierarchical'      => false,
+    'rewrite'           => array('slug' => 'article-tags', 'with_front' => false),
+    '_builtin'          => false
+  );
+  
+  register_taxonomy('te_article-tag', 'te_article', $te_article_tag_args);
+  
 }
 
 ?>
