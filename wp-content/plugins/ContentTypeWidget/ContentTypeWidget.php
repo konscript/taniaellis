@@ -138,11 +138,7 @@ class ContentTypeWidget extends WP_Widget {
 			
 			echo "<a href=\"". get_permalink($post->ID)."\" class=\"title\">$title</a>";
 			
-			
-			$content = $post->post_excerpt;
-			$content = str_replace(']]>', ']]&gt;', $content);
-			
-			echo "<p class=\"excerpt\">$content</p>";
+			echo "<p class=\"excerpt\">".$post->post_excerpt . the_excerpt()."</p>";
 			
 			echo "<div class=\"options\"><a class=\"read-more\" href=\"". get_permalink($post->ID)."\">Read more</a></div>";
 			
