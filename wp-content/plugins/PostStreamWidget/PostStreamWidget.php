@@ -61,7 +61,8 @@ class PostStreamWidget extends WP_Widget {
 		
 		$query = new WP_Query('post_type='. $ptype[$instance['type']] .'&post_status=publish,future');
 		
-		while($query->have_posts()) : $query->the_post();
+		$count = 0;
+		while($query->have_posts() && $count < $instance['items']) : $query->the_post();
 			
 			if($instance['type'] == 'event') {
 				$end = new DateTime(
@@ -103,6 +104,8 @@ class PostStreamWidget extends WP_Widget {
 			</div>
 			
 			<?php
+			
+			$count++;
 		endwhile;
 		
 		?>
@@ -119,6 +122,7 @@ class PostStreamWidget extends WP_Widget {
 		$instance['titleB'] 	= strip_tags($new_instance['titleB']);
 		$instance['type']		= strip_tags($new_instance['type']);
 		$instance['size']		= strip_tags($new_instance['size']);
+		$instance['items']		= strip_tags($new_instance['items']);
 		$instance['thumbnails'] = strip_tags($new_instance['thumbnails']);
 		
 		return $instance;
@@ -129,6 +133,8 @@ class PostStreamWidget extends WP_Widget {
 			'titleA'			=> '',
 			'titleB'			=> '',
 			'type'				=> 'post',
+			'size'				=> 'wide',
+			'items'				=> '3',
 			'thumbnails'		=> true
 		);
 		
@@ -153,7 +159,7 @@ class PostStreamWidget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('type'); ?>">Post Type:</label>
+			<label for="<?php echo $this->get_field_id('type'); ?>">Post Type:</label><br />
 			<select 
 				id="<?php echo $this->get_field_id('type'); ?>" 
 				name="<?php echo $this->get_field_name('type'); ?>">
@@ -165,7 +171,7 @@ class PostStreamWidget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('size'); ?>">Thumbnail Dimensions:</label>
+			<label for="<?php echo $this->get_field_id('size'); ?>">Thumbnail Dimensions:</label><br />
 			<select 
 				id="<?php echo $this->get_field_id('size'); ?>" 
 				name="<?php echo $this->get_field_name('size'); ?>">
@@ -173,6 +179,17 @@ class PostStreamWidget extends WP_Widget {
 				<option value="square"<?php if($instance['size'] == 'square') : ?> selected="selected"<?php endif; ?>>Square</option>
 				<option value="tall"<?php if($instance['size'] == 'tall') : ?> selected="selected"<?php endif; ?>>Tall</option>
 					
+			</select>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('items'); ?>">Items to show:</label><br />
+			<select 
+				id="<?php echo $this->get_field_id('items'); ?>" 
+				name="<?php echo $this->get_field_name('items'); ?>">
+				<?php for($i = 1; $i <= 10; $i++) : ?>
+				<option value="<?php echo $i; ?>"<?php if($instance['items'] == $i) : ?> selected="selected"<?php endif; ?>><?php echo $i; ?></option>
+				<?php endfor; ?>
 			</select>
 		</p>
 		

@@ -6,7 +6,10 @@ wp-content/*
 !wp-content/themes/*
 !wp-content/themes/taniaellis
 !wp-content/themes/taniaellis/*
+!wp-content/plugins/PostFixedWidget
+!wp-content/plugins/PostFixedWidget/*
+!wp-content/plugins/PostStream
+!wp-content/plugins/PostStream/*
 
 wp-content/themes/taniaellis/.DS_Store
-
 wp-content/themes/taniaellis/config.rb
