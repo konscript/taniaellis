@@ -14,6 +14,9 @@
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.corner.js"></script>
 		<script src="<?php bloginfo('template_url') ?>/js/modernizr.js"></script>
 		
+		<script type="text/javascript">var addthis_product = 'wpp-261';
+		var addthis_config = {"data_track_clickback":true,"ui_508_compliant":true};</script><script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=wp-4e1ecfa8583756c8"></script>
+		
 		<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->

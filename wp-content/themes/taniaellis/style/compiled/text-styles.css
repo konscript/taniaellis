@@ -432,16 +432,22 @@ html > body {
 /* line 482, ../sass/text-styles.scss */
 #page .widget .item .title {
   color: #94918A;
+  display: block;
   font-size: 1.3em;
   font-weight: bold;
+  text-decoration: none;
   text-transform: uppercase;
 }
-/* line 489, ../sass/text-styles.scss */
+/* line 490, ../sass/text-styles.scss */
+#page .widget .item .title:hover {
+  text-decoration: underline;
+}
+/* line 495, ../sass/text-styles.scss */
 #page .widget .item .excerpt {
   color: #94918A;
   line-height: 1.4em;
 }
-/* line 495, ../sass/text-styles.scss */
+/* line 501, ../sass/text-styles.scss */
 #page .widget .item .options .read-more, #page .widget .item .options .view-cases, #page .widget .item .options .view-clients {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -459,21 +465,21 @@ html > body {
   font-size: 1.1em;
   text-decoration: none;
 }
-/* line 502, ../sass/text-styles.scss */
+/* line 508, ../sass/text-styles.scss */
 #page .widget .item .options .read-more:hover, #page .widget .item .options .view-cases:hover, #page .widget .item .options .view-clients:hover {
   color: #608169;
 }
-/* line 509, ../sass/text-styles.scss */
+/* line 515, ../sass/text-styles.scss */
 #page .widget .view-all {
   color: #FFF;
   text-decoration: none;
 }
-/* line 513, ../sass/text-styles.scss */
+/* line 519, ../sass/text-styles.scss */
 #page .widget .view-all:hover {
   color: #e7e7e7;
 }
 
-/* line 521, ../sass/text-styles.scss */
+/* line 527, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: 500;

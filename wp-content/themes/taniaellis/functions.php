@@ -2,7 +2,8 @@
 
 add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article'));
 set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
-add_image_size('post-square-small-thumbnail', 50, 50, true);
+add_image_size('post-square-thumbnail', 100, 100, true);
+add_image_size('post-tall-thumbnail', 62, 116, true);
 add_image_size('post-wide-thumbnail', 240, 100, true);
 
 if(function_exists( 'register_nav_menus')) {
@@ -226,7 +227,7 @@ function event_register() {
 		'query_var'				=> true,
 		'menu_position'			=> 5,
 		'menu_icon'				=> get_stylesheet_directory_uri() . '/images/icon_event.gif',
-		'rewrite'				=> array('slug' => 'event'),
+		'rewrite'				=> array('slug' => 'event', 'with_front' => false),
 		'capability_type'		=> 'post',
 		'herarchical'			=> false,
 		'supports'				=> array(

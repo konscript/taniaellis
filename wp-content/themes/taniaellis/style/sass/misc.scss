@@ -14,7 +14,7 @@
 #header-top-container {
 	float: right;
 	width: 100%;
-	
+
 	#navigation-top {
 		float: right;
 		margin-right: 10px;
@@ -23,27 +23,27 @@
 			float: left;
 			padding: 15px 20px 15px 0;
 		}
-	}
-	
+	} 
+
 	form {
 		border: 1px solid #94918A;
 		float: right;
 		height: 18px;
 		margin-top: 11px;
 		width: 153px;
-		
+
 		#searchbar {
 			float: right;
 			height: 100%;
 			line-height: 16px;
 			padding-left: 1px;
 			width: 130px;
-			
+
 			&:focus {
 				outline: none;
 			}
 		}
-		
+
 		input[type=submit] {
 			background-color: #B0ADA6;
 			background-image: url('../../images/searchbar_icon.png');
@@ -60,19 +60,19 @@
 	clear: right;
 	float: right;
 	width: 100%;
-	
+
 	#logo {
 		float: left;
 	}
-	
+
 	#shop-link {
 		@include transition(background-color, 0.1s, ease-in-out);
-		
+
 		background-color: #93B897;
 		float: left;
 		line-height: 36px;
 		padding: 0 15px;	
-		
+
 		&:hover {
 			background-color: #93B897 / 1.2;
 		}	
@@ -91,13 +91,13 @@
 				float: left;
 				line-height: 36px;
 				padding: 0 12px;
-				
+
 				&:hover {
 					background-color: #B0ADA6 / 1.2;
 				}
 			}
 		}
-		
+
 		li.current-menu-item a { background-color: #B0ADA6 / 1.2; }
 	}
 }
@@ -108,39 +108,39 @@
 		float: right;
 		margin-bottom: 30px;
 	}
-	
-	
+
+
 	#header-container {
 		float: left;
 		height: 310px;
 		width: 100%;
-		
+
 		.navigation-header {
 			float: left;		
-		
+
 			li {
 				margin-top: 5px;
-			
+
 				&:first-child {
 					margin-top: 0;
 				}			
 			}
 		}
-		
+
 		#navigation-header-standard {
 			width: 260px;
-			
+
 			li {
 				margin-bottom: 10px;
 				a {
 					@include transition(color, 0.1s, ease-in-out);
-					
+
 					display: table-cell;
 					vertical-align: middle;
-					
+
 					span {
 						@include transition(background, 0.1s, ease-in-out);
-						
+
 						background: #b0ada6;
 						float: left;
 						height: 1em;
@@ -148,7 +148,7 @@
 						line-height: 1em;
 						width: 1em;
 					}
-					
+
 					&:hover span {
 						background: #7C7973;
 					}
@@ -160,7 +160,7 @@
 				}
 			}
 		}
-		
+
 		#navigation-social-business {
 			li {
 				a {
@@ -171,34 +171,34 @@
 					height: 30px;
 					padding: 10px;
 					width: 140px;
-				
+
 					.term {
 						display: block;
 						margin-top: 1px;
 					}
 				}			
 			}
-		
+
 			li.grey a { background-color: #94918A; }
 			li.grey a:hover { background-color: #94918A / 1.2; }
-		
+
 			li.green a { background-color: #9CC1A2; }
 			li.green a:hover { background-color: #9CC1A2 / 1.2; }
-		
+
 			li.blue a { background-color: #83A9C0; }
 			li.blue a:hover { background-color: #83A9C0 / 1.2; }
-		
+
 			li.purple a { background-color: #A8A6CD; }
 			li.purple a:hover { background-color: #A8A6CD / 1.2; }
-		
+
 			li.orange a { background-color: #D4B690; }
 			li.orange a:hover { background-color: #D4B690 / 1.2; }
 		}
-		
+
 		.front-page {
-			
+
 		}
-		
+
 		.header-content {
 			@include border-radius(10px);
 			background-color: #EAE6E3;
@@ -207,13 +207,13 @@
 			padding: 15px 10px 10px;
 			position: relative;
 			width: 680px;
-			
+
 			.left-column {
 				float: left;
 				height: 100%;
 				margin: 15px 0 0 -10px;
 				width: 322px;
-				
+
 				.header-title {
 					background: #7c7972;
 					@include border-bottom-right-radius(10px);
@@ -221,55 +221,55 @@
 					height: 68px;
 					padding: 20px 0 0 20px;
 				}
-				
+
 				#tagcloud-title {
 					border-bottom: 1px solid #7d7a75;
 					margin: 30px 0 15px 20px;
 					padding-bottom: 3px;
 				}
-				
+
 				#tagcloud {
 					margin-left: 20px;
 				}
 			}
-			
+
 			.right-column {
 				float: left;
 				height: 100%;
 				width: 250px;
 				padding: 23px 0 0 90px;
-				
+
 				h2 {
 					margin-bottom: 10px;
 				}
-				
+
 				a {
 					@include transition(color, 0.1s, ease-in-out);
 					color: #7d7a75;
-					
+
 					&:hover {
 						color: #7d7a75 / 1.2;
 					}
 				}
 			}
-			
+
 			.box {				
 				bottom: 10px;
 				right: 10px;
 				position: absolute;
 				width: 250px;
-				
+
 				.box-header {
 					@include border-top-radius(10px);
-			
+
 					background-color: #93B897;
 					padding: 15px 20px 10px 20px;
-			
+
 					span.box-first-line {
 						display: block;
 						height: 12px;
 					}
-			
+
 					span.box-second-line {
 						display: block;
 						height: 18px;
@@ -277,7 +277,7 @@
 				}
 			}
 		}
-		
+
 		#frontpage-header-content {
 			@include border-radius(10px);
 			background-color: #EAE6E3;
@@ -422,7 +422,7 @@
 	#page {
 		#social-bar {
 			@include border-radius(0);
-			
+
 			//background: none;
 			//border: 1px solid #000;
 			background: url('../../images/corner.png') bottom right no-repeat;
@@ -431,11 +431,11 @@
 			position: absolute;
 			top: -40px;
 			width: 331px;
-			
+
 			li {
 				margin-left: 5px;
 				margin-right: 0;
-				
+
 				&:first-child {
 					margin-left: 0;
 				}
@@ -446,7 +446,7 @@
 
 #page {
 	position: relative;
-	
+
 	#social-bar, #social-bar-frontpage {
 		@include border-bottom-radius(10px);
 		height: 40px;
@@ -454,26 +454,26 @@
 		right: 38px;
 		top: -20px;
 		width: 500px;
-	
+
 		li {
 			display: block;
 			float: left;
 			margin-right: 10px;
-			
+
 			&:first-child {
 				margin-left: 15px;
 			}
 		}
 	}
-	
+
 	#social-bar {
 		background-color: #C7C2BB;
 	}
-	
+
 	#social-bar-frontpage {
 		background-color: #9CC1A2;
 	}
-	
+
 	.box {
 		@include border-radius(10px);
 		background-color: #C7C2BB;
@@ -483,10 +483,10 @@
 		position: absolute;
 		width: 250px;
 		z-index: 999;
-		
+
 		.box-header {
 			@include border-top-radius(10px);
-			
+
 			background-color: #7C7972;
 			padding: 15px 20px 10px 20px;
 
@@ -500,12 +500,12 @@
 				height: 18px;
 			}
 		}
-		
+
 		.box-content {
 			margin-bottom: 15px;
 			padding: 10px 20px 0;
 		}
-		
+
 		#bonus-sticker {
 			left: 25px;
 			position: absolute;
@@ -514,7 +514,7 @@
 			// top: 40px;
 			// z-index: 15;
 		}
-		
+
 		.box-button {					
 			@include border-radius(5px);
 			@include background-image(linear-gradient(top, #A4A19C, #7C7972));
@@ -537,16 +537,16 @@
 			}
 		}
 	}
-	
+
 	#box-frontpage {
 		background-color: #9CC1A2;
 	}
-	
+
 	.left-sidebar {
 		background: url('../../images/left-fade-background.png') top left no-repeat;
 		margin-left: -16px;
 		padding-left: 16px;
-		
+
 		.widget {
 			clear: left;
 			float: left;
@@ -566,7 +566,7 @@
 				width: 260px;
 			}
 		}
-		
+
 		.widget-blog {
 			background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
 
@@ -576,13 +576,51 @@
 				.excerpt {
 					width: 260px;
 				}
+				
+				.options {
+					float: right;
+					width: 100px;
+				}
+			}
+		}
+		
+		.widget-event {
+			background: url('../../images/post_type_icon_events.png') top left no-repeat;
+
+			.event {
+				@include featured-image(250px, 0);
+
+				.excerpt {
+					width: 260px;
+				}
+				
+				.meta-data {
+					width: 260px;
+					float: right;
+					margin-top: 3px;
+					margin-bottom: 12px;
+					text-align: right;
+				}
+				
+				.by-line {
+					display: none;
+				}
+			}
+		}
+		
+		.widget-reading-room {
+			.reading-room {
+				.options {
+					float: right;
+					width: 100px;
+				}
 			}
 		}
 	}
-	
+
 	.right-sidebar, .right-sidebar-single {
 		background: url('../../images/right-fade-background.png') top right no-repeat;
-				
+
 		.sidebar-background {
 			background-color: #FFF;
 			//border: 1px solid #000;
@@ -830,6 +868,38 @@
 			}
 		}
 		
+		.widget-reading-room {
+			.reading-room {
+				@include featured-image(240px, 20px);
+				
+				.meta-data {
+					float: right;
+					width: 250px;
+				}
+
+				.title, .excerpt {
+					clear: right;
+					float: right;
+					width: 250px;
+				}
+
+				.options {
+					clear: right;
+					float: right;
+					width: 100px;
+				}
+				
+				.addthis_toolbox {
+					float: left;
+					clear: left;
+				}
+
+				.by-line {
+					display: none;
+				}
+			}
+		}
+
 		.widget-blog {
 			background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
 
@@ -850,15 +920,24 @@
 				.options {
 					clear: right;
 					float: right;
-					width: 250px;
+					width: 100px;
+				}
+				
+				.addthis_toolbox {
+					float: left;
+					clear: right;
+				}
+
+				.by-line {
+					display: none;
 				}
 			}
 		}
 	}
-	
+
 	.widget-event {
 		background: url('../../images/post_type_icon_events.png') top left no-repeat;
-		
+
 		.event {
 			@include featured-image(100px, 20px);
 
@@ -879,14 +958,18 @@
 
 			.options {
 				float: right;
-				width: 390px;
+				width: 100px;
+			}
+			
+			.by-line {
+				display: none;
 			}
 		}
 	}
-	
+
 	.widget-clients {
 		background: url('../../images/post_type_icon_featured_client.png') top left no-repeat;
-	
+
 		#clients-viewer {
 			float: left;
 			width: 100%;
@@ -915,95 +998,103 @@
 			}
 		}
 	}
-	
 
-		
-		.options {
+
+
+	.options {
+		float: right;
+		height: 16px;
+		line-height: 16px;
+		margin-top: 20px;
+		width: 100%;
+
+		.view-clients {
+			color: #F00;
 			float: right;
-			height: 16px;
-			line-height: 16px;
-			margin-top: 20px;
-			width: 100%;
-
-			.view-clients {
-				color: #F00;
-				float: right;
-				margin-left: 30px;
-				margin-right: 20px;
-			}
-
-			.view-cases {
-				float: right;
-			}
+			margin-left: 30px;
+			margin-right: 20px;
 		}
-	
+
+		.view-cases {
+			float: right;
+		}
+	}
+
 	.header-container {
 		margin-left: 50px;
 		margin-bottom: 20px;
 	}
-	
+
 	.widget-books {
 		background: url('../../images/post_type_icon_books.png') top left no-repeat;
-		
+
 		.book {
 			@include featured-image(60px, 20px);
 		}
 	}
-	
+
 	.widget-reading-room {
 		background: url('../../images/post_type_icon_reading_room.png') top left no-repeat;
-		
+
 		.reading-room {
 			@include featured-image(60px, 20px);
 		}
 	}
-	
+
 	.by-line {
 		float: left;
 		margin-top: 3px;
 	}
-	
+
 	.meta-data {
 		float: right;
 		margin-top: 3px;
 		margin-bottom: 12px;
 	}
-	
+
 	.title {
 		clear: right;
 		margin-bottom: 12px;
 	}
-	
+
 	.excerpt {
 		clear: right;
 		float: right;
 		width: 170px;
 	}
 	
+	.addthis_toolbox {
+		clear: left;
+		float: left;
+		height: 16px;
+		line-height: 16px;
+		margin-top: 20px;
+		width: 110px;
+	}
+
 	.options {
 		float: left;
 		height: 16px;
 		line-height: 16px;
 		margin-top: 20px;
-		width: 100%;
-		
+
 		.sharing {
 			float: left;
 		}
-		
+
 		.read-more {
 			float: right;
 		}
 	}
-	
+
 	.view-all {
 		@include transition(all, 0.1s, ease-in-out);
-		
+
 		background-color: #B1ACA6;
 		float: right;
 		margin-right: 20px;
 		padding: 5px 15px;
-		
+
 		&:hover {
 			background-color: #B1ACA6 / 1.2;
 		}
@@ -1024,7 +1115,7 @@ footer {
 			padding: 0 10px;
 		}
 	}
-	
+
 	#co2-link {
 		float: right;
 		margin-top: 15px;

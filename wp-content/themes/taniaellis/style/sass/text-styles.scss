@@ -481,9 +481,15 @@ html>body {
 		
 			.title {
 				color: #94918A;
+				display: block;
 				font-size: 1.3em;
 				font-weight: bold;
+				text-decoration: none;
 				text-transform: uppercase;
+				
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		
 			.excerpt {
@@ -513,7 +519,7 @@ html>body {
 			&:hover {
 				color: #FFF / 1.1;
 			}	
-		}
+		} 
 	}
 }
 
