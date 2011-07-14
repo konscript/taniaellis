@@ -326,6 +326,16 @@ html>body {
 				strong {
 					font-weight: bold;
 				}
+				
+				a {
+					@include transition(color, 0.1s, ease-in-out);
+					color: #7FB987;
+					text-decoration: none;
+					
+					&:hover {
+						color: #7FB987 / 1.2;
+					}
+				}
 			}
 			
 			h3 {
@@ -376,10 +386,16 @@ html>body {
 		
 		.read-more {
 			a {
+				@include transition(color, 0.1s, ease-in-out);
+				
 				color: #7FB987;
 				float: right;
 				font-weight: bold;
 				text-decoration: none;
+				
+				&:hover {
+					color: #7FB987 / 1.2;
+				}
 			}
 		}
 	}
