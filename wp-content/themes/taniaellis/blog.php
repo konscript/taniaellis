@@ -91,17 +91,20 @@
       </div>
     </div>
 	  
-		<section class="left-sidebar">
-			<?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(2); ?>
-			&nbsp;
-		</section>
-		
-		<section class="right-sidebar">
-		    <?php if(function_exists('dynamic_sidebar')) dynamic_sidebar(1); ?>
-			&nbsp;
-		</section>
-		
-		<div class="clearer"></div>
+	<section class="left-sidebar">
+		<div class="sidebar-background">
+			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
+		</div>
+	</section>
+	
+	<section class="right-sidebar">
+		<div class="sidebar-background">
+	    	<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Right Sidebar"); ?>
+			<?php //if(function_exists('dynamic_sidebar')) dynamic_sidebar(1); ?>
+		</div>
+	</section>
+	
+	<div class="clearer"></div>
 		
 	</div> <!-- #page -->
 </div> <!-- #page-content -->

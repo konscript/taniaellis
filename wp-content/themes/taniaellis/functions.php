@@ -2,8 +2,8 @@
 
 add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article'));
 set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
-add_image_size('post-square-small-thumbnail', 50, 50);
-add_image_size('post-wide-thumbnail', 240, 100);
+add_image_size('post-square-small-thumbnail', 50, 50, true);
+add_image_size('post-wide-thumbnail', 240, 100, true);
 
 if(function_exists( 'register_nav_menus')) {
 	register_nav_menus(array(
@@ -265,6 +265,7 @@ function article_register() {
 		'show_ui' => true,
 		'query_var' => true,
 		'menu_position' => 5,
+		'_builtin' => false, // It's a custom post type, not built in!
 		'menu_icon' => get_stylesheet_directory_uri() . '/images/icon_article.png',
 		'rewrite' => array('slug' => 'articles', 'with_front' => false),
 		'capability_type' => 'post',

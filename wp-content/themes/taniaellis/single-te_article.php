@@ -185,7 +185,7 @@
                                   </div>
                                 </div>
                                 
-                                <?php echo get_the_term_list(80, 'tomas', 'Tagged | ', ' | ', ''); ?>
+                                <?php //echo get_the_term_list(80, 'tomas', 'Tagged | ', ' | ', ''); ?>
                                 
                               <?php endwhile; ?>
                               <?php endif; ?>
