@@ -70,11 +70,14 @@ class PostFixedWidget extends WP_Widget {
 			
 		<?php
 		
-		$query = new WP_Query( array( 'post__in' => $this->items($instance) ) );
+		query_posts(array(
+			'post_type'		=> $ptype[$instance['type']],
+			'post__in' 		=> $this->items($instance)
+		));
 		
+	
 		$count = 0;
-		while($query->have_posts() && $count < $instance['items']) : $query->the_post();
-			
+		while(have_posts() && $count < $instance['items']) : the_post();
 			if($instance['type'] == 'event') {
 				$end = new DateTime(
 									get_post_meta(get_the_ID(), '_year', true)		.'-'.
