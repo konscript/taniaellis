@@ -185,6 +185,7 @@
                                     <?php the_content(); ?>
                                   </div>
                                 </div>
+                                <div class="clearer"></div>
                                 
                                 <p class="post-categories">
                                   <?php echo get_the_term_list($post->ID, 'te_article-category', 'Posted in |&nbsp;', '&nbsp;|&nbsp;', ''); ?>

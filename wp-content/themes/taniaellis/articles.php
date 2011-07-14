@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Articles
+*/
+?>
+
 <?php get_header(); ?>
 
 <div id="header">
@@ -166,6 +172,7 @@
                                 <h2 class="first-line">Articles</h2>
                                 <h2 class="second-line">Ethics / Sustainability</h2>
                               </div>
+                              <?php query_posts(array('post_type' => 'te_article')); ?>
                               <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                                
                                 <div class="post-feed">
                                   <?php
@@ -186,6 +193,7 @@
                                     <p class="date">
                                       <?php the_time('F j, Y'); ?>
                                     </p>
+                                    
                                   <!-- </div>     -->
                                   <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                   <div class="entry">

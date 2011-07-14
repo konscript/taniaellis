@@ -369,7 +369,18 @@ html>body {
 		}
 		
 		.comment-count {
-			
+			color: #7FB987;
+			float: left;
+			font-weight: bold;
+		}
+		
+		.read-more {
+			a {
+				color: #7FB987;
+				float: right;
+				font-weight: bold;
+				text-decoration: none;
+			}
 		}
 	}
 	

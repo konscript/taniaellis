@@ -616,7 +616,8 @@
 			margin-bottom: 20px;
 			margin-left: 40px;
 			padding-bottom: 50px;
-			padding-right: 20px;
+			//padding-right: 20px;
+			width: 534px;
 			
 			.meta {
 				float: left;
@@ -650,8 +651,9 @@
 			float: left;
 			margin-bottom: 20px;
 			margin-left: 40px;
-			padding-bottom: 50px;
-			padding-right: 20px;
+			padding-bottom: 20px;
+			//padding-right: 20px;
+			width: 514px;
 			
 			
 			.wp-post-image {
@@ -670,17 +672,26 @@
 				float: right;
 				margin-bottom: 15px;
 			}
+					
+			.entry {
+				margin-bottom: 20px;
+			}
 			
-			.wrap {
-				float: right;
-			
-				.entry {
-				
-				}
+			.comment-count {
+				color: #7FB987;
+				float: left;
+				font-weight: bold;
 			}
 
-			
-			
+			.read-more {
+				a {
+					color: #7FB987;
+					float: right;
+					font-weight: bold;
+					text-decoration: none;
+				}
+			}
+	
 		}
 		
 		.post-categories {
@@ -692,7 +703,8 @@
 			border-bottom: 1px solid #CCC;
 			margin-bottom: 50px;
 			margin-left: 40px;
-			padding-bottom: 20px;			
+			padding-bottom: 20px;
+			width: 534px;		
 		}
 		
 		#respond {
