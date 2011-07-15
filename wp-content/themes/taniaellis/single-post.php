@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-SINGLE POST
+
 <div id="header">
 	<p id="sub-heading">The <span>Social</span> Business Company</p>
 	<p id="language-picker">
@@ -71,7 +71,7 @@ SINGLE POST
 	                    </p>
                     
                     
-	                  <?php endwhile; ?>
+	                  <?php endwhile; wp_reset_query(); ?>
                   <?php endif; ?>
                   
                   <div class="clearer"></div>
