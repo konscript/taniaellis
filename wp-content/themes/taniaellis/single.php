@@ -37,41 +37,42 @@ TEST
 		</section>
 		<section class="right-sidebar-single">
 			<div class="sidebar-background">
-				<?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
-                    <div class="post-header">
-                      <h2 class="first-line">Blog</h2>
-                      <h2 class="second-line"><?php the_category(', '); ?></h2>
-                    </div>
+				<?php WP_Query('post_type=post') ?>
+				<?php if(have_posts()): ?>
+					<?php while(have_posts()): the_post(); ?>
+	                    <div class="post-header">
+	                      <h2 class="first-line">Blog</h2>
+	                      <h2 class="second-line"><?php the_category(', '); ?></h2>
+	                    </div>
                     
-                    <div class="post">
-						<?php
-                          the_post_thumbnail('post-wide-image', array('class' => 'featured-image'));
-                        ?>
+	                    <div class="post">
+							<?php
+	                          the_post_thumbnail('post-wide-image', array('class' => 'featured-image'));
+	                        ?>
 	
-                      <div class="meta">
-                        <p class="byline">
-                          <?php the_category(', '); ?>
-                        </p>
-                        <p class="date">
-                          <?php the_date('F j Y'); ?>
-                        </p>
-                      </div>    
-                      <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                      <div class="entry">
-                        <?php the_content(); ?>
-                      </div>
-                    </div>
-                    <div class="clearer"></div>
+	                      <div class="meta">
+	                        <p class="byline">
+	                          <?php the_category(', '); ?>
+	                        </p>
+	                        <p class="date">
+	                          <?php the_date('F j Y'); ?>
+	                        </p>
+	                      </div>    
+	                      <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	                      <div class="entry">
+	                        <?php the_content(); ?>
+	                      </div>
+	                    </div>
+	                    <div class="clearer"></div>
                     
-                    <p class="post-categories">
-                      <?php echo get_the_term_list($post->ID, 'te_article-category', 'Posted in |&nbsp;', '&nbsp;|&nbsp;', ''); ?>
-                    </p>
-                    <p class="post-tags">
-                      <?php echo get_the_term_list($post->ID, 'te_article-tag', 'Tagged |&nbsp;', '&nbsp;|&nbsp;', ''); ?>
-                    </p>
+	                    <p class="post-categories">
+							<?php the_category(); ?>
+	                    </p>
+	                    <p class="post-tags">
+	                    </p>
                     
                     
-                  <?php endwhile; ?>
+	                  <?php endwhile; ?>
                   <?php endif; ?>
                   
                   <div class="clearer"></div>
