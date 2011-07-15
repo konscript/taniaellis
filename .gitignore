@@ -12,6 +12,14 @@ wp-content/*
 !wp-content/plugins/PostStream/*
 !wp-content/plugins/sidebar-generator
 !wp-content/plugins/sidebar-generator/*
+!wp-content/plugins/regenerate-thumbnails
+!wp-content/plugins/regenerate-thumbnails/*
+!wp-content/plugins/regenerate-thumbnails/jquery-ui
+!wp-content/plugins/regenerate-thumbnails/jquery-ui/*
+!wp-content/plugins/regenerate-thumbnails/jquery-ui/redmond
+!wp-content/plugins/regenerate-thumbnails/jquery-ui/redmond/*
+!wp-content/plugins/regenerate-thumbnails/jquery-ui/redmond/images
+!wp-content/plugins/regenerate-thumbnails/jquery-ui/redmond/images/*
 
 wp-content/themes/taniaellis/.DS_Store
 wp-content/themes/taniaellis/config.rb
