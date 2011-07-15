@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-TEST
 <div id="header">
 	<p id="sub-heading">The <span>Social</span> Business Company</p>
 	<p id="language-picker">
@@ -37,7 +36,6 @@ TEST
 		</section>
 		<section class="right-sidebar-single">
 			<div class="sidebar-background">
-				<?php new WP_Query('post_type=post') ?>
 				<?php if(have_posts()): ?>
 					<?php while(have_posts()): the_post(); ?>
 	                    <div class="post-header">
