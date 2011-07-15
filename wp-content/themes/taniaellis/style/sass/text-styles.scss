@@ -287,6 +287,15 @@ html>body {
 			font-size: 1.8em;
 			line-height: 1.65em;
 			text-transform: uppercase;
+			
+			a {
+				color: #B0ADA6;
+				text-decoration: none;
+				
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 	
@@ -299,6 +308,15 @@ html>body {
 			.byline {
 				font-weight: bold;
 				text-transform: uppercase;
+				
+				a {
+					color: #7D7872;
+					text-decoration: none;
+					
+					&:hover {
+						text-decoration: underline;
+					}
+				}
 			}
 			
 			.date {
