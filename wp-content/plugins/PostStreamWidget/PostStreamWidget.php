@@ -108,6 +108,8 @@ class PostStreamWidget extends WP_Widget {
 			$count++;
 		endwhile;
 		
+		wp_reset_query();
+		
 		?>
 		</div>
 		<?php
