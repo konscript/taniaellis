@@ -37,7 +37,7 @@ TEST
 		</section>
 		<section class="right-sidebar-single">
 			<div class="sidebar-background">
-				<?php WP_Query('post_type=post') ?>
+				<?php new WP_Query('post_type=post') ?>
 				<?php if(have_posts()): ?>
 					<?php while(have_posts()): the_post(); ?>
 	                    <div class="post-header">
