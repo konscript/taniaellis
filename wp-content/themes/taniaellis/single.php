@@ -46,6 +46,23 @@ get_header();
       <div class="sidebar-background">
           
           <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
+            <?php
+            $args = array(
+            	'post_type' => 'attachment',
+            	'numberposts' => null,
+            	'post_status' => null,
+            	'post_parent' => $post->ID
+            );
+            $attachments = get_posts($args);
+            if ($attachments) {
+            	foreach ($attachments as $attachment) {
+            		//echo apply_filters('the_title', $attachment->post_title);
+            		wp_get_attachment_link($attachment->ID, false);
+            	  //echo get_permalink($attachment->ID);
+            	}
+            }
+            ?>
+            
             <div class="post-header">
               <h2 class="first-line">Articles</h2>
               <h2 class="second-line">Ethics / Sustainability</h2>
