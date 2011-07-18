@@ -273,8 +273,7 @@ function article_register() {
 		'rewrite' => array('slug' => 'articles', 'with_front' => false),
 		'capability_type' => 'post',
 		'hierarchical' => false,
-		'supports' => array('title', 'author', 'excerpt', 'editor', 'thumbnail', 'comments'),
-		//'taxonomies' => array('category', 'post_tag')
+		'supports' => array('title', 'editor', 'thumbnail', 'comments')
 	  );
 	  
 	  register_post_type('te_article', $args);
