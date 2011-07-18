@@ -657,6 +657,12 @@
 			//padding-right: 20px;
 			width: 534px;
 			
+			@include featured-image(524px, 0);
+			
+			.featured-image {
+				margin-bottom: 30px;
+			}
+			
 			.meta {
 				float: left;
 				margin-bottom: 20px;
@@ -681,6 +687,10 @@
 					float: left;
 					margin: 0 20px 10px 0;
 				}
+			}
+			
+			.addthis_toolbox {
+				float: right;
 			}
 		}
 		
@@ -732,17 +742,21 @@
 	
 		}
 		
-		.post-categories {
-			margin-bottom: 3px;
-			margin-left: 40px;
-		}
-		
-		.post-tags {
+		.post-identification {
 			border-bottom: 1px solid #CCC;
 			margin-bottom: 50px;
 			margin-left: 40px;
 			padding-bottom: 20px;
-			width: 534px;		
+			width: 534px;
+			
+			.post-categories {
+				//margin-bottom: 3px;
+				//margin-left: 40px;
+			}
+		
+			.post-tags {
+				margin-top: 3px;
+			}
 		}
 		
 		#respond {

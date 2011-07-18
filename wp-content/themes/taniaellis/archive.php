@@ -181,27 +181,48 @@
                                   ?>
                                   <!-- <div class="meta"> -->
                                     <p class="byline">
-                                      By <?php the_author(); ?>
+                                      <?php 
+                                      if(get_post_type($post->ID) == 'te_article') {
+                                        echo te_get_article_author($post->ID);
+                                      } else {
+                                        echo 'By' . get_the_author();
+                                      }
+                                      ?>
                                     </p>
                                     <p class="date">
-                                      <?php the_time('F j, Y'); ?>
+                                      <?php 
+                                      if(get_post_type($post->ID) == 'te_article') {
+                                        echo te_get_article_date($post->ID);
+                                      } else {
+                                        the_time('F j, Y');
+                                      }
+                                      ?>
                                     </p>
                                   <!-- </div>     -->
                                   <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                   <div class="entry">
-                                    <?php the_excerpt(); ?>
+                                    <?php 
+                                    if(get_post_type($post->ID) == 'te_article') {
+                                      the_content();
+                                    } else {
+                                      the_excerpt();
+                                    }
+                                    ?>
                                   </div>
                                   
                                   <p class="comment-count">
                                     (<?php comments_number('No comments', '1 comment', '% comments') ?>)
                                   </p>
                                   <p class="read-more">
-                                    <a href="<?php echo the_permalink(); ?>">Read more</a>
+                                    <?php 
+                                    if(get_post_type($post->ID) == 'te_article') {
+                                      echo '<a href="'. te_get_article_url($post->ID) . '">Read more</a>';
+                                    } else {
+                                      echo '<a href="' . the_permalink() . '">Read more</a>';
+                                    }
+                                    ?>
                                   </p>
-                                  
                                 </div>
-                                
-                                
                               <?php endwhile; ?>
                               <?php endif; ?>
                               

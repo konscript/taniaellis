@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <div id="header">
 	<p id="sub-heading">The <span>Social</span> Business Company</p>
 	<p id="language-picker">
@@ -47,6 +48,7 @@
 							<?php
 	                          the_post_thumbnail('post-wide-image', array('class' => 'featured-image'));
 	                        ?>
+	
 	                      <div class="meta">
 	                        <p class="byline">
 	                          <?php the_category(', '); ?>
@@ -69,7 +71,7 @@
 	                    </p>
                     
                     
-	                  <?php endwhile; ?>
+	                  <?php endwhile; wp_reset_query(); ?>
                   <?php endif; ?>
                   
                   <div class="clearer"></div>

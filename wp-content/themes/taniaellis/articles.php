@@ -186,25 +186,35 @@ Template Name: Articles
                                         break;
                                     }
                                   ?>
-                                  <!-- <div class="meta"> -->
                                     <p class="byline">
-                                      By <?php the_author(); ?>
+                                      <?php
+                                        echo te_get_article_author($post->ID);
+                                      ?>
                                     </p>
                                     <p class="date">
-                                      <?php the_time('F j, Y'); ?>
+                                      <?php
+                                        $article_date = get_post_meta($post->ID, 'te_article_date', true);
+                                        
+                                        // Determine whether a date has been set. Echo publish date if not.
+                                        if(isset($article_date) && $article_date != "") {
+                                          echo $article_date;
+                                        } else {
+                                          the_time('F j, Y');
+                                        }
+                                      ?>
                                     </p>
                                     
                                   <!-- </div>     -->
                                   <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                   <div class="entry">
-                                    <?php the_excerpt(); ?>
+                                    <?php the_content(); ?>
                                   </div>
                                   
                                   <p class="comment-count">
-                                    (<?php comments_number('No comments', '1 comment', '% comments') ?>)
+                                    (<?php comments_number('No comments', '1 comment', '% comments'); ?>)
                                   </p>
                                   <p class="read-more">
-                                    <a href="<?php echo the_permalink(); ?>">Read more</a>
+                                      <a href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
                                   </p>
                                   
                                 </div>

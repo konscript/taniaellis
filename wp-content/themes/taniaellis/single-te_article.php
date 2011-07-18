@@ -167,14 +167,14 @@
                                   <h2 class="first-line">Articles</h2>
                                   <h2 class="second-line">Ethics / Sustainability</h2>
                                 </div>
-                                
+                                                                
                                 <div class="post">
                                   <div class="meta">
                                     <p class="byline">
-                                      By <?php the_author(); ?>
+                                      <?php echo te_get_article_author($post->ID); ?>
                                     </p>
                                     <p class="date">
-                                      <?php the_date('F j Y'); ?>
+                                      <?php echo te_get_article_date($post->ID); ?>
                                     </p>
                                   </div>    
                                   <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -184,15 +184,27 @@
                                     ?>
                                     <?php the_content(); ?>
                                   </div>
+                                  <p class="read-more">
+                                    <!-- HTTP:// should be appended to the link if it is not already! -->
+                                    <a href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>
+                                  </p>
                                 </div>
                                 <div class="clearer"></div>
-                                
-                                <p class="post-categories">
-                                  <?php echo get_the_term_list($post->ID, 'te_article-category', 'Posted in |&nbsp;', '&nbsp;|&nbsp;', ''); ?>
-                                </p>
-                                <p class="post-tags">
-                                  <?php echo get_the_term_list($post->ID, 'te_article-tag', 'Tagged |&nbsp;', '&nbsp;|&nbsp;', ''); ?>
-                                </p>
+                                                        
+                                <?php if(has_term('', 'te_article-category', $post->ID) || has_term('', 'te_article-tag', $post->ID)): ?>
+                                  <div class="post-identification">
+                                    <?php if(has_term('', 'te_article-category', $post->ID)): ?>
+                                      <p class="post-categories">
+                                        <?php echo get_the_term_list($post->ID, 'te_article-category', 'Posted in |&nbsp;', '&nbsp;|&nbsp;', ''); ?>
+                                      </p>
+                                    <?php endif; ?>
+                                    <?php if(has_term('', 'te_article-tag', $post->ID)): ?>
+                                      <p class="post-tags">
+                                        <?php echo get_the_term_list($post->ID, 'te_article-tag', 'Tagged |&nbsp;', '&nbsp;|&nbsp;', ''); ?>
+                                      </p>
+                                    <?php endif; ?>
+                                  </div>
+                                <?php endif; ?>
                                 
                                 
                               <?php endwhile; ?>

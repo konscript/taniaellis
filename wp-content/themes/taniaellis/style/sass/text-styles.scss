@@ -287,6 +287,15 @@ html>body {
 			font-size: 1.8em;
 			line-height: 1.65em;
 			text-transform: uppercase;
+			
+			a {
+				color: #B0ADA6;
+				text-decoration: none;
+				
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 	
@@ -299,6 +308,15 @@ html>body {
 			.byline {
 				font-weight: bold;
 				text-transform: uppercase;
+				
+				a {
+					color: #7D7872;
+					text-decoration: none;
+					
+					&:hover {
+						text-decoration: underline;
+					}
+				}
 			}
 			
 			.date {
@@ -344,6 +362,20 @@ html>body {
 				margin-bottom: 0.6em;
 				margin-top: 2.5em;
 				text-transform: uppercase;
+			}
+		}
+		
+		.read-more {
+			a {
+				@include transition(color, 0.1s, ease-in-out);
+				
+				color: #7FB987;
+				font-weight: bold;
+				text-decoration: none;
+				
+				&:hover {
+					color: #7FB987 / 1.2;
+				}
 			}
 		}
 	}
