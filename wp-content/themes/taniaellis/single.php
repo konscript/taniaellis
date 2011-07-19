@@ -48,7 +48,6 @@
 							<?php
 	                          the_post_thumbnail('post-wide-image', array('class' => 'featured-image'));
 	                        ?>
-	
 	                      <div class="meta">
 	                        <p class="byline">
 	                          <?php the_category(', '); ?>

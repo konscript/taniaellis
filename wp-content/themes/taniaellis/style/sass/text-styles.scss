@@ -364,6 +364,20 @@ html>body {
 				text-transform: uppercase;
 			}
 		}
+		
+		.read-more {
+			a {
+				@include transition(color, 0.1s, ease-in-out);
+				
+				color: #7FB987;
+				font-weight: bold;
+				text-decoration: none;
+				
+				&:hover {
+					color: #7FB987 / 1.2;
+				}
+			}
+		}
 	}
 	
 	.post-feed {
