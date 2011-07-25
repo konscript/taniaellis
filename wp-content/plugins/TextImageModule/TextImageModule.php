@@ -104,7 +104,7 @@ class TextImageModule extends WP_Widget {
 			'header'			=> '',
 			'link'				=> '',
 			'linkText'		=> 'Read More',
-			'imageUrl'		=> '',
+			'imageURL'		=> '',
 			'metadata'		=> '',
 			'byline'			=> '',
 			'text'			=> '',
@@ -141,7 +141,7 @@ class TextImageModule extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $header; ?>">Header:</label><br />
+			<label for="<?php echo $header_id; ?>">Header:</label><br />
 			<input 
 				type="text"
 				id="<?php echo $header_id; ?>"
@@ -150,12 +150,39 @@ class TextImageModule extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $header; ?>">Text:</label><br />
+			<label for="<?php echo $text_id; ?>">Text:</label><br />
 			<textarea
 				id="<?php echo $text_id; ?>"
 				name="<?php echo $text_name; ?>"
 				style="width:100%;"
 				rows="6"><?php echo $text; ?></textarea>
+		</p>
+		
+		<p>
+			<label for="<?php echo $imageURL_id; ?>">Image:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $imageURL_id; ?>"
+				name="<?php echo $imageURL_name; ?>"
+				value="<?php echo $imageURL; ?>">
+		</p>
+		
+		<p>
+			<label for="<?php echo $link_id; ?>">Link:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $link_id; ?>"
+				name="<?php echo $link_name; ?>"
+				value="<?php echo $link; ?>">
+		</p>
+		
+		<p>
+			<label for="<?php echo $linkText_id; ?>">Link text:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $linkText_id; ?>"
+				name="<?php echo $linkText_name; ?>"
+				value="<?php echo $linkText; ?>">
 		</p>
 		
 		<?php
