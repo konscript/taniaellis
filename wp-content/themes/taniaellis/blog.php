@@ -92,15 +92,12 @@
     </div>
 	  
 	<section class="left-sidebar">
-		<div class="sidebar-background">
-			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
-		</div>
+		<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
 	</section>
 	
 	<section class="right-sidebar">
 		<div class="sidebar-background">
-	    	<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Right Sidebar"); ?>
-			<?php //if(function_exists('dynamic_sidebar')) dynamic_sidebar(1); ?>
+			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Right Sidebar"); ?>
 		</div>
 	</section>
 	
