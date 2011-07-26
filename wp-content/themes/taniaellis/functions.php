@@ -456,9 +456,144 @@ function te_get_article_date($post_id) {
   }
 }
 
+/**
+##########################
+# CREATE VIDEO POST TYPE #
+##########################
+**/
+add_action('init', 'video_register');
+
+function video_register() {
+
+  $labels = array(
+		'name' => _x('Videos', 'post type general name'),
+		'singular_name' => _x('Video', 'post type singular name'),
+		'add_new' => _x('Add New', 'video'),
+		'add_new_item' => __('Add New Video'),
+		'edit_item' => __('Edit Video'),
+		'new_item' => __('New Video'),
+		'view_item' => __('View Video'),
+		'search_items' => __('Search Videos'),
+		'not_found' =>  __('Nothing found'),
+		'not_found_in_trash' => __('Nothing found in Trash'),
+		'parent_item_colon' => ''
+	);
+	
+	$args = array(
+	  '_builtin' => false,
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'query_var' => true,
+		'menu_position' => 5,
+		'_builtin' => false, // It's a custom post type, not built in!
+		'menu_icon' => get_stylesheet_directory_uri() . '/images/icon_video.png',
+		'rewrite' => array('slug' => 'articles', 'with_front' => false),
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array('title', 'editor', 'thumbnail')
+	  );
+	  
+	  register_post_type('te_video', $args);
+}
+
+add_action('init', 'create_video_taxonomies');
+function create_video_taxonomies() {
+  $te_video_category_labels = array(
+    'name'                => _x('Video Categories', 'taxonomy general name'),
+    'singular_name'       => _x('Video Category', 'taxonomy singular name'),
+    'search_items'        => __('Search Categories'),
+    'popular_items'       => __('Popular Categories'),
+    'all_items'           => __('All Categories'),
+    'parent_item'         => __('Parent Category'),
+    'parent_item_colon'   => __('Parent Category:'),
+    'edit_item'           => __('Edit Category'),
+    'update_item'         => __('Update Category'),
+    'add_new_item'        => __('Add New Category'),
+    'new_item_name'       => __('New Category Name')  
+  );
+  
+  $te_video_category_args = array(
+    'labels'            => $te_video_category_labels,
+    'public'            => true,
+    'show_in_nav_menus' => true,
+    'show_ui'           => true,
+    'show_tagcloud'     => true,
+    'hierarchical'      => true,
+    'rewrite'           => array('slug' => 'article-categories', 'with_front' => false),
+    '_builtin'          => false
+  );
+  
+  register_taxonomy('te_video-category', 'te_video', $te_video_category_args);
+  
+  $te_article_tag_labels = array(
+    'name'                  => _x('Video Tags', 'taxonomy general name'),
+    'singular_name'         => _x('Video Tag', 'taxonomy singular name'),
+    'search_items'          => __('Search Tags'),
+    'popular_items'         => __('Popular Tags'),
+    'all_items'             => __('All Tags'),
+    'parent_item'           => __('Parent Tags'),
+    'parent_item_colon'     => __('Parent Tags:'),
+    'edit_item'             => __('Edit Tag'),
+    'update_item'           => __('Update Tag'),
+    'add_new_item'          => __('Add New Tag'),
+    'new_item_name'         => __('New Tag Name'),
+    'add_or_remove_items'   => __('Add or remove tags'),
+    'choose_from_most_used' => __('Choose from most used tags')
+  );
+  
+  $te_video_tag_args = array(
+    'labels'            => $te_article_tag_labels,
+    'public'            => true,
+    'show_in_nav_menus' => true,
+    'show_ui'           => true,
+    'show_tagcloud'     => true,
+    'hierarchical'      => false,
+    'rewrite'           => array('slug' => 'article-tags', 'with_front' => false),
+    '_builtin'          => false
+  );
+  
+  register_taxonomy('te_video-tag', 'te_video', $te_video_tag_args);
+}
+
+/* ADD CUSTOM FIELDS TO ARTICLE POST TYPE */
+
+add_action("admin_init", "te_video_add_meta_box");
+add_action('save_post', 'save_te_video_details');
+ 
+function te_video_add_meta_box() {
+  add_meta_box("te_video-url", "Video Options", "te_video_options", "te_video", "side", "low");
+}
+ 
+function te_video_options() {
+  global $post;
+  $custom = get_post_custom($post->ID);
+  $te_video_url = $custom["te_video_url"][0];
+  ?>
+  <label for="te_article_author">Video URL:</label>
+  <input id="te_video_url" name="te_video_url" value="<?php echo $te_video_url; ?>" />
+  <?php
+}
 
 
+/* Save meta data. Should probably have some security options added. (Nonce authentication) */ 
+function save_te_video_details() {
+  global $post;
+  
+  if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) 
+    return;
+  
+  update_post_meta($post->ID, "te_video_url", $_POST["te_video_url"]);
+}
 
-
+function te_get_vimeo_video($url) {
+  $pattern = "/[0-9]*$/";
+  
+  preg_match_all($pattern, $url, $matches);
+  print_r($matches);
+}
 
 ?>
+
+  
