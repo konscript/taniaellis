@@ -92,7 +92,7 @@ class TextImageModule extends WP_Widget {
 		$instance['imageURL']		= strip_tags($new_instance['imageURL']);
 		$instance['metadata']		= strip_tags($new_instance['metadata']);
 		$instance['byline']			= strip_tags($new_instance['byline']);
-		$instance['text']			= strip_tags($new_instance['text']);
+		$instance['text']				= strip_tags($new_instance['text']);
 		
 		return $instance;
 	}
@@ -128,7 +128,7 @@ class TextImageModule extends WP_Widget {
 				type="text"
 				id="<?php echo $titleA_id; ?>"
 				name="<?php echo $titleA_name; ?>"
-				value="<?php echo $titleA; ?>">
+				value="<?php echo $titleA; ?>" />
 		</p>
 		
 		<p>
@@ -137,7 +137,7 @@ class TextImageModule extends WP_Widget {
 				type="text"
 				id="<?php echo $titleB_id; ?>"
 				name="<?php echo $titleB_name; ?>"
-				value="<?php echo $titleB; ?>">
+				value="<?php echo $titleB; ?>" />
 		</p>
 		
 		<p>
@@ -146,7 +146,7 @@ class TextImageModule extends WP_Widget {
 				type="text"
 				id="<?php echo $header_id; ?>"
 				name="<?php echo $header_name; ?>"
-				value="<?php echo $header; ?>">
+				value="<?php echo $header; ?>" />
 		</p>
 		
 		<p>
@@ -163,8 +163,15 @@ class TextImageModule extends WP_Widget {
 			<input 
 				type="text"
 				id="<?php echo $imageURL_id; ?>"
+				class="image-upload-field"
 				name="<?php echo $imageURL_name; ?>"
-				value="<?php echo $imageURL; ?>">
+				value="<?php echo $imageURL; ?>" />
+			<input
+				type="button"
+				id="<?php echo $imageURL_id ?>_button"
+				class="image-upload"
+				value="Upload / Select Image"
+				onClick="start_upload(this)" />
 		</p>
 		
 		<p>
@@ -173,7 +180,7 @@ class TextImageModule extends WP_Widget {
 				type="text"
 				id="<?php echo $link_id; ?>"
 				name="<?php echo $link_name; ?>"
-				value="<?php echo $link; ?>">
+				value="<?php echo $link; ?>" />
 		</p>
 		
 		<p>
@@ -182,12 +189,26 @@ class TextImageModule extends WP_Widget {
 				type="text"
 				id="<?php echo $linkText_id; ?>"
 				name="<?php echo $linkText_name; ?>"
-				value="<?php echo $linkText; ?>">
+				value="<?php echo $linkText; ?>" />
 		</p>
 		
 		<?php
 	}
 }
+
+function load_admin_scripts() {
+	wp_enqueue_script('media-upload');
+	wp_enqueue_script('thickbox');
+	wp_register_script('imagewidget-upload', WP_PLUGIN_URL . '/TextImageModule/imagewidget-upload.js');
+	wp_enqueue_script('imagewidget-upload');
+}
+
+function load_admin_styles() {
+	wp_enqueue_style('thickbox');
+}
+
+add_action('admin_print_scripts', 'load_admin_scripts');
+add_action('admin_print_styles', 'load_admin_styles');
 
 function load_text_image_widget() {
 	register_widget('TextImageModule');
