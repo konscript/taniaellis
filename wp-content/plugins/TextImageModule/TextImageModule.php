@@ -36,12 +36,13 @@ class TextImageModule extends WP_Widget {
 		$link = $instance['link'];
 		$linkText = $instance['linkText'];
 		$imageURL = $instance['imageURL'];
+		$iconURL = $instance['iconURL'];
 		$metadata = $instance['metadata'];
 		$byline = $instance['byline'];
 		
 		?>
 		
-		<div class="widget widget-image-text">
+		<div class="widget widget-image-text" style="background: url('<?php echo $iconURL; ?>') top left no-repeat">
 			<div class="header-container">
 				<h2 class="first-line"><?php echo $titleA; ?></h2>
 				<h2 class="second-line"><?php echo $titleB; ?></h2>
@@ -90,6 +91,7 @@ class TextImageModule extends WP_Widget {
 		$instance['link']				= strip_tags($new_instance['link']);
 		$instance['linkText']		= strip_tags($new_instance['linkText']);
 		$instance['imageURL']		= strip_tags($new_instance['imageURL']);
+		$instance['iconURL']		= strip_tags($new_instance['iconURL']);
 		$instance['metadata']		= strip_tags($new_instance['metadata']);
 		$instance['byline']			= strip_tags($new_instance['byline']);
 		$instance['text']				= strip_tags($new_instance['text']);
@@ -105,9 +107,10 @@ class TextImageModule extends WP_Widget {
 			'link'				=> '',
 			'linkText'		=> 'Read More',
 			'imageURL'		=> '',
+			'iconURL'			=> '',
 			'metadata'		=> '',
 			'byline'			=> '',
-			'text'			=> '',
+			'text'				=> '',
 		);
 		
 		foreach($defaults as $key => $value) {
@@ -169,7 +172,23 @@ class TextImageModule extends WP_Widget {
 			<input
 				type="button"
 				id="<?php echo $imageURL_id ?>_button"
-				class="image-upload"
+				class="image-upload image"
+				value="Upload / Select Image"
+				onClick="start_upload(this)" />
+		</p>
+		
+		<p>
+			<label for="<?php echo $iconRL_id; ?>">Icon:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $iconURL_id; ?>"
+				class="icon-upload-field"
+				name="<?php echo $iconURL_name; ?>"
+				value="<?php echo $iconURL; ?>" />
+			<input
+				type="button"
+				id="<?php echo $iconURL_id ?>_button"
+				class="icon-upload icon"
 				value="Upload / Select Image"
 				onClick="start_upload(this)" />
 		</p>
