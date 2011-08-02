@@ -566,6 +566,17 @@
 				width: 260px;
 			}
 		}
+		
+		.widget-image-text {
+			.image-text {
+				@include featured-image(62px, 15px);
+				
+				.title, .excerpt {
+					margin-left: 0;
+					float: left;
+				}
+			}
+		}
 
 		.widget-blog {
 			background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;

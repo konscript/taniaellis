@@ -39,10 +39,11 @@ class TextImageModule extends WP_Widget {
 		$iconURL = $instance['iconURL'];
 		$metadata = $instance['metadata'];
 		$byline = $instance['byline'];
+		$layout = $instance['layout'];
 		
 		?>
 		
-		<div class="widget widget-image-text" style="background: url('<?php echo $iconURL; ?>') top left no-repeat">
+		<div class="widget widget-image-text layout-<?php echo $layout; ?>" style="background: url('<?php echo $iconURL; ?>') top left no-repeat">
 			<div class="header-container">
 				<h2 class="first-line"><?php echo $titleA; ?></h2>
 				<h2 class="second-line"><?php echo $titleB; ?></h2>
@@ -69,7 +70,7 @@ class TextImageModule extends WP_Widget {
 					
 					<?php if($link != "") : ?>
 					<div class="options">
-						<a href="<?php echo $link; ?>"><?php echo $linkText; ?></a>
+						<a href="<?php echo $link; ?>" class="read-more"><?php echo $linkText; ?></a>
 					</div>
 					<?php endif; ?>
 					
@@ -95,6 +96,7 @@ class TextImageModule extends WP_Widget {
 		$instance['metadata']		= strip_tags($new_instance['metadata']);
 		$instance['byline']			= strip_tags($new_instance['byline']);
 		$instance['text']				= strip_tags($new_instance['text']);
+		$instance['layout']				= strip_tags($new_instance['layout']);
 		
 		return $instance;
 	}
@@ -111,6 +113,7 @@ class TextImageModule extends WP_Widget {
 			'metadata'		=> '',
 			'byline'			=> '',
 			'text'				=> '',
+			'layout'			=> 'tall',
 		);
 		
 		foreach($defaults as $key => $value) {
@@ -209,6 +212,13 @@ class TextImageModule extends WP_Widget {
 				id="<?php echo $linkText_id; ?>"
 				name="<?php echo $linkText_name; ?>"
 				value="<?php echo $linkText; ?>" />
+		</p>
+		
+		<p>
+			<label for="<?php echo $layout_id; ?>">Layout:</label><br />
+			<select id="<?php echo $layout_id; ?>" name="<?php echo $layout_name; ?>">
+				<option value="tall">Tall</option>
+			</select>
 		</p>
 		
 		<?php
