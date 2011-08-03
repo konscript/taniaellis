@@ -410,10 +410,18 @@ html>body {
 			line-height: 1.3em;
 		}
 		
-		.comment-count {
-			color: #7FB987;
-			float: left;
-			font-weight: bold;
+		.add-comment {
+			a {
+				color: #7FB987;
+				float: left;
+				font-weight: bold;
+				text-decoration: none;
+				@include transition(color, 0.1s, ease-in-out);
+				
+				&:hover {
+					color: #7FB987 / 1.2;
+				}
+			}
 		}
 		
 		.read-more {

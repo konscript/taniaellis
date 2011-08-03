@@ -1,4 +1,5 @@
 <?php
+include('meta-box.php');
 
 add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article'));
 set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
@@ -489,10 +490,10 @@ function video_register() {
 		'menu_position' => 5,
 		'_builtin' => false, // It's a custom post type, not built in!
 		'menu_icon' => get_stylesheet_directory_uri() . '/images/icon_video.png',
-		'rewrite' => array('slug' => 'articles', 'with_front' => false),
+		'rewrite' => array('slug' => 'videos', 'with_front' => false),
 		'capability_type' => 'post',
 		'hierarchical' => false,
-		'supports' => array('title', 'editor', 'thumbnail')
+		'supports' => array('title')
 	  );
 	  
 	  register_post_type('te_video', $args);
@@ -521,7 +522,7 @@ function create_video_taxonomies() {
     'show_ui'           => true,
     'show_tagcloud'     => true,
     'hierarchical'      => true,
-    'rewrite'           => array('slug' => 'article-categories', 'with_front' => false),
+    'rewrite'           => array('slug' => 'video-categories', 'with_front' => false),
     '_builtin'          => false
   );
   
@@ -550,20 +551,20 @@ function create_video_taxonomies() {
     'show_ui'           => true,
     'show_tagcloud'     => true,
     'hierarchical'      => false,
-    'rewrite'           => array('slug' => 'article-tags', 'with_front' => false),
+    'rewrite'           => array('slug' => 'video-tags', 'with_front' => false),
     '_builtin'          => false
   );
   
   register_taxonomy('te_video-tag', 'te_video', $te_video_tag_args);
 }
 
-/* ADD CUSTOM FIELDS TO ARTICLE POST TYPE */
+/* ADD CUSTOM FIELDS TO VIDEO POST TYPE */
 
 add_action("admin_init", "te_video_add_meta_box");
 add_action('save_post', 'save_te_video_details');
  
 function te_video_add_meta_box() {
-  add_meta_box("te_video-url", "Video Options", "te_video_options", "te_video", "side", "low");
+  add_meta_box("te_video-url", "Video Options", "te_video_options", "te_video", "advanced", "high");
 }
  
 function te_video_options() {
@@ -571,9 +572,11 @@ function te_video_options() {
   $custom = get_post_custom($post->ID);
   $te_video_url = $custom["te_video_url"][0];
   ?>
-  <label for="te_article_author">Video URL:</label>
+  <label for="te_video_url">Vimeo URL:</label>
   <input id="te_video_url" name="te_video_url" value="<?php echo $te_video_url; ?>" />
+  <br /><br />
   <?php
+  te_vimeo_video($te_video_url);
 }
 
 
@@ -587,13 +590,160 @@ function save_te_video_details() {
   update_post_meta($post->ID, "te_video_url", $_POST["te_video_url"]);
 }
 
-function te_get_vimeo_video($url) {
+function te_vimeo_video($url) {
   $pattern = "/[0-9]*$/";
-  
   preg_match_all($pattern, $url, $matches);
-  print_r($matches);
+  //print_r($matches[0][0]);
+  $video_id = $matches[0][0];
+  ?>
+  <iframe src="http://player.vimeo.com/video/<?php echo $video_id ?>?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" width="534" height="300" frameborder="0"></iframe>
+  <?php
 }
 
-?>
 
+/**
+################################
+# CREATE TESTEMONIAL POST TYPE #
+################################
+**/
+add_action('init', 'testemonial_register');
+
+function testemonial_register() {
+
+  $labels = array(
+   'name' => _x('Testemonials', 'post type general name'),
+   'singular_name' => _x('Testemonial', 'post type singular name'),
+   'add_new' => _x('Add New', 'testemonial'),
+   'add_new_item' => __('Add New Testemonial'),
+   'edit_item' => __('Edit Testemonial'),
+   'new_item' => __('New Testemonial'),
+   'view_item' => __('View Testemonial'),
+   'search_items' => __('Search Testemonial'),
+   'not_found' =>  __('Nothing found'),
+   'not_found_in_trash' => __('Nothing found in Trash'),
+   'parent_item_colon' => ''
+ );
+ 
+ $args = array(
+   'labels' => $labels,
+   'public' => true,
+   'publicly_queryable' => true,
+   'show_ui' => true,
+   'query_var' => true,
+   'menu_position' => 5,
+   '_builtin' => false, // It's a custom post type, not built in!
+   'menu_icon' => get_stylesheet_directory_uri() . '/images/icon_quotes.png',
+   'rewrite' => array('slug' => 'testemonials', 'with_front' => false),
+   'capability_type' => 'post',
+   'hierarchical' => false,
+   'supports' => array('title', 'editor')
+   );
+   
+   register_post_type('te_testemonial', $args);
+}
+
+/* ADD CUSTOM FIELDS TO TESTEMONIAL POST TYPE */
+add_action('admin-init', 'te_testemonial_add_meta_box');
+
+function te_testemonial_add_meta_box() {
+  $te_testemonial_meta_box = array(
+  	'id' => 'te_testemonial-meta',
+  	'title' => 'Testemonial Options',
+  	'pages' => array('te_testemonial'),
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Testemonial Author',
+  			'id' => $prefix . '-author',
+  			'type' => 'text',					
+  			//'std' => '<b>It\'s great!</b>',
+  			//'desc' => ''
+  		),
+  		array(
+  			'name' => 'Testemonial Date',
+  			'id' => $prefix . '-date',
+  			'type' => 'date'						// file upload
+  		)
+  	)
+  );
   
+  $testemonial_box = new RW_Meta_Box($te_testemonial_meta_box);
+}
+
+/**
+###################################
+# ADD META BOXES TO PAGE TEMPLATE #
+###################################
+**/ 
+add_action("admin_init", "te_page_template_meta_boxes");
+
+function te_page_template_meta_boxes() {
+  $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+	
+	$page_template = get_post_meta($post_id, '_wp_page_template', true);
+	
+  switch ($page_template) {
+    case 'readingroom.php':
+      te_reading_room_meta();
+      break;    
+    default:
+      break;
+  }
+}
+
+function te_reading_room_meta() {
+
+}
+
+$meta_boxes[] = array(
+	'id' => 'te_testemonial-meta',
+	'title' => 'Testemonial Options',
+	'pages' => array('te_testemonial'),
+	'context' => 'side',
+
+	'fields' => array(
+		array(
+			'name' => 'Testemonial Author',
+			'id' => $prefix . '-author',
+			'type' => 'text',					
+			//'std' => '<b>It\'s great!</b>',
+			//'desc' => ''
+		),
+		array(
+			'name' => 'Testemonial Date',
+			'id' => $prefix . '-date',
+			'type' => 'date'
+		)
+	)
+);
+
+foreach($meta_boxes as $meta_box) {
+  $my_box = new RW_Meta_Box($meta_box);
+}
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>

@@ -1,9 +1,3 @@
-<?php
-/*
-Template Name: Articles
-*/
-?>
-
 <?php get_header(); ?>
 
 <div id="header">
@@ -167,64 +161,46 @@ Template Name: Articles
 
                         <section class="right-sidebar-single">
                           <div class="sidebar-background">
-                            
-                              <div class="post-header">
-                                <h2 class="first-line">Articles</h2>
-                                <h2 class="second-line">Ethics / Sustainability</h2>
-                              </div>
-                              <?php query_posts(array('post_type' => 'te_article')); ?>
-                              <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                                
-                                <div class="post-feed">
+                              
+                              <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
+                                <div class="post-header">
+                                  <h2 class="first-line">Articles</h2>
+                                  <h2 class="second-line">Ethics / Sustainability</h2>
+                                </div>
+                                                                
+                                <div class="post">
                                   <?php
-                                    switch (get_post_type($post->ID)) {
-                                      case 'te_article':
-                                        the_post_thumbnail(array(100, 100));
-                                        break;
-
-                                      default:
-                                        # code...
-                                        break;
-                                    }
+                                    the_post_thumbnail(array(240, 240));
                                   ?>
+                                  <?php 
+                                    $url = get_post_meta($post->ID, 'te_video_url', true);
+                                    te_vimeo_video($url);
+                                  ?>
+                                  <div class="meta">
                                     <p class="byline">
-                                      <?php
-                                        echo te_get_article_author($post->ID);
-                                      ?>
+                                      <?php the_author(); ?>
                                     </p>
                                     <p class="date">
-                                      <?php
-                                        $article_date = get_post_meta($post->ID, 'te_article_date', true);
-                                        
-                                        // Determine whether a date has been set. Echo publish date if not.
-                                        if(isset($article_date) && $article_date != "") {
-                                          echo $article_date;
-                                        } else {
-                                          the_time('F j, Y');
-                                        }
-                                      ?>
+                                      <?php the_time(); ?>
                                     </p>
-                                    
-                                  <!-- </div>     -->
+                                  </div>    
                                   <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                   <div class="entry">
                                     <?php the_content(); ?>
                                   </div>
-                                  
-                                  <p class="add-comment">
-                                    <a href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
-                                  </p>
                                   <p class="read-more">
-                                      <a href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
+                                    <!-- HTTP:// should be appended to the link if it is not already! -->
+                                    <a href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>
                                   </p>
-                                  
                                 </div>
-                                
-                                
+                                <div class="clearer"></div>
+                                                                                         
                               <?php endwhile; ?>
                               <?php endif; ?>
                               
                               <div class="clearer"></div>
                               
+                              <?php comments_template(); ?>
                           </div>
                         </section>
 

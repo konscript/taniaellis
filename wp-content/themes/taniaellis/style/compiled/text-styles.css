@@ -376,13 +376,30 @@ html > body {
 #page .post-feed .entry {
   line-height: 1.3em;
 }
-/* line 413, ../sass/text-styles.scss */
-#page .post-feed .comment-count {
+/* line 414, ../sass/text-styles.scss */
+#page .post-feed .add-comment a {
   color: #7FB987;
   float: left;
   font-weight: bold;
+  text-decoration: none;
+  -moz-transition-property: color;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
-/* line 420, ../sass/text-styles.scss */
+/* line 421, ../sass/text-styles.scss */
+#page .post-feed .add-comment a:hover {
+  color: #699a70;
+}
+/* line 428, ../sass/text-styles.scss */
 #page .post-feed .read-more a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -401,16 +418,16 @@ html > body {
   font-weight: bold;
   text-decoration: none;
 }
-/* line 428, ../sass/text-styles.scss */
+/* line 436, ../sass/text-styles.scss */
 #page .post-feed .read-more a:hover {
   color: #699a70;
 }
-/* line 435, ../sass/text-styles.scss */
+/* line 443, ../sass/text-styles.scss */
 #page .post-categories, #page .post-tags {
   color: #7D7872;
   font-weight: bold;
 }
-/* line 439, ../sass/text-styles.scss */
+/* line 447, ../sass/text-styles.scss */
 #page .post-categories a, #page .post-tags a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -428,85 +445,85 @@ html > body {
   font-weight: normal;
   text-decoration: none;
 }
-/* line 445, ../sass/text-styles.scss */
+/* line 453, ../sass/text-styles.scss */
 #page .post-categories a:hover, #page .post-tags a:hover {
   color: #699a70;
 }
-/* line 451, ../sass/text-styles.scss */
+/* line 459, ../sass/text-styles.scss */
 #page #respond {
   color: #7D7872;
   font-weight: bold;
 }
-/* line 455, ../sass/text-styles.scss */
+/* line 463, ../sass/text-styles.scss */
 #page #respond input {
   font-weight: normal;
 }
-/* line 459, ../sass/text-styles.scss */
+/* line 467, ../sass/text-styles.scss */
 #page #respond input[type=submit] {
   color: #FFF;
 }
-/* line 464, ../sass/text-styles.scss */
+/* line 472, ../sass/text-styles.scss */
 #page .recent-comments {
   color: #7D7872;
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 469, ../sass/text-styles.scss */
+/* line 477, ../sass/text-styles.scss */
 #page .recent-comments span {
   color: #7FB987;
 }
-/* line 475, ../sass/text-styles.scss */
+/* line 483, ../sass/text-styles.scss */
 #page .comment .comment-author-url {
   color: #7FB987;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 481, ../sass/text-styles.scss */
+/* line 489, ../sass/text-styles.scss */
 #page .comment .comment-date-time {
   color: #7D7872;
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 487, ../sass/text-styles.scss */
+/* line 495, ../sass/text-styles.scss */
 #page .comment .comment-author {
   color: #7D7872;
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 493, ../sass/text-styles.scss */
+/* line 501, ../sass/text-styles.scss */
 #page .comment .comment-content {
   color: #7D7872;
   line-height: 1.3em;
 }
-/* line 500, ../sass/text-styles.scss */
+/* line 508, ../sass/text-styles.scss */
 #page .widget .header-container {
   color: #B0ADA6;
 }
-/* line 503, ../sass/text-styles.scss */
+/* line 511, ../sass/text-styles.scss */
 #page .widget .header-container .first-line {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 0.699em;
   text-transform: uppercase;
 }
-/* line 511, ../sass/text-styles.scss */
+/* line 519, ../sass/text-styles.scss */
 #page .widget .header-container .second-line {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 1.65em;
   text-transform: uppercase;
 }
-/* line 520, ../sass/text-styles.scss */
+/* line 528, ../sass/text-styles.scss */
 #page .widget .item .by-line, #page .widget .item .meta-data {
   color: #94918A;
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 526, ../sass/text-styles.scss */
+/* line 534, ../sass/text-styles.scss */
 #page .widget .item .by-line {
   font-weight: bold;
 }
-/* line 530, ../sass/text-styles.scss */
+/* line 538, ../sass/text-styles.scss */
 #page .widget .item .title {
   color: #94918A;
   display: block;
@@ -515,16 +532,16 @@ html > body {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 538, ../sass/text-styles.scss */
+/* line 546, ../sass/text-styles.scss */
 #page .widget .item .title:hover {
   text-decoration: underline;
 }
-/* line 543, ../sass/text-styles.scss */
+/* line 551, ../sass/text-styles.scss */
 #page .widget .item .excerpt {
   color: #94918A;
   line-height: 1.4em;
 }
-/* line 549, ../sass/text-styles.scss */
+/* line 557, ../sass/text-styles.scss */
 #page .widget .item .options .read-more, #page .widget .item .options .view-cases, #page .widget .item .options .view-clients {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -542,21 +559,21 @@ html > body {
   font-size: 1.1em;
   text-decoration: none;
 }
-/* line 556, ../sass/text-styles.scss */
+/* line 564, ../sass/text-styles.scss */
 #page .widget .item .options .read-more:hover, #page .widget .item .options .view-cases:hover, #page .widget .item .options .view-clients:hover {
   color: #608169;
 }
-/* line 563, ../sass/text-styles.scss */
+/* line 571, ../sass/text-styles.scss */
 #page .widget .view-all {
   color: #FFF;
   text-decoration: none;
 }
-/* line 567, ../sass/text-styles.scss */
+/* line 575, ../sass/text-styles.scss */
 #page .widget .view-all:hover {
   color: #e7e7e7;
 }
 
-/* line 575, ../sass/text-styles.scss */
+/* line 583, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: 500;
