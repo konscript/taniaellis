@@ -674,8 +674,9 @@ function te_testemonial_add_meta_box() {
 ###################################
 # ADD META BOXES TO PAGE TEMPLATE #
 ###################################
-**/ 
-add_action("admin_init", "te_page_template_meta_boxes");
+**/
+
+te_page_template_meta_boxes();
 
 function te_page_template_meta_boxes() {
   $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
@@ -692,35 +693,81 @@ function te_page_template_meta_boxes() {
 }
 
 function te_reading_room_meta() {
+  add_action('init', function() { remove_post_type_support('page', 'editor'); });
+  
+  $prefix = 'te_reading-room-header-text';
+  
+  $meta_boxes[] = array(
+  	'id' => 'te_reading-room-header-text',
+  	'title' => 'Header Text Options',
+  	'pages' => array('page'),
+  	'context' => 'normal',
 
+  	'fields' => array(
+  		array(
+  			'name' => 'Title',
+  			'id' => 'din_mor_er_syg',
+  			'type' => 'text',					
+  		),
+  		array(
+  			'name' => 'Content',
+  			'id' => $prefix . '-content',
+  			'type' => 'textarea'
+  		),
+  		array(
+  		  'name' => 'Link Address',
+  		  'id' => $prefix . '-link-address',
+  		  'type' => 'text',
+  		  'desc' => 'Remember http://'
+  		),
+  		array(
+  		  'name' => 'Link Text',
+  		  'id' => $prefix . '-link-text',
+  		  'type' => 'text',
+  		)
+  	)
+  );
+  
+  $meta_boxes[] = array(
+  	'id' => 'te_reading-room-box-text',
+  	'title' => 'Box Text Options',
+  	'pages' => array('page'),
+  	'context' => 'normal',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Title Line 1',
+  			'id' => $prefix . '-title-line-1',
+  			'type' => 'text',					
+  		),
+  		array(
+  			'name' => 'Title Line 2',
+  			'id' => $prefix . '-title-line-2',
+  			'type' => 'text'
+  		),
+  		array(
+  		  'name' => 'Content',
+  		  'id' => $prefix . '-content',
+  		  'type' => 'textarea',
+  		),
+  		array(
+  		  'name' => 'Link Address',
+  		  'id' => $prefix . '-link-address',
+  		  'type' => 'text',
+  		  'desc' => 'Remember http://'
+  		),
+  		array(
+  		  'name' => 'Link Text',
+  		  'id' => $prefix . '-link-text',
+  		  'type' => 'text'
+  		)
+  	)
+  );
+
+  foreach($meta_boxes as $meta_box) {
+    $my_box = new RW_Meta_Box($meta_box);
+  }
 }
-
-$meta_boxes[] = array(
-	'id' => 'te_testemonial-meta',
-	'title' => 'Testemonial Options',
-	'pages' => array('te_testemonial'),
-	'context' => 'side',
-
-	'fields' => array(
-		array(
-			'name' => 'Testemonial Author',
-			'id' => $prefix . '-author',
-			'type' => 'text',					
-			//'std' => '<b>It\'s great!</b>',
-			//'desc' => ''
-		),
-		array(
-			'name' => 'Testemonial Date',
-			'id' => $prefix . '-date',
-			'type' => 'date'
-		)
-	)
-);
-
-foreach($meta_boxes as $meta_box) {
-  $my_box = new RW_Meta_Box($meta_box);
-}
-
 
 
 

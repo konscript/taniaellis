@@ -286,7 +286,7 @@ class RW_Meta_Box {
 
 	function show_field_textarea($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "<textarea name='{$field['id']}' cols='60' rows='15' style='width:97%'>$meta</textarea>";
+		echo "<textarea name='{$field['id']}' cols='60' rows='5' style='width:97%'>$meta</textarea>";
 		$this->show_field_end($field, $meta);
 	}
 

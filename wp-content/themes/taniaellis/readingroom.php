@@ -68,7 +68,7 @@
                       <?php
                       
                       
-                      echo get_post_meta($post->ID, 'Newsletter', true);
+                      echo get_post_meta($post->ID, 'din_mor_er_syg', true);
                       
                       ?>
                       
