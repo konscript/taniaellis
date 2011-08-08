@@ -205,7 +205,8 @@ function yarpp_related($type,$args,$echo = true,$reference_ID=false,$domain = 'w
 		'use_template'=>"${domainprefix}use_template",
 		'order'=>"${domainprefix}order",
 		'template_file'=>"${domainprefix}template_file",
-		'promote_yarpp'=>"${domainprefix}promote_yarpp");
+		'promote_yarpp'=>"${domainprefix}promote_yarpp",
+		'titleA' => '', 'titleB' => '');
 	$optvals = array();
 	foreach (array_keys($options) as $option) {
 		if (isset($args[$option])) {
