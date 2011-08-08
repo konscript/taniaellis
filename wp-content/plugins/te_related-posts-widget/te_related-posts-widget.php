@@ -1,24 +1,24 @@
 <?php
 
 /*
-Plugin Name: Tagcloud Widget
+Plugin Name: Related Posts Widget
 Plugin URI: http://konscript.com
-Description: A widget that displays a cloud of tags.
+Description: A widget that displays related posts
 Version: 1.0
 Author URI: http://konscript.com
 */
 
-class TagcloudWidget extends WP_Widget {
-	function TagCloudWidget() {
+class TE_RelatedPostsWidget extends WP_Widget {
+	function TE_RelatedPostsWidget	() {
 		$this->WP_widget(
-			'tagcloud-widget',
-			'Tagcloud Widget',
+			'te_related-posts-widget',
+			'TE Related Posts Widget',
 			array(
-				'classname'		=> 'Tagcloud Widget',
-				'description' => 'A widget that displays a cloud of tags.'
+				'classname'		=> 'TE Related Posts Widget',
+				'description' => 'A widget that displays related posts.'
 			),
 			array(
-				'id_base'			=> 'tagcloud-widget'
+				'id_base'			=> 'te_related-posts-widget'
 			)
 		);
 	}
@@ -31,41 +31,27 @@ class TagcloudWidget extends WP_Widget {
 		$titleA = apply_filters('widget_title', $instance['titleA']);
 		$titleB = apply_filters('widget_title', $instance['titleB']);
 		
+		global $post;
+    if (!is_singular())
+      return;
+
+		$type = ($post->post_type == 'page' ? array('page') : array('post'));
+		if (yarpp_get_option('cross_relate'))
+			$type = array('post','page');
+		
 		?>
 		
-		<div class="widget widget-tagcloud">
+		<div class="widget widget-blog related">
 			<div class="header-container">
 				<h2 class="first-line"><?php echo $titleA; ?></h2>
 				<h2 class="second-line"><?php echo $titleB; ?></h2>
 			</div>
 			
-			<div class="item tagcloud">
-				<div class="item-content">
-					<?php
-				
-					$default_colors = array(
-						'#a8a6cd',
-						'#91b997',
-						'#e7cd30',
-						'#83a8c2',
-						'#d7b590'
-					);
-				
-					$options = array();
-				    $options['color_names']     = $default_colors;
-					$options['min_size']        = 14;
-				    $options['max_size']        = 22;
-					$options['use_colors']      = true;
-				
-					if (function_exists('ilwp_tag_cloud'))
-						ilwp_tag_cloud($options);
-				
-					?>
-				</div>
-			</div>
+			<?php print_r (yarpp_related($type,$instance,false,false,'widget')); ?>
 		</div>
 		
 		<?php
+		
 	}
 	
 	function update($new_instance, $old_instance) {
@@ -117,10 +103,10 @@ class TagcloudWidget extends WP_Widget {
 	}
 }
 
-function load_tagcloud_widget() {
-	register_widget('TagcloudWidget');
+function load_related_posts_widget() {
+	register_widget('TE_RelatedPostsWidget');
 }
 
-add_action('widgets_init', 'load_tagcloud_widget');
-
+add_action('widgets_init', 'load_related_posts_widget');
+	
 ?>
