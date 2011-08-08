@@ -96,8 +96,9 @@ class TextImageModule extends WP_Widget {
 		$instance['metadata']		= strip_tags($new_instance['metadata']);
 		$instance['byline']			= strip_tags($new_instance['byline']);
 		$instance['text']				= strip_tags($new_instance['text']);
-		$instance['layout']				= strip_tags($new_instance['layout']);
-		
+		$instance['layout']			= strip_tags($new_instance['layout']);
+		$instance['byline']			= strip_tags($new_instance['byline']);
+		$instance['metadata']			= strip_tags($new_instance['metadata']);
 		return $instance;
 	}
 	
@@ -114,6 +115,8 @@ class TextImageModule extends WP_Widget {
 			'byline'			=> '',
 			'text'				=> '',
 			'layout'			=> 'tall',
+			'byline'			=> '',
+			'metadata'		=> '',
 		);
 		
 		foreach($defaults as $key => $value) {
@@ -212,6 +215,24 @@ class TextImageModule extends WP_Widget {
 				id="<?php echo $linkText_id; ?>"
 				name="<?php echo $linkText_name; ?>"
 				value="<?php echo $linkText; ?>" />
+		</p>
+		
+		<p>
+			<label for="<?php echo $byline_id; ?>">By line:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $byline_id; ?>"
+				name="<?php echo $byline_name; ?>"
+				value="<?php echo $byline; ?>" />
+		</p>
+		
+		<p>
+			<label for="<?php echo $metadata_id; ?>">Metadata:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $metadata_id; ?>"
+				name="<?php echo $metadata_name; ?>"
+				value="<?php echo $metadata; ?>" />
 		</p>
 		
 		<p>
