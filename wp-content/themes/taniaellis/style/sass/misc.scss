@@ -567,13 +567,28 @@
 			}
 		}
 		
-		.widget-image-text {
+		.layout-tall {
 			.image-text {
 				@include featured-image(62px, 15px);
 				
 				.title, .excerpt {
 					margin-left: 0;
 					float: left;
+				}
+			}
+		}
+		
+		.layout-wide {
+			.image-text {
+				@include featured-image(250px, 0);
+				
+				.excerpt {
+					width: 260px;
+				}
+				
+				.options {
+					float: right;
+					width: 100px;
 				}
 			}
 		}
@@ -631,6 +646,38 @@
 
 	.right-sidebar, .right-sidebar-single {
 		background: url('../../images/right-fade-background.png') top right no-repeat;
+		
+		.widget-image-text {
+			.image-text {
+				@include featured-image(240px, 20px);
+
+				.meta-data {
+					float: right;
+					width: 250px;
+				}
+
+				.title, .excerpt {
+					clear: right;
+					float: right;
+					width: 250px;
+				}
+
+				.options {
+					clear: right;
+					float: right;
+					width: 100px;
+				}
+				
+				.addthis_toolbox {
+					float: left;
+					clear: right;
+				}
+
+				.by-line {
+					display: none;
+				}
+			}
+		}
 
 		.sidebar-background {
 			background-color: #FFF;

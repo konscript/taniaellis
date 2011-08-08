@@ -238,7 +238,8 @@ class TextImageModule extends WP_Widget {
 		<p>
 			<label for="<?php echo $layout_id; ?>">Layout:</label><br />
 			<select id="<?php echo $layout_id; ?>" name="<?php echo $layout_name; ?>">
-				<option value="tall">Tall</option>
+				<option value="tall"<?php if($layout == "tall") echo " selected=\"selected\""; ?>>Tall</option>
+				<option value="wide"<?php if($layout == "wide") echo " selected=\"selected\""; ?>>Wide</option>
 			</select>
 		</p>
 		
