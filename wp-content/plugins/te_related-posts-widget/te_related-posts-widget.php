@@ -28,9 +28,6 @@ class TE_RelatedPostsWidget extends WP_Widget {
 		
 		echo $before_widget;
 		
-		$titleA = apply_filters('widget_title', $instance['titleA']);
-		$titleB = apply_filters('widget_title', $instance['titleB']);
-		
 		global $post;
     if (!is_singular())
       return;
