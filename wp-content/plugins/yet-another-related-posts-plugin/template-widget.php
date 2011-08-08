@@ -32,5 +32,6 @@ if($related_query->have_posts()) : ?>
 			</div>
 		</div>
 
-	<?php endwhile;
-endif; ?>
+	<?php endwhile; ?>
+	</div>
+<?php endif; ?>

@@ -37,15 +37,8 @@ class TE_RelatedPostsWidget extends WP_Widget {
 			$type = array('post','page');
 		
 		?>
-		
-		<div class="widget widget-blog related">
-			<div class="header-container">
-				<h2 class="first-line"><?php echo $titleA; ?></h2>
-				<h2 class="second-line"><?php echo $titleB; ?></h2>
-			</div>
 			
 			<?php print_r (yarpp_related($type,$instance,false,false,'widget')); ?>
-		</div>
 		
 		<?php
 		
