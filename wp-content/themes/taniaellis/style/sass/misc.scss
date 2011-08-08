@@ -567,6 +567,24 @@
 			}
 		}
 		
+		.widget-tagcloud {
+			background: url('../../images/icon_tag.jpg') top left no-repeat;
+			
+			.tagcloud {
+				margin-left: 10px;
+				width: 250px;
+				
+				a {
+					text-decoration: none;
+					text-transform: uppercase;
+					
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		
 		.layout-tall {
 			.image-text {
 				@include featured-image(62px, 15px);
