@@ -45,40 +45,36 @@ class TE_RelatedPostsWidget extends WP_Widget {
     );
     $query = new WP_Query( $args );
 
-		?>
-		
-		<div class="widget widget-blog related">
-			<div class="header-container">
-				<h2 class="first-line"><?php echo $titleA; ?><h2>
-				<h2 class="second-line"><?php echo $titleB; ?></h2>
-			</div>
+		if($query->have_posts()) : ?>
+			<div class="widget widget-blog related">
+				<div class="header-container">
+					<h2 class="first-line"><?php echo $titleA; ?><h2>
+					<h2 class="second-line"><?php echo $titleB; ?></h2>
+				</div>
+					<?php while($query->have_posts()) : ?>
+						<?php $query->the_post(); ?>
 			
-			<?php if($query->have_posts()) : ?>
-				<?php while($query->have_posts()) : ?>
-					<?php $query->the_post(); ?>
-				
-					<div class="item blog">
-						<div class="item-content">
-								<a href="<?php the_permalink(); ?>">
-									<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
-								</a>
+						<div class="item blog">
+							<div class="item-content">
+									<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
+									</a>
+							
+									<p class="meta-data"><?php the_time('j M Y H:i') ?></p>
+									<span class="by-line">By <?php the_author(); ?></span>
+							
+									<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									<p class="excerpt"><?php the_excerpt_rss(); ?></a>
 								
-								<p class="meta-data"><?php the_time('j M Y H:i') ?></p>
-								<span class="by-line">By <?php the_author(); ?></span>
-								
-								<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								<p class="excerpt"><?php the_excerpt_rss(); ?></a>
-									
-								<div class="options">
-									<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
-								</div>
+									<div class="options">
+										<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
+									</div>
+							</div>
 						</div>
-					</div>
-				
-				<?php endwhile; ?>
-			<?php endif; ?>
 			
-		<?php
+					<?php endwhile; ?>
+				</div>
+		<?php endif;
 		
 		wp_reset_query();
 	}
