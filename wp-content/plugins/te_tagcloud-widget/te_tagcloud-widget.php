@@ -46,7 +46,7 @@ class TE_TagcloudWidget extends WP_Widget {
 					$terms = get_terms($instance['postType'], array(
 						'number'				=> $instance['itemCount'],
 						'hierarchical'	=> 0,
-						
+						'sortby'				=> 'count'
 					));
 					
 					$scores = array();
@@ -77,7 +77,7 @@ class TE_TagcloudWidget extends WP_Widget {
 						
 						?>
 						
-						<a href="<?php echo $link ?>" class="tag-<?php echo $id; ?> s<?php echo $class_id; ?>"><?php echo $term->name; ?></a>
+						<a href="<?php echo $link ?>" class="tag-<?php echo $id; ?> s<?php echo $class_id; ?>"><?php echo $term->name; ?></a>&nbsp;
 						
 						<?php
 					endforeach;
