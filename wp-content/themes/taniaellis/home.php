@@ -78,3 +78,5 @@
 
 	</div> <!-- #page -->
 </div> <!-- #page-content -->
+
+<?php get_footer(); ?>

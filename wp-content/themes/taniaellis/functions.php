@@ -457,8 +457,4 @@ function te_get_article_date($post_id) {
 }
 
 
-
-
-
-
 ?>

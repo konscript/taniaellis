@@ -248,8 +248,7 @@ class TextImageModule extends WP_Widget {
 }
 
 function load_admin_scripts() {
-	wp_enqueue_script('media-upload');
-	wp_enqueue_script('thickbox');
+	wp_enqueue_script(array('jquery', 'editor', 'thickbox', 'media-upload'));
 	wp_register_script('imagewidget-upload', WP_PLUGIN_URL . '/TextImageModule/imagewidget-upload.js');
 	wp_enqueue_script('imagewidget-upload');
 }
@@ -258,8 +257,13 @@ function load_admin_styles() {
 	wp_enqueue_style('thickbox');
 }
 
+function load_tiny_mce() {
+	wp_tiny_mce( false );
+}
+
 add_action('admin_print_scripts', 'load_admin_scripts');
 add_action('admin_print_styles', 'load_admin_styles');
+add_action('admin_head', 'load_tiny_mce');
 
 function load_text_image_widget() {
 	register_widget('TextImageModule');
