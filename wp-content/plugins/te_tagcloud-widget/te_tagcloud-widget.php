@@ -46,7 +46,8 @@ class TE_TagcloudWidget extends WP_Widget {
 					$terms = get_terms($instance['postType'], array(
 						'number'				=> $instance['itemCount'],
 						'hierarchical'	=> 0,
-						'sortby'				=> 'count'
+						'orderby'				=> 'count',
+						'order'					=> 'DESC'
 					));
 					
 					$scores = array();
@@ -69,6 +70,9 @@ class TE_TagcloudWidget extends WP_Widget {
 						$class_spread = 1;
 						
 					$step = $class_spread / $score_spread;
+					
+					// Shuffle it around
+					shuffle($terms);
 					
 					foreach($terms as $term) :
 						$id = $term->term_id;
