@@ -44,7 +44,7 @@ class TE_TagcloudWidget extends WP_Widget {
 					<?php									
 					
 					$terms = get_terms($instance['postType'], array(
-						'number'				=> 45,
+						'number'				=> $instance['itemCount'],
 						'hierarchical'	=> 0,
 						
 					));
@@ -96,6 +96,7 @@ class TE_TagcloudWidget extends WP_Widget {
 		$instance['titleA']			= strip_tags($new_instance['titleA']);
 		$instance['titleB']			= strip_tags($new_instance['titleB']);
 		$instance['postType']		= strip_tags($new_instance['postType']);
+		$instance['itemCount']		= strip_tags($new_instance['itemCount']);
 		
 		return $instance;
 	}
@@ -105,6 +106,7 @@ class TE_TagcloudWidget extends WP_Widget {
 			'titleA'			=> '',
 			'titleB'			=> '',
 			'postType'		=> 'post_tag',
+			'itemCount'		=> '16',
 		);
 		
 		foreach($defaults as $key => $value) {
@@ -115,6 +117,9 @@ class TE_TagcloudWidget extends WP_Widget {
 			
 			$$idn = $this->get_field_id($key);			
 			$$nn = $this->get_field_name($key);
+			
+			if(!isset($instance[$key]) && array_key_exists($key, $defaults))
+				$instance[$key] = $defaults[$key];
 		}
 		
 		?> 
@@ -136,16 +141,25 @@ class TE_TagcloudWidget extends WP_Widget {
 				name="<?php echo $titleB_name; ?>"
 				value="<?php echo $titleB; ?>" />
 		</p>
-			<p>
-				<label for="<?php echo $postType_id; ?>">Type:</label><br />
-				<select 
-					id="<?php echo $postType_id; ?>"
-					name="<?php echo $postType_name; ?>">
+		<p>
+			<label for="<?php echo $postType_id; ?>">Type:</label><br />
+			<select 
+				id="<?php echo $postType_id; ?>"
+				name="<?php echo $postType_name; ?>">
 
-					<option value="post_tag"<?php if($instance['postType'] == 'post_tag') echo " selected=\"selected\""; ?>>Blog Post</option>
-					<option value="te_article-tag"<?php if($instance['postType'] == 'te_article-tag') echo " selected=\"selected\""; ?>>Article</option>
-				</select>
-			</p>
+				<option value="post_tag"<?php if($instance['postType'] == 'post_tag') echo " selected=\"selected\""; ?>>Blog Post</option>
+				<option value="te_article-tag"<?php if($instance['postType'] == 'te_article-tag') echo " selected=\"selected\""; ?>>Article</option>
+			</select>
+		</p>
+		<p>
+			<label for="<?php echo $itemCount_id; ?>">Tags to show:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $itemCount_id; ?>"
+				name="<?php echo $itemCount_name; ?>"
+				value="<?php echo $instance['itemCount']; ?>"
+				size="2" />
+		</p>
 		
 		<?php
 	}
