@@ -1,24 +1,24 @@
 <?php
 
 /*
-Plugin Name: Text Image Module
+Plugin Name: TE Text Widget
 Plugin URI: http://konscript.com
-Description: A widget that displays a text and a headline with an image and a icon
+Description: A widget for displaying a widget with editable text, image, icon and link.
 Version: 1.0
 Author URI: http://konscript.com
 */
 
-class TextImageModule extends WP_Widget {
-	function TextImageModule() {
+class TE_FreeTextWidget extends WP_Widget {
+	function TE_FreeTextWidget() {
 		$this->WP_widget(
-			'text-image-widget',
-			'Text Image Module',
+			'te_free-text-widget',
+			'TE Text Widget',
 			array(
-				'classname'		=> 'Text Image Module',
-				'description' => 'A widget that displays a text and a headline with an image and a icon'
+				'classname'		=> 'TE Text Widget',
+				'description' => 'A widget for displaying a widget with editable text, image, icon and link.'
 			),
 			array(
-				'id_base'			=> 'text-image-widget'
+				'id_base'			=> 'te_free-text-widget'
 			)
 		);
 	}
@@ -265,10 +265,10 @@ add_action('admin_print_scripts', 'load_admin_scripts');
 add_action('admin_print_styles', 'load_admin_styles');
 add_action('admin_head', 'load_tiny_mce');
 
-function load_text_image_widget() {
-	register_widget('TextImageModule');
+function te_load_FreeTextWidget() {
+	register_widget('TE_FreeTextWidget');
 }
 
-add_action('widgets_init', 'load_text_image_widget');
+add_action('widgets_init', 'te_load_FreeTextWidget');
 
 ?>

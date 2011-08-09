@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: Related Posts Widget
+Plugin Name: TE Related Posts Widget
 Plugin URI: http://konscript.com
 Description: A widget that displays related posts
 Version: 1.0
@@ -140,10 +140,10 @@ class TE_RelatedPostsWidget extends WP_Widget {
 	}
 }
 
-function load_related_posts_widget() {
+function te_load_RelatedPostsWidget() {
 	register_widget('TE_RelatedPostsWidget');
 }
 
-add_action('widgets_init', 'load_related_posts_widget');
+add_action('widgets_init', 'te_load_RelatedPostsWidget');
 	
 ?>

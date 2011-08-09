@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: Tagcloud Widget
+Plugin Name: TE Tagcloud Widget
 Plugin URI: http://konscript.com
 Description: A widget that displays a cloud of tags.
 Version: 1.0
@@ -169,10 +169,10 @@ class TE_TagcloudWidget extends WP_Widget {
 	}
 }
 
-function load_tagcloud_widget() {
+function te_load_TagcloudWidget() {
 	register_widget('TE_TagcloudWidget');
 }
 
-add_action('widgets_init', 'load_tagcloud_widget');
+add_action('widgets_init', 'te_load_TagcloudWidget');
 
 ?>
