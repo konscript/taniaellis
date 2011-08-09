@@ -24,24 +24,63 @@ class TE_RelatedPostsWidget extends WP_Widget {
 	}
 	
 	function widget($args, $instance) {
-		extract($args);
-		
-		echo $before_widget;
-		
 		global $post;
     if (!is_singular())
       return;
 
-		$type = ($post->post_type == 'page' ? array('page') : array('post'));
-		if (yarpp_get_option('cross_relate'))
-			$type = array('post','page');
+		extract($args);
 		
+		$titleA = apply_filters('widget_title', $instance['titleA']);
+		$titleB = apply_filters('widget_title', $instance['titleB']);
+		
+		echo $before_widget;
+		
+		$scores = the_related_get_scores(); // pass the post ID if outside of the loop
+    $posts = array_slice( array_keys( $scores ), 0, 5); // keep only the the five best results
+    $args = array(
+				'post_type'					=> $instance['postType'],
+        'post__in'          => $posts,
+        'posts_per_page'    => 3,
+        'caller_get_posts'  => 1 // ignore sticky status
+    );
+    $query = new WP_Query( $args );
+
 		?>
-			
-			<?php print_r (yarpp_related($type,$instance,false,false,'widget')); ?>
 		
+		<div class="widget widget-blog related">
+			<div class="header-container">
+				<h2 class="first-line"><?php echo $titleA; ?><h2>
+				<h2 class="second-line"><?php echo $titleB; ?></h2>
+			</div>
+			
+			<?php if($query->have_posts()) : ?>
+				<?php while($query->have_posts()) : ?>
+					<?php $query->the_post(); ?>
+				
+					<div class="item blog">
+						<div class="item-content">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
+								</a>
+								
+								<p class="meta-data"><?php the_time('j M Y H:i') ?></p>
+								<span class="by-line">By <?php the_author(); ?></span>
+								
+								<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<p class="excerpt"><?php the_excerpt_rss(); ?></a>
+									
+								<div class="options">
+									<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
+								</div>
+						</div>
+					</div>
+				
+				<?php endwhile; ?>
+			<?php endif; ?>
+			
 		<?php
 		
+		wp_reset_query();
 	}
 	
 	function update($new_instance, $old_instance) {
@@ -49,6 +88,7 @@ class TE_RelatedPostsWidget extends WP_Widget {
 		
 		$instance['titleA']			= strip_tags($new_instance['titleA']);
 		$instance['titleB']			= strip_tags($new_instance['titleB']);
+		$instance['postType']		= strip_tags($new_instance['postType']);
 		
 		return $instance;
 	}
@@ -57,6 +97,7 @@ class TE_RelatedPostsWidget extends WP_Widget {
 		$defaults = array(
 			'titleA'			=> '',
 			'titleB'			=> '',
+			'postType'		=> 'post',
 		);
 		
 		foreach($defaults as $key => $value) {
@@ -87,6 +128,16 @@ class TE_RelatedPostsWidget extends WP_Widget {
 				id="<?php echo $titleB_id; ?>"
 				name="<?php echo $titleB_name; ?>"
 				value="<?php echo $titleB; ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $postType_id; ?>">Type:</label><br />
+			<select 
+				id="<?php echo $postType_id; ?>"
+				name="<?php echo $postType_name; ?>">
+				
+				<option value="post"<?php if($instance['postType'] == 'post') echo " selected=\"selected\""; ?>>Blog Post</option>
+				<option value="te_article"<?php if($instance['postType'] == 'te_article') echo " selected=\"selected\""; ?>>Article</option>
+			</select>
 		</p>
 		
 		<?php
