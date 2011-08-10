@@ -1,24 +1,24 @@
 <?php
 
 /*
-Plugin Name: Text Image Module
+Plugin Name: TE Text Widget
 Plugin URI: http://konscript.com
-Description: A widget that displays a text and a headline with an image and a icon
+Description: A widget for displaying a widget with editable text, image, icon and link.
 Version: 1.0
 Author URI: http://konscript.com
 */
 
-class TextImageModule extends WP_Widget {
-	function TextImageModule() {
+class TE_FreeTextWidget extends WP_Widget {
+	function TE_FreeTextWidget() {
 		$this->WP_widget(
-			'text-image-widget',
-			'Text Image Module',
+			'te_free-text-widget',
+			'TE Text Widget',
 			array(
-				'classname'		=> 'Text Image Module',
-				'description' => 'A widget that displays a text and a headline with an image and a icon'
+				'classname'		=> 'TE Text Widget',
+				'description' => 'A widget for displaying a widget with editable text, image, icon and link.'
 			),
 			array(
-				'id_base'			=> 'text-image-widget'
+				'id_base'			=> 'te_free-text-widget'
 			)
 		);
 	}
@@ -96,8 +96,9 @@ class TextImageModule extends WP_Widget {
 		$instance['metadata']		= strip_tags($new_instance['metadata']);
 		$instance['byline']			= strip_tags($new_instance['byline']);
 		$instance['text']				= strip_tags($new_instance['text']);
-		$instance['layout']				= strip_tags($new_instance['layout']);
-		
+		$instance['layout']			= strip_tags($new_instance['layout']);
+		$instance['byline']			= strip_tags($new_instance['byline']);
+		$instance['metadata']			= strip_tags($new_instance['metadata']);
 		return $instance;
 	}
 	
@@ -114,6 +115,8 @@ class TextImageModule extends WP_Widget {
 			'byline'			=> '',
 			'text'				=> '',
 			'layout'			=> 'tall',
+			'byline'			=> '',
+			'metadata'		=> '',
 		);
 		
 		foreach($defaults as $key => $value) {
@@ -215,9 +218,28 @@ class TextImageModule extends WP_Widget {
 		</p>
 		
 		<p>
+			<label for="<?php echo $byline_id; ?>">By line:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $byline_id; ?>"
+				name="<?php echo $byline_name; ?>"
+				value="<?php echo $byline; ?>" />
+		</p>
+		
+		<p>
+			<label for="<?php echo $metadata_id; ?>">Metadata:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $metadata_id; ?>"
+				name="<?php echo $metadata_name; ?>"
+				value="<?php echo $metadata; ?>" />
+		</p>
+		
+		<p>
 			<label for="<?php echo $layout_id; ?>">Layout:</label><br />
 			<select id="<?php echo $layout_id; ?>" name="<?php echo $layout_name; ?>">
-				<option value="tall">Tall</option>
+				<option value="tall"<?php if($layout == "tall") echo " selected=\"selected\""; ?>>Tall</option>
+				<option value="wide"<?php if($layout == "wide") echo " selected=\"selected\""; ?>>Wide</option>
 			</select>
 		</p>
 		
@@ -226,9 +248,8 @@ class TextImageModule extends WP_Widget {
 }
 
 function load_admin_scripts() {
-	wp_enqueue_script('media-upload');
-	wp_enqueue_script('thickbox');
-	wp_register_script('imagewidget-upload', WP_PLUGIN_URL . '/TextImageModule/imagewidget-upload.js');
+	wp_enqueue_script(array('jquery', 'editor', 'thickbox', 'media-upload'));
+	wp_register_script('imagewidget-upload', WP_PLUGIN_URL . '/te_free-text-widget/imagewidget-upload.js');
 	wp_enqueue_script('imagewidget-upload');
 }
 
@@ -236,13 +257,18 @@ function load_admin_styles() {
 	wp_enqueue_style('thickbox');
 }
 
-add_action('admin_print_scripts', 'load_admin_scripts');
-add_action('admin_print_styles', 'load_admin_styles');
-
-function load_text_image_widget() {
-	register_widget('TextImageModule');
+function load_tiny_mce() {
+	wp_tiny_mce( false );
 }
 
-add_action('widgets_init', 'load_text_image_widget');
+add_action('admin_print_scripts', 'load_admin_scripts');
+add_action('admin_print_styles', 'load_admin_styles');
+add_action('admin_head', 'load_tiny_mce');
+
+function te_load_FreeTextWidget() {
+	register_widget('TE_FreeTextWidget');
+}
+
+add_action('widgets_init', 'te_load_FreeTextWidget');
 
 ?>

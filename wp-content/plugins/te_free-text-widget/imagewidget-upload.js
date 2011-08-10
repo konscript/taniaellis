@@ -1,7 +1,7 @@
 // http://www.webmaster-source.com/2010/01/08/using-the-wordpress-uploader-in-your-plugin-or-theme/
 
-var type;
-var field;
+var type = 'image';
+var field = '.image-upload-field';
 var widget;
 
 function start_upload(btn) {
