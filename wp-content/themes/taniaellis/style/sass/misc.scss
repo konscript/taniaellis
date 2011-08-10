@@ -617,6 +617,44 @@
 			}
 		}
 		
+		.widget-list {
+			.list {
+				.title {
+					margin-bottom: 10px;
+				}
+				.excerpt {
+					margin-bottom: 10px;
+					width: 260px;
+				}
+				
+				.options {
+					float: right;
+					width: 100px;
+				}
+				
+				.list {
+					li {
+						span {
+							$bcolor: rgb(147, 185, 148);
+
+							display: table-cell;
+							vertical-align: middle;
+							margin-bottom: 8px;
+
+							span {
+								background: $bcolor;
+								float: left;
+								height: 1em;
+								margin-right: 5px;
+								line-height: 1em;
+								width: 1em;
+							}
+						}
+					}
+				}
+			}
+		}
+		
 		.widget-blog.related {
 			background: url('../../images/icon_related.png') top left no-repeat;
 		}

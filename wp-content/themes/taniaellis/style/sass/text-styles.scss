@@ -496,6 +496,18 @@ html>body {
 		}
 	}
 	
+	.widget-list {
+		.list {
+			.title {
+				color: rgb(125, 122, 117);
+			}
+			
+			li {
+				font-size: 11px;
+			}
+		}
+	}
+	
 	.widget {			
 		.header-container {
 			color: #B0ADA6;
@@ -556,6 +568,13 @@ html>body {
 					&:hover {
 						color: #749B7F / 1.2;
 					}
+				}
+			}
+			
+			.list {
+				li {
+					color: rgb(123, 120, 115);
+					text-transform: uppercase;
 				}
 			}
 		}	

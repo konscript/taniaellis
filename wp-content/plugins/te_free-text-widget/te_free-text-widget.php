@@ -249,7 +249,7 @@ class TE_FreeTextWidget extends WP_Widget {
 
 function load_admin_scripts() {
 	wp_enqueue_script(array('jquery', 'editor', 'thickbox', 'media-upload'));
-	wp_register_script('imagewidget-upload', WP_PLUGIN_URL . '/TextImageModule/imagewidget-upload.js');
+	wp_register_script('imagewidget-upload', WP_PLUGIN_URL . '/te_free-text-widget/imagewidget-upload.js');
 	wp_enqueue_script('imagewidget-upload');
 }
 
