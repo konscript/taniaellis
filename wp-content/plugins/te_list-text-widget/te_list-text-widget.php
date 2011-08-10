@@ -105,7 +105,7 @@ class TE_ListTextWidget extends WP_Widget {
 		while($found < $instance['itemCount']) {
 			if(isset($new_instance["item_$i"])) {
 				if(empty($new_instance["item_$i"]))
-					unset($instance["item_$i"])
+					unset($instance["item_$i"]);
 				else {
 					$instance["item_$i"] = strip_tags($new_instance["item_$i"]);
 					$found++;
