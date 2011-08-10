@@ -122,7 +122,7 @@ class TE_ListTextWidget extends WP_Widget {
 		$defaults = array(
 			'titleA'			=> '',
 			'titleB'			=> '',
-			'itemCount'		=> 1,
+			'itemCount'		=> '1',
 			'iconURL'			=> '',
 			'header'			=> '',
 			'text'				=> '',
