@@ -212,7 +212,7 @@ class TE_ListTextWidget extends WP_Widget {
 		</p>
 		
 		<ul>
-			<?php for($i = 1; $i <= (int)$itemCount; $i++) : 
+			<?php for($i = 1; $i <= (int)$itemCount + 1; $i++) : 
 				$id = 'item_' . $i . '_id';
 				$name = 'item_' . $i . '_name';
 				$val = 'item_' . $i; ?>
