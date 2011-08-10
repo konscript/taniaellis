@@ -142,6 +142,8 @@ class TE_ListTextWidget extends WP_Widget {
 			$$nn = $this->get_field_name($key);
 		}
 		
+		echo $itemCount;
+		
 		$i = 1;
 		$found = 0;
 		$items = array();
