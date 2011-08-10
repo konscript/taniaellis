@@ -20,8 +20,8 @@
 
 		<div class="header-content" id="frontpage-header-content">
 			<img id="intro-movie" src="<?php bloginfo('template_url'); ?>/images/header_frontpage_tania_telly.png" />
-			<!-- Video goes here! -->
-
+      <!-- Insert video here! -->
+      <!-- <iframe src="http://player.vimeo.com/video/23945339?title=0&amp;byline=0&amp;portrait=0" width="250" height="170" frameborder="0"></iframe> -->
 
 			<div class="header-quote">
 				<h6>Heartcore business for social and economic value!</h6>

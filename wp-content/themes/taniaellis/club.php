@@ -3,41 +3,90 @@
 Template Name: Club
 */
 ?>
-  <?php get_header(); ?>
 
-  <div id="header">
-    <p id="sub-heading">The <span>Social</span> Business Company</p>
-    <p id="language-picker">
-      <a class="current" href="javascript:void(0)">ENG</a> / <a href="javascript:void(0)">DK</a>
-    </p>
+<?php get_header(); ?>
 
-    <div class="clearer"></div>
+<div id="header">
+	<p id="sub-heading">The <span>Social</span> Business Company &reg;</p>
+	<p id="language-picker">
+		<a class="current" href="javascript:void(0)">ENG</a> / <a href="javascript:void(0)">DK</a>
+	</p>
+	
+	<div class="clearer"></div>
 
-    <div id="header-container">    
+	<div id="header-container">
+		
+		<?php wp_nav_menu(array(
+	    'theme_location' 	=> 'reading-room-menu',
+			'menu_class'		=> 'navigation-header',
+			'menu_id'			=> 'navigation-header-standard',
+			'link_before'		=> '<span>&nbsp;</span>'
+	        )); 
+	    ?>
+		<div class="header-content">
+			
+			<div class="left-column" id="club-left">
+			  
+			  <img src="<?php bloginfo('template_url'); ?>/images/club_logo.png" id="club-logo" />
+        
+        <p class="testemonials-title">
+          <span class="first-line">Join the club</span>
+          <span class="second-line">See what the members say...</span>
+        </p>
+        
+        <?php 
+          $testemonial_1_id = get_post_meta($post->ID, 'te_club-testemonials-testemonial-1-id', true);
+          $testemonial_2_id = get_post_meta($post->ID, 'te_club-testemonials-testemonial-2-id', true);
+          
+          $testemonial_1['author'] = get_post_meta($testemonial_1_id, 'te_testemonial-author', true);
+          $testemonial_1['video-id'] = get_post_meta($testemonial_1_id, 'te_testemonial-video-id', true);
+          $testemonial_1['video-url'] = get_post_meta($testemonial_1['video-id'], 'te_video_url', true);
+          $testemonial_1['author-url'] = get_post_meta($testemonial_1_id, 'te_testemonial-author-url', true);
+          $testemonial_1['author-url-text'] = get_post_meta($testemonial_1_id, 'te_testemonial-author-url-text', true);
+          
+          $testemonial_2['author'] = get_post_meta($testemonial_2_id, 'te_testemonial-author', true);
+          $testemonial_2['video-id'] = get_post_meta($testemonial_2_id, 'te_testemonial-video-id', true);
+          $testemonial_2['video-url'] = get_post_meta($testemonial_2['video-id'], 'te_video_url', true);
+          $testemonial_2['author-url'] = get_post_meta($testemonial_2_id, 'te_testemonial-author-url', true);
+          $testemonial_2['author-url-text'] = get_post_meta($testemonial_2_id, 'te_testemonial-author-url-text', true);
+          
+        ?>
+        
+        <div class="club-videos">
+            <div class="club-video">
+              <?php echo te_vimeo_video($testemonial_1['video-url'], 150, 90); ?>
+              <p class="testemonial-author"><?php echo $testemonial_1['author']; ?></p>
+              <a href="<?php echo $testemonial_1['author-url']; ?>" class="author-url"><?php echo $testemonial_1['author-url-text']; ?></a>
+            </div>
+            
+            <div class="club-video">
+              <?php echo te_vimeo_video($testemonial_2['video-url'], 150, 90); ?>
+              <p class="testemonial-author"><?php echo $testemonial_2['author']; ?></p>
+              <a href="<?php echo $testemonial_2['author-url']; ?>" class="author-url"><?php echo $testemonial_2['author-url-text']; ?></a>
+            </div>
+        </div>
+        
+			</div>
+			
+			<div class="right-column" id="club-right">
+				<div class="header-right-box">
+					<h2><?php echo get_post_meta($post->ID, 'te_club-header-text-title', true); ?></h2>
+					<p><?php echo get_post_meta($post->ID, 'te_club-header-text-content', true); ?></p>
 
-      <ul class="navigation-header" id="navigation-header-standard">
-        <li><a href="#"><span>&nbsp;</span>Item</a></li>
-        <li><a href="#"><span>&nbsp;</span>Item</a></li>
-        <li><a href="#"><span>&nbsp;</span>Item</a></li>
-        <li><a href="#"><span>&nbsp;</span>Item</a></li>
+          <?php
+          $header_link_url = get_post_meta($post->ID, 'te_club-header-text-link-address', true);
+          $header_link_text = get_post_meta($post->ID, 'te_club-header-text-link-text', true);
+          ?>
 
-      </ul>
-      <div class="header-content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<a class="join" href="<?php echo $header_link_url; ?>"><?php echo $header_link_text; ?></a>
+				</div>
+			</div>
 
-
-
-
-      </div> <!-- #header-content -->
-    </div> <!-- #header-container -->
-
-
-  </div> <!-- #header -->
+		</div> <!-- .header-content -->
+	</div> <!-- #.header-container -->
+	
+	
+</div> <!-- #header -->
 
 <div class="clearer"></div>
 
@@ -52,13 +101,23 @@ Template Name: Club
         <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_facebook.png" alt="Facebook" title="Facebook" /></a></li>
         <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
       </ul>
-      <div class="box">
-        <p class="box-header">
-          <span class="box-first-line">Become a Member</span>
-          <span class="box-second-line">Of the Club</span>
+			<div class="box">
+        <p class="box-header green-header">
+          <?php
+            $box_title_line_1 = get_post_meta($post->ID, 'te_club-box-text-title-line-1', true);
+            $box_title_line_2 = get_post_meta($post->ID, 'te_club-box-text-title-line-2', true);
+          ?>
+          <span class="box-first-line"><?php echo $box_title_line_1; ?></span>
+          <span class="box-second-line"><?php echo $box_title_line_2; ?></span>
         </p>
-        <p class="box-content"></p>
-        <a class="box-button" href="javascript:void(0)">Join the Club</a>                       
+        <p class="box-content box-content-dark">
+          <?php echo get_post_meta($post->ID, 'te_club-box-text-content', true); ?>
+        </p>
+        <?php
+          $box_link_address = get_post_meta($post->ID, 'te_club-box-text-link-address', true);
+          $box_link_text = get_post_meta($post->ID, 'te_club-box-text-link-text', true);
+        ?>
+        <a class="box-button green-button" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>                       
       </div>
     </div>
 

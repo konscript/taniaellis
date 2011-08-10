@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Reading Room
+    Template Name: Lectures
 */
 ?>
 <?php get_header(); ?>
@@ -23,22 +23,32 @@
 	        )); 
 	    ?>
 		<div class="header-content">
-			<div class="left-column">
-				<div class="header-title">
-		            <h2 class="first-line">Social Business</h2>
-			        <h2 class="second-line">Reading Room</h2>
-		        </div>
+			<div class="left-column" id="lectures-left">
+        <div class="header-title">
+          <h2 class="first-line">Social Business</h2>
+          <h2 class="second-line">Lectures</h2>
+        </div>
+      
+      <div class="lecture-board">
+        <ul>
+          <?php
+          for ($i = 1 ; $i < 6; $i++) { 
+            echo '<li>' . get_post_meta($post->ID, 'te_lectures-bullets-bullet-' . $i, true) . '</li>';
+          }      
+          ?>
+        </ul>
+      </div>
 		
 
 			</div>
-			<div class="right-column">
+			<div class="right-column" id="lectures-right">
 				<div class="header-right-box">
-					<h2><?php echo get_post_meta($post->ID, 'te_reading-room-header-text-title', true); ?></h2>
-					<p><?php echo get_post_meta($post->ID, 'te_reading-room-header-text-content', true); ?></p>
+					<h2><?php echo get_post_meta($post->ID, 'te_lectures-header-text-title', true); ?></h2>
+					<p><?php echo get_post_meta($post->ID, 'te_lectures-header-text-content', true); ?></p>
 
           <?php
-          $header_link_url = get_post_meta($post->ID, 'te_reading-room-header-text-link-address', true);
-          $header_link_text = get_post_meta($post->ID, 'te_reading-room-header-text-link-text', true);
+          $header_link_url = get_post_meta($post->ID, 'te_lectures-header-text-link-address', true);
+          $header_link_text = get_post_meta($post->ID, 'te_lectures-header-text-link-text', true);
           ?>
 
 					<a class="join" href="<?php echo $header_link_url; ?>"><?php echo $header_link_text; ?></a>
@@ -65,22 +75,22 @@
 				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
 			</ul>
 			<div class="box">
-        <p class="box-header">
+        <p class="box-header brown-header">
           <?php
-            $box_title_line_1 = get_post_meta($post->ID, 'te_reading-room-box-text-title-line-1', true);
-            $box_title_line_2 = get_post_meta($post->ID, 'te_reading-room-box-text-title-line-2', true);
+            $box_title_line_1 = get_post_meta($post->ID, 'te_consulting-box-text-title-line-1', true);
+            $box_title_line_2 = get_post_meta($post->ID, 'te_consulting-box-text-title-line-2', true);
           ?>
           <span class="box-first-line"><?php echo $box_title_line_1; ?></span>
           <span class="box-second-line"><?php echo $box_title_line_2; ?></span>
         </p>
-        <p class="box-content">
-          <?php echo get_post_meta($post->ID, 'te_reading-room-box-text-content', true); ?>
+        <p class="box-content box-content-dark">
+          <?php echo get_post_meta($post->ID, 'te_consulting-box-text-content', true); ?>
         </p>
         <?php
-          $box_link_address = get_post_meta($post->ID, 'te_reading-room-box-text-link-address', true);
-          $box_link_text = get_post_meta($post->ID, 'te_reading-room-box-text-link-text', true);
+          $box_link_address = get_post_meta($post->ID, 'te_consulting-box-text-link-address', true);
+          $box_link_text = get_post_meta($post->ID, 'te_consulting-box-text-link-text', true);
         ?>
-        <a class="box-button" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>                       
+        <a class="box-button brown-button" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>                       
       </div>
     </div>
 	  

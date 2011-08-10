@@ -556,48 +556,40 @@ function create_video_taxonomies() {
   );
   
   register_taxonomy('te_video-tag', 'te_video', $te_video_tag_args);
-}
-
-/* ADD CUSTOM FIELDS TO VIDEO POST TYPE */
-
-add_action("admin_init", "te_video_add_meta_box");
-add_action('save_post', 'save_te_video_details');
- 
-function te_video_add_meta_box() {
-  add_meta_box("te_video-url", "Video Options", "te_video_options", "te_video", "advanced", "high");
-}
- 
-function te_video_options() {
-  global $post;
-  $custom = get_post_custom($post->ID);
-  $te_video_url = $custom["te_video_url"][0];
-  ?>
-  <label for="te_video_url">Vimeo URL:</label>
-  <input id="te_video_url" name="te_video_url" value="<?php echo $te_video_url; ?>" />
-  <br /><br />
-  <?php
-  te_vimeo_video($te_video_url);
-}
-
-
-/* Save meta data. Should probably have some security options added. (Nonce authentication) */ 
-function save_te_video_details() {
-  global $post;
   
-  if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) 
-    return;
-  
-  update_post_meta($post->ID, "te_video_url", $_POST["te_video_url"]);
 }
 
-function te_vimeo_video($url) {
+te_video_meta();
+
+function te_video_meta() {
+  $meta_boxes[] = array(
+  	'id' => 'te_video-options',
+  	'title' => 'Video Options',
+  	'pages' => array('te_video'),
+  	'context' => 'normal',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Vimeo URL',
+  			'id' => 'te_video_url',
+  			'type' => 'text',					
+  		)
+  	)
+  );
+  
+  foreach($meta_boxes as $meta_box) {
+    $my_box = new RW_Meta_Box($meta_box);
+  }
+  
+}
+
+function te_vimeo_video($url, $width, $height) {
   $pattern = "/[0-9]*$/";
   preg_match_all($pattern, $url, $matches);
   //print_r($matches[0][0]);
   $video_id = $matches[0][0];
-  ?>
-  <iframe src="http://player.vimeo.com/video/<?php echo $video_id ?>?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" width="534" height="300" frameborder="0"></iframe>
-  <?php
+
+  return '<iframe src="http://player.vimeo.com/video/'. $video_id .'?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" width="' . $width . '" height="' . $height . '" frameborder="0"></iframe>';
 }
 
 
@@ -643,9 +635,22 @@ function testemonial_register() {
 }
 
 /* ADD CUSTOM FIELDS TO TESTEMONIAL POST TYPE */
-add_action('admin-init', 'te_testemonial_add_meta_box');
+te_testemonial_add_meta_box();
 
 function te_testemonial_add_meta_box() {
+  add_action('init', function() { remove_post_type_support('te_testemonial', 'editor'); });
+  
+  $video_query = new WP_Query('post_type=te_video');
+  if($video_query->have_posts()) {
+    $videos[''] = '';
+    while($video_query->have_posts()) {
+      $video_query->the_post();
+      $videos[get_the_ID()] = get_the_title();
+    }
+  }
+  
+  $prefix = 'te_testemonial';
+  
   $te_testemonial_meta_box = array(
   	'id' => 'te_testemonial-meta',
   	'title' => 'Testemonial Options',
@@ -655,14 +660,36 @@ function te_testemonial_add_meta_box() {
   		array(
   			'name' => 'Testemonial Author',
   			'id' => $prefix . '-author',
-  			'type' => 'text',					
-  			//'std' => '<b>It\'s great!</b>',
-  			//'desc' => ''
+  			'type' => 'text',	
   		),
   		array(
   			'name' => 'Testemonial Date',
   			'id' => $prefix . '-date',
-  			'type' => 'date'						// file upload
+  			'type' => 'date'
+  		),
+  		array(
+  		  'name' => 'Author URL',
+  			'id' => $prefix . '-author-url',
+  			'type' => 'text',
+  			'desc' => 'Author website. Remember http://'
+  		),
+  		array(
+  		  'name' => 'Author URL text',
+  			'id' => $prefix . '-author-url-text',
+  			'type' => 'text',
+  			'desc' => 'Link text'
+  		),
+  		array(
+  		  'name' => 'Vimeo',
+  		  'id' => $prefix . '-video-id',
+  		  'desc' => 'Select the blank option if no vimeo should be attached',
+  		  'type' => 'select',
+  		  'options' => $videos
+  		),
+  		array(
+  		  'name' => 'Testemonial',
+  		  'id' => $prefix . '-testemonial-text',
+  		  'type' => 'textarea'
   		)
   	)
   );
@@ -687,15 +714,26 @@ function te_page_template_meta_boxes() {
     case 'readingroom.php':
       te_reading_room_meta();
       break;    
+    case 'club.php':
+      te_club_meta();
+      break;
+    case 'consulting.php':
+      te_consulting_meta();
+      break;
+    case 'lectures.php':
+      te_lectures_meta();
+      break;
     default:
       break;
   }
 }
 
+
+
 function te_reading_room_meta() {
   add_action('init', function() { remove_post_type_support('page', 'editor'); });
   
-  $prefix = 'te_reading-room-header-text';
+  $header_prefix = 'te_reading-room-header-text';
   
   $meta_boxes[] = array(
   	'id' => 'te_reading-room-header-text',
@@ -706,27 +744,29 @@ function te_reading_room_meta() {
   	'fields' => array(
   		array(
   			'name' => 'Title',
-  			'id' => 'din_mor_er_syg',
+  			'id' => $header_prefix . '-title',
   			'type' => 'text',					
   		),
   		array(
   			'name' => 'Content',
-  			'id' => $prefix . '-content',
+  			'id' => $header_prefix . '-content',
   			'type' => 'textarea'
   		),
   		array(
   		  'name' => 'Link Address',
-  		  'id' => $prefix . '-link-address',
+  		  'id' => $header_prefix . '-link-address',
   		  'type' => 'text',
   		  'desc' => 'Remember http://'
   		),
   		array(
   		  'name' => 'Link Text',
-  		  'id' => $prefix . '-link-text',
+  		  'id' => $header_prefix . '-link-text',
   		  'type' => 'text',
   		)
   	)
   );
+  
+  $box_prefix = 'te_reading-room-box-text';
   
   $meta_boxes[] = array(
   	'id' => 'te_reading-room-box-text',
@@ -737,31 +777,412 @@ function te_reading_room_meta() {
   	'fields' => array(
   		array(
   			'name' => 'Title Line 1',
-  			'id' => $prefix . '-title-line-1',
+  			'id' => $box_prefix . '-title-line-1',
   			'type' => 'text',					
   		),
   		array(
   			'name' => 'Title Line 2',
-  			'id' => $prefix . '-title-line-2',
+  			'id' => $box_prefix . '-title-line-2',
   			'type' => 'text'
   		),
   		array(
   		  'name' => 'Content',
-  		  'id' => $prefix . '-content',
+  		  'id' => $box_prefix . '-content',
   		  'type' => 'textarea',
   		),
   		array(
   		  'name' => 'Link Address',
-  		  'id' => $prefix . '-link-address',
+  		  'id' => $box_prefix . '-link-address',
   		  'type' => 'text',
   		  'desc' => 'Remember http://'
   		),
   		array(
   		  'name' => 'Link Text',
-  		  'id' => $prefix . '-link-text',
+  		  'id' => $box_prefix . '-link-text',
   		  'type' => 'text'
   		)
   	)
+  );
+
+  foreach($meta_boxes as $meta_box) {
+    $my_box = new RW_Meta_Box($meta_box);
+  }
+}
+
+function te_lectures_meta() {
+  add_action('init', function() { remove_post_type_support('page', 'editor'); });
+    
+    $header_prefix = 'te_lectures-header-text';
+    
+    $meta_boxes[] = array(
+     'id' => $header_prefix,
+     'title' => 'Header Text Options',
+     'pages' => array('page'),
+     'context' => 'normal',
+  
+     'fields' => array(
+       array(
+         'name' => 'Title',
+         'id' => $header_prefix . '-title',
+         'type' => 'text',         
+       ),
+       array(
+         'name' => 'Content',
+         'id' => $header_prefix . '-content',
+         'type' => 'textarea'
+       ),
+       array(
+         'name' => 'Link Address',
+         'id' => $header_prefix . '-link-address',
+         'type' => 'text',
+         'desc' => 'Remember http://'
+       ),
+       array(
+         'name' => 'Link Text',
+         'id' => $header_prefix . '-link-text',
+         'type' => 'text',
+       )
+     )
+    );
+    
+    $box_prefix = 'te_consulting-box-text';
+    
+    $meta_boxes[] = array(
+     'id' => $box_prefix,
+     'title' => 'Box Text Options',
+     'pages' => array('page'),
+     'context' => 'normal',
+  
+     'fields' => array(
+       array(
+         'name' => 'Title Line 1',
+         'id' => $box_prefix . '-title-line-1',
+         'type' => 'text',         
+       ),
+       array(
+         'name' => 'Title Line 2',
+         'id' => $box_prefix . '-title-line-2',
+         'type' => 'text'
+       ),
+       array(
+         'name' => 'Content',
+         'id' => $box_prefix . '-content',
+         'type' => 'textarea',
+       ),
+       array(
+         'name' => 'Link Address',
+         'id' => $box_prefix . '-link-address',
+         'type' => 'text',
+         'desc' => 'Remember http://'
+       ),
+       array(
+         'name' => 'Link Text',
+         'id' => $box_prefix . '-link-text',
+         'type' => 'text'
+       )
+     )
+    );
+    
+  $bullets_prefix = 'te_lectures-bullets';
+  
+  $meta_boxes[] = array(
+     'id' => $bullets_prefix,
+     'title' => 'Link Options: Four Corners of Social Business Consulting',
+     'pages' => array('page'),
+     'context' => 'normal',
+  
+     'fields' => array(
+       array(
+         'name' => 'Bullet 1',
+         'id' => $bullets_prefix . '-bullet-1',
+         'type' => 'text',
+       ),
+       array(
+         'name' => 'Bullet 2',
+         'id' => $bullets_prefix . '-bullet-2',
+         'type' => 'text'
+       ),
+       array(
+         'name' => 'Bullet 3',
+         'id' => $bullets_prefix . '-bullet-3',
+         'type' => 'text',
+       ),
+
+       array(
+         'name' => 'Bullet 4',
+         'id' => $bullets_prefix . '-bullet-4',
+         'type' => 'text'
+       ),
+       array(
+         'name' => 'Bullet 5',
+         'id' => $bullets_prefix . '-bullet-5',
+         'type' => 'text',
+       )
+      )
+    );
+  
+  foreach($meta_boxes as $meta_box) {
+      $my_box = new RW_Meta_Box($meta_box);
+    }
+}
+
+function te_consulting_meta() {
+  add_action('init', function() { remove_post_type_support('page', 'editor'); });
+    
+    $header_prefix = 'te_consulting-header-text';
+    
+    $meta_boxes[] = array(
+     'id' => $header_prefix,
+     'title' => 'Header Text Options',
+     'pages' => array('page'),
+     'context' => 'normal',
+  
+     'fields' => array(
+       array(
+         'name' => 'Title',
+         'id' => $header_prefix . '-title',
+         'type' => 'text',         
+       ),
+       array(
+         'name' => 'Content',
+         'id' => $header_prefix . '-content',
+         'type' => 'textarea'
+       ),
+       array(
+         'name' => 'Link Address',
+         'id' => $header_prefix . '-link-address',
+         'type' => 'text',
+         'desc' => 'Remember http://'
+       ),
+       array(
+         'name' => 'Link Text',
+         'id' => $header_prefix . '-link-text',
+         'type' => 'text',
+       )
+     )
+    );
+    
+    $box_prefix = 'te_consulting-box-text';
+    
+    $meta_boxes[] = array(
+     'id' => $box_prefix,
+     'title' => 'Box Text Options',
+     'pages' => array('page'),
+     'context' => 'normal',
+  
+     'fields' => array(
+       array(
+         'name' => 'Title Line 1',
+         'id' => $box_prefix . '-title-line-1',
+         'type' => 'text',         
+       ),
+       array(
+         'name' => 'Title Line 2',
+         'id' => $box_prefix . '-title-line-2',
+         'type' => 'text'
+       ),
+       array(
+         'name' => 'Content',
+         'id' => $box_prefix . '-content',
+         'type' => 'textarea',
+       ),
+       array(
+         'name' => 'Link Address',
+         'id' => $box_prefix . '-link-address',
+         'type' => 'text',
+         'desc' => 'Remember http://'
+       ),
+       array(
+         'name' => 'Link Text',
+         'id' => $box_prefix . '-link-text',
+         'type' => 'text'
+       )
+     )
+    );
+    
+    $links_prefix = 'te_consulting-links';
+  
+  
+  $meta_boxes[] = array(
+     'id' => $links_prefix,
+     'title' => 'Link Options: Four Corners of Social Business Consulting',
+     'pages' => array('page'),
+     'context' => 'normal',
+  
+     'fields' => array(
+       array(
+         'name' => 'Middle Text',
+         'id' => $links_prefix . '-center-text',
+         'type' => 'text',
+         'desc' => 'This text will appear in the middle of the four links'
+       ),
+       array(
+         'name' => 'Top Link Text',
+         'id' => $links_prefix . '-top-link-text',
+         'type' => 'text'
+       ),
+       array(
+         'name' => 'Top Link URL',
+         'id' => $links_prefix . '-top-link-url',
+         'type' => 'text',
+         'desc' => 'Remember http://'          
+       ),
+
+       array(
+         'name' => 'Right Link Text',
+         'id' => $links_prefix . '-right-link-text',
+         'type' => 'text'
+       ),
+       array(
+         'name' => 'Right Link URL',
+         'id' => $links_prefix . '-right-link-url',
+         'type' => 'text',
+         'desc' => 'Remember http://'          
+       ),
+
+       array(
+         'name' => 'Bottom Link Text',
+         'id' => $links_prefix . '-bottom-link-text',
+         'type' => 'text'
+       ),
+       array(
+         'name' => 'Bottom Link URL',
+         'id' => $links_prefix . '-bottom-link-url',
+         'type' => 'text',
+         'desc' => 'Remember http://'          
+       ),
+       
+       array(
+         'name' => 'Left Link Text',
+         'id' => $links_prefix . '-left-link-text',
+         'type' => 'text'
+       ),
+       array(
+         'name' => 'Left Link URL',
+         'id' => $links_prefix . '-left-link-url',
+         'type' => 'text',
+         'desc' => 'Remember http://'    
+       )
+
+     )
+    );
+  
+  foreach($meta_boxes as $meta_box) {
+      $my_box = new RW_Meta_Box($meta_box);
+    }
+}
+
+function te_club_meta() {
+  add_action('init', function() { remove_post_type_support('page', 'editor'); });
+  
+  $header_prefix = 'te_club-header-text';
+  
+  $meta_boxes[] = array(
+  	'id' => 'te_club-header-text',
+  	'title' => 'Header Text Options',
+  	'pages' => array('page'),
+  	'context' => 'normal',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Title',
+  			'id' => $header_prefix . '-title',
+  			'type' => 'text',					
+  		),
+  		array(
+  			'name' => 'Content',
+  			'id' => $header_prefix . '-content',
+  			'type' => 'textarea'
+  		),
+  		array(
+  		  'name' => 'Link Address',
+  		  'id' => $header_prefix . '-link-address',
+  		  'type' => 'text',
+  		  'desc' => 'Remember http://'
+  		),
+  		array(
+  		  'name' => 'Link Text',
+  		  'id' => $header_prefix . '-link-text',
+  		  'type' => 'text',
+  		)
+  	)
+  );
+  
+  $box_prefix = 'te_club-box-text';
+  
+  $meta_boxes[] = array(
+  	'id' => 'te_club-box-text',
+  	'title' => 'Box Text Options',
+  	'pages' => array('page'),
+  	'context' => 'normal',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Title Line 1',
+  			'id' => $box_prefix . '-title-line-1',
+  			'type' => 'text',					
+  		),
+  		array(
+  			'name' => 'Title Line 2',
+  			'id' => $box_prefix . '-title-line-2',
+  			'type' => 'text'
+  		),
+  		array(
+  		  'name' => 'Content',
+  		  'id' => $box_prefix . '-content',
+  		  'type' => 'textarea',
+  		),
+  		array(
+  		  'name' => 'Link Address',
+  		  'id' => $box_prefix . '-link-address',
+  		  'type' => 'text',
+  		  'desc' => 'Remember http://'
+  		),
+  		array(
+  		  'name' => 'Link Text',
+  		  'id' => $box_prefix . '-link-text',
+  		  'type' => 'text'
+  		)
+  	)
+  );
+  
+  $testemonial_query = new WP_Query('post_type=te_testemonial');
+  if($testemonial_query->have_posts()) {
+    while($testemonial_query->have_posts()) {
+      $testemonial_query->the_post();
+      
+      //echo get_post_meta(get_the_ID(), 'te_testemonial-video-id', true);
+      
+      if(get_post_meta(get_the_ID(), 'te_testemonial-video-id', true)) {
+        $testemonials[get_the_ID()] = get_the_title();
+      }
+    
+    }
+  }
+  
+  $testemonials_prefix = 'te_club-testemonials';
+  
+  // This should be extended so any number of testemonials can be selected
+  $meta_boxes[] = array(
+   'id' => 'te_club-videos',
+   'title' => 'Video Testemonials',
+   'pages' => array('page'),
+   'context' => 'normal',
+  
+   'fields' => array(
+     array(
+       'name' => 'Testemonial 1',
+       'id' => $testemonials_prefix . '-testemonial-1-id',
+       'type' => 'select',
+       'options' => $testemonials      
+     ),
+     array(
+       'name' => 'Testemonial 2',
+       'id' => $testemonials_prefix . '-testemonial-2-id',
+       'type' => 'select',
+       'options' => $testemonials      
+     )
+   )
   );
 
   foreach($meta_boxes as $meta_box) {

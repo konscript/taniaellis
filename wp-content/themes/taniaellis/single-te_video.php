@@ -174,7 +174,7 @@
                                   ?>
                                   <?php 
                                     $url = get_post_meta($post->ID, 'te_video_url', true);
-                                    te_vimeo_video($url);
+                                    echo te_vimeo_video($url, 534, 300);
                                   ?>
                                   <div class="meta">
                                     <p class="byline">

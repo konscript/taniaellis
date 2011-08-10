@@ -221,6 +221,11 @@
 					height: 68px;
 					padding: 20px 0 0 20px;
 				}
+				
+				#club-logo {
+					margin-top: -60px;
+					margin-left: -30px;
+				}
 
 				#tagcloud-title {
 					border-bottom: 1px solid #7d7a75;
@@ -230,6 +235,168 @@
 
 				#tagcloud {
 					margin-left: 20px;
+				}
+			}
+			
+			#club-left {
+				width: 372px;
+				
+				.testemonials-title {
+					margin: 5px 0 10px 40px;
+					
+					.first-line {
+						display: block;
+					}
+				}
+				
+				.club-videos {
+					float: left;
+					margin-left: 40px;
+				
+					.club-video {
+						float: left;
+						margin-left: 10px;
+						
+						iframe {
+							border: 5px solid #CCC;
+						}
+						
+						.testemonial-author {
+							margin-top: 5px;
+						}
+						
+						.author-url {
+							display: block;
+							margin-top: 2px;
+						}
+						
+						&:first-child {
+							margin-left: 0;
+						}
+					}
+				}	
+			}
+			
+			#club-right {
+				padding: 23px 0 0 40px;
+			}
+			
+			#consulting-left {
+				width: 372px;
+				
+				.header-title {
+					background-color: #83A9C0;
+					width: 272px;
+				}
+				
+				.csr-four-corners {
+					position: relative;
+					height: 190px;
+					margin-left: 30px;
+					width: 372px;
+					
+					.middle {
+						background: url('../../images/consulting_corners_background.png') center center no-repeat;
+						height: 85px;
+						left: 100px;
+						position: absolute;
+						top: 50px;
+						width: 152px;
+						
+						p {
+							padding: 25px 10px 0;
+							text-align: center; // Move to text-styles
+						}
+					}
+					
+					a {
+						@include border-radius(5px);
+						background-color: #9CC1A2;
+						background-repeat: no-repeat;
+						@include transition(background-color, 0.1s, ease-in-out);
+						
+						&:hover {
+							background-color: #83A9C0;
+						}
+					}
+					
+					.top {
+						background-image: url('../../images/consulting_arrow_up.png');
+						background-position: bottom center;
+						display: block;
+						height: 12px;
+						left: 117px;
+						padding: 14px 10px;
+						position: absolute;
+						top: 10px;
+						width: 100px;
+						text-align: center;
+					}
+					
+					.right {
+						background-image: url('../../images/consulting_arrow_right.png');
+						background-position: left center;
+						display: block;
+						height: 24px;
+						left: 252px;
+						padding: 13px 10px;
+						position: absolute;
+						top: 69px;
+						width: 80px;
+						text-align: center;
+											
+					}
+					
+					.bottom {
+						background-image: url('../../images/consulting_arrow_down.png'); 
+						background-position: top center;
+						display: block;
+						height: 20px;
+						left: 117px;
+						padding: 10px;
+						position: absolute;
+						top: 135px;
+						width: 100px;
+						text-align: center;
+					}
+					
+					.left {
+						background-image: url('../../images/consulting_arrow_left.png');
+						background-position: right center;
+						display: block;
+						height: 24px;
+						left: -10px;
+						padding: 13px 10px;
+						position: absolute;
+						top: 69px;
+						width: 90px;	
+						text-align: center;				
+					}
+				}
+			}
+			
+			#consulting-right {
+				padding: 23px 0 0 40px;
+			}
+			
+			#lectures-left {
+				.header-title {
+					background-color: #D4B690;
+					width: 302px;
+				}
+				
+				.lecture-board {
+					background: url('../../images/lectures_header_background.png') bottom center no-repeat;
+					height: 167px;
+					padding-left: 50px;
+					padding-top: 25px;
+					width: 372px;
+					
+					ul {
+						color: #9CC1A2;
+						list-style-type: disc;
+						list-style-position: inside;
+					}
 				}
 			}
 
@@ -299,7 +466,7 @@
 			iframe {
 				@include border-radius(10px);
 				position: relative;
-				left: -250px;
+				left: -290px;
 				top: 70px;
 				z-index: 1000;
 			}
@@ -500,6 +667,18 @@
 				height: 18px;
 			}
 		}
+		
+		.blue-header {
+			background-color: #83A9C0;
+		}
+		
+		.green-header {
+			background-color: #9CC1A2;
+		}
+		
+		.brown-header {
+			background-color: #D4B690;
+		}
 
 		.box-content {
 			margin-bottom: 15px;
@@ -522,6 +701,7 @@
 			background-color: #7C7972;					
 			display: block;
 			float: right;
+			margin-bottom: 10px;
 			margin-right: 20px;
 			padding: 5px 20px;
 
@@ -536,6 +716,42 @@
 				@include background-image(linear-gradient(top, #7C7972 / 1.2, #A4A19C / 1.2));
 			}
 		}
+		
+		.brown-button {
+			@include background-image(linear-gradient(top, #D4B690, #D4B690 / 1.2));
+			
+			&:hover {
+				@include background-image(linear-gradient(top, #D4B690 / 1.2, #D4B690 / 1.44));
+			}
+			
+			&:active {
+				@include background-image(linear-gradient(top, #D4B690 / 1.44, #D4B690 / 1.2));
+			}
+		}
+		
+		.blue-button {
+			@include background-image(linear-gradient(top, #83A9C0, #83A9C0 / 1.2));
+			
+			&:hover {
+				@include background-image(linear-gradient(top, #83A9C0 / 1.2, #83A9C0 / 1.44));
+			}
+			
+			&:active {
+				@include background-image(linear-gradient(top, #83A9C0 / 1.44, #83A9C0 / 1.2));
+			}
+		}
+		
+		.green-button {
+			@include background-image(linear-gradient(top, #9CC1A2, #9CC1A2 / 1.2));
+			
+			&:hover {
+				@include background-image(linear-gradient(top, #9CC1A2 / 1.2, #9CC1A2 / 1.44));
+			}
+			
+			&:active {
+				@include background-image(linear-gradient(top, #9CC1A2 / 1.44, #9CC1A2 / 1.2));
+			}
+		}
 	}
 
 	#box-frontpage {
@@ -545,6 +761,7 @@
 	.left-sidebar {
 		background: url('../../images/left-fade-background.png') top left no-repeat;
 		margin-left: -16px;
+		min-height: 992px; // If stuff goes wrong, delet this
 		padding-left: 16px;
 
 		.widget {
@@ -631,6 +848,7 @@
 
 	.right-sidebar, .right-sidebar-single {
 		background: url('../../images/right-fade-background.png') top right no-repeat;
+		min-height: 992px; // If stuff goes wrong, delete this...
 
 		.sidebar-background {
 			background-color: #FFF;

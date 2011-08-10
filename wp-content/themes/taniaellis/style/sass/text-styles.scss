@@ -101,6 +101,85 @@ html>body {
 			}
 		}
 		
+		#club-left {
+			.testemonials-title {
+				color: #7D7A75;
+				
+				.first-line {
+					font-size: 2.7em;
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+				
+				.second-line {
+					font-size: 1.7em;
+				}
+			}
+			
+			.club-videos {
+				.club-video {
+					.testemonial-author {
+						color: #7D7A75;
+						font-size: 1.05em;
+						font-weight: bold;
+					}
+					
+					.author-url {
+						@include transition(color, 0.1s, ease-in-out);
+						
+						color: #9CC1A2 / 1.1;
+						font-weight: bold;
+						text-decoration: none;
+					
+						&:hover {
+							color: #9CC1A2 / 1.2;
+						}
+					}
+				}
+			}
+		}
+		
+		#consulting-left {
+			width: 372px;
+			
+			.header-title {
+				background-color: #83A9C0;
+				width: 272px;
+			}
+			
+			.csr-four-corners {
+				position: relative;
+				height: 190px;
+				margin-left: 30px;
+				width: 372px;
+				
+				.middle {				
+					p {
+						color: #888;
+						font-size: 0.9em;
+						text-transform: uppercase;
+					}
+				}
+				
+				a {
+					color: #FFF;
+					text-align: center;
+					text-decoration: none;
+				}
+			}
+		}
+		
+		#lectures-left {			
+			.lecture-board {
+				ul {
+					color: #9CC1A2;
+					font-style: italic;
+					font-weight: bold;
+					line-height: 1.2em;
+				}
+			}
+		}
+		
 		.right-column {
 			h2 {
 				color: #7d7a75;
@@ -263,6 +342,10 @@ html>body {
 			color: #FFF;
 			font-size: 1em;
 			line-height: 1.1em;
+		}
+		
+		.box-content-dark {
+			color: #555;
 		}
 		
 		.box-button {
