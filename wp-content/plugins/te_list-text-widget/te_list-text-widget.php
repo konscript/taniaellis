@@ -131,7 +131,7 @@ class TE_ListTextWidget extends WP_Widget {
 		);
 		
 		foreach($defaults as $key => $item) {
-			$$key = (isset($instance[$key])) ? $instance[$key] : $defaults[$item];
+			$$key = (isset($instance[$key]) && !empty($instance[$key])) ? $instance[$key] : $defaults[$item];
 			// $$key = (isset($instance[$key])) ? $instance[$key]: $defaults[$key];
 			// //echo $key . " : " . $instance[$key] . " : " . $defaults[$key] . "<br />";
 			// 
