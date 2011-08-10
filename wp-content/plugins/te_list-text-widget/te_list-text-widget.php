@@ -94,10 +94,25 @@ class TE_ListTextWidget extends WP_Widget {
 		$instance['link']				= strip_tags($new_instance['link']);
 		$instance['linkText']		= strip_tags($new_instance['linkText']);
 		
-		for($i = 1; $i <= (int) $new_instance['itemCount']; $i++) {
-			unset($instance["item_$i"]);
-			if(isset($new_instance["item_$i"]))
-				$instance["item_$i"] = strip_tags($new_instance["item_$i"]);
+		// for($i = 1; $i <= (int) $new_instance['itemCount']; $i++) {
+		// 		unset($instance["item_$i"]);
+		// 		if(isset($new_instance["item_$i"]))
+		// 			$instance["item_$i"] = strip_tags($new_instance["item_$i"]);
+		// 	}
+		
+		$i = 1;
+		$found = 0;
+		while($found < $instance['itemCount']) {
+			if(isset($new_instance["item_$i"])) {
+				if(empty($new_instance["item_$i"]))
+					unset($instance["item_$i"])
+				else {
+					$instance["item_$i"] = strip_tags($new_instance["item_$i"]);
+					$found++;
+				}
+				
+			}
+			$i++;
 		}
 		
 		return $instance;
