@@ -131,7 +131,8 @@ class TE_ListTextWidget extends WP_Widget {
 		);
 		
 		foreach($defaults as $key => $item) {
-			$$key = (isset($instance[$key]) && !empty($instance[$key])) ? $instance[$key] : $defaults[$item];
+			$$key = (isset($instance[$key]) && !empty($instance[$key])) ? $instance[$key] : $defaults[$key];
+			echo "key -> $key : def -> " . $defaults[$key] . " instance -> " . $instance[$key] . "<br />";
 			// $$key = (isset($instance[$key])) ? $instance[$key]: $defaults[$key];
 			// //echo $key . " : " . $instance[$key] . " : " . $defaults[$key] . "<br />";
 			// 
@@ -142,19 +143,23 @@ class TE_ListTextWidget extends WP_Widget {
 			$$nn = $this->get_field_name($key);
 		}
 		
-		echo $itemCount;
+		// $i = 1;
+		// $found = 0;
+		// $items = array();
+		// while($found <= $itemCount) {
+		// 	if(isset($instance["item_$i"]) and !empty($instance["item_$i"])) {
+		// 		$items["item_$i"] = $instance["item_$i"];
+		// 		$found++;
+		// 	}
+		// 	$i++;
+		// }
+		// 
 		
-		$i = 1;
-		$found = 0;
 		$items = array();
-		while($found < $itemCount) {
-			if(isset($instance["item_$i"]) and !empty($instance["item_$i"])) {
+		for($i = 1; $i <= $itemCount; $i++) {
+			if(isset($instance["item_$i"]))
 				$items["item_$i"] = $instance["item_$i"];
-				$found++;
-			}
-			$i++;
 		}
-		
 		
 		
 		?>
