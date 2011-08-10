@@ -115,9 +115,15 @@ class TE_ListTextWidget extends WP_Widget {
 			'linkText'		=> 'Read More',
 		);
 		
-		for($i = 1; $i <= $instance['itemCount']; $i++) {
-			if(!isset($instance["item_$i"]))
-				$instance["item_$i"] = '';
+		$i = 1;
+		$found = 0;
+		$items = array();
+		while($found < $instance['itemCount']) {
+			if(isset($instance["item_$i"]) and !empty($instance["item_$i"])) {
+				$items["item_$i"] = $instance["item_$i"];
+				$found++;
+			}
+			$i++;
 		}
 		
 		foreach($instance as $key => $value) {
@@ -211,8 +217,19 @@ class TE_ListTextWidget extends WP_Widget {
 				value="<?php echo $itemCount; ?>" />
 		</p>
 		
+		<p>
+			<input 
+				type="text"
+				id="<?php echo $this->get_field_id('item_1'); ?>"
+				name="<?php echo $this->get_field_name('item_1'); ?>"
+				value="<?php echo $instance['item_1']; ?>" />
+		</p>
+		
 		<ul>
-			<?php for($i = 1; $i <= (int)$itemCount + 1; $i++) : 
+			<?php foreach($items as $key => $item) : 
+				if($key == "item_1")
+					continue;
+					
 				$id = 'item_' . $i . '_id';
 				$name = 'item_' . $i . '_name';
 				$val = 'item_' . $i; ?>
@@ -220,14 +237,14 @@ class TE_ListTextWidget extends WP_Widget {
 				<li>
 					<input 
 						type="text"
-						id="<?php echo $$id; ?>"
-						name="<?php echo $$name; ?>"
-						value="<?php echo $$val; ?>" />
+						id="<?php echo $this->get_field_id($key); ?>"
+						name="<?php echo $this->get_field_name($key); ?>"
+						value="<?php echo $item; ?>" />
 					<a href="javascript:void(0)" class="remove-field">
 						<img src="<?php echo WP_PLUGIN_URL . '/te_list-text-widget/remove.gif'; ?>" />
 					</a>
 				</li>
-			<?php endfor; ?>
+			<?php endforeach; ?>
 		</ul>
 		<a href="javascript:void(0)" class="add_field">Add field</a>
 
