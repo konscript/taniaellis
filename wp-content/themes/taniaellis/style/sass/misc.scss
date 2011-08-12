@@ -262,7 +262,7 @@
 						}
 						
 						.testemonial-author {
-							margin-top: 5px;
+							margin-top: 7px;
 						}
 						
 						.author-url {
@@ -398,6 +398,99 @@
 						list-style-position: inside;
 					}
 				}
+			}
+			
+			#events-left {
+				width: 372px;
+				
+				.header-title {
+					width: 222px;
+				}
+				
+				.event-testemonial {
+					margin: 30px 0 0 40px;
+				
+					img {
+						border: 5px solid #CCC;
+						float: left;
+						margin-right: 15px;
+						width: 62px;
+					}
+					
+					.testemonial-content {
+						float: left;
+						height: 150px;
+						width: 245px;
+						
+						.testemonial-author {
+							margin-bottom: 5px;
+						}
+						
+						.testemonial-entry {
+							background: url('../../images/header_frontpage_quotes.png') top left no-repeat;
+							padding: 14px 0 0 35px;
+						}
+						
+						.case-link {
+							float: right;
+							margin-top: 10px;
+						}
+					}
+				}
+			}
+			
+			#events-right {
+				padding: 23px 0 0 40px;
+			}
+			
+			#lab-left {
+				width: 362px;
+				
+				.header-title {
+					background-color: #A8A6CD;
+					width: 222px;
+				}
+				
+				.lab-container {
+					@include border-top-radius(10px);
+					background-color: rgb(208, 203, 197);
+					float: left;
+					height: 172px;
+					margin: 20px 0 0 20px;
+					width: 322px;
+					
+					.lab {
+						padding: 20px 20px 0 110px;
+						height: 172px;
+						
+						.title {
+							border-bottom: 1px solid #999;
+							margin-bottom: 10px;
+							padding-bottom: 10px;
+						}
+						
+						.lab-link {
+							float: right;
+							margin-top: 10px;
+						}
+					}
+					
+					.lab-1 {
+						background: url('../../images/events_header_flask_1.png') no-repeat 23px 55px;
+					}
+					
+					.lab-2 {
+						background: url('../../images/events_header_flask_2.png') no-repeat 41px 7px;
+					}
+					
+					.lab-3 {
+						background: url('../../images/events_header_flask_3.png') no-repeat 13px 27px;
+					}
+				}
+			}
+			
+			#lab-right {
+				padding: 23px 0 0 50px;	
 			}
 
 			.right-column {
@@ -679,6 +772,10 @@
 		.brown-header {
 			background-color: #D4B690;
 		}
+		
+		.purple-header {
+			background-color: #A8A6CD;
+		}
 
 		.box-content {
 			margin-bottom: 15px;
@@ -750,6 +847,18 @@
 			
 			&:active {
 				@include background-image(linear-gradient(top, #9CC1A2 / 1.44, #9CC1A2 / 1.2));
+			}
+		}
+		
+		.purple-button {
+			@include background-image(linear-gradient(top, #A8A6CD, #A8A6CD / 1.2));
+			
+			&:hover {
+				@include background-image(linear-gradient(top, #A8A6CD / 1.2, #A8A6CD / 1.44));
+			}
+			
+			&:active {
+				@include background-image(linear-gradient(top, #A8A6CD / 1.44, #A8A6CD / 1.2));
 			}
 		}
 	}

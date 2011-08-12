@@ -180,6 +180,72 @@ html>body {
 			}
 		}
 		
+		#events-left {
+			.event-testemonial {
+				.testemonial-content {
+					color: #7D7A75;
+					
+					.testemonial-author {
+						font-size: 0.9em;
+						text-transform: uppercase;
+					}
+					
+					.testemonial-entry {
+						font-style: italic;
+						font-weight: bold;
+						line-height: 1.4em;
+					}
+					
+					.case-link {
+						@include transition(color, 0.1s, ease-in-out);
+						color: rgb(123, 185, 134);
+						font-weight: bold;
+						text-decoration: none;
+						
+						&:hover {
+							color: rgb(123, 185, 134) / 1.2;
+						}
+					}
+				}
+			}
+		}
+		
+		#lab-left {
+			.lab-container {
+				.lab {
+					color: #7D7A75;
+					
+					.title {
+						font-size: 1.3em;
+						line-height: 1.3em;
+						text-transform: uppercase;
+						
+						.second-line {
+							font-weight: bold;
+						}
+					}
+					
+					.content {
+						line-height: 1.3em;
+					}
+
+					.lab-link {
+						@include transition(color, 0.1s, ease-in-out);
+						color: rgb(123, 185, 134);
+						font-weight: bold;
+						text-decoration: none;
+						
+						&:hover {
+							color: rgb(123, 185, 134) / 1.2;
+						}
+					}
+				}
+			}
+		}
+		
+		#lab-right {
+		}
+		
 		.right-column {
 			h2 {
 				color: #7d7a75;

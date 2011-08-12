@@ -1,7 +1,7 @@
 <?php
 include('meta-box.php');
 
-add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article'));
+add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article', 'te_testemonial'));
 set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
 add_image_size('post-square-thumbnail', 100, 100, true);
 add_image_size('post-tall-thumbnail', 62, 116, true);
@@ -556,7 +556,6 @@ function create_video_taxonomies() {
   );
   
   register_taxonomy('te_video-tag', 'te_video', $te_video_tag_args);
-  
 }
 
 te_video_meta();
@@ -590,6 +589,48 @@ function te_vimeo_video($url, $width, $height) {
   $video_id = $matches[0][0];
 
   return '<iframe src="http://player.vimeo.com/video/'. $video_id .'?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" width="' . $width . '" height="' . $height . '" frameborder="0"></iframe>';
+}
+
+/**
+#########################
+# CREATE CASE POST TYPE #
+#########################
+**/
+add_action('init', 'case_register');
+
+function case_register() {
+
+  $labels = array(
+		'name' => _x('Cases', 'post type general name'),
+		'singular_name' => _x('Case', 'post type singular name'),
+		'add_new' => _x('Add New', 'case'),
+		'add_new_item' => __('Add New Case'),
+		'edit_item' => __('Edit Case'),
+		'new_item' => __('New Case'),
+		'view_item' => __('View Case'),
+		'search_items' => __('Search Case'),
+		'not_found' =>  __('Nothing found'),
+		'not_found_in_trash' => __('Nothing found in Trash'),
+		'parent_item_colon' => ''
+	);
+	
+	$args = array(
+	  '_builtin' => false,
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'query_var' => true,
+		'menu_position' => 5,
+		'_builtin' => false, // It's a custom post type, not built in!
+		'menu_icon' => get_stylesheet_directory_uri() . '/images/icon_video.png',
+		'rewrite' => array('slug' => 'videos', 'with_front' => false),
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array('title', 'editor', 'thumbnail')
+	  );
+	  
+	  register_post_type('te_case', $args);
 }
 
 
@@ -628,7 +669,7 @@ function testemonial_register() {
    'rewrite' => array('slug' => 'testemonials', 'with_front' => false),
    'capability_type' => 'post',
    'hierarchical' => false,
-   'supports' => array('title', 'editor')
+   'supports' => array('thumbnail', 'title', 'editor')
    );
    
    register_post_type('te_testemonial', $args);
@@ -646,6 +687,17 @@ function te_testemonial_add_meta_box() {
     while($video_query->have_posts()) {
       $video_query->the_post();
       $videos[get_the_ID()] = get_the_title();
+    }
+  }
+  
+  wp_reset_query();
+  
+  $case_query = new WP_Query('post_type=te_case');
+  if($case_query->have_posts()) {
+    $cases[''] = '';
+    while($case_query->have_posts()) {
+      $case_query->the_post();
+      $cases[get_the_ID()] = get_the_title();
     }
   }
   
@@ -687,6 +739,13 @@ function te_testemonial_add_meta_box() {
   		  'options' => $videos
   		),
   		array(
+  		  'name' => 'Case',
+  		  'id' => $prefix . '-case-id',
+  		  'desc' => 'Case to attach. Select blank option if no case should be attached',
+  		  'type' => 'select',
+  		  'options' => $cases
+  		),
+  		array(
   		  'name' => 'Testemonial',
   		  'id' => $prefix . '-testemonial-text',
   		  'type' => 'textarea'
@@ -722,6 +781,12 @@ function te_page_template_meta_boxes() {
       break;
     case 'lectures.php':
       te_lectures_meta();
+      break;
+    case 'events.php':
+      te_events_meta();
+      break;
+    case 'lab.php':
+      te_lab_meta();
       break;
     default:
       break;
@@ -922,6 +987,100 @@ function te_lectures_meta() {
     );
   
   foreach($meta_boxes as $meta_box) {
+      $my_box = new RW_Meta_Box($meta_box);
+    }
+}
+
+
+function te_events_meta() {
+  add_action('init', function() { remove_post_type_support('page', 'editor'); });
+    
+    $header_prefix = 'te_events-header-text';
+    
+    $testemonial_query = new WP_Query('post_type=te_testemonial');
+    if($testemonial_query->have_posts()) {
+      while($testemonial_query->have_posts()) {
+        $testemonial_query->the_post();
+        $testemonials[get_the_ID()] = get_the_title();
+      }
+    }
+        
+    $meta_boxes[] = array(
+     'id' => $header_prefix,
+     'title' => 'Header Text Options',
+     'pages' => array('page'),
+     'context' => 'normal',
+  
+     'fields' => array(
+       array(
+         'name' => 'Title',
+         'id' => $header_prefix . '-title',
+         'type' => 'text',         
+       ),
+       array(
+         'name' => 'Content',
+         'id' => $header_prefix . '-content',
+         'type' => 'textarea'
+       ),
+       array(
+         'name' => 'Link Address',
+         'id' => $header_prefix . '-link-address',
+         'type' => 'text',
+         'desc' => 'Remember http://'
+       ),
+       array(
+         'name' => 'Link Text',
+         'id' => $header_prefix . '-link-text',
+         'type' => 'text',
+       ),
+       array(
+        'name' => 'Testemonial',
+        'id' => $header_prefix . '-testemonial',
+        'type' => 'select',
+        'options' => $testemonials
+       )
+     )
+    );
+    
+    $box_prefix = 'te_events-box-text';
+    
+    $meta_boxes[] = array(
+     'id' => $box_prefix,
+     'title' => 'Box Text Options',
+     'pages' => array('page'),
+     'context' => 'normal',
+  
+     'fields' => array(
+       array(
+         'name' => 'Title Line 1',
+         'id' => $box_prefix . '-title-line-1',
+         'type' => 'text',         
+       ),
+       array(
+         'name' => 'Title Line 2',
+         'id' => $box_prefix . '-title-line-2',
+         'type' => 'text'
+       ),
+       array(
+         'name' => 'Content',
+         'id' => $box_prefix . '-content',
+         'type' => 'textarea',
+       ),
+       array(
+         'name' => 'Link Address',
+         'id' => $box_prefix . '-link-address',
+         'type' => 'text',
+         'desc' => 'Remember http://'
+       ),
+       array(
+         'name' => 'Link Text',
+         'id' => $box_prefix . '-link-text',
+         'type' => 'text'
+       )
+     )
+    );
+  
+    foreach($meta_boxes as $meta_box) {
       $my_box = new RW_Meta_Box($meta_box);
     }
 }
@@ -1191,6 +1350,198 @@ function te_club_meta() {
 }
 
 
+function te_lab_meta() {
+  add_action('init', function() { remove_post_type_support('page', 'editor'); });
+  
+  $header_prefix = 'te_lab-header-text';
+  
+  $meta_boxes[] = array(
+  	'id' => $header_prefix,
+  	'title' => 'Header Text Options',
+  	'pages' => array('page'),
+  	'context' => 'normal',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Title',
+  			'id' => $header_prefix . '-title',
+  			'type' => 'text',					
+  		),
+  		array(
+  			'name' => 'Content',
+  			'id' => $header_prefix . '-content',
+  			'type' => 'textarea'
+  		),
+  		array(
+  		  'name' => 'Link Address',
+  		  'id' => $header_prefix . '-link-address',
+  		  'type' => 'text',
+  		  'desc' => 'Remember http://'
+  		),
+  		array(
+  		  'name' => 'Link Text',
+  		  'id' => $header_prefix . '-link-text',
+  		  'type' => 'text',
+  		)
+  	)
+  );
+  
+  $box_prefix = 'te_lab-box-text';
+  
+  $meta_boxes[] = array(
+  	'id' => $box_prefix,
+  	'title' => 'Box Text Options',
+  	'pages' => array('page'),
+  	'context' => 'normal',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Title Line 1',
+  			'id' => $box_prefix . '-title-line-1',
+  			'type' => 'text',					
+  		),
+  		array(
+  			'name' => 'Title Line 2',
+  			'id' => $box_prefix . '-title-line-2',
+  			'type' => 'text'
+  		),
+  		array(
+  		  'name' => 'Content',
+  		  'id' => $box_prefix . '-content',
+  		  'type' => 'textarea',
+  		),
+  		array(
+  		  'name' => 'Link Address',
+  		  'id' => $box_prefix . '-link-address',
+  		  'type' => 'text',
+  		  'desc' => 'Remember http://'
+  		),
+  		array(
+  		  'name' => 'Link Text',
+  		  'id' => $box_prefix . '-link-text',
+  		  'type' => 'text'
+  		)
+  	)
+  );
+  
+  $roller_1_prefix = 'te_lab-roller-1';
+  
+  $meta_boxes[] = array(
+  	'id' => $roller_1_prefix,
+  	'title' => 'Fading Boxes: 1',
+  	'pages' => array('page'),
+  	'context' => 'normal',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Title Line 1',
+  			'id' => $roller_1_prefix . '-title-line-1',
+  			'type' => 'text',					
+  		),
+  		array(
+  			'name' => 'Title Line 2',
+  			'id' => $roller_1_prefix . '-title-line-2',
+  			'type' => 'text'
+  		),
+  		array(
+  		  'name' => 'Content',
+  		  'id' => $roller_1_prefix . '-content',
+  		  'type' => 'textarea',
+  		),
+  		array(
+  		  'name' => 'Link Address',
+  		  'id' => $roller_1_prefix . '-link-address',
+  		  'type' => 'text',
+  		  'desc' => 'Remember http://'
+  		),
+  		array(
+  		  'name' => 'Link Text',
+  		  'id' => $roller_1_prefix . '-link-text',
+  		  'type' => 'text'
+  		)
+  	)
+  );
+  
+  $roller_2_prefix = 'te_lab-roller-2';
+  
+  $meta_boxes[] = array(
+  	'id' => $roller_2_prefix,
+  	'title' => 'Fading Boxes: 2',
+  	'pages' => array('page'),
+  	'context' => 'normal',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Title Line 1',
+  			'id' => $roller_2_prefix . '-title-line-1',
+  			'type' => 'text',					
+  		),
+  		array(
+  			'name' => 'Title Line 2',
+  			'id' => $roller_2_prefix . '-title-line-2',
+  			'type' => 'text'
+  		),
+  		array(
+  		  'name' => 'Content',
+  		  'id' => $roller_2_prefix . '-content',
+  		  'type' => 'textarea',
+  		),
+  		array(
+  		  'name' => 'Link Address',
+  		  'id' => $roller_2_prefix . '-link-address',
+  		  'type' => 'text',
+  		  'desc' => 'Remember http://'
+  		),
+  		array(
+  		  'name' => 'Link Text',
+  		  'id' => $roller_2_prefix . '-link-text',
+  		  'type' => 'text'
+  		)
+  	)
+  );
+  
+  $roller_3_prefix = 'te_lab-roller-3';  
+  
+  $meta_boxes[] = array(
+  	'id' => $roller_3_prefix,
+  	'title' => 'Fading Boxes: 3',
+  	'pages' => array('page'),
+  	'context' => 'normal',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Title Line 1',
+  			'id' => $roller_3_prefix . '-title-line-1',
+  			'type' => 'text',					
+  		),
+  		array(
+  			'name' => 'Title Line 2',
+  			'id' => $roller_3_prefix . '-title-line-2',
+  			'type' => 'text'
+  		),
+  		array(
+  		  'name' => 'Content',
+  		  'id' => $roller_3_prefix . '-content',
+  		  'type' => 'textarea',
+  		),
+  		array(
+  		  'name' => 'Link Address',
+  		  'id' => $roller_3_prefix . '-link-address',
+  		  'type' => 'text',
+  		  'desc' => 'Remember http://'
+  		),
+  		array(
+  		  'name' => 'Link Text',
+  		  'id' => $roller_3_prefix . '-link-text',
+  		  'type' => 'text'
+  		)
+  	)
+  );
+
+  foreach($meta_boxes as $meta_box) {
+    $my_box = new RW_Meta_Box($meta_box);
+  }
+}
 
  
 

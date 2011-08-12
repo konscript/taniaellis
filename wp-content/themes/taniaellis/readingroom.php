@@ -73,7 +73,7 @@
           <span class="box-first-line"><?php echo $box_title_line_1; ?></span>
           <span class="box-second-line"><?php echo $box_title_line_2; ?></span>
         </p>
-        <p class="box-content">
+        <p class="box-content box-content-dark">
           <?php echo get_post_meta($post->ID, 'te_reading-room-box-text-content', true); ?>
         </p>
         <?php
