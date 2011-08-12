@@ -1004,9 +1004,7 @@ function te_events_meta() {
         $testemonials[get_the_ID()] = get_the_title();
       }
     }
-    
-    print_r($testemonials);
-    
+        
     $meta_boxes[] = array(
      'id' => $header_prefix,
      'title' => 'Header Text Options',
