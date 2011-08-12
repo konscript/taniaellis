@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Home
+*/
+?>
+
 <?php get_header(); ?>
 
 <div id="header">
@@ -19,16 +25,29 @@
 		)); ?>
 
 		<div class="header-content" id="frontpage-header-content">
-			<img id="intro-movie" src="<?php bloginfo('template_url'); ?>/images/header_frontpage_tania_telly.png" />
+      <!-- <img id="intro-movie" src="<?php bloginfo('template_url'); ?>/images/frontpage_header_tv.png" /> -->
       <!-- Insert video here! -->
-      <!-- <iframe src="http://player.vimeo.com/video/23945339?title=0&amp;byline=0&amp;portrait=0" width="250" height="170" frameborder="0"></iframe> -->
-
+      
+      <?php
+        $video_id = get_post_meta($post->ID, 'te_home-header-text-video', true);
+        $video_url = get_post_meta($video_id, 'te_video_url', true);
+      ?>
+      
+      <div class="intro-movie-container">
+        <?php echo te_vimeo_video($video_url, 262, 180); ?>
+      </div>
+      
 			<div class="header-quote">
-				<h6>Heartcore business for social and economic value!</h6>
-				<p id="header-quote-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				<h6><?php echo get_post_meta($post->ID, 'te_home-header-text-title', true); ?></h6>
+				<p id="header-quote-text"><?php echo get_post_meta($post->ID, 'te_home-header-text-content', true); ?></p>
 
+        <?php
+          $header_link_url = get_post_meta($post->ID, 'te_home-header-text-link-address', true);
+          $header_link_text = get_post_meta($post->ID, 'te_home-header-text-link-text', true);
+        ?>
+        
 				<div id="read-more-signature">
-					<a href="javascript:void(0)">Read more</a>
+					<a href="<?php echo $header_link_url; ?>"><?php echo $header_link_text; ?></a>
 				</div>
 			</div>
 		</div> <!-- #frontpage-header-content -->
@@ -49,18 +68,29 @@
 			<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_facebook.png" alt="Facebook" title="Facebook" /></a></li>
 			<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
 
+      <?php
+        $box_title_line_1 = get_post_meta($post->ID, 'te_home-box-text-title-line-1', true);
+        $box_title_line_2 = get_post_meta($post->ID, 'te_home-box-text-title-line-2', true);
+      ?>
+
 			<div class="box" id="box-frontpage">
 				<p class="box-header">
-					<span class="box-first-line">Social business trends</span>
-					<span class="box-second-line">Newsletter</span>
+					<span class="box-first-line"><?php echo $box_title_line_1; ?></span>
+					<span class="box-second-line"><?php echo $box_title_line_2; ?></span>
 				</p>
+				
 
 				<p class="box-content">
-					Sign up for my newsletter and get the FREE bonus guide along with monthly inspiration on social business and heartcore value. Sign up and I will email you the guide.
+  				<?php echo get_post_meta($post->ID, 'te_home-box-text-content', true); ?>
 				</p>
 
+        <?php
+          $box_link_address = get_post_meta($post->ID, 'te_home-box-text-link-address', true);
+          $box_link_text = get_post_meta($post->ID, 'te_home-box-text-link-text', true);
+        ?>
+
 				<img src="<?php bloginfo('template_url') ?>/images/newsletter_bonus_sticker.png" alt="" id="bonus-sticker" />
-				<a class="box-button" href="javascript:void(0)">Subscribe</a>
+				<a class="box-button" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>
 			</div>
 		</ul>
 

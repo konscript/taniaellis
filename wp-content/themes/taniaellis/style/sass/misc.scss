@@ -10,10 +10,26 @@
 	}
 }
 
-
 #header-top-container {
 	float: right;
 	width: 100%;
+	
+	#shop-link {
+		@include border-bottom-radius(10px);
+		@include transition(background-color, 0.1s, ease-in-out);
+		background: url('../../images/shop_icon.png') 10px center no-repeat;
+		background-color: #9CC1A2;
+		display: block;
+		left: 290px;
+		padding: 8px 0 8px 35px;	
+		position: relative;
+		top: 0px;
+		width: 40px;
+		
+		&:hover {
+			background-color: #9CC1A2 / 1.2;
+		}
+	}
 
 	#navigation-top {
 		float: right;
@@ -23,7 +39,7 @@
 			float: left;
 			padding: 15px 20px 15px 0;
 		}
-	} 
+	}
 
 	form {
 		border: 1px solid #94918A;
@@ -65,18 +81,18 @@
 		float: left;
 	}
 
-	#shop-link {
-		@include transition(background-color, 0.1s, ease-in-out);
-
-		background-color: #93B897;
-		float: left;
-		line-height: 36px;
-		padding: 0 15px;	
-
-		&:hover {
-			background-color: #93B897 / 1.2;
-		}	
-	}
+	// #shop-link {
+	// 	@include transition(background-color, 0.1s, ease-in-out);
+	// 
+	// 	background-color: #93B897;
+	// 	float: left;
+	// 	line-height: 36px;
+	// 	padding: 0 15px;	
+	// 
+	// 	&:hover {
+	// 		background-color: #93B897 / 1.2;
+	// 	}	
+	// }
 
 	#navigation-pages {
 		float: right;
@@ -547,51 +563,34 @@
 			position: relative;
 			width: 775px;
 
-			img#intro-movie {				
+			// img#intro-movie {				
+			// 	float: left;
+			// 	left: 35px;
+			// 	margin-right: 58px;
+			// 	position: relative;
+			// 	top: -40px;
+			// 	z-index: 999;
+			// }
+
+			// iframe {
+			// 	@include border-radius(10px);
+			// 	position: relative;
+			// 	left: -300px;
+			// 	top: 70px;
+			// 	z-index: 1000;
+			// }
+			
+			.intro-movie-container {
+				background: url('../../images/frontpage_header_tv.png') no-repeat;
 				float: left;
-				left: 35px;
-				margin-right: 58px;
-				position: relative;
-				top: -40px;
-				z-index: 999;
-			}
-
-			iframe {
-				@include border-radius(10px);
-				position: relative;
-				left: -290px;
-				top: 70px;
-				z-index: 1000;
-			}
-
-			#social-bar {
-				background: #9CC1A2;
-				@include border-bottom-left-radius(10px);
-				float: right;
-				height: 40px;
-				position: relative;
-				right: 287px;
-				top: -40px;
-				width: 265px;
-				z-index: 999; 
-
-				li {
-					display: block;
-					float: left;
-					margin-right: 10px;
+				height: 254px;
+				margin: -45px 20px 0 40px;
+				padding: 110px 0 0 127px;
+				width: 276px;
+				
+				iframe {
+					@include border-radius(10px);
 				}
-
-				li:first-child {
-					margin-left: 15px;
-				}
-			}
-
-			#bonus-sticker {
-				float: right;
-				position: relative;
-				right: -70px;
-				top: -37px;
-				z-index: 15;
 			}
 
 			.header-quote {
@@ -606,7 +605,7 @@
 				}
 
 				div#read-more-signature {
-					background: url('../../images/header_frontpage_signature.png') right center no-repeat;
+					background: url('../../images/signature.png') right center no-repeat;
 					height: 33px;
 					line-height: 33px;
 					//margin-bottom: 11px;
@@ -1561,7 +1560,7 @@ footer {
 
 		li {
 			display: inline;
-			padding: 0 10px;
+			padding: 0 20px;
 		}
 	}
 
