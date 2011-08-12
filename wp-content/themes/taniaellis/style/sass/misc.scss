@@ -733,7 +733,7 @@
 		background-color: #9CC1A2;
 	}
 
-	.box {
+	.box { 
 		@include border-radius(10px);
 		background-color: #C7C2BB;
 		bottom: 0px;
@@ -914,6 +914,44 @@
 				.s4 { color: #83a8c2; font-size: 20px; }
 				.s5 { color: #d7b590; font-size: 22px; }
 			}
+		}
+		
+		.widget-testemonial {
+			background: url('../../images/post_type_icon_testimonial.png') top left no-repeat;
+			
+			.testemonial {
+					@include featured-image(250px, 0);
+					
+					.featured-image {
+						margin-bottom: 5px;
+					}
+					
+					.title {
+						display: none;
+					}
+					
+					.excerpt {
+						background: url('../../images/header_frontpage_quotes.png') top left no-repeat;
+						font-style: italic;
+						padding-left: 40px;
+						padding-top: 12px;
+						width: 220px;
+					}
+			}
+		}
+		
+		.widget-video-testemonial {
+			background: url('../../images/post_type_icon_video.png') top left no-repeat;
+			
+			.video-testemonial {
+				.video {
+					float: left;
+					border: 5px solid #E1DCD8;
+					width: 250px;
+					
+				}
+			}
+			
 		}
 		
 		.layout-tall {

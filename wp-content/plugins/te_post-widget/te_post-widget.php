@@ -43,15 +43,11 @@ class TE_PostWidget extends WP_Widget {
 		$titleB = apply_filters('widget_title', $instance['titleB']);
 		
 		$wclass = array(
-			'post'		=> 'blog',
-			'event'		=> 'event',
-			'article'	=> 'reading-room'
-		);
-		
-		$ptype = array(
-			'post'		=> 'post',
-			'event'		=> 'te_event',
-			'article'	=> 'te_article'
+			'post'									=> 'blog',
+			'te_event'							=> 'event',
+			'te_article'						=> 'reading-room',
+			'te_testemonial'				=> 'testemonial',
+			'te_testemonial_video'	=> 'video-testemonial'
 		);
 		
 		$tsize = array(
@@ -71,53 +67,16 @@ class TE_PostWidget extends WP_Widget {
 		<?php
 		
 		query_posts(array(
-			'post_type'		=> $ptype[$instance['type']],
+			'post_type'		=> (($instance['type'] == 'te_testemonial_video') ? 'te_testemonial' : $instance['type']),
 			'post__in' 		=> $this->items($instance)
 		));
 		
 	
 		$count = 0;
 		while(have_posts() && $count < $instance['items']) : the_post();
-			if($instance['type'] == 'event') {
-				$end = new DateTime(
-									get_post_meta(get_the_ID(), '_year', true)		.'-'.
-									get_post_meta(get_the_ID(), '_month', true)		.'-'.
-									get_post_meta(get_the_ID(), '_day', true)		.' '.
-									get_post_meta(get_the_ID(), '_hour', true)		.':'.
-									get_post_meta(get_the_ID(), '_minute', true)
-								);
-			}
+			$post_id = get_the_ID();
 			
-			?>
-			
-			<div class="item <?php echo $wclass[$instance['type']]; ?>">
-				<div class="item-content">
-					<?php if($instance['thumbnails']) : ?>
-					<a href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail($tsize[$instance['size']], array('class' => 'featured-image')); ?>
-					</a>
-					<?php endif; ?>
-				
-					<p class="meta-data"><?php the_time('j M Y H:i'); if(isset($end)) echo " - ".date_format($end, 'j M Y H:i'); ?></p>
-					
-					<span class="by-line">
-						<?php if($instance['type'] == 'article') : ?>
-							Article
-						<?php else : ?>
-						By <?php the_author(); ?>
-						<?php endif; ?>
-					</span>
-					
-					<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					<p class="excerpt"><?php the_excerpt_rss(); ?></p>
-				
-					<div class="options">
-						<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
-					</div>
-				</div>
-			</div>
-			
-			<?php
+			include("templates/" . $instance['type'] . ".php");
 			
 			$count++;
 		endwhile;
@@ -134,12 +93,12 @@ class TE_PostWidget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		
-		$instance['titleA'] 	= strip_tags($new_instance['titleA']);
-		$instance['titleB'] 	= strip_tags($new_instance['titleB']);
-		$instance['type']		= strip_tags($new_instance['type']);
-		$instance['size']		= strip_tags($new_instance['size']);
-		$instance['items']		= strip_tags($new_instance['items']);
-		$instance['thumbnails'] = strip_tags($new_instance['thumbnails']);
+		$instance['titleA'] 			= strip_tags($new_instance['titleA']);
+		$instance['titleB'] 			= strip_tags($new_instance['titleB']);
+		$instance['type']					= strip_tags($new_instance['type']);
+		$instance['size']					= strip_tags($new_instance['size']);
+		$instance['items']				= strip_tags($new_instance['items']);
+		$instance['thumbnails'] 	= strip_tags($new_instance['thumbnails']);
 		
 		for($i = 1; $i <= $instance['items']; $i++) {
 			unset($instance['item_$i']);
@@ -158,7 +117,7 @@ class TE_PostWidget extends WP_Widget {
 			'type'				=> 'post',
 			'size'				=> 'wide',
 			'items'				=> '3',
-			'thumbnails'		=> true
+			'thumbnails'	=> true,
 		);
 		
 		?>
@@ -187,9 +146,10 @@ class TE_PostWidget extends WP_Widget {
 				id="<?php echo $this->get_field_id('type'); ?>" 
 				name="<?php echo $this->get_field_name('type'); ?>">
 				<option value="post"<?php if($instance['type'] == 'post') : ?> selected="selected"<?php endif; ?>>Blog Post</option>
-				<option value="event"<?php if($instance['type'] == 'event') : ?> selected="selected"<?php endif; ?>>Event</option>
-				<option value="article"<?php if($instance['type'] == 'article') : ?> selected="selected"<?php endif; ?>>Article</option>
-					
+				<option value="te_event"<?php if($instance['type'] == 'te_event') : ?> selected="selected"<?php endif; ?>>Event</option>
+				<option value="te_article"<?php if($instance['type'] == 'te_article') : ?> selected="selected"<?php endif; ?>>Article</option>
+				<option value="te_testemonial"<?php if($instance['type'] == 'te_testemonial') : ?> selected="selected"<?php endif; ?>>Testimonial</option>	
+				<option value="te_testemonial_video"<?php if($instance['type'] == 'te_testemonial_video') : ?> selected="selected"<?php endif; ?>>Video Testimonial</option>	
 			</select>
 		</p>
 		
@@ -227,6 +187,14 @@ class TE_PostWidget extends WP_Widget {
 		
 		<?php
 		
+			$args = array(
+				'post_type'		=> $instance['type'],
+				'numberposts'	=> -1,
+				'post_status'	=> array('publish', 'future')
+			);
+		
+			$posts = get_posts($args);
+
 			for($i = 1; $i <= (int)$instance['items']; $i++) {
 				?>
 			
@@ -234,20 +202,8 @@ class TE_PostWidget extends WP_Widget {
 					<label for="<?php echo $this->get_field_id("item_$i"); ?>">Post #<?php echo $i; ?>:</label>
 					<select id="<?php echo $this->get_field_id("item_$i"); ?>" name="<?php echo $this->get_field_name("item_$i"); ?>">
 						<?php
-						
-						$ptype = array(
-							'post'		=> 'post',
-							'event'		=> 'te_event',
-							'article'	=> 'te_article'
-						);
 
-						$args = array(
-							'post_type'		=> $ptype[$instance['type']],
-							'numberposts'	=> -1,
-							'post_status'	=> array('publish', 'future')
-						);
-
-						foreach(get_posts($args) as $key => $value) {
+						foreach($posts as $key => $value) {
 							$item = "item_$i";
 							$post = (array) $value;
 							$selected = ($instance[$item] == $post['ID']) ? ' selected="selected"' : '';

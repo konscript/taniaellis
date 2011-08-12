@@ -132,7 +132,7 @@ class TE_ListTextWidget extends WP_Widget {
 		
 		foreach($defaults as $key => $item) {
 			$$key = (isset($instance[$key]) && !empty($instance[$key])) ? $instance[$key] : $defaults[$key];
-			echo "key -> $key : def -> " . $defaults[$key] . " instance -> " . $instance[$key] . "<br />";
+			// echo "key -> $key : def -> " . $defaults[$key] . " instance -> " . $instance[$key] . "<br />";
 			// $$key = (isset($instance[$key])) ? $instance[$key]: $defaults[$key];
 			// //echo $key . " : " . $instance[$key] . " : " . $defaults[$key] . "<br />";
 			// 
@@ -248,9 +248,22 @@ class TE_ListTextWidget extends WP_Widget {
 				id="<?php echo $this->get_field_id('item_1'); ?>"
 				name="<?php echo $this->get_field_name('item_1'); ?>"
 				value="<?php echo $instance['item_1']; ?>" />
+			<a href="javascript:void(0)" class="remove-field">
+				<img src="<?php echo WP_PLUGIN_URL . '/te_list-text-widget/remove.gif'; ?>" />
+			</a>
 		</p>
 		
-		<ul>
+		<ul class="input-list">
+			<li class="hidden" style="display:none;">
+				<input 
+					type="text"
+					id=""
+					name=""
+					value="" />
+				<a href="javascript:void(0)" class="remove-field">
+					<img src="<?php echo WP_PLUGIN_URL . '/te_list-text-widget/remove.gif'; ?>" />
+				</a>
+			</li>
 			<?php foreach($items as $key => $item) : 
 				if($key == "item_1")
 					continue;
