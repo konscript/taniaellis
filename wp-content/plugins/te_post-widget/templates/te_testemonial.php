@@ -5,10 +5,6 @@ $date = date_format(new DateTime(get_post_meta($post_id, 'te_testemonial-date', 
 $text = get_post_meta($post_id, 'te_testemonial-testemonial-text', true);
 
 $case_id = get_post_meta($post_id, 'te_testemonial-case-id', true);
-if(!empty($case_id)) {
-	$case_q = new WP_Query('?p=' . $case_id);
-	$case = $case_q->the_post();
-}
 
 ?>
 <div class="item testemonial">
@@ -26,6 +22,15 @@ if(!empty($case_id)) {
 		</span>
 		
 		<p class="excerpt"><?php echo $text; ?></p>
+		
+		<?php
+		
+		if(!empty($case_id)) {
+			$case_q = new WP_Query('?p=' . $case_id);
+			$case = $case_q->the_post();
+		}
+		
+		?>
 		
 		<? if(isset($case)) : ?>
 			<div class="options">
