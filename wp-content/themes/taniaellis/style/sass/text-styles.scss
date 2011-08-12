@@ -9,6 +9,13 @@ html>body {
 	font-size: 12px;
 }
 
+#shop-link {
+	color: #FFF;
+	font-size: 0.9em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
 #navigation-top {
 	li {
 		a {
@@ -48,11 +55,6 @@ html>body {
 	#sub-heading {
 		text-transform: uppercase;
 		color: #94918A;
-		
-		span {
-			color: #7D7A73;
-			font-weight: bold;
-		}
 	}
 	
 	#language-picker {
@@ -750,6 +752,6 @@ html>body {
 #footer-bar { 
 	li {
 		font-size: 1em;
-		font-weight: 500;
+		font-weight: bold;
 	}
 }
