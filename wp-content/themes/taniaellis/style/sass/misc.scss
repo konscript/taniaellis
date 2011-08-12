@@ -217,7 +217,7 @@
 
 		.header-content {
 			@include border-radius(10px);
-			background-color: #EAE6E3;
+			background-color: rgb(229, 223, 217);
 			float: right;
 			height: 285px;
 			padding: 15px 10px 10px;
@@ -507,6 +507,12 @@
 			
 			#lab-right {
 				padding: 23px 0 0 50px;	
+			}
+			
+			#reading-room-left {
+				.books {
+					margin: 10px 0 0 20px;
+				}
 			}
 
 			.right-column {
