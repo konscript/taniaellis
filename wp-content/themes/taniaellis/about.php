@@ -82,12 +82,13 @@
     </div>
 	  
 		<section class="left-sidebar">
-      <?php echo '<pre>'; print_r($menu_items); echo '</pre>'; ?>
-	    
+			<?php 
+			generated_dynamic_sidebar("Left Sidebar");
+			?>	    
 		</section>
 		
 		<section class="right-sidebar">
-		  &nbsp;
+      <?php generated_dynamic_sidebar("Right Sidebar"); ?>
 		</section>
 		
 		<div class="clearer"></div>
