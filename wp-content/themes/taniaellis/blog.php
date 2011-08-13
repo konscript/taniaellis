@@ -29,7 +29,7 @@
 			        <h2 class="second-line">Blog</h2>
 		        </div>
 		
-				<h3 id="tagcloud-title">Join the conversation...</h3>
+				<h3 id="tagcloud-title"><span>Most tagged words...</span></h3>
 				<div id="tagcloud">
 					<?php
 					
