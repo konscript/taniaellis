@@ -62,6 +62,10 @@ if(function_exists( 'register_nav_menus')) {
 	    'social-business-menu'  => 'Social Business Menu',
 	    'club-menu'             => 'Club Menu',
 		  'blog-menu'				      => 'Blog Menu',
+		  'lab-menu'				      => 'Lab Menu',
+		  'consulting-menu'				=> 'Consulting Menu',
+		  'lectures-menu'				  => 'Lectures Menu',
+		  'events-menu'				 		=> 'Events Menu',
 		  'reading-room-menu'     => 'Reading Room Menu'
 	    )
 	);
