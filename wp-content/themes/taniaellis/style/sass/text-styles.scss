@@ -23,10 +23,6 @@ html>body {
 			font-weight: bold;
 			text-decoration: none;
 		}
-		
-		a:active {
-			text-decoration: underline;
-		}
 	}
 } 
 
@@ -245,7 +241,22 @@ html>body {
 			}
 		}
 		
-		#lab-right {
+		#about-right {
+			.header-right-box {
+				
+				.title {
+					font-weight: bold;
+					line-height: 1.3em;
+				}
+				
+				.content {
+					line-height: 1.4em;
+				}
+				
+				#read-more-about {
+					line-height: 27px;
+				}
+			}
 		}
 		
 		.right-column {

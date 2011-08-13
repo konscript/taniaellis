@@ -37,7 +37,24 @@
 
 		li {
 			float: left;
-			padding: 15px 20px 15px 0;
+			padding: 15px 5px 15px 0;
+			
+			a {
+				@include border-radius(10px);
+				@include transition(all, 0.1s, ease-in-out);
+				background-color: #FFF;
+				padding: 5px 10px;
+				
+				&:hover {
+					color: #FFF;
+					background-color: #7C7972;
+				}
+			}
+		}
+		
+		.current-menu-item a {
+			color: #FFF;
+			background-color: #7C7972;
 		}
 	}
 
@@ -521,6 +538,27 @@
 			#reading-room-left {
 				.books {
 					margin: 10px 0 0 20px;
+				}
+			}
+			
+			#about-left {
+				
+			}
+			
+			#about-right {
+				.header-right-box {
+					img {
+						border: 5px solid #CCC;
+						float: left;
+						margin: 0 10px 10px 0;
+					}
+					
+					#read-more-about {
+						background: url('../../images/signature.png') center right no-repeat;
+						display: block;
+						height: 27px;
+						padding-right: 180px;
+					}
 				}
 			}
 
