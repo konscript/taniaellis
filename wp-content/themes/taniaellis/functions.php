@@ -192,6 +192,24 @@ function te_event_meta() {
    )
   );
   
+  $attachments_prefix = 'te_event-attachments';
+  
+  $meta_boxes[] = array(
+   'id' => $attachments_prefix,
+   'title' => 'Attachments',
+   'pages' => array('te_event'),
+   'context' => 'side',
+   'priority' => 'low',
+  
+   'fields' => array(
+     array(
+       'name' => 'Attachment',
+       'id' => $attachments_prefix . '-id',
+       'type' => 'file',
+       'desc' => 'Can be used to upload eg. an <br> event programme'
+     )
+   )
+  );
   
   
   foreach($meta_boxes as $meta_box) {
@@ -656,6 +674,17 @@ function te_testemonial_add_meta_box() {
     }
   }
   
+  wp_reset_query();
+  
+  $event_query = new WP_Query('post_type=te_event');
+  if($case_query->have_posts()) {
+    $events[''] = '';
+    while($event_query->have_posts()) {
+      $event_query->the_post();
+      $events[get_the_ID()] = get_the_title();
+    }
+  }
+  
   $prefix = 'te_testemonial';
   
   $te_testemonial_meta_box = array(
@@ -699,6 +728,13 @@ function te_testemonial_add_meta_box() {
   		  'desc' => 'Case to attach. Select blank option if no case should be attached',
   		  'type' => 'select',
   		  'options' => $cases
+  		), 
+  		array(
+  		  'name' => 'Event',
+  		  'id' => $prefix . '-event-id',
+  		  'desc' => 'Event to attach. Select blank option if no event should be attached',
+  		  'type' => 'select',
+  		  'options' => $events
   		),
   		array(
   		  'name' => 'Testemonial',
@@ -1594,27 +1630,6 @@ function te_lab_meta() {
     $my_box = new RW_Meta_Box($meta_box);
   }
 }
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Hide some of the unused wp widgets
 function hide_wp_widgets() {
