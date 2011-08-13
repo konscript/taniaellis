@@ -15,8 +15,12 @@ get_header();
 	<div class="clearer"></div>
 
 	<div id="header-container">
+		<?php
+		
+		$menu_id = get_post_meta($post->ID, 'te_page-menu-id', true);
+		?>
 		<?php wp_nav_menu(array(
-				'theme_location'		=> 'blog-menu',
+				'menu'							=> $menu_id,
 				'container'				  => '',
 				'menu_id'				    => 'navigation-header-standard',
 				'menu_class'			  => 'navigation-header',

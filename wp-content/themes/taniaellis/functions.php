@@ -70,6 +70,19 @@ if(function_exists( 'register_nav_menus')) {
 	);
 }
 
+$locations = get_nav_menu_locations();
+$id = $locations['events-menu'];
+
+function get_menus(){
+    $r = array();
+    $menus = get_nav_menu_locations();
+		foreach($menus as $key => $menu) {
+			$o = wp_get_nav_menu_object($menu);
+			$r[$menu] = $o->name;
+		}
+    return $r;
+}
+
 /**
 ######################
 # REGEISTER SIDEBARS #
@@ -140,6 +153,7 @@ require_once('page_templates/page-template-te_lab.php');
 require_once('page_templates/page-template-te_lectures.php');
 require_once('page_templates/page-template-te_reading-room.php');
 require_once('page_templates/page-template-te_about.php');
+require_once('page_templates/page-template-te_page.php');
 
 /**
 ###################################
@@ -179,6 +193,8 @@ function te_page_template_meta_boxes() {
     case 'about.php':
       te_about_meta();
       break;
+		case 'page.php':
+      te_page_meta();
     default:
       break;
   }
