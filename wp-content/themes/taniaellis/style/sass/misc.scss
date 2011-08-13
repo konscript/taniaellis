@@ -52,7 +52,7 @@
 			}
 		}
 		
-		.current-menu-item a {
+		.current-menu-item a, .current-page-ancestor a {
 			color: #FFF;
 			background-color: #7C7972;
 		}
@@ -97,19 +97,6 @@
 	#logo {
 		float: left;
 	}
-
-	// #shop-link {
-	// 	@include transition(background-color, 0.1s, ease-in-out);
-	// 
-	// 	background-color: #93B897;
-	// 	float: left;
-	// 	line-height: 36px;
-	// 	padding: 0 15px;	
-	// 
-	// 	&:hover {
-	// 		background-color: #93B897 / 1.2;
-	// 	}	
-	// }
 
 	#navigation-pages {
 		float: right;
