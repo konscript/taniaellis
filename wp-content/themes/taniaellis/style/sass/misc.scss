@@ -37,7 +37,24 @@
 
 		li {
 			float: left;
-			padding: 15px 20px 15px 0;
+			padding: 15px 5px 15px 0;
+			
+			a {
+				@include border-radius(10px);
+				@include transition(all, 0.1s, ease-in-out);
+				background-color: #FFF;
+				padding: 5px 10px;
+				
+				&:hover {
+					color: #FFF;
+					background-color: #7C7972;
+				}
+			}
+		}
+		
+		.current-menu-item a {
+			color: #FFF;
+			background-color: #7C7972;
 		}
 	}
 
@@ -522,6 +539,14 @@
 				.books {
 					margin: 10px 0 0 20px;
 				}
+			}
+			
+			#about-left {
+				
+			}
+			
+			#about-right {
+				
 			}
 
 			.right-column {
