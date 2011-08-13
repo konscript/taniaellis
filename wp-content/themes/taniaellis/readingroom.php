@@ -23,13 +23,15 @@
 	        )); 
 	    ?>
 		<div class="header-content">
-			<div class="left-column">
-				<div class="header-title">
-		            <h2 class="first-line">Social Business</h2>
-			        <h2 class="second-line">Reading Room</h2>
-		        </div>
-		
-
+			<div class="left-column" id="reading-room-left">
+        <div class="header-title">
+          <h2 class="first-line">Social Business</h2>
+          <h2 class="second-line">Reading Room</h2>
+        </div>
+        <div class="books">
+		      <img src="<?php bloginfo('template_url'); ?>/images/book_danish.png" />
+		      <img src="<?php bloginfo('template_url'); ?>/images/book_english.png" />
+        </div>
 			</div>
 			<div class="right-column">
 				<div class="header-right-box">
