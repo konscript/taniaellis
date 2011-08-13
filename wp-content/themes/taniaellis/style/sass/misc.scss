@@ -244,13 +244,21 @@
 				}
 
 				#tagcloud-title {
-					border-bottom: 1px solid #7d7a75;
+					background: url(../../images/tagcloud_icon.png) top left no-repeat;
+					
 					margin: 30px 0 15px 20px;
-					padding-bottom: 3px;
+					padding-left: 40px;
+					height: 34px;
+					
+					span {
+						border-bottom: 1px solid #7d7a75;
+						padding-bottom: 8px;
+					}
 				}
 
 				#tagcloud {
-					margin-left: 20px;
+					margin-left: 33px;
+					margin-top: -12px;
 				}
 			}
 			
@@ -414,7 +422,7 @@
 						list-style-position: inside;
 					}
 				}
-			}
+			} 
 			
 			#events-left {
 				width: 372px;
@@ -914,12 +922,6 @@
 						text-decoration: underline;
 					}
 				}
-				
-				.s1 { color: #a8a6cd; font-size: 14px; }
-				.s2 { color: #91b997; font-size: 16px; }
-				.s3 { color: #e7cd30; font-size: 18px; }
-				.s4 { color: #83a8c2; font-size: 20px; }
-				.s5 { color: #d7b590; font-size: 22px; }
 			}
 		}
 		
@@ -1361,6 +1363,21 @@
 			}
 		}
 		
+		.widget-testemonial {
+			background: url('../../images/post_type_icon_testimonial.png') top left no-repeat;
+			.testemonial {
+				@include featured-image(240px, 20px);
+			}
+			
+			.excerpt {
+				background: url('../../images/header_frontpage_quotes.png') top left no-repeat;
+				font-style: italic;
+				padding-left: 40px;
+				padding-top: 12px;
+				width: 210px;
+			}
+		}
+		
 		.widget-reading-room {
 			.reading-room {
 				@include featured-image(240px, 20px);
@@ -1619,3 +1636,11 @@ footer {
 .clearer {
 	clear: both;
 }
+
+
+// Tag cloud colors
+.s1 { color: #a8a6cd; font-size: 14px; }
+.s2 { color: #91b997; font-size: 16px; }
+.s3 { color: #e7cd30; font-size: 18px; }
+.s4 { color: #83a8c2; font-size: 20px; }
+.s5 { color: #d7b590; font-size: 22px; }

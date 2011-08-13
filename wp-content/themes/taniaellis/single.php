@@ -39,49 +39,56 @@
 			?>
 		</section>
 		<section class="right-sidebar-single">
-			<div class="sidebar-background">
-				<?php if(have_posts()): ?>
-					<?php while(have_posts()): the_post(); ?>
-	                    <div class="post-header">
-	                      <h2 class="first-line">Blog</h2>
-	                      <h2 class="second-line"><?php the_category(', '); ?></h2>
-	                    </div>
-                    
-	                    <div class="post">
-							<?php
-	                          the_post_thumbnail('post-wide-image', array('class' => 'featured-image'));
-	                        ?>
-	                      <div class="meta">
-	                        <p class="byline">
-	                          <?php the_category(', '); ?>
-	                        </p>
-	                        <p class="date">
-	                          <?php the_date('F j Y'); ?>
-	                        </p>
-	                      </div>    
-	                      <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	                      <div class="entry">
-	                        <?php the_content(); ?>
-	                      </div>
-	                    </div>
-	                    <div class="clearer"></div>
-                    
-	                    <p class="post-categories">
-							Posted in | <?php the_category('&nbsp;|&nbsp;'); ?>
-	                    </p>
-	                    <p class="post-tags">
-							<?php the_tags('Tagged |&nbsp;', '&nbsp;|&nbsp;'); ?>
-	                    </p>
-                    
-                    
-	                  <?php endwhile; wp_reset_query(); ?>
-                  <?php endif; ?>
-                  
-                  <div class="clearer"></div>
-                  
-                  <?php comments_template(); ?>
+<div class="sidebar-background">
+	<?php if(have_posts()): ?>
+		<?php while(have_posts()): the_post(); ?>
+			<div class="post-header">
+				<h2 class="first-line">Blog</h2>
+				<h2 class="second-line"><?php $category = get_the_category(); echo $category[0]->cat_name; ?></h2>
 			</div>
-		</section>
+     
+			<div class="post">
+				<?php the_post_thumbnail('post-wide-image', array('class' => 'featured-image')); ?>
+
+				<div class="meta">
+					<p class="byline">
+						<?php echo $category[0]->cat_name; ?>
+					</p>
+					<p class="date">
+						<?php the_time('j M Y'); ?>
+					</p>
+				</div>    
+				<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<div class="entry">
+					<?php the_content(); ?>
+				</div>
+			</div>
+			
+			<div class="clearer"></div>
+
+			<?php if(has_category() || has_tag()) : ?>
+				<div class="post-identification">
+					<?php if(has_category()) : ?>
+						<p class="post-categories">
+							Posted in | <?php the_category('&nbsp;|&nbsp;'); ?>
+						</p>
+					<?php endif; ?>
+						<?php if(has_tag()) : ?>
+							<p class="post-tags">
+								<?php the_tags('Tagged |&nbsp;', '&nbsp;|&nbsp;'); ?>
+							</p>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
+                                                                
+			<?php endwhile; ?>
+    <?php endif; ?>
+     
+     <div class="clearer"></div>
+     
+     <?php comments_template(); ?>
+ </div>
+</section>
 
 		<div class="clearer"></div>
 
