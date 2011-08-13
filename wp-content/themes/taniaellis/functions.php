@@ -195,8 +195,8 @@ function te_page_template_meta_boxes() {
       te_about_meta();
       break;
 		case 'page.php':
-      te_page_meta();
     default:
+      te_page_meta();
       break;
   }
 }
