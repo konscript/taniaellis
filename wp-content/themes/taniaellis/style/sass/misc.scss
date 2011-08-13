@@ -546,7 +546,20 @@
 			}
 			
 			#about-right {
-				
+				.header-right-box {
+					img {
+						border: 5px solid #CCC;
+						float: left;
+						margin: 0 10px 10px 0;
+					}
+					
+					#read-more-about {
+						background: url('../../images/signature.png') center right no-repeat;
+						display: block;
+						height: 27px;
+						padding-right: 180px;
+					}
+				}
 			}
 
 			.right-column {
