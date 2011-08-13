@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div id="header">
-	<p id="sub-heading">The <span>Social</span> Business Company</p>
+	<p id="sub-heading">The <span>Social</span> Business Company &reg;</p>
 	<p id="language-picker">
 		<a class="current" href="javascript:void(0)">ENG</a> / <a href="javascript:void(0)">DK</a>
 	</p>
@@ -10,7 +10,7 @@
 
 	<div id="header-container">
 		<?php wp_nav_menu(array(
-			'theme_location'		=> 'reading-room-menu',
+				'theme_location'		=> 'blog-menu',
 				'container'				  => '',
 				'menu_id'				    => 'navigation-header-standard',
 				'menu_class'			  => 'navigation-header',
