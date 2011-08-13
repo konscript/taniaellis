@@ -32,7 +32,7 @@
         <div class="event-testemonial">
           <?php
             $testemonial['id'] = get_post_meta($post->ID, 'te_events-header-text-testemonial', true);
-            $testemonial['thumb'] = get_the_post_thumbnail($testemonial['id'], 'events-header-testemonial');
+            $testemonial['thumb'] = get_the_post_thumbnail($testemonial['id'], 'post-square-thumbnail');
             $testemonial['author'] = get_post_meta($testemonial['id'], 'te_testemonial-author', true);
             $testemonial['text'] = get_post_meta($testemonial['id'], 'te_testemonial-testemonial-text', true);
           
