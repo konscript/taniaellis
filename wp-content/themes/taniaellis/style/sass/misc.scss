@@ -1261,6 +1261,17 @@
 			}
 		}
 		
+		.post-feed.event {
+			.date {
+				float: left;
+				width: 354px;
+				
+				b {
+					font-weight: bold;
+				}
+			}
+		}
+		
 		.post-identification {
 			border-bottom: 1px solid #CCC;
 			margin-bottom: 50px;

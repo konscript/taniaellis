@@ -1,6 +1,6 @@
 <?php
 
-function event_register() {
+function regsiter_te_event() {
 	$args = array(
 		'labels'				=> array(
 			'name'					=> _x('Events', 'post type general name'),
@@ -21,7 +21,7 @@ function event_register() {
 		'query_var'				=> true,
 		'menu_position'			=> 5,
 		'menu_icon'				=> get_stylesheet_directory_uri() . '/images/icon_event.gif',
-		'rewrite'				=> array('slug' => 'events', 'with_front' => false),
+		'rewrite'				=> array('slug' => 'event', 'with_front' => false),
 		'capability_type'		=> 'post',
 		'herarchical'			=> false,
 		'supports'				=> array(
@@ -30,14 +30,13 @@ function event_register() {
 			'editor',
 			'thumbnail',
 			'comments'
-		),
-		'register_meta_box_cb'	=> 'add_events_metaboxes'
+		)
 	);
 	
 	register_post_type('te_event', $args);
 }
 
-add_action('init', 'event_register');
+add_action('init', 'regsiter_te_event');
 
 te_event_meta();
 
@@ -67,7 +66,7 @@ function te_event_meta() {
   		array(
   			'name' => 'Start Date',
   			'id' => $prefix . '-start-date',
-  			'type' => 'date',					
+  			'type' => 'text'
   		),
   		array(
   			'name' => 'Start Time',
@@ -78,7 +77,7 @@ function te_event_meta() {
   		array(
   			'name' => 'End Date',
   			'id' => $prefix . '-end-date',
-  			'type' => 'date',					
+  			'type' => 'text'				
   		),
   		array(
   			'name' => 'End Time',
@@ -133,6 +132,15 @@ function te_event_meta() {
     $my_box = new RW_Meta_Box($meta_box);
   }
 
+	function load_te_event_admin_scripts() {
+		wp_register_script('datepicker-support', get_bloginfo('template_url') . '/datepicker-support.js');
+		wp_enqueue_script('datepicker-support');
+	}
+
+	add_action('admin_print_scripts', 'load_te_event_admin_scripts');
+
 }
+
+
 
 ?>
