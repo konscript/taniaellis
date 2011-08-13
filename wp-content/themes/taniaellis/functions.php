@@ -10,8 +10,7 @@ add_filter( 'show_admin_bar', '__return_false' ); // Don't render admin-bar
 remove_action('wp_head', 'wp_generator'); // Don't output generator tag (prevent formposting)
 remove_action('wp_head', 'wlwmanifest_link'); // Don't output manifest link/tag
 
-add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article', 'te_testemonial'));
-
+add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article', 'te_testemonial', 'page'));
 /**
 #######################################
 # REGISTER ADDITIONAL THUMBNAIL SIZES #
@@ -66,7 +65,8 @@ if(function_exists( 'register_nav_menus')) {
 		  'consulting-menu'				=> 'Consulting Menu',
 		  'lectures-menu'				  => 'Lectures Menu',
 		  'events-menu'				 		=> 'Events Menu',
-		  'reading-room-menu'     => 'Reading Room Menu'
+		  'reading-room-menu'     => 'Reading Room Menu',
+		  'about-menu'            => 'About Menu'
 	    )
 	);
 }
@@ -153,6 +153,7 @@ require_once('page_templates/page-template-te_home.php');
 require_once('page_templates/page-template-te_lab.php');
 require_once('page_templates/page-template-te_lectures.php');
 require_once('page_templates/page-template-te_reading-room.php');
+require_once('page_templates/page-template-te_about.php');
 require_once('page_templates/page-template-te_page.php');
 
 /**
@@ -189,9 +190,13 @@ function te_page_template_meta_boxes() {
       break;
     case 'home.php':
       te_home_meta(); 
+      break;
+    case 'about.php':
+      te_about_meta();
+      break;
 		case 'page.php':
-      te_page_meta();
     default:
+      te_page_meta();
       break;
   }
 }
