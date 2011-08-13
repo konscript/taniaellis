@@ -88,7 +88,9 @@
 		</section>
 		
 		<section class="right-sidebar">
-      <?php generated_dynamic_sidebar("Right Sidebar"); ?>
+		  <div class="sidebar-background">
+        <?php generated_dynamic_sidebar("Right Sidebar"); ?>
+      </div>
 		</section>
 		
 		<div class="clearer"></div>
