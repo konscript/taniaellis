@@ -1,6 +1,13 @@
 <?php
 include('meta-box.php');
 
+/*
+ * Cleaning up the wp_head output in header.php
+ */
+add_filter( 'show_admin_bar', '__return_false' ); // Don't render admin-bar
+remove_action('wp_head', 'wp_generator'); // Don't output generator tag (prevent formposting)
+remove_action('wp_head', 'wlwmanifest_link'); // Don't output manifest link/tag
+
 add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article', 'te_testemonial'));
 set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
 add_image_size('post-square-thumbnail', 100, 100, true);

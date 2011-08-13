@@ -80,6 +80,10 @@
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>
+			
+			<?php 
+			//if(function_exists('the_ratings')) { the_ratings(); } 
+			?>
                                                                 
 			<?php endwhile; ?>
     <?php endif; ?>
