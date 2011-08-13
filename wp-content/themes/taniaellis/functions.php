@@ -62,6 +62,10 @@ if(function_exists( 'register_nav_menus')) {
 	    'social-business-menu'  => 'Social Business Menu',
 	    'club-menu'             => 'Club Menu',
 		  'blog-menu'				      => 'Blog Menu',
+		  'lab-menu'				      => 'Lab Menu',
+		  'consulting-menu'				=> 'Consulting Menu',
+		  'lectures-menu'				  => 'Lectures Menu',
+		  'events-menu'				 		=> 'Events Menu',
 		  'reading-room-menu'     => 'Reading Room Menu'
 	    )
 	);
@@ -127,7 +131,8 @@ add_action('admin_head', 'change_custom_post_type_icons');
 #######################################
 **/
 
-require_once('page_templates/page-template-te_page.php');
+// TO-DO: Only include page-template used for displaying current page.
+
 require_once('page_templates/page-template-te_club.php');
 require_once('page_templates/page-template-te_consulting.php');
 require_once('page_templates/page-template-te_events.php');
@@ -135,5 +140,44 @@ require_once('page_templates/page-template-te_home.php');
 require_once('page_templates/page-template-te_lab.php');
 require_once('page_templates/page-template-te_lectures.php');
 require_once('page_templates/page-template-te_reading-room.php');
+
+/**
+###################################
+# ADD META BOXES TO PAGE TEMPLATE #
+###################################
+**/
+
+te_page_template_meta_boxes();
+
+function te_page_template_meta_boxes() {
+  $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+	
+	$page_template = get_post_meta($post_id, '_wp_page_template', true);
+	
+  switch ($page_template) {
+    case 'readingroom.php':
+      te_reading_room_meta();
+      break;    
+    case 'club.php':
+      te_club_meta();
+      break;
+    case 'consulting.php':
+      te_consulting_meta();
+      break;
+    case 'lectures.php':
+      te_lectures_meta();
+      break;
+    case 'events.php':
+      te_events_meta();
+      break;
+    case 'lab.php':
+      te_lab_meta();
+      break;
+    case 'home.php':
+      te_home_meta(); 
+    default:
+      break;
+  }
+}
 
 ?>
