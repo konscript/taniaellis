@@ -33,22 +33,48 @@
 				<div id="tagcloud">
 					<?php
 					
-					$default_colors = array(
-						'#a8a6cd',
-						'#91b997',
-						'#e7cd30',
-						'#83a8c2',
-						'#d7b590'
-					);
+					$terms = get_terms('post_tag', array(
+						'number'				=> 12,
+						'hierarchical'	=> 0,
+						'orderby'				=> 'count',
+						'order'					=> 'DESC'
+					));
 					
-					$options = array();
-				    $options['color_names']     = $default_colors;
-					$options['min_size']        = 14;
-				    $options['max_size']        = 22;
-					$options['use_colors']      = true;
+					$scores = array();
+					foreach($terms as $term) {
+						$scores[$term->term_id] = $term->count;
+					}
 					
-					if (function_exists('ilwp_tag_cloud'))
-						ilwp_tag_cloud($options);
+					$max_score = max($scores);
+					$min_score = min($scores);
+					
+					$score_spread = $max_score - $min_score;
+					if($score_spread <= 0)
+						$score_spread = 1;
+					
+					$max_class = 5;
+					$min_class = 1;
+					
+					$class_spread = $max_class - $min_class;
+					if($class_spread <= 0)
+						$class_spread = 1;
+						
+					$step = $class_spread / $score_spread;
+					
+					// Shuffle it around
+					shuffle($terms);
+					
+					foreach($terms as $term) :
+						$id = $term->term_id;
+						$link = clean_url(get_tag_link($id));
+						$class_id = ($min_class + (($scores[$id] - $min_score) * $step));
+						
+						?>
+						
+						<a href="<?php echo $link ?>" class="tag-<?php echo $id; ?> s<?php echo $class_id; ?>"><?php echo $term->name; ?></a>&nbsp;
+						
+						<?php
+					endforeach;
 					
 					?>
 				</div>
