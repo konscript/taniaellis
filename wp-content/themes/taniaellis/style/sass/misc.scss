@@ -1354,6 +1354,21 @@
 			}
 		}
 		
+		.widget-testemonial {
+			background: url('../../images/post_type_icon_testimonial.png') top left no-repeat;
+			.testemonial {
+				@include featured-image(240px, 20px);
+			}
+			
+			.excerpt {
+				background: url('../../images/header_frontpage_quotes.png') top left no-repeat;
+				font-style: italic;
+				padding-left: 40px;
+				padding-top: 12px;
+				width: 210px;
+			}
+		}
+		
 		.widget-reading-room {
 			.reading-room {
 				@include featured-image(240px, 20px);
