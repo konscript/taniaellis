@@ -89,7 +89,34 @@
 		
 		<section class="right-sidebar">
 		  <div class="sidebar-background">
-        <?php generated_dynamic_sidebar("Right Sidebar"); ?>
+        <?php //generated_dynamic_sidebar("Right Sidebar"); ?>
+        <div class="widget widget-blog">
+          <div class="header-container">
+            <h2 class="first-line">4 Key Services</h2>
+            <h2 class="second-line">All Centered Around Social Business</h2>
+          </div>
+
+
+          <div class="key-services">
+            <div class="key-service" id="club">
+              <div class="header">
+                <p class="first-line">The Social Business</p>
+                <p class="seconnd-line">Club</p>
+              </div>
+              
+              <p class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+              </p>
+              
+              <ul>
+                <li>Monthly Lectures</li>
+                <li>Yearly Workshops</li>
+                <li>Connets You With LikeMinded</li>
+                <li>Lorem Ipsum Dolor</li>                
+              </ul>
+            </div>
+          </div>
+        	
       </div>
 		</section>
 		
