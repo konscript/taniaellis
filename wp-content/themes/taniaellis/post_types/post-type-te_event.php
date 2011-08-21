@@ -133,11 +133,11 @@ function te_event_meta() {
   }
 
 	function load_te_event_admin_scripts() {
-		wp_register_script('datepicker-support', get_bloginfo('template_url') . '/datepicker-support.js');
-		wp_enqueue_script('datepicker-support');
+		// wp_register_script('datepicker-support', get_bloginfo('template_url') . '/datepicker-support.js');
+		// 	wp_enqueue_script('datepicker-support');
 	}
 
-	add_action('admin_print_scripts', 'load_te_event_admin_scripts');
+	//add_action('admin_print_scripts', 'load_te_event_admin_scripts');
 
 }
 
