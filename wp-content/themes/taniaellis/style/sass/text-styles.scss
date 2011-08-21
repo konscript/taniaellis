@@ -287,8 +287,9 @@ html>body {
 		li {
 			a {
 				color: #b0ada6;
-				font-size: 1em;
-				line-height: 1em;
+				font-size: 0.9em;
+				font-weight: bold;
+				line-height: 0.9em;
 				text-decoration: none;
 				text-transform: uppercase;
 				
@@ -300,6 +301,10 @@ html>body {
 			.current {
 				color: #7C7973;
 			}
+		}
+		
+		.current-menu-item a {
+			color: #7C7973;
 		}
 	}
 	

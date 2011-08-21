@@ -7,7 +7,7 @@
 		border: 5px solid #E1DCD8;
 		margin-right: $margin-right;
 		width: $width;
-	}
+	} 
 }
 
 #header-top-container {
@@ -163,10 +163,10 @@
 
 						background: #b0ada6;
 						float: left;
-						height: 1em;
+						height: 10px;
 						margin-right: 5px;
-						line-height: 1em;
-						width: 1em;
+						line-height: 0.9em;
+						width: 10px;
 					}
 
 					&:hover span {
@@ -177,6 +177,33 @@
 				ul {
 					margin-top: 10px;
 					margin-left: 30px;
+				}
+			}
+			
+			.current-menu-item { 
+				a {
+					span { 
+						background: #7C7973;					
+					}
+				}
+				
+				ul li {
+					 
+					a {
+						color: #b0ada6;
+					
+						span {
+							background: #b0ada6;
+						}
+						
+						&:hover {
+							color: #7C7973;
+							
+							span {
+								background: #7C7973;
+							}
+						}
+					}
 				}
 			}
 		}
