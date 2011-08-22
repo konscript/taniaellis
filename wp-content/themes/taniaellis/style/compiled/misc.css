@@ -987,7 +987,7 @@
 #page #social-bar li, #page #social-bar-frontpage li {
   display: block;
   float: left;
-  margin-right: 10px;
+  margin-right: 6px;
 }
 /* line 796, ../sass/misc.scss */
 #page #social-bar li:first-child, #page #social-bar-frontpage li:first-child {
