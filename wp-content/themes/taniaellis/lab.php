@@ -98,13 +98,13 @@
 <div id="page-content">
 	<div id="page">
 	  
-	  <div id="social-bar">
+	  <div id="social-bar" class="addthis_toolbox addthis_32x32_style">
       <ul>
-				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_youtube.png" alt="YouTube" title="YouTube" /></a></li>
-				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_rss.png" alt="RSS" title="RSS" /></a></li>
-				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_twitter.png" alt="Twitter" title="Twitter" /></a></li>
-				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_facebook.png" alt="Facebook" title="Facebook" /></a></li>
-				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
+		  	<li><a class="addthis_button_facebook"></a></li>
+			  <li><a class="addthis_button_twitter"></a></li>
+			  <li><a class="addthis_button_linkedin"></a></li>
+			  <li><a class="addthis_button_youtube"></a></li>
+			  <li><a class="addthis_button_rss"></a></li>
 			</ul>
 			<div class="box">
         <p class="box-header purple-header">

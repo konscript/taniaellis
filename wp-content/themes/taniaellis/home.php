@@ -61,12 +61,17 @@ Template Name: Home
 
 		<!-- id="newsletter-signup-box" -->
 
-		<ul id="social-bar-frontpage">
-			<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_youtube.png" alt="YouTube" title="YouTube" /></a></li>
-			<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_rss.png" alt="RSS" title="RSS" /></a></li>
-			<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_twitter.png" alt="Twitter" title="Twitter" /></a></li>
-			<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_facebook.png" alt="Facebook" title="Facebook" /></a></li>
-			<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
+		<div id="social-bar-frontpage" class="addthis_toolbox addthis_default_style addthis_32x32_style">
+			<ul>
+		  	<li><a class="addthis_button_facebook"></a></li>
+			  <li><a class="addthis_button_twitter"></a></li>
+			  <li><a class="addthis_button_linkedin"></a></li>
+			  <li><a class="addthis_button_youtube"></a></li>
+			  <li><a class="addthis_button_rss"></a></li>
+			</ul>
+		</div>
+
+
 
       <?php
         $box_title_line_1 = get_post_meta($post->ID, 'te_home-box-text-title-line-1', true);
