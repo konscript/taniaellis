@@ -51,7 +51,7 @@ Template Name: Articles
                                   <?php
                                     switch (get_post_type($post->ID)) {
                                       case 'te_article':
-                                        the_post_thumbnail(array(100, 100));
+                                        the_post_thumbnail('post-square-thumbnail');
                                         break;
 
                                       default:
