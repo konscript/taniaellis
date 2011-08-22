@@ -122,12 +122,14 @@ Template Name: Club
     </div>
 
     <section class="left-sidebar">
-      &nbsp; HEJ
-    </section>
-
-    <section class="right-sidebar">
-      &nbsp; HEJ
-    </section>
+			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
+		</section>
+		
+		<section class="right-sidebar">
+	    <div class="sidebar-background">
+				<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Right Sidebar"); ?>
+			</div>
+		</section>
 
     <div class="clearer"></div>
 
