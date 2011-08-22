@@ -69,7 +69,6 @@ Template Name: Home
 			  <li><a class="addthis_button_youtube"></a></li>
 			  <li><a class="addthis_button_rss"></a></li>
 			</ul>
-		</div>
 
 
 
@@ -97,7 +96,7 @@ Template Name: Home
 				<img src="<?php bloginfo('template_url') ?>/images/newsletter_bonus_sticker.png" alt="" id="bonus-sticker" />
 				<a class="box-button" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>
 			</div>
-		</ul>
+		</div>
 
 		<section class="left-sidebar">
 			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
