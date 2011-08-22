@@ -23,7 +23,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		);
 	}
 	
-	function widget($args, $instance) {
+	/*function widget($args, $instance) {
 		extract($args);
 		
 		echo $before_widget;
@@ -115,6 +115,58 @@ class TE_PostStreamWidget extends WP_Widget {
 		<?php
 		
 		echo $after_widget;
+	}*/
+	
+	function widget($args, $instance) {
+		extract($args);
+		
+		echo $before_widget;
+		
+		$titleA = apply_filters('widget_title', $instance['titleA']);
+		$titleB = apply_filters('widget_title', $instance['titleB']);
+		
+		$wclass = array(
+			'post'									=> 'blog',
+			'te_event'							=> 'event',
+			'te_article'						=> 'reading-room',
+			'te_testemonial'				=> 'testemonial',
+			'te_testemonial_video'	=> 'video-testemonial'
+		);
+		
+		$tsize = array(
+			'wide'		=> 'post-wide-thumbnail',
+			'square'	=> 'post-square-thumbnail',
+			'tall'		=> 'post-tall-thumbnail'
+		);
+		
+		?>
+		
+		<div class="widget widget-<?php echo $wclass[$instance['type']]; ?>">
+			<div class="header-container">
+				<h2 class="first-line"><?php echo $titleA; ?><h2>
+				<h2 class="second-line"><?php echo $titleB; ?></h2>
+			</div>
+			
+		<?php		
+	
+		$query = new WP_Query('post_type='. $ptype[$instance['type']] .'&post_status=publish,future');
+		
+		$count = 0;
+		while($query->have_posts() && $count < $instance['items']) : $query->the_post();
+			$post_id = get_the_ID();
+			
+			include("templates/" . $instance['type'] . ".php");
+			
+			$count++;
+		endwhile;
+		
+		wp_reset_query();
+		
+		?>
+		</div>
+		<?php
+		
+		echo $after_widget;
 	}
 	
 	function update($new_instance, $old_instance) {
@@ -166,8 +218,8 @@ class TE_PostStreamWidget extends WP_Widget {
 				id="<?php echo $this->get_field_id('type'); ?>" 
 				name="<?php echo $this->get_field_name('type'); ?>">
 				<option value="post"<?php if($instance['type'] == 'post') : ?> selected="selected"<?php endif; ?>>Blog Post</option>
-				<option value="event"<?php if($instance['type'] == 'event') : ?> selected="selected"<?php endif; ?>>Event</option>
-				<option value="article"<?php if($instance['type'] == 'article') : ?> selected="selected"<?php endif; ?>>Article</option>
+				<option value="te_event"<?php if($instance['type'] == 'te_event') : ?> selected="selected"<?php endif; ?>>Event</option>
+				<option value="te_article"<?php if($instance['type'] == 'te_article') : ?> selected="selected"<?php endif; ?>>Article</option>
 					
 			</select>
 		</p>

@@ -1447,33 +1447,31 @@
 		}
 		
 		.widget-reading-room {
+			background: url('../../images/post_type_icon_reading_room.png') top left no-repeat;
+			
 			.reading-room {
-				@include featured-image(240px, 20px);
+				@include featured-image(100px, 20px);
 				
 				.meta-data {
 					float: right;
-					width: 250px;
 				}
 
-				.title, .excerpt {
-					clear: right;
-					float: right;
-					width: 250px;
+				.title {
+					float: left;
+					width: 390px;
+				}
+
+				.excerpt {
+					width: 390px;
 				}
 
 				.options {
-					clear: right;
 					float: right;
-					width: 100px;
+					width: 520px;
 				}
 				
-				.addthis_toolbox {
-					float: left;
-					clear: left;
-				}
-
 				.by-line {
-					display: none;
+					float: left;
 				}
 			}
 		}
@@ -1607,14 +1605,6 @@
 		background: url('../../images/post_type_icon_books.png') top left no-repeat;
 
 		.book {
-			@include featured-image(60px, 20px);
-		}
-	}
-
-	.widget-reading-room {
-		background: url('../../images/post_type_icon_reading_room.png') top left no-repeat;
-
-		.reading-room {
 			@include featured-image(60px, 20px);
 		}
 	}

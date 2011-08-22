@@ -114,11 +114,13 @@
     </div>
 	  
 		<section class="left-sidebar">
-			&nbsp;
+			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
 		</section>
 		
 		<section class="right-sidebar">
-		    &nbsp;
+	    <div class="sidebar-background">
+				<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Right Sidebar"); ?>
+			</div>
 		</section>
 		
 		<div class="clearer"></div>

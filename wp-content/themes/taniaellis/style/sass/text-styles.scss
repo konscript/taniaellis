@@ -514,11 +514,12 @@ html>body {
 				
 				a {
 					@include transition(color, 0.1s, ease-in-out);
-					color: #7FB987;
+					color: #7db985;
 					text-decoration: none;
+					font-weight: bold;
 					
 					&:hover {
-						color: #7FB987 / 1.2;
+						color: #7db985 / 1.2;
 					}
 				}
 			}
@@ -733,15 +734,16 @@ html>body {
 			}
 		
 			.options {
-				.read-more, .view-cases, .view-clients {
+				.read-more, .view-cases, .view-clients, .add-comment {
 					@include transition(color, 0.1s, ease-in-out);
 				
-					color: #749B7F;
+					color: #7db985;
 					font-size: 1.1em;
 					text-decoration: none;
+					font-weight: bold;
 				
 					&:hover {
-						color: #749B7F / 1.2;
+						color: #7db985 / 1.2;
 					}
 				}
 			}
