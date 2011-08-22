@@ -44,26 +44,24 @@ class TE_FreeTextWidget extends WP_Widget {
 		?>
 		
 		<div class="widget widget-image-text layout-<?php echo $layout; ?>" style="background: url('<?php echo $iconURL; ?>') top left no-repeat">
-			<div class="header-container">
-				<h2 class="first-line"><?php echo $titleA; ?></h2>
-				<h2 class="second-line"><?php echo $titleB; ?></h2>
-			</div>
+			<?php if(!empty($titleA)) : ?>
+				<div class="header-container">
+					<h2 class="first-line"><?php echo $titleA; ?></h2>
+					<h2 class="second-line"><?php echo $titleB; ?></h2>
+				</div>
+			<?php endif; ?>
 			
 			<div class="item image-text">
 				<div class="item-content">
 					
-					<?php 
-					
-					if($imageURL != "") :
-						if($link != "") echo "<a href=\"$link\">";
-							echo "<img src=\"$imageURL\" class=\"featured-image\" />";
-						if($link != "") echo "</a>";
-					endif;
-					
-					?>
-					
+					<?php if($imageURL != "") : ?>
+						<img src="<?php echo $imageURL; ?>" class="featured-image" />
+					<?php endif; ?>
+										
 					<p class="meta-data"><?php echo $metadata; ?></p>
 					<span class="by-line"><?php echo $byline; ?></span>
+					
+					<div class="clearer"></div>
 					
 					<a class="title" href="<?php echo $link; ?>"><?php echo $header; ?></a>
 					<p class="excerpt"><?php echo $text; ?></p>

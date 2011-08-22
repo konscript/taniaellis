@@ -949,7 +949,6 @@
 		.widget {
 			clear: left;
 			float: left;
-			margin-top: 50px;
 			width: 320px;
 
 			&:first-child {
@@ -1036,6 +1035,10 @@
 		.layout-wide {
 			.image-text {
 				@include featured-image(250px, 0);
+				
+				.title {
+					margin-top: 5px;
+				}
 				
 				.excerpt {
 					width: 260px;
