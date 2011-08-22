@@ -202,18 +202,16 @@
                                     ?>
                                   </div>
                                   
-                                  <p class="comment-count">
-                                    (<?php comments_number('No comments', '1 comment', '% comments') ?>)
-                                  </p>
-                                  <p class="read-more">
-                                    <?php 
-                                    if(get_post_type($post->ID) == 'te_article') {
-                                      echo '<a href="'. te_get_article_url($post->ID) . '">Read more</a>';
-                                    } else {
-                                      echo '<a href="' . the_permalink() . '">Read more</a>';
-                                    }
-                                    ?>
-                                  </p>
+																	<div class="options">
+	                                  <a href="<?php the_permalink(); ?>#respond" class="add-comment"> Add Comment (<?php comments_number('0', '1', '') ?>)</a>
+	                                   <?php 
+	                                   if(get_post_type($post->ID) == 'te_article') {
+	                                     echo '<a class="read-more" href="'. te_get_article_url($post->ID) . '">Read more</a>';
+	                                   } else {
+	                                     echo '<a class="read-more" href="' . the_permalink() . '">Read more</a>';
+	                                   }
+	                                   ?>
+																	</div>
                                 </div>
                               <?php endwhile; ?>
                               <?php endif; ?>
