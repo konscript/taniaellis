@@ -533,19 +533,23 @@ html>body {
 			}
 		}
 		
-		.read-more {
-			a {
-				@include transition(color, 0.1s, ease-in-out);
+			.read-more {
+				a {
+					@include transition(color, 0.1s, ease-in-out);
 				
-				color: #7FB987;
-				font-weight: bold;
-				text-decoration: none;
+					color: #7FB987;
+					font-weight: bold;
+					text-decoration: none;
 				
-				&:hover {
-					color: #7FB987 / 1.2;
+					&:hover {
+						color: #7FB987 / 1.2;
+					}
 				}
 			}
-		}
+			
+			.add-comment {
+				float: left;
+			}
 	}
 	
 	.post-feed {
@@ -592,19 +596,21 @@ html>body {
 			}
 		}
 		
-		.read-more {
-			a {
-				@include transition(color, 0.1s, ease-in-out);
-				
-				color: #7FB987;
-				float: right;
-				font-weight: bold;
-				text-decoration: none;
-				
-				&:hover {
-					color: #7FB987 / 1.2;
-				}
+		.read-more, .add-comment {
+			@include transition(color, 0.1s, ease-in-out);
+			
+			color: #7FB987;
+			float: right;
+			font-weight: bold;
+			text-decoration: none;
+			
+			&:hover {
+				color: #7FB987 / 1.2;
 			}
+		}
+		
+		.add-comment {
+			float: left;
 		}
 	}
 	

@@ -163,11 +163,11 @@
                                   <?php
                                     switch (get_post_type($post->ID)) {
                                       case 'te_article':
-                                        the_post_thumbnail(array(100, 100));
+                                        the_post_thumbnail('post-square-thumbnail');
                                         break;
 
                                       default:
-                                        # code...
+                                       the_post_thumbnail('post-wide-thumbnail');
                                         break;
                                     }
                                   ?>
@@ -194,23 +194,22 @@
                                   <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                   <div class="entry">
                                     <?php 
-                                    if(get_post_type($post->ID) == 'te_article') {
-                                      the_content();
-                                    } else {
-                                      the_excerpt();
-                                    }
+                                    // if(get_post_type($post->ID) == 'te_article') {
+                                    //                                       the_content();
+                                    //                                     } else {
+                                    //                                       the_excerpt();
+                                    //                                     }
+																		the_excerpt();
                                     ?>
                                   </div>
                                   
 																	<div class="options">
 	                                  <a href="<?php the_permalink(); ?>#respond" class="add-comment"> Add Comment (<?php comments_number('0', '1', '') ?>)</a>
-	                                   <?php 
-	                                   if(get_post_type($post->ID) == 'te_article') {
-	                                     echo '<a class="read-more" href="'. te_get_article_url($post->ID) . '">Read more</a>';
-	                                   } else {
-	                                     echo '<a class="read-more" href="' . the_permalink() . '">Read more</a>';
-	                                   }
-	                                   ?>
+																		<?php if(get_post_type($post->ID) == 'te_article') :?>
+																			<a class="read-more" href="<?php te_get_article_url($post->ID); ?>">Read More</a>
+																		<?php else : ?>
+																			<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
+	                                  <?php endif; ?>
 																	</div>
                                 </div>
                               <?php endwhile; ?>

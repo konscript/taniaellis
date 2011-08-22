@@ -1276,9 +1276,24 @@
 				float: right;
 				margin-bottom: 15px;
 			}
+			
+			.title {
+				margin-left: 0;
+			}
 					
 			.entry {
+				margin-left: 0;
 				margin-bottom: 20px;
+			}
+			
+			.addthis_toolbox {
+				float: left;
+				clear: left;
+			}
+			
+			.options {
+				float: right;
+				width: 390px;
 			}
 		}
 		
@@ -1469,11 +1484,16 @@
 
 				.options {
 					float: right;
-					width: 520px;
+					width: 390px;
 				}
 				
 				.by-line {
 					float: left;
+				}
+				
+				.addthis_toolbox {
+					float: left;
+					clear: left;
 				}
 			}
 		}

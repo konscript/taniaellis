@@ -82,14 +82,11 @@ Template Name: Articles
                                   <div class="entry">
                                     <?php the_content(); ?>
                                   </div>
-                                  
-                                  <p class="add-comment">
-                                    <a href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
-                                  </p>
-                                  <p class="read-more">
-                                      <a href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
-                                  </p>
-                                  
+
+                                  <div class="options">
+					                          <a class="add-comment" href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
+					                          <a class="read-more" href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
+                                  </div>
                                 </div>
                                 
                                 
