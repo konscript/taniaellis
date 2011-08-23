@@ -14,7 +14,7 @@ html>body {
 	font-size: 0.9em;
 	text-decoration: none;
 	text-transform: uppercase;
-}
+} 
 
 #navigation-top {
 	li {
@@ -514,11 +514,12 @@ html>body {
 				
 				a {
 					@include transition(color, 0.1s, ease-in-out);
-					color: #7FB987;
+					color: #7db985;
 					text-decoration: none;
+					font-weight: bold;
 					
 					&:hover {
-						color: #7FB987 / 1.2;
+						color: #7db985 / 1.2;
 					}
 				}
 			}
@@ -532,19 +533,23 @@ html>body {
 			}
 		}
 		
-		.read-more {
-			a {
-				@include transition(color, 0.1s, ease-in-out);
+			.read-more {
+				a {
+					@include transition(color, 0.1s, ease-in-out);
 				
-				color: #7FB987;
-				font-weight: bold;
-				text-decoration: none;
+					color: #7FB987;
+					font-weight: bold;
+					text-decoration: none;
 				
-				&:hover {
-					color: #7FB987 / 1.2;
+					&:hover {
+						color: #7FB987 / 1.2;
+					}
 				}
 			}
-		}
+			
+			.add-comment {
+				float: left;
+			}
 	}
 	
 	.post-feed {
@@ -591,19 +596,21 @@ html>body {
 			}
 		}
 		
-		.read-more {
-			a {
-				@include transition(color, 0.1s, ease-in-out);
-				
-				color: #7FB987;
-				float: right;
-				font-weight: bold;
-				text-decoration: none;
-				
-				&:hover {
-					color: #7FB987 / 1.2;
-				}
+		.read-more, .add-comment {
+			@include transition(color, 0.1s, ease-in-out);
+			
+			color: #7FB987;
+			float: right;
+			font-weight: bold;
+			text-decoration: none;
+			
+			&:hover {
+				color: #7FB987 / 1.2;
 			}
+		}
+		
+		.add-comment {
+			float: left;
 		}
 	}
 	
@@ -733,15 +740,16 @@ html>body {
 			}
 		
 			.options {
-				.read-more, .view-cases, .view-clients {
+				.read-more, .view-cases, .view-clients, .add-comment {
 					@include transition(color, 0.1s, ease-in-out);
 				
-					color: #749B7F;
+					color: #7db985;
 					font-size: 1.1em;
 					text-decoration: none;
+					font-weight: bold;
 				
 					&:hover {
-						color: #749B7F / 1.2;
+						color: #7db985 / 1.2;
 					}
 				}
 			}

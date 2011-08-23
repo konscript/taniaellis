@@ -33,15 +33,7 @@ Template Name: Articles
 
 <div id="page-content-single">
   <div id="page">
-    <div id="social-bar">
-      <ul>
-        <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_youtube.png" alt="YouTube" title="YouTube" /></a></li>
-        <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_rss.png" alt="RSS" title="RSS" /></a></li>
-        <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_twitter.png" alt="Twitter" title="Twitter" /></a></li>
-        <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_facebook.png" alt="Facebook" title="Facebook" /></a></li>
-        <li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
-      </ul>
-    </div>
+    <?php @include("partials/social-bar.php"); ?>
     <section class="left-sidebar">
       			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
     </section>
@@ -59,7 +51,7 @@ Template Name: Articles
                                   <?php
                                     switch (get_post_type($post->ID)) {
                                       case 'te_article':
-                                        the_post_thumbnail(array(100, 100));
+                                        the_post_thumbnail('post-square-thumbnail');
                                         break;
 
                                       default:
@@ -90,14 +82,11 @@ Template Name: Articles
                                   <div class="entry">
                                     <?php the_content(); ?>
                                   </div>
-                                  
-                                  <p class="add-comment">
-                                    <a href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
-                                  </p>
-                                  <p class="read-more">
-                                      <a href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
-                                  </p>
-                                  
+
+                                  <div class="options">
+					                          <a class="add-comment" href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
+					                          <a class="read-more" href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
+                                  </div>
                                 </div>
                                 
                                 

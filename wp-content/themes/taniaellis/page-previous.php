@@ -23,15 +23,7 @@
 
 <div id="page-content-single">
 	<div id="page">
-		<div id="social-bar">
-			<ul>
-				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_youtube.png" alt="YouTube" title="YouTube" /></a></li>
-				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_rss.png" alt="RSS" title="RSS" /></a></li>
-				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_twitter.png" alt="Twitter" title="Twitter" /></a></li>
-				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_facebook.png" alt="Facebook" title="Facebook" /></a></li>
-				<li><a href="#"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" alt="Fairpages" title="Fairpages" /></a></li>
-			</ul>
-		</div>
+		<?php @include("partials/social-bar.php"); ?>
 		<section class="left-sidebar">
 			<?php 
 			if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Events Single Left");
