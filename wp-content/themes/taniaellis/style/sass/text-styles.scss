@@ -763,6 +763,35 @@ html>body {
 			}	
 		} 
 	}
+	
+	.widget-key-services {
+		.key-services {
+			
+			.key-service {
+				.header {
+					color: #FFF;
+					
+					.first-line {
+						text-transform: uppercase;
+					}
+					
+					.second-line {
+						font-family: "Arial Black", Arial, Helvetica;
+						font-size: 1.8em;
+						text-transform: uppercase;
+					}
+				}
+			}
+			
+			.content {
+				color: #7D7A75 / 1.4;
+				line-height: 1.5em; 
+			}
+			
+			ul {
+			}
+		}
+	}
 }
 
 #footer-bar { 

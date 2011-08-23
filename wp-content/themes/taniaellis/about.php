@@ -90,7 +90,7 @@
 		<section class="right-sidebar">
 		  <div class="sidebar-background">
         <?php //generated_dynamic_sidebar("Right Sidebar"); ?>
-        <div class="widget widget-blog">
+        <div class="widget widget-key-services">
           <div class="header-container">
             <h2 class="first-line">4 Key Services</h2>
             <h2 class="second-line">All Centered Around Social Business</h2>
@@ -101,21 +101,47 @@
             <div class="key-service" id="club">
               <div class="header">
                 <p class="first-line">The Social Business</p>
-                <p class="seconnd-line">Club</p>
+                <p class="second-line">Club</p>
               </div>
               
               <p class="content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
               </p>
               
               <ul>
-                <li>Monthly Lectures</li>
-                <li>Yearly Workshops</li>
-                <li>Connets You With LikeMinded</li>
-                <li>Lorem Ipsum Dolor</li>                
+                <li><span>&nbsp;</span>Monthly Lectures</li>
+                <li><span>&nbsp;</span>Yearly Workshops</li>
+                <li><span>&nbsp;</span>Connets You With LikeMinded</li>
+                <li><span>&nbsp;</span>Lorem Ipsum Dolor</li>                
               </ul>
+
+              <div class="push"></div>
+              <a href="#" class="key-service-read-more">Read more</a>
+            </div>
+            
+            <div class="key-service" id="club">
+              <div class="header">
+                <p class="first-line">The Social Business</p>
+                <p class="second-line">Club</p>
+              </div>
+              
+              <p class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+              </p>
+              
+              <ul>
+                <li><span>&nbsp;</span>Monthly Lectures</li>
+                <li><span>&nbsp;</span>Yearly Workshops</li>
+                <li><span>&nbsp;</span>Connets You With LikeMinded</li>
+                <li><span>&nbsp;</span>Lorem Ipsum Dolor</li>                
+              </ul>
+
+              <div class="push"></div>
+              <a href="#" class="key-service-read-more">Read more</a>
             </div>
           </div>
+        	
+        	
         	
       </div>
 		</section>

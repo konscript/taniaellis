@@ -1446,6 +1446,77 @@
 			}
 		}
 		
+		.widget-key-services {
+			background: url('../../images/post_type_icon_key_services.png') top left no-repeat;
+
+			.key-services {
+				margin-left: 40px;
+				
+				.key-service {
+					@include border-radius(10px);
+					background-color: rgb(234, 230, 227);
+					float: left;
+					margin-left: 20px;
+					min-height: 250px;
+					position: relative;
+					width: 250px;
+					
+					&:first-child {
+						margin-left: 0px;
+					}
+					
+					.header {
+						@include border-top-radius(10px);
+						background-color: #9CC1A2;
+						padding: 13px 20px 10px 20px;
+						width: 210px;
+					}
+					
+					.content {
+						margin-bottom: 15px;
+						padding: 10px 20px 0;
+					}
+
+					ul {
+						padding: 0 20px;
+
+						li {
+							font-size: 0.9em;
+							font-weight: bold;
+							color: #7D7A75;
+							text-transform: uppercase;
+							margin-bottom: 10px;
+
+							span {
+								background-color: #9CC1A2; 
+								display: block;
+								float: left;
+								height: 10px;
+								margin-top: 1px;
+								margin-right: 10px;
+								width: 10px;
+							}
+						}
+					}
+					
+					.key-service-read-more {
+						@include border-radius(5px);
+						background-color: #7D7A75;
+						bottom: 15px;
+						padding: 5px 10px;
+						position: absolute;
+						right: 20px;
+					}
+					
+					.push {
+						height: 30px;
+						margin-top: 30px;
+					}
+				}
+			}
+			
+		}
+		
 		.widget-reading-room {
 			.reading-room {
 				@include featured-image(240px, 20px);

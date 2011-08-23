@@ -760,8 +760,27 @@ html > body {
 #page .widget .view-all:hover {
   color: #e7e7e7;
 }
+/* line 771, ../sass/text-styles.scss */
+#page .widget-key-services .key-services .key-service .header {
+  color: #FFF;
+}
+/* line 774, ../sass/text-styles.scss */
+#page .widget-key-services .key-services .key-service .header .first-line {
+  text-transform: uppercase;
+}
+/* line 778, ../sass/text-styles.scss */
+#page .widget-key-services .key-services .key-service .header .second-line {
+  font-family: "Arial Black", Arial, Helvetica;
+  font-size: 1.8em;
+  text-transform: uppercase;
+}
+/* line 786, ../sass/text-styles.scss */
+#page .widget-key-services .key-services .content {
+  color: #595753;
+  line-height: 1.5em;
+}
 
-/* line 769, ../sass/text-styles.scss */
+/* line 798, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: bold;
