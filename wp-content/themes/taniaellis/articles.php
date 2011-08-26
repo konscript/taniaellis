@@ -45,7 +45,7 @@ Template Name: Articles
                                 <h2 class="first-line">Articles</h2>
                                 <h2 class="second-line">Ethics / Sustainability</h2>
                               </div>
-                              <?php query_posts(array('post_type' => 'te_article')); ?>
+                              <?php query_posts(array('post_type' => 'te_article', 'post_status' => 'publish', 'paged' => $paged)); ?>
                               <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                                
                                 <div class="post-feed">
                                   <?php
@@ -90,7 +90,9 @@ Template Name: Articles
                                 </div>
                               <?php endwhile; ?>
                               
-                              <?php //posts_nav_link(); ?>
+                              <div class="posts-nav-links">
+                                <?php posts_nav_link(' ', '« Previous Page', 'Next Page »'); ?>
+                              </div>
                               
                               <?php endif; ?>
                               

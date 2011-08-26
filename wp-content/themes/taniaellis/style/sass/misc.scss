@@ -1300,6 +1300,22 @@
 			}
 		}
 		
+		// The links that display next and previous page
+		.posts-nav-links {
+			width: 300px;
+			margin-left: 40px;
+			
+			.previouspostslink, .nextpostslink {
+				@include transition(background, 0.2s, ease-in-out);
+				background: #CCC;
+				padding: 5px 10px;
+				
+				&:hover {
+					background: #CCC / 1.2;
+				}
+			}
+		}
+		
 		.post-feed.event {
 			.date {
 				float: left;

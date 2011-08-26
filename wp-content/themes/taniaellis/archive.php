@@ -213,9 +213,15 @@
 																	</div>
                                 </div>
                                 
-                                <?php //wp_link_pages(); ?>
-                                
                               <?php endwhile; ?>
+                              
+                                <div class="posts-nav-links">
+                                <?php
+                                  // (Use wp-postnavi(); in the future)
+                                  posts_nav_link();
+                                ?>
+                                </div>
+                              
                               <?php endif; ?>
                               
                               <div class="clearer"></div>
