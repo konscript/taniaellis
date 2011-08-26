@@ -531,6 +531,16 @@
 						}
 					}
 					
+					.flasks {
+						img {
+							margin-top: 7px;
+							margin-left: 23px;
+						}
+						img + img {
+							margin-left: 50px;
+						}
+					}
+					
 					.lab-1 {
 						background: url('../../images/events_header_flask_1.png') no-repeat 23px 55px;
 					}

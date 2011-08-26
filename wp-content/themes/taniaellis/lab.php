@@ -10,7 +10,7 @@
     jQuery(".lab-container").innerfade({
       animationtype: 'fade',
       containerheight: '172px',
-      timeout: 5000,
+      timeout: 3500,
       speed: 750
     });
   });
@@ -55,6 +55,11 @@
         ?>
         
         <div class="lab-container">
+          <div class="flasks">
+            <img src="<?php bloginfo('template_url'); ?>/images/events_header_flask_1.png" />
+            <img src="<?php bloginfo('template_url'); ?>/images/events_header_flask_2.png" />
+            <img src="<?php bloginfo('template_url'); ?>/images/events_header_flask_3.png" />
+          </div>
           <?php for($i = 1 ; $i < 4 ; $i++): ?>
             <div class="lab lab-<?php echo $i; ?>">
               <div class="title">
