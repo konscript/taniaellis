@@ -1566,7 +1566,7 @@
   margin-left: 40px;
 }
 /* line 1308, ../sass/misc.scss */
-#page .right-sidebar .posts-nav-links .previouspostslink, #page .right-sidebar .posts-nav-links .nextpostslink, #page .right-sidebar-single .posts-nav-links .previouspostslink, #page .right-sidebar-single .posts-nav-links .nextpostslink {
+#page .right-sidebar .posts-nav-links a, #page .right-sidebar-single .posts-nav-links a {
   -moz-transition-property: background;
   -webkit-transition-property: background;
   -o-transition-property: background;
@@ -1583,7 +1583,7 @@
   padding: 5px 10px;
 }
 /* line 1313, ../sass/misc.scss */
-#page .right-sidebar .posts-nav-links .previouspostslink:hover, #page .right-sidebar .posts-nav-links .nextpostslink:hover, #page .right-sidebar-single .posts-nav-links .previouspostslink:hover, #page .right-sidebar-single .posts-nav-links .nextpostslink:hover {
+#page .right-sidebar .posts-nav-links a:hover, #page .right-sidebar-single .posts-nav-links a:hover {
   background: #aaaaaa;
 }
 /* line 1320, ../sass/misc.scss */
