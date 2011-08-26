@@ -85,6 +85,11 @@ function te_home_meta() {
   		  'name' => 'Link Text',
   		  'id' => $box_prefix . '-link-text',
   		  'type' => 'text'
+  		),
+  		array(
+  		  'name' => 'Bonus Sticker',
+  		  'id' => $box_prefix . '-bonus-sticker',
+  		  'type' => 'checkbox'
   		)
   	)
   );

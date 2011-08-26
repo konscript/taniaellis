@@ -92,8 +92,10 @@ Template Name: Home
           $box_link_address = get_post_meta($post->ID, 'te_home-box-text-link-address', true);
           $box_link_text = get_post_meta($post->ID, 'te_home-box-text-link-text', true);
         ?>
-
-				<img src="<?php bloginfo('template_url') ?>/images/newsletter_bonus_sticker.png" alt="" id="bonus-sticker" />
+        <?php $bonus_sticker = get_post_meta($post->ID, 'te_home-box-text-bonus-sticker', true); ?>
+        <?php if($bonus_sticker == 'on'): ?>
+				  <img src="<?php bloginfo('template_url') ?>/images/newsletter_bonus_sticker.png" alt="" id="bonus-sticker" />
+				<?php endif; ?>
 				<a class="box-button" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>
 			</div>
 		</div>
