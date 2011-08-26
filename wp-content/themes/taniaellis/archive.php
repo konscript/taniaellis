@@ -212,6 +212,9 @@
 	                                  <?php endif; ?>
 																	</div>
                                 </div>
+                                
+                                <?php //wp_link_pages(); ?>
+                                
                               <?php endwhile; ?>
                               <?php endif; ?>
                               

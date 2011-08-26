@@ -88,9 +88,10 @@ Template Name: Articles
 					                          <a class="read-more" href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
                                   </div>
                                 </div>
-                                
-                                
                               <?php endwhile; ?>
+                              
+                              <?php //posts_nav_link(); ?>
+                              
                               <?php endif; ?>
                               
                               <div class="clearer"></div>
