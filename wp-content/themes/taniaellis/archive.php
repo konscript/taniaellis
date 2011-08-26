@@ -218,7 +218,7 @@
                                 <div class="posts-nav-links">
                                 <?php
                                   // (Use wp-postnavi(); in the future)
-                                  posts_nav_link();
+                                  posts_nav_link(' ', '« Previous Page', 'Next Page »');
                                 ?>
                                 </div>
                               
