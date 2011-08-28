@@ -78,7 +78,7 @@ function te_lectures_meta() {
   
   $meta_boxes[] = array(
      'id' => $bullets_prefix,
-     'title' => 'Link Options: Four Corners of Social Business Consulting',
+     'title' => 'Bullet Options',
      'pages' => array('page'),
      'context' => 'normal',
   
@@ -89,25 +89,54 @@ function te_lectures_meta() {
          'type' => 'text',
        ),
        array(
+         'name' => 'Bullet 1 Link',
+         'id' => $bullets_prefix . '-bullet-1-link',
+         'type' => 'text',
+         'desc' => 'Remeber <code>http://</code>'
+       ),
+       array(
          'name' => 'Bullet 2',
          'id' => $bullets_prefix . '-bullet-2',
          'type' => 'text'
+       ),
+       array(
+         'name' => 'Bullet 2 Link',
+         'id' => $bullets_prefix . '-bullet-2-link',
+         'type' => 'text',
+         'desc' => 'Remeber <code>http://</code>'
        ),
        array(
          'name' => 'Bullet 3',
          'id' => $bullets_prefix . '-bullet-3',
          'type' => 'text',
        ),
-
+       array(
+         'name' => 'Bullet 3 Link',
+         'id' => $bullets_prefix . '-bullet-3-link',
+         'type' => 'text',
+         'desc' => 'Remeber <code>http://</code>'
+       ),
        array(
          'name' => 'Bullet 4',
          'id' => $bullets_prefix . '-bullet-4',
          'type' => 'text'
        ),
        array(
+         'name' => 'Bullet 4 Link',
+         'id' => $bullets_prefix . '-bullet-4-link',
+         'type' => 'text',
+         'desc' => 'Remeber <code>http://</code>'
+       ),
+       array(
          'name' => 'Bullet 5',
          'id' => $bullets_prefix . '-bullet-5',
          'type' => 'text',
+       ),
+       array(
+         'name' => 'Bullet 5 Link',
+         'id' => $bullets_prefix . '-bullet-5-link',
+         'type' => 'text',
+         'desc' => 'Remeber <code>http://</code>'
        )
       )
     );

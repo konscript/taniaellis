@@ -212,7 +212,16 @@
 	                                  <?php endif; ?>
 																	</div>
                                 </div>
+                                
                               <?php endwhile; ?>
+                              
+                                <div class="posts-nav-links">
+                                <?php
+                                  // (Use wp-postnavi(); in the future)
+                                  posts_nav_link(' ', '« Previous Page', 'Next Page »');
+                                ?>
+                                </div>
+                              
                               <?php endif; ?>
                               
                               <div class="clearer"></div>

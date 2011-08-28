@@ -14,7 +14,7 @@ html>body {
 	font-size: 0.9em;
 	text-decoration: none;
 	text-transform: uppercase;
-}
+} 
 
 #navigation-top {
 	li {
@@ -174,6 +174,16 @@ html>body {
 					font-style: italic;
 					font-weight: bold;
 					line-height: 1.2em;
+					
+					a {
+						@include transition(color, 0.1s, ease-in-out);
+						color: #9CC1A2;
+						text-decoration: none;
+						
+						&:hover {
+							color: #9CC1A2 / 1.2;
+						}
+					}
 				}
 			}
 		}
@@ -614,6 +624,13 @@ html>body {
 		}
 	}
 	
+	.posts-nav-links {
+		a {
+			color: #FFF;
+			text-decoration: none;
+		}
+	}
+	
 	.post-categories, .post-tags {
 		color: #7D7872;
 		font-weight: bold;
@@ -770,6 +787,35 @@ html>body {
 				color: #FFF / 1.1;
 			}	
 		} 
+	}
+	
+	.widget-key-services {
+		.key-services {
+			
+			.key-service {
+				.header {
+					color: #FFF;
+					
+					.first-line {
+						text-transform: uppercase;
+					}
+					
+					.second-line {
+						font-family: "Arial Black", Arial, Helvetica;
+						font-size: 1.8em;
+						text-transform: uppercase;
+					}
+				}
+			}
+			
+			.content {
+				color: #7D7A75 / 1.4;
+				line-height: 1.5em; 
+			}
+			
+			ul {
+			}
+		}
 	}
 }
 

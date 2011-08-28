@@ -8,7 +8,7 @@
 		margin-right: $margin-right;
 		width: $width;
 	} 
-}
+} 
 
 #header-top-container {
 	float: right;
@@ -448,7 +448,6 @@
 					width: 372px;
 					
 					ul {
-						color: #9CC1A2;
 						list-style-type: disc;
 						list-style-position: inside;
 					}
@@ -528,6 +527,16 @@
 						.lab-link {
 							float: right;
 							margin-top: 10px;
+						}
+					}
+					
+					.flasks {
+						img {
+							margin-top: 7px;
+							margin-left: 23px;
+						}
+						img + img {
+							margin-left: 50px;
 						}
 					}
 					
@@ -1300,6 +1309,22 @@
 			}
 		}
 		
+		// The links that display next and previous page
+		.posts-nav-links {
+			width: 300px;
+			margin-left: 40px;
+			
+			a {
+				@include transition(background, 0.2s, ease-in-out);
+				background: #CCC;
+				padding: 5px 10px;
+				
+				&:hover {
+					background: #CCC / 1.2;
+				}
+			}
+		}
+		
 		.post-feed.event {
 			.date {
 				float: left;
@@ -1464,6 +1489,77 @@
 				padding-top: 12px;
 				width: 210px;
 			}
+		}
+		
+		.widget-key-services {
+			background: url('../../images/post_type_icon_key_services.png') top left no-repeat;
+
+			.key-services {
+				margin-left: 40px;
+				
+				.key-service {
+					@include border-radius(10px);
+					background-color: rgb(234, 230, 227);
+					float: left;
+					margin-left: 20px;
+					min-height: 250px;
+					position: relative;
+					width: 250px;
+					
+					&:first-child {
+						margin-left: 0px;
+					}
+					
+					.header {
+						@include border-top-radius(10px);
+						background-color: #9CC1A2;
+						padding: 13px 20px 10px 20px;
+						width: 210px;
+					}
+					
+					.content {
+						margin-bottom: 15px;
+						padding: 10px 20px 0;
+					}
+
+					ul {
+						padding: 0 20px;
+
+						li {
+							font-size: 0.9em;
+							font-weight: bold;
+							color: #7D7A75;
+							text-transform: uppercase;
+							margin-bottom: 10px;
+
+							span {
+								background-color: #9CC1A2; 
+								display: block;
+								float: left;
+								height: 10px;
+								margin-top: 1px;
+								margin-right: 10px;
+								width: 10px;
+							}
+						}
+					}
+					
+					.key-service-read-more {
+						@include border-radius(5px);
+						background-color: #7D7A75;
+						bottom: 15px;
+						padding: 5px 10px;
+						position: absolute;
+						right: 20px;
+					}
+					
+					.push {
+						height: 30px;
+						margin-top: 30px;
+					}
+				}
+			}
+			
 		}
 		
 		.widget-reading-room {

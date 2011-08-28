@@ -93,7 +93,6 @@ function create_article_taxonomies() {
   );
   
   register_taxonomy('te_article-tag', 'te_article', $te_article_tag_args);
-  
 }
 
 add_action('init', 'article_register');

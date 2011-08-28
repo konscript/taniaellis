@@ -33,7 +33,9 @@
         <ul>
           <?php
           for ($i = 1 ; $i < 6; $i++) { 
-            echo '<li>' . get_post_meta($post->ID, 'te_lectures-bullets-bullet-' . $i, true) . '</li>';
+            $link_address = get_post_meta($post->ID, 'te_lectures-bullets-bullet-' . $i . '-link', true);
+            $link_text = get_post_meta($post->ID, 'te_lectures-bullets-bullet-' . $i, true);
+            echo '<li><a href="' . $link_address . '">' . $link_text . '</a></li>';
           }      
           ?>
         </ul>
