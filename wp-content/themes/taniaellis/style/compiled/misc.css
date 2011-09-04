@@ -1563,11 +1563,6 @@
   float: left;
   clear: left;
 }
-/* line 1306, ../sass/misc.scss */
-#page .right-sidebar .post-feed .options, #page .right-sidebar-single .post-feed .options {
-  float: right;
-  width: 390px;
-}
 /* line 1313, ../sass/misc.scss */
 #page .right-sidebar .posts-nav-links, #page .right-sidebar-single .posts-nav-links {
   width: 300px;
