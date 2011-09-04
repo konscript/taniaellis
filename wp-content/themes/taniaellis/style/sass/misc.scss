@@ -1087,6 +1087,25 @@
 			}
 		}
 		
+		.layout-square {
+			.image-text {
+				@include featured-image(100px, 0);
+				
+				.title {
+					margin-top: 5px;
+				}
+				
+				.excerpt {
+					width: 260px;
+				}
+				
+				.options {
+					float: right;
+					width: 100px;
+				}
+			}
+		}
+		
 		.widget-list {
 			.list {
 				.title {

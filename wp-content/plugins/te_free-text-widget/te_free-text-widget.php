@@ -266,6 +266,7 @@ class TE_FreeTextWidget extends WP_Widget {
 			<select id="<?php echo $layout_id; ?>" name="<?php echo $layout_name; ?>">
 				<option value="tall"<?php if($layout == "tall") echo " selected=\"selected\""; ?>>Tall</option>
 				<option value="wide"<?php if($layout == "wide") echo " selected=\"selected\""; ?>>Wide</option>
+				<option value="wide"<?php if($layout == "square") echo " selected=\"selected\""; ?>>Square</option>
 			</select>
 		</p>
 		
