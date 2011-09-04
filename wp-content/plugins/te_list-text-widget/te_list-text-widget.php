@@ -37,15 +37,11 @@ class TE_ListTextWidget extends WP_Widget {
 		
 		$iconURL = $instance['iconURL'];
 		
-		$i = 1;
-		$found = 0;
 		$items = array();
-		while($found < $instance['itemCount']) {
-			if(isset($instance["item_$i"]) and !empty($instance["item_$i"])) {
-				$items[] = $instance["item_$i"];
-				$found++;
+		foreach($instance as $key => $item) {
+			if(preg_match("/item\_([0-9]+)/", $key)) {
+				$items[$key] = $item;
 			}
-			$i++;
 		}
 		
 		echo $before_widget;
@@ -94,25 +90,10 @@ class TE_ListTextWidget extends WP_Widget {
 		$instance['link']				= strip_tags($new_instance['link']);
 		$instance['linkText']		= strip_tags($new_instance['linkText']);
 		
-		// for($i = 1; $i <= (int) $new_instance['itemCount']; $i++) {
-		// 		unset($instance["item_$i"]);
-		// 		if(isset($new_instance["item_$i"]))
-		// 			$instance["item_$i"] = strip_tags($new_instance["item_$i"]);
-		// 	}
-		
-		$i = 1;
-		$found = 0;
-		while($found < $instance['itemCount']) {
-			if(isset($new_instance["item_$i"])) {
-				if(empty($new_instance["item_$i"]))
-					unset($instance["item_$i"]);
-				else {
-					$instance["item_$i"] = strip_tags($new_instance["item_$i"]);
-					$found++;
-				}
-				
+		foreach($new_instance as $key => $item) {
+			if(preg_match("/item\_([0-9]+)/", $key)) {
+				$instance[$key] = strip_tags($new_instance[$key]);
 			}
-			$i++;
 		}
 		
 		return $instance;
@@ -132,10 +113,6 @@ class TE_ListTextWidget extends WP_Widget {
 		
 		foreach($defaults as $key => $item) {
 			$$key = (isset($instance[$key]) && !empty($instance[$key])) ? $instance[$key] : $defaults[$key];
-			// echo "key -> $key : def -> " . $defaults[$key] . " instance -> " . $instance[$key] . "<br />";
-			// $$key = (isset($instance[$key])) ? $instance[$key]: $defaults[$key];
-			// //echo $key . " : " . $instance[$key] . " : " . $defaults[$key] . "<br />";
-			// 
 			$idn = $key.'_id';
 			$nn = $key.'_name';
 					
@@ -143,24 +120,12 @@ class TE_ListTextWidget extends WP_Widget {
 			$$nn = $this->get_field_name($key);
 		}
 		
-		// $i = 1;
-		// $found = 0;
-		// $items = array();
-		// while($found <= $itemCount) {
-		// 	if(isset($instance["item_$i"]) and !empty($instance["item_$i"])) {
-		// 		$items["item_$i"] = $instance["item_$i"];
-		// 		$found++;
-		// 	}
-		// 	$i++;
-		// }
-		// 
-		
 		$items = array();
-		for($i = 1; $i <= $itemCount; $i++) {
-			if(isset($instance["item_$i"]))
-				$items["item_$i"] = $instance["item_$i"];
+		foreach($instance as $key => $item) {
+			if(preg_match("/item\_([0-9]+)/", $key)) {
+				$items[$key] = $item;
+			}
 		}
-		
 		
 		?>
 		
@@ -172,7 +137,7 @@ class TE_ListTextWidget extends WP_Widget {
 				name="<?php echo $titleA_name; ?>"
 				value="<?php echo $titleA; ?>" />
 		</p>
-
+		
 		<p>
 			<label for="<?php echo $titleB_id; ?>">Title (second):</label><br />
 			<input 
@@ -181,7 +146,7 @@ class TE_ListTextWidget extends WP_Widget {
 				name="<?php echo $titleB_name; ?>"
 				value="<?php echo $titleB; ?>" />
 		</p>
-		
+
 		<p>
 			<label for="<?php echo $iconRL_id; ?>">Icon:</label><br />
 			<input 
@@ -206,7 +171,7 @@ class TE_ListTextWidget extends WP_Widget {
 				name="<?php echo $header_name; ?>"
 				value="<?php echo $header; ?>" />
 		</p>
-		
+	
 		<p>
 			<label for="<?php echo $text_id; ?>">Text:</label><br />
 			<textarea
@@ -215,7 +180,7 @@ class TE_ListTextWidget extends WP_Widget {
 				style="width:100%;"
 				rows="6"><?php echo $text; ?></textarea>
 		</p>
-		
+
 		<p>
 			<label for="<?php echo $link_id; ?>">Link:</label><br />
 			<input 
@@ -224,7 +189,7 @@ class TE_ListTextWidget extends WP_Widget {
 				name="<?php echo $link_name; ?>"
 				value="<?php echo $link; ?>" />
 		</p>
-		
+
 		<p>
 			<label for="<?php echo $linkText_id; ?>">Link text:</label><br />
 			<input 
@@ -233,15 +198,7 @@ class TE_ListTextWidget extends WP_Widget {
 				name="<?php echo $linkText_name; ?>"
 				value="<?php echo $linkText; ?>" />
 		</p>
-		
-		<p>
-			<input 
-				type="hidden"
-				id="<?php echo $itemCount_id; ?>" 
-				name="<?php echo $itemCount_name; ?>"
-				value="<?php echo $itemCount; ?>" />
-		</p>
-		
+	
 		<p>
 			<input 
 				type="text"
@@ -253,38 +210,38 @@ class TE_ListTextWidget extends WP_Widget {
 			</a>
 		</p>
 		
-		<ul class="input-list">
-			<li class="hidden" style="display:none;">
-				<input 
-					type="text"
-					id=""
-					name=""
-					value="" />
-				<a href="javascript:void(0)" class="remove-field">
-					<img src="<?php echo WP_PLUGIN_URL . '/te_list-text-widget/remove.gif'; ?>" />
-				</a>
-			</li>
-			<?php foreach($items as $key => $item) : 
-				if($key == "item_1")
-					continue;
-					
-				$id = 'item_' . $i . '_id';
-				$name = 'item_' . $i . '_name';
-				$val = 'item_' . $i; ?>
-
-				<li>
+		<p>
+			<ul class="input-list">
+				<li class="hidden" style="display: none;">
 					<input 
 						type="text"
-						id="<?php echo $this->get_field_id($key); ?>"
-						name="<?php echo $this->get_field_name($key); ?>"
-						value="<?php echo $item; ?>" />
+						id=""
+						name=""
+						value="" />
 					<a href="javascript:void(0)" class="remove-field">
 						<img src="<?php echo WP_PLUGIN_URL . '/te_list-text-widget/remove.gif'; ?>" />
 					</a>
 				</li>
-			<?php endforeach; ?>
-		</ul>
-		<a href="javascript:void(0)" class="add_field">Add field</a>
+				<?php if(count($items) > 0) : ?>
+					<?php foreach($items as $key => $item) : if($key == "item_1") continue; ?>
+						<li>
+							<input 
+								type="text"
+								id="<?php echo $this->get_field_id($key); ?>"
+								name="<?php echo $this->get_field_name($key); ?>"
+								value="<?php echo $item; ?>" />
+							<a href="javascript:void(0)" class="remove-field">
+								<img src="<?php echo WP_PLUGIN_URL . '/te_list-text-widget/remove.gif'; ?>" />
+							</a>
+						</li>
+					<?php endforeach; ?>
+				<?php endif; ?>
+			</ul>
+		</p>
+		
+		<p>
+			<a href="javascript:void(0)" class="add_field">Add field</a>
+		</p>
 
 		<?php
 	}
@@ -299,7 +256,7 @@ add_action('widgets_init', 'te_load_ListTextWidget');
 function te_load_ListTextWidget_scripts() {
 	wp_register_script('admin-helper', WP_PLUGIN_URL . '/te_list-text-widget/admin-helper.js');
 	
-	wp_enqueue_script(array('jquery', 'editor', 'thickbox', 'media-upload'));
+	wp_enqueue_script(array('jquery', 'thickbox', 'media-upload'));
 	wp_enqueue_script('admin-helper');
 }
 

@@ -7,7 +7,7 @@ var widget;
 function start_upload(btn) {
 	widget = jQuery(btn).closest('.widget');
 	
-	if(jQuery(widget).is('.image')) {
+	if(jQuery(btn).is('.image')) {
 		type = 'image';
 		field = '.image-upload-field';
 	} else {

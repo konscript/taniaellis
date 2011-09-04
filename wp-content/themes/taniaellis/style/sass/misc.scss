@@ -954,6 +954,28 @@
 		margin-left: -16px;
 		min-height: 992px; // If stuff goes wrong, delet this
 		padding-left: 16px;
+		
+		.widget-view-all {
+			clear: left;
+			float: left;
+			margin-top: 0px;
+			margin-bottom: 40px;
+			width: 320px;
+			
+			a {
+				@include transition(background, 0.1s, ease-in-out);
+				background: rgb(160, 157, 148);
+				color: #fff;
+				float: right;
+				margin-right: 20px;
+				padding: 5px 15px;
+				text-decoration: none;
+				
+				&:hover {
+					background: 0.9 * rgb(160, 157, 148);
+				}
+			}
+		}
 
 		.widget {
 			clear: left;
@@ -1034,9 +1056,13 @@
 			.image-text {
 				@include featured-image(62px, 15px);
 				
-				.title, .excerpt {
-					margin-left: 0;
+				.title {
 					float: left;
+				}
+				
+				.excerpt {
+					float: left;
+					margin-left: 0;
 				}
 			}
 		}
@@ -1441,6 +1467,28 @@
 			
 			.comment-author {
 				margin-bottom: 15px;
+			}
+		}
+		
+		.widget-view-all {
+			clear: left;
+			float: left;
+			margin-top: 0px;
+			margin-bottom: 40px;
+			width: 650px;
+			
+			a {
+				@include transition(background, 0.1s, ease-in-out);
+				background: rgb(160, 157, 148);
+				color: #fff;
+				float: right;
+				margin-right: 20px;
+				padding: 5px 15px;
+				text-decoration: none;
+				
+				&:hover {
+					background: 0.9 * rgb(160, 157, 148);
+				}
 			}
 		}
 		
