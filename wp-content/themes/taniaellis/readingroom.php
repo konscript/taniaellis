@@ -21,7 +21,6 @@
 			'menu_class'		=> 'navigation-header',
 			'menu_id'			=> 'navigation-header-standard',
 			'link_before'		=> '<span>&nbsp;</span>',
-			'walker' => new TE_Walker()
 	        )); 
 	    ?>
 	    
