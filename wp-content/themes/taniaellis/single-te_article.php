@@ -37,8 +37,17 @@
                               
                               <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
                                 <div class="post-header">
+                                  <?php 
+                                    $primary_category_id = get_post_meta($post->ID, 'te_article-primary-category-cat', true);
+
+                                    if(!$primary_category_id) {
+                                      $primary_category_name = 'All Articles';
+                                    } else {
+                                      $primary_category_name = get_term($primary_category_id, 'te_article-category')->name;
+                                    }
+                                  ?>
                                   <h2 class="first-line">Articles</h2>
-                                  <h2 class="second-line">Ethics / Sustainability</h2>
+                                  <h2 class="second-line"><?php echo $primary_category_name; ?></h2>
                                 </div>
                                                                 
                                 <div class="post">

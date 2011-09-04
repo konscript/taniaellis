@@ -1,5 +1,4 @@
 <?php
-
 function article_register() {
 
   $labels = array(
@@ -33,6 +32,42 @@ function article_register() {
 	  );
 	  
 	  register_post_type('te_article', $args);
+	  create_article_taxonomies();
+	  create_article_category_metabox();
+}
+
+function create_article_category_metabox() {
+  
+  $category_terms = wp_get_object_terms($_GET['post'], 'te_article-category');
+  
+  foreach($category_terms as $key => $term) {
+    $categories[$term->term_id] = $term->name;
+  }
+  
+  $prefix = 'te_article-primary-category';
+  
+  $meta_boxes[] = array(
+    
+  	'id' => $prefix,
+  	'title' => 'Primary Category',
+  	'pages' => array('te_article'),
+  	'context' => 'side',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Primary Category',
+  			'id' => $prefix . '-cat',
+  			'type' => 'select',
+  			'options' => $categories	
+  		)
+  	)
+  );
+
+
+  foreach($meta_boxes as $meta_box) {
+    $my_box = new RW_Meta_Box($meta_box);
+  }
+ 
 }
 
 
@@ -96,7 +131,6 @@ function create_article_taxonomies() {
 }
 
 add_action('init', 'article_register');
-add_action('init', 'create_article_taxonomies');
 
 /* ADD CUSTOM FIELDS TO ARTICLE POST TYPE */
 
