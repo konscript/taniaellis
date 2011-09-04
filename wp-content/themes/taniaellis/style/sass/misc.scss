@@ -1203,6 +1203,12 @@
 		background: url('../../images/right-fade-background.png') top right no-repeat;
 		min-height: 992px; // If stuff goes wrong, delete this...
 		
+		.layout-square {
+			.image-text {
+				@include featured-image(100px, 0);
+			}
+		}
+		
 		.widget-image-text {
 			.image-text {
 				@include featured-image(240px, 20px);
