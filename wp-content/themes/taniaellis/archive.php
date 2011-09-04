@@ -156,7 +156,7 @@
                             
                               <div class="post-header">
                                 <h2 class="first-line">Articles</h2>
-                                <h2 class="second-line">Ethics / Sustainability</h2>
+                                <h2 class="second-line"><?php echo $wp_query->queried_object->name; ?></h2>
                               </div>
                               <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                                
                                 <div class="post-feed">

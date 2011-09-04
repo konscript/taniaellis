@@ -15,13 +15,16 @@
 
 	<div id="header-container">
 		
+		
 		<?php wp_nav_menu(array(
 	    'theme_location' 	=> 'reading-room-menu',
 			'menu_class'		=> 'navigation-header',
 			'menu_id'			=> 'navigation-header-standard',
-			'link_before'		=> '<span>&nbsp;</span>'
+			'link_before'		=> '<span>&nbsp;</span>',
+			'walker' => new TE_Walker()
 	        )); 
 	    ?>
+	    
 		<div class="header-content">
 			<div class="left-column" id="reading-room-left">
         <div class="header-title">

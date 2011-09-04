@@ -201,4 +201,18 @@ function te_page_template_meta_boxes() {
   }
 }
 
+    
+class TE_Walker extends Walker_Page {
+  
+  function start_lvl(&$output, $depth) {
+    $output .= 'start lvl';
+  }
+  
+  function start_el(&$output, $page, $depth, $args, $current_page) {
+    $output .= 'hej';
+  }
+}
+  
+
+
 ?>

@@ -43,7 +43,7 @@ Template Name: Articles
                             
                               <div class="post-header">
                                 <h2 class="first-line">Articles</h2>
-                                <h2 class="second-line">Ethics / Sustainability</h2>
+                                <h2 class="second-line">All Articles</h2>
                               </div>
                               <?php query_posts(array('post_type' => 'te_article', 'post_status' => 'publish', 'paged' => $paged)); ?>
                               <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                                
