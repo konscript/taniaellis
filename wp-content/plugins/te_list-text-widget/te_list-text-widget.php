@@ -91,7 +91,7 @@ class TE_ListTextWidget extends WP_Widget {
 		$instance['linkText']		= strip_tags($new_instance['linkText']);
 		
 		foreach($new_instance as $key => $item) {
-			if(preg_match("/item\_([0-9]+)/", $key)) {
+			if(preg_match("/item\_([0-9]+)/", $key) && !empty($item)) {
 				$instance[$key] = strip_tags($new_instance[$key]);
 			}
 		}
@@ -205,9 +205,6 @@ class TE_ListTextWidget extends WP_Widget {
 				id="<?php echo $this->get_field_id('item_1'); ?>"
 				name="<?php echo $this->get_field_name('item_1'); ?>"
 				value="<?php echo $instance['item_1']; ?>" />
-			<a href="javascript:void(0)" class="remove-field">
-				<img src="<?php echo WP_PLUGIN_URL . '/te_list-text-widget/remove.gif'; ?>" />
-			</a>
 		</p>
 		
 		<p>
