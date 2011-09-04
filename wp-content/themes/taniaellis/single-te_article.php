@@ -91,7 +91,6 @@
                                 
                               <?php endwhile; ?>
                               <?php endif; ?>
-                              <?php echo '<pre>'; print_r($wp_query); echo '</pre>'; ?>
                               
                               <div class="clearer"></div>
                               
