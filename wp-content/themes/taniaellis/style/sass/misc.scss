@@ -1221,7 +1221,7 @@
 			float: left;
 			margin-bottom: 20px;
 			margin-left: 40px;
-			padding-bottom: 50px;
+			padding-bottom: 30px;
 			//padding-right: 20px;
 			width: 534px;
 			
@@ -1257,7 +1257,14 @@
 				}
 			}
 			
+			.read-more {
+				float: right;
+				margin-right: 50px;
+				margin-top: 15px;
+			}
+			
 			.addthis_toolbox {
+				margin-top: 12px;
 				float: right;
 			}
 		}
@@ -1377,6 +1384,11 @@
 				height: 20px;
 				padding: 2px;
 				width: 340px;
+				
+				&:focus {
+					border: 1px solid #7FB987;
+					outline: none;
+				}
 			}
 			
 			textarea {
@@ -1385,6 +1397,11 @@
 				padding: 2px;
 				resize: none;
 				width: 390px;
+				
+				&:focus {
+					border: 1px solid #7FB987;
+					outline: none;
+				}
 			}
 			
 			input[type=submit] {
