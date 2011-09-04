@@ -56,6 +56,22 @@ class TE_PostWidget extends WP_Widget {
 			'tall'		=> 'post-tall-thumbnail'
 		);
 		
+		$type = array(
+			'post'									=> 'posts',
+			'te_article'						=> 'articles',
+			'te_event'							=> 'events',
+			'te_testemonial'				=> 'testemonials',
+			'te_testemonial_video'	=> 'testemonials'
+		);
+		
+		$url = array(
+			'post'									=> 'blog',
+			'te_article'						=> 'reading-room/articles',
+			'te_event'							=> 'events',
+			'te_testemonail'				=> 'cases',
+			'te_testemonail_video'	=> 'cases'
+		);
+		
 		?>
 		
 		<div class="widget widget-<?php echo $wclass[$instance['type']]; ?>">
@@ -85,6 +101,13 @@ class TE_PostWidget extends WP_Widget {
 		
 		?>
 		</div>
+		
+		<?php if($instance['viewAllButton']) : ?>
+		<div class="widget-view-all">
+			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>">View all <?php echo $type[$instance['type']]; ?></a>
+		</div>
+		<?php endif; ?>
+		
 		<?php
 		
 		echo $after_widget;
@@ -93,12 +116,13 @@ class TE_PostWidget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		
-		$instance['titleA'] 			= strip_tags($new_instance['titleA']);
-		$instance['titleB'] 			= strip_tags($new_instance['titleB']);
-		$instance['type']					= strip_tags($new_instance['type']);
-		$instance['size']					= strip_tags($new_instance['size']);
-		$instance['items']				= strip_tags($new_instance['items']);
-		$instance['thumbnails'] 	= strip_tags($new_instance['thumbnails']);
+		$instance['titleA'] 				= strip_tags($new_instance['titleA']);
+		$instance['titleB'] 				= strip_tags($new_instance['titleB']);
+		$instance['type']						= strip_tags($new_instance['type']);
+		$instance['size']						= strip_tags($new_instance['size']);
+		$instance['items']					= strip_tags($new_instance['items']);
+		$instance['thumbnails'] 		= strip_tags($new_instance['thumbnails']);
+		$instance['viewAllButton'] 	= strip_tags($new_instance['viewAllButton']);
 		
 		for($i = 1; $i <= $instance['items']; $i++) {
 			unset($instance['item_$i']);
@@ -112,12 +136,13 @@ class TE_PostWidget extends WP_Widget {
 	
 	function form($instance) {
 		$defaults = array(
-			'titleA'			=> '',
-			'titleB'			=> '',
-			'type'				=> 'post',
-			'size'				=> 'wide',
-			'items'				=> '3',
-			'thumbnails'	=> true,
+			'titleA'				=> '',
+			'titleB'				=> '',
+			'type'					=> 'post',
+			'size'					=> 'wide',
+			'items'					=> '3',
+			'thumbnails'		=> true,
+			'viewAllButton'	=> false
 		);
 		
 		?>
@@ -183,6 +208,15 @@ class TE_PostWidget extends WP_Widget {
 				id="<?php echo $this->get_field_id('thumbnails'); ?>" 
 				name="<?php echo $this->get_field_name('thumbnails'); ?>" 
 				<?php if($instance['thumbnails']) : ?> checked="checked"<?php endif; ?>>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('viewAllButton'); ?>">Show View All Button:</label>
+			<input 
+				type="checkbox" 
+				id="<?php echo $this->get_field_id('viewAllButton'); ?>" 
+				name="<?php echo $this->get_field_name('viewAllButton'); ?>" 
+				<?php if($instance['viewAllButton']) : ?> checked="checked"<?php endif; ?>>
 		</p>
 		
 		<?php

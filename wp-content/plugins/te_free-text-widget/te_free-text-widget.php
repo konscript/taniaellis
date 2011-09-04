@@ -35,6 +35,8 @@ class TE_FreeTextWidget extends WP_Widget {
 		
 		$link = $instance['link'];
 		$linkText = $instance['linkText'];
+		$viewAllURL = $instance['viewAllURL'];
+		$viewAllText = $instance['viewAllText'];
 		$imageURL = $instance['imageURL'];
 		$iconURL = $instance['iconURL'];
 		$metadata = $instance['metadata'];
@@ -61,8 +63,6 @@ class TE_FreeTextWidget extends WP_Widget {
 					<p class="meta-data"><?php echo $metadata; ?></p>
 					<span class="by-line"><?php echo $byline; ?></span>
 					
-					<div class="clearer"></div>
-					
 					<a class="title" href="<?php echo $link; ?>"><?php echo $header; ?></a>
 					<p class="excerpt"><?php echo $text; ?></p>
 					
@@ -75,6 +75,12 @@ class TE_FreeTextWidget extends WP_Widget {
 				</div>
 			</div>
 		</div>
+		
+		<?php if(!empty($viewAllText) && !empty($viewAllURL)) : ?>
+		<div class="widget-view-all">
+			<a href="<?php echo $viewAllURL; ?>"><?php echo $viewAllText; ?></a>
+		</div>
+		<?php endif; ?>
 		
 		<?php
 		
@@ -89,6 +95,8 @@ class TE_FreeTextWidget extends WP_Widget {
 		$instance['header']			= strip_tags($new_instance['header']);
 		$instance['link']				= strip_tags($new_instance['link']);
 		$instance['linkText']		= strip_tags($new_instance['linkText']);
+		$instance['viewAllURL']	= strip_tags($new_instance['viewAllURL']);
+		$instance['viewAllText']		= strip_tags($new_instance['viewAllText']);
 		$instance['imageURL']		= strip_tags($new_instance['imageURL']);
 		$instance['iconURL']		= strip_tags($new_instance['iconURL']);
 		$instance['metadata']		= strip_tags($new_instance['metadata']);
@@ -115,6 +123,8 @@ class TE_FreeTextWidget extends WP_Widget {
 			'layout'			=> 'tall',
 			'byline'			=> '',
 			'metadata'		=> '',
+			'viewAllText' => 'View All',
+			'viewAllURL'	=> ''
 		);
 		
 		foreach($defaults as $key => $value) {
@@ -231,6 +241,24 @@ class TE_FreeTextWidget extends WP_Widget {
 				id="<?php echo $metadata_id; ?>"
 				name="<?php echo $metadata_name; ?>"
 				value="<?php echo $metadata; ?>" />
+		</p>
+		
+		<p>
+			<label for="<?php echo $viewAllURL_id; ?>">View All URL:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $viewAllURL_id; ?>"
+				name="<?php echo $viewAllURL_name; ?>"
+				value="<?php echo $viewAllURL; ?>" />
+		</p>
+
+		<p>
+			<label for="<?php echo $linkText_id; ?>">View All Text:</label><br />
+			<input 
+				type="text"
+				id="<?php echo $viewAllText_id; ?>"
+				name="<?php echo $viewAllText_name; ?>"
+				value="<?php echo $viewAllText; ?>" />
 		</p>
 		
 		<p>
