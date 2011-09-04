@@ -205,11 +205,7 @@
                                   
 																	<div class="options">
 	                                  <a href="<?php the_permalink(); ?>#respond" class="add-comment"> Add Comment (<?php comments_number('0', '1', '') ?>)</a>
-																		<?php if(get_post_type($post->ID) == 'te_article') :?>
-																			<a class="read-more" href="<?php te_get_article_url($post->ID); ?>">Read More</a>
-																		<?php else : ?>
-																			<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
-	                                  <?php endif; ?>
+																		<a class="read-more" href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>
 																	</div>
                                 </div>
                                 
