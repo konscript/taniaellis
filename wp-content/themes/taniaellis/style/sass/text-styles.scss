@@ -513,7 +513,8 @@ html>body {
 		}
 		
 		.entry {
-			line-height: 1.3em;
+			font-size: 1em;
+			line-height: 1.5em;
 			
 			p {
 				margin-bottom: 1em;
@@ -543,7 +544,7 @@ html>body {
 			}
 		}
 		
-			.read-more {
+			.read-more {						
 				a {
 					@include transition(color, 0.1s, ease-in-out);
 				
