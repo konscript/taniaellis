@@ -18,5 +18,7 @@
 		<div class="options">
 			<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
 		</div>
+		
+		<div class="clearer"></div>
 	</div>
 </div>

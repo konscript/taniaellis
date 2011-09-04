@@ -23,100 +23,6 @@ class TE_PostStreamWidget extends WP_Widget {
 		);
 	}
 	
-	/*function widget($args, $instance) {
-		extract($args);
-		
-		echo $before_widget;
-		
-		$titleA = apply_filters('widget_title', $instance['titleA']);
-		$titleB = apply_filters('widget_title', $instance['titleB']);
-		
-		$wclass = array(
-			'post'		=> 'blog',
-			'event'		=> 'event',
-			'article'	=> 'reading-room'
-		);
-		
-		$ptype = array(
-			'post'		=> 'post',
-			'event'		=> 'te_event',
-			'article'	=> 'te_article'
-		);
-		
-		$tsize = array(
-			'wide'		=> 'post-wide-thumbnail',
-			'square'	=> 'post-square-thumbnail',
-			'tall'		=> 'post-tall-thumbnail'
-		);
-		
-		?>
-		
-		<div class="widget widget-<?php echo $wclass[$instance['type']]; ?>">
-			<div class="header-container">
-				<h2 class="first-line"><?php echo $titleA; ?><h2>
-				<h2 class="second-line"><?php echo $titleB; ?></h2>
-			</div>
-			
-		<?php
-		
-		$query = new WP_Query('post_type='. $ptype[$instance['type']] .'&post_status=publish,future');
-		
-		$count = 0;
-		while($query->have_posts() && $count < $instance['items']) : $query->the_post();
-			
-			if($instance['type'] == 'event') {
-				$end = new DateTime(
-									get_post_meta(get_the_ID(), '_year', true)		.'-'.
-									get_post_meta(get_the_ID(), '_month', true)		.'-'.
-									get_post_meta(get_the_ID(), '_day', true)		.' '.
-									get_post_meta(get_the_ID(), '_hour', true)		.':'.
-									get_post_meta(get_the_ID(), '_minute', true)
-								);
-			}
-			
-			?>
-			
-			<div class="item <?php echo $wclass[$instance['type']]; ?>">
-				<div class="item-content">
-					<?php if($instance['thumbnails']) : ?>
-					<a href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail($tsize[$instance['size']], array('class' => 'featured-image')); ?>
-					</a>
-					<?php endif; ?>
-				
-					<p class="meta-data"><?php the_time('j M Y H:i'); if(isset($end)) echo " - ".date_format($end, 'j M Y H:i'); ?></p>
-					
-					<span class="by-line">
-						<?php if($instance['type'] == 'article') : ?>
-							Article
-						<?php else : ?>
-						By <?php the_author(); ?>
-						<?php endif; ?>
-					</span>
-					
-					<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					<p class="excerpt"><?php the_excerpt_rss(); ?></p>
-				
-					<div class="options">
-						<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
-					</div>
-				</div>
-			</div>
-			
-			<?php
-			
-			$count++;
-		endwhile;
-		
-		wp_reset_query();
-		
-		?>
-		</div>
-		<?php
-		
-		echo $after_widget;
-	}*/
-	
 	function widget($args, $instance) {
 		extract($args);
 		
@@ -137,6 +43,22 @@ class TE_PostStreamWidget extends WP_Widget {
 			'wide'		=> 'post-wide-thumbnail',
 			'square'	=> 'post-square-thumbnail',
 			'tall'		=> 'post-tall-thumbnail'
+		);
+		
+		$type = array(
+			'post'									=> 'blog posts',
+			'te_article'						=> 'articles',
+			'te_event'							=> 'events',
+			'te_testemonial'				=> 'testemonials',
+			'te_testemonial_video'	=> 'testemonials'
+		);
+		
+		$url = array(
+			'post'									=> 'blog',
+			'te_article'						=> 'reading-room/articles',
+			'te_event'							=> 'events',
+			'te_testemonail'				=> 'cases',
+			'te_testemonail_video'	=> 'cases'
 		);
 		
 		?>
@@ -164,6 +86,13 @@ class TE_PostStreamWidget extends WP_Widget {
 		
 		?>
 		</div>
+		
+		<?php if($instance['viewAllButton']) : ?>
+		<div class="widget-view-all">
+			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>">View all <?php echo $type[$instance['type']]; ?></a>
+		</div>
+		<?php endif; ?>
+		
 		<?php
 		
 		echo $after_widget;
@@ -178,6 +107,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		$instance['size']		= strip_tags($new_instance['size']);
 		$instance['items']		= strip_tags($new_instance['items']);
 		$instance['thumbnails'] = strip_tags($new_instance['thumbnails']);
+		$instance['viewAllButton'] 	= strip_tags($new_instance['viewAllButton']);
 		
 		return $instance;
 	}
@@ -189,7 +119,8 @@ class TE_PostStreamWidget extends WP_Widget {
 			'type'				=> 'post',
 			'size'				=> 'wide',
 			'items'				=> '3',
-			'thumbnails'		=> true
+			'thumbnails'		=> true,
+			'viewAllButton'	=> false
 		);
 		
 		?>
@@ -254,6 +185,15 @@ class TE_PostStreamWidget extends WP_Widget {
 				id="<?php echo $this->get_field_id('thumbnails'); ?>" 
 				name="<?php echo $this->get_field_name('thumbnails'); ?>" 
 				<?php if($instance['thumbnails']) : ?> checked="checked"<?php endif; ?>>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('viewAllButton'); ?>">Show View All Button:</label>
+			<input 
+				type="checkbox" 
+				id="<?php echo $this->get_field_id('viewAllButton'); ?>" 
+				name="<?php echo $this->get_field_name('viewAllButton'); ?>" 
+				<?php if($instance['viewAllButton']) : ?> checked="checked"<?php endif; ?>>
 		</p>
 		
 		<?php
