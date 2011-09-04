@@ -46,7 +46,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		);
 		
 		$type = array(
-			'post'									=> 'posts',
+			'post'									=> 'blog posts',
 			'te_article'						=> 'articles',
 			'te_event'							=> 'events',
 			'te_testemonial'				=> 'testemonials',
