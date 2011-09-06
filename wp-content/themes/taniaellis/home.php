@@ -62,13 +62,13 @@ Template Name: Home
 		<!-- id="newsletter-signup-box" -->
 
 		<div id="social-bar-frontpage" class="addthis_toolbox addthis_default_style addthis_32x32_style">
-			<ul>
-		  	<li><a class="addthis_button_facebook"></a></li>
-			  <li><a class="addthis_button_twitter"></a></li>
-			  <li><a class="addthis_button_linkedin"></a></li>
-			  <li><a class="addthis_button_youtube"></a></li>
-			  <li><a class="addthis_button_rss"></a></li>
-			</ul>
+      <ul>
+        <li><a class="addthis_button_facebook"></a></li>
+        <li><a class="addthis_button_twitter"></a></li>
+        <li><a class="addthis_button_linkedin"></a></li>
+        <li><a class="addthis_button_youtube"></a></li>
+        <li><a class="addthis_button_rss"></a></li>
+      </ul>
 
 
 

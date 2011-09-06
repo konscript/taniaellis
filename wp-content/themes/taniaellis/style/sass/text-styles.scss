@@ -423,12 +423,13 @@ html>body {
 			text-transform: uppercase;
 
 			span.box-first-line {
-
+				line-height: 1em;
 			}
 
 			span.box-second-line {
 				font-family: "Arial Black", Arial, Helvetica, sans-serif;
 				font-size: 1.3em;
+				line-height: 1em;
 			}
 		}
 		
