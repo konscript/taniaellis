@@ -53,14 +53,7 @@
 									<p class="meta-data"><?php the_time('j M Y'); ?></p>
 
 									<span class="by-line">
-							
-										<?php 
-											$cats = get_the_category(); 
-											if(is_array($cats) and count($cats) > 0)
-												echo $cats[0]->name;
-											else
-												echo $cats->name;
-										?>
+										<?php echo $wp_query->queried_object->name; ?>
 									</span>
 
 									<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -73,7 +66,7 @@
 									<div class="clearer"></div>
 								</div> <!-- .item.content //-->
 							</div> <!-- .item .blog //-->
-						<?php endwhile; // # while have_posts() ?>
+						 <?php endwhile; // # while have_posts() ?>
 					</div> <!- .widget .widget-blog //-->
 				<?php endif; // # if have_posts() ?>
 				 
