@@ -34,7 +34,7 @@
 					<?php
 					
 					$terms = get_terms('post_tag', array(
-						'number'				=> 12,
+						'number'				=> 7,
 						'hierarchical'	=> 0,
 						'orderby'				=> 'count',
 						'order'					=> 'DESC'
