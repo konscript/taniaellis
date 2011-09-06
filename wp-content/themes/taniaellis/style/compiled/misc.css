@@ -1625,11 +1625,11 @@
   height: 100px;
   position: relative;
   vertical-align: middle;
+  text-align: center;
   width: 100px;
 }
-/* line 1347, ../sass/misc.scss */
+/* line 1348, ../sass/misc.scss */
 #page .right-sidebar .post-feed .thumb-wrapper .thumb-container .wp-post-image, #page .right-sidebar-single .post-feed .thumb-wrapper .thumb-container .wp-post-image {
-  margin: 0 auto;
   vertical-align: middle;
   line-height: 100px;
 }
