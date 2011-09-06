@@ -64,7 +64,13 @@ class TE_RelatedPostsWidget extends WP_Widget {
 									<span class="by-line">By <?php the_author(); ?></span>
 							
 									<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-									<p class="excerpt"><?php the_excerpt_rss(); ?></a>
+									<p class="excerpt">
+										<?php if($instance['postType'] == 'te_article') : ?>
+											<?php echo te_get_article_author(the_ID()); ?>
+										<?php else : ?>
+											<?php the_excerpt_rss(); ?>
+										<?php endif; ?>
+									</a>
 								
 									<div class="options">
 										<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
