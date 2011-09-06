@@ -36,8 +36,13 @@ class TE_RelatedPostsWidget extends WP_Widget {
 		echo $before_widget;
 		
 		$scores = the_related_get_scores(); // pass the post ID if outside of the loop
-    $posts = array_slice( array_keys( $scores ), 0, 5); // keep only the the five best results
-    $args = array(
+			
+		if(is_array($scores) && count($scores) > 0)
+    	$posts = array_slice( array_keys( $scores ), 0, 5); // keep only the the five best results
+		else
+    	$posts = array();
+
+		$args = array(
 				'post_type'					=> $instance['postType'],
         'post__in'          => $posts,
         'posts_per_page'    => 3,
@@ -51,35 +56,34 @@ class TE_RelatedPostsWidget extends WP_Widget {
 					<h2 class="first-line"><?php echo $titleA; ?><h2>
 					<h2 class="second-line"><?php echo $titleB; ?></h2>
 				</div>
-					<?php while($query->have_posts()) : ?>
-						<?php $query->the_post(); ?>
-			
-						<div class="item blog">
-							<div class="item-content">
-									<a href="<?php the_permalink(); ?>">
-										<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
-									</a>
-							
-									<p class="meta-data"><?php the_time('j M Y H:i') ?></p>
-									<span class="by-line">By <?php the_author(); ?></span>
-							
-									<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-									<p class="excerpt">
-										<?php if($instance['postType'] == 'te_article') : ?>
-											<?php echo te_get_article_author(the_ID()); ?>
-										<?php else : ?>
-											<?php the_excerpt_rss(); ?>
-										<?php endif; ?>
-									</a>
-								
-									<div class="options">
-										<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
-									</div>
-							</div>
+				<?php while($query->have_posts()) : ?>
+					<?php $query->the_post(); ?>
+					<div class="item blog">
+						<div class="item-content">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
+								</a>
+					
+								<p class="meta-data"><?php the_time('j M Y H:i') ?></p>
+								<span class="by-line">
+									<?php if($instance['postType'] == 'te_article') : ?>
+										<?php //echo te_get_article_author(get_the_ID()); ?>
+										Article
+									<?php else : ?>
+										By <?php the_author(); ?>
+									<?php endif; ?>
+								</span>
+					
+								<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<p class="excerpt"><?php the_excerpt_rss(); ?></a>
+						
+								<div class="options">
+									<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
+								</div>
 						</div>
-			
-					<?php endwhile; ?>
-				</div>
+					</div>
+				<?php endwhile; ?>
+			</div>		
 		<?php endif;
 		
 		wp_reset_query();
