@@ -34,7 +34,7 @@
 					<?php
 					
 					$terms = get_terms('post_tag', array(
-						'number'				=> 12,
+						'number'				=> 7,
 						'hierarchical'	=> 0,
 						'orderby'				=> 'count',
 						'order'					=> 'DESC'
@@ -67,8 +67,8 @@
 					foreach($terms as $term) :
 						$id = $term->term_id;
 						$link = clean_url(get_tag_link($id));
-						$class_id = ($min_class + (($scores[$id] - $min_score) * $step));
-						
+						//$class_id = ($min_class + (($scores[$id] - $min_score) * $step));
+						$class_id = rand($min_class, $max_class);
 						?>
 						
 						<a href="<?php echo $link ?>" class="tag-<?php echo $id; ?> s<?php echo $class_id; ?>"><?php echo $term->name; ?></a>&nbsp;
