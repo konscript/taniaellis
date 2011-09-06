@@ -48,17 +48,13 @@ Template Name: Articles
                               <?php query_posts(array('post_type' => 'te_article', 'post_status' => 'publish', 'paged' => $paged)); ?>
                               <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                                
                                 <div class="post-feed">
-                                  <?php
-                                    switch (get_post_type($post->ID)) {
-                                      case 'te_article':
-                                        the_post_thumbnail('post-square-thumbnail');
-                                        break;
-
-                                      default:
-                                        # code...
-                                        break;
-                                    }
-                                  ?>
+                                    <?php if(has_post_thumbnail($post->ID)): ?>
+                                      <div class="thumb-wrapper">
+                                        <div class="thumb-container">
+                                          <?php the_post_thumbnail('post-square-thumbnail'); ?>
+                                        </div>
+                                      </div>
+                                    <?php endif; ?>
                                     <p class="byline">
                                       <?php
                                         echo te_get_article_author($post->ID);
