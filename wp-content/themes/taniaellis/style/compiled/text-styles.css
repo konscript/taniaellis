@@ -827,3 +827,29 @@ html > body {
   font-size: 1em;
   font-weight: bold;
 }
+
+/* line 833, ../sass/text-styles.scss */
+#tagcloud .s1, .widget-tagcloud .tagcloud .s1 {
+  color: #a8a6cd;
+  font-size: 14px;
+}
+/* line 834, ../sass/text-styles.scss */
+#tagcloud .s2, .widget-tagcloud .tagcloud .s2 {
+  color: #91b997;
+  font-size: 16px;
+}
+/* line 835, ../sass/text-styles.scss */
+#tagcloud .s3, .widget-tagcloud .tagcloud .s3 {
+  color: #e7cd30;
+  font-size: 18px;
+}
+/* line 836, ../sass/text-styles.scss */
+#tagcloud .s4, .widget-tagcloud .tagcloud .s4 {
+  color: #83a8c2;
+  font-size: 20px;
+}
+/* line 837, ../sass/text-styles.scss */
+#tagcloud .s5, .widget-tagcloud .tagcloud .s5 {
+  color: #d7b590;
+  font-size: 22px;
+}
