@@ -1330,11 +1330,25 @@
 			//padding-right: 20px;
 			width: 514px;
 			
-			
-			.wp-post-image {
-				border: 5px solid #E1DCD8;
+			.thumb-wrapper {
 				float: left;
 				margin: 0 20px 10px 0;
+				
+				.thumb-container {
+					border: 5px solid #E1DCD8;
+					//float: left;
+					display: table-cell;
+					height: 100px;
+					//line-height: 100px;
+					position: relative;
+					vertical-align: middle;
+					width: 100px;
+
+					.wp-post-image {
+						vertical-align: middle;
+						line-height: 100px;
+					}
+				}
 			}
 			
 				
