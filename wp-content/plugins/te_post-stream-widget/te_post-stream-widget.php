@@ -89,7 +89,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		
 		<?php if($instance['viewAllButton']) : ?>
 		<div class="widget-view-all">
-			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>/all/">View all <?php echo $type[$instance['type']]; ?></a>
+			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>all/">View all <?php echo $type[$instance['type']]; ?></a>
 		</div>
 		<?php endif; ?>
 		
