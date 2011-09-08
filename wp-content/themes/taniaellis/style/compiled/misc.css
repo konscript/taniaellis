@@ -911,7 +911,6 @@
   background-image: -webkit-linear-gradient(top, #a4a19c, #7c7972);
   background-image: -moz-linear-gradient(top, #a4a19c, #7c7972);
   background-image: -o-linear-gradient(top, #a4a19c, #7c7972);
-  background-image: -ms-linear-gradient(top, #a4a19c, #7c7972);
   background-image: linear-gradient(top, #a4a19c, #7c7972);
   background-color: #7C7972;
   display: block;
@@ -927,7 +926,6 @@
   background-image: -webkit-linear-gradient(top, #888682, #67645f);
   background-image: -moz-linear-gradient(top, #888682, #67645f);
   background-image: -o-linear-gradient(top, #888682, #67645f);
-  background-image: -ms-linear-gradient(top, #888682, #67645f);
   background-image: linear-gradient(top, #888682, #67645f);
 }
 /* line 754, ../sass/misc.scss */
@@ -937,7 +935,6 @@
   background-image: -webkit-linear-gradient(top, #67645f, #888682);
   background-image: -moz-linear-gradient(top, #67645f, #888682);
   background-image: -o-linear-gradient(top, #67645f, #888682);
-  background-image: -ms-linear-gradient(top, #67645f, #888682);
   background-image: linear-gradient(top, #67645f, #888682);
 }
 
@@ -1091,7 +1088,6 @@
   background-image: -webkit-linear-gradient(top, #a4a19c, #7c7972);
   background-image: -moz-linear-gradient(top, #a4a19c, #7c7972);
   background-image: -o-linear-gradient(top, #a4a19c, #7c7972);
-  background-image: -ms-linear-gradient(top, #a4a19c, #7c7972);
   background-image: linear-gradient(top, #a4a19c, #7c7972);
   background-color: #7C7972;
   display: block;
@@ -1108,7 +1104,6 @@
   background-image: -webkit-linear-gradient(top, #888682, #67645f);
   background-image: -moz-linear-gradient(top, #888682, #67645f);
   background-image: -o-linear-gradient(top, #888682, #67645f);
-  background-image: -ms-linear-gradient(top, #888682, #67645f);
   background-image: linear-gradient(top, #888682, #67645f);
 }
 /* line 896, ../sass/misc.scss */
@@ -1118,7 +1113,6 @@
   background-image: -webkit-linear-gradient(top, #67645f, #888682);
   background-image: -moz-linear-gradient(top, #67645f, #888682);
   background-image: -o-linear-gradient(top, #67645f, #888682);
-  background-image: -ms-linear-gradient(top, #67645f, #888682);
   background-image: linear-gradient(top, #67645f, #888682);
 }
 /* line 902, ../sass/misc.scss */
@@ -1127,7 +1121,6 @@
   background-image: -webkit-linear-gradient(top, #d4b690, #b09778);
   background-image: -moz-linear-gradient(top, #d4b690, #b09778);
   background-image: -o-linear-gradient(top, #d4b690, #b09778);
-  background-image: -ms-linear-gradient(top, #d4b690, #b09778);
   background-image: linear-gradient(top, #d4b690, #b09778);
 }
 /* line 905, ../sass/misc.scss */
@@ -1136,7 +1129,6 @@
   background-image: -webkit-linear-gradient(top, #b09778, #937e64);
   background-image: -moz-linear-gradient(top, #b09778, #937e64);
   background-image: -o-linear-gradient(top, #b09778, #937e64);
-  background-image: -ms-linear-gradient(top, #b09778, #937e64);
   background-image: linear-gradient(top, #b09778, #937e64);
 }
 /* line 909, ../sass/misc.scss */
@@ -1145,7 +1137,6 @@
   background-image: -webkit-linear-gradient(top, #937e64, #b09778);
   background-image: -moz-linear-gradient(top, #937e64, #b09778);
   background-image: -o-linear-gradient(top, #937e64, #b09778);
-  background-image: -ms-linear-gradient(top, #937e64, #b09778);
   background-image: linear-gradient(top, #937e64, #b09778);
 }
 /* line 914, ../sass/misc.scss */
@@ -1154,7 +1145,6 @@
   background-image: -webkit-linear-gradient(top, #83a9c0, #6d8ca0);
   background-image: -moz-linear-gradient(top, #83a9c0, #6d8ca0);
   background-image: -o-linear-gradient(top, #83a9c0, #6d8ca0);
-  background-image: -ms-linear-gradient(top, #83a9c0, #6d8ca0);
   background-image: linear-gradient(top, #83a9c0, #6d8ca0);
 }
 /* line 917, ../sass/misc.scss */
@@ -1163,7 +1153,6 @@
   background-image: -webkit-linear-gradient(top, #6d8ca0, #5a7585);
   background-image: -moz-linear-gradient(top, #6d8ca0, #5a7585);
   background-image: -o-linear-gradient(top, #6d8ca0, #5a7585);
-  background-image: -ms-linear-gradient(top, #6d8ca0, #5a7585);
   background-image: linear-gradient(top, #6d8ca0, #5a7585);
 }
 /* line 921, ../sass/misc.scss */
@@ -1172,7 +1161,6 @@
   background-image: -webkit-linear-gradient(top, #5a7585, #6d8ca0);
   background-image: -moz-linear-gradient(top, #5a7585, #6d8ca0);
   background-image: -o-linear-gradient(top, #5a7585, #6d8ca0);
-  background-image: -ms-linear-gradient(top, #5a7585, #6d8ca0);
   background-image: linear-gradient(top, #5a7585, #6d8ca0);
 }
 /* line 926, ../sass/misc.scss */
@@ -1181,7 +1169,6 @@
   background-image: -webkit-linear-gradient(top, #9cc1a2, #82a087);
   background-image: -moz-linear-gradient(top, #9cc1a2, #82a087);
   background-image: -o-linear-gradient(top, #9cc1a2, #82a087);
-  background-image: -ms-linear-gradient(top, #9cc1a2, #82a087);
   background-image: linear-gradient(top, #9cc1a2, #82a087);
 }
 /* line 929, ../sass/misc.scss */
@@ -1190,7 +1177,6 @@
   background-image: -webkit-linear-gradient(top, #82a087, #6c8670);
   background-image: -moz-linear-gradient(top, #82a087, #6c8670);
   background-image: -o-linear-gradient(top, #82a087, #6c8670);
-  background-image: -ms-linear-gradient(top, #82a087, #6c8670);
   background-image: linear-gradient(top, #82a087, #6c8670);
 }
 /* line 933, ../sass/misc.scss */
@@ -1199,7 +1185,6 @@
   background-image: -webkit-linear-gradient(top, #6c8670, #82a087);
   background-image: -moz-linear-gradient(top, #6c8670, #82a087);
   background-image: -o-linear-gradient(top, #6c8670, #82a087);
-  background-image: -ms-linear-gradient(top, #6c8670, #82a087);
   background-image: linear-gradient(top, #6c8670, #82a087);
 }
 /* line 938, ../sass/misc.scss */
@@ -1208,7 +1193,6 @@
   background-image: -webkit-linear-gradient(top, #a8a6cd, #8c8aaa);
   background-image: -moz-linear-gradient(top, #a8a6cd, #8c8aaa);
   background-image: -o-linear-gradient(top, #a8a6cd, #8c8aaa);
-  background-image: -ms-linear-gradient(top, #a8a6cd, #8c8aaa);
   background-image: linear-gradient(top, #a8a6cd, #8c8aaa);
 }
 /* line 941, ../sass/misc.scss */
@@ -1217,7 +1201,6 @@
   background-image: -webkit-linear-gradient(top, #8c8aaa, #74738e);
   background-image: -moz-linear-gradient(top, #8c8aaa, #74738e);
   background-image: -o-linear-gradient(top, #8c8aaa, #74738e);
-  background-image: -ms-linear-gradient(top, #8c8aaa, #74738e);
   background-image: linear-gradient(top, #8c8aaa, #74738e);
 }
 /* line 945, ../sass/misc.scss */
@@ -1226,7 +1209,6 @@
   background-image: -webkit-linear-gradient(top, #74738e, #8c8aaa);
   background-image: -moz-linear-gradient(top, #74738e, #8c8aaa);
   background-image: -o-linear-gradient(top, #74738e, #8c8aaa);
-  background-image: -ms-linear-gradient(top, #74738e, #8c8aaa);
   background-image: linear-gradient(top, #74738e, #8c8aaa);
 }
 /* line 951, ../sass/misc.scss */
@@ -1355,10 +1337,6 @@
   margin-right: 15px;
   margin-bottom: 3px;
   width: 62px;
-}
-/* line 1062, ../sass/misc.scss */
-#page .left-sidebar .layout-tall .image-text .title {
-  float: left;
 }
 /* line 1066, ../sass/misc.scss */
 #page .left-sidebar .layout-tall .image-text .excerpt {
@@ -1779,7 +1757,6 @@
   background-image: -webkit-linear-gradient(top, #9ebaa3, #7ea382);
   background-image: -moz-linear-gradient(top, #9ebaa3, #7ea382);
   background-image: -o-linear-gradient(top, #9ebaa3, #7ea382);
-  background-image: -ms-linear-gradient(top, #9ebaa3, #7ea382);
   background-image: linear-gradient(top, #9ebaa3, #7ea382);
   background-color: #A0B9A3;
   border: none;
@@ -1794,7 +1771,6 @@
   background-image: -webkit-linear-gradient(top, #839b87, #69876c);
   background-image: -moz-linear-gradient(top, #839b87, #69876c);
   background-image: -o-linear-gradient(top, #839b87, #69876c);
-  background-image: -ms-linear-gradient(top, #839b87, #69876c);
   background-image: linear-gradient(top, #839b87, #69876c);
 }
 /* line 1489, ../sass/misc.scss */
@@ -1804,7 +1780,6 @@
   background-image: -webkit-linear-gradient(top, #69876c, #839b87);
   background-image: -moz-linear-gradient(top, #69876c, #839b87);
   background-image: -o-linear-gradient(top, #69876c, #839b87);
-  background-image: -ms-linear-gradient(top, #69876c, #839b87);
   background-image: linear-gradient(top, #69876c, #839b87);
 }
 /* line 1496, ../sass/misc.scss */
