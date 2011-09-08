@@ -36,6 +36,7 @@ class TE_ListTextWidget extends WP_Widget {
 		$linkText = $instance['linkText'];
 		
 		$iconURL = $instance['iconURL'];
+		$bulletColor = $instance['bulletColor'];
 		
 		$items = array();
 		foreach($instance as $key => $item) {
@@ -60,7 +61,7 @@ class TE_ListTextWidget extends WP_Widget {
 					
 					<ul class="list">
 						<?php foreach($items as $item) :?>
-						<li><span><span>&nbsp;</span><?php echo $item; ?></span></li>
+						<li><span><span style="background-color: <?php echo $bulletColor; ?>;">&nbsp;</span><?php echo $item; ?></span></li>
 						<?php endforeach; ?>
 					</ul>
 					
@@ -81,14 +82,15 @@ class TE_ListTextWidget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		
-		$instance['titleA']			= strip_tags($new_instance['titleA']);
-		$instance['titleB']			= strip_tags($new_instance['titleB']);
-		$instance['itemCount']	= strip_tags($new_instance['itemCount']);
-		$instance['iconURL']		= strip_tags($new_instance['iconURL']);
-		$instance['text']				= strip_tags($new_instance['text']);
-		$instance['header']			= strip_tags($new_instance['header']);
-		$instance['link']				= strip_tags($new_instance['link']);
-		$instance['linkText']		= strip_tags($new_instance['linkText']);
+		$instance['titleA']					= strip_tags($new_instance['titleA']);
+		$instance['titleB']					= strip_tags($new_instance['titleB']);
+		$instance['itemCount']			= strip_tags($new_instance['itemCount']);
+		$instance['iconURL']				= strip_tags($new_instance['iconURL']);
+		$instance['text']						= strip_tags($new_instance['text']);
+		$instance['header']					= strip_tags($new_instance['header']);
+		$instance['link']						= strip_tags($new_instance['link']);
+		$instance['linkText']				= strip_tags($new_instance['linkText']);
+		$instance['bulletColor']		= $new_instance['bulletColor'];
 		
 		foreach($new_instance as $key => $item) {
 			if(preg_match("/item\_([0-9]+)/", $key) && !empty($item)) {
@@ -109,6 +111,7 @@ class TE_ListTextWidget extends WP_Widget {
 			'text'				=> '',
 			'link'				=> '',
 			'linkText'		=> 'Read More',
+			'bulletColor'	=> ''
 		);
 		
 		foreach($defaults as $key => $item) {
@@ -126,6 +129,11 @@ class TE_ListTextWidget extends WP_Widget {
 				$items[$key] = $item;
 			}
 		}
+		
+		$orangeColor = "rgb(223, 115, 4)";
+		$greenColor = "rgb(134, 171, 129)";
+		$purpleColor = "rgb(150, 147, 198)";
+		$greyColor = "rgb(129, 127, 121)";
 		
 		?>
 		
@@ -197,6 +205,17 @@ class TE_ListTextWidget extends WP_Widget {
 				id="<?php echo $linkText_id; ?>"
 				name="<?php echo $linkText_name; ?>"
 				value="<?php echo $linkText; ?>" />
+		</p>
+		
+		<p>
+			<select
+				id="<?php echo $bulletColor_id; ?>"
+				name="<?php echo $bulletColor_name; ?>">
+				<option value="<?php echo $orangeColor; ?>"<?php if($bulletColor == $orangeColor) : ?> selected="selected"<?php endif; ?>>Orange</option>
+				<option value="<?php echo $greenColor; ?>"<?php if($bulletColor == $greenColor) : ?> selected="selected"<?php endif; ?>>Green</option>
+				<option value="<?php echo $purpleColor; ?>"<?php if($bulletColor == $purpleColor) : ?> selected="selected"<?php endif; ?>>Purple</option>
+				<option value="<?php echo $greyColor; ?>"<?php if($bulletColor == $greyColor) : ?> selected="selected"<?php endif; ?>>Grey</option>
+			</select>
 		</p>
 	
 		<p>
