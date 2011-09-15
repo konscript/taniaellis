@@ -1775,17 +1775,16 @@
 		background: url('../../images/post_type_icon_events.png') top left no-repeat;
 
 		.event {
-			@include featured-image(100px, 20px);
 
 			.meta-data {
-				//float: left;
+				float: left;
 				width: 390px;
 			}
 
 			// Probably not needed?
-			.title {
-				//float: left;
-				width: 390px;
+			.title, .excerpt {
+				float: none;
+				width: auto;
 			}
 
 			.options {
@@ -1793,8 +1792,10 @@
 				width: 100px;
 			}
 			
-			.by-line {
-				display: none;
+			.addthis_toolbox {
+				clear: left;
+				float: left;
+				margin-top: 20px;
 			}
 		}
 	}

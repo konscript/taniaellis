@@ -18,7 +18,7 @@
 		<p class="excerpt"><?php the_excerpt_rss(); ?></p>
 		
 		<div class="options">
-			<a href="<?php echo get_permalink($post->ID) . '#respond'; ?>" class="add-comment">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
+			<a href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
 			<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
 		</div>
 	</div>
