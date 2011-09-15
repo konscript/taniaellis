@@ -1,10 +1,12 @@
 <div class="item reading-room'">
 	<div class="item-content">
-		<?php if($instance['thumbnails']) : ?>
-		<a href="<?php the_permalink(); ?>">
-			<?php the_post_thumbnail($tsize[$instance['size']], array('class' => 'featured-image')); ?>
-		</a>
-		<?php endif; ?>
+		<?php if(has_post_thumbnail($post->ID) && $instance['thumbnails']) : ?>
+      <div class="thumb-wrapper">
+        <div class="thumb-container">
+          <?php the_post_thumbnail($tsize[$instance['size']], array('class' => 'featured-image')); ?>
+        </div>
+      </div>
+    <?php endif; ?>
 	
 		<p class="meta-data"><?php the_time('j M Y'); ?></p>
 		
