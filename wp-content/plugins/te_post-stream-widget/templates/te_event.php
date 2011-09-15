@@ -1,12 +1,12 @@
 <?php
 
-$end = new DateTime(
-	get_post_meta($post_id, '_year', true)		.'-'.
-	get_post_meta($post_id, '_month', true)		.'-'.
-	get_post_meta($post_id, '_day', true)		.' '.
-	get_post_meta($post_id, '_hour', true)		.':'.
-	get_post_meta($post_id, '_minute', true)
-);
+// $end = new DateTime(
+// 	get_post_meta($post_id, '_year', true)		.'-'.
+// 	get_post_meta($post_id, '_month', true)		.'-'.
+// 	get_post_meta($post_id, '_day', true)		.' '.
+// 	get_post_meta($post_id, '_hour', true)		.':'.
+// 	get_post_meta($post_id, '_minute', true)
+// );
 
 ?>
 <div class="item event">
