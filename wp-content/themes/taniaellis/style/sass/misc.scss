@@ -1699,33 +1699,36 @@
 			background: url('../../images/post_type_icon_reading_room.png') top left no-repeat;
 			
 			.reading-room {
-				@include featured-image(100px, 20px);
+				// @include featured-image(100px, 20px);
 				
-				.meta-data {
-					float: right;
-				}
+				.item-content { width: 520px; 
+					
+					.meta-data {
+						float: right;
+					}
 
-				.title {
-					float: left;
-					width: 390px;
-				}
+					.title, .excerpt {
+						margin: 0;
+						padding: 0;
+						float: none;
+						width: auto;
+					}
 
-				.excerpt {
-					width: 390px;
-				}
+					.title {
+						margin-bottom: 5px;
+					}
 
-				.options {
-					float: right;
-					width: 390px;
-				}
-				
-				.by-line {
-					float: left;
-				}
-				
-				.addthis_toolbox {
-					float: left;
-					clear: left;
+					.options {
+						float: right;
+						clear: right;
+						width: 100%;
+					}
+
+					.addthis_toolbox {
+						clear: left;
+						float: left;
+						margin-top: 20px;
+					}
 				}
 			}
 		}
@@ -1782,10 +1785,6 @@
 			// Probably not needed?
 			.title {
 				//float: left;
-				width: 390px;
-			}
-
-			.excerpt {
 				width: 390px;
 			}
 

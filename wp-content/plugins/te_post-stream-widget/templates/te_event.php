@@ -30,6 +30,7 @@
 		<p class="excerpt"><?php the_excerpt_rss(); ?></p>
 		
 		<div class="options">
+
 			<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
 		</div>
 	</div>

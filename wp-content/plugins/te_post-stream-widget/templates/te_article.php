@@ -1,4 +1,4 @@
-<div class="item reading-room'">
+<div class="item reading-room">
 	<div class="item-content">
 		<?php if(has_post_thumbnail($post->ID) && $instance['thumbnails']) : ?>
       <div class="thumb-wrapper">
@@ -18,6 +18,7 @@
 		<p class="excerpt"><?php the_excerpt_rss(); ?></p>
 		
 		<div class="options">
+			<a class="add-comment" href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
 			<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
 		</div>
 	</div>
