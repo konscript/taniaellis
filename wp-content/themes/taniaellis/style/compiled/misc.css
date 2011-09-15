@@ -1636,7 +1636,7 @@
 #page .right-sidebar .post-feed .thumb-wrapper .thumb-container, #page .right-sidebar-single .post-feed .thumb-wrapper .thumb-container {
   border: 5px solid #E1DCD8;
   display: table-cell;
-  height: 100px;
+  height: 110px;
   position: relative;
   vertical-align: middle;
   text-align: center;
