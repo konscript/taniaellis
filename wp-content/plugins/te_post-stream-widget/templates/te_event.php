@@ -17,7 +17,10 @@ $end = new DateTime(
 		</a>
 		<?php endif; ?>
 	
-		<p class="meta-data"><?php the_time('j M Y H:i'); echo " - ".date_format($end, 'j M Y H:i'); ?></p>
+		<p class="meta-data">
+			<?php //the_time('j M Y H:i'); echo " - ".date_format($end, 'j M Y H:i'); ?>
+			
+		</p>
 		
 		<span class="by-line">
 			By <?php the_author(); ?>
