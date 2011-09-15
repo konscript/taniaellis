@@ -1211,6 +1211,27 @@
 			}
 		}
 		
+		.widget {
+			.thumb-wrapper {
+				float: left;
+				margin: 0 20px 10px 0;
+				
+				.thumb-container {
+					border: 5px solid #E1DCD8;
+					display: table-cell;
+					height: 110px; // This has to be done because of the display being table-cell
+					position: relative;
+					vertical-align: middle;
+					text-align: center;
+					width: 100px;
+
+					.wp-post-image {
+						vertical-align: middle;
+						line-height: 100px;
+					}
+				}
+		}
+		
 		.widget-image-text {
 			.image-text {
 				@include featured-image(240px, 20px);
