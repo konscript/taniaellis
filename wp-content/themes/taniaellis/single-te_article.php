@@ -94,6 +94,23 @@
                               
                               <div class="clearer"></div>
                               
+                              <?php
+                              $args = array(
+                              	'post_type' => 'attachment',
+                              	'numberposts' => null,
+                              	'post_status' => null,
+                              	'post_parent' => $post->ID
+                              );
+                              $attachments = get_posts($args);
+                              ?>
+                              
+                              <pre> 
+                              <?php
+                                // print_r($attachments);
+                                // echo print_r(get_post_meta($post->ID, 'te_article-attachment-file', false));
+                              ?>
+                              </pre>
+                              
                               <?php comments_template(); ?>
                           </div>
                         </section>

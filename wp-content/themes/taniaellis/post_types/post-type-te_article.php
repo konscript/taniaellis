@@ -62,6 +62,24 @@ function create_article_category_metabox() {
   		)
   	)
   );
+  
+  $prefix = 'te_article-attachment';
+  
+  $meta_boxes[] = array(
+    
+  	'id' => $prefix,
+  	'title' => 'Attachment',
+  	'pages' => array('te_article'),
+  	'context' => 'side',
+
+  	'fields' => array(
+  		array(
+  			'name' => 'Primary Category',
+  			'id' => $prefix . '-file',
+  			'type' => 'file'
+  		)
+  	)
+  );
 
 
   foreach($meta_boxes as $meta_box) {
