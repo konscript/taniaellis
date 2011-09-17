@@ -71,7 +71,7 @@ class TE_PostStreamWidget extends WP_Widget {
 			
 		<?php		
 	
-		$query = new WP_Query('post_type='. $ptype[$instance['type']] .'&post_status=publish,future');
+		$query = new WP_Query('post_type='. $instance['type'] .'&post_status=publish,future');
 		
 		$count = 0;
 		while($query->have_posts() && $count < $instance['items']) : $query->the_post();

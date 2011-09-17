@@ -77,9 +77,11 @@ $id = $locations['events-menu'];
 function get_menus(){
     $r = array();
     $menus = get_nav_menu_locations();
-		foreach($menus as $key => $menu) {
-			$o = wp_get_nav_menu_object($menu);
-			$r[$menu] = $o->name;
+		if(is_array($menus) && count($menus) > 0) {
+			foreach($menus as $key) {
+				$o = wp_get_nav_menu_object($menus[$key]);
+				$r[$menus[$key]] = $o->name;
+			}
 		}
     return $r;
 }

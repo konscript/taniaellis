@@ -9,7 +9,7 @@
 		margin-bottom: 3px;
 		width: $width;
 	} 
-} 
+}
 
 #header-top-container {
 	float: right;
@@ -1211,6 +1211,28 @@
 			}
 		}
 		
+		.widget {
+			.thumb-wrapper {
+				float: left;
+				margin: 0 20px 10px 0;
+				
+				.thumb-container {
+					border: 5px solid #E1DCD8;
+					display: table-cell;
+					height: 110px; // This has to be done because of the display being table-cell
+					position: relative;
+					vertical-align: middle;
+					text-align: center;
+					width: 100px;
+
+					.wp-post-image {
+						vertical-align: middle;
+						line-height: 100px;
+					}
+				}
+			}
+		}
+		
 		.widget-image-text {
 			.image-text {
 				@include featured-image(240px, 20px);
@@ -1677,54 +1699,36 @@
 			background: url('../../images/post_type_icon_reading_room.png') top left no-repeat;
 			
 			.reading-room {
-				@include featured-image(100px, 20px);
+				// @include featured-image(100px, 20px);
 				
-				.thumb-wrapper {
-					float: left;
-					margin: 0 20px 10px 0;
-
-					.thumb-container {
-						border: 5px solid #E1DCD8;
-						display: table-cell;
-						height: 110px; // This has to be done because of the display being table-cell
-						position: relative;
-						vertical-align: middle;
-						text-align: center;
-						width: 100px;
-
-						.wp-post-image {
-							vertical-align: middle;
-							line-height: 100px;
-						}
+				.item-content { width: 520px; 
+					
+					.meta-data {
+						float: right;
 					}
-				}
-				
-				.meta-data {
-					float: right;
-				}
 
-				.title {
-					//float: left;
-					//width: 390px;
-				}
+					.title, .excerpt {
+						margin: 0;
+						padding: 0;
+						float: none;
+						width: auto;
+					}
 
-				.excerpt {
-					float: none;
-					width: auto;
-				}
+					.title {
+						margin-bottom: 5px;
+					}
 
-				.options {
-					float: right;
-					width: 390px;
-				}
-				
-				.by-line {
-					float: left;
-				}
-				
-				.addthis_toolbox {
-					float: left;
-					clear: left;
+					.options {
+						float: right;
+						clear: right;
+						width: 100%;
+					}
+
+					.addthis_toolbox {
+						clear: left;
+						float: left;
+						margin-top: 20px;
+					}
 				}
 			}
 		}
@@ -1771,21 +1775,16 @@
 		background: url('../../images/post_type_icon_events.png') top left no-repeat;
 
 		.event {
-			@include featured-image(100px, 20px);
 
 			.meta-data {
-				//float: left;
+				float: left;
 				width: 390px;
 			}
 
 			// Probably not needed?
-			.title {
-				//float: left;
-				width: 390px;
-			}
-
-			.excerpt {
-				width: 390px;
+			.title, .excerpt {
+				float: none;
+				width: auto;
 			}
 
 			.options {
@@ -1793,8 +1792,10 @@
 				width: 100px;
 			}
 			
-			.by-line {
-				display: none;
+			.addthis_toolbox {
+				clear: left;
+				float: left;
+				margin-top: 20px;
 			}
 		}
 	}
