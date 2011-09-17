@@ -1325,12 +1325,32 @@
 				margin-bottom: 25px;
 			}
 			
-			.entry {			
-				.wp-post-image {
-					border: 5px solid #E1DCD8;
+			.entry {
+				.thumb-wrapper {
 					float: left;
 					margin: 0 20px 10px 0;
+
+					.thumb-container {
+						border: 5px solid #E1DCD8;
+						display: table-cell;
+						height: 250px; // This has to be done because of the display being table-cell
+						position: relative;
+						vertical-align: middle;
+						text-align: center;
+						width: 240px;
+
+						.wp-post-image {
+							vertical-align: middle;
+							line-height: 100px;
+						}
+					}
 				}
+							
+				// .wp-post-image {
+				// 	border: 5px solid #E1DCD8;
+				// 	float: left;
+				// 	margin: 0 20px 10px 0;
+				// }
 			}
 			
 			.read-more {

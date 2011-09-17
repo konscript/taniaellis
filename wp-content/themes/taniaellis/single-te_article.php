@@ -46,8 +46,7 @@
                                       $primary_category_name = get_term($primary_category_id, 'te_article-category')->name;
                                     }
                                   ?>
-                                  <h2 class="first-line">Articles</h2>
-                                  <h2 class="second-line"><?php echo $primary_category_name; ?></h2>
+                                  <h2 class="big-line">Articles</h2>
                                 </div>
                                                                 
                                 <div class="post">
@@ -61,8 +60,15 @@
                                   </div>    
                                   <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                   <div class="entry">
+                                    <?php if(has_post_thumbnail($post->ID)) : ?>
+                                      <div class="thumb-wrapper">
+                                        <div class="thumb-container">
+                                          <?php the_post_thumbnail('post-big-square-thumbnail'); ?>
+                                        </div>
+                                      </div>
+                                    <?php endif; ?>
                                     <?php
-                                      the_post_thumbnail(array(240, 240));
+                                      //the_post_thumbnail(array(240, 240));
                                     ?>
                                     <?php the_content(); ?>
                                   </div>
