@@ -189,17 +189,18 @@ function te_get_article_url($post_id) {
   $article_url = get_post_meta($post_id, 'te_article_url', true);
   
   // If there is no thumbnail but one attatchment, link to that attachment
-  if(!has_post_thumbnail($post_id) && count($attachments) == 1) {
-    $article_url = wp_get_attachment_url($attachments[0]->ID);
+  
+  if(isset($article_url) && $article_url != "" ){ // If none of the above, there are no attachments. Get the link set in admin interface
+    $article_url = get_post_meta($post_id, 'te_article_url', true);
+  } else if(!has_post_thumbnail($post_id) && count($attachments) == 1) {
+	    $article_url = wp_get_attachment_url($attachments[0]->ID);
   } else if(has_post_thumbnail($post_id) && count($attachments) > 1) { // If there is a thumbnail and an attachment, link to the attachment
     foreach ($attachments as $key => $attachment) {
       if($attachment->ID != get_post_thumbnail_id($post_id)) {
         $article_url = wp_get_attachment_url($attachment->ID);
-      }
-    }
-  } else if(isset($article_url) && $article_url != "" ){ // If none of the above, there are no attachments. Get the link set in admin interface
-    $article_url = get_post_meta($post_id, 'te_article_url', true);
-  } else { // This is unlikely to happen. If there are no attachments and no link is set, redirect to the permalink
+   		}
+		}
+	} else { // This is unlikely to happen. If there are no attachments and no link is set, redirect to the permalink
     $article_url = get_permalink($post_id);
   }
   
