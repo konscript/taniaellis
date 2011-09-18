@@ -45,7 +45,7 @@ function create_attachment_metabox() {
   	'id' => $prefix,
   	'title' => 'Attachment',
   	'pages' => array('te_article'),
-  	'context' => 'side',
+  	'context' => 'normal',
 
   	'fields' => array(
   		array(
