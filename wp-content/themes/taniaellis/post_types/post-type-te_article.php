@@ -33,35 +33,10 @@ function article_register() {
 	  
 	  register_post_type('te_article', $args);
 	  create_article_taxonomies();
-	  create_article_category_metabox();
+	  create_attachment_metabox();
 }
 
-function create_article_category_metabox() {
-  
-  $category_terms = wp_get_object_terms($_GET['post'], 'te_article-category');
-  
-  foreach($category_terms as $key => $term) {
-    $categories[$term->term_id] = $term->name;
-  }
-  
-  $prefix = 'te_article-primary-category';
-  
-  $meta_boxes[] = array(
-    
-  	'id' => $prefix,
-  	'title' => 'Primary Category',
-  	'pages' => array('te_article'),
-  	'context' => 'side',
-
-  	'fields' => array(
-  		array(
-  			'name' => 'Primary Category',
-  			'id' => $prefix . '-cat',
-  			'type' => 'select',
-  			'options' => $categories	
-  		)
-  	)
-  );
+function create_attachment_metabox() {
   
   $prefix = 'te_article-attachment';
   
@@ -74,7 +49,7 @@ function create_article_category_metabox() {
 
   	'fields' => array(
   		array(
-  			'name' => 'Primary Category',
+  			'name' => 'Select file',
   			'id' => $prefix . '-file',
   			'type' => 'file'
   		)
@@ -194,35 +169,50 @@ function save_te_article_details() {
   the admin interface will be returned. If there is no
   attachment and no link set, returns the permalink
 **/
+// function te_get_article_url($post_id) {
+//   $args = array(
+//    'post_type' => 'attachment',
+//    'numberposts' => null,
+//    'post_status' => null,
+//    'post_parent' => $post_id
+//   );
+//   
+//   $attachments = get_posts($args);
+//   
+//   $article_url = get_post_meta($post_id, 'te_article_url', true);
+//   
+//   // If there is no thumbnail but one attatchment, link to that attachment
+//   
+//   if(isset($article_url) && $article_url != "" ){ // If none of the above, there are no attachments. Get the link set in admin interface
+//     $article_url = get_post_meta($post_id, 'te_article_url', true);
+//   } else if(!has_post_thumbnail($post_id) && count($attachments) == 1) {
+//      $article_url = wp_get_attachment_url($attachments[0]->ID);
+//   } else if(has_post_thumbnail($post_id) && count($attachments) > 1) { // If there is a thumbnail and an attachment, link to the attachment
+//     foreach ($attachments as $key => $attachment) {
+//       if($attachment->ID != get_post_thumbnail_id($post_id)) {
+//         $article_url = wp_get_attachment_url($attachment->ID);
+//        }
+//    }
+//  } else { // This is unlikely to happen. If there are no attachments and no link is set, redirect to the permalink
+//     $article_url = get_permalink($post_id);
+//   }
+//   
+//   return $article_url;
+// }
+
 function te_get_article_url($post_id) {
-  $args = array(
-   'post_type' => 'attachment',
-   'numberposts' => null,
-   'post_status' => null,
-   'post_parent' => $post_id
-  );
   
-  $attachments = get_posts($args);
+  $article_attachment_url = get_post_meta($post_id, 'te_article-attachment-file', true);
+  $article_link_url       = trim(get_post_meta($post_id, 'te_article_url', true)); // Trim this to avoid accidental whitespace in beginning or end of URL
+  $article_permalink      = get_permalink($post_id);
   
-  $article_url = get_post_meta($post_id, 'te_article_url', true);
-  
-  // If there is no thumbnail but one attatchment, link to that attachment
-  
-  if(isset($article_url) && $article_url != "" ){ // If none of the above, there are no attachments. Get the link set in admin interface
-    $article_url = get_post_meta($post_id, 'te_article_url', true);
-  } else if(!has_post_thumbnail($post_id) && count($attachments) == 1) {
-	    $article_url = wp_get_attachment_url($attachments[0]->ID);
-  } else if(has_post_thumbnail($post_id) && count($attachments) > 1) { // If there is a thumbnail and an attachment, link to the attachment
-    foreach ($attachments as $key => $attachment) {
-      if($attachment->ID != get_post_thumbnail_id($post_id)) {
-        $article_url = wp_get_attachment_url($attachment->ID);
-   		}
-		}
-	} else { // This is unlikely to happen. If there are no attachments and no link is set, redirect to the permalink
-    $article_url = get_permalink($post_id);
+  if($article_attachment_url) {
+    return $article_attachment_url;
+  } else if($article_link_url) {
+    return $article_link_url;
+  } else {
+    return $article_permalink;
   }
-  
-  return $article_url;
 }
 
 /**  

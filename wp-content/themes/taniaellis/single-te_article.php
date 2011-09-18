@@ -67,9 +67,6 @@
                                         </div>
                                       </div>
                                     <?php endif; ?>
-                                    <?php
-                                      //the_post_thumbnail(array(240, 240));
-                                    ?>
                                     <?php the_content(); ?>
                                   </div>
                                   <p class="read-more">
