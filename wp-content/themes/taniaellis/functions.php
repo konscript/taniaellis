@@ -19,6 +19,7 @@ add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article', 'te
 
 set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
 add_image_size('post-square-thumbnail', 100, 100, true);
+add_image_size('post-big-square-thumbnail', 240, 240, false);
 add_image_size('post-tall-thumbnail', 62, 116, true);
 add_image_size('post-wide-thumbnail', 240, 100, true);
 add_image_size('post-wide-image', 524, 218, true);

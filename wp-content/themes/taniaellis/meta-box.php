@@ -341,7 +341,8 @@ class RW_Meta_Box {
 			echo '<div style="margin-bottom: 10px"><strong>' . _('Uploaded files') . '</strong></div>';
 			echo '<ol>';
 			foreach ($attachs as $att) {
-				if (wp_attachment_is_image($att->ID)) continue; // what's image uploader for?
+				//if (wp_attachment_is_image($att->ID)) continue; // what's image uploader for?
+				// If the above line is out-commented, image-files will not show up in file list ("Uploaded files") - By Tomas Lieberkind, 18/9-2011
 
 				$src = wp_get_attachment_url($att->ID);
 				if (in_array($src, $meta)) {
@@ -355,7 +356,7 @@ class RW_Meta_Box {
 		echo "<div style='clear: both'><strong>" . _('Upload new files') . "</strong></div>
 			<div class='new-files'>
 				<div class='file-input'><input type='file' name='{$field['id']}[]' /></div>
-				<a class='rw-add-file' href='javascript:void(0)'>" . _('Add more file') . "</a>
+				<a class='rw-add-file' href='javascript:void(0)'>" . _('Add more files') . "</a>
 			</div>
 		</td>";
 	}
