@@ -39,8 +39,15 @@
 				<h2 class="second-line"><?php $category = get_the_category(); echo $category[0]->cat_name; ?></h2>
 			</div>
      
-			<div class="post">
-				<?php the_post_thumbnail('post-wide-image', array('class' => 'featured-image')); ?>
+			<div class="post blog">
+				<?php if(has_post_thumbnail($post->ID)): ?>
+					<div class="thumb-wrapper">
+						<div class="thumb-container">
+							<?php the_post_thumbnail('post-wide-image', array('class' => 'featured-image')); ?>
+						</div>
+					</div> <!-- .thumb-cotnainer //-->
+				<?php endif; // #if has_post_thumbnail ?>
+
 
 				<div class="meta">
 					<p class="byline">
