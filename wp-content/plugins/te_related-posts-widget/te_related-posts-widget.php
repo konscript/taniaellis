@@ -59,10 +59,16 @@ class TE_RelatedPostsWidget extends WP_Widget {
 				<?php while($query->have_posts()) : ?>
 					<?php $query->the_post(); ?>
 					<div class="item blog">
-						<div class="item-content">
-								<a href="<?php the_permalink(); ?>">
-									<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
-								</a>
+						<div class="item-content">								
+								<?php if(has_post_thumbnail($post->ID)) : ?>
+						      <div class="thumb-wrapper">
+						        <div class="thumb-container">
+											<a href="<?php the_permalink(); ?>">
+						          	<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
+											</a>
+						        </div>
+						      </div>
+						    <?php endif; ?>
 					
 								<p class="meta-data"><?php the_time('j M Y H:i') ?></p>
 								<span class="by-line">
