@@ -979,6 +979,28 @@
 				}
 			}
 		}
+		
+		.widget {
+			.thumb-wrapper {
+				float: left;
+				margin: 0 20px 10px 0;
+				
+				.thumb-container {
+					border: 5px solid #E1DCD8;
+					display: table-cell;
+					height: 110px; // This has to be done because of the display being table-cell
+					position: relative;
+					vertical-align: middle;
+					text-align: center;
+					width: 100px;
+
+					.wp-post-image {
+						vertical-align: middle;
+						line-height: 100px;
+					}
+				}
+			}
+		}
 
 		.widget {
 			clear: left;
@@ -1154,7 +1176,14 @@
 			background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
 
 			.blog {
-				@include featured-image(250px, 0);
+				
+				.thumb-wrapper {
+					margin-right: 0;
+				}
+				
+				.thumb-container {
+					width: 250px;
+				}
 
 				.excerpt {
 					width: 260px;
@@ -1758,6 +1787,10 @@
 
 			.blog {				
 				.item-content { width: 520px; }
+				
+				.thumb-container{
+					width: 250px;
+				}
 
 				.meta-data {
 					float: right;
