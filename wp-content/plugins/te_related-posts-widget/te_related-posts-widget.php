@@ -50,21 +50,24 @@ class TE_RelatedPostsWidget extends WP_Widget {
     );
     $query = new WP_Query( $args );
 
+		$cclass = ($instance['postType'] == 'post') ? 'blog' : 'reading-room';
+		$isize = ($instance['postType'] == 'post') ? 'post-wide-thumbnail' : 'post-square-small-thumbnail';
+
 		if($query->have_posts()) : ?>
-			<div class="widget widget-blog related">
+			<div class="widget widget-<?php echo $cclass; ?> related">
 				<div class="header-container">
 					<h2 class="first-line"><?php echo $titleA; ?><h2>
 					<h2 class="second-line"><?php echo $titleB; ?></h2>
 				</div>
 				<?php while($query->have_posts()) : ?>
 					<?php $query->the_post(); ?>
-					<div class="item blog">
+					<div class="item <?php echo $cclass; ?>">
 						<div class="item-content">								
 								<?php if(has_post_thumbnail($post->ID)) : ?>
 						      <div class="thumb-wrapper">
 						        <div class="thumb-container">
 											<a href="<?php the_permalink(); ?>">
-						          	<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
+						          	<?php the_post_thumbnail($isize, array('class' => 'featured-image')); ?>
 											</a>
 						        </div>
 						      </div>

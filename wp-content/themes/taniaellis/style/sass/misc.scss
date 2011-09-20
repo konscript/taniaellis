@@ -1168,8 +1168,25 @@
 			}
 		}
 		
-		.widget-blog.related {
+		.widget-blog.related, .widget-reading-room.related {
 			background: url('../../images/icon_related.png') top left no-repeat;
+		}
+		
+		.widget-reading-room {
+			.reading-room {
+				
+				.thumb-wrapper {
+				}
+				
+				.thumb-container {
+					width: 62px;
+					height: 62px;
+				}
+				
+				.excerpt {
+					width: auto;
+				}
+			}
 		}
 
 		.widget-blog {
