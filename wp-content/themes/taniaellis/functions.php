@@ -71,16 +71,13 @@ if(function_exists( 'register_nav_menus')) {
 	);
 }
 
-$locations = get_nav_menu_locations();
-$id = $locations['events-menu'];
-
 function get_menus(){
-    $r = array();
-    $menus = get_nav_menu_locations();
+    $r = array(-1 => "");
+    $menus = wp_get_nav_menus();
 		if(is_array($menus) && count($menus) > 0) {
-			foreach($menus as $key) {
-				$o = wp_get_nav_menu_object($menus[$key]);
-				$r[$menus[$key]] = $o->name;
+			foreach($menus as $key => $menu) {
+				$o = wp_get_nav_menu_object($menu->term_id);
+				$r[$menu->term_id] = $o->name;
 			}
 		}
     return $r;
