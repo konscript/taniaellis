@@ -74,7 +74,7 @@ class TE_PostWidget extends WP_Widget {
 		
 		?>
 		
-		<div class="widget widget-<?php echo $wclass[$instance['type']]; ?>">
+		<div class="widget widget-<?php echo $wclass[$instance['type']]; ?><?php if(!$instance['showAddthis']) echo " no-addthis"; ?>">
 			<div class="header-container">
 				<h2 class="first-line"><?php echo $titleA; ?><h2>
 				<h2 class="second-line"><?php echo $titleB; ?></h2>
@@ -124,6 +124,8 @@ class TE_PostWidget extends WP_Widget {
 		$instance['items']					= strip_tags($new_instance['items']);
 		$instance['thumbnails'] 		= strip_tags($new_instance['thumbnails']);
 		$instance['viewAllButton'] 	= strip_tags($new_instance['viewAllButton']);
+		$instance['showAddthis'] 	= strip_tags($new_instance['showAddthis']);
+		$instance['showRatings'] 	= strip_tags($new_instance['showRatings']);
 		
 		for($i = 1; $i <= $instance['items']; $i++) {
 			unset($instance['item_$i']);
@@ -143,7 +145,9 @@ class TE_PostWidget extends WP_Widget {
 			'size'					=> 'wide',
 			'items'					=> '3',
 			'thumbnails'		=> true,
-			'viewAllButton'	=> false
+			'viewAllButton'	=> false,
+			'showAddthis'	=> true,
+			'showRatings'	=> true
 		);
 		
 		?>
@@ -218,6 +222,24 @@ class TE_PostWidget extends WP_Widget {
 				id="<?php echo $this->get_field_id('viewAllButton'); ?>" 
 				name="<?php echo $this->get_field_name('viewAllButton'); ?>" 
 				<?php if($instance['viewAllButton']) : ?> checked="checked"<?php endif; ?>>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('showAddthis'); ?>">Show AddThis buttons:</label>
+			<input 
+				type="checkbox" 
+				id="<?php echo $this->get_field_id('showAddthis'); ?>" 
+				name="<?php echo $this->get_field_name('showAddthis'); ?>" 
+				<?php if($instance['showAddthis']) : ?> checked="checked"<?php endif; ?>>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('showRatings'); ?>">Show rating:</label>
+			<input 
+				type="checkbox" 
+				id="<?php echo $this->get_field_id('showRatings'); ?>" 
+				name="<?php echo $this->get_field_name('showRatings'); ?>" 
+				<?php if($instance['showRatings']) : ?> checked="checked"<?php endif; ?>>
 		</p>
 		
 		<?php

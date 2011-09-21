@@ -19,6 +19,12 @@
 		<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		<p class="excerpt"><?php the_excerpt_rss(); ?></p>
 		
+		<?php if(function_exists('wp_gdsr_render_article') && $instance['showRatings']) : ?>
+			<div class="rating">
+				<?php wp_gdsr_render_article(); ?>
+			</div>
+		<?php endif; ?>
+		
 		<div class="options">
 			<a class="add-comment" href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
 			<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>

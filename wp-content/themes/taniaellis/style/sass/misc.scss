@@ -951,6 +951,14 @@
 	#box-frontpage {
 		background-color: #9CC1A2;
 	}
+	
+	.left-sidebar, .right-sidebar, .right-sidebar-single {
+		.widget.no-addthis {
+			.addthis_toolbox {
+				display: none;
+			}
+		}
+	}
 
 	.left-sidebar {
 		background: url('../../images/left-fade-background.png') top left no-repeat;
@@ -1209,6 +1217,16 @@
 				.options {
 					float: right;
 					width: 100px;
+				}
+				
+				.rating {
+					clear: left;
+					float: left;
+					margin-top: 12px;
+				}
+				
+				.addthis_toolbox {
+					margin-top: 17px;
 				}
 			}
 		}
@@ -1843,6 +1861,12 @@
 					clear: left;
 					float: left;
 					margin-top: 20px;
+				}
+				
+				.rating {
+					clear: left;
+					float: left;
+					margin-top: 12px;
 				}
 			}
 		}
