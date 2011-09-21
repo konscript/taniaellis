@@ -85,6 +85,17 @@ function get_menus(){
     return $r;
 }
 
+function getCurrentCatID(){
+  global $wp_query;
+  
+	if(is_category() || is_single()){
+		$cat_ID = get_query_var('cat');
+  }
+
+	return $cat_ID;
+}
+
+
 /**
 ######################
 # REGEISTER SIDEBARS #

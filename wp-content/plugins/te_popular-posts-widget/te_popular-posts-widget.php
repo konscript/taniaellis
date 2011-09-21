@@ -25,8 +25,6 @@ class TE_PopularPostsWidget extends WP_Widget {
 	
 	function widget($args, $instance) {
 		global $post;
-    if (!is_singular())
-      return;
 
 		extract($args);
 		
@@ -34,6 +32,9 @@ class TE_PopularPostsWidget extends WP_Widget {
 		$titleB = apply_filters('widget_title', $instance['titleB']);
 		
 		echo $before_widget;
+		
+		
+		$in_context = (is_category() && $instance['contextAware']) ? true : false;
 
 		$q_args = array(
 				'post_type'					=> $instance['postType'],
@@ -43,6 +44,9 @@ class TE_PopularPostsWidget extends WP_Widget {
 				'sort_order'				=> 'desc',
         'caller_get_posts'  => 1 // ignore sticky status
     );
+
+		if($in_context)
+			$q_args['category__in'] = getCurrentCatID();
  		
 		query_posts( $q_args );
 
@@ -101,18 +105,20 @@ class TE_PopularPostsWidget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		
-		$instance['titleA']			= strip_tags($new_instance['titleA']);
-		$instance['titleB']			= strip_tags($new_instance['titleB']);
-		$instance['postType']		= strip_tags($new_instance['postType']);
+		$instance['titleA']					= strip_tags($new_instance['titleA']);
+		$instance['titleB']					= strip_tags($new_instance['titleB']);
+		$instance['postType']				= strip_tags($new_instance['postType']);
+		$instance['contextAware']		= strip_tags($new_instance['contextAware']);
 		
 		return $instance;
 	}
 	
 	function form($instance) {
 		$defaults = array(
-			'titleA'			=> '',
-			'titleB'			=> '',
-			'postType'		=> 'post',
+			'titleA'					=> '',
+			'titleB'					=> '',
+			'postType'				=> 'post',
+			'contextAware'		=> 'true',
 		);
 		
 		foreach($defaults as $key => $value) {
@@ -153,6 +159,15 @@ class TE_PopularPostsWidget extends WP_Widget {
 				<option value="post"<?php if($instance['postType'] == 'post') echo " selected=\"selected\""; ?>>Blog Post</option>
 				<option value="te_article"<?php if($instance['postType'] == 'te_article') echo " selected=\"selected\""; ?>>Article</option>
 			</select>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('contextAware'); ?>">Context awareness:</label>
+			<input 
+				type="checkbox" 
+				id="<?php echo $this->get_field_id('contextAware'); ?>" 
+				name="<?php echo $this->get_field_name('contextAware'); ?>" 
+				<?php if($instance['contextAware']) : ?> checked="checked"<?php endif; ?>>
 		</p>
 		
 		<?php
