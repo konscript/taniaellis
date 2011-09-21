@@ -147,7 +147,7 @@ class TE_PostWidget extends WP_Widget {
 			'thumbnails'		=> true,
 			'viewAllButton'	=> false,
 			'showAddthis'	=> true,
-			'showRatings'	=> true
+			'showRatings'	=> false
 		);
 		
 		?>

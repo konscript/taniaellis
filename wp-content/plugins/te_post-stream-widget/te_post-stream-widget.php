@@ -124,7 +124,7 @@ class TE_PostStreamWidget extends WP_Widget {
 			'thumbnails'		=> true,
 			'viewAllButton'	=> true,
 			'showAddthis'	=> true,
-			'showRatings'	=> true
+			'showRatings'	=> false
 		);
 		
 		?>
