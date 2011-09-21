@@ -1437,8 +1437,15 @@
 			}
 			
 			.addthis_toolbox {
-				margin-top: 12px;
+				margin-top: 30px;
+				clear: right;
 				float: right;
+			}
+			
+			.ratingblock {
+				margin-top: 30px;
+				clear: left;
+				float: left;
 			}
 		}
 		
