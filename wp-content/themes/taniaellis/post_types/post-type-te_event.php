@@ -64,26 +64,28 @@ function te_event_meta() {
 
   	'fields' => array(
   		array(
-  			'name' => 'Start Date',
-  			'id' => $prefix . '-start-date',
-  			'type' => 'text'
+  			'name'	=> 'Start Date',
+  			'id' 		=> $prefix . '-start-date',
+  			'type'	=> 'text',
+				'desc'	=> 'Format: mm/dd/yyyy'
   		),
   		array(
-  			'name' => 'Start Time',
-  			'id' => $prefix . '-start-time',
-  			'type' => 'text',
-  			'desc' => 'Format: hh:mm'					
+  			'name' 	=> 'Start Time',
+  			'id' 		=> $prefix . '-start-time',
+  			'type'	=> 'text',
+  			'desc'	=> 'Format: hh:mm'					
   		),
   		array(
-  			'name' => 'End Date',
-  			'id' => $prefix . '-end-date',
-  			'type' => 'text'				
+  			'name' 	=> 'End Date',
+  			'id' 		=> $prefix . '-end-date',
+  			'type' 	=> 'text'			,
+				'desc'	=> 'Format: mm/dd/yyyy'	
   		),
   		array(
-  			'name' => 'End Time',
-  			'id' => $prefix . '-end-time',
-  			'type' => 'text',
-  			'desc' => 'Format: hh:mm'					
+  			'name' 	=> 'End Time',
+  			'id' 		=> $prefix . '-end-time',
+  			'type' 	=> 'text',
+  			'desc' 	=> 'Format: hh:mm'					
   		)
   	)
   );

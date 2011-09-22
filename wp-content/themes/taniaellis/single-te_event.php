@@ -42,22 +42,21 @@
 			<div class="post">
 				<p class="date">
 				
-				<?php the_post_thumbnail('post-wide-image', array('class' => 'featured-image')); ?>
+					<?php if(has_post_thumbnail(get_the_ID())) : ?>
+			      <div class="thumb-wrapper">
+			        <div class="thumb-container">
+								<a href="<?php the_permalink(); ?>">
+			          	<?php the_post_thumbnail('post-wide-image', array('class' => 'featured-image')); ?>
+								</a>
+			        </div>
+			      </div>
+			    <?php endif; ?>
+		
 					<?php
 						
 						$id = get_the_ID();
-						$start_date = get_post_meta($id, 'te_event-options-start-date', true);
-						$start_time = get_post_meta($id, 'te_event-options-start-time', true);
-						
-						$start =  new DateTime($start_date . ' ' . $start_time);
-						
-						$end_date = get_post_meta($id, 'te_event-options-end-date', true);
-						$end_time = get_post_meta($id, 'te_event-options-end-time', true);
-						
-						if($end_date != "" && $end_time != "")
-							$end = new DateTime($end_date . ' ' . $end_time);
-						else
-							$end = NULL;
+						$start = get_event_start($id);
+						$end = get_event_end($id);
 						
 						echo date_format($start, 'j M Y H:i');
 						
