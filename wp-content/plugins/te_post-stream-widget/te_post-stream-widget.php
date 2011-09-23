@@ -54,11 +54,11 @@ class TE_PostStreamWidget extends WP_Widget {
 		);
 		
 		$url = array(
-			'post'									=> 'blog',
+			'post'									=> 'blog/all',
 			'te_article'						=> 'reading-room/articles',
-			'te_event'							=> 'events',
-			'te_testemonail'				=> 'cases',
-			'te_testemonail_video'	=> 'cases'
+			'te_event'							=> 'events/all',
+			'te_testemonail'				=> 'cases/all',
+			'te_testemonail_video'	=> 'cases/all'
 		);
 		
 		?>
@@ -70,8 +70,14 @@ class TE_PostStreamWidget extends WP_Widget {
 			</div>
 			
 		<?php		
+		
+		$q = 'post_type='. $instance['type'] .'&post_status=publish,future';
+		
+		if($instance['type'] == 'te_event') {
+			$q .= '&meta_key=te_event-options-start-date&orderby=meta_value&order=DESC';
+		}
 	
-		$query = new WP_Query('post_type='. $instance['type'] .'&post_status=publish,future');
+		$query = new WP_Query($q);
 		
 		$count = 0;
 		while($query->have_posts() && $count < $instance['items']) : $query->the_post();
