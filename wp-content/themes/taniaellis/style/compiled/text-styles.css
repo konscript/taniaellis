@@ -824,39 +824,44 @@ html > body {
   font-size: 1.8em;
   text-transform: uppercase;
 }
-/* line 821, ../sass/text-styles.scss */
+/* line 820, ../sass/text-styles.scss */
+#page .widget-key-services .key-services .key-service .key-service-read-more {
+  color: #FFF;
+  text-decoration: none;
+}
+/* line 826, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .content {
   color: #595753;
   line-height: 1.5em;
 }
 
-/* line 833, ../sass/text-styles.scss */
+/* line 840, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: bold;
 }
 
-/* line 841, ../sass/text-styles.scss */
+/* line 848, ../sass/text-styles.scss */
 #tagcloud .s1, .widget-tagcloud .tagcloud .s1 {
   color: #a8a6cd;
   font-size: 14px;
 }
-/* line 842, ../sass/text-styles.scss */
+/* line 849, ../sass/text-styles.scss */
 #tagcloud .s2, .widget-tagcloud .tagcloud .s2 {
   color: #91b997;
   font-size: 16px;
 }
-/* line 843, ../sass/text-styles.scss */
+/* line 850, ../sass/text-styles.scss */
 #tagcloud .s3, .widget-tagcloud .tagcloud .s3 {
   color: #e7cd30;
   font-size: 18px;
 }
-/* line 844, ../sass/text-styles.scss */
+/* line 851, ../sass/text-styles.scss */
 #tagcloud .s4, .widget-tagcloud .tagcloud .s4 {
   color: #83a8c2;
   font-size: 20px;
 }
-/* line 845, ../sass/text-styles.scss */
+/* line 852, ../sass/text-styles.scss */
 #tagcloud .s5, .widget-tagcloud .tagcloud .s5 {
   color: #d7b590;
   font-size: 22px;

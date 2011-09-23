@@ -1731,7 +1731,7 @@
 					@include border-radius(10px);
 					background-color: rgb(234, 230, 227);
 					float: left;
-					margin-left: 20px;
+					margin-bottom: 20px;
 					min-height: 250px;
 					position: relative;
 					width: 250px;
@@ -1776,11 +1776,20 @@
 					
 					.key-service-read-more {
 						@include border-radius(5px);
+						@include background-image(linear-gradient(#7D7A75, #7D7A75 / 1.2));
 						background-color: #7D7A75;
 						bottom: 15px;
 						padding: 5px 10px;
 						position: absolute;
 						right: 20px;
+						
+						&:hover {
+							@include background-image(linear-gradient(#7D7A75 / 1.2, #7D7A75 / 1.44));
+						}
+						
+						&:active {
+							@include background-image(linear-gradient(#7D7A75 / 1.44, #7D7A75 / 1.2));							
+						}
 					}
 					
 					.push {
@@ -1788,8 +1797,44 @@
 						margin-top: 30px;
 					}
 				}
+				
+				.uneven {
+					margin-right: 20px;
+				}
 			}
 			
+			#purple {
+				$purple: rgb(168, 166, 205);
+				.header {
+					background-color: $purple;
+				}
+				
+				ul li span {
+					background-color: $purple;
+				}
+			}
+			
+			#blue {
+				$blue: rgb(131, 169, 192);
+				.header {
+					background-color: $blue;
+				}
+				
+				ul li span {
+					background-color: $blue;
+				}
+			}
+			
+			#brown {
+				$brown: rgb(214, 182, 144);
+				.header {
+					background-color: $brown;
+				}
+				
+				ul li span {
+					background-color: $brown;
+				}
+			}
 		}
 		
 		.widget-reading-room {
