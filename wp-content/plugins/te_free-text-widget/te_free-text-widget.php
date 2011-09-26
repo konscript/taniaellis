@@ -60,7 +60,7 @@ class TE_FreeTextWidget extends WP_Widget {
 			      <div class="thumb-wrapper">
 			        <div class="thumb-container">
 								<a href="<?php the_permalink(); ?>">
-									<img src="<?php echo $imageURL; ?>" class="featured-image" />
+									<img src="<?php echo $imageURL; ?>" />
 								</a>
 			        </div>
 			      </div>

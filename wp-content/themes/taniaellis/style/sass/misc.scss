@@ -1306,12 +1306,6 @@
 		background: url('../../images/right-fade-background.png') top right no-repeat;
 		min-height: 992px; // If stuff goes wrong, delete this...
 		
-		.layout-square {
-			.image-text {
-				@include featured-image(100px, 0);
-			}
-		}
-		
 		.widget {
 			.thumb-wrapper {
 				float: left;
@@ -1333,35 +1327,41 @@
 				}
 			}
 		}
-		
-		.widget-image-text {
-			.image-text {
-				@include featured-image(240px, 20px);
-
-				.meta-data {
-					float: right;
-					width: 250px;
-				}
-
-				.title, .excerpt {
-					clear: right;
-					float: right;
-					width: 250px;
-				}
-
-				.options {
-					clear: right;
-					float: right;
-					width: 100px;
-				}
+			
+		.widget.layout-square {
+			.item.image-text {
+				.item-content {
 				
-				.addthis_toolbox {
-					float: left;
-					clear: right;
-				}
+					.thumb-wrapper {
+						margin-right: 18px;
+					}
+				
+					.thumb-container {
+						width: 100px;
+					}
 
-				.by-line {
-					display: none;
+					.thumb-container, img {
+						height: 100px;
+					}
+					
+					.meta-data {
+						float: right;
+						
+					}
+
+					.by-line {
+						float: left;
+					}
+					
+					.title, .excerpt {
+						float: none;
+						width: auto;
+					}
+
+					.options {
+						float: right;
+						width: 100px;
+					}
 				}
 			}
 		}

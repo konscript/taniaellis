@@ -1559,20 +1559,12 @@
   background: url("../../images/right-fade-background.png") top right no-repeat;
   min-height: 992px;
 }
-/* line 5, ../sass/misc.scss */
-#page .right-sidebar .layout-square .image-text img.featured-image, #page .right-sidebar-single .layout-square .image-text img.featured-image {
-  float: left;
-  border: 5px solid #E1DCD8;
-  margin-right: 0;
-  margin-bottom: 3px;
-  width: 100px;
-}
-/* line 1316, ../sass/misc.scss */
+/* line 1310, ../sass/misc.scss */
 #page .right-sidebar .widget .thumb-wrapper, #page .right-sidebar-single .widget .thumb-wrapper {
   float: left;
   margin: 0 20px 10px 0;
 }
-/* line 1320, ../sass/misc.scss */
+/* line 1314, ../sass/misc.scss */
 #page .right-sidebar .widget .thumb-wrapper .thumb-container, #page .right-sidebar-single .widget .thumb-wrapper .thumb-container {
   border: 5px solid #E1DCD8;
   display: table-cell;
@@ -1582,44 +1574,40 @@
   text-align: center;
   width: 100px;
 }
-/* line 1329, ../sass/misc.scss */
+/* line 1323, ../sass/misc.scss */
 #page .right-sidebar .widget .thumb-wrapper .thumb-container .wp-post-image, #page .right-sidebar-single .widget .thumb-wrapper .thumb-container .wp-post-image {
   vertical-align: middle;
   line-height: 100px;
 }
-/* line 5, ../sass/misc.scss */
-#page .right-sidebar .widget-image-text .image-text img.featured-image, #page .right-sidebar-single .widget-image-text .image-text img.featured-image {
-  float: left;
-  border: 5px solid #E1DCD8;
-  margin-right: 20px;
-  margin-bottom: 3px;
-  width: 240px;
+/* line 1335, ../sass/misc.scss */
+#page .right-sidebar .widget.layout-square .item.image-text .item-content .thumb-wrapper, #page .right-sidebar-single .widget.layout-square .item.image-text .item-content .thumb-wrapper {
+  margin-right: 18px;
 }
-/* line 1341, ../sass/misc.scss */
-#page .right-sidebar .widget-image-text .image-text .meta-data, #page .right-sidebar-single .widget-image-text .image-text .meta-data {
-  float: right;
-  width: 250px;
-}
-/* line 1346, ../sass/misc.scss */
-#page .right-sidebar .widget-image-text .image-text .title, #page .right-sidebar .widget-image-text .image-text .excerpt, #page .right-sidebar-single .widget-image-text .image-text .title, #page .right-sidebar-single .widget-image-text .image-text .excerpt {
-  clear: right;
-  float: right;
-  width: 250px;
-}
-/* line 1352, ../sass/misc.scss */
-#page .right-sidebar .widget-image-text .image-text .options, #page .right-sidebar-single .widget-image-text .image-text .options {
-  clear: right;
-  float: right;
+/* line 1339, ../sass/misc.scss */
+#page .right-sidebar .widget.layout-square .item.image-text .item-content .thumb-container, #page .right-sidebar-single .widget.layout-square .item.image-text .item-content .thumb-container {
   width: 100px;
 }
-/* line 1358, ../sass/misc.scss */
-#page .right-sidebar .widget-image-text .image-text .addthis_toolbox, #page .right-sidebar-single .widget-image-text .image-text .addthis_toolbox {
-  float: left;
-  clear: right;
+/* line 1343, ../sass/misc.scss */
+#page .right-sidebar .widget.layout-square .item.image-text .item-content .thumb-container, #page .right-sidebar .widget.layout-square .item.image-text .item-content img, #page .right-sidebar-single .widget.layout-square .item.image-text .item-content .thumb-container, #page .right-sidebar-single .widget.layout-square .item.image-text .item-content img {
+  height: 100px;
 }
-/* line 1363, ../sass/misc.scss */
-#page .right-sidebar .widget-image-text .image-text .by-line, #page .right-sidebar-single .widget-image-text .image-text .by-line {
-  display: none;
+/* line 1347, ../sass/misc.scss */
+#page .right-sidebar .widget.layout-square .item.image-text .item-content .meta-data, #page .right-sidebar-single .widget.layout-square .item.image-text .item-content .meta-data {
+  float: right;
+}
+/* line 1352, ../sass/misc.scss */
+#page .right-sidebar .widget.layout-square .item.image-text .item-content .by-line, #page .right-sidebar-single .widget.layout-square .item.image-text .item-content .by-line {
+  float: left;
+}
+/* line 1356, ../sass/misc.scss */
+#page .right-sidebar .widget.layout-square .item.image-text .item-content .title, #page .right-sidebar .widget.layout-square .item.image-text .item-content .excerpt, #page .right-sidebar-single .widget.layout-square .item.image-text .item-content .title, #page .right-sidebar-single .widget.layout-square .item.image-text .item-content .excerpt {
+  float: none;
+  width: auto;
+}
+/* line 1361, ../sass/misc.scss */
+#page .right-sidebar .widget.layout-square .item.image-text .item-content .options, #page .right-sidebar-single .widget.layout-square .item.image-text .item-content .options {
+  float: right;
+  width: 100px;
 }
 /* line 1369, ../sass/misc.scss */
 #page .right-sidebar .sidebar-background, #page .right-sidebar-single .sidebar-background {
