@@ -65,9 +65,13 @@ class TE_FreeTextWidget extends WP_Widget {
 			        </div>
 			      </div>
 			    <?php endif; ?>
-										
-					<p class="meta-data"><?php echo $metadata; ?></p>
-					<span class="by-line"><?php echo $byline; ?></span>
+						
+					<?php if($metadata != "")	: ?>
+						<p class="meta-data"><?php echo $metadata; ?></p>
+					<?php endif; ?>
+					<?php if($byline != "") : ?>
+						<span class="by-line"><?php echo $byline; ?></span>
+					<?php endif; ?>
 					
 					<a class="title" href="<?php echo $link; ?>"><?php echo $header; ?></a>
 					<p class="excerpt"><?php echo $text; ?></p>
