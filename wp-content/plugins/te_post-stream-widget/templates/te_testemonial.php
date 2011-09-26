@@ -11,7 +11,7 @@ $case_id = get_post_meta($post_id, 'te_testemonial-case-id', true);
 	<div class="item-content">
 		<?php if($instance['thumbnails']) : ?>
 		<a href="<?php the_permalink(); ?>">
-			<?php the_post_thumbnail($tsize[$instance['size']], array('class' => 'featured-image')); ?>
+			<?php the_post_thumbnail('post-square-thumbnail', array('class' => 'featured-image')); ?>
 		</a>
 		<?php endif; ?>
 	

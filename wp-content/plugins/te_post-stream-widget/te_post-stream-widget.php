@@ -39,12 +39,6 @@ class TE_PostStreamWidget extends WP_Widget {
 			'te_testemonial_video'	=> 'video-testemonial'
 		);
 		
-		$tsize = array(
-			'wide'		=> 'post-wide-thumbnail',
-			'square'	=> 'post-square-thumbnail',
-			'tall'		=> 'post-tall-thumbnail'
-		);
-		
 		$type = array(
 			'post'									=> 'blog posts',
 			'te_article'						=> 'articles',
@@ -110,7 +104,6 @@ class TE_PostStreamWidget extends WP_Widget {
 		$instance['titleA'] 	= strip_tags($new_instance['titleA']);
 		$instance['titleB'] 	= strip_tags($new_instance['titleB']);
 		$instance['type']		= strip_tags($new_instance['type']);
-		$instance['size']		= strip_tags($new_instance['size']);
 		$instance['items']		= strip_tags($new_instance['items']);
 		$instance['thumbnails'] = strip_tags($new_instance['thumbnails']);
 		$instance['viewAllButton'] 	= strip_tags($new_instance['viewAllButton']);
@@ -125,7 +118,6 @@ class TE_PostStreamWidget extends WP_Widget {
 			'titleA'			=> '',
 			'titleB'			=> '',
 			'type'				=> 'post',
-			'size'				=> 'wide',
 			'items'				=> '3',
 			'thumbnails'		=> true,
 			'viewAllButton'	=> true,
@@ -161,18 +153,6 @@ class TE_PostStreamWidget extends WP_Widget {
 				<option value="post"<?php if($instance['type'] == 'post') : ?> selected="selected"<?php endif; ?>>Blog Post</option>
 				<option value="te_event"<?php if($instance['type'] == 'te_event') : ?> selected="selected"<?php endif; ?>>Event</option>
 				<option value="te_article"<?php if($instance['type'] == 'te_article') : ?> selected="selected"<?php endif; ?>>Article</option>
-					
-			</select>
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('size'); ?>">Thumbnail Dimensions:</label><br />
-			<select 
-				id="<?php echo $this->get_field_id('size'); ?>" 
-				name="<?php echo $this->get_field_name('size'); ?>">
-				<option value="wide"<?php if($instance['size'] == 'wide') : ?> selected="selected"<?php endif; ?>>Wide</option>
-				<option value="square"<?php if($instance['size'] == 'square') : ?> selected="selected"<?php endif; ?>>Square</option>
-				<option value="tall"<?php if($instance['size'] == 'tall') : ?> selected="selected"<?php endif; ?>>Tall</option>
 					
 			</select>
 		</p>
