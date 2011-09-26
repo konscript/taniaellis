@@ -836,6 +836,23 @@ html>body {
 	}
 }
 
+#footer-menu li  {
+	span {
+		color: #9D9C97;
+	}
+	
+	a {
+		color: #9D9C97;
+		text-decoration: none;
+
+
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
 #tagcloud, .widget-tagcloud .tagcloud {
 	// Tag cloud colors
 	.s1 { color: #a8a6cd; font-size: 14px; }

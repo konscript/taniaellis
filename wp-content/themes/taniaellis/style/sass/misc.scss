@@ -2076,6 +2076,8 @@
 }
 
 footer {
+	padding-bottom: 20px;
+	
 	#footer-bar {
 		background-color: #B0ADA6;
 		color: #FFF;
@@ -2087,6 +2089,25 @@ footer {
 		li {
 			display: inline;
 			padding: 0 20px;
+		}
+	}
+	
+	#footer-menu {
+		float: left;
+		margin-top: 20px;
+		margin-left: 10px;
+		
+		li {
+			float: left;
+			margin-left: 10px;
+			
+			span {
+				margin-left: 10px;
+			}
+			
+			&.last span {
+				display: none;
+			}
 		}
 	}
 

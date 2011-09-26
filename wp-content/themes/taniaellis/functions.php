@@ -68,7 +68,8 @@ if(function_exists( 'register_nav_menus')) {
 		  'lectures-menu'				  => 'Lectures Menu',
 		  'events-menu'				 		=> 'Events Menu',
 		  'reading-room-menu'     => 'Reading Room Menu',
-		  'about-menu'            => 'About Menu'
+		  'about-menu'            => 'About Menu',
+		  'footer-menu'           => 'Footer Menu'
 	    )
 	);
 }

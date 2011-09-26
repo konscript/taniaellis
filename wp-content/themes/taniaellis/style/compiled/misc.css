@@ -2382,7 +2382,11 @@
   background-color: #938f8a;
 }
 
-/* line 2079, ../sass/misc.scss */
+/* line 2078, ../sass/misc.scss */
+footer {
+  padding-bottom: 20px;
+}
+/* line 2081, ../sass/misc.scss */
 footer #footer-bar {
   background-color: #B0ADA6;
   color: #FFF;
@@ -2390,19 +2394,38 @@ footer #footer-bar {
   text-align: center;
   width: 100%;
 }
-/* line 2087, ../sass/misc.scss */
+/* line 2089, ../sass/misc.scss */
 footer #footer-bar li {
   display: inline;
   padding: 0 20px;
 }
-/* line 2093, ../sass/misc.scss */
+/* line 2095, ../sass/misc.scss */
+footer #footer-menu {
+  float: left;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+/* line 2100, ../sass/misc.scss */
+footer #footer-menu li {
+  float: left;
+  margin-left: 10px;
+}
+/* line 2104, ../sass/misc.scss */
+footer #footer-menu li span {
+  margin-left: 10px;
+}
+/* line 2108, ../sass/misc.scss */
+footer #footer-menu li.last span {
+  display: none;
+}
+/* line 2114, ../sass/misc.scss */
 footer #co2-link {
   float: right;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-/* line 2100, ../sass/misc.scss */
+/* line 2121, ../sass/misc.scss */
 .clearer {
   clear: both;
 }
