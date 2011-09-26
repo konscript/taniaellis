@@ -1087,30 +1087,52 @@
 		
 		.layout-tall {
 			.image-text {
-				@include featured-image(62px, 15px);
+				.thumb-wrapper {
+					margin-right: 18px;
+				}
 				
-				.title {
-					//float: left;
+				.thumb-container {
+					width: 62px;
+				}
+				
+				.thumb-container, .featured-image {
+					width: 62px;
+					height: 100px;
 				}
 				
 				.excerpt {
-					float: left;
-					margin-left: 0;
+					margin: 0;
 				}
 			}
 		}
 		
 		.layout-wide {
 			.image-text {
-				@include featured-image(250px, 0);
-				
-				.title {
-					margin-top: 5px;
-				}
-				
-				.excerpt {
-					width: 260px;
-				}
+			.thumb-wrapper {
+				margin-right: 0;
+				width: 260px;
+			}
+			
+			.thumb-container {
+				width: 250px;
+			}
+			
+			.thumb-container, img {
+				height: 100px;
+			}
+
+			.excerpt {
+				width: 260px;
+			}
+
+
+			.title {
+				margin-top: 5px;
+			}
+			
+			.excerpt {
+				width: 260px;
+			}
 				
 				.options {
 					float: right;
@@ -1121,14 +1143,25 @@
 		
 		.layout-square {
 			.image-text {
-				@include featured-image(100px, 0);
+				
+				.thumb-wrapper {
+					margin-right: 18px;
+				}
+				
+				.thumb-container {
+					width: 62px;
+				}
+
+				.thumb-container, img {
+					height: 62px;
+				}
 				
 				.title {
 					margin-top: 5px;
 				}
 				
 				.excerpt {
-					width: 260px;
+					width: 170px;
 				}
 				
 				.options {
