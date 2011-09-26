@@ -83,13 +83,17 @@ class TE_FreeTextWidget extends WP_Widget {
 					<?php endif; ?>
 					
 				</div>
+				
 			</div>
+			
+			
 		</div>
 		
 		<?php if(!empty($viewAllText) && !empty($viewAllURL)) : ?>
 		<div class="widget-view-all">
 			<a href="<?php echo $viewAllURL; ?>"><?php echo $viewAllText; ?></a>
 		</div>
+
 		<?php endif; ?>
 		
 		<?php

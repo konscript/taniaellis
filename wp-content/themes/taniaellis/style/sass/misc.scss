@@ -958,20 +958,13 @@
 				display: none;
 			}
 		}
-	}
-
-	.left-sidebar {
-		background: url('../../images/left-fade-background.png') top left no-repeat;
-		margin-left: -16px;
-		min-height: 992px; // If stuff goes wrong, delet this
-		padding-left: 16px;
 		
 		.widget-view-all {
 			clear: left;
 			float: left;
 			margin-top: 0px;
-			margin-bottom: 40px;
-			width: 320px;
+			margin-bottom: 0px;
+			width: 580px;
 			
 			a {
 				@include transition(background, 0.1s, ease-in-out);
@@ -986,6 +979,13 @@
 					background: 0.9 * rgb(160, 157, 148);
 				}
 			}
+		}
+	}
+
+	.left-sidebar {
+		
+		.widget-view-all {
+			width: 320px;
 		}
 		
 		.widget {
@@ -1014,6 +1014,7 @@
 			clear: left;
 			float: left;
 			width: 320px;
+			margin-top: 40px;
 
 			&:first-child {
 				margin-top: 0;
@@ -1307,6 +1308,7 @@
 		min-height: 992px; // If stuff goes wrong, delete this...
 		
 		.widget {
+			margin-top: 0px;
 			.thumb-wrapper {
 				float: left;
 				margin: 0 20px 10px 0;
@@ -1691,32 +1693,10 @@
 			}
 		}
 		
-		.widget-view-all {
-			clear: left;
-			float: left;
-			margin-top: 0px;
-			margin-bottom: 40px;
-			width: 580px;
-			
-			a {
-				@include transition(background, 0.1s, ease-in-out);
-				background: rgb(160, 157, 148);
-				color: #fff;
-				float: right;
-				margin-right: 20px;
-				padding: 5px 15px;
-				text-decoration: none;
-				
-				&:hover {
-					background: 0.9 * rgb(160, 157, 148);
-				}
-			}
-		}
-		
 		.widget {
 			clear: left;
 			float: left;
-			margin-top: 50px;
+			margin-top: 30px;
 			width: 560px;
 
 			&:first-child {
