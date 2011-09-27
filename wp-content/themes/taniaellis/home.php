@@ -96,7 +96,7 @@ Template Name: Home
         <?php if($bonus_sticker == 'on'): ?>
 				  <img src="<?php bloginfo('template_url') ?>/images/newsletter_bonus_sticker.png" alt="" id="bonus-sticker" />
 				<?php endif; ?>
-				<a class="box-button" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>
+				<a class="box-button" target="_blank" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>
 			</div>
 		</div>
 

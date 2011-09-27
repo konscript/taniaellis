@@ -57,11 +57,21 @@ class TE_FreeTextWidget extends WP_Widget {
 				<div class="item-content">
 					
 					<?php if($imageURL != "") : ?>
-						<img src="<?php echo $imageURL; ?>" class="featured-image" />
+			      <div class="thumb-wrapper">
+			        <div class="thumb-container">
+								<a href="<?php the_permalink(); ?>">
+									<img src="<?php echo $imageURL; ?>" />
+								</a>
+			        </div>
+			      </div>
+			    <?php endif; ?>
+						
+					<?php if($metadata != "" || $byline != "")	: ?>
+						<p class="meta-data"><?php echo $metadata; ?></p>
 					<?php endif; ?>
-										
-					<p class="meta-data"><?php echo $metadata; ?></p>
-					<span class="by-line"><?php echo $byline; ?></span>
+					<?php if($byline != "" || $metadata != "") : ?>
+						<span class="by-line"><?php echo $byline; ?></span>
+					<?php endif; ?>
 					
 					<a class="title" href="<?php echo $link; ?>"><?php echo $header; ?></a>
 					<p class="excerpt"><?php echo $text; ?></p>
@@ -73,13 +83,17 @@ class TE_FreeTextWidget extends WP_Widget {
 					<?php endif; ?>
 					
 				</div>
+				
 			</div>
+			
+			
 		</div>
 		
 		<?php if(!empty($viewAllText) && !empty($viewAllURL)) : ?>
 		<div class="widget-view-all">
 			<a href="<?php echo $viewAllURL; ?>"><?php echo $viewAllText; ?></a>
 		</div>
+
 		<?php endif; ?>
 		
 		<?php
@@ -266,7 +280,7 @@ class TE_FreeTextWidget extends WP_Widget {
 			<select id="<?php echo $layout_id; ?>" name="<?php echo $layout_name; ?>">
 				<option value="tall"<?php if($layout == "tall") echo " selected=\"selected\""; ?>>Tall</option>
 				<option value="wide"<?php if($layout == "wide") echo " selected=\"selected\""; ?>>Wide</option>
-				<option value="wide"<?php if($layout == "square") echo " selected=\"selected\""; ?>>Square</option>
+				<option value="square"<?php if($layout == "square") echo " selected=\"selected\""; ?>>Square</option>
 			</select>
 		</p>
 		

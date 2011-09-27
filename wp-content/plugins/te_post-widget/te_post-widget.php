@@ -50,12 +50,6 @@ class TE_PostWidget extends WP_Widget {
 			'te_testemonial_video'	=> 'video-testemonial'
 		);
 		
-		$tsize = array(
-			'wide'		=> 'post-wide-thumbnail',
-			'square'	=> 'post-square-thumbnail',
-			'tall'		=> 'post-tall-thumbnail'
-		);
-		
 		$type = array(
 			'post'									=> 'blog posts',
 			'te_article'						=> 'articles',
@@ -65,11 +59,11 @@ class TE_PostWidget extends WP_Widget {
 		);
 		
 		$url = array(
-			'post'									=> 'blog',
+			'post'									=> 'blog/all',
 			'te_article'						=> 'reading-room/articles',
-			'te_event'							=> 'events',
-			'te_testemonail'				=> 'cases',
-			'te_testemonail_video'	=> 'cases'
+			'te_event'							=> 'events/all',
+			'te_testemonail'				=> 'cases/all',
+			'te_testemonail_video'	=> 'cases/all'
 		);
 		
 		?>
@@ -105,7 +99,7 @@ class TE_PostWidget extends WP_Widget {
 		
 		<?php if($instance['viewAllButton']) : ?>
 		<div class="widget-view-all">
-			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>all/">View all <?php echo $type[$instance['type']]; ?></a>
+			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>">View all <?php echo $type[$instance['type']]; ?></a>
 		</div>
 		<?php endif; ?>
 		
@@ -120,7 +114,6 @@ class TE_PostWidget extends WP_Widget {
 		$instance['titleA'] 				= strip_tags($new_instance['titleA']);
 		$instance['titleB'] 				= strip_tags($new_instance['titleB']);
 		$instance['type']						= strip_tags($new_instance['type']);
-		$instance['size']						= strip_tags($new_instance['size']);
 		$instance['items']					= strip_tags($new_instance['items']);
 		$instance['thumbnails'] 		= strip_tags($new_instance['thumbnails']);
 		$instance['viewAllButton'] 	= strip_tags($new_instance['viewAllButton']);
@@ -142,7 +135,6 @@ class TE_PostWidget extends WP_Widget {
 			'titleA'				=> '',
 			'titleB'				=> '',
 			'type'					=> 'post',
-			'size'					=> 'wide',
 			'items'					=> '3',
 			'thumbnails'		=> true,
 			'viewAllButton'	=> false,
@@ -180,18 +172,6 @@ class TE_PostWidget extends WP_Widget {
 				<option value="te_article"<?php if($instance['type'] == 'te_article') : ?> selected="selected"<?php endif; ?>>Article</option>
 				<option value="te_testemonial"<?php if($instance['type'] == 'te_testemonial') : ?> selected="selected"<?php endif; ?>>Testimonial</option>	
 				<option value="te_testemonial_video"<?php if($instance['type'] == 'te_testemonial_video') : ?> selected="selected"<?php endif; ?>>Video Testimonial</option>	
-			</select>
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('size'); ?>">Thumbnail Dimensions:</label><br />
-			<select 
-				id="<?php echo $this->get_field_id('size'); ?>" 
-				name="<?php echo $this->get_field_name('size'); ?>">
-				<option value="wide"<?php if($instance['size'] == 'wide') : ?> selected="selected"<?php endif; ?>>Wide</option>
-				<option value="square"<?php if($instance['size'] == 'square') : ?> selected="selected"<?php endif; ?>>Square</option>
-				<option value="tall"<?php if($instance['size'] == 'tall') : ?> selected="selected"<?php endif; ?>>Tall</option>
-					
 			</select>
 		</p>
 		

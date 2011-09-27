@@ -68,11 +68,19 @@ if(function_exists( 'register_nav_menus')) {
 		  'lectures-menu'				  => 'Lectures Menu',
 		  'events-menu'				 		=> 'Events Menu',
 		  'reading-room-menu'     => 'Reading Room Menu',
-		  'about-menu'            => 'About Menu'
+		  'about-menu'            => 'About Menu',
+		  'footer-menu'           => 'Footer Menu'
 	    )
 	);
 }
 
+/**
+ * Get all menus created from the menu manager
+ * in the admin interface.
+ *
+ * @return Array og WP Menu Objects
+ * @author Kristian Andersen
+ **/
 function get_menus(){
     $r = array(-1 => "");
     $menus = wp_get_nav_menus();
@@ -84,6 +92,52 @@ function get_menus(){
 		}
     return $r;
 }
+
+/**
+ * Returns the ID of the current category (if within one).
+ *
+ * @return int
+ * @author Kristian Andersen
+ **/
+function getCurrentCatID(){
+  global $wp_query;
+  
+	if(is_category() || is_single()){
+		$cat_ID = get_query_var('cat');
+  }
+
+	return $cat_ID;
+}
+
+/**
+ * Returns the start DateTime object of a event
+ * from it's ID.
+ *
+ * @return DateTime object
+ * @author Kristian Andersen
+ **/
+function get_event_start($post_id) {
+	$date = get_post_meta($post_id, 'te_event-options-start-date', true);
+	$time = get_post_meta($post_id, 'te_event-options-start-time', true);	
+	
+	return DateTime::createFromFormat('m/d/Y H:i', $date . ' ' . $time);
+}
+
+
+/**
+ * Returns the end DateTime object of a event
+ * from it's ID.
+ *
+ * @return DateTime object
+ * @author Kristian Andersen
+ **/
+function get_event_end($post_id) {
+	$date = get_post_meta($post_id, 'te_event-options-end-date', true);
+	$time = get_post_meta($post_id, 'te_event-options-end-time', true);	
+	
+	return DateTime::createFromFormat('m/d/Y H:i', $date . ' ' . $time);
+}
+
 
 /**
 ######################
@@ -114,13 +168,20 @@ if(function_exists('register_sidebar')) {
 ##########################################
 **/
 
+// Include custom post type scripts.
 require_once('post_types/post-type-te_event.php');
 require_once('post_types/post-type-te_article.php');
 require_once('post_types/post-type-te_video.php');
 require_once('post_types/post-type-te_case.php');
 require_once('post_types/post-type-te_testemonial.php');
 
-
+/**
+ * Changes the default post type icons
+ * for custom post types in admin interface.
+ *
+ * @return void
+ * @author Tomas Lieberkind
+ **/
 function change_custom_post_type_icons() {
   ?>
   <style type="text/css" media="screen">
@@ -137,6 +198,7 @@ function change_custom_post_type_icons() {
   <?php
 }
 
+// Add hook for including custom post type icons
 add_action('admin_head', 'change_custom_post_type_icons');
 
 /**
@@ -144,8 +206,6 @@ add_action('admin_head', 'change_custom_post_type_icons');
 # INCLUDE PAGE TEMPLATE SPECIFIC CODE #
 #######################################
 **/
-
-// TO-DO: Only include page-template used for displaying current page.
 
 require_once('page_templates/page-template-te_club.php');
 require_once('page_templates/page-template-te_consulting.php');

@@ -1,5 +1,5 @@
 @import "compass/css3/transition";
- 
+  
 body {
 	font-size: 75%;
 }
@@ -840,6 +840,23 @@ html>body {
 	li {
 		font-size: 1em;
 		font-weight: bold;
+	}
+}
+
+#footer-menu li  {
+	span {
+		color: #9D9C97;
+	}
+	
+	a {
+		color: #9D9C97;
+		text-decoration: none;
+
+
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 

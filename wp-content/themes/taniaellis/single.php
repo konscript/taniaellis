@@ -57,7 +57,7 @@
 						<?php the_time('j M Y'); ?>
 					</p>
 				</div>    
-				<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<h2 class="title"><?php the_title(); ?></h2>
 				<div class="entry">
 					<?php the_content(); ?>
 				</div>
