@@ -255,6 +255,7 @@ function te_page_template_meta_boxes() {
     case 'about.php':
       te_about_meta();
       break;
+    case 'blog.php':
 		case 'page.php':
     default:
       te_page_meta();

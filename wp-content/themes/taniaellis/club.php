@@ -17,7 +17,7 @@ Template Name: Club
 	<div id="header-container">
 		
 		<?php wp_nav_menu(array(
-	    'theme_location' 	=> 'reading-room-menu',
+	    'theme_location' 	=> 'club-menu',
 			'menu_class'		=> 'navigation-header',
 			'menu_id'			=> 'navigation-header-standard',
 			'link_before'		=> '<span>&nbsp;</span>'
