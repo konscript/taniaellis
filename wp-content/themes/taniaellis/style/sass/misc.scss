@@ -983,6 +983,11 @@
 	}
 
 	.left-sidebar {
+		background: url("../../images/left-fade-background.png") top left no-repeat;
+		float: left;
+		margin-left: -16px;
+		min-height: 992px;
+		padding-left: 16px;
 		
 		.widget-view-all {
 			width: 320px;
