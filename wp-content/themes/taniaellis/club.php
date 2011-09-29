@@ -30,8 +30,8 @@ Template Name: Club
 			  <img src="<?php bloginfo('template_url'); ?>/images/club_logo.png" id="club-logo" />
         
         <p class="testemonials-title">
-          <span class="first-line">Join the club</span>
-          <span class="second-line">See what the members say...</span>
+          <span class="first-line"><?php echo get_post_meta($post->ID, 'te_club-header-text-left-pane-first-line', true); ?></span>
+          <span class="second-line"><?php echo get_post_meta($post->ID, 'te_club-header-text-left-pane-second-line', true); ?></span>
         </p>
         
         <?php 
