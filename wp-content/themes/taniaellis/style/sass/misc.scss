@@ -1398,6 +1398,10 @@
 			margin-right: 20px;
 			padding-left: 50px;
 			padding-bottom: 10px;
+			
+			.lead-text {
+				margin: 5px 0 10px -50px;
+			}
 		}
 		
 		.comments-header {
@@ -1432,11 +1436,18 @@
 				}
 			}
 			
+			.entry {
+				ul li {
+					background: url('../../images/content-bullet-point.png') left 3px no-repeat;
+					padding-left: 25px;
+				}
+			}
+			
 			.title {
 				margin-bottom: 25px;
 			}
 			
-			&.blog {
+			&.blog { // What does &. mean?
 				.thumb-wrapper {
 					margin-right: 0;
 					
@@ -1480,7 +1491,7 @@
 			.read-more {
 				float: right;
 				margin-right: 50px;
-				margin-top: 15px;
+				margin-top: 30px;
 			}
 			
 			.addthis_toolbox {
