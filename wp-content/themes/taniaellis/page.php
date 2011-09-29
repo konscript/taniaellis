@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template Name: Page
+Template Name: Widget Page
 */
 get_header(); 
 ?>
