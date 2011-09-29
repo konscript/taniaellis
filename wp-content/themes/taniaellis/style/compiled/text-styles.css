@@ -517,13 +517,13 @@ html > body {
   -webkit-transition-timing-function: ease-in-out;
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  color: #7db985;
+  color: #7FB987;
   text-decoration: none;
   font-weight: bold;
 }
 /* line 540, ../sass/text-styles.scss */
 #page .post .entry a:hover {
-  color: #689a6e;
+  color: #699a70;
 }
 /* line 545, ../sass/text-styles.scss */
 #page .post .entry ul {
