@@ -32,7 +32,8 @@
         </div>
         <div class="books">
 		      <img src="<?php bloginfo('template_url'); ?>/images/book_danish.png" />
-		      <img src="<?php bloginfo('template_url'); ?>/images/book_english.png" />
+          <img src="<?php bloginfo('template_url'); ?>/images/book_english.png" />
+		      <img src="<?php bloginfo('template_url'); ?>/images/top_40.png" class="top-40"/>
         </div>
 			</div>
 			<div class="right-column">

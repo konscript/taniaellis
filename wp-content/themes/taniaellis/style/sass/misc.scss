@@ -564,6 +564,13 @@
 			#reading-room-left {
 				.books {
 					margin: 10px 0 0 20px;
+					position: relative;
+				}
+				
+				.top-40 {
+					position: absolute;
+					top: 35px;
+					right: -45px;
 				}
 			}
 			
