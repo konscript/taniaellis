@@ -1665,10 +1665,6 @@
   background: url("../../images/content-bullet-point.png") left 3px no-repeat;
   padding-left: 25px;
 }
-/* line 1445, ../sass/misc.scss */
-#page .right-sidebar .post .entry img, #page .right-sidebar-single .post .entry img {
-  border: 5px solid #CCC;
-}
 /* line 1450, ../sass/misc.scss */
 #page .right-sidebar .post .title, #page .right-sidebar-single .post .title {
   margin-bottom: 25px;
