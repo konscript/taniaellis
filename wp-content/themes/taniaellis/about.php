@@ -105,89 +105,52 @@
 
 
           <div class="key-services">
-            <div class="key-service uneven">
-              <div class="header">
-                <p class="first-line">The Social Business</p>
-                <p class="second-line">Club</p>
-              </div>
-              
-              <p class="content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-              </p>
-              
-              <ul>
-                <li><span>&nbsp;</span>Monthly Lectures</li>
-                <li><span>&nbsp;</span>Yearly Workshops</li>
-                <li><span>&nbsp;</span>Connets You With LikeMinded</li>
-                <li><span>&nbsp;</span>Lorem Ipsum Dolor</li>                
-              </ul>
-
-              <div class="push"></div>
-              <a href="#" class="key-service-read-more">Read more</a>
-            </div>
             
-            <div class="key-service" id="purple">
-              <div class="header">
-                <p class="first-line">The Social Business</p>
-                <p class="second-line">Club</p>
-              </div>
+            <?php for($i = 1; $i < 5; $i++): ?>
               
-              <p class="content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-              </p>
+              <?php
+                $key_service['title-1']       = get_post_meta($post->ID, "te_about-key-service-$i-title-line-1", true);
+                $key_service['title-2']       = get_post_meta($post->ID, "te_about-key-service-$i-title-line-2", true);
+                $key_service['color']         = get_post_meta($post->ID, "te_about-key-service-$i-color", true);
+                $key_service['content']       = get_post_meta($post->ID, "te_about-key-service-$i-content", true);
+                $key_service['link-address']  = get_post_meta($post->ID, "te_about-key-service-$i-link-address", true);
+                $key_service['link-text']     = get_post_meta($post->ID, "te_about-key-service-$i-link-text", true);
+                
+                for ($j = 1; $j < 6; $j++) { 
+                  $key_service["bullet-$j"] = get_post_meta($post->ID, "te_about-key-service-$i-bullet-$j", true);
+                }
+                                
+              ?>
               
-              <ul>
-                <li><span>&nbsp;</span>Monthly Lectures</li>
-                <li><span>&nbsp;</span>Yearly Workshops</li>
-                <li><span>&nbsp;</span>Connets You With LikeMinded</li>
-                <li><span>&nbsp;</span>Lorem Ipsum Dolor</li>                
-              </ul>
+              
+              <?php if($i % 2 == 1): ?>
+                <div class="key-service uneven" id="<?php echo $key_service['color']; ?>">
+              <?php else: ?>
+                <div class="key-service" id="<?php echo $key_service['color']; ?>">
+              <?php endif; ?>
+              
+                <div class="header">
+                  <p class="first-line"><?php echo $key_service['title-1']; ?></p>
+                  <p class="second-line"><?php echo $key_service['title-2']; ?></p>
+                </div>
 
-              <div class="push"></div>
-              <a href="#" class="key-service-read-more">Read more</a>
-            </div>
-            
-            <div class="key-service uneven" id="blue">
-              <div class="header">
-                <p class="first-line">The Social Business</p>
-                <p class="second-line">Club</p>
-              </div>
-              
-              <p class="content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-              </p>
-              
-              <ul>
-                <li><span>&nbsp;</span>Monthly Lectures</li>
-                <li><span>&nbsp;</span>Yearly Workshops</li>
-                <li><span>&nbsp;</span>Connets You With LikeMinded</li>
-                <li><span>&nbsp;</span>Lorem Ipsum Dolor</li>                
-              </ul>
+                <p class="content">
+                  <?php echo $key_service['content']; ?>
+                </p>
 
-              <div class="push"></div>
-              <a href="#" class="key-service-read-more">Read more</a>
-            </div>
+                <ul>
+                  <?php for($j = 1; $j < 6; $j++): ?>
+                    <?php if($key_service["bullet-$j"]): ?>
+                      <li><span>&nbsp;</span><?php echo $key_service["bullet-$j"]; ?></li>
+                    <?php endif; ?>
+                  <? endfor; ?>         
+                </ul>
+
+                <div class="push"></div>
+                <a href="<?php echo $key_service['link-address'];?>" class="key-service-read-more"><?php echo $key_service['link-text']; ?></a>
+              </div>
+            <?php endfor; ?>
           
-            <div class="key-service" id="brown">
-              <div class="header">
-                <p class="first-line">The Social Business</p>
-                <p class="second-line">Club</p>
-              </div>
-              
-              <p class="content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-              </p>
-              
-              <ul>
-                <li><span>&nbsp;</span>Monthly Lectures</li>
-                <li><span>&nbsp;</span>Yearly Workshops</li>
-                <li><span>&nbsp;</span>Connets You With LikeMinded</li>
-                <li><span>&nbsp;</span>Lorem Ipsum Dolor</li>                
-              </ul>
-
-              <div class="push"></div>
-              <a href="#" class="key-service-read-more">Read more</a>
-            </div>
           </div>
           
         	
