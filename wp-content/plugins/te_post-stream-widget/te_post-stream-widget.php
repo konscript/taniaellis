@@ -65,7 +65,7 @@ class TE_PostStreamWidget extends WP_Widget {
 			
 		<?php		
 		
-		$q = 'post_type='. $instance['type'] .'&post_status=publish,future';
+		$q = 'post_type='. $instance['type'] .'&post_status=publish';
 		
 		if($instance['type'] == 'te_event') {
 			$q .= '&meta_key=te_event-options-start-date&orderby=meta_value&order=DESC';

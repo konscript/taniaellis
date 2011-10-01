@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php get_header(); 
+/*
+Template Name: All Events
+*/
+?>
 
 <div id="header">
 	<p id="sub-heading">The <span>Social</span> Business Company &reg;</p>
@@ -32,25 +36,16 @@
 		<section class="right-sidebar-single">
 			<div class="sidebar-background">
 				<div class="post-header">
-					<h2 class="first-line">Previous</h2>
+					<h2 class="first-line">All</h2>
 					<h2 class="second-line">Events</h2>
 				</div>
 				
 				<?php 
-				$time = date_format(new DateTime(), 'Y/m/d');
-				
 				$query = new WP_Query(array(
 					'post_type'		=> 'te_event',
 					'orderby'			=> 'meta_value',
-					'meta_key'		=>'te_event-options-end-date',
+					'meta_key'		=>'te_event-options-start-date',
 					'order'				=> 'DESC',
-					'meta_query'	=> array(
-						array(
-							'key'	=> 'te_event-options-end-date',
-							'value'	=> $time,
-							'compare'	=> '<'
-						),
-					),
 					'post_status' => 'publish',
 					'paged' => $paged,
 					'posts_per_page'	=> -1
@@ -92,9 +87,6 @@
 				<div class="posts-nav-links">
           <?php posts_nav_link(' ', '« Previous Page', 'Next Page »'); ?>
         </div>
-				<div class="widget-view-all">
-					<a href="<?php echo get_permalink(get_page_by_path('events/all')); ?>">View more events</a>
-				</div>
  			<?php endif; ?>
  		</div>
 		

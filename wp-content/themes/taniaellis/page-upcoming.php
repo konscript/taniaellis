@@ -51,6 +51,8 @@
 							'compare'	=> '>'
 						),
 					),
+					'post_status' => 'publish',
+					'paged' => $paged,
 					'posts_per_page'	=> -1
 				)); ?>
  				<?php if($query->have_posts()): ?>
@@ -87,6 +89,12 @@
 			      </p> 
    				</div>
  				<?php endwhile; ?>
+				<div class="posts-nav-links">
+          <?php posts_nav_link(' ', '« Previous Page', 'Next Page »'); ?>
+        </div>
+				<div class="widget-view-all">
+					<a href="<?php echo get_permalink(get_page_by_path('events/all')); ?>">View more events</a>
+				</div>
  			<?php endif; ?>
  		</div>
 	</section>
