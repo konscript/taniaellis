@@ -674,7 +674,7 @@ html > body {
   color: #699a70;
 }
 /* line 650, ../sass/text-styles.scss */
-#page .post-feed .read-more, #page .post-feed .add-comment {
+#page .post-feed .read-more, #page .post-feed .add-comment, #page .post-feed .read-more a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
   -o-transition-property: color;
@@ -693,7 +693,7 @@ html > body {
   text-decoration: none;
 }
 /* line 658, ../sass/text-styles.scss */
-#page .post-feed .read-more:hover, #page .post-feed .add-comment:hover {
+#page .post-feed .read-more:hover, #page .post-feed .add-comment:hover, #page .post-feed .read-more a:hover {
   color: #699a70;
 }
 /* line 663, ../sass/text-styles.scss */

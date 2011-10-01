@@ -1379,10 +1379,6 @@
 					margin-bottom: 12px;
 					text-align: right;
 				}
-				
-				.by-line {
-					display: none;
-				}
 			}
 		}
 		
@@ -1675,11 +1671,14 @@
 		.post-feed.event {
 			.date {
 				float: left;
-				width: 354px;
 				
-				b {
+				span {
 					font-weight: bold;
 				}
+			}
+			
+			.byline {
+				float: right;
 			}
 		}
 		

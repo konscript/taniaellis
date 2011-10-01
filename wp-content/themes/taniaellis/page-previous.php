@@ -37,57 +37,53 @@
 				</div>
 				
 				<?php 
-				$time = time() + ( get_option( 'gmt_offset' ) * 3600 );
-				//$today = gmdate( 'ymd', $time );
+				$time = date_format(new DateTime(), 'Y/m/d');
 				
 				$query = new WP_Query(array(
-					'post_type' => 'te_event',
-					'orderby'		=> 'meta_value',
-					'order'			=> 'DESC',
-					'meta_key'	=> 'te_event-options-start-date',
-					'meta_value'	=> $time,
-					'meta_compare'	=> '>=',
+					'post_type'		=> 'te_event',
+					'orderby'			=> 'meta_value',
+					'meta_key'		=>'te_event-options-end-date',
+					'order'				=> 'DESC',
+					'meta_query'	=> array(
+						array(
+							'key'	=> 'te_event-options-end-date',
+							'value'	=> $time,
+							'compare'	=> '<'
+						),
+					),
 					'posts_per_page'	=> -1
 				)); ?>
  				<?php if($query->have_posts()): ?>
  					<?php while($query->have_posts()): $query->the_post(); ?>                                
    					<div class="post-feed event">
-     					<?php the_post_thumbnail(array(100, 100)); ?>
+     					<?php if(has_post_thumbnail(get_the_ID())) : ?>
+					      <div class="thumb-wrapper">
+					        <div class="thumb-container">
+										<a href="<?php the_permalink(); ?>">
+					          	<?php the_post_thumbnail('post-square-thumbnail', array('class' => 'featured-image')); ?>
+										</a>
+					        </div>
+					      </div>
+					    <?php endif; ?>
 
-       				<p class="date">
-								<b>Event Date:</b>
-			          <?php
-					
-									$id = get_the_ID();
-									$start_date = get_post_meta($id, 'te_event-options-start-date', true);
-									if(!empty($start_date)) {
-										echo date('j M Y', $start_date + (get_option('gmt_offset') * 3600));
-
-										$start_time = get_post_meta($id, 'te_event-options-start-time', true);
-										echo " $start_time";
-
-										$end_date = get_post_meta($id, 'te_event-options-end-date', true);
-										echo " - " . date('j M Y', $end_date + (get_option('gmt_offset') * 3600));
-
-										$end_time = get_post_meta($id, 'te_event-options-end-time', true);
-										echo " $start_time";
-									}
-				
+       			<p class="date">
+							<?php
+								$start = get_event_start(get_the_ID());
+								$end = get_event_end(get_the_ID());
 							?>
+							<span>Event Date:</span> <?php echo date_format($start, 'j M Y H:i') . " - " . date_format($end, 'j M Y H:i'); ?>
        			</p>
+
+						<p class="byline">&nbsp;</p>
        
      				<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
      				
 						<div class="entry">
        				<?php the_content(); ?>
      				</div>
-     
-     				<p class="add-comment">
-			        <a href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Comments (<?php comments_number('0', '1', '%') ?>)</a>
-			      </p>
-			
+
      				<p class="read-more">
-			          <a href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
+							<a href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
 			      </p> 
    				</div>
  				<?php endwhile; ?>
