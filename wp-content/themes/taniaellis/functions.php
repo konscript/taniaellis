@@ -120,7 +120,7 @@ function get_event_start($post_id) {
 	$date = get_post_meta($post_id, 'te_event-options-start-date', true);
 	$time = get_post_meta($post_id, 'te_event-options-start-time', true);	
 	
-	return DateTime::createFromFormat('m/d/Y H:i', $date . ' ' . $time);
+	return DateTime::createFromFormat('Y/m/d H:i', $date . ' ' . $time);
 }
 
 
@@ -135,7 +135,7 @@ function get_event_end($post_id) {
 	$date = get_post_meta($post_id, 'te_event-options-end-date', true);
 	$time = get_post_meta($post_id, 'te_event-options-end-time', true);	
 	
-	return DateTime::createFromFormat('m/d/Y H:i', $date . ' ' . $time);
+	return DateTime::createFromFormat('Y/m/d H:i', $date . ' ' . $time);
 }
 
 
