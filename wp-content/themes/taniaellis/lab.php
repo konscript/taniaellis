@@ -45,9 +45,9 @@
         for($i = 1; $i < 4; $i++) { 
           $labs[$i]['title-line-1'] = get_post_meta($post->ID, 'te_lab-roller-' . $i . '-title-line-1', true);
           $labs[$i]['title-line-2'] = get_post_meta($post->ID, 'te_lab-roller-' . $i . '-title-line-2', true);
-          $labs[$i]['content'] = get_post_meta($post->ID, 'te_lab-roller-' . $i . '-content', true);
-          $labs[$i]['link-url'] = get_post_meta($post->ID, 'te_lab-roller-' . $i . '-link-address', true);
-          $labs[$i]['link-text'] = get_post_meta($post->ID, 'te_lab-roller-' . $i . '-link-text', true);
+          $labs[$i]['content']      = get_post_meta($post->ID, 'te_lab-roller-' . $i . '-content', true);
+          $labs[$i]['link-url']     = get_post_meta($post->ID, 'te_lab-roller-' . $i . '-link-address', true);
+          $labs[$i]['link-text']    = get_post_meta($post->ID, 'te_lab-roller-' . $i . '-link-text', true);
         }
         
         //print_r($labs);
