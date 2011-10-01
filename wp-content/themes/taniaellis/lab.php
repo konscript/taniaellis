@@ -13,7 +13,7 @@
     //     timeout: 3500,
     //     speed: 750
     //   });
-    // }); 
+    // });  
     
     jQuery(document).ready(function() {
       rollFade('.lab-container', '.labs', false, 3500, 375);
