@@ -1,8 +1,5 @@
 <?php
 
-/*
-Template Name: Widget Page
-*/
 get_header(); 
 ?>
 
