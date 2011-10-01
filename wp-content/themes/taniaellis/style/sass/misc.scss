@@ -1042,6 +1042,57 @@
 			}
 		}
 		
+		.widget-services {
+			background: url('../../images/post_type_icon_services.png') top left no-repeat;
+			.services {
+				ul {
+			    li {
+						margin-bottom: 5px;
+			    	a {
+			    		@include border-radius(10px);
+			    		@include transition(background-color, 0.1s, ease-in-out);
+			    		color: #FFF;
+			    		text-decoration: none;
+			    		text-transform: uppercase;
+			    		background-color: #94918A;
+			    		display: block;
+			    		height: 30px;
+			    		padding: 14px;
+			    		width: 220px;
+
+			    		.social {
+			    			font-weight: bold;
+			    		}
+
+			    		.term {
+			    			font-family: "Arial Black", Arial, sans-serif;
+			    			font-size: 1.4em;
+			    			font-weight: bold;
+			    			line-height: 1em;
+			    			display: block;
+			    			margin-top: 1px;
+			    		}
+			    	}			
+			    }
+
+			    li.grey a { background-color: #94918A; }
+			    li.grey a:hover { background-color: #94918A / 1.2; }
+
+			    li.green a { background-color: #9CC1A2; }
+			    li.green a:hover { background-color: #9CC1A2 / 1.2; }
+
+			    li.blue a { background-color: #83A9C0; }
+			    li.blue a:hover { background-color: #83A9C0 / 1.2; }
+
+			    li.purple a { background-color: #A8A6CD; }
+			    li.purple a:hover { background-color: #A8A6CD / 1.2; }
+
+			    li.orange a { background-color: #D4B690; }
+			    li.orange a:hover { background-color: #D4B690 / 1.2; }
+			}
+			}
+		}
+		
 		.widget-tagcloud {
 			background: url('../../images/icon_tag.jpg') top left no-repeat;
 			
