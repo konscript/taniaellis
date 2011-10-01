@@ -779,7 +779,7 @@
 			height: 40px;
 			left: 0;
 			position: absolute;
-			top: -40px;
+			top: -37px;
 			width: 331px;
 
 			li {
@@ -799,10 +799,10 @@
 
 	#social-bar, #social-bar-frontpage {
 		@include border-bottom-radius(10px);
-		height: 40px;
+		height: 35px;
 		position: absolute;
 		right: 38px;
-		top: -20px;
+		top: -15px;
 		width: 500px;
 		margin-top: 0;
 		
