@@ -1737,11 +1737,11 @@
 #page .right-sidebar .post .thumb-wrapper .thumb-container, #page .right-sidebar-single .post .thumb-wrapper .thumb-container {
   border: 5px solid #E1DCD8;
   display: table-cell;
-  height: 250px;
+  height: 110px;
   position: relative;
   vertical-align: middle;
   text-align: center;
-  width: 240px;
+  width: 100px;
 }
 /* line 1512, ../sass/misc.scss */
 #page .right-sidebar .post .thumb-wrapper .thumb-container .wp-post-image, #page .right-sidebar-single .post .thumb-wrapper .thumb-container .wp-post-image {
