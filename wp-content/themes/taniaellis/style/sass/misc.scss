@@ -1366,18 +1366,42 @@
 			background: url('../../images/post_type_icon_events.png') top left no-repeat;
 
 			.event {
-				@include featured-image(250px, 0);
-
-				.excerpt {
-					width: 260px;
+				.item-content {
+					width: auto;
+				}
+				.title, .excerpt {
+					width: auto;
+				}
+				
+				.title {
+					margin-top: 0px;
+				}
+				
+				.byline {
+					display: none;
 				}
 				
 				.meta-data {
-					width: 260px;
-					float: right;
+					float: left;
 					margin-top: 3px;
 					margin-bottom: 12px;
-					text-align: right;
+					padding: 0;
+					text-align: left;
+					
+					span {
+						font-weight: bold;
+					}
+				}
+				
+				.options {
+					float: right;
+					width: 100px;
+				}
+				
+				.addthis_toolbox {
+					margin-top: 18px;
+					clear: right;
+					float: left;
 				}
 			}
 		}
@@ -2056,27 +2080,44 @@
 		background: url('../../images/post_type_icon_events.png') top left no-repeat;
 
 		.event {
-
+			.item-content {
+				width: 520px;
+			}
+			
 			.meta-data {
 				float: left;
-				width: 390px;
+				
+				span {
+					font-weight: bold;
+				}
 			}
 
-			// Probably not needed?
-			.title, .excerpt {
+			.byline {
+				float: right;
+				margin-bottom: 15px;
+			}
+			
+			.title {
+				clear: right;
 				float: none;
 				width: auto;
 			}
-
+			
+			.excerpt {
+				clear: right;
+				float: none;
+				width: auto;
+			}
+			
 			.options {
 				float: right;
 				width: 100px;
 			}
 			
 			.addthis_toolbox {
-				clear: left;
+				margin-top: 18px;
+				clear: right;
 				float: left;
-				margin-top: 20px;
 			}
 		}
 	}

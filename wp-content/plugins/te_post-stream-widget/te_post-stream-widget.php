@@ -55,6 +55,14 @@ class TE_PostStreamWidget extends WP_Widget {
 			'te_testemonail_video'	=> 'cases/all'
 		);
 		
+		$size = array(
+			'wide'									=> 'post-wide-thumbnail',
+			'square'								=> 'post-square-thumbnail',
+			'tall'									=> 'post-tall-thumbnail'
+		);
+		
+		$dim = $size[$instance['dimensions']]
+		
 		?>
 		
 		<div class="widget widget-<?php echo $wclass[$instance['type']]; ?><?php if(!$instance['showAddthis']) echo " no-addthis"; ?>">
@@ -101,14 +109,15 @@ class TE_PostStreamWidget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		
-		$instance['titleA'] 	= strip_tags($new_instance['titleA']);
-		$instance['titleB'] 	= strip_tags($new_instance['titleB']);
-		$instance['type']		= strip_tags($new_instance['type']);
-		$instance['items']		= strip_tags($new_instance['items']);
-		$instance['thumbnails'] = strip_tags($new_instance['thumbnails']);
+		$instance['titleA'] 				= strip_tags($new_instance['titleA']);
+		$instance['titleB'] 				= strip_tags($new_instance['titleB']);
+		$instance['type']						= strip_tags($new_instance['type']);
+		$instance['items']					= strip_tags($new_instance['items']);
+		$instance['thumbnails'] 		= strip_tags($new_instance['thumbnails']);
 		$instance['viewAllButton'] 	= strip_tags($new_instance['viewAllButton']);
-		$instance['showAddthis'] 	= strip_tags($new_instance['showAddthis']);
-		$instance['showRatings'] 	= strip_tags($new_instance['showRatings']);
+		$instance['showAddthis'] 		= strip_tags($new_instance['showAddthis']);
+		$instance['showRatings'] 		= strip_tags($new_instance['showRatings']);
+		$instance['dimensions'] 		= strip_tags($new_instance['dimensions']);
 		
 		return $instance;
 	}
@@ -165,6 +174,17 @@ class TE_PostStreamWidget extends WP_Widget {
 				<?php for($i = 1; $i <= 10; $i++) : ?>
 				<option value="<?php echo $i; ?>"<?php if($instance['items'] == $i) : ?> selected="selected"<?php endif; ?>><?php echo $i; ?></option>
 				<?php endfor; ?>
+			</select>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('dimensions'); ?>">Dimensions:</label><br />
+			<select 
+				id="<?php echo $this->get_field_id('dimensions'); ?>" 
+				name="<?php echo $this->get_field_name('dimensions'); ?>">
+				<option value="wide"<?php if($instance['dimensions'] == 'wide') : ?> selected="selected"<?php endif; ?>>Wide</option>
+				<option value="square"<?php if($instance['dimensions'] == 'square') : ?> selected="selected"<?php endif; ?>>Square</option>
+				<option value="tall"<?php if($instance['dimensions'] == 'tall') : ?> selected="selected"<?php endif; ?>>Tall</option>
 			</select>
 		</p>
 		
