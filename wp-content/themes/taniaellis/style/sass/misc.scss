@@ -1224,6 +1224,36 @@
 		
 		.widget-blog.related, .widget-reading-room.related {
 			background: url('../../images/icon_related.png') top left no-repeat;
+			
+			.item {
+				.thumb-wrapper {
+					margin-right: 0;
+				}
+
+				.thumb-container {
+					width: 250px;
+					height: 110px;
+				}
+
+				.excerpt {
+					width: 260px;
+				}
+
+				.options {
+					float: right;
+					width: 100px;
+				}
+
+				.rating {
+					clear: left;
+					float: left;
+					margin-top: 12px;
+				}
+
+				.addthis_toolbox {
+					margin-top: 17px;
+				}
+			}
 		}
 		
 		.widget-blog.popular, .widget-reading-room.popular {
