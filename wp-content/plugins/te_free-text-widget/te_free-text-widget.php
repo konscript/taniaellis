@@ -302,14 +302,14 @@ function load_tiny_mce() {
 	wp_tiny_mce( false );
 }
 
-add_action('admin_print_scripts', 'load_admin_scripts');
-add_action('admin_print_styles', 'load_admin_styles');
-add_action('admin_head', 'load_tiny_mce');
-
 function te_load_FreeTextWidget() {
+	add_action('admin_print_scripts', 'load_admin_scripts');
+	add_action('admin_print_styles', 'load_admin_styles');
+	add_action('admin_head', 'load_tiny_mce');
 	register_widget('TE_FreeTextWidget');
 }
 
+if(is_admin() && $_SERVER['PHP_SELF'] == "/taniaellis/wp-admin/widgets.php")
 add_action('widgets_init', 'te_load_FreeTextWidget');
 
 ?>
