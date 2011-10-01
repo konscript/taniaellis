@@ -1485,6 +1485,10 @@
 			}
 		}
 		
+		#search {
+			background: url('../../images/icon_questionmark.png') top left no-repeat;
+		}
+		
 		.comments-header {
 			background: url(../../images/comments_icon.png) top left no-repeat;
 			border-bottom: none;
@@ -2162,6 +2166,10 @@
 	.title {
 		clear: right;
 		margin-bottom: 12px;
+	}
+	
+	.title-search {
+		clear: both;
 	}
 
 	.excerpt {
