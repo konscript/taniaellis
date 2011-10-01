@@ -30,10 +30,21 @@
 			?>
 		</section>
 		<section class="right-sidebar-single">
+			<?php
+			
+			$post_meta['first-line']  = get_post_meta($post->ID, 'te_page-text-title-first-line', true);
+      $post_meta['second-line'] = get_post_meta($post->ID, 'te_page-text-title-second-line', true);
+      $post_meta['title-icon']  = get_post_meta($post->ID, 'te_page-text-title-icon', true);
+      $post_meta['lead-text']   = get_post_meta($post->ID, 'te_page-text-lead-paragraph-text', true);
+				
+			?>
 			<div class="sidebar-background">
 				<div class="post-header">
-					<h2 class="first-line">Previous</h2>
-					<h2 class="second-line">Events</h2>
+				<h2 class="first-line"><?php echo $post_meta['first-line']; ?></h2>
+				<h2 class="second-line"><?php echo $post_meta['second-line']; ?></h2>
+				<?php if(!empty($post_meta['lead-text'])) : ?>
+					<p class="lead-text"><?php echo $post_meta['lead-text']; ?></p>
+				<?php endif; ?>
 				</div>
 				
 				<?php 
