@@ -6,15 +6,19 @@
 <?php get_header(); ?>
 
 <script type="text/javascript">
-	  jQuery(document).ready(function() {
-	    jQuery(".lab-container").innerfade({
-	      animationtype: 'fade',
-	      containerheight: '172px',
-	      timeout: 3500,
-	      speed: 750
-	    });
-	  });
-	</script>
+    // jQuery(document).ready(function() {
+    //   jQuery(".lab-container").innerfade({
+    //     animationtype: 'fade',
+    //     containerheight: '172px',
+    //     timeout: 3500,
+    //     speed: 750
+    //   });
+    // });
+    
+    jQuery(document).ready(function() {
+      rollFade('.lab-container', '.labs', false, 3500, 375);
+    });
+</script>
 
 <div id="header">
 	<p id="sub-heading">The <span>Social</span> Business Company &reg;</p>
@@ -55,13 +59,13 @@
         ?>
         
         <div class="lab-container">
-          <div class="flasks">
+          <div class="flasks labs">
             <img src="<?php bloginfo('template_url'); ?>/images/events_header_flask_1.png" />
             <img src="<?php bloginfo('template_url'); ?>/images/events_header_flask_2.png" />
             <img src="<?php bloginfo('template_url'); ?>/images/events_header_flask_3.png" />
           </div>
           <?php for($i = 1 ; $i < 4 ; $i++): ?>
-            <div class="lab lab-<?php echo $i; ?>">
+            <div class="lab labs lab-<?php echo $i; ?>">
               <div class="title">
                 <p class="first-line"><?php echo $labs[$i]['title-line-1']; ?></p>
                 <p class="second-line"><?php echo $labs[$i]['title-line-2']; ?></p>

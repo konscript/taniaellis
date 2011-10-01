@@ -14,7 +14,8 @@
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.min.js"></script>
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.corner.js"></script>
 		<script src="<?php bloginfo('template_url') ?>/js/modernizr.js"></script>
-		<script src="<?php bloginfo('template_url') ?>/js/jquery.innerfade.js"></script>
+		<!-- // <script src="<?php bloginfo('template_url') ?>/js/jquery.innerfade.js"></script> -->
+		<script src="<?php bloginfo('template_url') ?>/js/rollfade.js"></script>
 		<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
