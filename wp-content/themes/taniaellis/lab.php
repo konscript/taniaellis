@@ -6,15 +6,15 @@
 <?php get_header(); ?>
 
 <script type="text/javascript">
-  jQuery(document).ready(function() {
-    jQuery(".lab-container").innerfade({
-      animationtype: 'fade',
-      containerheight: '172px',
-      timeout: 3500,
-      speed: 750
-    });
-  });
-</script>
+	  jQuery(document).ready(function() {
+	    jQuery(".lab-container").innerfade({
+	      animationtype: 'fade',
+	      containerheight: '172px',
+	      timeout: 3500,
+	      speed: 750
+	    });
+	  });
+	</script>
 
 <div id="header">
 	<p id="sub-heading">The <span>Social</span> Business Company &reg;</p>
