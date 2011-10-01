@@ -77,7 +77,13 @@
           $box_link_address = get_post_meta($post->ID, 'te_about-box-text-link-address', true);
           $box_link_text = get_post_meta($post->ID, 'te_about-box-text-link-text', true);
         ?>
-        <a class="box-button green-button" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>                       
+        <?php $bonus_sticker = get_post_meta($post->ID, 'te_about-box-text-bonus-sticker', true); ?>
+        <?php $sticker_url = get_post_meta($post->ID, 'te_about-box-text-bonus-sticker-image', true); ?>
+        
+        <?php if($bonus_sticker == 'on' && $sticker_url): ?>
+				  <img src="<?php echo $sticker_url; ?>" alt="" class="bonus-sticker" />
+				<?php endif; ?>
+        <a class="box-button green-button" href="<?php echo $box_link_address; ?>" target="_blank"><?php echo $box_link_text; ?></a>                       
       </div>
     </div>
 	  
@@ -98,7 +104,7 @@
 
 
           <div class="key-services">
-            <div class="key-service" id="club">
+            <div class="key-service uneven">
               <div class="header">
                 <p class="first-line">The Social Business</p>
                 <p class="second-line">Club</p>
@@ -119,7 +125,49 @@
               <a href="#" class="key-service-read-more">Read more</a>
             </div>
             
-            <div class="key-service" id="club">
+            <div class="key-service" id="purple">
+              <div class="header">
+                <p class="first-line">The Social Business</p>
+                <p class="second-line">Club</p>
+              </div>
+              
+              <p class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+              </p>
+              
+              <ul>
+                <li><span>&nbsp;</span>Monthly Lectures</li>
+                <li><span>&nbsp;</span>Yearly Workshops</li>
+                <li><span>&nbsp;</span>Connets You With LikeMinded</li>
+                <li><span>&nbsp;</span>Lorem Ipsum Dolor</li>                
+              </ul>
+
+              <div class="push"></div>
+              <a href="#" class="key-service-read-more">Read more</a>
+            </div>
+            
+            <div class="key-service uneven" id="blue">
+              <div class="header">
+                <p class="first-line">The Social Business</p>
+                <p class="second-line">Club</p>
+              </div>
+              
+              <p class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+              </p>
+              
+              <ul>
+                <li><span>&nbsp;</span>Monthly Lectures</li>
+                <li><span>&nbsp;</span>Yearly Workshops</li>
+                <li><span>&nbsp;</span>Connets You With LikeMinded</li>
+                <li><span>&nbsp;</span>Lorem Ipsum Dolor</li>                
+              </ul>
+
+              <div class="push"></div>
+              <a href="#" class="key-service-read-more">Read more</a>
+            </div>
+          
+            <div class="key-service" id="brown">
               <div class="header">
                 <p class="first-line">The Social Business</p>
                 <p class="second-line">Club</p>
@@ -140,6 +188,7 @@
               <a href="#" class="key-service-read-more">Read more</a>
             </div>
           </div>
+          
         	
         	
         	

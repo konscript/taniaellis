@@ -216,6 +216,8 @@ require_once('page_templates/page-template-te_lectures.php');
 require_once('page_templates/page-template-te_reading-room.php');
 require_once('page_templates/page-template-te_about.php');
 require_once('page_templates/page-template-te_page.php');
+require_once('page_templates/page-template-te_page-text.php');
+
 
 /**
 ###################################
@@ -255,6 +257,10 @@ function te_page_template_meta_boxes() {
     case 'about.php':
       te_about_meta();
       break;
+    case 'page-text.php':
+      te_page_text_meta();
+      break;
+    case 'blog.php':
 		case 'page.php':
     default:
       te_page_meta();

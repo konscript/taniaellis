@@ -36,7 +36,7 @@ function te_lectures_meta() {
      )
     );
     
-    $box_prefix = 'te_consulting-box-text';
+    $box_prefix = 'te_lectures-box-text';
     
     $meta_boxes[] = array(
      'id' => $box_prefix,
@@ -70,7 +70,17 @@ function te_lectures_meta() {
          'name' => 'Link Text',
          'id' => $box_prefix . '-link-text',
          'type' => 'text'
-       )
+       ),
+       array(
+   		  'name' => 'Bonus Sticker On/Off',
+   		  'id' => $box_prefix . '-bonus-sticker',
+   		  'type' => 'checkbox'
+   		),
+   		array(
+   		  'name'  => 'Bonus Sticker Image',
+   		  'id'    => $box_prefix . '-bonus-sticker-image',
+   		  'type'  => 'image'
+   		)
      )
     );
     

@@ -32,6 +32,16 @@ function te_club_meta() {
   		  'name' => 'Link Text',
   		  'id' => $header_prefix . '-link-text',
   		  'type' => 'text',
+  		),
+  		array(
+  		  'name' => 'Left Pane First Line',
+  		  'id' => $header_prefix . '-left-pane-first-line',
+  		  'type' => 'text',
+  		),
+  		array(
+  		  'name' => 'Left Pane Second Line',
+  		  'id' => $header_prefix . '-left-pane-second-line',
+  		  'type' => 'text',
   		)
   	)
   );
@@ -70,6 +80,16 @@ function te_club_meta() {
   		  'name' => 'Link Text',
   		  'id' => $box_prefix . '-link-text',
   		  'type' => 'text'
+  		),
+  		array(
+  		  'name' => 'Bonus Sticker On/Off',
+  		  'id' => $box_prefix . '-bonus-sticker',
+  		  'type' => 'checkbox'
+  		),
+  		array(
+  		  'name'  => 'Bonus Sticker Image',
+  		  'id'    => $box_prefix . '-bonus-sticker-image',
+  		  'type'  => 'image'
   		)
   	)
   );

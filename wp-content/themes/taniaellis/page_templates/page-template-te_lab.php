@@ -70,6 +70,16 @@ function te_lab_meta() {
   		  'name' => 'Link Text',
   		  'id' => $box_prefix . '-link-text',
   		  'type' => 'text'
+  		),
+  		array(
+  		  'name' => 'Bonus Sticker On/Off',
+  		  'id' => $box_prefix . '-bonus-sticker',
+  		  'type' => 'checkbox'
+  		),
+  		array(
+  		  'name'  => 'Bonus Sticker Image',
+  		  'id'    => $box_prefix . '-bonus-sticker-image',
+  		  'type'  => 'image'
   		)
   	)
   );

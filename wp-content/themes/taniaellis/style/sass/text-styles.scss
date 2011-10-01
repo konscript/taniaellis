@@ -1,5 +1,5 @@
 @import "compass/css3/transition";
- 
+  
 body {
 	font-size: 75%;
 }
@@ -436,7 +436,7 @@ html>body {
 		.box-content {
 			color: #FFF;
 			font-size: 1em;
-			line-height: 1.1em;
+			line-height: 1.3em;
 		}
 		
 		.box-content-dark {
@@ -477,11 +477,17 @@ html>body {
 		}
 		
 		.big-line {
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 4.6em;
+			font-family: "Arial Black", Arial, Helvetica, sans-serif;
+			font-size: 1.8em;
 			font-weight: bold;
 			line-height: 0.75em;
+			padding-bottom: 34px;
 			text-transform: uppercase;
+		}
+		
+		.lead-text {
+			font-weight: bold;
+			line-height: 1.3em;
 		}
 	}
 	
@@ -525,6 +531,21 @@ html>body {
 			font-size: 1em;
 			line-height: 1.5em;
 			
+			a {
+				@include transition(color, 0.1s, ease-in-out);
+				color: #7FB987;
+				text-decoration: none;
+				font-weight: bold;
+				
+				&:hover {
+					color: #7FB987 / 1.2;
+				}
+			}
+			
+			ul {
+				margin-bottom: 1em;
+			}
+			
 			p {
 				margin-bottom: 1em;
 				
@@ -532,20 +553,19 @@ html>body {
 					font-weight: bold;
 				}
 				
-				a {
-					@include transition(color, 0.1s, ease-in-out);
-					color: #7db985;
-					text-decoration: none;
-					font-weight: bold;
-					
-					&:hover {
-						color: #7db985 / 1.2;
-					}
+				em {
+					font-style: italic;
 				}
 			}
-			
-			h3 {
-				font-size: 1.25em;
+
+			h1 { font-size: 1.7em; }			
+			h2 { font-size: 1.5em; }
+			h3 { font-size: 1.25em; }
+			h4 { font-size: 1.1em; }
+			h5 { font-size: 1em; }
+			h6 { font-size: 0.9em; }
+					
+			h1, h2, h3, h4, h5, h6 {
 				font-weight: bold;
 				margin-bottom: 0.6em;
 				margin-top: 2.5em;
@@ -600,6 +620,17 @@ html>body {
 		
 		.entry {
 			line-height: 1.3em;
+			
+			a {
+				color: #7FB987;
+				font-weight: bold;
+				text-decoration: none;
+				@include transition(color, 0.1s, ease-in-out);
+				
+				&:hover {
+					color: #7FB987 / 1.2;
+				}
+			}
 		}
 		
 		.add-comment {
@@ -816,6 +847,11 @@ html>body {
 						text-transform: uppercase;
 					}
 				}
+				
+				.key-service-read-more {
+					color: #FFF;
+					text-decoration: none;
+				}
 			}
 			
 			.content {
@@ -825,6 +861,8 @@ html>body {
 			
 			ul {
 			}
+			
+			
 		}
 	}
 }

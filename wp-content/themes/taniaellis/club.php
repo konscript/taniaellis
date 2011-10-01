@@ -17,7 +17,7 @@ Template Name: Club
 	<div id="header-container">
 		
 		<?php wp_nav_menu(array(
-	    'theme_location' 	=> 'reading-room-menu',
+	    'theme_location' 	=> 'club-menu',
 			'menu_class'		=> 'navigation-header',
 			'menu_id'			=> 'navigation-header-standard',
 			'link_before'		=> '<span>&nbsp;</span>'
@@ -30,8 +30,8 @@ Template Name: Club
 			  <img src="<?php bloginfo('template_url'); ?>/images/club_logo.png" id="club-logo" />
         
         <p class="testemonials-title">
-          <span class="first-line">Join the club</span>
-          <span class="second-line">See what the members say...</span>
+          <span class="first-line"><?php echo get_post_meta($post->ID, 'te_club-header-text-left-pane-first-line', true); ?></span>
+          <span class="second-line"><?php echo get_post_meta($post->ID, 'te_club-header-text-left-pane-second-line', true); ?></span>
         </p>
         
         <?php 
@@ -117,7 +117,13 @@ Template Name: Club
           $box_link_address = get_post_meta($post->ID, 'te_club-box-text-link-address', true);
           $box_link_text = get_post_meta($post->ID, 'te_club-box-text-link-text', true);
         ?>
-        <a class="box-button green-button" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>                       
+        <?php $bonus_sticker = get_post_meta($post->ID, 'te_club-box-text-bonus-sticker', true); ?>
+        <?php $sticker_url = get_post_meta($post->ID, 'te_club-box-text-bonus-sticker-image', true); ?>
+        
+        <?php if($bonus_sticker == 'on' && $sticker_url): ?>
+				  <img src="<?php echo $sticker_url; ?>" alt="" class="bonus-sticker" />
+				<?php endif; ?>
+        <a class="box-button green-button" href="<?php echo $box_link_address; ?>" target="_blank"><?php echo $box_link_text; ?></a>                       
       </div>
     </div>
 

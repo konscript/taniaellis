@@ -16,7 +16,7 @@
 	<div id="header-container">
 		
 		<?php wp_nav_menu(array(
-	    'theme_location' 	=> 'reading-room-menu',
+	    'theme_location' 	=> 'consulting-menu',
 			'menu_class'		=> 'navigation-header',
 			'menu_id'			=> 'navigation-header-standard',
 			'link_before'		=> '<span>&nbsp;</span>'
@@ -109,7 +109,13 @@
           $box_link_address = get_post_meta($post->ID, 'te_consulting-box-text-link-address', true);
           $box_link_text = get_post_meta($post->ID, 'te_consulting-box-text-link-text', true);
         ?>
-        <a class="box-button blue-button" href="<?php echo $box_link_address; ?>"><?php echo $box_link_text; ?></a>                       
+        <?php $bonus_sticker = get_post_meta($post->ID, 'te_consulting-box-text-bonus-sticker', true); ?>
+        <?php $sticker_url = get_post_meta($post->ID, 'te_consulting-box-text-bonus-sticker-image', true); ?>
+        
+        <?php if($bonus_sticker == 'on' && $sticker_url): ?>
+				  <img src="<?php echo $sticker_url; ?>" alt="" class="bonus-sticker" />
+				<?php endif; ?>
+        <a class="box-button blue-button" href="<?php echo $box_link_address; ?>" target="_blank"><?php echo $box_link_text; ?></a>                       
       </div>
     </div>
 	  

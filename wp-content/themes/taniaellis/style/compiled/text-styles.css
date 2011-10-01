@@ -409,7 +409,7 @@ html > body {
 #page .box .box-content {
   color: #FFF;
   font-size: 1em;
-  line-height: 1.1em;
+  line-height: 1.3em;
 }
 /* line 442, ../sass/text-styles.scss */
 #page .box .box-content-dark {
@@ -449,64 +449,62 @@ html > body {
 }
 /* line 479, ../sass/text-styles.scss */
 #page .post-header .big-line, #page .comments-header .big-line {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 4.6em;
+  font-family: "Arial Black", Arial, Helvetica, sans-serif;
+  font-size: 1.8em;
   font-weight: bold;
   line-height: 0.75em;
+  padding-bottom: 34px;
   text-transform: uppercase;
 }
 /* line 488, ../sass/text-styles.scss */
+#page .post-header .lead-text, #page .comments-header .lead-text {
+  font-weight: bold;
+  line-height: 1.3em;
+}
+/* line 494, ../sass/text-styles.scss */
 #page .post {
   color: #7D7872;
 }
-/* line 491, ../sass/text-styles.scss */
+/* line 497, ../sass/text-styles.scss */
 #page .post .meta {
   font-size: 0.9em;
 }
-/* line 494, ../sass/text-styles.scss */
+/* line 500, ../sass/text-styles.scss */
 #page .post .meta .byline {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 498, ../sass/text-styles.scss */
+/* line 504, ../sass/text-styles.scss */
 #page .post .meta .byline a {
   color: #7D7872;
   text-decoration: none;
 }
-/* line 502, ../sass/text-styles.scss */
+/* line 508, ../sass/text-styles.scss */
 #page .post .meta .byline a:hover {
   text-decoration: underline;
 }
-/* line 508, ../sass/text-styles.scss */
+/* line 514, ../sass/text-styles.scss */
 #page .post .meta .date {
   text-transform: uppercase;
 }
-/* line 513, ../sass/text-styles.scss */
+/* line 519, ../sass/text-styles.scss */
 #page .post .title {
   font-size: 2.2em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 518, ../sass/text-styles.scss */
+/* line 524, ../sass/text-styles.scss */
 #page .post .title a {
   color: #7D7872;
   text-decoration: none;
 }
-/* line 524, ../sass/text-styles.scss */
+/* line 530, ../sass/text-styles.scss */
 #page .post .entry {
   font-size: 1em;
   line-height: 1.5em;
 }
-/* line 528, ../sass/text-styles.scss */
-#page .post .entry p {
-  margin-bottom: 1em;
-}
-/* line 531, ../sass/text-styles.scss */
-#page .post .entry p strong {
-  font-weight: bold;
-}
-/* line 535, ../sass/text-styles.scss */
-#page .post .entry p a {
+/* line 534, ../sass/text-styles.scss */
+#page .post .entry a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
   -o-transition-property: color;
@@ -519,23 +517,62 @@ html > body {
   -webkit-transition-timing-function: ease-in-out;
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  color: #7db985;
+  color: #7FB987;
   text-decoration: none;
   font-weight: bold;
 }
-/* line 541, ../sass/text-styles.scss */
-#page .post .entry p a:hover {
-  color: #689a6e;
+/* line 540, ../sass/text-styles.scss */
+#page .post .entry a:hover {
+  color: #699a70;
 }
-/* line 547, ../sass/text-styles.scss */
+/* line 545, ../sass/text-styles.scss */
+#page .post .entry ul {
+  margin-bottom: 1em;
+}
+/* line 549, ../sass/text-styles.scss */
+#page .post .entry p {
+  margin-bottom: 1em;
+}
+/* line 552, ../sass/text-styles.scss */
+#page .post .entry p strong {
+  font-weight: bold;
+}
+/* line 556, ../sass/text-styles.scss */
+#page .post .entry p em {
+  font-style: italic;
+}
+/* line 561, ../sass/text-styles.scss */
+#page .post .entry h1 {
+  font-size: 1.7em;
+}
+/* line 562, ../sass/text-styles.scss */
+#page .post .entry h2 {
+  font-size: 1.5em;
+}
+/* line 563, ../sass/text-styles.scss */
 #page .post .entry h3 {
   font-size: 1.25em;
+}
+/* line 564, ../sass/text-styles.scss */
+#page .post .entry h4 {
+  font-size: 1.1em;
+}
+/* line 565, ../sass/text-styles.scss */
+#page .post .entry h5 {
+  font-size: 1em;
+}
+/* line 566, ../sass/text-styles.scss */
+#page .post .entry h6 {
+  font-size: 0.9em;
+}
+/* line 568, ../sass/text-styles.scss */
+#page .post .entry h1, #page .post .entry h2, #page .post .entry h3, #page .post .entry h4, #page .post .entry h5, #page .post .entry h6 {
   font-weight: bold;
   margin-bottom: 0.6em;
   margin-top: 2.5em;
   text-transform: uppercase;
 }
-/* line 557, ../sass/text-styles.scss */
+/* line 577, ../sass/text-styles.scss */
 #page .post .read-more a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -553,45 +590,67 @@ html > body {
   font-weight: bold;
   text-decoration: none;
 }
-/* line 564, ../sass/text-styles.scss */
+/* line 584, ../sass/text-styles.scss */
 #page .post .read-more a:hover {
   color: #699a70;
 }
-/* line 570, ../sass/text-styles.scss */
+/* line 590, ../sass/text-styles.scss */
 #page .post .add-comment {
   float: left;
 }
-/* line 575, ../sass/text-styles.scss */
+/* line 595, ../sass/text-styles.scss */
 #page .post-feed {
   color: #7D7872;
 }
-/* line 579, ../sass/text-styles.scss */
+/* line 599, ../sass/text-styles.scss */
 #page .post-feed .byline {
   font-size: 0.9em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 585, ../sass/text-styles.scss */
+/* line 605, ../sass/text-styles.scss */
 #page .post-feed .date {
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 590, ../sass/text-styles.scss */
+/* line 610, ../sass/text-styles.scss */
 #page .post-feed .title {
   font-size: 1.3em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 595, ../sass/text-styles.scss */
+/* line 615, ../sass/text-styles.scss */
 #page .post-feed .title a {
   color: #7D7872;
   text-decoration: none;
 }
-/* line 601, ../sass/text-styles.scss */
+/* line 621, ../sass/text-styles.scss */
 #page .post-feed .entry {
   line-height: 1.3em;
 }
-/* line 606, ../sass/text-styles.scss */
+/* line 624, ../sass/text-styles.scss */
+#page .post-feed .entry a {
+  color: #7FB987;
+  font-weight: bold;
+  text-decoration: none;
+  -moz-transition-property: color;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+/* line 630, ../sass/text-styles.scss */
+#page .post-feed .entry a:hover {
+  color: #699a70;
+}
+/* line 637, ../sass/text-styles.scss */
 #page .post-feed .add-comment a {
   color: #7FB987;
   float: left;
@@ -610,11 +669,11 @@ html > body {
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-/* line 613, ../sass/text-styles.scss */
+/* line 644, ../sass/text-styles.scss */
 #page .post-feed .add-comment a:hover {
   color: #699a70;
 }
-/* line 619, ../sass/text-styles.scss */
+/* line 650, ../sass/text-styles.scss */
 #page .post-feed .read-more, #page .post-feed .add-comment {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -633,25 +692,25 @@ html > body {
   font-weight: bold;
   text-decoration: none;
 }
-/* line 627, ../sass/text-styles.scss */
+/* line 658, ../sass/text-styles.scss */
 #page .post-feed .read-more:hover, #page .post-feed .add-comment:hover {
   color: #699a70;
 }
-/* line 632, ../sass/text-styles.scss */
+/* line 663, ../sass/text-styles.scss */
 #page .post-feed .add-comment {
   float: left;
 }
-/* line 638, ../sass/text-styles.scss */
+/* line 669, ../sass/text-styles.scss */
 #page .posts-nav-links a {
   color: #FFF;
   text-decoration: none;
 }
-/* line 644, ../sass/text-styles.scss */
+/* line 675, ../sass/text-styles.scss */
 #page .post-categories, #page .post-tags {
   color: #7D7872;
   font-weight: bold;
 }
-/* line 648, ../sass/text-styles.scss */
+/* line 679, ../sass/text-styles.scss */
 #page .post-categories a, #page .post-tags a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -669,93 +728,93 @@ html > body {
   font-weight: normal;
   text-decoration: none;
 }
-/* line 654, ../sass/text-styles.scss */
+/* line 685, ../sass/text-styles.scss */
 #page .post-categories a:hover, #page .post-tags a:hover {
   color: #699a70;
 }
-/* line 660, ../sass/text-styles.scss */
+/* line 691, ../sass/text-styles.scss */
 #page #respond {
   color: #7D7872;
   font-weight: bold;
 }
-/* line 664, ../sass/text-styles.scss */
+/* line 695, ../sass/text-styles.scss */
 #page #respond input {
   font-weight: normal;
 }
-/* line 668, ../sass/text-styles.scss */
+/* line 699, ../sass/text-styles.scss */
 #page #respond input[type=submit] {
   color: #FFF;
 }
-/* line 673, ../sass/text-styles.scss */
+/* line 704, ../sass/text-styles.scss */
 #page .recent-comments {
   color: #7D7872;
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 678, ../sass/text-styles.scss */
+/* line 709, ../sass/text-styles.scss */
 #page .recent-comments span {
   color: #7FB987;
 }
-/* line 684, ../sass/text-styles.scss */
+/* line 715, ../sass/text-styles.scss */
 #page .comment .comment-author-url {
   color: #7FB987;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 690, ../sass/text-styles.scss */
+/* line 721, ../sass/text-styles.scss */
 #page .comment .comment-date-time {
   color: #7D7872;
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 696, ../sass/text-styles.scss */
+/* line 727, ../sass/text-styles.scss */
 #page .comment .comment-author {
   color: #7D7872;
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 702, ../sass/text-styles.scss */
+/* line 733, ../sass/text-styles.scss */
 #page .comment .comment-content {
   color: #7D7872;
   line-height: 1.3em;
 }
-/* line 710, ../sass/text-styles.scss */
+/* line 741, ../sass/text-styles.scss */
 #page .widget-list .list .title {
   color: #7d7a75;
 }
-/* line 714, ../sass/text-styles.scss */
+/* line 745, ../sass/text-styles.scss */
 #page .widget-list .list li {
   font-size: 11px;
 }
-/* line 721, ../sass/text-styles.scss */
+/* line 752, ../sass/text-styles.scss */
 #page .widget .header-container {
   color: #B0ADA6;
 }
-/* line 724, ../sass/text-styles.scss */
+/* line 755, ../sass/text-styles.scss */
 #page .widget .header-container .first-line {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 0.699em;
   text-transform: uppercase;
 }
-/* line 732, ../sass/text-styles.scss */
+/* line 763, ../sass/text-styles.scss */
 #page .widget .header-container .second-line {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 1.65em;
   text-transform: uppercase;
 }
-/* line 741, ../sass/text-styles.scss */
+/* line 772, ../sass/text-styles.scss */
 #page .widget .item .by-line, #page .widget .item .meta-data {
   color: #94918A;
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 747, ../sass/text-styles.scss */
+/* line 778, ../sass/text-styles.scss */
 #page .widget .item .by-line {
   font-weight: bold;
 }
-/* line 751, ../sass/text-styles.scss */
+/* line 782, ../sass/text-styles.scss */
 #page .widget .item .title {
   color: #94918A;
   display: block;
@@ -764,16 +823,16 @@ html > body {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 759, ../sass/text-styles.scss */
+/* line 790, ../sass/text-styles.scss */
 #page .widget .item .title:hover {
   text-decoration: underline;
 }
-/* line 764, ../sass/text-styles.scss */
+/* line 795, ../sass/text-styles.scss */
 #page .widget .item .excerpt {
   color: #94918A;
   line-height: 1.4em;
 }
-/* line 770, ../sass/text-styles.scss */
+/* line 801, ../sass/text-styles.scss */
 #page .widget .item .options .read-more, #page .widget .item .options .view-cases, #page .widget .item .options .view-clients, #page .widget .item .options .add-comment {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -792,85 +851,90 @@ html > body {
   text-decoration: none;
   font-weight: bold;
 }
-/* line 778, ../sass/text-styles.scss */
+/* line 809, ../sass/text-styles.scss */
 #page .widget .item .options .read-more:hover, #page .widget .item .options .view-cases:hover, #page .widget .item .options .view-clients:hover, #page .widget .item .options .add-comment:hover {
   color: #689a6e;
 }
-/* line 785, ../sass/text-styles.scss */
+/* line 816, ../sass/text-styles.scss */
 #page .widget .item .list li {
   color: #7b7873;
   text-transform: uppercase;
 }
-/* line 792, ../sass/text-styles.scss */
+/* line 823, ../sass/text-styles.scss */
 #page .widget .view-all {
   color: #FFF;
   text-decoration: none;
 }
-/* line 796, ../sass/text-styles.scss */
+/* line 827, ../sass/text-styles.scss */
 #page .widget .view-all:hover {
   color: #e7e7e7;
 }
-/* line 806, ../sass/text-styles.scss */
+/* line 837, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .header {
   color: #FFF;
 }
-/* line 809, ../sass/text-styles.scss */
+/* line 840, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .header .first-line {
   text-transform: uppercase;
 }
-/* line 813, ../sass/text-styles.scss */
+/* line 844, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .header .second-line {
   font-family: "Arial Black", Arial, Helvetica;
   font-size: 1.8em;
   text-transform: uppercase;
 }
-/* line 821, ../sass/text-styles.scss */
+/* line 851, ../sass/text-styles.scss */
+#page .widget-key-services .key-services .key-service .key-service-read-more {
+  color: #FFF;
+  text-decoration: none;
+}
+/* line 857, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .content {
   color: #595753;
   line-height: 1.5em;
 }
 
-/* line 833, ../sass/text-styles.scss */
+/* line 871, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: bold;
 }
 
-/* line 840, ../sass/text-styles.scss */
+/* line 878, ../sass/text-styles.scss */
 #footer-menu li span {
   color: #9D9C97;
 }
-/* line 844, ../sass/text-styles.scss */
+/* line 882, ../sass/text-styles.scss */
 #footer-menu li a {
   color: #9D9C97;
   text-decoration: none;
 }
-/* line 850, ../sass/text-styles.scss */
+/* line 888, ../sass/text-styles.scss */
 #footer-menu li a:hover {
   text-decoration: underline;
 }
 
-/* line 858, ../sass/text-styles.scss */
+/* line 896, ../sass/text-styles.scss */
 #tagcloud .s1, .widget-tagcloud .tagcloud .s1 {
   color: #a8a6cd;
   font-size: 14px;
 }
-/* line 859, ../sass/text-styles.scss */
+/* line 897, ../sass/text-styles.scss */
 #tagcloud .s2, .widget-tagcloud .tagcloud .s2 {
   color: #91b997;
   font-size: 16px;
 }
-/* line 860, ../sass/text-styles.scss */
+/* line 898, ../sass/text-styles.scss */
 #tagcloud .s3, .widget-tagcloud .tagcloud .s3 {
   color: #e7cd30;
   font-size: 18px;
 }
-/* line 861, ../sass/text-styles.scss */
+/* line 899, ../sass/text-styles.scss */
 #tagcloud .s4, .widget-tagcloud .tagcloud .s4 {
   color: #83a8c2;
   font-size: 20px;
 }
-/* line 862, ../sass/text-styles.scss */
+/* line 900, ../sass/text-styles.scss */
 #tagcloud .s5, .widget-tagcloud .tagcloud .s5 {
   color: #d7b590;
   font-size: 22px;

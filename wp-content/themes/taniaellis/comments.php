@@ -26,7 +26,7 @@
 <?php
 
 if(have_comments($post->ID)) {
-  $comments = get_comments(array('post_id' => $post->ID));
+  $comments = get_comments(array('post_id' => $post->ID, 'status' => 'approve'));
   
   ?>
   <p class="recent-comments">

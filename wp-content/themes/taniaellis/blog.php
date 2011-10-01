@@ -113,7 +113,7 @@
           <span class="box-second-line">Of the Club</span>
         </p>
         <p class="box-content"></p>
-        <a class="box-button" href="javascript:void(0)">Join the Club</a>                       
+        <a class="box-button" href="javascript:void(0)" target="_blank">Join the Club</a>                       
       </div>
     </div>
 	  

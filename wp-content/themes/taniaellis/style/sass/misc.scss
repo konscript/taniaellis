@@ -9,7 +9,7 @@
 		margin-bottom: 3px;
 		width: $width;
 	} 
-}
+} 
 
 #header-top-container {
 	float: right;
@@ -564,6 +564,13 @@
 			#reading-room-left {
 				.books {
 					margin: 10px 0 0 20px;
+					position: relative;
+				}
+				
+				.top-40 {
+					position: absolute;
+					top: 35px;
+					right: -45px;
 				}
 			}
 			
@@ -867,7 +874,7 @@
 			padding: 10px 20px 0;
 		}
 
-		#bonus-sticker {
+		.bonus-sticker {
 			left: 22px;
 			position: absolute;
 			bottom: -35px;
@@ -983,6 +990,11 @@
 	}
 
 	.left-sidebar {
+		background: url("../../images/left-fade-background.png") top left no-repeat;
+		float: left;
+		margin-left: -16px;
+		min-height: 992px;
+		padding-left: 16px;
 		
 		.widget-view-all {
 			width: 320px;
@@ -1386,6 +1398,10 @@
 			margin-right: 20px;
 			padding-left: 50px;
 			padding-bottom: 10px;
+			
+			.lead-text {
+				margin: 5px 0 10px -50px;
+			}
 		}
 		
 		.comments-header {
@@ -1420,11 +1436,22 @@
 				}
 			}
 			
+			.entry {
+				ul li {
+					background: url('../../images/content-bullet-point.png') left 3px no-repeat;
+					padding-left: 25px;
+				}
+				
+				// img {
+				// 	border: 5px solid #CCC;
+				// }
+			}
+			
 			.title {
 				margin-bottom: 25px;
 			}
 			
-			&.blog {
+			&.blog { // What does &. mean?
 				.thumb-wrapper {
 					margin-right: 0;
 					
@@ -1468,7 +1495,7 @@
 			.read-more {
 				float: right;
 				margin-right: 50px;
-				margin-top: 15px;
+				margin-top: 30px;
 			}
 			
 			.addthis_toolbox {
@@ -1755,7 +1782,7 @@
 					@include border-radius(10px);
 					background-color: rgb(234, 230, 227);
 					float: left;
-					margin-left: 20px;
+					margin-bottom: 20px;
 					min-height: 250px;
 					position: relative;
 					width: 250px;
@@ -1800,11 +1827,20 @@
 					
 					.key-service-read-more {
 						@include border-radius(5px);
+						@include background-image(linear-gradient(#7D7A75, #7D7A75 / 1.2));
 						background-color: #7D7A75;
 						bottom: 15px;
 						padding: 5px 10px;
 						position: absolute;
 						right: 20px;
+						
+						&:hover {
+							@include background-image(linear-gradient(#7D7A75 / 1.2, #7D7A75 / 1.44));
+						}
+						
+						&:active {
+							@include background-image(linear-gradient(#7D7A75 / 1.44, #7D7A75 / 1.2));							
+						}
 					}
 					
 					.push {
@@ -1812,8 +1848,44 @@
 						margin-top: 30px;
 					}
 				}
+				
+				.uneven {
+					margin-right: 20px;
+				}
 			}
 			
+			#purple {
+				$purple: rgb(168, 166, 205);
+				.header {
+					background-color: $purple;
+				}
+				
+				ul li span {
+					background-color: $purple;
+				}
+			}
+			
+			#blue {
+				$blue: rgb(131, 169, 192);
+				.header {
+					background-color: $blue;
+				}
+				
+				ul li span {
+					background-color: $blue;
+				}
+			}
+			
+			#brown {
+				$brown: rgb(214, 182, 144);
+				.header {
+					background-color: $brown;
+				}
+				
+				ul li span {
+					background-color: $brown;
+				}
+			}
 		}
 		
 		.widget-reading-room {

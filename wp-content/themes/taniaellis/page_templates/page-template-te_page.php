@@ -1,11 +1,13 @@
 <?php
 
 function te_page_meta() {
+  
 	$meta_boxes[] = array(
 		'id'			=> 'te_page-menu',
 		'title'		=> 'Page Menu',
 		'pages'		=> array('page'),
 		'context'	=> 'normal',
+		'low'  => 'high',
 		'fields'	=> array(
 			array(
 				'name'		=> 'Menu',
