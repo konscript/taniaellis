@@ -1478,7 +1478,7 @@
 						width: 100px;
 					}
 				}
-			}
+			} 
 		}
 
 		.sidebar-background {
@@ -1503,6 +1503,10 @@
 			.lead-text {
 				margin: 5px 0 10px -50px;
 			}
+		}
+		
+		#search {
+			background: url('../../images/icon_questionmark.png') top left no-repeat;
 		}
 		
 		.comments-header {
@@ -1543,9 +1547,24 @@
 					padding-left: 25px;
 				}
 				
-				// img {
-				// 	border: 5px solid #CCC;
-				// }
+				img {
+					border: 5px solid #CCC;
+				}
+				
+				.alignleft {
+					float: left;
+					margin: 0 10px 10px 0;
+				}
+				
+				.alignright {
+					float: right;
+					margin: 0 0 10px 10px;
+				}
+				
+				.aligncenter {
+					display: block;
+					margin: 10px auto;
+				}
 			}
 			
 			.title {
@@ -2202,6 +2221,10 @@
 	.title {
 		clear: right;
 		margin-bottom: 12px;
+	}
+	
+	.title-search {
+		clear: both;
 	}
 
 	.excerpt {

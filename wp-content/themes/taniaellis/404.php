@@ -1,5 +1,4 @@
 <?php
-
 get_header(); 
 ?>
 
@@ -45,3 +44,4 @@ get_header();
 	</div>
 </div>
 <?php get_footer(); ?>
+>>>>>>> 110488688eafbf116bcdb94bef5b8f119df6fed8

@@ -48,10 +48,8 @@
     		<header>
     			<div id="header-top-container">
     			
-					<form method="get" action="<?php bloginfo('siteurl') ?>/search/">
-						<input type="submit" value="" />    			    	
-						<input type="text" name="searchbar" value="" id="searchbar" />
-					</form>
+            <!-- Retreive the searchbar from searchform.php -->
+            <?php get_search_form(); ?>
 					
     				<?php wp_nav_menu(array(
     					'theme_location'		=> 'navigation-top',
@@ -59,6 +57,8 @@
     					'menu_id'				=> 'navigation-top',
     					'menu_class'			=> ''
     				)); ?>
+    				
+            
     				
     				<a id="shop-link" href="javascript:void(0)">Shop</a>
     				
@@ -73,6 +73,7 @@
                         'menu_class'            => ''
                     )); ?>
     				<a href="<?php bloginfo('siteurl') ?>" id="logo"><img src="<?php bloginfo('template_url')?>/images/logo.png" /></a>
+    				
             <!-- <a id="shop-link" href="javascript:void(0)">Shop</a> -->
     			</div>
 
