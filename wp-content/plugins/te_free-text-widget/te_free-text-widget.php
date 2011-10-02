@@ -79,7 +79,10 @@ class TE_FreeTextWidget extends WP_Widget {
 						<span class="by-line"><?php echo $byline; ?></span>
 					<?php endif; ?>
 					
-					<a class="title" href="<?php echo $link; ?>"><?php echo $header; ?></a>
+					<?php if(!empty($header)) : ?>
+						<a class="title" href="<?php echo $link; ?>"><?php echo $header; ?></a>
+					<?php endif; ?>
+					
 					<p class="excerpt"><?php echo nl2br($text); ?></p>
 					
 					<?php if($link != "") : ?>
