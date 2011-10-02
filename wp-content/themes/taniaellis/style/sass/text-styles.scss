@@ -575,6 +575,18 @@ html>body {
 				margin-top: 2.5em;
 				text-transform: uppercase;
 			}
+			
+			.contact-form {
+				p {
+					label {
+						font-weight: bold;
+					}
+					
+					input[type=submit] {
+						color: #FFF;
+					}
+				}
+			}
 		}
 		
 		.read-more {						

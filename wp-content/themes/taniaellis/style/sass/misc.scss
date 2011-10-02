@@ -1565,6 +1565,75 @@
 					display: block;
 					margin: 10px auto;
 				}
+				
+				.contact-form {
+					p {
+						label {
+							float: left;
+							width: 100px;
+						}
+						
+						input, textarea {
+							border: 1px solid #7D7872;
+						}
+						
+						input[type=text] {
+							width: 340px;
+						}
+						
+						textarea {
+							height: 80px;
+							resize: vertical;
+							width: 390px;
+						}
+						
+						input[type=submit] {
+							@include border-radius(5px);
+							@include background-image(linear-gradient(top, #9EBAA3, #7EA382));
+
+							background-color: #A0B9A3;	
+							border: none;				
+							margin-left: 340px;
+							width: 150px;
+
+							&:hover {
+								background-color: #7C7972 / 1.2;						
+								color: #FFF / 1.1;
+								@include background-image(linear-gradient(top, #9EBAA3 / 1.2, #7EA382 / 1.2));
+							}
+
+							&:active {
+								color: #FFF / 1.2;
+								@include background-image(linear-gradient(top, #7EA382 / 1.2, #9EBAA3 / 1.2));
+							}
+						}
+					}
+				}
+				
+				.wpcf7-response-output {
+					@include border-radius(5px);
+					width: 460px;
+				}
+				
+				.wpcf7-mail-sent-ok {
+					border-color: #9CC1A2;
+				}
+				
+				span.wpcf7-not-valid-tip {
+					position: absolute;
+					top: -3px;
+					left: 0%;
+					z-index: 100;
+					background: white;
+					border: 1px solid red;
+					font-size: 10pt;
+					width: 334px;
+					padding: 0px 2px;
+				}
+				
+				.wpcf7-validation-errors {
+					border: 2px solid #E6E47C;
+				}
 			}
 			
 			.title {
