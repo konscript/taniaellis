@@ -52,7 +52,7 @@
 									<?php if(has_post_thumbnail($post->ID)): ?>
 										<div class="thumb-wrapper">
 											<div class="thumb-container">
-												<?php the_post_thumbnail('post-wide-image', array('class' => 'featured-image')); ?>
+												<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
 											</div>
 										</div> <!-- .thumb-cotnainer //-->
 									<?php endif; // #if has_post_thumbnail ?>

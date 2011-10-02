@@ -15,18 +15,28 @@
 
 	<div id="header-container">
 		
-		<?php wp_nav_menu(array(
-	        'theme_location' 	=> 'blog-menu',
-			'menu_class'		=> 'navigation-header',
-			'menu_id'			=> 'navigation-header-standard',
-			'link_before'		=> '<span>&nbsp;</span>'
-	        )); 
-	    ?>
+		<?php 
+		
+			wp_nav_menu(array(
+				'theme_location' 	=> 'blog-menu',
+				'menu_class'		=> 'navigation-header',
+				'menu_id'			=> 'navigation-header-standard',
+				'link_before'		=> '<span>&nbsp;</span>'
+			));
+		
+			$header_titleA = get_post_meta($post->ID, 'te_blog-header-text-titleA', true);
+			$header_titleB = get_post_meta($post->ID, 'te_blog-header-text-titleB', true);
+			$header_title_right = get_post_meta($post->ID, 'te_blog-header-text-title-right', true);
+			$header_content = get_post_meta($post->ID, 'te_blog-header-text-content', true);
+	    $header_link_url = get_post_meta($post->ID, 'te_blog-header-text-link-address', true);
+	   	$header_link_text = get_post_meta($post->ID, 'te_blog-header-text-link-text', true);
+
+	  ?>
 		<div class="header-content">
 			<div class="left-column">
 				<div class="header-title">
-		            <h2 class="first-line">Social Business</h2>
-			        <h2 class="second-line">Blog</h2>
+		            <h2 class="first-line"><?php echo $header_titleA; ?></h2>
+			        <h2 class="second-line"><?php echo $header_titleB; ?></h2>
 		        </div>
 		
 				<h3 id="tagcloud-title"><span>Most tagged words...</span></h3>
@@ -81,10 +91,10 @@
 			</div>
 			<div class="right-column">
 				<div class="header-right-box">
-					<h2>What are the focus of change that are opening up for new business opportunities and social innovations?</h2>
-					<p>Lorem ipsum dolor sit amet, doalr sit consec tetuer adipscing elit, sed diam nonum my nibh euismod.</p>
+					<h2><?php echo $header_title_right; ?></h2>
+					<p><?php echo $header_content; ?></p>
 
-					<a class="join" href="#">Join the conversation</a>
+					<a class="join" href="<?php echo $header_link_url; ?>"><?php echo $header_link_text; ?></a>
 				</div>
 			</div>
 
@@ -108,13 +118,33 @@
 			  <li><a target="_blank" href="<?php bloginfo('rss2_url'); ?>"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_rss.png" /></a></li>
 			  <li><a target="_blank" href="http://thefairpages.com/company-profile/profile.aspx?company=tania-ellis"><img src="<?php bloginfo('template_url') ?>/images/social_media_icon_fairpages.png" /></a></li>
 			</ul>
+			
+			<?php
+			
+			$box_title_line_1 = get_post_meta($post->ID, 'te_blog-box-text-title-line-1', true);
+      $box_title_line_2 = get_post_meta($post->ID, 'te_blog-box-text-title-line-2', true);
+			$box_content = get_post_meta($post->ID, 'te_blog-box-text-content', true);
+			$box_link_address = get_post_meta($post->ID, 'te_blog-box-text-link-address', true);
+      $box_link_text = get_post_meta($post->ID, 'te_blog-box-text-link-text', true);
+
+			$bonus_sticker = get_post_meta($post->ID, 'te_blog-box-text-bonus-sticker', true);
+      $sticker_url = get_post_meta($post->ID, 'te_blog-box-text-bonus-sticker-image', true);
+			
+			?>
+			
       <div class="box">
         <p class="box-header">
-          <span class="box-first-line">Become a Member</span>
-          <span class="box-second-line">Of the Club</span>
+          <span class="box-first-line"><?php echo $box_title_line_1; ?></span>
+          <span class="box-second-line"><?php echo $box_title_line_2; ?></span>
         </p>
-        <p class="box-content"></p>
-        <a class="box-button" href="javascript:void(0)" target="_blank">Join the Club</a>                       
+        <p class="box-content box-content-blog">
+					<?php echo $box_content; ?>
+				</p>
+        
+        <?php if($bonus_sticker == 'on' && $sticker_url): ?>
+				  <img src="<?php echo $sticker_url; ?>" alt="" class="bonus-sticker" />
+				<?php endif; ?>
+        <a class="box-button" href="<?php echo $box_link_address; ?>" target="_blank"><?php echo $box_link_text; ?></a>                       
       </div>
     </div>
 	  
