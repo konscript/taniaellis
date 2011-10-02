@@ -80,7 +80,7 @@ class TE_FreeTextWidget extends WP_Widget {
 					<?php endif; ?>
 					
 					<a class="title" href="<?php echo $link; ?>"><?php echo $header; ?></a>
-					<p class="excerpt"><?php echo $text; ?></p>
+					<p class="excerpt"><?php echo nl2br($text); ?></p>
 					
 					<?php if($link != "") : ?>
 					<div class="options">
