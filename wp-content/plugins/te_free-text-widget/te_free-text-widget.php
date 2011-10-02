@@ -308,7 +308,9 @@ function load_tiny_mce() {
 	wp_tiny_mce( false );
 }
 
-if(is_admin() && $_SERVER['PHP_SELF'] == "/taniaellis/wp-admin/widgets.php") {
+global $pagenow;
+
+if(is_admin() && $pagenow == "widgets.php") {
 	add_action('admin_print_scripts', 'load_admin_scripts');
 	add_action('admin_print_styles', 'load_admin_styles');
 	add_action('admin_head', 'load_tiny_mce');
