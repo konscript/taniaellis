@@ -73,7 +73,7 @@ class TE_FreeTextWidget extends WP_Widget {
 			    <?php endif; ?>
 						
 					<?php if($metadata != "" || $byline != "")	: ?>
-						<p class="meta-data"><?php echo $metadata; ?></p>
+						<p class="meta-data"><?php if(empty($metadata)) { echo "&nbsp;"; }else{ echo $metadata; } ?></p>
 					<?php endif; ?>
 					<?php if($byline != "" || $metadata != "") : ?>
 						<span class="by-line"><?php echo $byline; ?></span>
