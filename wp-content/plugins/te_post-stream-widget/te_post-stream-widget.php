@@ -71,15 +71,33 @@ class TE_PostStreamWidget extends WP_Widget {
 				<h2 class="second-line"><?php echo $titleB; ?></h2>
 			</div>
 			
-		<?php		
+		<?php
 		
-		$q = 'post_type='. $instance['type'] .'&post_status=publish';
+		$args = array(
+			'post_type'				=> $instance['type'],
+			'post_status'			=> 'publish',
+			'orderby'					=> 'date',
+			'order'						=> 'DESC'
+		);
+		
+		// $q = 'post_type='. $instance['type'] .'&post_status=publish';
 		
 		if($instance['type'] == 'te_event') {
-			$q .= '&meta_key=te_event-options-start-date&orderby=meta_value&order=DESC';
+			// $q .= '&meta_key=te_event-options-start-date&orderby=meta_value&order=DESC';
+			
+			$time = date_format(new DateTime(), 'Y/m/d');
+			
+			$args['meta_key'] 		= 'te_event-options-start-date';
+			$args['orderby']			= 'meta_value';
+			$args['order']				= 'DESC';
+			$args['meta_query']		= array(array(
+				'key'	=> 'te_event-options-end-date',
+				'value'	=> $time,
+				'compare'	=> '>'
+			));
 		}
 	
-		$query = new WP_Query($q);
+		$query = new WP_Query($args);
 		
 		$count = 0;
 		while($query->have_posts() && $count < $instance['items']) : $query->the_post();
