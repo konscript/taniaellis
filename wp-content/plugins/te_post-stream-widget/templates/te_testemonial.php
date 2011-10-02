@@ -6,13 +6,29 @@ $text = get_post_meta($post_id, 'te_testemonial-testemonial-text', true);
 
 $case_id = get_post_meta($post_id, 'te_testemonial-case-id', true);
 
+$video_id = get_post_meta($post_id, 'te_testemonial-video-id', true);
+
+if(!empty($video_id) && $video_id > 0) {
+	$video_url = get_post_meta($video_id, 'te_video_url', true);
+}
+
 ?>
 <div class="item testemonial">
 	<div class="item-content">
-		<?php if($instance['thumbnails']) : ?>
-		<a href="<?php the_permalink(); ?>">
-			<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
-		</a>
+		<?php if(has_post_thumbnail($post->ID) && $instance['thumbnails']) : ?>
+      <div class="thumb-wrapper">
+        <div class="thumb-container">
+					<a href="<?php the_permalink(); ?>">
+          	<?php the_post_thumbnail('post-wide-thumbnail', array('class' => 'featured-image')); ?>
+					</a>
+        </div>
+      </div>
+    <?php endif; ?>
+
+		<?php if($video_id && $video_url) : ?>
+			<div class="video">
+				<?php echo te_vimeo_video($video_url, 240, 100); ?>
+			</div>
 		<?php endif; ?>
 	
 		<p class="meta-data"><?php echo $date; ?></p>
@@ -21,7 +37,9 @@ $case_id = get_post_meta($post_id, 'te_testemonial-case-id', true);
 			<?php echo $author; ?>
 		</span>
 		
-		<p class="excerpt"><?php echo $text; ?></p>
+		<?php if(!empty($text)) : ?>
+			<p class="excerpt"><?php echo $text; ?></p>
+		<?php endif; ?>
 		
 		<?php
 		
