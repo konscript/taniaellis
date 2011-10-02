@@ -1139,84 +1139,38 @@
 			}
 		}
 		
-		
-		// .widget-testemonial {
-		// 			background: url('../../images/post_type_icon_testimonial.png') top left no-repeat;
-		// 			
-		// 			&.video-testemonial {
-		// 					background: url('../../images/post_type_icon_video.png') top left no-repeat;
-		// 			}
-		// 			.testemonial {
-		// 				.item-content {
-		// 					width: 520px;
-		// 				}
-		// 				
-		// 				.video {
-		// 					float: left;
-		// 					border: 5px solid #E1DCD8;
-		// 					width: 240px;
-		// 					margin-right: 20px;
-		// 				}
-		// 				
-		// 				.excerpt {
-		// 					background: url('../../images/header_frontpage_quotes.png') top left no-repeat;
-		// 					font-style: italic;
-		// 					padding-left: 40px;
-		// 					padding-top: 12px;
-		// 					width: 210px;
-		// 				}
-		// 			}
-		// 		}
-		
-		
 		.layout-tall {
 			.image-text {
-				.thumb-wrapper {
-					margin-right: 18px;
-				}
-				
 				.thumb-container {
 					width: 62px;
+					height: 110px;
 				}
 				
-				.thumb-container, .featured-image {
-					width: 62px;
-					height: 100px;
+				.title {
+					margin-top: 5px;
 				}
 				
 				.excerpt {
-					margin: 0;
+					width: 158px;
 				}
 			}
 		}
 		
 		.layout-wide {
 			.image-text {
-			.thumb-wrapper {
-				margin-right: 0;
-				width: 260px;
-			}
-			
-			.thumb-container {
-				width: 250px;
-			}
-			
-			.thumb-container, img {
-				height: 100px;
-			}
+				.thumb-container, .thumb-wrapper {
+					width: 250px;
+					height: 110px;
+				}
 
-			.excerpt {
-				width: 260px;
-			}
+				.excerpt {
+					width: 250px;
+				}
 
 
-			.title {
-				margin-top: 5px;
-			}
-			
-			.excerpt {
-				width: 260px;
-			}
+				.title {
+					margin-top: 5px;
+				}
 				
 				.options {
 					float: right;
@@ -1234,9 +1188,6 @@
 				
 				.thumb-container {
 					width: 62px;
-				}
-
-				.thumb-container, img {
 					height: 62px;
 				}
 				
@@ -1245,7 +1196,7 @@
 				}
 				
 				.excerpt {
-					width: 170px;
+					width: 160px;
 				}
 				
 				.options {
@@ -1466,6 +1417,7 @@
 		.widget.layout-square {
 			.item.image-text {
 				.item-content {
+					width: 520px;
 				
 					.thumb-wrapper {
 						margin-right: 18px;
