@@ -50,9 +50,9 @@ class TE_PostStreamWidget extends WP_Widget {
 		$url = array(
 			'post'									=> 'blog/all',
 			'te_article'						=> 'reading-room/articles',
-			'te_event'							=> 'events/all',
-			'te_testemonail'				=> 'cases/all',
-			'te_testemonail_video'	=> 'cases/all'
+			'te_event'							=> 'events',
+			'te_testemonail'				=> 'cases',
+			'te_testemonail_video'	=> 'cases'
 		);
 		
 		$size = array(
