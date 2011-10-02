@@ -211,6 +211,7 @@ require_once('page_templates/page-template-te_club.php');
 require_once('page_templates/page-template-te_consulting.php');
 require_once('page_templates/page-template-te_events.php');
 require_once('page_templates/page-template-te_home.php');
+require_once('page_templates/page-template-te_blog.php');
 require_once('page_templates/page-template-te_lab.php');
 require_once('page_templates/page-template-te_lectures.php');
 require_once('page_templates/page-template-te_reading-room.php');
@@ -254,6 +255,9 @@ function te_page_template_meta_boxes() {
     case 'home.php':
       te_home_meta(); 
       break;
+		case 'blog.php':
+	    te_blog_meta(); 
+	    break;
     case 'about.php':
       te_about_meta();
       break;

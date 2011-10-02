@@ -437,6 +437,10 @@ html>body {
 			color: #FFF;
 			font-size: 1em;
 			line-height: 1.3em;
+			
+			&.box-content-blog {
+				color: #5c5a55;
+			}
 		}
 		
 		.box-content-dark {
