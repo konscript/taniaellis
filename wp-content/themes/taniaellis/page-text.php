@@ -68,6 +68,7 @@ get_header();
             </div>
                                             
             <div class="post">
+              <?php if($post_meta['left-meta'] || $post_meta['right-meta']):?>
               <div class="meta">
                 <p class="byline">
                   <?php echo $post_meta['left-meta']; ?>
@@ -75,7 +76,9 @@ get_header();
                 <p class="date">
                   <?php echo $post_meta['right-meta']; ?>
                 </p>
-              </div>    
+              </div>
+              <?php endif; ?>
+              
               <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
               <div class="entry">
                 <?php if(has_post_thumbnail($post->ID)) : ?>
