@@ -796,6 +796,18 @@
 
 #page {
 	position: relative;
+	
+	.thumblock {
+		clear: left;
+		float: left;
+		margin-top: 16px;
+		height: 20px;
+		width: 100px;
+		
+		.gdthumb {
+			float: left;
+		}
+	}
 
 	#social-bar, #social-bar-frontpage {
 		@include border-bottom-radius(10px);
@@ -1489,10 +1501,6 @@
 				ul li {
 					background: url('../../images/content-bullet-point.png') left 3px no-repeat;
 					padding-left: 25px;
-				}
-				
-				img {
-					border: 5px solid #CCC;
 				}
 				
 				.alignleft {

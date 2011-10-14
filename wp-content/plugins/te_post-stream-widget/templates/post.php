@@ -25,6 +25,13 @@
 			</div>
 		<?php endif; ?>
 		
+		<?php if(function_exists('wp_gdsr_render_article') && $instance['showThumbs']) : ?>
+		<div class="like">
+			<?php wp_gdsr_render_article_thumbs(); ?>
+		</div>
+		<?php endif; ?>
+
+		
 		<div class="options">
 			<a href="<?php the_permalink(); ?>" class="read-more">Read more</a>
 		</div>

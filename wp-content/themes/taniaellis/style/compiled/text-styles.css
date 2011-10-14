@@ -390,68 +390,73 @@ html > body {
   text-decoration: none;
 }
 
-/* line 421, ../sass/text-styles.scss */
+/* line 420, ../sass/text-styles.scss */
+#page .thumblock .gdthumbtext {
+  color: #7FB987;
+  font-weight: bold;
+}
+/* line 428, ../sass/text-styles.scss */
 #page .box .box-header {
   color: #FFF;
   text-transform: uppercase;
 }
-/* line 425, ../sass/text-styles.scss */
+/* line 432, ../sass/text-styles.scss */
 #page .box .box-header span.box-first-line {
   line-height: 1em;
 }
-/* line 429, ../sass/text-styles.scss */
+/* line 436, ../sass/text-styles.scss */
 #page .box .box-header span.box-second-line {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.3em;
   line-height: 1em;
 }
-/* line 436, ../sass/text-styles.scss */
+/* line 443, ../sass/text-styles.scss */
 #page .box .box-content {
   color: #FFF;
   font-size: 1em;
   line-height: 1.3em;
 }
-/* line 441, ../sass/text-styles.scss */
+/* line 448, ../sass/text-styles.scss */
 #page .box .box-content.box-content-blog {
   color: #5c5a55;
 }
-/* line 446, ../sass/text-styles.scss */
+/* line 453, ../sass/text-styles.scss */
 #page .box .box-content-dark {
   color: #555;
 }
-/* line 450, ../sass/text-styles.scss */
+/* line 457, ../sass/text-styles.scss */
 #page .box .box-button {
   color: #FFF;
   text-decoration: none;
 }
-/* line 456, ../sass/text-styles.scss */
+/* line 463, ../sass/text-styles.scss */
 #page .post-header, #page .comments-header {
   color: #B0ADA6;
 }
-/* line 459, ../sass/text-styles.scss */
+/* line 466, ../sass/text-styles.scss */
 #page .post-header .first-line, #page .comments-header .first-line {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 0.699em;
   text-transform: uppercase;
 }
-/* line 467, ../sass/text-styles.scss */
+/* line 474, ../sass/text-styles.scss */
 #page .post-header .second-line, #page .comments-header .second-line {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 1.65em;
   text-transform: uppercase;
 }
-/* line 473, ../sass/text-styles.scss */
+/* line 480, ../sass/text-styles.scss */
 #page .post-header .second-line a, #page .comments-header .second-line a {
   color: #B0ADA6;
   text-decoration: none;
 }
-/* line 477, ../sass/text-styles.scss */
+/* line 484, ../sass/text-styles.scss */
 #page .post-header .second-line a:hover, #page .comments-header .second-line a:hover {
   text-decoration: underline;
 }
-/* line 483, ../sass/text-styles.scss */
+/* line 490, ../sass/text-styles.scss */
 #page .post-header .big-line, #page .comments-header .big-line {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.8em;
@@ -460,54 +465,54 @@ html > body {
   padding-bottom: 34px;
   text-transform: uppercase;
 }
-/* line 492, ../sass/text-styles.scss */
+/* line 499, ../sass/text-styles.scss */
 #page .post-header .lead-text, #page .comments-header .lead-text {
   font-weight: bold;
   line-height: 1.3em;
 }
-/* line 498, ../sass/text-styles.scss */
+/* line 505, ../sass/text-styles.scss */
 #page .post {
   color: #7D7872;
 }
-/* line 501, ../sass/text-styles.scss */
+/* line 508, ../sass/text-styles.scss */
 #page .post .meta {
   font-size: 0.9em;
 }
-/* line 504, ../sass/text-styles.scss */
+/* line 511, ../sass/text-styles.scss */
 #page .post .meta .byline {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 508, ../sass/text-styles.scss */
+/* line 515, ../sass/text-styles.scss */
 #page .post .meta .byline a {
   color: #7D7872;
   text-decoration: none;
 }
-/* line 512, ../sass/text-styles.scss */
+/* line 519, ../sass/text-styles.scss */
 #page .post .meta .byline a:hover {
   text-decoration: underline;
 }
-/* line 518, ../sass/text-styles.scss */
+/* line 525, ../sass/text-styles.scss */
 #page .post .meta .date {
   text-transform: uppercase;
 }
-/* line 523, ../sass/text-styles.scss */
+/* line 530, ../sass/text-styles.scss */
 #page .post .title {
   font-size: 2.2em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 528, ../sass/text-styles.scss */
+/* line 535, ../sass/text-styles.scss */
 #page .post .title a {
   color: #7D7872;
   text-decoration: none;
 }
-/* line 534, ../sass/text-styles.scss */
+/* line 541, ../sass/text-styles.scss */
 #page .post .entry {
   font-size: 1em;
   line-height: 1.5em;
 }
-/* line 538, ../sass/text-styles.scss */
+/* line 545, ../sass/text-styles.scss */
 #page .post .entry a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -525,66 +530,66 @@ html > body {
   text-decoration: none;
   font-weight: bold;
 }
-/* line 544, ../sass/text-styles.scss */
+/* line 551, ../sass/text-styles.scss */
 #page .post .entry a:hover {
   color: #699a70;
 }
-/* line 549, ../sass/text-styles.scss */
+/* line 556, ../sass/text-styles.scss */
 #page .post .entry ul {
   margin-bottom: 1em;
 }
-/* line 553, ../sass/text-styles.scss */
+/* line 560, ../sass/text-styles.scss */
 #page .post .entry p {
   margin-bottom: 1em;
 }
-/* line 556, ../sass/text-styles.scss */
+/* line 563, ../sass/text-styles.scss */
 #page .post .entry p strong {
   font-weight: bold;
 }
-/* line 560, ../sass/text-styles.scss */
+/* line 567, ../sass/text-styles.scss */
 #page .post .entry p em {
   font-style: italic;
 }
-/* line 565, ../sass/text-styles.scss */
+/* line 572, ../sass/text-styles.scss */
 #page .post .entry h1 {
   font-size: 1.7em;
 }
-/* line 566, ../sass/text-styles.scss */
+/* line 573, ../sass/text-styles.scss */
 #page .post .entry h2 {
   font-size: 1.5em;
 }
-/* line 567, ../sass/text-styles.scss */
+/* line 574, ../sass/text-styles.scss */
 #page .post .entry h3 {
   font-size: 1.25em;
 }
-/* line 568, ../sass/text-styles.scss */
+/* line 575, ../sass/text-styles.scss */
 #page .post .entry h4 {
   font-size: 1.1em;
 }
-/* line 569, ../sass/text-styles.scss */
+/* line 576, ../sass/text-styles.scss */
 #page .post .entry h5 {
   font-size: 1em;
 }
-/* line 570, ../sass/text-styles.scss */
+/* line 577, ../sass/text-styles.scss */
 #page .post .entry h6 {
   font-size: 0.9em;
 }
-/* line 572, ../sass/text-styles.scss */
+/* line 579, ../sass/text-styles.scss */
 #page .post .entry h1, #page .post .entry h2, #page .post .entry h3, #page .post .entry h4, #page .post .entry h5, #page .post .entry h6 {
   font-weight: bold;
   margin-bottom: 0.6em;
   margin-top: 2.5em;
   text-transform: uppercase;
 }
-/* line 581, ../sass/text-styles.scss */
+/* line 588, ../sass/text-styles.scss */
 #page .post .entry .contact-form p label {
   font-weight: bold;
 }
-/* line 585, ../sass/text-styles.scss */
+/* line 592, ../sass/text-styles.scss */
 #page .post .entry .contact-form p input[type=submit] {
   color: #FFF;
 }
-/* line 593, ../sass/text-styles.scss */
+/* line 600, ../sass/text-styles.scss */
 #page .post .read-more a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -602,45 +607,45 @@ html > body {
   font-weight: bold;
   text-decoration: none;
 }
-/* line 600, ../sass/text-styles.scss */
+/* line 607, ../sass/text-styles.scss */
 #page .post .read-more a:hover {
   color: #699a70;
 }
-/* line 606, ../sass/text-styles.scss */
+/* line 613, ../sass/text-styles.scss */
 #page .post .add-comment {
   float: left;
 }
-/* line 611, ../sass/text-styles.scss */
+/* line 618, ../sass/text-styles.scss */
 #page .post-feed {
   color: #7D7872;
 }
-/* line 615, ../sass/text-styles.scss */
+/* line 622, ../sass/text-styles.scss */
 #page .post-feed .byline {
   font-size: 0.9em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 621, ../sass/text-styles.scss */
+/* line 628, ../sass/text-styles.scss */
 #page .post-feed .date {
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 626, ../sass/text-styles.scss */
+/* line 633, ../sass/text-styles.scss */
 #page .post-feed .title {
   font-size: 1.3em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 631, ../sass/text-styles.scss */
+/* line 638, ../sass/text-styles.scss */
 #page .post-feed .title a {
   color: #7D7872;
   text-decoration: none;
 }
-/* line 637, ../sass/text-styles.scss */
+/* line 644, ../sass/text-styles.scss */
 #page .post-feed .entry {
   line-height: 1.3em;
 }
-/* line 640, ../sass/text-styles.scss */
+/* line 647, ../sass/text-styles.scss */
 #page .post-feed .entry a {
   color: #7FB987;
   font-weight: bold;
@@ -658,11 +663,11 @@ html > body {
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-/* line 646, ../sass/text-styles.scss */
+/* line 653, ../sass/text-styles.scss */
 #page .post-feed .entry a:hover {
   color: #699a70;
 }
-/* line 653, ../sass/text-styles.scss */
+/* line 660, ../sass/text-styles.scss */
 #page .post-feed .add-comment a {
   color: #7FB987;
   float: left;
@@ -681,11 +686,11 @@ html > body {
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-/* line 660, ../sass/text-styles.scss */
+/* line 667, ../sass/text-styles.scss */
 #page .post-feed .add-comment a:hover {
   color: #699a70;
 }
-/* line 666, ../sass/text-styles.scss */
+/* line 673, ../sass/text-styles.scss */
 #page .post-feed .read-more, #page .post-feed .add-comment, #page .post-feed .read-more a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -704,25 +709,25 @@ html > body {
   font-weight: bold;
   text-decoration: none;
 }
-/* line 674, ../sass/text-styles.scss */
+/* line 681, ../sass/text-styles.scss */
 #page .post-feed .read-more:hover, #page .post-feed .add-comment:hover, #page .post-feed .read-more a:hover {
   color: #699a70;
 }
-/* line 679, ../sass/text-styles.scss */
+/* line 686, ../sass/text-styles.scss */
 #page .post-feed .add-comment {
   float: left;
 }
-/* line 685, ../sass/text-styles.scss */
+/* line 692, ../sass/text-styles.scss */
 #page .posts-nav-links a {
   color: #FFF;
   text-decoration: none;
 }
-/* line 691, ../sass/text-styles.scss */
+/* line 698, ../sass/text-styles.scss */
 #page .post-categories, #page .post-tags {
   color: #7D7872;
   font-weight: bold;
 }
-/* line 695, ../sass/text-styles.scss */
+/* line 702, ../sass/text-styles.scss */
 #page .post-categories a, #page .post-tags a {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -740,93 +745,93 @@ html > body {
   font-weight: normal;
   text-decoration: none;
 }
-/* line 701, ../sass/text-styles.scss */
+/* line 708, ../sass/text-styles.scss */
 #page .post-categories a:hover, #page .post-tags a:hover {
   color: #699a70;
 }
-/* line 707, ../sass/text-styles.scss */
+/* line 714, ../sass/text-styles.scss */
 #page #respond {
   color: #7D7872;
   font-weight: bold;
 }
-/* line 711, ../sass/text-styles.scss */
+/* line 718, ../sass/text-styles.scss */
 #page #respond input {
   font-weight: normal;
 }
-/* line 715, ../sass/text-styles.scss */
+/* line 722, ../sass/text-styles.scss */
 #page #respond input[type=submit] {
   color: #FFF;
 }
-/* line 720, ../sass/text-styles.scss */
+/* line 727, ../sass/text-styles.scss */
 #page .recent-comments {
   color: #7D7872;
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 725, ../sass/text-styles.scss */
+/* line 732, ../sass/text-styles.scss */
 #page .recent-comments span {
   color: #7FB987;
 }
-/* line 731, ../sass/text-styles.scss */
+/* line 738, ../sass/text-styles.scss */
 #page .comment .comment-author-url {
   color: #7FB987;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 737, ../sass/text-styles.scss */
+/* line 744, ../sass/text-styles.scss */
 #page .comment .comment-date-time {
   color: #7D7872;
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 743, ../sass/text-styles.scss */
+/* line 750, ../sass/text-styles.scss */
 #page .comment .comment-author {
   color: #7D7872;
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 749, ../sass/text-styles.scss */
+/* line 756, ../sass/text-styles.scss */
 #page .comment .comment-content {
   color: #7D7872;
   line-height: 1.3em;
 }
-/* line 757, ../sass/text-styles.scss */
+/* line 764, ../sass/text-styles.scss */
 #page .widget-list .list .title {
   color: #7d7a75;
 }
-/* line 761, ../sass/text-styles.scss */
+/* line 768, ../sass/text-styles.scss */
 #page .widget-list .list li {
   font-size: 11px;
 }
-/* line 768, ../sass/text-styles.scss */
+/* line 775, ../sass/text-styles.scss */
 #page .widget .header-container {
   color: #B0ADA6;
 }
-/* line 771, ../sass/text-styles.scss */
+/* line 778, ../sass/text-styles.scss */
 #page .widget .header-container .first-line {
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 0.699em;
   text-transform: uppercase;
 }
-/* line 779, ../sass/text-styles.scss */
+/* line 786, ../sass/text-styles.scss */
 #page .widget .header-container .second-line {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.8em;
   line-height: 1.65em;
   text-transform: uppercase;
 }
-/* line 788, ../sass/text-styles.scss */
+/* line 795, ../sass/text-styles.scss */
 #page .widget .item .by-line, #page .widget .item .meta-data {
   color: #94918A;
   font-size: 0.9em;
   text-transform: uppercase;
 }
-/* line 794, ../sass/text-styles.scss */
+/* line 801, ../sass/text-styles.scss */
 #page .widget .item .by-line {
   font-weight: bold;
 }
-/* line 798, ../sass/text-styles.scss */
+/* line 805, ../sass/text-styles.scss */
 #page .widget .item .title {
   color: #94918A;
   display: block;
@@ -835,16 +840,16 @@ html > body {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 806, ../sass/text-styles.scss */
+/* line 813, ../sass/text-styles.scss */
 #page .widget .item .title:hover {
   text-decoration: underline;
 }
-/* line 811, ../sass/text-styles.scss */
+/* line 818, ../sass/text-styles.scss */
 #page .widget .item .excerpt {
   color: #94918A;
   line-height: 1.4em;
 }
-/* line 817, ../sass/text-styles.scss */
+/* line 824, ../sass/text-styles.scss */
 #page .widget .item .options .read-more, #page .widget .item .options .view-cases, #page .widget .item .options .view-clients, #page .widget .item .options .add-comment {
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -863,90 +868,90 @@ html > body {
   text-decoration: none;
   font-weight: bold;
 }
-/* line 825, ../sass/text-styles.scss */
+/* line 832, ../sass/text-styles.scss */
 #page .widget .item .options .read-more:hover, #page .widget .item .options .view-cases:hover, #page .widget .item .options .view-clients:hover, #page .widget .item .options .add-comment:hover {
   color: #689a6e;
 }
-/* line 832, ../sass/text-styles.scss */
+/* line 839, ../sass/text-styles.scss */
 #page .widget .item .list li {
   color: #7b7873;
   text-transform: uppercase;
 }
-/* line 839, ../sass/text-styles.scss */
+/* line 846, ../sass/text-styles.scss */
 #page .widget .view-all {
   color: #FFF;
   text-decoration: none;
 }
-/* line 843, ../sass/text-styles.scss */
+/* line 850, ../sass/text-styles.scss */
 #page .widget .view-all:hover {
   color: #e7e7e7;
 }
-/* line 853, ../sass/text-styles.scss */
+/* line 860, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .header {
   color: #FFF;
 }
-/* line 856, ../sass/text-styles.scss */
+/* line 863, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .header .first-line {
   text-transform: uppercase;
 }
-/* line 860, ../sass/text-styles.scss */
+/* line 867, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .header .second-line {
   font-family: "Arial Black", Arial, Helvetica;
   font-size: 1.8em;
   text-transform: uppercase;
 }
-/* line 867, ../sass/text-styles.scss */
+/* line 874, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .key-service-read-more {
   color: #FFF;
   text-decoration: none;
 }
-/* line 873, ../sass/text-styles.scss */
+/* line 880, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .content {
   color: #595753;
   line-height: 1.5em;
 }
 
-/* line 887, ../sass/text-styles.scss */
+/* line 894, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: bold;
 }
 
-/* line 894, ../sass/text-styles.scss */
+/* line 901, ../sass/text-styles.scss */
 #footer-menu li span {
   color: #9D9C97;
 }
-/* line 898, ../sass/text-styles.scss */
+/* line 905, ../sass/text-styles.scss */
 #footer-menu li a {
   color: #9D9C97;
   text-decoration: none;
 }
-/* line 904, ../sass/text-styles.scss */
+/* line 911, ../sass/text-styles.scss */
 #footer-menu li a:hover {
   text-decoration: underline;
 }
 
-/* line 912, ../sass/text-styles.scss */
+/* line 919, ../sass/text-styles.scss */
 #tagcloud .s1, .widget-tagcloud .tagcloud .s1 {
   color: #a8a6cd;
   font-size: 14px;
 }
-/* line 913, ../sass/text-styles.scss */
+/* line 920, ../sass/text-styles.scss */
 #tagcloud .s2, .widget-tagcloud .tagcloud .s2 {
   color: #91b997;
   font-size: 16px;
 }
-/* line 914, ../sass/text-styles.scss */
+/* line 921, ../sass/text-styles.scss */
 #tagcloud .s3, .widget-tagcloud .tagcloud .s3 {
   color: #e7cd30;
   font-size: 18px;
 }
-/* line 915, ../sass/text-styles.scss */
+/* line 922, ../sass/text-styles.scss */
 #tagcloud .s4, .widget-tagcloud .tagcloud .s4 {
   color: #83a8c2;
   font-size: 20px;
 }
-/* line 916, ../sass/text-styles.scss */
+/* line 923, ../sass/text-styles.scss */
 #tagcloud .s5, .widget-tagcloud .tagcloud .s5 {
   color: #d7b590;
   font-size: 22px;

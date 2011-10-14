@@ -135,6 +135,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		$instance['viewAllButton'] 	= strip_tags($new_instance['viewAllButton']);
 		$instance['showAddthis'] 		= strip_tags($new_instance['showAddthis']);
 		$instance['showRatings'] 		= strip_tags($new_instance['showRatings']);
+		$instance['showThumbs'] 		= strip_tags($new_instance['showThumbs']);
 		$instance['dimensions'] 		= strip_tags($new_instance['dimensions']);
 		
 		return $instance;
@@ -149,7 +150,8 @@ class TE_PostStreamWidget extends WP_Widget {
 			'thumbnails'		=> true,
 			'viewAllButton'	=> true,
 			'showAddthis'	=> true,
-			'showRatings'	=> false
+			'showRatings'	=> false,
+			'showThumbs'	=> false,
 		);
 		
 		?>
@@ -240,6 +242,15 @@ class TE_PostStreamWidget extends WP_Widget {
 				id="<?php echo $this->get_field_id('showRatings'); ?>" 
 				name="<?php echo $this->get_field_name('showRatings'); ?>" 
 				<?php if($instance['showRatings']) : ?> checked="checked"<?php endif; ?>>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('showThumbs'); ?>">Show thumbs:</label>
+			<input 
+				type="checkbox" 
+				id="<?php echo $this->get_field_id('showThumbs'); ?>" 
+				name="<?php echo $this->get_field_name('showThumbs'); ?>" 
+				<?php if($instance['showThumbs']) : ?> checked="checked"<?php endif; ?>>
 		</p>
 		
 		<?php
