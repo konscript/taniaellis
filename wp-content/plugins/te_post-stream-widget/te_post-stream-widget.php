@@ -53,9 +53,9 @@ class TE_PostStreamWidget extends WP_Widget {
 			'post'									=> 'blog/all',
 			'te_news'								=> 'about/company-news',
 			'te_article'						=> 'reading-room/articles',
-			'te_event'							=> 'events',
-			'te_testemonail'				=> 'cases',
-			'te_testemonail_video'	=> 'cases'
+			'te_event'							=> 'events/all',
+			'te_testemonail'				=> 'cases/all',
+			'te_testemonail_video'	=> 'cases/all'
 		);
 		
 		$size = array(
@@ -118,7 +118,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		
 		<?php if($instance['viewAllButton']) : ?>
 		<div class="widget-view-all">
-			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>all/">View all <?php echo $type[$instance['type']]; ?></a>
+			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>">View all <?php echo $type[$instance['type']]; ?></a>
 		</div>
 		<?php endif; ?>
 		
