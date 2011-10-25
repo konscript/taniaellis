@@ -10,7 +10,7 @@ add_filter( 'show_admin_bar', '__return_false' ); // Don't render admin-bar
 remove_action('wp_head', 'wp_generator'); // Don't output generator tag (prevent formposting)
 remove_action('wp_head', 'wlwmanifest_link'); // Don't output manifest link/tag
 
-add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article', 'te_testemonial', 'page', 'te_client'));
+add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article', 'te_testemonial', 'page', 'te_client', 'te_news'));
 /**
 #######################################
 # REGISTER ADDITIONAL THUMBNAIL SIZES #
@@ -184,6 +184,8 @@ require_once('post_types/post-type-te_video.php');
 require_once('post_types/post-type-te_case.php');
 require_once('post_types/post-type-te_testemonial.php');
 require_once('post_types/post-type-te_client.php');
+require_once('post_types/post-type-te_news.php');
+
 
 /**
  * Changes the default post type icons
