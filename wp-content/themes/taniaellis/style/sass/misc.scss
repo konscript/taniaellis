@@ -2129,6 +2129,29 @@
 			}
 		}
 	}
+	
+	.widget-news {
+		background: url('../../images/post_type_icon_news.png') top left no-repeat;
+		
+		.news {
+			.excerpt {
+				clear: right;
+				float: none;
+				width: auto;
+			}
+			
+			.options {
+				float: right;
+				width: 100px;
+			}
+			
+			.addthis_toolbox {
+				margin-top: 18px;
+				clear: right;
+				float: left;
+			}
+		}
+	}
 
 	.widget-event {
 		background: url('../../images/post_type_icon_events.png') top left no-repeat;
