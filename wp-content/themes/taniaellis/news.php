@@ -16,7 +16,6 @@ Template Name: News
 
   <div id="header-container">    
 
-
 		<?php
   		$menu_id = get_post_meta($post->ID, 'te_page-menu-id', true);
 		
@@ -47,8 +46,8 @@ Template Name: News
       <div class="sidebar-background">
         
           <div class="post-header">
-            <h2 class="first-line">Articles</h2>
-            <h2 class="second-line">All Articles</h2>
+            <h2 class="first-line">News From The</h2>
+            <h2 class="second-line">Social Business Company</h2>
           </div>
           <?php query_posts(array('post_type' => 'te_news', 'post_status' => 'publish', 'paged' => $paged)); ?>
           <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                                
@@ -62,7 +61,12 @@ Template Name: News
                 <?php endif; ?>
                 <p class="byline">
                   <?php
-                    the_author();
+                    $byline = get_post_meta($post->ID, 'te_news-options-id', true);
+                    
+                    if($byline)
+                      echo $byline;
+                    else
+                      the_author();
                   ?>
                 </p>
                 <p class="date">
