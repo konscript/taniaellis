@@ -10,7 +10,7 @@ add_filter( 'show_admin_bar', '__return_false' ); // Don't render admin-bar
 remove_action('wp_head', 'wp_generator'); // Don't output generator tag (prevent formposting)
 remove_action('wp_head', 'wlwmanifest_link'); // Don't output manifest link/tag
 
-add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article', 'te_testemonial', 'page'));
+add_theme_support('post-thumbnails', array('post', 'te_event', 'te_article', 'te_testemonial', 'page', 'te_client'));
 /**
 #######################################
 # REGISTER ADDITIONAL THUMBNAIL SIZES #
@@ -140,9 +140,9 @@ function get_event_end($post_id) {
 
 
 /**
-######################
-# REGEISTER SIDEBARS #
-######################
+#####################
+# REGISTER SIDEBARS #
+#####################
 **/
 
 if(function_exists('register_sidebar')) {
@@ -174,6 +174,7 @@ require_once('post_types/post-type-te_article.php');
 require_once('post_types/post-type-te_video.php');
 require_once('post_types/post-type-te_case.php');
 require_once('post_types/post-type-te_testemonial.php');
+require_once('post_types/post-type-te_client.php');
 
 /**
  * Changes the default post type icons
