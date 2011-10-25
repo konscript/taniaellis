@@ -2029,6 +2029,13 @@
 				}
 			}
 			
+			#grey {
+				$grey: rgb(148, 145, 138);
+				.header {
+					background-color: $grey;
+				}
+			}
+			
 			#purple {
 				$purple: rgb(168, 166, 205);
 				.header {
