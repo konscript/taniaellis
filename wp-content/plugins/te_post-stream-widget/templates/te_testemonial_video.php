@@ -33,5 +33,17 @@ $video_video_url = get_post_meta($video_id, 'te_video_url', true);
 			<a href="<?php echo $case_link; ?>" class="case"><?php echo $case_link_text; ?></a>
 		<?php endif; ?>
 		
+		<?php if(function_exists('wp_gdsr_render_article') && $instance['showRatings']) : ?>
+			<div class="rating">
+				<?php wp_gdsr_render_article(); ?>
+			</div>
+		<?php endif; ?>
+		
+		<?php if(function_exists('wp_gdsr_render_article') && $instance['showThumbs']) : ?>
+		<div class="like">
+			<?php wp_gdsr_render_article_thumbs(); ?>
+		</div>
+		<?php endif; ?>
+		
 	</div>
 </div>
