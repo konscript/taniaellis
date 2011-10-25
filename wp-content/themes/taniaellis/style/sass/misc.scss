@@ -1186,7 +1186,7 @@
 
 
 				.title {
-					float: left;
+					float: none;
 					margin-top: 5px;
 				}
 				
@@ -1214,7 +1214,7 @@
 				}
 				
 				.excerpt {
-					width: 160px;
+					width: auto;
 				}
 				
 				.options {
@@ -2138,6 +2138,11 @@
 				width: 520px;
 			}
 			
+			.thumb-container{
+				width: 100px;
+				height: 110px;
+			}
+			
 			.meta-data {
 				float: left;
 				
@@ -2397,4 +2402,15 @@ footer {
  
 .clearer {
 	clear: both;
+}
+
+#page-content-single {
+	#page {
+		#single-event {
+			.thumb-container{
+				width: 100px;
+				height: 110px;
+			}
+		}
+	}
 }

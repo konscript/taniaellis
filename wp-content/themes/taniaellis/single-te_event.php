@@ -35,11 +35,11 @@
 	<?php if(have_posts()): ?>
 		<?php while(have_posts()): the_post(); ?>
 			<div class="post-header">
-				<h2 class="first-line">Upcoming</h2>
+				<h2 class="first-line">All</h2>
 				<h2 class="second-line">Events</h2>
 			</div>
      
-			<div class="post">
+			<div id="single-event" class="post">
 				<div class="meta">
 					<p class="date">
 						<span>Event Date:</span>
@@ -62,7 +62,7 @@
 		      <div class="thumb-wrapper">
 		        <div class="thumb-container">
 							<a href="<?php the_permalink(); ?>">
-		          	<?php the_post_thumbnail('post-wide-image', array('class' => 'featured-image')); ?>
+		          	<?php the_post_thumbnail('post-square-thumbnail', array('class' => 'featured-image')); ?>
 							</a>
 		        </div>
 		      </div>

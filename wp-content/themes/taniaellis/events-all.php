@@ -68,7 +68,13 @@ Template Name: All Events
 								$start = get_event_start(get_the_ID());
 								$end = get_event_end(get_the_ID());
 							?>
-							<span>Event Date:</span> <?php echo date_format($start, 'j M Y H:i') . " - " . date_format($end, 'j M Y H:i'); ?>
+							<span>Event Date:</span>
+							<?php 
+								
+								if($start != '' && $end != '')
+									echo date_format($start, 'j M Y H:i') . " - " . date_format($end, 'j M Y H:i'); 
+							
+							?>
        			</p>
 
 						<p class="byline">&nbsp;</p>
@@ -76,7 +82,7 @@ Template Name: All Events
      				<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
      				
 						<div class="entry">
-       				<?php the_content(); ?>
+       				<?php the_excerpt(); ?>
      				</div>
 
      				<p class="read-more">

@@ -118,9 +118,14 @@ function getCurrentCatID(){
  **/
 function get_event_start($post_id) {
 	$date = get_post_meta($post_id, 'te_event-options-start-date', true);
-	$time = get_post_meta($post_id, 'te_event-options-start-time', true);	
+	$time = get_post_meta($post_id, 'te_event-options-start-time', true);
 	
-	return DateTime::createFromFormat('Y/m/d H:i', $date . ' ' . $time);
+	$r = null;
+	try {
+		$r = DateTime::createFromFormat('Y/m/d H:i', $date . ' ' . $time);
+	} catch(Exception $e) {}
+	
+	return $r;
 }
 
 
@@ -135,7 +140,12 @@ function get_event_end($post_id) {
 	$date = get_post_meta($post_id, 'te_event-options-end-date', true);
 	$time = get_post_meta($post_id, 'te_event-options-end-time', true);	
 	
-	return DateTime::createFromFormat('Y/m/d H:i', $date . ' ' . $time);
+	$r = null;
+	try {
+		$r = DateTime::createFromFormat('Y/m/d H:i', $date . ' ' . $time);
+	} catch(Exception $e) {}
+	
+	return $r;
 }
 
 function get_attachment_id_from_src ($image_src) {
