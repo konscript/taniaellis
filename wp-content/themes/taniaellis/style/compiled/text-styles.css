@@ -956,3 +956,8 @@ html > body {
   color: #d7b590;
   font-size: 22px;
 }
+
+/* line 926, ../sass/text-styles.scss */
+strong, b {
+  font-weight: bold;
+}

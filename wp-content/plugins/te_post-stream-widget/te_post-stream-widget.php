@@ -33,6 +33,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		
 		$wclass = array(
 			'post'									=> 'blog',
+			'te_news'								=> 'news',
 			'te_event'							=> 'event',
 			'te_article'						=> 'reading-room',
 			'te_testemonial'				=> 'testemonial',
@@ -41,6 +42,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		
 		$type = array(
 			'post'									=> 'blog posts',
+			'te_news'								=> 'news',
 			'te_article'						=> 'articles',
 			'te_event'							=> 'events',
 			'te_testemonial'				=> 'testemonials',
@@ -49,10 +51,11 @@ class TE_PostStreamWidget extends WP_Widget {
 		
 		$url = array(
 			'post'									=> 'blog/all',
+			'te_news'								=> 'about/company-news',
 			'te_article'						=> 'reading-room/articles',
-			'te_event'							=> 'events',
-			'te_testemonail'				=> 'cases',
-			'te_testemonail_video'	=> 'cases'
+			'te_event'							=> 'events/all',
+			'te_testemonail'				=> 'cases/all',
+			'te_testemonail_video'	=> 'cases/all'
 		);
 		
 		$size = array(
@@ -115,7 +118,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		
 		<?php if($instance['viewAllButton']) : ?>
 		<div class="widget-view-all">
-			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>all/">View all <?php echo $type[$instance['type']]; ?></a>
+			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>">View all <?php echo $type[$instance['type']]; ?></a>
 		</div>
 		<?php endif; ?>
 		
@@ -180,6 +183,7 @@ class TE_PostStreamWidget extends WP_Widget {
 				id="<?php echo $this->get_field_id('type'); ?>" 
 				name="<?php echo $this->get_field_name('type'); ?>">
 				<option value="post"<?php if($instance['type'] == 'post') : ?> selected="selected"<?php endif; ?>>Blog Post</option>
+				<option value="te_news"<?php if($instance['type'] == 'te_news') : ?> selected="selected"<?php endif; ?>>News</option>
 				<option value="te_event"<?php if($instance['type'] == 'te_event') : ?> selected="selected"<?php endif; ?>>Event</option>
 				<option value="te_article"<?php if($instance['type'] == 'te_article') : ?> selected="selected"<?php endif; ?>>Article</option>
 				<option value="te_testemonial"<?php if($instance['type'] == 'te_testemonial') : ?> selected="selected"<?php endif; ?>>Testemonial</option>

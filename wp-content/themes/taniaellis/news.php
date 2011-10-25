@@ -66,7 +66,7 @@ Template Name: News
                     if($byline)
                       echo $byline;
                     else
-                      the_author();
+                      echo "By " . get_the_author();
                   ?>
                 </p>
                 <p class="date">
