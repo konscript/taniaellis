@@ -33,13 +33,41 @@ function news_register() {
 		'menu_position'       => 5,
 		'_builtin'            => false, // It's a custom post type, not built in!
 	  'menu_icon'           => get_stylesheet_directory_uri() . '/images/icon_news.png',
-		'rewrite'             => array('slug' => 'about/company-news', 'with_front' => false),
+		'rewrite'             => array('slug' => 'news', 'with_front' => false),
 		'capability_type'     => 'post',
 		'hierarchical'        => false,
 		'supports'            => array('title', 'editor', 'thumbnail')
 	  );
 	  
 	  register_post_type('te_news', $args);
+}
+
+te_news_meta();
+
+function te_news_meta() {
+  
+  $news_prefix = 'te_news-options';
+  
+  $meta_boxes[] = array(
+   'id' => $news_prefix,
+   'title' => 'News Options',
+   'pages' => array('te_news'),
+   'context' => 'side',
+   'priority' => 'low',
+  
+   'fields' => array(
+     array(
+       'name' => 'Byline',
+       'id' => $news_prefix . '-id',
+       'type' => 'text',
+     )
+   )
+  );
+  
+  
+  foreach($meta_boxes as $meta_box) {
+    $my_box = new RW_Meta_Box($meta_box);
+  }
 }
 
 ?>
