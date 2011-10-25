@@ -10,7 +10,7 @@
 
 	<div id="header-container">
 		<?php wp_nav_menu(array(
-				'theme_location'		=> 'blog-menu',
+				'theme_location'		=> 'about-menu',
 				'container'				  => '',
 				'menu_id'				    => 'navigation-header-standard',
 				'menu_class'			  => 'navigation-header',
