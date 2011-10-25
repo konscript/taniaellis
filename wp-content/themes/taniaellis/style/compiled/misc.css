@@ -1504,7 +1504,7 @@
 }
 /* line 1188, ../sass/misc.scss */
 #page .left-sidebar .layout-wide .image-text .title {
-  float: left;
+  float: none;
   margin-top: 5px;
 }
 /* line 1193, ../sass/misc.scss */
@@ -1527,7 +1527,7 @@
 }
 /* line 1216, ../sass/misc.scss */
 #page .left-sidebar .layout-square .image-text .excerpt {
-  width: 160px;
+  width: auto;
 }
 /* line 1220, ../sass/misc.scss */
 #page .left-sidebar .layout-square .image-text .options {
