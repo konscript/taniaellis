@@ -65,7 +65,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		
 		?>
 		
-		<div class="widget widget-<?php echo $wclass[$instance['type']]; ?><?php if(!$instance['showLike']) echo " no-addthis"; ?><?php if(!$instance['showAddthis']) echo " no-addthis"; ?>">
+		<div class="widget widget-<?php echo $wclass[$instance['type']]; ?><?php if(!$instance['showAddthis']) echo " no-addthis"; ?>">
 			<div class="header-container">
 				<h2 class="first-line"><?php echo $titleA; ?><h2>
 				<h2 class="second-line"><?php echo $titleB; ?></h2>
