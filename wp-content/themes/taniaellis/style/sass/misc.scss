@@ -1607,6 +1607,24 @@
 				}
 			}
 			
+			&.news {
+				.thumb-container {
+					width: 100px;
+				}
+				
+				.meta {
+					float: none;
+				}
+				
+				h2.title {
+					margin-bottom: 10px;
+				}
+				
+				.ratingblock, .thumblock {
+					display: none;
+				}
+			}
+			
 			.thumb-wrapper {
 				float: left;
 				margin: 0 20px 30px 0;
