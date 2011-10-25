@@ -67,7 +67,7 @@ function te_event_meta() {
   			'name'	=> 'Start Date',
   			'id' 		=> $prefix . '-start-date',
   			'type'	=> 'text',
-				'desc'	=> 'Format: mm/dd/yyyy'
+				'desc'	=> 'Format: yyyy/mm/dd'
   		),
   		array(
   			'name' 	=> 'Start Time',
@@ -79,7 +79,7 @@ function te_event_meta() {
   			'name' 	=> 'End Date',
   			'id' 		=> $prefix . '-end-date',
   			'type' 	=> 'text'			,
-				'desc'	=> 'Format: mm/dd/yyyy'	
+				'desc'	=> 'Format: yyyy/mm/dd'	
   		),
   		array(
   			'name' 	=> 'End Time',

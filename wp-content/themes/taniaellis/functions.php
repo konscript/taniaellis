@@ -21,7 +21,7 @@ set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
 add_image_size('post-square-small-thumbnail', 62, 62, true);
 add_image_size('post-square-thumbnail', 100, 100, true);
 add_image_size('post-big-square-thumbnail', 240, 240, false);
-add_image_size('post-tall-thumbnail', 62, 116, true);
+add_image_size('post-tall-thumbnail', 62, 100, true);
 add_image_size('post-wide-thumbnail', 240, 100, true);
 add_image_size('post-wide-image', 524, 218, true);
 
@@ -137,6 +137,15 @@ function get_event_end($post_id) {
 	
 	return DateTime::createFromFormat('Y/m/d H:i', $date . ' ' . $time);
 }
+
+function get_attachment_id_from_src ($image_src) {
+
+		global $wpdb;
+		$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'";
+		$id = $wpdb->get_var($query);
+		return $id;
+
+	}
 
 
 /**

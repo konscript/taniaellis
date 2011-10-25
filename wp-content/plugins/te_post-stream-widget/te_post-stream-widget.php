@@ -50,9 +50,9 @@ class TE_PostStreamWidget extends WP_Widget {
 		$url = array(
 			'post'									=> 'blog/all',
 			'te_article'						=> 'reading-room/articles',
-			'te_event'							=> 'events/all',
-			'te_testemonail'				=> 'cases/all',
-			'te_testemonail_video'	=> 'cases/all'
+			'te_event'							=> 'events',
+			'te_testemonail'				=> 'cases',
+			'te_testemonail_video'	=> 'cases'
 		);
 		
 		$size = array(
@@ -71,15 +71,33 @@ class TE_PostStreamWidget extends WP_Widget {
 				<h2 class="second-line"><?php echo $titleB; ?></h2>
 			</div>
 			
-		<?php		
+		<?php
 		
-		$q = 'post_type='. $instance['type'] .'&post_status=publish';
+		$args = array(
+			'post_type'				=> $instance['type'],
+			'post_status'			=> 'publish',
+			'orderby'					=> 'date',
+			'order'						=> 'DESC'
+		);
+		
+		// $q = 'post_type='. $instance['type'] .'&post_status=publish';
 		
 		if($instance['type'] == 'te_event') {
-			$q .= '&meta_key=te_event-options-start-date&orderby=meta_value&order=DESC';
+			// $q .= '&meta_key=te_event-options-start-date&orderby=meta_value&order=DESC';
+			
+			$time = date_format(new DateTime(), 'Y/m/d');
+			
+			$args['meta_key'] 		= 'te_event-options-start-date';
+			$args['orderby']			= 'meta_value';
+			$args['order']				= 'DESC';
+			$args['meta_query']		= array(array(
+				'key'	=> 'te_event-options-end-date',
+				'value'	=> $time,
+				'compare'	=> '>'
+			));
 		}
 	
-		$query = new WP_Query($q);
+		$query = new WP_Query($args);
 		
 		$count = 0;
 		while($query->have_posts() && $count < $instance['items']) : $query->the_post();
@@ -117,6 +135,7 @@ class TE_PostStreamWidget extends WP_Widget {
 		$instance['viewAllButton'] 	= strip_tags($new_instance['viewAllButton']);
 		$instance['showAddthis'] 		= strip_tags($new_instance['showAddthis']);
 		$instance['showRatings'] 		= strip_tags($new_instance['showRatings']);
+		$instance['showThumbs'] 		= strip_tags($new_instance['showThumbs']);
 		$instance['dimensions'] 		= strip_tags($new_instance['dimensions']);
 		
 		return $instance;
@@ -131,7 +150,8 @@ class TE_PostStreamWidget extends WP_Widget {
 			'thumbnails'		=> true,
 			'viewAllButton'	=> true,
 			'showAddthis'	=> true,
-			'showRatings'	=> false
+			'showRatings'	=> false,
+			'showThumbs'	=> false,
 		);
 		
 		?>
@@ -162,7 +182,7 @@ class TE_PostStreamWidget extends WP_Widget {
 				<option value="post"<?php if($instance['type'] == 'post') : ?> selected="selected"<?php endif; ?>>Blog Post</option>
 				<option value="te_event"<?php if($instance['type'] == 'te_event') : ?> selected="selected"<?php endif; ?>>Event</option>
 				<option value="te_article"<?php if($instance['type'] == 'te_article') : ?> selected="selected"<?php endif; ?>>Article</option>
-					
+				<option value="te_testemonial"<?php if($instance['type'] == 'te_testemonial') : ?> selected="selected"<?php endif; ?>>Testemonial</option>
 			</select>
 		</p>
 		
@@ -222,6 +242,15 @@ class TE_PostStreamWidget extends WP_Widget {
 				id="<?php echo $this->get_field_id('showRatings'); ?>" 
 				name="<?php echo $this->get_field_name('showRatings'); ?>" 
 				<?php if($instance['showRatings']) : ?> checked="checked"<?php endif; ?>>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('showThumbs'); ?>">Show thumbs:</label>
+			<input 
+				type="checkbox" 
+				id="<?php echo $this->get_field_id('showThumbs'); ?>" 
+				name="<?php echo $this->get_field_name('showThumbs'); ?>" 
+				<?php if($instance['showThumbs']) : ?> checked="checked"<?php endif; ?>>
 		</p>
 		
 		<?php

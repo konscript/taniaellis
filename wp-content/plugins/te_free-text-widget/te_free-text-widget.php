@@ -44,7 +44,7 @@ class TE_FreeTextWidget extends WP_Widget {
 		$layout = $instance['layout'];
 		
 		?>
-		
+
 		<div class="widget widget-image-text layout-<?php echo $layout; ?>" style="background: url('<?php echo $iconURL; ?>') top left no-repeat">
 			<?php if(!empty($titleA)) : ?>
 				<div class="header-container">
@@ -60,21 +60,30 @@ class TE_FreeTextWidget extends WP_Widget {
 			      <div class="thumb-wrapper">
 			        <div class="thumb-container">
 								<a href="<?php the_permalink(); ?>">
-									<img src="<?php echo $imageURL; ?>" />
+									
+									<?php 
+									
+									$aid = get_attachment_id_from_src($imageURL);
+									$size = ($layout == "square") ? "square-small" : $layout;
+									echo wp_get_attachment_image($aid, "post-$size-thumbnail", false, array('class' => 'featured-image'));
+									?>
 								</a>
 			        </div>
 			      </div>
 			    <?php endif; ?>
 						
 					<?php if($metadata != "" || $byline != "")	: ?>
-						<p class="meta-data"><?php echo $metadata; ?></p>
+						<p class="meta-data"><?php if(empty($metadata)) { echo "&nbsp;"; }else{ echo $metadata; } ?></p>
 					<?php endif; ?>
 					<?php if($byline != "" || $metadata != "") : ?>
 						<span class="by-line"><?php echo $byline; ?></span>
 					<?php endif; ?>
 					
-					<a class="title" href="<?php echo $link; ?>"><?php echo $header; ?></a>
-					<p class="excerpt"><?php echo $text; ?></p>
+					<?php if(!empty($header)) : ?>
+						<a class="title" href="<?php echo $link; ?>"><?php echo $header; ?></a>
+					<?php endif; ?>
+					
+					<p class="excerpt"><?php echo nl2br($text); ?></p>
 					
 					<?php if($link != "") : ?>
 					<div class="options">
@@ -302,14 +311,17 @@ function load_tiny_mce() {
 	wp_tiny_mce( false );
 }
 
-function te_load_FreeTextWidget() {
+global $pagenow;
+
+if(is_admin() && $pagenow == "widgets.php") {
 	add_action('admin_print_scripts', 'load_admin_scripts');
 	add_action('admin_print_styles', 'load_admin_styles');
 	add_action('admin_head', 'load_tiny_mce');
-	register_widget('TE_FreeTextWidget');
 }
 
-if(is_admin() && $_SERVER['PHP_SELF'] == "/taniaellis/wp-admin/widgets.php")
+function te_load_FreeTextWidget() {
+	register_widget('TE_FreeTextWidget');
+}
 add_action('widgets_init', 'te_load_FreeTextWidget');
 
 ?>

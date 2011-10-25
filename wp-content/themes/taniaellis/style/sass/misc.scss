@@ -796,6 +796,18 @@
 
 #page {
 	position: relative;
+	
+	.thumblock {
+		clear: left;
+		float: left;
+		margin-top: 16px;
+		height: 20px;
+		width: 100px;
+		
+		.gdthumb {
+			float: left;
+		}
+	}
 
 	#social-bar, #social-bar-frontpage {
 		@include border-bottom-radius(10px);
@@ -1139,84 +1151,44 @@
 			}
 		}
 		
-		
-		// .widget-testemonial {
-		// 			background: url('../../images/post_type_icon_testimonial.png') top left no-repeat;
-		// 			
-		// 			&.video-testemonial {
-		// 					background: url('../../images/post_type_icon_video.png') top left no-repeat;
-		// 			}
-		// 			.testemonial {
-		// 				.item-content {
-		// 					width: 520px;
-		// 				}
-		// 				
-		// 				.video {
-		// 					float: left;
-		// 					border: 5px solid #E1DCD8;
-		// 					width: 240px;
-		// 					margin-right: 20px;
-		// 				}
-		// 				
-		// 				.excerpt {
-		// 					background: url('../../images/header_frontpage_quotes.png') top left no-repeat;
-		// 					font-style: italic;
-		// 					padding-left: 40px;
-		// 					padding-top: 12px;
-		// 					width: 210px;
-		// 				}
-		// 			}
-		// 		}
-		
-		
 		.layout-tall {
 			.image-text {
-				.thumb-wrapper {
-					margin-right: 18px;
-				}
-				
 				.thumb-container {
 					width: 62px;
+					height: 110px;
 				}
 				
-				.thumb-container, .featured-image {
-					width: 62px;
-					height: 100px;
+				.title {
+					margin-top: 5px;
 				}
 				
 				.excerpt {
-					margin: 0;
+					float: none;
+					width: auto;
 				}
 			}
 		}
 		
 		.layout-wide {
 			.image-text {
-			.thumb-wrapper {
-				margin-right: 0;
-				width: 260px;
-			}
-			
-			.thumb-container {
-				width: 250px;
-			}
-			
-			.thumb-container, img {
-				height: 100px;
-			}
+				.thumb-container, .thumb-wrapper {
+					width: 250px;
+					height: 110px;
+				}
 
-			.excerpt {
-				width: 260px;
-			}
+				.excerpt {
+					width: 250px;
+				}
+				
+				.meta-data {
+					margin-bottom: 5px;
+				}
 
 
-			.title {
-				margin-top: 5px;
-			}
-			
-			.excerpt {
-				width: 260px;
-			}
+				.title {
+					float: left;
+					margin-top: 5px;
+				}
 				
 				.options {
 					float: right;
@@ -1234,9 +1206,6 @@
 				
 				.thumb-container {
 					width: 62px;
-				}
-
-				.thumb-container, img {
 					height: 62px;
 				}
 				
@@ -1245,7 +1214,7 @@
 				}
 				
 				.excerpt {
-					width: 170px;
+					width: 160px;
 				}
 				
 				.options {
@@ -1442,6 +1411,10 @@
 		
 		.widget {
 			margin-top: 0px;
+			
+			.item-content {
+				width: 520px;
+			}
 			.thumb-wrapper {
 				float: left;
 				margin: 0 20px 10px 0;
@@ -1462,44 +1435,7 @@
 				}
 			}
 		}
-			
-		.widget.layout-square {
-			.item.image-text {
-				.item-content {
-				
-					.thumb-wrapper {
-						margin-right: 18px;
-					}
-				
-					.thumb-container {
-						width: 100px;
-					}
 
-					.thumb-container, img {
-						height: 100px;
-					}
-					
-					.meta-data {
-						float: right;
-						
-					}
-
-					.by-line {
-						float: left;
-					}
-					
-					.title, .excerpt {
-						float: none;
-						width: auto;
-					}
-
-					.options {
-						float: right;
-						width: 100px;
-					}
-				}
-			} 
-		}
 
 		.sidebar-background {
 			background-color: #FFF;
@@ -1565,10 +1501,6 @@
 				ul li {
 					background: url('../../images/content-bullet-point.png') left 3px no-repeat;
 					padding-left: 25px;
-				}
-				
-				img {
-					border: 5px solid #CCC;
 				}
 				
 				.alignleft {
@@ -2276,7 +2208,53 @@
 		}
 	}
 
+	.layout-square {
+		.image-text {
+			.thumb-container {
+				width: 100px;
+				height: 110px;
+			}
+			
+			.excerpt {
+				float: none;
+				width: auto;
+			}
+		} 
+	}
+	
+	.layout-wide {
+		.image-text {
+			.item-content {
+				.thumb-container {
+					width: 240px;
+					height: 110px;
+				}
 
+				.excerpt {
+					float: none;
+					width: auto;
+				}
+			}
+		} 
+	}
+	
+	.layout-tall {
+		.image-text {
+			.thumb-container, .thumb-wrapper {
+				width: 62px;
+				height: 110px;
+			}
+			
+			.thumb-wrapper {
+				margin-right: 25px;
+			}
+			
+			.excerpt {
+				float: none;
+				width: auto;
+			}
+		} 
+	}
 
 	.options {
 		float: right;
