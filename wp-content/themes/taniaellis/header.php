@@ -10,6 +10,7 @@
 		
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('stylesheet_url') ?>" />
 		<link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/images/favicon.ico">
+		<link rel="apple-touch-icon" href="<?php bloginfo('template_url') ?>/images/apple-touch.png" />
 		
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.min.js"></script>
 		<script src="<?php bloginfo('template_url') ?>/js/jquery.corner.js"></script>
