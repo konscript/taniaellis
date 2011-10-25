@@ -283,6 +283,8 @@ function te_page_template_meta_boxes() {
     case 'about.php':
       te_about_meta();
       break;
+    case 'news.php':
+      break;
     case 'page-text.php':
       te_page_text_meta();
       break;
