@@ -103,7 +103,7 @@ function create_case_metaboxes() {
  		  'options' => $clients
  		),
      array(
-       'name' => 'Website',
+       'name' => 'Material',
        'id' => $case_prefix . '-document',
        'type' => 'file',
        'desc' => 'Upload case material'
