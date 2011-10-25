@@ -150,7 +150,9 @@
                 <a href="<?php echo $key_service['link-address'];?>" class="key-service-read-more"><?php echo $key_service['link-text']; ?></a>
               </div>
             <?php endfor; ?>
-          
+            
+            <div class="clearer"></div>
+                      
           </div>
           
         	
