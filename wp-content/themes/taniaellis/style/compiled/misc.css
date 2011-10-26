@@ -2493,7 +2493,7 @@
 /* line 2173, ../sass/misc.scss */
 #page .widget-news .news .addthis_toolbox {
   margin-top: 18px;
-  clear: right;
+  clear: left;
   float: left;
 }
 /* line 2181, ../sass/misc.scss */
