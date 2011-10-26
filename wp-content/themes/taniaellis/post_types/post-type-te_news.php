@@ -36,7 +36,7 @@ function news_register() {
 		'rewrite'             => array('slug' => 'news', 'with_front' => false),
 		'capability_type'     => 'post',
 		'hierarchical'        => false,
-		'supports'            => array('title', 'editor', 'thumbnail')
+		'supports'            => array('title', 'editor', 'thumbnail', 'excerpt')
 	  );
 	  
 	  register_post_type('te_news', $args);
