@@ -1726,17 +1726,17 @@
 				margin-top: 21px;
 			}
 			
-			.options {
-				float: left;
-				clear: right;
-				width: 100px;
-				margin-top: 20px;
-			}
-			
 //			.options {
-//				clear: right;
 //				float: right;
+//				clear: right;
+//				width: 100px;
+//				margin-top: 20px;
 //			}
+			
+			.options {
+				clear: right;
+				float: right;
+			}
 			
 			.ratingblock {
 				display: none;

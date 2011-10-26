@@ -2010,12 +2010,10 @@
   clear: both;
   margin-top: 21px;
 }
-/* line 1729, ../sass/misc.scss */
+/* line 1736, ../sass/misc.scss */
 #page .right-sidebar .post-feed .options, #page .right-sidebar-single .post-feed .options {
-  float: left;
   clear: right;
-  width: 100px;
-  margin-top: 20px;
+  float: right;
 }
 /* line 1741, ../sass/misc.scss */
 #page .right-sidebar .post-feed .ratingblock, #page .right-sidebar-single .post-feed .ratingblock {
