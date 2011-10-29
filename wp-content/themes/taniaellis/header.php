@@ -1,5 +1,5 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 	<head>
 		<title>Tania Ellis</title>
 		<meta charset="utf-8" />
