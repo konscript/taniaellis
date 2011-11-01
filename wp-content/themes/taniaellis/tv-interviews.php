@@ -41,20 +41,26 @@ Template Name: TV Interviews
     <section class="right-sidebar-single">
       <div class="sidebar-background">
         
-          <div class="post-header">
-            <h2 class="first-line">Articles</h2>
-            <h2 class="second-line">All Articles</h2>
+        <?php
+          $post_id = $wp_query->post->ID;
+        
+          $post_meta['first-line']  = get_post_meta($post_id, 'te_page-tv-interviews-first-line', true);
+          $post_meta['second-line'] = get_post_meta($post_id, 'te_page-tv-interviews-second-line', true);
+          $post_meta['lead-text']   = get_post_meta($post_id, 'te_page-tv-interviews-lead-paragraph-text', true);
+        ?>
+        
+          <div class="post-header" id="tv-interviews">
+            <h2 class="first-line"><?php echo $post_meta['first-line']; ?></h2>
+            <h2 class="second-line"><?php echo $post_meta['second-line']; ?></h2>
+            <p class="lead-text"><?php echo $post_meta['lead-text']; ?></p>
           </div>
-          <?php query_posts(array('post_type' => 'te_article', 'post_status' => 'publish', 'paged' => $paged)); ?>
-          <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                                
+          
+          <?php query_posts(array('post_type' => 'te_interview', 'post_status' => 'publish', 'paged' => $paged)); ?>
+          <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                         
             <div class="post-feed">
-                <?php if(has_post_thumbnail($post->ID)): ?>
-                  <div class="thumb-wrapper">
-                    <div class="thumb-container">
-                      <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-square-thumbnail'); ?></a>
-                    </div>
-                  </div>
-                <?php endif; ?>
+                
+                <!-- Insert video here! --> 
+                
                 <p class="byline">
                   <?php
                     echo te_get_article_author($post->ID);
@@ -101,5 +107,4 @@ Template Name: TV Interviews
   </div> <!-- #page -->
 
 </div> <!-- #page-content -->
-
 <?php get_footer(); ?>
