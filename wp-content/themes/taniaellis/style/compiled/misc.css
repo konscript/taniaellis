@@ -2012,7 +2012,7 @@
 #page .right-sidebar .post-feed .thumb-wrapper .thumb-container, #page .right-sidebar-single .post-feed .thumb-wrapper .thumb-container {
   border: 5px solid #E1DCD8;
   display: table-cell;
-  height: 110px;
+  height: 10px;
   position: relative;
   vertical-align: middle;
   text-align: center;
