@@ -41,17 +41,16 @@ Template Name: All Events
 				</div>
 				
 				<?php 
-				$query = new WP_Query(array(
+				query_posts(array(
 					'post_type'		=> 'te_event',
 					'orderby'			=> 'meta_value',
 					'meta_key'		=>'te_event-options-start-date',
 					'order'				=> 'DESC',
 					'post_status' => 'publish',
 					'paged' => $paged,
-					'posts_per_page'	=> -1
 				)); ?>
- 				<?php if($query->have_posts()): ?>
- 					<?php while($query->have_posts()): $query->the_post(); ?>                                
+ 				<?php if(have_posts()): ?>
+ 					<?php while(have_posts()): the_post(); ?>                                
    					<div class="post-feed event">
      					<?php if(has_post_thumbnail(get_the_ID())) : ?>
 					      <div class="thumb-wrapper">
