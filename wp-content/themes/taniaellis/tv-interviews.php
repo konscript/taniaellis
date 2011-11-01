@@ -93,7 +93,7 @@ Template Name: TV Interviews
   
                 <div class="options">
   		            <a class="add-comment" href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
-  		            <a class="read-more" href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
+  		            <a class="read-more" href="<?php the_permalink(); ?>">Read more</a>                              
                 </div>
               </div> <!-- // Text Container -->
             </div>
