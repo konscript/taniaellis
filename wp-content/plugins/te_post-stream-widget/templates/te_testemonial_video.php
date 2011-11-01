@@ -20,7 +20,7 @@ $video_video_url = get_post_meta($video_id, 'te_video_url', true);
 	<div class="item-content">
 		
 		<div class="video">
-	 		<?php echo te_vimeo_video($testemonial['video-url'], 250, 136); ?>
+	 		<?php echo te_vimeo_video($testemonial['video-url'], 240, 100); ?>
 		</div>
 	
 		<p class="meta-data"><?php echo $date; ?></p>

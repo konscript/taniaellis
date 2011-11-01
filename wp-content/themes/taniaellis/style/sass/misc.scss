@@ -10,7 +10,7 @@
 		width: $width;
 	} 
 } 
-
+ 
 #header-top-container {
 	float: right;
 	width: 100%;
@@ -1138,10 +1138,7 @@
 						border: 5px solid #E1DCD8;
 						width: 240px;
 						margin-bottom: 12px;
-					}
-					
-					.title {
-						display: none;
+						height: 100px;
 					}
 					
 					.excerpt {
@@ -1150,6 +1147,33 @@
 						padding-left: 40px;
 						padding-top: 12px;
 						width: 220px;
+					}
+			}
+		}
+		
+		.widget-interview {
+			background: url('../../images/post_type_icon_video.png') top left no-repeat;
+			
+			
+			.interview {
+					.video {
+						border: 5px solid #E1DCD8;
+						width: 240px;
+						margin-bottom: 12px;
+						height: 135px;
+					}
+					
+					.excerpt {
+						width: auto;
+					}
+					
+					.options {
+						float: right;
+						width: 100px;
+					}
+					
+					.addthis_toolbox {
+						margin-top: 17px;
 					}
 			}
 		}
@@ -1719,6 +1743,21 @@
 						vertical-align: middle;
 						line-height: 100px;
 					}
+				}
+			}
+			
+			.text-container {
+				float: right;
+				width: 364px;
+			}
+			
+			.vimeo-container { 
+				float: left;
+				
+				iframe {
+					border: 5px solid #CCC;
+					float: left;
+					margin: 0 20px 20px 0;
 				}
 			}
 			

@@ -59,36 +59,43 @@ Template Name: TV Interviews
           <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                         
             <div class="post-feed">
                 
-                <!-- Insert video here! --> 
-                
+              <?php 
+                $vidue_id   = get_post_meta($post->ID, 'te_interview-video-id', true);
+                $video_url  = get_post_meta($video_id, 'te_video_url', true);
+              ?>
+              <div class="vimeo-container">
+                <?php echo te_vimeo_video($video_url, 120, 70); ?>
+              </div>
+              
+              <div class="text-container"> <!-- This is because there is always a video attached to an interview -->
+              
                 <p class="byline">
-                  <?php
-                    echo te_get_article_author($post->ID);
-                  ?>
+                  <?php echo get_post_meta($post->ID, 'te_interview-meta', true); ?>
                 </p>
+              
                 <p class="date">
                   <?php
-                    $article_date = get_post_meta($post->ID, 'te_article_date', true);
-                    
+                    $interview_date = get_post_meta($post->ID, 'te_interview-date', true);
+                  
                     // Determine whether a date has been set. Echo publish date if not.
-                    if(isset($article_date) && $article_date != "") {
-                      echo $article_date;
+                    if(isset($interview_date) && $interview_date != "") {
+                      echo $interview_date;
                     } else {
                       the_time('F j, Y');
                     }
                   ?>
                 </p>
-                
-              <!-- </div>     -->
-              <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-              <div class="entry">
-                <?php the_content(); ?>
-              </div>
-    
-              <div class="options">
-		            <a class="add-comment" href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
-		            <a class="read-more" href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
-              </div>
+              
+                <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <div class="entry">
+                  <?php the_excerpt(); ?>
+                </div>
+  
+                <div class="options">
+  		            <a class="add-comment" href="<?php echo get_permalink($post->ID) . '#respond'; ?>">Add comment (<?php comments_number('0', '1', '%'); ?>)</a>
+  		            <a class="read-more" href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>                              
+                </div>
+              </div> <!-- // Text Container -->
             </div>
           <?php endwhile; ?>
           
