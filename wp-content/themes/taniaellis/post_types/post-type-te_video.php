@@ -128,7 +128,6 @@ function te_video_meta() {
 function te_vimeo_video($url, $width, $height) {
   $pattern = "/[0-9]*$/";
   preg_match_all($pattern, $url, $matches);
-  //print_r($matches[0][0]);
   $video_id = $matches[0][0];
 
   return '<iframe src="http://player.vimeo.com/video/'. $video_id .'?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" width="' . $width . '" height="' . $height . '" frameborder="0"></iframe>';

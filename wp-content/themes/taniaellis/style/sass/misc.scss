@@ -10,7 +10,7 @@
 		width: $width;
 	} 
 } 
-
+ 
 #header-top-container {
 	float: right;
 	width: 100%;
@@ -1486,6 +1486,10 @@
 			.lead-text {
 				margin: 5px 0 10px -50px;
 			}
+			
+			&#tv-interviews {
+				background: url('../../images/post_type_icon_video.png') top left no-repeat;
+			}
 		}
 		
 		#search {
@@ -1739,6 +1743,21 @@
 						vertical-align: middle;
 						line-height: 100px;
 					}
+				}
+			}
+			
+			.text-container {
+				float: right;
+				width: 364px;
+			}
+			
+			.vimeo-container { 
+				float: left;
+				
+				iframe {
+					border: 5px solid #CCC;
+					float: left;
+					margin: 0 20px 20px 0;
 				}
 			}
 			
