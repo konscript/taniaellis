@@ -156,6 +156,18 @@ function get_attachment_id_from_src ($image_src) {
 		return $id;
 
 	}
+	
+	
+function get_interview_date($post_id) {
+	$date = null;
+	try {
+		$date = date_format(new DateTime(get_post_meta($post_id, 'te_interview-date', true)), 'j M Y');
+	} catch(Exception $e) {
+		$date = "";
+	}
+	
+	return $date;
+}
 
 
 /**
