@@ -75,8 +75,8 @@ Template Name: TV Interviews
               
                 <p class="date">
                   <?php
-                    $interview_date = get_post_meta($post->ID, 'te_interview-date', true);
-                  
+                    $interview_date = get_interview_date($post->ID);
+                    
                     // Determine whether a date has been set. Echo publish date if not.
                     if(isset($interview_date) && $interview_date != "") {
                       echo $interview_date;
