@@ -25,6 +25,7 @@ if(!empty($video_id) && $video_id > 0) {
       </div>
     <?php endif; ?>
 
+
 		<?php if($video_id && $video_url) : ?>
 			<div class="video">
 				<?php echo te_vimeo_video($video_url, 240, 100); ?>

@@ -47,7 +47,8 @@ class TE_PostWidget extends WP_Widget {
 			'te_event'							=> 'event',
 			'te_article'						=> 'reading-room',
 			'te_testemonial'				=> 'testemonial',
-			'te_testemonial_video'	=> 'video-testemonial'
+			'te_testemonial_video'	=> 'video-testemonial',
+			'te_interview'					=> 'interview',
 		);
 		
 		$type = array(
@@ -55,7 +56,8 @@ class TE_PostWidget extends WP_Widget {
 			'te_article'						=> 'articles',
 			'te_event'							=> 'events',
 			'te_testemonial'				=> 'testemonials',
-			'te_testemonial_video'	=> 'testemonials'
+			'te_testemonial_video'	=> 'testemonials',
+			'te_interview'					=> 'tv interviews',
 		);
 		
 		$url = array(
@@ -63,7 +65,8 @@ class TE_PostWidget extends WP_Widget {
 			'te_article'						=> 'reading-room/articles',
 			'te_event'							=> 'events/all',
 			'te_testemonail'				=> 'cases/all',
-			'te_testemonail_video'	=> 'cases/all'
+			'te_testemonail_video'	=> 'cases/all',
+			'te_interview'					=> 'reading-room/interviews',
 		);
 		
 		?>
@@ -99,7 +102,7 @@ class TE_PostWidget extends WP_Widget {
 		
 		<?php if($instance['viewAllButton']) : ?>
 		<div class="widget-view-all">
-			<a href="<?php echo get_permalink(get_page_by_path($url[$instance['type']])); ?>">View all <?php echo $type[$instance['type']]; ?></a>
+			<a href="<?php echo trailingslashit(site_url()) . trailingslashit($url[$instance['type']]); ?>">View all <?php echo $type[$instance['type']]; ?></a>
 		</div>
 		<?php endif; ?>
 		
@@ -174,6 +177,7 @@ class TE_PostWidget extends WP_Widget {
 				<option value="te_article"<?php if($instance['type'] == 'te_article') : ?> selected="selected"<?php endif; ?>>Article</option>
 				<option value="te_testemonial"<?php if($instance['type'] == 'te_testemonial') : ?> selected="selected"<?php endif; ?>>Testimonial</option>	
 				<option value="te_testemonial_video"<?php if($instance['type'] == 'te_testemonial_video') : ?> selected="selected"<?php endif; ?>>Video Testimonial</option>	
+				<option value="te_interview"<?php if($instance['type'] == 'te_interview') : ?> selected="selected"<?php endif; ?>>TV Interview</option>	
 			</select>
 		</p>
 		
