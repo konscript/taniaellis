@@ -60,7 +60,7 @@ Template Name: TV Interviews
             <div class="post-feed">
                 
               <?php 
-                $vidue_id   = get_post_meta($post->ID, 'te_interview-video-id', true);
+                $video_id   = get_post_meta($post->ID, 'te_interview-video-id', true);
                 $video_url  = get_post_meta($video_id, 'te_video_url', true);
               ?>
               <div class="vimeo-container">
