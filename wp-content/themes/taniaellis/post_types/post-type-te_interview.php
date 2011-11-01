@@ -35,7 +35,7 @@ function interview_register() {
    'rewrite' => array('slug' => 'interviews', 'with_front' => false),
    'capability_type' => 'post',
    'hierarchical' => false,
-   'supports' => array('thumbnail', 'title', 'editor', 'excerpt')
+   'supports' => array('thumbnail', 'title', 'editor', 'excerpt', 'comments')
    );
    
    register_post_type('te_interview', $args);

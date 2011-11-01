@@ -1514,6 +1514,11 @@
 			
 			//@include featured-image(524px, 0);
 			
+			.vimeo-container iframe {
+				border: 5px solid #CCC;
+				margin-bottom: 20px;
+			}
+			
 			.meta {
 				float: left;
 				margin-bottom: 20px;
