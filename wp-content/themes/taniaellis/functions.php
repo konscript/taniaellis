@@ -193,6 +193,7 @@ require_once('post_types/post-type-te_article.php');
 require_once('post_types/post-type-te_video.php');
 require_once('post_types/post-type-te_case.php');
 require_once('post_types/post-type-te_testemonial.php');
+require_once('post_types/post-type-te_interview.php');
 require_once('post_types/post-type-te_client.php');
 require_once('post_types/post-type-te_news.php');
 
