@@ -143,6 +143,7 @@
         <?php if($bonus_sticker == 'on' && $sticker_url): ?>
 				  <img src="<?php echo $sticker_url; ?>" alt="" class="bonus-sticker" />
 				<?php endif; ?>
+				<?php quick_subscribe_form(); ?>
         <a class="box-button" href="<?php echo $box_link_address; ?>" target="_blank"><?php echo $box_link_text; ?></a>                       
       </div>
     </div>
