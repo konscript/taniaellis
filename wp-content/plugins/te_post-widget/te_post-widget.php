@@ -51,6 +51,7 @@ class TE_PostWidget extends WP_Widget {
 			'te_interview'					=> 'interview',
 			'te_case'								=> 'case',
 			'te_client'							=> 'client',
+			'te_news'								=> 'news',
 		);
 		
 		$type = array(
@@ -62,6 +63,7 @@ class TE_PostWidget extends WP_Widget {
 			'te_interview'					=> 'tv interviews',
 			'te_case'								=> 'cases',
 			'te_client'							=> 'clients',
+			'te_news'								=> 'news',
 		);
 		
 		$url = array(
@@ -73,6 +75,7 @@ class TE_PostWidget extends WP_Widget {
 			'te_interview'					=> 'reading-room/interviews',
 			'te_case'								=> 'cases/all',
 			'te_client'							=> 'cases/clients/all',
+			'te_news'								=> 'about/company-news',
 		);
 		
 		?>

@@ -39,6 +39,8 @@ class TE_PostStreamWidget extends WP_Widget {
 			'te_testemonial_video'	=> 'video-testemonial',
 			'te_interview'					=> 'interview',
 			'te_case'								=> 'case',
+			'te_client'							=> 'client',
+			'te_news'								=> 'news',
 		);
 		
 		$type = array(
@@ -49,6 +51,8 @@ class TE_PostStreamWidget extends WP_Widget {
 			'te_testemonial_video'	=> 'testemonials',
 			'te_interview'					=> 'tv interviews',
 			'te_case'								=> 'cases',
+			'te_client'							=> 'clients',
+			'te_news'								=> 'news',
 		);
 		
 		$url = array(
@@ -59,12 +63,8 @@ class TE_PostStreamWidget extends WP_Widget {
 			'te_testemonail_video'	=> 'cases/all',
 			'te_interview'					=> 'reading-room/interviews',
 			'te_case'								=> 'cases/all',
-		);
-		
-		$size = array(
-			'wide'									=> 'post-wide-thumbnail',
-			'square'								=> 'post-square-thumbnail',
-			'tall'									=> 'post-tall-thumbnail'
+			'te_client'							=> 'cases/clients/all',
+			'te_news'								=> 'about/company-news',
 		);
 		
 		$dim = $size[$instance['dimensions']]
