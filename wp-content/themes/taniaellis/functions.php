@@ -1,6 +1,7 @@
 <?php
 include('meta-box.php');
 
+
 /**
 ##################
 # THEME SETTINGS #
@@ -61,6 +62,7 @@ if(function_exists( 'register_nav_menus')) {
 	    'navigation-top'        => 'Top Menu',
 	    'navigation-pages'      => 'Page Menu',
 	    'social-business-menu'  => 'Social Business Menu',
+	    'cases-menu'            => 'Cases Menu',
 	    'club-menu'             => 'Club Menu',
 		  'blog-menu'				      => 'Blog Menu',
 		  'lab-menu'				      => 'Lab Menu',

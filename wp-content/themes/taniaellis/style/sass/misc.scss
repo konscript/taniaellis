@@ -1522,6 +1522,10 @@
 			}
 		}
 		
+		#case {
+			background: url('../../images/post_type_icon_cases.png') top left no-repeat;
+		}
+		
 		#search {
 			background: url('../../images/icon_questionmark.png') top left no-repeat;
 		}
@@ -1752,13 +1756,12 @@
 			}
 		}
 		
-		.client-info {			
-			.about-headline, .client-name { 
-				margin-bottom: 10px; 
+		.case {
+			.client-info {			
+				.about-headline, .client-name { 
+					margin-bottom: 10px; 
+				}
 			}
-			
-			
-			
 		}
 		
 		.post-feed {

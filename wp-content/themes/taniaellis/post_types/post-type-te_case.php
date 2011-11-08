@@ -45,9 +45,7 @@ function case_register() {
 		)
 	);
 	  
-	  
 	  register_post_type('te_case', $args);
-	  flush_rewrite_rules(false);
 	  create_case_taxonomies();
 	  create_case_metaboxes();
 }
@@ -95,7 +93,7 @@ function create_case_metaboxes() {
   
   $case_prefix = 'te_case-options';
 
-  $case_meta = array(
+  $meta_boxes[] = array(
    'id' => $case_prefix,
    'title' => 'Client Options',
    'pages' => array('te_case'),
@@ -118,8 +116,50 @@ function create_case_metaboxes() {
      )
    )
   );
+  
+  $case_meta_prefix = 'te_case-meta';
+  
+  $meta_boxes[] = array(
+   'id' => $case_top_prefix,
+   'title' => 'Top Options',
+   'pages' => array('te_case'),
+   'context' => 'normal',
+   'priority' => 'high',
 
-  $case_box = new RW_Meta_Box($case_meta);
+   'fields' => array(
+     array(
+ 		  'name'  => 'Title: First Line',
+ 		  'id'    => $case_meta_prefix . '-first-line',
+ 		  'desc'  => 'First line of page title',
+      'type'  => 'text',
+ 		),
+     array(
+       'name' => 'Title: Second Line',
+       'id'   => $case_meta_prefix . '-second-line',
+       'type' => 'text',
+       'desc' => 'Second line of page title',
+     ),
+     array(
+  	  'name'  => 'Left Meta',
+  		'id'    => $case_meta_prefix . '-left',
+  		'desc'  => 'Will appear to the left under the featured image',
+      'type'  => 'text',
+  	 ),
+     array(
+        'name' => 'Right Meta',
+        'id'   => $case_meta_prefix . '-right',
+        'desc' => 'Will appear to the right under the featured image',
+        'type' => 'text',
+     )
+   )
+  );
+  
+  foreach($meta_boxes as $meta_box) {
+     $my_box = new RW_Meta_Box($meta_box);
+   }
+
+  //$case_box = new RW_Meta_Box($case_meta);
+  //$case_box_2 = new RW_Mate_Box($case_top_meta);
 
 }
 

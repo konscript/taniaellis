@@ -14,7 +14,7 @@
 		$menu_id = get_post_meta($post->ID, 'te_page-text-menu-id', true);
 		?>
 		<?php wp_nav_menu(array(
-				'menu'							=> $menu_id,
+				'theme_location'		=> 'cases-menu',
 				'container'				  => '',
 				'menu_id'				    => 'navigation-header-standard',
 				'menu_class'			  => 'navigation-header',
@@ -39,12 +39,10 @@
           <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
             
             <?php
-              $post_meta['first-line']  = get_post_meta($post->ID, 'te_page-text-title-first-line', true);
-              $post_meta['second-line'] = get_post_meta($post->ID, 'te_page-text-title-second-line', true);
-              $post_meta['title-icon']  = get_post_meta($post->ID, 'te_page-text-title-icon', true);
-              $post_meta['lead-text']   = get_post_meta($post->ID, 'te_page-text-lead-paragraph-text', true);
-              $post_meta['left-meta']   = get_post_meta($post->ID, 'te_page-text-meta-left', true);
-              $post_meta['right-meta']  = get_post_meta($post->ID, 'te_page-text-meta-right', true);
+              $case['first-line']   = get_post_meta($post->ID, 'te_case-meta-first-line', true);
+              $case['second-line']  = get_post_meta($post->ID, 'te_case-meta-second-line', true);
+              $case['left-meta']    = get_post_meta($post->ID, 'te_case-meta-left', true);
+              $case['right-meta']   = get_post_meta($post->ID, 'te_case-meta-right', true);
               
               // Get all things that has to do with the client
               $case['client-id'] = get_post_meta($post->ID, 'te_case-options-client-id', true);
@@ -56,15 +54,9 @@
             ?>
             
             <!-- The following way to add the correct icon to the header is a bit of a hack, but it is easy! Should this be changed? -->
-            <?php
-              $style = '';
-              if($post_meta['title-icon']) {
-                $style = 'background: url(' . $post_meta['title-icon'] . ') top left no-repeat;';
-              }
-            ?>
-            <div class="post-header" style="<?php echo $style; ?>">
-              <h2 class="first-line">Cases on</h2>
-              <h2 class="second-line">Conferences</h2>
+            <div class="post-header" id="case">
+              <h2 class="first-line"><?php echo $case['first-line']; ?></h2>
+              <h2 class="second-line"><?php echo $case['second-line']; ?></h2>
             </div>
                                             
             <div class="post case">
@@ -84,17 +76,6 @@
               
               <div class="clearer"></div>
               
-              <?php if($post_meta['left-meta'] || $post_meta['right-meta']):?>
-                <div class="meta">
-                  <p class="byline">
-                    <?php echo $post_meta['left-meta']; ?>
-                  </p>
-                  <p class="date">
-                    <?php echo $post_meta['right-meta']; ?>
-                  </p>
-                </div>
-              <?php endif; ?>
-              
               <?php if(has_post_thumbnail($post->ID)) : ?>
                 <div class="thumb-wrapper">
       						<div class="thumb-container">
@@ -102,35 +83,46 @@
       						</div>
       					</div>
     					<?php endif; ?>
+    					
+    					<?php if($case['left-meta'] || $case['right-meta']):?>
+                <div class="meta">
+                  <p class="byline">
+                    <?php echo $case['left-meta']; ?>
+                  </p>
+                  <p class="date">
+                    <?php echo $case['right-meta']; ?>
+                  </p>
+                </div>
+              <?php endif; ?>
               
               <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
               <div class="entry">
-                <?php if(has_post_thumbnail($post->ID)) : ?>
-                  <div class="thumb-wrapper">
-                    <div class="thumb-container">
-                      <?php the_post_thumbnail('post-big-square-thumbnail'); ?>
-                    </div>
-                  </div>
-                <?php endif; ?>
                 <?php the_content(); ?>
               </div>
             </div>
             <div class="clearer"></div>
+            
+            <?php if(has_term('', 'te_case-category', $post->ID) || has_term('', 'te_case-tag', $post->ID)): ?>
+              <div class="post-identification">
+                <?php if(has_term('', 'te_case-category', $post->ID)): ?>
+                  <p class="post-categories">
+                    <?php echo get_the_term_list($post->ID, 'te_case-category', 'Posted in |&nbsp;', '&nbsp;|&nbsp;', ''); ?>
+                  </p>
+                <?php endif; ?>
+                <?php if(has_term('', 'te_case-tag', $post->ID)): ?>
+                  <p class="post-tags">
+                    <?php echo get_the_term_list($post->ID, 'te_case-tag', 'Tagged |&nbsp;', '&nbsp;|&nbsp;', ''); ?>
+                  </p>
+                <?php endif; ?>
+              </div>
+            <?php endif; ?>
                                                 
           <?php endwhile; ?>
           <?php endif; ?>
           
           <div class="clearer"></div>
           
-          <?php
-          $args = array(
-          	'post_type' => 'attachment',
-          	'numberposts' => null,
-          	'post_status' => null,
-          	'post_parent' => $post->ID
-          );
-          $attachments = get_posts($args);
-          ?>
+          <?php comments_template(); ?>
           
       </div>
     </section>
