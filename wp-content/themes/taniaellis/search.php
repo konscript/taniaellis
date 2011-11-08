@@ -1,11 +1,9 @@
 <?php
-/*
-Template Name: Articles
-*/
+
 ?>
 
 <?php get_header(); ?>
-
+123
 <div id="header">
   <p id="sub-heading">The <span>Social</span> Business Company &reg;</p>
   <p id="language-picker">
