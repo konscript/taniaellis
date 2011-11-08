@@ -1543,7 +1543,7 @@
 			width: 534px;
 			
 			//@include featured-image(524px, 0);
-			
+						
 			.vimeo-container iframe {
 				border: 5px solid #CCC;
 				margin-bottom: 20px;
@@ -1750,6 +1750,15 @@
 				clear: left;
 				float: left;
 			}
+		}
+		
+		.client-info {			
+			.about-headline, .client-name { 
+				margin-bottom: 10px; 
+			}
+			
+			
+			
 		}
 		
 		.post-feed {
@@ -2432,7 +2441,7 @@
 				.thumb-container {
 					width: 240px;
 					height: 110px;
-				}
+				} 
 
 				.excerpt {
 					float: none;
