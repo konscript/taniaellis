@@ -1178,6 +1178,36 @@
 			}
 		}
 		
+		.widget-case {
+			background: url('../../images/post_type_icon_cases.png') top left no-repeat;
+			
+			.case {
+				.thumb-container, .thumb-wrapper {
+					width: 250px;
+					height: 110px;
+				}
+
+				.excerpt {
+					width: 250px;
+				}
+				
+				.meta-data {
+					margin-bottom: 5px;
+				}
+
+
+				.title {
+					float: none;
+					margin-top: 5px;
+				}
+				
+				.options {
+					float: right;
+					width: 100px;
+				}
+			}
+		}
+		
 		.layout-tall {
 			.image-text {
 				.thumb-container {
