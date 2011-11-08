@@ -50,6 +50,7 @@ class TE_PostWidget extends WP_Widget {
 			'te_testemonial_video'	=> 'video-testemonial',
 			'te_interview'					=> 'interview',
 			'te_case'								=> 'case',
+			'te_client'							=> 'client',
 		);
 		
 		$type = array(
@@ -60,6 +61,7 @@ class TE_PostWidget extends WP_Widget {
 			'te_testemonial_video'	=> 'testemonials',
 			'te_interview'					=> 'tv interviews',
 			'te_case'								=> 'cases',
+			'te_client'							=> 'clients',
 		);
 		
 		$url = array(
@@ -70,6 +72,7 @@ class TE_PostWidget extends WP_Widget {
 			'te_testemonail_video'	=> 'cases/all',
 			'te_interview'					=> 'reading-room/interviews',
 			'te_case'								=> 'cases/all',
+			'te_client'							=> 'cases/clients/all',
 		);
 		
 		?>
@@ -179,6 +182,7 @@ class TE_PostWidget extends WP_Widget {
 				<option value="te_event"<?php if($instance['type'] == 'te_event') : ?> selected="selected"<?php endif; ?>>Event</option>
 				<option value="te_article"<?php if($instance['type'] == 'te_article') : ?> selected="selected"<?php endif; ?>>Article</option>
 				<option value="te_case"<?php if($instance['type'] == 'te_case') : ?> selected="selected"<?php endif; ?>>Case</option>
+				<option value="te_client"<?php if($instance['type'] == 'te_client') : ?> selected="selected"<?php endif; ?>>Client</option>
 				<option value="te_testemonial"<?php if($instance['type'] == 'te_testemonial') : ?> selected="selected"<?php endif; ?>>Testimonial</option>	
 				<option value="te_testemonial_video"<?php if($instance['type'] == 'te_testemonial_video') : ?> selected="selected"<?php endif; ?>>Video Testimonial</option>	
 				<option value="te_interview"<?php if($instance['type'] == 'te_interview') : ?> selected="selected"<?php endif; ?>>TV Interview</option>	
