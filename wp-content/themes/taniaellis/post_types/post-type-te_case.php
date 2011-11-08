@@ -36,8 +36,14 @@ function case_register() {
 		'rewrite'             => array('slug' => 'cases', 'with_front' => false),
 		'capability_type'     => 'post',
 		'hierarchical'        => false,
-		'supports'            => array('title', 'editor', 'thumbnail')
-	  );
+		'supports'				=> array(
+			'title',
+			'excerpt',
+			'editor',
+			'thumbnail',
+			'comments'
+		)
+	);
 	  
 	  register_post_type('te_case', $args);
 	  create_case_taxonomies();
@@ -65,7 +71,7 @@ function create_case_taxonomies() {
     'show_in_nav_menus' => true,
     'show_ui'           => true,
     'hierarchical'      => true,
-    'rewrite'           => array('slug' => 'client-categories', 'with_front' => false),
+    'rewrite'           => array('slug' => 'case-categories', 'with_front' => false),
     '_builtin'          => false
   );
 

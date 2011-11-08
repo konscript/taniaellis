@@ -2212,6 +2212,52 @@
 				}
 			}
 		}
+		
+		.widget-case {
+			background: url('../../images/post_type_icon_cases.png') top left no-repeat;
+
+			.case {				
+				.item-content { width: 520px; }
+				
+				.thumb-container{
+					width: 240px;
+					height: 110px;
+				}
+
+				.meta-data {
+					float: right;
+				}
+
+				.title, .excerpt {
+					margin: 0;
+					padding: 0;
+					float: none;
+					width: auto;
+				}
+				
+				.title {
+					margin-bottom: 5px;
+				}
+
+				.options {
+					float: right;
+					clear: right;
+					width: auto;
+				}
+				
+				.addthis_toolbox {
+					clear: left;
+					float: left;
+					margin-top: 20px;
+				}
+				
+				.rating {
+					clear: left;
+					float: left;
+					margin-top: 12px;
+				}
+			}
+		}
 
 		.widget-blog {
 			background: url('../../images/post_type_icon_featured_blog.png') top left no-repeat;
