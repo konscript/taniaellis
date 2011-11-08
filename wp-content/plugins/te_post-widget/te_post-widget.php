@@ -104,6 +104,14 @@ class TE_PostWidget extends WP_Widget {
 		wp_reset_query();
 		
 		?>
+		
+		<?php if($instance['type'] == 'te_client') : ?>
+			<div class="client-footer">
+				<a href="<?php echo trailingslashit(site_url()) . trailingslashit($url['te_case']); ?>">View all cases</a>
+				<a href="<?php echo trailingslashit(site_url()) . trailingslashit($url['te_client']); ?>">View all clients</a>
+			</div>
+		<?php endif; ?>
+		
 		</div>
 		
 		<?php if($instance['viewAllButton']) : ?>
