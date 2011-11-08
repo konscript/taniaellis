@@ -47,7 +47,6 @@ function case_register() {
 	  
 	  
 	  register_post_type('te_case', $args);
-	  flush_rewrite_rules(false);
 	  create_case_taxonomies();
 	  create_case_metaboxes();
 }

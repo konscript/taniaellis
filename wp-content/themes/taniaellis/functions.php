@@ -1,4 +1,5 @@
 <?php
+
 include('meta-box.php');
 
 /**
@@ -200,7 +201,7 @@ if(function_exists('register_sidebar')) {
 **/
 
 // Include custom post type scripts.
-require_once('post_types/post-type-te_event.php');
+//require_once('post_types/post-type-te_event.php');
 require_once('post_types/post-type-te_article.php');
 require_once('post_types/post-type-te_video.php');
 require_once('post_types/post-type-te_case.php');
