@@ -39,7 +39,9 @@ function case_register() {
 		'supports'            => array('title', 'editor', 'thumbnail')
 	  );
 	  
+	  
 	  register_post_type('te_case', $args);
+	  flush_rewrite_rules(false);
 	  create_case_taxonomies();
 	  create_case_metaboxes();
 }
@@ -97,7 +99,7 @@ function create_case_metaboxes() {
    'fields' => array(
      array(
  		  'name' => 'Client',
- 		  'id' => $prefix . '-client-id',
+ 		  'id' => $case_prefix . '-client-id',
  		  'desc' => 'Client to case',
  		  'type' => 'select',
  		  'options' => $clients

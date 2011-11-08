@@ -615,6 +615,24 @@ html>body {
 		}
 	}
 	
+	.client-info {
+		.about-headline {
+			font-size: 0.9em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		
+		.client-name {
+			font-size: 1.5em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		
+		.client-description {
+			line-height: 1.5em;
+		}
+	}
+	
 	.post-feed {
 		color: #7D7872;
 		
