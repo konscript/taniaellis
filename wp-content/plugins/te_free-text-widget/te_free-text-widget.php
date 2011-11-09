@@ -64,7 +64,7 @@ class TE_FreeTextWidget extends WP_Widget {
 									<?php 
 									
 									$aid = get_attachment_id_from_src($imageURL);
-									$size = ($layout == "square") ? "square-small" : $layout;
+									$size = $layout;
 									echo wp_get_attachment_image($aid, "post-$size-thumbnail", false, array('class' => 'featured-image'));
 									?>
 								</a>
