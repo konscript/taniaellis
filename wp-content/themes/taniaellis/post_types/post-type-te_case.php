@@ -33,7 +33,7 @@ function case_register() {
 		'menu_position'       => 5,
 		'_builtin'            => false, // It's a custom post type, not built in!
 	  'menu_icon'           => get_stylesheet_directory_uri() . '/images/icon_case.png',
-		'rewrite'             => array('slug' => 'cases', 'with_front' => false),
+		'rewrite'             => array('slug' => 'cases/case', 'with_front' => false),
 		'capability_type'     => 'post',
 		'hierarchical'        => false,
 		'supports'				=> array(
