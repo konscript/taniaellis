@@ -77,6 +77,15 @@ class TE_RelatedPostsWidget extends WP_Widget {
 									<?php if($instance['postType'] == 'te_article') : ?>
 										<?php //echo te_get_article_author(get_the_ID()); ?>
 										Article
+										
+									<?php elseif($instance['postType'] == 'te_case') : ?>
+										<?php
+											$categories = get_the_terms($post->ID, 'te_case-category');
+											if(count($categories) > 0) {
+												$vals = array_values($categories);
+												echo $vals[0]->name;
+											}
+										?>
 									<?php else : ?>
 										By <?php the_author(); ?>
 									<?php endif; ?>
@@ -151,6 +160,7 @@ class TE_RelatedPostsWidget extends WP_Widget {
 				
 				<option value="post"<?php if($instance['postType'] == 'post') echo " selected=\"selected\""; ?>>Blog Post</option>
 				<option value="te_article"<?php if($instance['postType'] == 'te_article') echo " selected=\"selected\""; ?>>Article</option>
+				<option value="te_case"<?php if($instance['postType'] == 'te_case') echo " selected=\"selected\""; ?>>Case</option>
 			</select>
 		</p>
 		
