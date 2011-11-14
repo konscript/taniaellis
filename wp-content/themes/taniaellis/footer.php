@@ -26,5 +26,24 @@
 
 		    wp_footer();
 		?>
+			<script type="text/javascript">
+
+				var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
+
+				if($.browser.webkit) {
+					$("img.featured-image").each(function(){
+						var o = $(this).closest(".thumb-container");
+						var height = $(o).css("height");
+						//console.log(height);
+
+						if(height == "110px")
+							$(o).css("height", "100px");
+
+						if(height == "120px")
+							$(o).css("height", "100px");
+					});
+				}
+				
+			</script>
 	</body>
 </html>
