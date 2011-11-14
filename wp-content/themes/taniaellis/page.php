@@ -16,12 +16,11 @@ get_header();
 
 	<div id="header-container">
 		<?php
-		
-		$menu_id = get_post_meta($post->ID, 'te_page-menu-id', true);
+			$menu_id = get_post_meta($post->ID, 'te_page-menu-id', true);
 		?>
 		<?php wp_nav_menu(array(
 				'menu'							=> $menu_id,
-				'container'				  => '',
+				'container'					=> '',
 				'menu_id'				    => 'navigation-header-standard',
 				'menu_class'			  => 'navigation-header',
 				'link_before'       => '<span>&nbsp;</span>'
@@ -41,6 +40,31 @@ get_header();
 		</section>
 		<section class="right-sidebar-single">
 			<div class="sidebar-background">
+				<?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
+          
+          <?php
+            $post_meta['first-line']  = get_post_meta($post->ID, 'te_page-text-title-first-line', true);
+            $post_meta['second-line'] = get_post_meta($post->ID, 'te_page-text-title-second-line', true);
+            $post_meta['title-icon']  = get_post_meta($post->ID, 'te_page-text-title-icon', true);
+            $post_meta['lead-text']   = get_post_meta($post->ID, 'te_page-text-lead-paragraph-text', true);
+            $post_meta['left-meta']   = get_post_meta($post->ID, 'te_page-text-meta-left', true);
+            $post_meta['right-meta']  = get_post_meta($post->ID, 'te_page-text-meta-right', true);
+          ?>
+          
+          <!-- The following way to add the correct icon to the header is a bit of a hack, but it is easy! Should this be changed? -->
+          <?php
+            $style = '';
+            if($post_meta['title-icon']) {
+              $style = 'background: url(' . $post_meta['title-icon'] . ') top left no-repeat;';
+            }
+          ?>
+          <div class="post-header" style="<?php echo $style; ?>">
+            <h2 class="first-line"><?php echo $post_meta['first-line']; ?></h2>
+            <h2 class="second-line"><?php echo $post_meta['second-line']; ?></h2>
+            <p class="lead-text"><?php echo $post_meta['lead-text']; ?></p>
+          </div>
+				<?php endwhile; endif; ?>
+				
 				<?php generated_dynamic_sidebar("Right Sidebar"); ?>
 			</div>
 		</section>
