@@ -2,7 +2,6 @@
 
 include('meta-box.php');
 
-
 /**
 ##################
 # THEME SETTINGS #
@@ -25,7 +24,7 @@ add_image_size('post-square-thumbnail', 100, 100, true);
 add_image_size('post-big-square-thumbnail', 240, 240, false);
 add_image_size('post-tall-thumbnail', 62, 100, true);
 add_image_size('post-wide-thumbnail', 240, 100, true);
-add_image_size('post-wide-image', 524, 218, true);
+add_image_size('post-wide-image', 524, 218, false);
 
 /**
 #############################
@@ -203,7 +202,7 @@ if(function_exists('register_sidebar')) {
 **/
 
 // Include custom post type scripts.
-//require_once('post_types/post-type-te_event.php');
+require_once('post_types/post-type-te_event.php');
 require_once('post_types/post-type-te_article.php');
 require_once('post_types/post-type-te_video.php');
 require_once('post_types/post-type-te_case.php');

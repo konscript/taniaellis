@@ -30,7 +30,7 @@
 		<?php @include("partials/social-bar.php"); ?>
 		<section class="left-sidebar">
 			<?php 
-			generated_dynamic_sidebar("Left Sidebar");
+			generated_dynamic_sidebar("Single Case Sidebar");
 			?>
     </section>
    <section class="right-sidebar-single">

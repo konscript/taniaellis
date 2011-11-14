@@ -21,17 +21,9 @@
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		
-		<script type="text/javascript">
-		if(!Modernizr.borderradius) {
-			$("#social-business-menu li a").corner("round 10px");
-			$("#header-content").corner("round 10px");
-			$("#newsletter-signup-box").corner("round top 10px");
-			$("#newsletter-signup-box").corner("round br 10px cc:#fff");
-			$("#social-bar").corner("round bl 10px cc:#fff");
-			$("#newsletter-signup-button").corner("round 5px");
-			
-		}
-		</script>
+	
+		
+		
 		
 		<?php
 			/* Always have wp_head() just before the closing </head>

@@ -10,7 +10,7 @@ $end = get_event_end(get_the_ID());
       <div class="thumb-wrapper">
         <div class="thumb-container">
 					<a href="<?php the_permalink(); ?>">
-          	<?php the_post_thumbnail($dim, array('class' => 'featured-image')); ?>
+          	<?php the_post_thumbnail('post-square-thumbnail', array('class' => 'featured-image')); ?>
 					</a>
         </div>
       </div>

@@ -51,7 +51,7 @@ Template Name: Articles
                                     <?php if(has_post_thumbnail($post->ID)): ?>
                                       <div class="thumb-wrapper">
                                         <div class="thumb-container">
-                                          <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-square-thumbnail'); ?></a>
+                                          <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-square-thumbnail', array("class" => "featured-image")); ?></a>
                                         </div>
                                       </div>
                                     <?php endif; ?>

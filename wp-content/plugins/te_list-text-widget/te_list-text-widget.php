@@ -80,7 +80,7 @@ class TE_ListTextWidget extends WP_Widget {
 	}
 	
 	function update($new_instance, $old_instance) {
-		$instance = $old_instance;
+		//$instance = $old_instance;
 		
 		$instance['titleA']					= strip_tags($new_instance['titleA']);
 		$instance['titleB']					= strip_tags($new_instance['titleB']);
