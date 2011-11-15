@@ -246,7 +246,7 @@ function te_get_article_date($post_id) {
   $article_date = get_post_meta($post_id, 'te_article_date', true);
   
   if($article_date == null) {
-    return get_the_time('F j, Y', $post_id);
+    return get_the_time('F j Y', $post_id);
   }
   
   // Determine whether a date has been set. Echo publish date if not.
