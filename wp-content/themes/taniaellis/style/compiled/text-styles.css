@@ -298,7 +298,7 @@ html > body {
   text-decoration: none;
 }
 /* line 298, ../sass/text-styles.scss */
-#header #navigation-header-standard li a {
+#header #navigation-header-standard li a, #header #navigation-cases li a {
   color: #b0ada6;
   font-size: 0.9em;
   font-weight: bold;
@@ -307,15 +307,15 @@ html > body {
   text-transform: uppercase;
 }
 /* line 306, ../sass/text-styles.scss */
-#header #navigation-header-standard li a:hover {
+#header #navigation-header-standard li a:hover, #header #navigation-cases li a:hover {
   color: #7C7973;
 }
 /* line 311, ../sass/text-styles.scss */
-#header #navigation-header-standard li .current {
+#header #navigation-header-standard li .current, #header #navigation-cases li .current {
   color: #7C7973;
 }
 /* line 316, ../sass/text-styles.scss */
-#header #navigation-header-standard .current-menu-item a {
+#header #navigation-header-standard .current-menu-item a, #header #navigation-cases .current-menu-item a {
   color: #7C7973;
 }
 /* line 324, ../sass/text-styles.scss */

@@ -16,13 +16,13 @@ Template Name: Cases
 
 	<div id="header-container">
 		
-		<?php wp_nav_menu(array(
-	    'theme_location' 	=> 'cases-menu',
-			'menu_class'		=> 'navigation-header',
-			'menu_id'			=> 'navigation-header-standard',
-			'link_before'		=> '<span>&nbsp;</span>'
-	        )); 
-	    ?>
+    <?php wp_nav_menu(array(
+			'theme_location'	=> 'cases-menu',
+			'container'			=> '',
+			'menu_id'			   => 'navigation-cases',
+			'menu_class'			  => 'navigation-header',
+			'link_before'       => '<span>&nbsp;</span>'
+		)); ?>
 		<div class="header-content">
 			<div class="left-column" id="cases-left">
 				
