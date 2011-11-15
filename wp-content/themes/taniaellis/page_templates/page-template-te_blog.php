@@ -81,6 +81,12 @@ function te_blog_meta() {
   		  'id' => $box_prefix . '-link-text',
   		  'type' => 'text'
   		),
+			array(
+				'name'	=> 'Subscribe to blog on/off',
+				'desc'	=> 'If subscribe to blog is on, the link set in "Link address" and "Link text" won\'t show',
+				'id'		=> $box_prefix . '-subscribe',
+				'type'	=> 'checkbox'
+			),
   		array(
   		  'name' => 'Bonus Sticker On/Off',
   		  'id' => $box_prefix . '-bonus-sticker',

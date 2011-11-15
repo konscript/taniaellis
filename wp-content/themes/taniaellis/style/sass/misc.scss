@@ -968,6 +968,22 @@
 				@include background-image(linear-gradient(top, #A8A6CD / 1.44, #A8A6CD / 1.2));
 			}
 		}
+		
+		#subscribe-to-blog {
+			padding: 0 20px;
+			
+			input[type=text] {
+				border: 1px solid #999;
+				margin-bottom: 10px;
+				padding: 2px;
+				width: 204px;
+			}
+			
+			input[type=submit] {
+				margin-right: 0;
+				margin-bottom: 10px;
+			}
+		}
 	}
 
 	#box-frontpage {
