@@ -149,7 +149,7 @@
 				<?php if($show_subscribe == 'on'): ?>
 					<form id="subscribe-to-blog" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=TaniaEllis-temp', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
 						<input type="text" name="email" />
-						<input type="hidden" value="taniaellis-test/feed-test-2" name="uri"/>
+						<input type="hidden" value="TaniaEllis-temp" name="uri"/>
 						<input type="hidden" name="loc" value="en_US"/>
 						<input class="box-button green-button" type="submit" value="Subscribe" />
 					</form>
