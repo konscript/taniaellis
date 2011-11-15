@@ -254,9 +254,9 @@ require_once('page_templates/page-template-te_lectures.php');
 require_once('page_templates/page-template-te_reading-room.php');
 require_once('page_templates/page-template-te_tv-interviews.php');
 require_once('page_templates/page-template-te_about.php');
+require_once('page_templates/page-template-te_cases.php');
 require_once('page_templates/page-template-te_page.php');
 require_once('page_templates/page-template-te_page-text.php');
-
 
 /**
 ###################################
@@ -284,6 +284,9 @@ function te_page_template_meta_boxes() {
     case 'lectures.php':
       te_lectures_meta();
       break;
+		case 'cases.php':
+			te_cases_meta();
+			break;
     case 'events.php':
       te_events_meta();
       break;

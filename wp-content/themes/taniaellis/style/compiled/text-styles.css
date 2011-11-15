@@ -89,27 +89,27 @@ html > body {
   text-transform: uppercase;
 }
 /* line 103, ../sass/text-styles.scss */
-#header .header-content #club-left .testemonials-title {
+#header .header-content #club-left .testemonials-title, #header .header-content #cases-left .testemonials-title {
   color: #7D7A75;
 }
 /* line 106, ../sass/text-styles.scss */
-#header .header-content #club-left .testemonials-title .first-line {
+#header .header-content #club-left .testemonials-title .first-line, #header .header-content #cases-left .testemonials-title .first-line {
   font-size: 2.7em;
   font-weight: bold;
   text-transform: uppercase;
 }
 /* line 112, ../sass/text-styles.scss */
-#header .header-content #club-left .testemonials-title .second-line {
+#header .header-content #club-left .testemonials-title .second-line, #header .header-content #cases-left .testemonials-title .second-line {
   font-size: 1.7em;
 }
 /* line 119, ../sass/text-styles.scss */
-#header .header-content #club-left .club-videos .club-video .testemonial-author {
+#header .header-content #club-left .club-videos .club-video .testemonial-author, #header .header-content #club-left .club-videos .case-video .testemonial-author, #header .header-content #club-left .cases-videos .club-video .testemonial-author, #header .header-content #club-left .cases-videos .case-video .testemonial-author, #header .header-content #cases-left .club-videos .club-video .testemonial-author, #header .header-content #cases-left .club-videos .case-video .testemonial-author, #header .header-content #cases-left .cases-videos .club-video .testemonial-author, #header .header-content #cases-left .cases-videos .case-video .testemonial-author {
   color: #7D7A75;
   font-size: 1.05em;
   font-weight: bold;
 }
 /* line 125, ../sass/text-styles.scss */
-#header .header-content #club-left .club-videos .club-video .author-url {
+#header .header-content #club-left .club-videos .club-video .author-url, #header .header-content #club-left .club-videos .case-video .author-url, #header .header-content #club-left .cases-videos .club-video .author-url, #header .header-content #club-left .cases-videos .case-video .author-url, #header .header-content #cases-left .club-videos .club-video .author-url, #header .header-content #cases-left .club-videos .case-video .author-url, #header .header-content #cases-left .cases-videos .club-video .author-url, #header .header-content #cases-left .cases-videos .case-video .author-url {
   -moz-transition-property: color;
   -webkit-transition-property: color;
   -o-transition-property: color;
@@ -127,7 +127,7 @@ html > body {
   text-decoration: none;
 }
 /* line 132, ../sass/text-styles.scss */
-#header .header-content #club-left .club-videos .club-video .author-url:hover {
+#header .header-content #club-left .club-videos .club-video .author-url:hover, #header .header-content #club-left .club-videos .case-video .author-url:hover, #header .header-content #club-left .cases-videos .club-video .author-url:hover, #header .header-content #club-left .cases-videos .case-video .author-url:hover, #header .header-content #cases-left .club-videos .club-video .author-url:hover, #header .header-content #cases-left .club-videos .case-video .author-url:hover, #header .header-content #cases-left .cases-videos .club-video .author-url:hover, #header .header-content #cases-left .cases-videos .case-video .author-url:hover {
   color: #82a087;
 }
 /* line 140, ../sass/text-styles.scss */

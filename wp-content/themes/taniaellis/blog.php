@@ -147,9 +147,13 @@
 				<?php endif; ?>
 				
 				<?php if($show_subscribe == 'on'): ?>
-					<form id="subscribe-to-blog" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=TaniaEllis-temp', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+					<?php $subscription_slug = get_post_meta($post->ID, 'te_blog-box-text-subscription-address', true); ?>
+					
+					<? echo $subscription_slug; ?>
+					
+					<form id="subscribe-to-blog" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $subscription_slug; ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
 						<input type="text" name="email" />
-						<input type="hidden" value="TaniaEllis-temp" name="uri"/>
+						<input type="hidden" value="<?php echo $subscription_slug; ?>" name="uri"/>
 						<input type="hidden" name="loc" value="en_US"/>
 						<input class="box-button green-button" type="submit" value="Subscribe" />
 					</form>

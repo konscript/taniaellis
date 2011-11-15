@@ -99,7 +99,7 @@ html>body {
 			}
 		}
 		
-		#club-left {
+		#club-left, #cases-left {
 			.testemonials-title {
 				color: #7D7A75;
 				
@@ -114,8 +114,8 @@ html>body {
 				}
 			}
 			
-			.club-videos {
-				.club-video {
+			.club-videos, .cases-videos {
+				.club-video, .case-video {
 					.testemonial-author {
 						color: #7D7A75;
 						font-size: 1.05em;

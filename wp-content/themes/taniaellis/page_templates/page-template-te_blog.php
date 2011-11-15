@@ -87,6 +87,12 @@ function te_blog_meta() {
 				'id'		=> $box_prefix . '-subscribe',
 				'type'	=> 'checkbox'
 			),
+			array(
+				'name'	=> 'Subscription feed address',
+				'desc'	=> 'The feed that that people sign up to when registering their e-mail. Should only be the feed slug',
+				'id'		=> $box_prefix . '-subscription-address',
+				'type'	=> 'text'
+			),
   		array(
   		  'name' => 'Bonus Sticker On/Off',
   		  'id' => $box_prefix . '-bonus-sticker',

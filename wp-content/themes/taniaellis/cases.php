@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Club
+Template Name: Cases
 */
 ?>
 
@@ -17,25 +17,28 @@ Template Name: Club
 	<div id="header-container">
 		
 		<?php wp_nav_menu(array(
-	    'theme_location' 	=> 'club-menu',
+	    'theme_location' 	=> 'cases-menu',
 			'menu_class'		=> 'navigation-header',
 			'menu_id'			=> 'navigation-header-standard',
 			'link_before'		=> '<span>&nbsp;</span>'
 	        )); 
 	    ?>
 		<div class="header-content">
-			<div class="left-column" id="club-left">
-			  
-			  <img src="<?php bloginfo('template_url'); ?>/images/club_logo.png" id="club-logo" />
-        
+			<div class="left-column" id="cases-left">
+				
+				<div class="header-title">
+          <h2 class="first-line">Social Business</h2>
+          <h2 class="second-line">Cases</h2>
+        </div>
+			          
         <p class="testemonials-title">
-          <span class="first-line"><?php echo get_post_meta($post->ID, 'te_club-header-text-left-pane-first-line', true); ?></span>
-          <span class="second-line"><?php echo get_post_meta($post->ID, 'te_club-header-text-left-pane-second-line', true); ?></span>
+          <span class="first-line"><?php echo get_post_meta($post->ID, 'te_cases-header-text-left-pane-first-line', true); ?></span>
+          <span class="second-line"><?php echo get_post_meta($post->ID, 'te_cases-header-text-left-pane-second-line', true); ?></span>
         </p>
         
         <?php 
-          $testemonial_1_id = get_post_meta($post->ID, 'te_club-testemonials-testemonial-1-id', true);
-          $testemonial_2_id = get_post_meta($post->ID, 'te_club-testemonials-testemonial-2-id', true);
+          $testemonial_1_id = get_post_meta($post->ID, 'te_cases-testemonials-testemonial-1-id', true);
+          $testemonial_2_id = get_post_meta($post->ID, 'te_cases-testemonials-testemonial-2-id', true);
           
           $testemonial_1['author'] = get_post_meta($testemonial_1_id, 'te_testemonial-author', true);
           $testemonial_1['video-id'] = get_post_meta($testemonial_1_id, 'te_testemonial-video-id', true);
@@ -51,14 +54,18 @@ Template Name: Club
           
         ?>
         
-        <div class="club-videos">
-            <div class="club-video">
+				<p class="left-pane-headline">
+					New Cases - See What They Say...
+				</p>
+
+        <div class="cases-videos">
+            <div class="case-video">
               <?php echo te_vimeo_video($testemonial_1['video-url'], 150, 90); ?>
               <p class="testemonial-author"><?php echo $testemonial_1['author']; ?></p>
               <a href="<?php echo $testemonial_1['author-url']; ?>" class="author-url"><?php echo $testemonial_1['author-url-text']; ?></a>
             </div>
             
-            <div class="club-video">
+            <div class="case-video">
               <?php echo te_vimeo_video($testemonial_2['video-url'], 150, 90); ?>
               <p class="testemonial-author"><?php echo $testemonial_2['author']; ?></p>
               <a href="<?php echo $testemonial_2['author-url']; ?>" class="author-url"><?php echo $testemonial_2['author-url-text']; ?></a>
@@ -67,14 +74,14 @@ Template Name: Club
         
 			</div>
 			
-			<div class="right-column" id="club-right">
+			<div class="right-column" id="cases-right">
 				<div class="header-right-box">
-					<h2><?php echo get_post_meta($post->ID, 'te_club-header-text-title', true); ?></h2>
-					<p><?php echo get_post_meta($post->ID, 'te_club-header-text-content', true); ?></p>
+					<h2><?php echo get_post_meta($post->ID, 'te_cases-header-text-title', true); ?></h2>
+					<p><?php echo get_post_meta($post->ID, 'te_cases-header-text-content', true); ?></p>
 
           <?php
-          $header_link_url = get_post_meta($post->ID, 'te_club-header-text-link-address', true);
-          $header_link_text = get_post_meta($post->ID, 'te_club-header-text-link-text', true);
+          $header_link_url = get_post_meta($post->ID, 'te_cases-header-text-link-address', true);
+          $header_link_text = get_post_meta($post->ID, 'te_cases-header-text-link-text', true);
           ?>
 
 					<a class="join" href="<?php echo $header_link_url; ?>"><?php echo $header_link_text; ?></a>
@@ -103,21 +110,21 @@ Template Name: Club
 			<div class="box">
         <p class="box-header green-header">
           <?php
-            $box_title_line_1 = get_post_meta($post->ID, 'te_club-box-text-title-line-1', true);
-            $box_title_line_2 = get_post_meta($post->ID, 'te_club-box-text-title-line-2', true);
+            $box_title_line_1 = get_post_meta($post->ID, 'te_cases-box-text-title-line-1', true);
+            $box_title_line_2 = get_post_meta($post->ID, 'te_cases-box-text-title-line-2', true);
           ?>
           <span class="box-first-line"><?php echo $box_title_line_1; ?></span>
           <span class="box-second-line"><?php echo $box_title_line_2; ?></span>
         </p>
         <p class="box-content box-content-dark">
-          <?php echo get_post_meta($post->ID, 'te_club-box-text-content', true); ?>
+          <?php echo get_post_meta($post->ID, 'te_cases-box-text-content', true); ?>
         </p>
         <?php
-          $box_link_address = get_post_meta($post->ID, 'te_club-box-text-link-address', true);
-          $box_link_text = get_post_meta($post->ID, 'te_club-box-text-link-text', true);
+          $box_link_address = get_post_meta($post->ID, 'te_cases-box-text-link-address', true);
+          $box_link_text = get_post_meta($post->ID, 'te_cases-box-text-link-text', true);
         ?>
-        <?php $bonus_sticker = get_post_meta($post->ID, 'te_club-box-text-bonus-sticker', true); ?>
-        <?php $sticker_url = get_post_meta($post->ID, 'te_club-box-text-bonus-sticker-image', true); ?>
+        <?php $bonus_sticker = get_post_meta($post->ID, 'te_cases-box-text-bonus-sticker', true); ?>
+        <?php $sticker_url = get_post_meta($post->ID, 'te_cases-box-text-bonus-sticker-image', true); ?>
         
         <?php if($bonus_sticker == 'on' && $sticker_url): ?>
 				  <img src="<?php echo $sticker_url; ?>" alt="" class="bonus-sticker" />

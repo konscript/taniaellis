@@ -299,7 +299,7 @@
 				}
 			}
 			
-			#club-left {
+			#club-left, #cases-left {
 				width: 372px;
 				
 				.testemonials-title {
@@ -310,11 +310,19 @@
 					}
 				}
 				
-				.club-videos {
+				.left-pane-headline {
+					padding-left: 40px;
+					font-size: 1.5em;
+					font-weight: bold;
+					color: #888;
+					margin: 15px 0 10px 0;
+				}
+				
+				.club-videos, .cases-videos {
 					float: left;
 					margin-left: 40px;
 				
-					.club-video {
+					.club-video, .case-video {
 						float: left;
 						margin-left: 10px;
 						
@@ -338,7 +346,7 @@
 				}	
 			}
 			
-			#club-right {
+			#club-right, #cases-right {
 				padding: 23px 0 0 40px;
 			}
 			
@@ -458,7 +466,13 @@
 						list-style-position: inside;
 					}
 				}
-			} 
+			}
+			
+			#cases-left {
+				.header-title {
+					width: 252px;
+				}
+			}
 			
 			#events-left {
 				width: 372px;
