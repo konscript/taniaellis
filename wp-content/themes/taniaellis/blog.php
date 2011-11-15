@@ -155,7 +155,7 @@
 					</form>
 				<?php endif; ?>
 				
-				<?php if($show_subscribe == 'off'): ?>
+				<?php if($show_subscribe != 'on'): ?>
         	<a class="box-button" href="<?php echo $box_link_address; ?>" target="_blank"><?php echo $box_link_text; ?></a>                       
       	<?php endif; ?>
 			</div>
