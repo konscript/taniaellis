@@ -55,7 +55,7 @@ Template Name: Cases
         ?>
         
 				<p class="left-pane-headline">
-					New Cases - See What They Say...
+					<?php echo get_post_meta($post->ID, 'te_cases-header-text-video-headline', true); ?>
 				</p>
 
         <div class="cases-videos">
