@@ -1,7 +1,5 @@
 <?php
 
-flush_rewrite_rules(false);
-
 include('meta-box.php');
 
 /**
