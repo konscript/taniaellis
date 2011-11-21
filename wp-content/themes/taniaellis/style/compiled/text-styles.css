@@ -73,7 +73,7 @@ html > body {
 /* line 79, ../sass/text-styles.scss */
 #header .header-content .header-title .second-line {
   font-family: "Arial Black", Arial, sans-serif;
-  font-size: 2.6em;
+  font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -833,8 +833,8 @@ html > body {
 /* line 804, ../sass/text-styles.scss */
 #page .widget .header-container .second-line {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.8em;
-  line-height: 1.65em;
+  font-size: 22px;
+  line-height: 35px;
   text-transform: uppercase;
 }
 /* line 813, ../sass/text-styles.scss */
