@@ -151,14 +151,20 @@ function get_event_end($post_id) {
 }
 
 function get_attachment_id_from_src ($image_src) {
-
-		global $wpdb;
-		$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'";
-		$id = $wpdb->get_var($query);
-		return $id;
-
-	}
+	global $wpdb;
 	
+	$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'";
+	$id = $wpdb->get_var($query);
+	
+	if($id == null){
+		$image_src = basename ( $image_src );
+		$q2 = "SELECT post_id FROM {$wpdb->postmeta}  WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE '%$image_src%'";
+		$id = $wpdb->get_var($q2);
+   }
+	
+	return $id;
+}
+
 	
 function get_interview_date($post_id) {
 	$date = null;
