@@ -44,6 +44,37 @@
 					});
 				}
 				
+				if($.browser.msie) {
+				
+					//------------ GENERAL ------------//
+					//-- Call To Action Box
+					$("#page .box").corner("round bottom 10px");
+					$("#page .box .box-header").corner("round top 10px");
+					$("#page .box .box-button").corner("round 5px");
+
+					//-- Social bar
+					$("#social-bar").corner("round bottom 10px");
+					
+					
+					//-- Header content
+					$("#header .header-content").corner("round 10px");
+					
+					// Header content -> header title
+					$(".header-content .header-title").corner("round tr br 10px");
+					
+					//-- Shop Link
+					$("#shop-link").corner("round bottom 10px");
+
+					//------------ HOME ------------//
+					//-- Social Business Menu
+
+					$('#navigation-social-business').find('.menu-item a').each(function(){
+						$(this).corner("round 10px");
+					});
+					
+					$("#social-bar-frontpage").corner("round bottom 10px");
+				}
+				
 			</script>
 	</body>
 </html>
