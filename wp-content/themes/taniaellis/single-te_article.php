@@ -63,7 +63,7 @@
                                     <?php if(has_post_thumbnail($post->ID)) : ?>
                                       <div class="thumb-wrapper">
                                         <div class="thumb-container">
-                                          <?php the_post_thumbnail('post-big-square-thumbnail', array("class" => "featured-image")); ?>
+                                          <?php the_post_thumbnail('post-square-thumbnail', array("class" => "featured-image")); ?>
                                         </div>
                                       </div>
                                     <?php endif; ?>
