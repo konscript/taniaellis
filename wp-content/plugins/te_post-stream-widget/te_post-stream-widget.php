@@ -152,7 +152,7 @@ class TE_PostStreamWidget extends WP_Widget {
 			'titleA'			=> '',
 			'titleB'			=> '',
 			'type'				=> 'post',
-			'items'				=> '3',
+			'items'				=> 3,
 			'thumbnails'		=> true,
 			'viewAllButton'	=> true,
 			'showAddthis'	=> true,
@@ -197,13 +197,12 @@ class TE_PostStreamWidget extends WP_Widget {
 		
 		<p>
 			<label for="<?php echo $this->get_field_id('items'); ?>">Items to show:</label><br />
-			<select 
-				id="<?php echo $this->get_field_id('items'); ?>" 
-				name="<?php echo $this->get_field_name('items'); ?>">
-				<?php for($i = 1; $i <= 10; $i++) : ?>
-				<option value="<?php echo $i; ?>"<?php if($instance['items'] == $i) : ?> selected="selected"<?php endif; ?>><?php echo $i; ?></option>
-				<?php endfor; ?>
-			</select>
+			<input 
+				type="text"
+				size="2"
+				id="<?php echo $this->get_field_id('items'); ?>"
+				name="<?php echo $this->get_field_name('items'); ?>"
+				value="<?php echo $instance['items']; ?>" />
 		</p>
 		
 		<p>
