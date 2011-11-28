@@ -80,6 +80,7 @@ function create_case_taxonomies() {
 
 function create_case_metaboxes() {
 
+	// Fetch all clients
 	$client_posts = get_posts(array('numberposts'	=> -1, 'post_type'		=> 'te_client', 'status' => 'publish'));
 	if(count($client_posts) > 0) {
 		$clients[''] = '';

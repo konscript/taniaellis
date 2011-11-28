@@ -94,19 +94,14 @@ function te_club_meta() {
   	)
   );
   
-  $testemonial_query = new WP_Query('post_type=te_testemonial');
-  if($testemonial_query->have_posts()) {
-    while($testemonial_query->have_posts()) {
-      $testemonial_query->the_post();
-      
-      //echo get_post_meta(get_the_ID(), 'te_testemonial-video-id', true);
-      
-      if(get_post_meta(get_the_ID(), 'te_testemonial-video-id', true)) {
-        $testemonials[get_the_ID()] = get_the_title();
-      }
-    
-    }
-  }
+	// Fetch all testimonials that has a video. This is handled by the meta_key parameter.
+	$testemonial_posts = get_posts(array('numberposts'	=> -1, 'post_type'		=> 'te_testemonial', 'status' => 'publish', 'meta_key' => 'te_testemonial-video-id'));
+	if(count($testemonial_posts) > 0) {
+		$testemonials[''] = '';
+		foreach($testemonial_posts as $key => $testemonial) {
+			$testemonials[$testemonial->ID] = $testemonial->post_title;
+		}
+	}
   
   $testemonials_prefix = 'te_club-testemonials';
   

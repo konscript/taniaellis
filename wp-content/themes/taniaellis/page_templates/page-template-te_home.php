@@ -3,14 +3,14 @@
 function te_home_meta() {
   add_action('init', function() { remove_post_type_support('page', 'editor'); });
   
-  $video_query = new WP_Query('post_type=te_video');
-  if($video_query->have_posts()) {
-    $videos[''] = '';
-    while($video_query->have_posts()) {
-      $video_query->the_post();
-      $videos[get_the_ID()] = get_the_title();
-    }
-  }
+	// Fetch all videos
+	$video_posts = get_posts(array('numberposts'	=> -1, 'post_type'		=> 'te_video', 'status' => 'publish'));
+	if(count($video_posts) > 0) {
+		$videos[''] = '';
+		foreach($video_posts as $key => $video) {
+			$videos[$video->ID] = $video->post_title;
+		}
+	}
   
   $header_prefix = 'te_home-header-text';
   
