@@ -69,14 +69,23 @@ function te_testemonial_add_meta_box() {
   
   wp_reset_query();
   
-  $event_query = new WP_Query('post_type=te_event');
-  if($case_query->have_posts()) {
-    $events[''] = '';
-    while($event_query->have_posts()) {
-      $event_query->the_post();
-      $events[get_the_ID()] = get_the_title();
-    }
-  }
+  // $event_query = new WP_Query('post_type=te_event');
+  // if($case_query->have_posts()) {
+  //   $events[''] = '';
+  //   while($event_query->have_posts()) {
+  //     $event_query->the_post();
+  //     $events[get_the_ID()] = get_the_title();
+  //   }
+  // }
+
+	$event_posts = get_posts(array('numberposts'	=> -1, 'post_type'		=> 'te_event', 'status' => 'publish'));
+	
+	if(count($event_posts) > 0) {
+		$events[''] = '';
+		foreach($event_posts as $key => $event) {
+			$events[$event->ID] = $event->post_title;
+		}
+	}
   
   $prefix = 'te_testemonial';
   
