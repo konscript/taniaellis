@@ -37,7 +37,11 @@
             $testemonial['text'] = get_post_meta($testemonial['id'], 'te_testemonial-testemonial-text', true);
           
             $case['id'] = get_post_meta($testemonial['id'], 'te_testemonial-case-id', true);
-            $case['url'] = get_permalink($case['id']);
+            
+						// Only get a case url if there is a case-id. This is necessary as get_permalink returns the URL of the last post in The Loop when the ID is not set.
+						if(!empty($case['id'])) {
+							$case['url'] = get_permalink($case['id']);
+						}
           ?>
           <?php echo $testemonial['thumb']; ?>
           <div class="testemonial-content">
@@ -45,8 +49,10 @@
             <p class="testemonial-entry">
               <?php echo $testemonial['text']; ?>
             </p>
-            <a href="<?php echo $case['url']; ?>" class="case-link">View case</a>
-          </div>
+						<?php if(!empty($case['url'])): ?>
+            	<a href="<?php echo $case['url']; ?>" class="case-link">View case</a>
+          	<?php endif; ?>
+					</div>
         </div>
 			
 			</div>
