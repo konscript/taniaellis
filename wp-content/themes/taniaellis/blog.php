@@ -149,8 +149,6 @@
 				<?php if($show_subscribe == 'on'): ?>
 					<?php $subscription_slug = get_post_meta($post->ID, 'te_blog-box-text-subscription-address', true); ?>
 					
-					<? echo $subscription_slug; ?>
-					
 					<form id="subscribe-to-blog" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $subscription_slug; ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
 						<input type="text" name="email" />
 						<input type="hidden" value="<?php echo $subscription_slug; ?>" name="uri"/>
