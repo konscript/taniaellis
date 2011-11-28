@@ -46,40 +46,27 @@ te_testemonial_add_meta_box();
 
 function te_testemonial_add_meta_box() {
   add_action('init', function() { remove_post_type_support('te_testemonial', 'editor'); });
-  
-  $video_query = new WP_Query('post_type=te_video');
-  if($video_query->have_posts()) {
-    $videos[''] = '';
-    while($video_query->have_posts()) {
-      $video_query->the_post();
-      $videos[get_the_ID()] = get_the_title();
-    }
-  }
-  
-  wp_reset_query();
-  
-  $case_query = new WP_Query('post_type=te_case');
-  if($case_query->have_posts()) {
-    $cases[''] = '';
-    while($case_query->have_posts()) {
-      $case_query->the_post();
-      $cases[get_the_ID()] = get_the_title();
-    }
-  }
-  
-  wp_reset_query();
-  
-  // $event_query = new WP_Query('post_type=te_event');
-  // if($case_query->have_posts()) {
-  //   $events[''] = '';
-  //   while($event_query->have_posts()) {
-  //     $event_query->the_post();
-  //     $events[get_the_ID()] = get_the_title();
-  //   }
-  // }
 
+	// Fetch all videos
+	$video_posts = get_posts(array('numberposts'	=> -1, 'post_type'		=> 'te_video', 'status' => 'publish'));
+	if(count($video_posts) > 0) {
+		$videos[''] = '';
+		foreach($video_posts as $key => $video) {
+			$videos[$video->ID] = $video->post_title;
+		}
+	}
+  
+	// Fetch all cases
+	$case_posts = get_posts(array('numberposts'	=> -1, 'post_type'		=> 'te_case', 'status' => 'publish'));
+	if(count($case_posts) > 0) {
+		$cases[''] = '';
+		foreach($case_posts as $key => $case) {
+			$cases[$case->ID] = $case->post_title;
+		}
+	}
+
+	// Fetch all events
 	$event_posts = get_posts(array('numberposts'	=> -1, 'post_type'		=> 'te_event', 'status' => 'publish'));
-	
 	if(count($event_posts) > 0) {
 		$events[''] = '';
 		foreach($event_posts as $key => $event) {

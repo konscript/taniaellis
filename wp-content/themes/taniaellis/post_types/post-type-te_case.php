@@ -79,17 +79,14 @@ function create_case_taxonomies() {
 }
 
 function create_case_metaboxes() {
-  
-  $client_query = new WP_Query('post_type=te_client');
-  if($client_query->have_posts()) {
-    $clients[''] = '';
-    while($client_query->have_posts()) {
-      $client_query->the_post();
-      $clients[get_the_ID()] = get_the_title();
-    }
-  }
-  
-  wp_reset_query();
+
+	$client_posts = get_posts(array('numberposts'	=> -1, 'post_type'		=> 'te_client', 'status' => 'publish'));
+	if(count($client_posts) > 0) {
+		$clients[''] = '';
+		foreach($client_posts as $key => $client) {
+			$clients[$client->ID] = $client->post_title;
+		}
+	}
   
   $case_prefix = 'te_case-options';
 
