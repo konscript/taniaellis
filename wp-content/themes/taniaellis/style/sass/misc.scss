@@ -151,7 +151,7 @@
 			}
 		}
 
-		#navigation-header-standard {
+		#navigation-header-standard, #navigation-cases {
 			width: 260px;
 
 			li {
@@ -209,6 +209,16 @@
 						}
 					}
 				}
+			}
+		}
+		
+		#navigation-cases {
+			li ul {
+				display: none;
+			}
+			
+			.current-menu-item ul {
+				display: block;
 			}
 		}
 

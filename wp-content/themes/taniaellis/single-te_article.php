@@ -63,7 +63,7 @@
                                     <?php if(has_post_thumbnail($post->ID)) : ?>
                                       <div class="thumb-wrapper">
                                         <div class="thumb-container">
-                                          <?php the_post_thumbnail('post-big-square-thumbnail', array("class" => "featured-image")); ?>
+                                          <?php the_post_thumbnail('post-square-thumbnail', array("class" => "featured-image")); ?>
                                         </div>
                                       </div>
                                     <?php endif; ?>
@@ -71,7 +71,7 @@
                                   </div>
                                   <p class="read-more">
                                     <!-- HTTP:// should be appended to the link if it is not already! -->
-                                    <a href="<?php echo te_get_article_url($post->ID); ?>">Read more</a>
+                                    <a href="<?php echo te_get_article_url($post->ID); ?>" target="_blank">Read more</a>
                                   </p>
                                 </div>
                                 <div class="clearer"></div>
