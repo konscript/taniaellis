@@ -85,7 +85,7 @@ class TE_PackWidget extends WP_Widget {
 			<div class="key-services">
 				<div class="item-content">
 				
-					<div class="key-service uneven" id="grey">
+					<div class="key-service uneven" id="<?php echo $colorA; ?>">
 
 						<div class="header">
 							<p class="second-line"><?php echo $headerA; ?></p>
@@ -128,7 +128,7 @@ class TE_PackWidget extends WP_Widget {
 						<a href="<?php echo $linkA;?>" class="key-service-read-more"><?php echo $linkTextA; ?></a>
 					</div> <!-- .key-service #grey -->
 					
-					<div class="key-service" id="grey">
+					<div class="key-service" id="<?php echo $colorB; ?>">
 
 						<div class="header">
 							<p class="second-line"><?php echo $headerB; ?></p>
@@ -249,8 +249,8 @@ class TE_PackWidget extends WP_Widget {
 			'packTitleB'	=> '',
 			'textA'				=> '',
 			'textB'				=> '',
-			'colorA'			=> '',
-			'colorB'			=> '',
+			'colorA'			=> 'grey',
+			'colorB'			=> 'grey',
 			'item1A'			=> '',
 			'item2A'			=> '',
 			'item3A'			=> '',
@@ -285,10 +285,10 @@ class TE_PackWidget extends WP_Widget {
 			$$nn = $this->get_field_name($key);
 		}
 		
-		$orangeColor = "rgb(223, 115, 4)";
-		$greenColor = "rgb(134, 171, 129)";
-		$purpleColor = "rgb(150, 147, 198)";
-		$greyColor = "rgb(129, 127, 121)";
+		$orangeColor = "orange";
+		$blueColor = "blue";
+		$purpleColor = "purple";
+		$greyColor = "grey";
 		
 		?>
 		
@@ -369,10 +369,10 @@ class TE_PackWidget extends WP_Widget {
 		<p>
 			<label for="<?php echo $colorA_id; ?>">Color:</label><br />
 			<select id="<?php echo $colorA_id; ?>" name="<?php echo $colorA_name; ?>">
-				<option value="<?php echo $orangeColor; ?>"<?php if($colorA_id == $orangeColor) : ?> selected="selected"<?php endif; ?>>Orange</option>
-				<option value="<?php echo $greenColor; ?>"<?php if($colorA_id == $greenColor) : ?> selected="selected"<?php endif; ?>>Green</option>
-				<option value="<?php echo $purpleColor; ?>"<?php if($colorA_id == $purpleColor) : ?> selected="selected"<?php endif; ?>>Purple</option>
-				<option value="<?php echo $greyColor; ?>"<?php if($colorA_id == $greyColor) : ?> selected="selected"<?php endif; ?>>Grey</option>
+				<option value="<?php echo $orangeColor; ?>"<?php if($instance['colorA'] == $orangeColor) : ?> selected="selected"<?php endif; ?>>Orange</option>
+				<option value="<?php echo $blueColor; ?>"<?php if($instance['colorA'] == $blueColor) : ?> selected="selected"<?php endif; ?>>blue</option>
+				<option value="<?php echo $purpleColor; ?>"<?php if($instance['colorA'] == $purpleColor) : ?> selected="selected"<?php endif; ?>>Purple</option>
+				<option value="<?php echo $greyColor; ?>"<?php if($instance['colorA'] == $greyColor) : ?> selected="selected"<?php endif; ?>>Grey</option>
 			</select>
 		</p>
 		
@@ -506,11 +506,11 @@ class TE_PackWidget extends WP_Widget {
 		
 		<p>
 			<label for="<?php echo $colorB_id; ?>">Color:</label><br />
-			<select id="<?php echo $colorB_id; ?>" name="<?php echo $color_name; ?>">
-				<option value="<?php echo $orangeColor; ?>"<?php if($colorB_id == $orangeColor) : ?> selected="selected"<?php endif; ?>>Orange</option>
-				<option value="<?php echo $greenColor; ?>"<?php if($colorB_id == $greenColor) : ?> selected="selected"<?php endif; ?>>Green</option>
-				<option value="<?php echo $purpleColor; ?>"<?php if($color_id == $purpleColor) : ?> selected="selected"<?php endif; ?>>Purple</option>
-				<option value="<?php echo $greyColor; ?>"<?php if($colorB_id == $greyColor) : ?> selected="selected"<?php endif; ?>>Grey</option>
+			<select id="<?php echo $colorB_id; ?>" name="<?php echo $colorB_name; ?>">
+				<option value="<?php echo $orangeColor; ?>"<?php if($instance['colorB'] == $orangeColor) : ?> selected="selected"<?php endif; ?>>Orange</option>
+				<option value="<?php echo $blueColor; ?>"<?php if($instance['colorB'] == $blueColor) : ?> selected="selected"<?php endif; ?>>blue</option>
+				<option value="<?php echo $purpleColor; ?>"<?php if($instance['colorB'] == $purpleColor) : ?> selected="selected"<?php endif; ?>>Purple</option>
+				<option value="<?php echo $greyColor; ?>"<?php if($instance['colorB'] == $greyColor) : ?> selected="selected"<?php endif; ?>>Grey</option>
 			</select>
 		</p>
 		

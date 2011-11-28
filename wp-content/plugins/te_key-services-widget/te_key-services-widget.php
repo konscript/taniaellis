@@ -42,8 +42,8 @@ class TE_KeyServicesWidget extends WP_Widget {
 				<div class="item-content">
 					<ul>
 						<li class="green"><a href="<?php echo get_permalink(get_page_by_path('club')); ?>"><span class="social">Social</span> Business <br><span class="term">Club</span></a></li>
-						<li class="blue"><a href="<?php echo get_permalink(get_page_by_path('consulting')); ?>"><span class="social">Social</span> Business <br><span class="term">Comsulting</span></a></li>
-						<li class="purple"><a href="<?php echo get_permalink(get_page_by_path('lab')); ?>"><span class="social">Social</span> Business <br><span class="term">Lab</span></a></li>
+						<li class="blue"><a href="<?php echo get_permalink(get_page_by_path('consulting')); ?>"><span class="social">Social</span> Business <br><span class="term">Consulting</span></a></li>
+						<li class="purple"><a href="<?php echo get_permalink(get_page_by_path('lab')); ?>"><span class="social">Social</span> Business <br><span class="term">Labs</span></a></li>
 						<li class="orange"><a href="<?php echo get_permalink(get_page_by_path('lectures')); ?>"><span class="social">Social</span> Business <br><span class="term">Lectures</span></a></li>
 					</ul>
 				</div>
