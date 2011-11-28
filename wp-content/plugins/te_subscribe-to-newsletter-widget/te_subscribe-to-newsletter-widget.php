@@ -55,8 +55,8 @@ class TE_NewsletterSubscribeWidget extends WP_Widget {
 				<div class="item-content">
 				
 					<div class="header">
-						<p class="first-line"><?php echo $headerB; ?></p>
-						<p class="second-line"><?php echo $headerA; ?></p>
+						<p class="first-line"><?php echo $headerA; ?></p>
+						<p class="second-line"><?php echo $headerB; ?></p>
 					</div>
 					
 					<div class="content">
