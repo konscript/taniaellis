@@ -871,6 +871,34 @@ html>body {
 		} 
 	}
 	
+	.widget-newsletter-subscribe {
+		.newsletter-subscribe {
+			.header {
+				color: #FFF;
+				
+				.first-line {
+					text-transform: uppercase;
+				}
+				
+				.second-line {
+					font-family: "Arial Black", Arial, Helvetica;
+					font-size: 1.8em;
+					text-transform: uppercase;
+				}
+			}
+			
+			.read-more {
+				color: #FFF;
+				text-decoration: none;
+			}
+		}
+		
+		.content {
+			color: #7D7A75 / 1.4;
+			line-height: 1.5em; 
+		}
+	}
+	
 	.widget-key-services {
 		.key-services {
 			

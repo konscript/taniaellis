@@ -902,78 +902,102 @@ html > body {
 #page .widget .view-all:hover {
   color: #e7e7e7;
 }
-/* line 878, ../sass/text-styles.scss */
+/* line 876, ../sass/text-styles.scss */
+#page .widget-newsletter-subscribe .newsletter-subscribe .header {
+  color: #FFF;
+}
+/* line 879, ../sass/text-styles.scss */
+#page .widget-newsletter-subscribe .newsletter-subscribe .header .first-line {
+  text-transform: uppercase;
+}
+/* line 883, ../sass/text-styles.scss */
+#page .widget-newsletter-subscribe .newsletter-subscribe .header .second-line {
+  font-family: "Arial Black", Arial, Helvetica;
+  font-size: 1.8em;
+  text-transform: uppercase;
+}
+/* line 890, ../sass/text-styles.scss */
+#page .widget-newsletter-subscribe .newsletter-subscribe .read-more {
+  color: #FFF;
+  text-decoration: none;
+}
+/* line 896, ../sass/text-styles.scss */
+#page .widget-newsletter-subscribe .content {
+  color: #595753;
+  line-height: 1.5em;
+}
+/* line 906, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .header {
   color: #FFF;
 }
-/* line 881, ../sass/text-styles.scss */
+/* line 909, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .header .first-line {
   text-transform: uppercase;
 }
-/* line 885, ../sass/text-styles.scss */
+/* line 913, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .header .second-line {
   font-family: "Arial Black", Arial, Helvetica;
   font-size: 1.8em;
   text-transform: uppercase;
 }
-/* line 892, ../sass/text-styles.scss */
+/* line 920, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .key-service .key-service-read-more {
   color: #FFF;
   text-decoration: none;
 }
-/* line 898, ../sass/text-styles.scss */
+/* line 926, ../sass/text-styles.scss */
 #page .widget-key-services .key-services .content {
   color: #595753;
   line-height: 1.5em;
 }
 
-/* line 912, ../sass/text-styles.scss */
+/* line 940, ../sass/text-styles.scss */
 #footer-bar li {
   font-size: 1em;
   font-weight: bold;
 }
 
-/* line 919, ../sass/text-styles.scss */
+/* line 947, ../sass/text-styles.scss */
 #footer-menu li span {
   color: #9D9C97;
 }
-/* line 923, ../sass/text-styles.scss */
+/* line 951, ../sass/text-styles.scss */
 #footer-menu li a {
   color: #9D9C97;
   text-decoration: none;
 }
-/* line 929, ../sass/text-styles.scss */
+/* line 957, ../sass/text-styles.scss */
 #footer-menu li a:hover {
   text-decoration: underline;
 }
 
-/* line 937, ../sass/text-styles.scss */
+/* line 965, ../sass/text-styles.scss */
 #tagcloud .s1, .widget-tagcloud .tagcloud .s1 {
   color: #a8a6cd;
   font-size: 14px;
 }
-/* line 938, ../sass/text-styles.scss */
+/* line 966, ../sass/text-styles.scss */
 #tagcloud .s2, .widget-tagcloud .tagcloud .s2 {
   color: #91b997;
   font-size: 16px;
 }
-/* line 939, ../sass/text-styles.scss */
+/* line 967, ../sass/text-styles.scss */
 #tagcloud .s3, .widget-tagcloud .tagcloud .s3 {
   color: #e7cd30;
   font-size: 18px;
 }
-/* line 940, ../sass/text-styles.scss */
+/* line 968, ../sass/text-styles.scss */
 #tagcloud .s4, .widget-tagcloud .tagcloud .s4 {
   color: #83a8c2;
   font-size: 20px;
 }
-/* line 941, ../sass/text-styles.scss */
+/* line 969, ../sass/text-styles.scss */
 #tagcloud .s5, .widget-tagcloud .tagcloud .s5 {
   color: #d7b590;
   font-size: 22px;
 }
 
-/* line 944, ../sass/text-styles.scss */
+/* line 972, ../sass/text-styles.scss */
 strong, b {
   font-weight: bold;
 }
