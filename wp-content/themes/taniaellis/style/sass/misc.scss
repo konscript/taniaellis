@@ -1058,18 +1058,18 @@
 		.widget {
 			.thumb-wrapper {
 				float: left;
-				margin: 0 20px 10px 0;
+				margin: 0 20px 20px 0;
 				
 				.thumb-container {
 					border: 5px solid #E1DCD8;
 					display: table-cell;
-					height: 110px; // This has to be done because of the display being table-cell
+					height: 100px; // This has to be done because of the display being table-cell
 					position: relative;
 					vertical-align: middle;
 					text-align: center;
 					width: 100px;
 
-					.wp-post-image {
+					.wp-post-image, .featured-image {
 						vertical-align: middle;
 						line-height: 100px;
 					}
@@ -1275,7 +1275,6 @@
 			.case {
 				.thumb-container, .thumb-wrapper {
 					width: 250px;
-					height: 110px;
 				}
 
 				.excerpt {
@@ -1303,7 +1302,6 @@
 			.image-text {
 				.thumb-container {
 					width: 62px;
-					height: 110px;
 				}
 				
 				.title {
@@ -1321,7 +1319,6 @@
 			.image-text {
 				.thumb-container, .thumb-wrapper {
 					width: 250px;
-					height: 110px;
 				}
 
 				.excerpt {
@@ -1420,7 +1417,6 @@
 
 				.thumb-container {
 					width: 240px;
-					height: 110px;
 				}
 
 				.excerpt {
@@ -1570,7 +1566,7 @@
 				.thumb-container {
 					border: 5px solid #E1DCD8;
 					display: table-cell;
-					height: 110px; // This has to be done because of the display being table-cell
+					height: 100px; // This has to be done because of the display being table-cell
 					position: relative;
 					vertical-align: middle;
 					text-align: center;
@@ -1810,7 +1806,7 @@
 				.thumb-container {
 					border: 5px solid #E1DCD8;
 					display: table-cell;
-					height: 110px; // This has to be done because of the display being table-cell
+					height: 100px; // This has to be done because of the display being table-cell
 					position: relative;
 					vertical-align: middle;
 					text-align: center;
@@ -1905,7 +1901,7 @@
 				.thumb-container {
 					border: 5px solid #E1DCD8;
 					display: table-cell;
-					height: 110px; // This has to be done because of the display being table-cell
+					height: 100px; // This has to be done because of the display being table-cell
 					position: relative;
 					vertical-align: middle;
 					text-align: center;
@@ -2360,7 +2356,6 @@
 				
 				.thumb-container{
 					width: 240px;
-					height: 110px;
 				}
 
 				.meta-data {
@@ -2406,7 +2401,6 @@
 				
 				.thumb-container{
 					width: 240px;
-					height: 110px;
 				}
 
 				.meta-data {
@@ -2478,7 +2472,6 @@
 			
 			.thumb-container{
 				width: 100px;
-				height: 110px;
 			}
 			
 			.meta-data {
@@ -2641,7 +2634,6 @@
 		.image-text {
 			.thumb-container {
 				width: 100px;
-				height: 110px;
 			}
 			
 			.excerpt {
@@ -2656,7 +2648,6 @@
 			.item-content {
 				.thumb-container {
 					width: 240px;
-					height: 110px;
 				} 
 
 				.excerpt {
@@ -2671,7 +2662,6 @@
 		.image-text {
 			.thumb-container, .thumb-wrapper {
 				width: 62px;
-				height: 110px;
 			}
 			
 			.thumb-wrapper {
@@ -2833,7 +2823,6 @@ footer {
 		#single-event {
 			.thumb-container{
 				width: 100px;
-				height: 110px;
 			}
 		}
 	}
