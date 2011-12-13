@@ -68,11 +68,15 @@
                                       </div>
                                     <?php endif; ?>
                                     <?php the_content(); ?>
+	                                  <p class="read-more">
+	                                    <!-- HTTP:// should be appended to the link if it is not already! -->
+	                                    <a href="<?php echo te_get_article_url($post->ID); ?>" target="_blank">Read more</a>
+	                                  </p>
                                   </div>
-                                  <p class="read-more">
+                                  <!-- <p class="read-more"> -->
                                     <!-- HTTP:// should be appended to the link if it is not already! -->
-                                    <a href="<?php echo te_get_article_url($post->ID); ?>" target="_blank">Read more</a>
-                                  </p>
+                                    <!-- <a href="<?php echo te_get_article_url($post->ID); ?>" target="_blank">Read more</a> -->
+                                  <!-- </p> -->
                                 </div>
                                 <div class="clearer"></div>
                                                         

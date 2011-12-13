@@ -1633,7 +1633,7 @@
 			float: left;
 			margin-bottom: 20px;
 			margin-left: 40px;
-			padding-bottom: 30px;
+			padding-bottom: 70px; // This was initially 30px. Has been changed to fix rating/like/addthis styles
 			//padding-right: 20px;
 			width: 534px;
 			
@@ -1659,6 +1659,8 @@
 			}
 			
 			.entry {
+				position: relative;
+								
 				ul li {
 					background: url('../../images/content-bullet-point.png') left 3px no-repeat;
 					padding-left: 25px;
@@ -1829,21 +1831,41 @@
 			
 			
 			.read-more {
-				float: right;
-				margin-right: 50px;
-				margin-top: 30px;
+				bottom: -65px;
+				margin-bottom: 0;
+				position: absolute;
+				right: 130px;
+				// float: right;
+				// margin-right: 50px;
+				// margin-top: 30px;
 			}
 			
 			.addthis_toolbox {
-				margin-top: 30px;
-				clear: left;
-				float: right;
+				bottom: -65px;
+				position: absolute;
+				right: 0;
+				//margin-top: 30px;
+				//clear: left;
+				//float: right;
+			}
+			
+			.thumblock {
+				bottom: -69px;
+				left: 130px;
+				position: absolute;
+				
+				strong {
+					line-height: 25px;
+					margin-left: 3px;
+				}
 			}
 			
 			.ratingblock {
-				margin-top: 30px;
-				clear: left;
-				float: left;
+				bottom: -70px;
+				position: absolute;
+				//margin-top: 30px;
+				//clear: left;
+				//float: left;
 			}
 		}
 		
