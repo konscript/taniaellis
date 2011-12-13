@@ -2121,7 +2121,7 @@
 /* line 1802, ../sass/misc.scss */
 #page .right-sidebar .post .thumb-wrapper, #page .right-sidebar-single .post .thumb-wrapper {
   float: left;
-  margin: 0 20px 30px 0;
+  margin: 0 20px 10px 0;
 }
 /* line 1806, ../sass/misc.scss */
 #page .right-sidebar .post .thumb-wrapper .thumb-container, #page .right-sidebar-single .post .thumb-wrapper .thumb-container {
@@ -2134,7 +2134,7 @@
   width: 100px;
 }
 /* line 1815, ../sass/misc.scss */
-#page .right-sidebar .post .thumb-wrapper .thumb-container .wp-post-image, #page .right-sidebar-single .post .thumb-wrapper .thumb-container .wp-post-image {
+#page .right-sidebar .post .thumb-wrapper .thumb-container .wp-post-image, #page .right-sidebar .post .thumb-wrapper .thumb-container .featured-image, #page .right-sidebar-single .post .thumb-wrapper .thumb-container .wp-post-image, #page .right-sidebar-single .post .thumb-wrapper .thumb-container .featured-image {
   vertical-align: middle;
   line-height: 100px;
 }
