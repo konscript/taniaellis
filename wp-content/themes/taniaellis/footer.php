@@ -28,52 +28,52 @@
 		?>
 			<script type="text/javascript">
 
-				var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
-
-				if($.browser.webkit) {
-					$("img.featured-image").each(function(){
-						var o = $(this).closest(".thumb-container");
-						var height = $(o).css("height");
-						//console.log(height);
-
-						if(height == "110px")
-							$(o).css("height", "100px");
-
-						if(height == "120px")
-							$(o).css("height", "100px");
-					});
-				}
-				
-				if($.browser.msie) {
-				
-					//------------ GENERAL ------------//
-					//-- Call To Action Box
-					$("#page .box").corner("round bottom 10px");
-					$("#page .box .box-header").corner("round top 10px");
-					$("#page .box .box-button").corner("round 5px");
-
-					//-- Social bar
-					$("#social-bar").corner("round bottom 10px");
-					
-					
-					//-- Header content
-					$("#header .header-content").corner("round 10px");
-					
-					// Header content -> header title
-					$(".header-content .header-title").corner("round tr br 10px");
-					
-					//-- Shop Link
-					$("#shop-link").corner("round bottom 10px");
-
-					//------------ HOME ------------//
-					//-- Social Business Menu
-
-					$('#navigation-social-business').find('.menu-item a').each(function(){
-						$(this).corner("round 10px");
-					});
-					
-					$("#social-bar-frontpage").corner("round bottom 10px");
-				}
+				// var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
+				// 
+				// 				if($.browser.webkit) {
+				// 					$("img.featured-image").each(function(){
+				// 						var o = $(this).closest(".thumb-container");
+				// 						var height = $(o).css("height");
+				// 						//console.log(height);
+				// 
+				// 						if(height == "110px")
+				// 							$(o).css("height", "100px");
+				// 
+				// 						if(height == "120px")
+				// 							$(o).css("height", "100px");
+				// 					});
+				// 				}
+				// 				
+				// 				if($.browser.msie) {
+				// 				
+				// 					//------------ GENERAL ------------//
+				// 					//-- Call To Action Box
+				// 					$("#page .box").corner("round bottom 10px");
+				// 					$("#page .box .box-header").corner("round top 10px");
+				// 					$("#page .box .box-button").corner("round 5px");
+				// 
+				// 					//-- Social bar
+				// 					$("#social-bar").corner("round bottom 10px");
+				// 					
+				// 					
+				// 					//-- Header content
+				// 					$("#header .header-content").corner("round 10px");
+				// 					
+				// 					// Header content -> header title
+				// 					$(".header-content .header-title").corner("round tr br 10px");
+				// 					
+				// 					//-- Shop Link
+				// 					$("#shop-link").corner("round bottom 10px");
+				// 
+				// 					//------------ HOME ------------//
+				// 					//-- Social Business Menu
+				// 
+				// 					$('#navigation-social-business').find('.menu-item a').each(function(){
+				// 						$(this).corner("round 10px");
+				// 					});
+				// 					
+				// 					$("#social-bar-frontpage").corner("round bottom 10px");
+				// 				}
 				
 			</script>
 	</body>
