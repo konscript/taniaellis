@@ -13,7 +13,7 @@
 		<?php wp_nav_menu(array(
 			'theme_location'		=> 'cases-menu',
 			'container'				  => '',
-			'menu_id'				    => 'navigation-header-standard',
+			'menu_id'				    => 'navigation-cases',
 			'menu_class'			  => 'navigation-header',
 			'link_before'       => '<span>&nbsp;</span>'
 			)); 

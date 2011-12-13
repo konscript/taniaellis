@@ -217,7 +217,7 @@
 				display: none;
 			}
 			
-			.current-menu-item ul {
+			.current-menu-item ul, .current-menu-parent ul {
 				display: block;
 			}
 		}
@@ -1874,6 +1874,18 @@
 				.about-headline, .client-name { 
 					margin-bottom: 10px; 
 				}
+			}
+		}
+		
+		.client {
+			float: left;
+			margin-right: 17px;
+			margin-bottom: 13px;
+			
+			img {
+				border: 5px solid #CCC;
+				width: 62px;
+				height: 62px;
 			}
 		}
 		
