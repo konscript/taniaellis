@@ -50,7 +50,7 @@ class TE_PostWidget extends WP_Widget {
 			'te_testemonial_video'	=> 'video-testemonial',
 			'te_interview'					=> 'interview',
 			'te_case'								=> 'case',
-			'te_client'							=> 'client',
+			'te_client'							=> 'clientcase',
 			'te_news'								=> 'news',
 		);
 		

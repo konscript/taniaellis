@@ -2576,7 +2576,7 @@
 		}
 	}
 
-	.widget-client {
+	.widget-clientcase {
 		background: url('../../images/post_type_icon_featured_client.png') top left no-repeat;
 
 		float: left;
@@ -2586,13 +2586,13 @@
 			padding-left: 40px;
 			
 			&:nth-child(7n){
-				.item.client {
+				.item.clientcase {
 					margin-right: 0;
 				}
 			}
 		}
 
-		.item.client {
+		.item.clientcase {
 			width: auto;
 			float: left;
 			margin-right: 17px;
