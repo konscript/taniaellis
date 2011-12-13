@@ -4,7 +4,7 @@
   width: 100%;
 }
 /* line 18, ../sass/misc.scss */
-#header-top-container #shop-link {
+#header-top-container #shop-link li a {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
   -o-border-bottom-left-radius: 10px;
@@ -39,7 +39,7 @@
   width: 40px;
 }
 /* line 30, ../sass/misc.scss */
-#header-top-container #shop-link:hover {
+#header-top-container #shop-link li a:hover {
   background-color: #82a087;
 }
 /* line 35, ../sass/misc.scss */
