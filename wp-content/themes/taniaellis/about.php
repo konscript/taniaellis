@@ -10,23 +10,22 @@
 	<p id="language-picker">
 		<a class="current" href="javascript:void(0)">ENG</a> / <a href="javascript:void(0)">DK</a>
 	</p>
-	
+
 	<div class="clearer"></div>
 
 	<div id="header-container">
-		
+
 		<?php wp_nav_menu(array(
-	    'theme_location' 	=> 'about-menu',
+			'theme_location' 	=> 'about-menu',
 			'menu_class'		=> 'navigation-header',
 			'menu_id'			=> 'navigation-header-standard',
 			'link_before'		=> '<span>&nbsp;</span>'
-	        )); 
-	    ?>
-
+			)); 
+		?>
 		<div class="header-content">
 			<div class="left-column" id="about-left">
-        <div class="header-title">
-          <h2 class="first-line">About</h2>
+				<div class="header-title">
+					<h2 class="first-line">About</h2>
           <h2 class="second-line">The Company</h2>
           <img src="<?php bloginfo('template_url'); ?>/images/moneytree.png" class="heartcore-tree" />
         </div>
