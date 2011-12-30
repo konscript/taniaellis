@@ -43,17 +43,18 @@ Template Name: All Clients
 					<h2 class="second-line">All Clients</h2>
 				</div>
 				
-				<?php query_posts(array('post_type' => 'te_client', 'post_status' => 'publish', 'posts_per_pagee' => -1)); ?>
-				<?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
+				<?php $clients = get_posts(array('post_type' => 'te_client', 'post_status' => 'publish', 'numberposts' => -1)); ?>
+				
+				<?php foreach($clients as $key => $client): ?>
 					<div class="client">
 						<div class="thumb-wrapper">
 							<div class="thumb-container">
-								<?php the_post_thumbnail(); ?>
+								<?php echo get_the_post_thumbnail($client->ID); ?>
 							</div>
 						</div>
 					</div>
-				<?php endwhile; ?>
-				<?php endif; ?>
+				<?php endforeach; ?>
+
   
 				<div class="clearer"></div>
       
