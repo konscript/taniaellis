@@ -43,7 +43,7 @@ Template Name: All Clients
 					<h2 class="second-line">All Clients</h2>
 				</div>
 				
-				<?php query_posts(array('post_type' => 'te_client', 'post_status' => 'publish')); ?>
+				<?php query_posts(array('post_type' => 'te_client', 'post_status' => 'publish', 'posts_per_pagee' => -1)); ?>
 				<?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
 					<div class="client">
 						<div class="thumb-wrapper">
