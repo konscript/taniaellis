@@ -37,7 +37,7 @@
 					<h2 class="second-line"><?php echo $wp_query->queried_object->name; ?></h2>
 				</div>
 				
-				<?php query_posts(array('posts_per_page' => -1)); ?>
+				<?php query_posts(array('post_type' => 'te_client', 'posts_per_page' => -1, 'te_client-category' => $wp_query->queried_object->name)); ?>
 				<?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
 					<div class="client">
 						<div class="thumb-wrapper">
