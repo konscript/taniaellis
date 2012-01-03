@@ -37,17 +37,18 @@
 					<h2 class="second-line"><?php echo $wp_query->queried_object->name; ?></h2>
 				</div>
 				
-				<?php $clients = get_posts(array('post_type' => 'te_client', 'post_status' => 'publish', 'numberposts' => -1)); ?>
-				
-				<?php foreach($clients as $key => $client): ?>
+				<?php query_posts(array('posts_per_page' => -1)); ?>
+				<?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
 					<div class="client">
 						<div class="thumb-wrapper">
 							<div class="thumb-container">
-								<?php echo get_the_post_thumbnail($client->ID); ?>
+								<?php the_post_thumbnail(); ?>
+								<!-- <img width="62" height="62" src="http://dev-taniaellis.konscript.com/wp-content/uploads/2011/11/Coloplast-62x62.jpg" class="featured-image wp-post-image" alt="Coloplast" title="Coloplast"> -->
 							</div>
 						</div>
 					</div>
-				<?php endforeach; ?>
+				<?php endwhile; ?>
+				<?php endif; ?>
   
 				<div class="clearer"></div>
       
