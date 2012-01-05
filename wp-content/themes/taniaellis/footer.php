@@ -6,7 +6,7 @@
 		    	<li>T: +45 3214 2295</li>
 		    	<li>M: +45 2625 2295</li>
 		    	<li>E-mail: <a href="mailto:te@taniaellis.com">te[at]taniaellis[dot]com</a></li>
-		    	<li>www.taniaellis.com</li>
+		    	<li><a href="<?php echo bloginfo('url'); ?>">www.taniaellis.com</a></li>
 			</ul>			
 			<?php wp_nav_menu(array(
 				'theme_location'	=> 'footer-menu',
