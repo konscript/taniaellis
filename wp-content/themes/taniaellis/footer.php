@@ -5,7 +5,7 @@
 		    	<li>Tania Ellis&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; The Social Business Company</li>
 		    	<li>T: +45 3214 2295</li>
 		    	<li>M: +45 2625 2295</li>
-		    	<li>E-mail: te[at]taniaellis[dot]com</li>
+		    	<li>E-mail: <a href="mailto:te@taniaellis.com">te[at]taniaellis[dot]com</a></li>
 		    	<li>www.taniaellis.com</li>
 			</ul>			
 			<?php wp_nav_menu(array(

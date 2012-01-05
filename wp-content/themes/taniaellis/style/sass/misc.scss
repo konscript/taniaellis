@@ -128,7 +128,12 @@
 
 
 #header {
+	#sub-heading {
+		margin-bottom: 30px;
+	}
+	
 	#language-picker {
+		display: none;
 		float: right;
 		margin-bottom: 30px;
 	}
@@ -2789,6 +2794,15 @@ footer {
 		li {
 			display: inline;
 			padding: 0 20px;
+		}
+		
+		a {
+			color: #FFF;
+			text-decoration: none;
+			
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 	
