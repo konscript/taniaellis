@@ -2587,7 +2587,7 @@
 		.widget-inset {
 			padding-left: 40px;
 			
-			&:nth-child(7n){
+			&:nth-child(7n), &:nth-child(14n){
 				.item.clientcase {
 					margin-right: 0;
 				}
