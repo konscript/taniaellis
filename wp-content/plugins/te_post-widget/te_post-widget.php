@@ -90,7 +90,8 @@ class TE_PostWidget extends WP_Widget {
 		
 		query_posts(array(
 			'post_type'		=> (($instance['type'] == 'te_testemonial_video') ? 'te_testemonial' : $instance['type']),
-			'post__in' 		=> $this->items($instance)
+			'post__in' 		=> $this->items($instance),
+			'posts_per_page' => $instance['items']
 		));
 		
 	
