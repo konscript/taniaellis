@@ -42,7 +42,7 @@
     			<div id="header-top-container">
     			
             <!-- Retreive the searchbar from searchform.php -->
-            <?php get_search_form(); ?>
+						<?php get_search_form(); ?>
 					
     				<?php wp_nav_menu(array(
     					'theme_location'		=> 'navigation-top',
@@ -52,10 +52,22 @@
     				)); ?>
     				
             
-    				
-    				<a id="shop-link" href="javascript:void(0)">Shop</a>
-    				
-    			</div>
+    				<!-- <ul id="shop-link">
+							<li>
+    						<a href="javascript:void(0)">Shop</a>
+    					</li>
+						</ul> -->
+						
+						<?php
+							wp_nav_menu(array(
+								'theme_location'	=> 'shop-menu',
+								'container'				=> 'false',
+								'menu_id'					=> 'shop-link',
+								'menu_class'			=> ''
+							));
+						?>
+    			
+					</div>
     			
     			<div id="header-menu-logo-container">
     			    

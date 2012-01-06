@@ -10,7 +10,7 @@ html > body {
 }
 
 /* line 12, ../sass/text-styles.scss */
-#shop-link {
+#shop-link li a {
   color: #FFF;
   font-size: 0.9em;
   text-decoration: none;

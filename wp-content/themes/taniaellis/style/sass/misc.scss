@@ -15,7 +15,7 @@
 	float: right;
 	width: 100%;
 	
-	#shop-link {
+	#shop-link li a {
 		@include border-bottom-radius(10px);
 		@include transition(background-color, 0.1s, ease-in-out);
 		background: url('../../images/shop_icon.png') 10px center no-repeat;
@@ -128,7 +128,12 @@
 
 
 #header {
+	#sub-heading {
+		margin-bottom: 30px;
+	}
+	
 	#language-picker {
+		display: none;
 		float: right;
 		margin-bottom: 30px;
 	}
@@ -1609,6 +1614,10 @@
 			}
 		}
 		
+		#clients {
+			background: url('../../images/post_type_icon_featured_client.png') top left no-repeat;
+		}
+		
 		#case {
 			background: url('../../images/post_type_icon_cases.png') top left no-repeat;
 		}
@@ -2785,6 +2794,15 @@ footer {
 		li {
 			display: inline;
 			padding: 0 20px;
+		}
+		
+		a {
+			color: #FFF;
+			text-decoration: none;
+			
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 	

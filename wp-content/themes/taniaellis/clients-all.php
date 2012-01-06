@@ -33,27 +33,37 @@ Template Name: All Clients
 		<?php @include("partials/social-bar.php"); ?>
 		<section class="left-sidebar">
 			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
-		</section>
+		</section>  
 
 		<section class="right-sidebar-single">
 			<div class="sidebar-background">
+				
+				<?php
+					$post_meta['first-line']  = get_post_meta($post->ID, 'te_page-text-title-first-line', true);
+					$post_meta['second-line'] = get_post_meta($post->ID, 'te_page-text-title-second-line', true);
+					$post_meta['lead-text']   = get_post_meta($post->ID, 'te_page-text-lead-paragraph-text', true);
+				?>
   
 				<div class="post-header" id="clients">
-					<h2 class="first-line">Clients</h2>
-					<h2 class="second-line">All Clients</h2>
+					<h2 class="first-line"><Clients><?php echo $post_meta['first-line']; ?></h2>
+					<h2 class="second-line"><?php echo $post_meta['second-line']; ?></h2>
+					<?php if(!empty($post_meta['lead-text'])): ?>
+						<p class="lead-text"><?php echo $post_meta['lead-text']; ?></p>
+					<?php endif; ?>
 				</div>
 				
-				<?php query_posts(array('post_type' => 'te_client', 'post_status' => 'publish')); ?>
-				<?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>
+				<?php $clients = get_posts(array('post_type' => 'te_client', 'post_status' => 'publish', 'numberposts' => -1)); ?>
+				
+				<?php foreach($clients as $key => $client): ?>
 					<div class="client">
 						<div class="thumb-wrapper">
 							<div class="thumb-container">
-								<?php the_post_thumbnail(); ?>
+								<?php echo get_the_post_thumbnail($client->ID); ?>
 							</div>
 						</div>
 					</div>
-				<?php endwhile; ?>
-				<?php endif; ?>
+				<?php endforeach; ?>
+
   
 				<div class="clearer"></div>
       

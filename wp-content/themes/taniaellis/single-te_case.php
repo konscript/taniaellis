@@ -16,7 +16,7 @@
 		<?php wp_nav_menu(array(
 				'theme_location'		=> 'cases-menu',
 				'container'				  => '',
-				'menu_id'				    => 'navigation-header-standard',
+				'menu_id'				    => 'navigation-cases',
 				'menu_class'			  => 'navigation-header',
 				'link_before'       => '<span>&nbsp;</span>'
 				)); ?>
@@ -49,6 +49,7 @@
               
               $client['featured-image'] = get_the_post_thumbnail($case['client-id'], 'post-thumbnail');
               $client['description']    = get_post_field('post_content', $case['client-id']);
+							$client['name']						= get_post_field('post_title', $case['client-id']);
               
               
             ?>
@@ -69,7 +70,7 @@
                 </div>
                 
                 <p class="about-headline">About the client</p>
-                <h3 class="client-name">ISS er DINmoR</h3>
+                <h3 class="client-name"><?php echo $client['name']; ?></h3>
                 <div class="client-description"><?php echo $client['description']; ?></div>
 
               </div>
