@@ -55,13 +55,15 @@ Template Name: All Clients
 				<?php $clients = get_posts(array('post_type' => 'te_client', 'post_status' => 'publish', 'numberposts' => -1)); ?>
 				
 				<?php foreach($clients as $key => $client): ?>
-					<div class="client">
-						<div class="thumb-wrapper">
-							<div class="thumb-container">
-								<?php echo get_the_post_thumbnail($client->ID); ?>
+					<?php if(has_post_thumbnail(get_the_ID())) : ?>
+						<div class="client">
+							<div class="thumb-wrapper">
+								<div class="thumb-container">
+									<?php echo get_the_post_thumbnail($client->ID); ?>
+								</div>
 							</div>
 						</div>
-					</div>
+					<?php endif; ?>
 				<?php endforeach; ?>
 
   
