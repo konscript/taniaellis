@@ -62,8 +62,8 @@ class TE_PostStreamWidget extends WP_Widget {
 			'te_testemonail'				=> 'cases/all',
 			'te_testemonail_video'	=> 'cases/all',
 			'te_interview'					=> 'reading-room/interviews',
-			'te_case'								=> 'cases/all',
-			'te_client'							=> 'cases/clients/all',
+			'te_case'								=> 'cases/view-all-cases',
+			'te_client'							=> 'cases/view-all-clients',
 			'te_news'								=> 'about/company-news',
 		);
 		
