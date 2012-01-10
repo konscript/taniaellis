@@ -3,9 +3,7 @@
 			<?php if(has_post_thumbnail($post->ID) && $instance['thumbnails']) : ?>
 	      <div class="thumb-wrapper">
 	        <div class="thumb-container">
-						<a href="<?php the_permalink(); ?>">
-	          	<?php the_post_thumbnail('post-square-small-thumbnail', array('class' => 'featured-image')); ?>
-						</a>
+          	<?php the_post_thumbnail('post-square-small-thumbnail', array('class' => 'featured-image')); ?>
 	        </div>
 	      </div>
 	    <?php endif; ?>		
