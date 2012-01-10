@@ -10,7 +10,7 @@
       </div>
     <?php endif; ?>
 	
-		<p class="meta-data"><?php the_time('j M Y'); ?></p>
+		<p class="meta-data" style="float:left"><?php the_time('j M Y'); ?></p>
 		
 		<span class="by-line"></span>
 		
