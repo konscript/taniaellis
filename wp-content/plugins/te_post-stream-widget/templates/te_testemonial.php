@@ -12,6 +12,8 @@ if(!empty($video_id) && $video_id > 0) {
 	$video_url = get_post_meta($video_id, 'te_video_url', true);
 }
 
+
+
 ?>
 <div class="item testemonial">
 	<div class="item-content">
