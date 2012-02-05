@@ -2982,22 +2982,6 @@
   cursor: pointer;
   width: 62px;
   height: 62px;
-  -moz-transition-property: border-color;
-  -webkit-transition-property: border-color;
-  -o-transition-property: border-color;
-  transition-property: border-color;
-  -moz-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -moz-transition-timing-function: ease-in-out;
-  -webkit-transition-timing-function: ease-in-out;
-  -o-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-/* line 2617, ../sass/misc.scss */
-#page .widget-clientcase .item.clientcase .thumb-wrapper .thumb-container:hover {
-  border-color: #ccc7c4;
 }
 /* line 2624, ../sass/misc.scss */
 #page .widget-clientcase .client-footer {
