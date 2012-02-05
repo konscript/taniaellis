@@ -1,7 +1,7 @@
 <?php
 
 $author = get_post_meta($post_id, 'te_testemonial-author', true);
-$date = date_format(new DateTime(get_post_meta($post_id, 'te_testemonial-date', true)), 'j M Y');
+//$date = date_format(new DateTime(get_post_meta($post_id, 'te_testemonial-date', true)), 'j M Y');
 $text = get_post_meta($post_id, 'te_testemonial-testemonial-text', true);
 
 $case_id = get_post_meta($post_id, 'te_testemonial-case-id', true);
@@ -31,8 +31,6 @@ if(!empty($video_id) && $video_id > 0) {
 				<?php echo te_vimeo_video($video_url, 240, 100); ?>
 			</div>
 		<?php endif; ?>
-	
-		<p class="meta-data"><?php echo $date; ?></p>
 		
 		<span class="by-line">
 			<?php echo $author; ?>
