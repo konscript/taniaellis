@@ -25,8 +25,8 @@
 		<div class="header-content">
 			<div class="left-column" id="about-left">
 				<div class="header-title">
-					<h2 class="first-line">About</h2>
-          <h2 class="second-line">The Company</h2>
+					<h2 class="first-line">About us</h2>
+          <h2 class="second-line">Who &amp; Why</h2>
           <img src="<?php bloginfo('template_url'); ?>/images/moneytree.png" class="heartcore-tree" />
         </div>
 			</div>
