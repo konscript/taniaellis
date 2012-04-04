@@ -97,7 +97,7 @@ class TE_PostWidget extends WP_Widget {
 	
 	
 		$count = 0;
-		while(have_posts() && $count < $instance['items']) : the_post();
+		while(have_posts() && $count <= $instance['items']) : the_post();
 			$post_id = get_the_ID();
 			
 			@include WP_PLUGIN_DIR . '/te_post-stream-widget/templates/' .  $instance['type'] . '.php';
