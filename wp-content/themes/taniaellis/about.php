@@ -98,7 +98,7 @@
         <div class="widget widget-key-services">
           <div class="header-container">
             <h2 class="first-line">4 Key Services</h2>
-            <h2 class="second-line">Social and Economic Value Creation</h2>
+            <h2 class="second-line">Social & Economic Value Creation</h2>
           </div>
 
 
