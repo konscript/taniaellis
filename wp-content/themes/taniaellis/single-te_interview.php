@@ -27,7 +27,7 @@
 		<section class="left-sidebar">
 			<?php 
 			//if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); 
-			generated_dynamic_sidebar("Blog Single Left");
+			generated_dynamic_sidebar("TV Interview Single Left");
 			?>
 		</section>
 		<section class="right-sidebar-single">
