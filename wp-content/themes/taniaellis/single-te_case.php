@@ -47,7 +47,7 @@
               // Get all things that has to do with the client
               $case['client-id'] = get_post_meta($post->ID, 'te_case-options-client-id', true);
               
-              $client['featured-image'] = get_the_post_thumbnail($case['client-id'], 'post-thumbnail');
+              $client['featured-image'] = get_the_post_thumbnail($case['client-id'], 'post-wide-image');
               $client['description']    = get_post_field('post_content', $case['client-id']);
 							$client['name']						= get_post_field('post_title', $case['client-id']);
               
