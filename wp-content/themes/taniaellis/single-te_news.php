@@ -26,7 +26,7 @@
 		<?php @include("partials/social-bar.php"); ?>
 		<section class="left-sidebar">
 			<?php 
-				generated_dynamic_sidebar("News Single Left");
+				generated_dynamic_sidebar("Single News Left");
 			?>
 		</section>
 		<section class="right-sidebar-single">
