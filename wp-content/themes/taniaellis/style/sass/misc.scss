@@ -1,6 +1,14 @@
 @import "compass/css3";
 @import "compass/layout/stretching";
 
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
 @mixin featured-image($width, $margin-right) {
 	img.featured-image {
 		float: left;
