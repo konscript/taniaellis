@@ -1104,6 +1104,8 @@
 		
 		.widget-newsletter-subscribe {
 			background: url('../../images/post_type_icon_newsletter.png') top left no-repeat;
+			border: 1px solid #CCC;
+			width: 290px;
 			
 			.newsletter-subscribe {
 				@include border-radius(10px);
