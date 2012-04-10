@@ -89,6 +89,7 @@ get_header();
                   </div>
                 <?php endif; ?>
                 <?php the_content(); ?>
+                <div class="clearer"></div>
               </div>
             </div>
             <div class="clearer"></div>
