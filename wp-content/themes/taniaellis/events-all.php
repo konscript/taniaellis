@@ -35,10 +35,38 @@ Template Name: All Events
 		</section>
 		<section class="right-sidebar-single">
 			<div class="sidebar-background">
-				<div class="post-header">
-					<h2 class="first-line">All</h2>
-					<h2 class="second-line">Events</h2>
-				</div>
+	  		<?php
+
+	  			// Fetch the pages ID
+	  			$page_id = $wp_query->post->ID;
+
+          $post_meta['first-line']  = get_post_meta($page_id, 'te_page-text-title-first-line', true);
+          $post_meta['second-line'] = get_post_meta($page_id, 'te_page-text-title-second-line', true);
+          $post_meta['title-icon']  = get_post_meta($page_id, 'te_page-text-title-icon', true);
+          $post_meta['lead-text']   = get_post_meta($page_id, 'te_page-text-lead-paragraph-text', true);
+          $post_meta['left-meta']   = get_post_meta($page_id, 'te_page-text-meta-left', true);
+          $post_meta['right-meta']  = get_post_meta($page_id, 'te_page-text-meta-right', true);
+
+          if(empty($post_meta['first-line']))
+          	$post_meta['first-line'] = 'Events';
+         	if(empty($post_meta['second-line']))
+          	$post_meta['second-line'] = 'All Evevnts';
+        ?>
+
+          <!-- The following way to add the correct icon to the header is a bit of a hack, but it is easy! Should this be changed? -->
+          <?php
+            $style = '';
+            if($post_meta['title-icon']) {
+              $style = 'background: url(' . $post_meta['title-icon'] . ') top left no-repeat;';
+            }
+          ?>
+          <div class="post-header" style="<?php echo $style; ?>">
+            <h2 class="first-line"><?php echo $post_meta['first-line']; ?></h2>
+            <h2 class="second-line"><?php echo $post_meta['second-line']; ?></h2>
+            <?php if(!empty($post_meta['lead-text'])): ?>
+            	<p class="lead-text"><?php echo $post_meta['lead-text']; ?></p>
+            <?php endif; ?>
+          </div>
 				
 				<?php 
 				query_posts(array(
