@@ -39,8 +39,13 @@
 				
 			?>
 			<div class="sidebar-background">
-				<div class="post-header">
-				<h2 class="first-line"><?php echo $post_meta['first-line']; ?></h2>
+        <?php
+          $style = '';
+          if($post_meta['title-icon']) {
+            $style = 'background: url(' . $post_meta['title-icon'] . ') top left no-repeat;';
+          }
+        ?>
+				<div class="post-header" style="<?php echo $style; ?>">				<h2 class="first-line"><?php echo $post_meta['first-line']; ?></h2>
 				<h2 class="second-line"><?php echo $post_meta['second-line']; ?></h2>
 				<?php if(!empty($post_meta['lead-text'])) : ?>
 					<p class="lead-text"><?php echo $post_meta['lead-text']; ?></p>
