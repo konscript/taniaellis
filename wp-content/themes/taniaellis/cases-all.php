@@ -34,16 +34,43 @@ Template Name: All Cases
   <div id="page">
     <?php @include("partials/social-bar.php"); ?>
     <section class="left-sidebar">
-      			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
+      <?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
     </section>
 
 		<section class="right-sidebar-single">
 		  <div class="sidebar-background">
+
+
+		  		<?php
+
+		  			// Fetch the pages ID
+		  			$page_id = $wp_query->post->ID;
+
+            $post_meta['first-line']  = get_post_meta($page_id, 'te_page-text-title-first-line', true);
+            $post_meta['second-line'] = get_post_meta($page_id, 'te_page-text-title-second-line', true);
+            $post_meta['title-icon']  = get_post_meta($page_id, 'te_page-text-title-icon', true);
+            $post_meta['lead-text']   = get_post_meta($page_id, 'te_page-text-lead-paragraph-text', true);
+            $post_meta['left-meta']   = get_post_meta($page_id, 'te_page-text-meta-left', true);
+            $post_meta['right-meta']  = get_post_meta($page_id, 'te_page-text-meta-right', true);
+
+            if(empty($post_meta['first-line']))
+            	$post_meta['first-line'] = 'Cases';
+           	if(empty($post_meta['second-line']))
+            	$post_meta['second-line'] = 'All Cases';
+          ?>
 		    
-		      <div class="post-header" id="case">
-		        <h2 class="first-line">Cases</h2>
-		        <h2 class="second-line">All Cases</h2>
-		      </div>
+          <!-- The following way to add the correct icon to the header is a bit of a hack, but it is easy! Should this be changed? -->
+          <?php
+            $style = '';
+            if($post_meta['title-icon']) {
+              $style = 'background: url(' . $post_meta['title-icon'] . ') top left no-repeat;';
+            }
+          ?>
+          <div class="post-header" id="case" style="<?php echo $style; ?>">
+            <h2 class="first-line"><?php echo $post_meta['first-line']; ?></h2>
+            <h2 class="second-line"><?php echo $post_meta['second-line']; ?></h2>
+            <p class="lead-text"><?php echo $post_meta['lead-text']; ?></p>
+          </div>
 		      <?php query_posts(array('post_type' => 'te_case', 'post_status' => 'publish', 'paged' => $paged)); ?>
 		      <?php if(have_posts()): ?><?php while(have_posts()): the_post(); ?>                                
 		        <div class="post-feed">
