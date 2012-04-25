@@ -109,7 +109,7 @@
  				<?php endwhile; ?>
 				<div class="posts-nav-links">
           <?php posts_nav_link(' ', '« Previous Page', 'Next Page »'); ?>
-          <?php next_posts_link('Next Posts', 0);
+          <?php next_posts_link('Next Posts', 0); ?>
         </div>
 				<div class="widget-view-all">
 					<a href="<?php echo get_permalink(get_page_by_path('events/all')); ?>">View more events</a>
