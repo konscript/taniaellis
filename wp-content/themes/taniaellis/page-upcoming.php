@@ -71,7 +71,7 @@
 					),
 					'post_status' => 'publish',
 					'paged' => $paged,
-					'posts_per_page'	=> -1
+					'posts_per_page'	=> 10
 				)); ?>
  				<?php if($query->have_posts()): ?>
  					<?php while($query->have_posts()): $query->the_post(); ?>                                
