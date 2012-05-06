@@ -61,7 +61,7 @@
 					'post_type'		=> 'te_event',
 					'orderby'			=> 'meta_value',
 					'meta_key'		=>'te_event-options-start-date',
-					'order'				=> 'DESC',
+					'order'				=> 'ASC',
 					'meta_query'	=> array(
 						array(
 							'key'	=> 'te_event-options-end-date',

@@ -64,7 +64,7 @@ class TE_PostStreamWidget extends WP_Widget {
 			'te_interview'					=> 'reading-room/interviews',
 			'te_case'								=> 'cases/view-all-cases',
 			'te_client'							=> 'cases/view-all-clients',
-			'te_news'								=> 'about/company-news',
+			'te_news'								=> 'news/company-news',
 		);
 		
 		$dim = $size[$instance['dimensions']]
@@ -95,7 +95,7 @@ class TE_PostStreamWidget extends WP_Widget {
 			
 			$args['meta_key'] 		= 'te_event-options-start-date';
 			$args['orderby']			= 'meta_value';
-			$args['order']				= 'DESC';
+			$args['order']				= 'ASC';
 			$args['meta_query']		= array(array(
 				'key'	=> 'te_event-options-end-date',
 				'value'	=> $time,
