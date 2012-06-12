@@ -1,6 +1,14 @@
 @import "compass/css3";
 @import "compass/layout/stretching";
 
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
 @mixin featured-image($width, $margin-right) {
 	img.featured-image {
 		float: left;
@@ -1104,6 +1112,8 @@
 		
 		.widget-newsletter-subscribe {
 			background: url('../../images/post_type_icon_newsletter.png') top left no-repeat;
+			border-bottom: 1px solid #CCC;
+			width: 290px;
 			
 			.newsletter-subscribe {
 				@include border-radius(10px);
@@ -1614,17 +1624,13 @@
 			}
 		}
 		
-		#clients {
-			background: url('../../images/post_type_icon_featured_client.png') top left no-repeat;
-		}
+		#clients { background: url('../../images/post_type_icon_featured_client.png') top left no-repeat; }
 		
-		#case {
-			background: url('../../images/post_type_icon_cases.png') top left no-repeat;
-		}
+		#case { background: url('../../images/post_type_icon_cases.png') top left no-repeat; }
 		
-		#search {
-			background: url('../../images/icon_questionmark.png') top left no-repeat;
-		}
+		#search { background: url('../../images/icon_questionmark.png') top left no-repeat; }
+
+		#event { background: url('../../images/post_type_icon_events.png') top left no-repeat; }
 		
 		.comments-header {
 			background: url(../../images/comments_icon.png) top left no-repeat;

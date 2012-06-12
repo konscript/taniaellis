@@ -10,7 +10,7 @@
 
 	<div id="header-container">
 		<?php wp_nav_menu(array(
-				'theme_location'		=> 'about-menu',
+				'theme_location'		=> 'news-menu',
 				'container'				  => '',
 				'menu_id'				    => 'navigation-header-standard',
 				'menu_class'			  => 'navigation-header',
@@ -26,7 +26,7 @@
 		<?php @include("partials/social-bar.php"); ?>
 		<section class="left-sidebar">
 			<?php 
-				generated_dynamic_sidebar("News Single Left");
+				generated_dynamic_sidebar("Single News Left");
 			?>
 		</section>
 		<section class="right-sidebar-single">

@@ -72,7 +72,8 @@ if(function_exists( 'register_nav_menus')) {
 		  'reading-room-menu'     => 'Reading Room Menu',
 		  'about-menu'            => 'About Menu',
 		  'footer-menu'           => 'Footer Menu',
-			'shop-menu'							=> 'Shop Link'
+			'shop-menu'							=> 'Shop Link',
+			'news-menu'							=> 'News Menu'
 	    )
 	);
 }

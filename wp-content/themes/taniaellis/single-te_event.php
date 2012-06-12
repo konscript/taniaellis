@@ -34,7 +34,7 @@
 <div class="sidebar-background">
 	<?php if(have_posts()): ?>
 		<?php while(have_posts()): the_post(); ?>
-			<div class="post-header">
+			<div class="post-header" id="event">
 				<h2 class="first-line">All</h2>
 				<h2 class="second-line">Events</h2>
 			</div>

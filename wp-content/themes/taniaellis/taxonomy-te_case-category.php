@@ -30,7 +30,7 @@
 		<?php @include("partials/social-bar.php"); ?>
 		
 		<section class="left-sidebar">
-			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Left Sidebar"); ?>
+			<?php if(function_exists('generated_dynamic_sidebar')) generated_dynamic_sidebar("Case Categories Left"); ?>
 		</section>
 
 		<section class="right-sidebar-single">

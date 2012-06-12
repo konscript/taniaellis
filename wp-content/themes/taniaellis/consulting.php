@@ -25,8 +25,8 @@
 		<div class="header-content">
 			<div class="left-column" id="consulting-left">
         <div class="header-title">
-          <h2 class="first-line">Social Business</h2>
-          <h2 class="second-line">Consulting</h2>
+          <h2 class="first-line">Consulting</h2>
+          <h2 class="second-line">& Training</h2>
         </div>
         
         <?php

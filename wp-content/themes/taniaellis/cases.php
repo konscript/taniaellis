@@ -27,8 +27,8 @@ Template Name: Cases
 			<div class="left-column" id="cases-left">
 				
 				<div class="header-title">
-          <h2 class="first-line">Social Business</h2>
-          <h2 class="second-line">Cases</h2>
+          <h2 class="first-line">Our Work</h2>
+          <h2 class="second-line">Clients & Cases</h2>
         </div>
 			          
         <p class="testemonials-title">
