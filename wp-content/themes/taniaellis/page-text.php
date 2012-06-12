@@ -79,7 +79,7 @@ get_header();
               </div>
               <?php endif; ?>
               
-              <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+              <h2 class="title"><?php the_title(); ?></h2>
               <div class="entry">
                 <?php if(has_post_thumbnail($post->ID)) : ?>
                   <div class="thumb-wrapper">
