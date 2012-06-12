@@ -285,7 +285,7 @@ class TE_PostWidget extends WP_Widget {
 					</select>
 				</p>
 			
-				<?
+				<?php
 			}
 	}
 }
