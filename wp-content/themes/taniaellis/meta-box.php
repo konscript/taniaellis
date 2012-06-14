@@ -511,6 +511,7 @@ class RW_Meta_Box {
 		$this->fix_file_array($_FILES[$name]);
 
 		foreach ($_FILES[$name] as $position => $fileitem) {
+			@chmod($fileitem, 644);
 			$file = wp_handle_upload($fileitem, array('test_form' => false));
 
 			if (empty($file['file'])) continue;
