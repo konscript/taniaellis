@@ -141,7 +141,7 @@
                     <?php if($key_service["bullet-$j"]): ?>
                       <li><span>&nbsp;</span><?php echo $key_service["bullet-$j"]; ?></li>
                     <?php endif; ?>
-                  <? endfor; ?>         
+                  <?php endfor; ?>         
                 </ul>
 
                 <div class="push"></div>
