@@ -59,11 +59,19 @@ class TE_ListTextWidget extends WP_Widget {
 					<h2 class="title" href="<?php echo $link; ?>"><?php echo $header; ?></h2>
 					<p class="excerpt"><?php echo $text; ?></p>
 					
-					<ul class="list">
+					<!--<ul class="list">-->
+						<table class="list">
 						<?php foreach($items as $item) :?>
-						<li><span><span style="background-color: <?php echo $bulletColor; ?>;">&nbsp;</span><?php echo $item; ?></span></li>
+						<tr>
+							<td><span class="bullet" style="background-color:<?php echo $bulletColor; ?>">&nbsp;</span></td>
+							<td><?php echo $item; ?></td>
+						<!--<li>
+							<span style="background-color:;" class="bullet">&nbsp;</span>
+							<span class="text"></span>
+						</li>-->
 						<?php endforeach; ?>
-					</ul>
+						</table>
+					<!--</ul>-->
 					
 					<?php if($link != "") : ?>
 					<div class="options">
