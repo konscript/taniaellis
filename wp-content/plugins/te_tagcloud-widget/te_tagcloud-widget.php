@@ -50,6 +50,8 @@ class TE_TagcloudWidget extends WP_Widget {
 						'order'					=> 'DESC'
 					));
 					
+					//die(print_r($terms));	
+					
 					$scores = array();
 					foreach($terms as $term) {
 						$scores[$term->term_id] = $term->count;
@@ -76,7 +78,7 @@ class TE_TagcloudWidget extends WP_Widget {
 					
 					foreach($terms as $term) :
 						$id = $term->term_id;
-						$link = clean_url(get_tag_link($id));
+						$link = clean_url(get_term_link($term->slug, $instance['postType']));
 						//$class_id = ($min_class + (($scores[$id] - $min_score) * $step));
 						$class_id = rand($min_class, $max_class);
 						?>
