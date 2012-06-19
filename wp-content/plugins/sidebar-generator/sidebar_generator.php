@@ -258,6 +258,7 @@ class sidebar_generator {
 	*/
 	function save_form($post_id){
 		$is_saving = $_POST['sbg_edit'];
+		//die(print_r($_POST['sidebar_generator_replacement']));
 		if(!empty($is_saving)){
 			delete_post_meta($post_id, 'sbg_selected_sidebar');
 			delete_post_meta($post_id, 'sbg_selected_sidebar_replacement');
@@ -302,7 +303,7 @@ class sidebar_generator {
 					//var_dump($wp_registered_sidebars);		
 						for($i=0;$i<5;$i++){ ?>
 							<li>Replace 
-								<select name="sidebar_generator[<?=$i?>]">
+								<select name="sidebar_generator[<?php echo$i?>]">
 								<option value="0"<?php if($selected_sidebar[$i] == ''){ echo " selected";} ?>>WP Default Sidebar</option>
 							<?php
 							$sidebars = $wp_registered_sidebars;// sidebar_generator::get_sidebars();
@@ -318,7 +319,7 @@ class sidebar_generator {
 							?>
 							</select>
 							 with  
-							<select name="sidebar_generator_replacement[<?=$i?>]">
+							<select name="sidebar_generator_replacement[<?php echo $i; ?>]">
 								<option value="0"<?php if($selected_sidebar_replacement[$i] == ''){ echo " selected";} ?>>None</option>
 							<?php
 							
