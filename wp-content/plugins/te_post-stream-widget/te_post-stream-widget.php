@@ -49,7 +49,7 @@ class TE_PostStreamWidget extends WP_Widget {
 			'te_event'							=> 'events',
 			'te_testemonial'				=> 'testemonials',
 			'te_testemonial_video'	=> 'testemonials',
-			'te_interview'					=> 'tv interviews',
+			'te_interview'					=> 'TV interviews',
 			'te_case'								=> 'cases',
 			'te_client'							=> 'clients',
 			'te_news'								=> 'news',
@@ -83,7 +83,8 @@ class TE_PostStreamWidget extends WP_Widget {
 			'post_type'				=> $instance['type'],
 			'post_status'			=> 'publish',
 			'orderby'					=> 'date',
-			'order'						=> 'DESC'
+			'order'						=> 'DESC',
+			'posts_per_page' => $instance['items'],
 		);
 		
 		// $q = 'post_type='. $instance['type'] .'&post_status=publish';

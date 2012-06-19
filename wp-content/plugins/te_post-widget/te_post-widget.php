@@ -60,7 +60,7 @@ class TE_PostWidget extends WP_Widget {
 			'te_event'							=> 'events',
 			'te_testemonial'				=> 'testemonials',
 			'te_testemonial_video'	=> 'testemonials',
-			'te_interview'					=> 'tv interviews',
+			'te_interview'					=> 'TV interviews',
 			'te_case'								=> 'cases',
 			'te_client'							=> 'clients',
 			'te_news'								=> 'news',
