@@ -66,7 +66,7 @@ function add_field() {
 jQuery(document).ready(function() {
 	widget_id_s = 'input[name="widget-id"]';
 	widget_id_base_s = 'input[name="id_base"]';
-	id_s = 'input[name="widget_number"]';
+	id_s = 'input[name="multi_number"]';
 	
 	jQuery(".remove-field").live("click", remove_field);
 	jQuery(".add_field").live("click", add_field);
