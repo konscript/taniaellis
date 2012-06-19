@@ -31,7 +31,7 @@ msgstr "Tutti gli utenti e visitatori"
 #: code/adm/db.php:1271
 #: tinymce3/panels/blograting.php:22
 #: tinymce3/panels/commentsaggr.php:17
-#: tinymce3/panels/filter.php:24
+#: tinymce3/panels/filter.php:26
 #: widgets/comments/part_basic.php:17
 #: widgets/comments/part_filter.php:17
 #: widgets/comments_28/part_basic.php:17
@@ -39,7 +39,7 @@ msgstr "Tutti gli utenti e visitatori"
 #: widgets/rating/part_basic.php:16
 #: widgets/rating/part_filter.php:28
 #: widgets/rating_28/part_basic.php:17
-#: widgets/rating_28/part_filter.php:38
+#: widgets/rating_28/part_filter.php:40
 #: widgets/top/part_basic.php:17
 #: widgets/top/part_filter.php:28
 #: widgets/top_28/part_basic.php:17
@@ -556,7 +556,7 @@ msgstr "I dati sono stati importati."
 msgid "loading"
 msgstr "in carica..."
 
-#: code/t2/render.php:1239
+#: code/t2/render.php:1247
 msgid "(no title)"
 msgstr "(nessun titolo)"
 
@@ -595,9 +595,9 @@ msgstr "Risultati valutazione standard"
 #: code/t2/templates.php:130
 #: code/t2/templates.php:155
 #: code/t2/templates.php:198
-#: code/t2/templates.php:231
-#: code/t2/templates.php:324
-#: code/t2/templates.php:355
+#: code/t2/templates.php:233
+#: code/t2/templates.php:326
+#: code/t2/templates.php:357
 msgid "article rating"
 msgstr "valutazione articolo"
 
@@ -606,9 +606,9 @@ msgstr "valutazione articolo"
 #: code/t2/templates.php:76
 #: code/t2/templates.php:129
 #: code/t2/templates.php:199
-#: code/t2/templates.php:232
-#: code/t2/templates.php:245
-#: code/t2/templates.php:315
+#: code/t2/templates.php:234
+#: code/t2/templates.php:247
+#: code/t2/templates.php:317
 msgid "maximum rating value"
 msgstr "valore max valutazione"
 
@@ -629,11 +629,11 @@ msgstr "valore max valutazione"
 #: code/t2/templates.php:131
 #: code/t2/templates.php:156
 #: code/t2/templates.php:202
-#: code/t2/templates.php:234
-#: code/t2/templates.php:326
-#: code/t2/templates.php:357
-#: code/t2/templates.php:375
-#: code/t2/templates.php:392
+#: code/t2/templates.php:236
+#: code/t2/templates.php:328
+#: code/t2/templates.php:359
+#: code/t2/templates.php:377
+#: code/t2/templates.php:394
 msgid "total votes for article"
 msgstr "totale dei voti articolo"
 
@@ -664,10 +664,10 @@ msgstr "URL articolo/pagina"
 #: code/t2/templates.php:159
 #: code/t2/templates.php:185
 #: code/t2/templates.php:207
-#: code/t2/templates.php:249
-#: code/t2/templates.php:267
-#: code/t2/templates.php:268
+#: code/t2/templates.php:251
 #: code/t2/templates.php:269
+#: code/t2/templates.php:270
+#: code/t2/templates.php:271
 msgid "rating stars"
 msgstr "Star valutazione"
 
@@ -678,7 +678,7 @@ msgstr "Thumb valutazione"
 
 #: code/t2/templates.php:28
 #: code/t2/templates.php:209
-#: code/t2/templates.php:233
+#: code/t2/templates.php:235
 msgid "bayesian estimate mean rating"
 msgstr "valutazione media stima bayesiana"
 
@@ -704,13 +704,13 @@ msgstr "Star valutazione articolo"
 
 #: code/t2/templates.php:33
 #: code/t2/templates.php:214
-#: code/t2/templates.php:235
+#: code/t2/templates.php:237
 msgid "number of posts/pages"
 msgstr "numero di articoli/pagine"
 
 #: code/t2/templates.php:34
-#: code/t2/templates.php:215
-#: code/t2/templates.php:251
+#: code/t2/templates.php:217
+#: code/t2/templates.php:253
 msgid "results rank id"
 msgstr "id risultati classificazione"
 
@@ -720,32 +720,32 @@ msgstr "id risultati classificazione"
 #: code/t2/templates.php:112
 #: code/t2/templates.php:132
 #: code/t2/templates.php:157
-#: code/t2/templates.php:216
-#: code/t2/templates.php:314
-#: code/t2/templates.php:323
-#: code/t2/templates.php:354
-#: code/t2/templates.php:372
-#: code/t2/templates.php:389
+#: code/t2/templates.php:218
+#: code/t2/templates.php:316
+#: code/t2/templates.php:325
+#: code/t2/templates.php:356
+#: code/t2/templates.php:374
+#: code/t2/templates.php:391
 msgid "post/page id"
 msgstr "ID articolo/pagina"
 
 #: code/t2/templates.php:36
-#: code/t2/templates.php:217
+#: code/t2/templates.php:219
 msgid "image for the post/page"
 msgstr "immagine articolo/pagina"
 
 #: code/t2/templates.php:37
-#: code/t2/templates.php:218
+#: code/t2/templates.php:220
 msgid "short post/page excerpt"
 msgstr "riassunto breve articolo/pagina"
 
 #: code/t2/templates.php:38
-#: code/t2/templates.php:219
+#: code/t2/templates.php:221
 msgid "name of the post/page author"
 msgstr "nome autore articolo/pagina"
 
 #: code/t2/templates.php:39
-#: code/t2/templates.php:220
+#: code/t2/templates.php:222
 msgid "url to authors archive"
 msgstr "URL archivio autori"
 
@@ -755,44 +755,44 @@ msgstr "URL archivio autori"
 #: code/t2/templates.php:77
 #: code/t2/templates.php:133
 #: code/t2/templates.php:174
-#: code/t2/templates.php:221
-#: code/t2/templates.php:237
-#: code/t2/templates.php:256
-#: code/t2/templates.php:295
-#: code/t2/templates.php:330
-#: code/t2/templates.php:379
+#: code/t2/templates.php:223
+#: code/t2/templates.php:239
+#: code/t2/templates.php:258
+#: code/t2/templates.php:297
+#: code/t2/templates.php:332
+#: code/t2/templates.php:381
 msgid "singular/plural word votes"
 msgstr "voti parola singolare/plurale"
 
 #: code/t2/templates.php:41
 #: code/t2/templates.php:101
-#: code/t2/templates.php:222
-#: code/t2/templates.php:257
+#: code/t2/templates.php:224
+#: code/t2/templates.php:259
 msgid "class for alternating row class"
 msgstr "classe per la classe delle righe alternate"
 
 #: code/t2/templates.php:42
-#: code/t2/templates.php:223
-#: code/t2/templates.php:258
+#: code/t2/templates.php:225
+#: code/t2/templates.php:260
 msgid "auto generated row classes"
 msgstr "Classi delle righe auto-generate"
 
 #: code/t2/templates.php:43
-#: code/t2/templates.php:224
-#: code/t2/templates.php:259
+#: code/t2/templates.php:226
+#: code/t2/templates.php:261
 msgid "Header"
 msgstr "Header"
 
 #: code/t2/templates.php:44
 #: code/t2/templates.php:102
-#: code/t2/templates.php:225
-#: code/t2/templates.php:260
+#: code/t2/templates.php:227
+#: code/t2/templates.php:262
 msgid "Item"
 msgstr "Termine"
 
 #: code/t2/templates.php:45
-#: code/t2/templates.php:226
-#: code/t2/templates.php:261
+#: code/t2/templates.php:228
+#: code/t2/templates.php:263
 msgid "Footer"
 msgstr "Footer"
 
@@ -803,10 +803,10 @@ msgstr "Blocco standard RSS valutazione"
 #: code/t2/templates.php:55
 #: code/t2/templates.php:158
 #: code/t2/templates.php:184
-#: code/t2/templates.php:265
-#: code/t2/templates.php:266
-#: code/t2/templates.php:352
-#: code/t2/templates.php:397
+#: code/t2/templates.php:267
+#: code/t2/templates.php:268
+#: code/t2/templates.php:354
+#: code/t2/templates.php:399
 msgid "rating header text"
 msgstr "testo header valutazione"
 
@@ -818,16 +818,16 @@ msgstr "testo header valutazione"
 #: code/t2/templates.php:166
 #: code/t2/templates.php:176
 #: code/t2/templates.php:192
-#: code/t2/templates.php:238
-#: code/t2/templates.php:270
-#: code/t2/templates.php:277
-#: code/t2/templates.php:286
-#: code/t2/templates.php:296
-#: code/t2/templates.php:303
-#: code/t2/templates.php:310
-#: code/t2/templates.php:318
-#: code/t2/templates.php:342
-#: code/t2/templates.php:381
+#: code/t2/templates.php:240
+#: code/t2/templates.php:272
+#: code/t2/templates.php:279
+#: code/t2/templates.php:288
+#: code/t2/templates.php:298
+#: code/t2/templates.php:305
+#: code/t2/templates.php:312
+#: code/t2/templates.php:320
+#: code/t2/templates.php:344
+#: code/t2/templates.php:383
 msgid "Normal"
 msgstr "Normale"
 
@@ -838,19 +838,19 @@ msgstr "Valutazione commenti aggregati"
 #: code/t2/templates.php:62
 #: code/t2/templates.php:171
 #: code/t2/templates.php:182
-#: code/t2/templates.php:244
-#: code/t2/templates.php:275
-#: code/t2/templates.php:291
-#: code/t2/templates.php:373
-#: code/t2/templates.php:390
+#: code/t2/templates.php:246
+#: code/t2/templates.php:277
+#: code/t2/templates.php:293
+#: code/t2/templates.php:375
+#: code/t2/templates.php:392
 msgid "comment rating"
 msgstr "valutazione commento"
 
 #: code/t2/templates.php:63
 #: code/t2/templates.php:172
-#: code/t2/templates.php:276
-#: code/t2/templates.php:283
-#: code/t2/templates.php:292
+#: code/t2/templates.php:278
+#: code/t2/templates.php:285
+#: code/t2/templates.php:294
 msgid "maximum comment rating value"
 msgstr "valore max valutazione commento"
 
@@ -859,13 +859,13 @@ msgid "total comments"
 msgstr "totale dei commenti"
 
 #: code/t2/templates.php:65
-#: code/t2/templates.php:293
+#: code/t2/templates.php:295
 msgid "total votes for all comment"
 msgstr "totale voti per tutti i commenti"
 
 #: code/t2/templates.php:66
-#: code/t2/templates.php:274
-#: code/t2/templates.php:294
+#: code/t2/templates.php:276
+#: code/t2/templates.php:296
 msgid "comment rating stars"
 msgstr "Star valutazione commento"
 
@@ -875,91 +875,91 @@ msgstr "Testo valutazioni multiple"
 
 #: code/t2/templates.php:78
 #: code/t2/templates.php:134
-#: code/t2/templates.php:331
+#: code/t2/templates.php:333
 msgid "remaining years"
 msgstr "anni residui"
 
 #: code/t2/templates.php:79
 #: code/t2/templates.php:135
-#: code/t2/templates.php:332
+#: code/t2/templates.php:334
 msgid "remaining months"
 msgstr "mesi residui"
 
 #: code/t2/templates.php:80
 #: code/t2/templates.php:136
-#: code/t2/templates.php:333
+#: code/t2/templates.php:335
 msgid "remaining days"
 msgstr "giorni residui"
 
 #: code/t2/templates.php:81
 #: code/t2/templates.php:137
-#: code/t2/templates.php:334
+#: code/t2/templates.php:336
 msgid "remaining hours"
 msgstr "ore residue"
 
 #: code/t2/templates.php:82
 #: code/t2/templates.php:138
-#: code/t2/templates.php:335
+#: code/t2/templates.php:337
 msgid "remaining minutes"
 msgstr "minuti residui"
 
 #: code/t2/templates.php:83
 #: code/t2/templates.php:139
-#: code/t2/templates.php:336
+#: code/t2/templates.php:338
 msgid "remaining seconds"
 msgstr "secondi residui"
 
 #: code/t2/templates.php:84
 #: code/t2/templates.php:140
-#: code/t2/templates.php:337
+#: code/t2/templates.php:339
 msgid "end voting date"
 msgstr "data fine votazione"
 
 #: code/t2/templates.php:85
 #: code/t2/templates.php:141
-#: code/t2/templates.php:338
+#: code/t2/templates.php:340
 msgid "total remaining days"
 msgstr "totale giorni residui"
 
 #: code/t2/templates.php:86
 #: code/t2/templates.php:142
-#: code/t2/templates.php:339
+#: code/t2/templates.php:341
 msgid "total remaining hours"
 msgstr "totale ore residue"
 
 #: code/t2/templates.php:87
 #: code/t2/templates.php:143
-#: code/t2/templates.php:340
+#: code/t2/templates.php:342
 msgid "total remaining minutes"
 msgstr "totale minuti residui"
 
 #: code/t2/templates.php:88
 #: code/t2/templates.php:144
 #: code/t2/templates.php:175
-#: code/t2/templates.php:329
-#: code/t2/templates.php:360
-#: code/t2/templates.php:378
-#: code/t2/templates.php:395
+#: code/t2/templates.php:331
+#: code/t2/templates.php:362
+#: code/t2/templates.php:380
+#: code/t2/templates.php:397
 msgid "saved vote value"
 msgstr "valore voto salvato"
 
 #: code/t2/templates.php:90
 #: code/t2/templates.php:146
-#: code/t2/templates.php:343
+#: code/t2/templates.php:345
 msgid "Time Restricted Active"
 msgstr "Limitazione tempo attiva"
 
 #: code/t2/templates.php:91
 #: code/t2/templates.php:147
-#: code/t2/templates.php:344
+#: code/t2/templates.php:346
 msgid "Time Restricted Closed"
 msgstr "Limitazione tempo chiusa"
 
 #: code/t2/templates.php:92
 #: code/t2/templates.php:148
 #: code/t2/templates.php:177
-#: code/t2/templates.php:345
-#: code/t2/templates.php:382
+#: code/t2/templates.php:347
+#: code/t2/templates.php:384
 msgid "Vote Saved"
 msgstr "Il voto é stato salvato"
 
@@ -1001,27 +1001,27 @@ msgid "multi rating text"
 msgstr "testo valutazioni multiple"
 
 #: code/t2/templates.php:115
-#: code/t2/templates.php:282
-#: code/t2/templates.php:301
-#: code/t2/templates.php:308
+#: code/t2/templates.php:284
+#: code/t2/templates.php:303
+#: code/t2/templates.php:310
 msgid "multi rating stars"
 msgstr "Star valutazioni multiple"
 
 #: code/t2/templates.php:116
 #: code/t2/templates.php:161
 #: code/t2/templates.php:187
-#: code/t2/templates.php:302
-#: code/t2/templates.php:309
-#: code/t2/templates.php:361
-#: code/t2/templates.php:398
+#: code/t2/templates.php:304
+#: code/t2/templates.php:311
+#: code/t2/templates.php:363
+#: code/t2/templates.php:400
 msgid "css class for whole block"
 msgstr "Classe CSS per l'intero blocco"
 
 #: code/t2/templates.php:117
 #: code/t2/templates.php:162
 #: code/t2/templates.php:188
-#: code/t2/templates.php:362
-#: code/t2/templates.php:399
+#: code/t2/templates.php:364
+#: code/t2/templates.php:401
 msgid "css class for header"
 msgstr "Classe CSS per la header"
 
@@ -1029,8 +1029,8 @@ msgstr "Classe CSS per la header"
 #: code/t2/templates.php:119
 #: code/t2/templates.php:164
 #: code/t2/templates.php:190
-#: code/t2/templates.php:364
-#: code/t2/templates.php:401
+#: code/t2/templates.php:366
+#: code/t2/templates.php:403
 msgid "css class for rating text"
 msgstr "Classe CSS per il testo di valutazione"
 
@@ -1039,24 +1039,24 @@ msgid "rating button"
 msgstr "Pulsante valutazione"
 
 #: code/t2/templates.php:121
-#: code/t2/templates.php:284
-#: code/t2/templates.php:316
+#: code/t2/templates.php:286
+#: code/t2/templates.php:318
 msgid "average rating"
 msgstr "media valutazione"
 
 #: code/t2/templates.php:122
-#: code/t2/templates.php:285
-#: code/t2/templates.php:317
+#: code/t2/templates.php:287
+#: code/t2/templates.php:319
 msgid "average rating stars"
 msgstr "Star media valutazione"
 
 #: code/t2/templates.php:123
 #: code/t2/templates.php:165
 #: code/t2/templates.php:191
-#: code/t2/templates.php:341
-#: code/t2/templates.php:365
-#: code/t2/templates.php:380
-#: code/t2/templates.php:402
+#: code/t2/templates.php:343
+#: code/t2/templates.php:367
+#: code/t2/templates.php:382
+#: code/t2/templates.php:404
 msgid "auto generated css"
 msgstr "CSS generato in automatico"
 
@@ -1070,15 +1070,15 @@ msgstr "Blocco standard valutazioni"
 
 #: code/t2/templates.php:160
 #: code/t2/templates.php:186
-#: code/t2/templates.php:353
-#: code/t2/templates.php:396
+#: code/t2/templates.php:355
+#: code/t2/templates.php:398
 msgid "rating text"
 msgstr "testo valutazione"
 
 #: code/t2/templates.php:163
 #: code/t2/templates.php:189
-#: code/t2/templates.php:363
-#: code/t2/templates.php:400
+#: code/t2/templates.php:365
+#: code/t2/templates.php:402
 msgid "css class for stars"
 msgstr "Classe CSS per le star"
 
@@ -1088,7 +1088,7 @@ msgstr "Testo valutazione commenti"
 
 #: code/t2/templates.php:173
 #: code/t2/templates.php:183
-#: code/t2/templates.php:246
+#: code/t2/templates.php:248
 msgid "total votes for comment"
 msgstr "totale voti commento"
 
@@ -1100,128 +1100,130 @@ msgstr "Blocco valutazione commenti"
 msgid "Widget Star Rating"
 msgstr "Widget valutazione star"
 
-#: code/t2/templates.php:229
-msgid "Widget Blog Rating"
-msgstr "Widget valutazione blog"
-
-#: code/t2/templates.php:236
-#: code/t2/templates.php:325
-#: code/t2/templates.php:356
-msgid "article percentage rating"
-msgstr "percentuale valutazione articolo"
-
-#: code/t2/templates.php:241
-msgid "Widget Comments Rating"
-msgstr "Widget valutazione commenti"
-
-#: code/t2/templates.php:247
-msgid "comment contents"
-msgstr "contenuti commento"
-
-#: code/t2/templates.php:248
-msgid "url to comment"
-msgstr "URL commento"
-
-#: code/t2/templates.php:250
-msgid "post id"
-msgstr "ID articolo"
-
-#: code/t2/templates.php:252
-msgid "comment id"
-msgstr "ID commento"
-
-#: code/t2/templates.php:253
-msgid "name of the comments author"
-msgstr "nome autore commenti"
-
-#: code/t2/templates.php:254
-msgid "authors url"
-msgstr "URL autori"
-
-#: code/t2/templates.php:255
-msgid "authors avatar"
-msgstr "avatar autori"
-
-#: code/t2/templates.php:264
-msgid "Standard Review Rating Block"
-msgstr "Blocco standard valutazione revisione"
-
-#: code/t2/templates.php:273
-msgid "Comments Review Rating Block"
-msgstr "Blocco valutazione revisione commenti"
-
-#: code/t2/templates.php:280
-msgid "Multi Review Rating Block"
-msgstr "Blocco valutazione revisioni multiple"
-
-#: code/t2/templates.php:289
-msgid "Aggregated Comments Review Rating"
-msgstr "Valutazione revisione commenti aggregati"
-
-#: code/t2/templates.php:299
-msgid "Multi Review Editor"
-msgstr "Editor revisione multipla"
-
-#: code/t2/templates.php:306
-msgid "Multi Rating Comment Integration"
-msgstr "Integrazione commenti revisione multipla"
-
-#: code/t2/templates.php:313
-msgid "Multi Rating Comment Integration Result"
-msgstr "Risultato integrazione commenti revisione multipla"
-
-#: code/t2/templates.php:321
-msgid "Thumbs Article Ratings Text"
-msgstr "Testo thumb valutazioni articolo "
-
-#: code/t2/templates.php:327
-#: code/t2/templates.php:358
-#: code/t2/templates.php:376
-#: code/t2/templates.php:393
+#: code/t2/templates.php:215
+#: code/t2/templates.php:329
+#: code/t2/templates.php:360
+#: code/t2/templates.php:378
+#: code/t2/templates.php:395
 msgid "total up votes for article"
 msgstr "totale vot favorevoli per l'articolo"
 
-#: code/t2/templates.php:328
-#: code/t2/templates.php:359
-#: code/t2/templates.php:377
-#: code/t2/templates.php:394
+#: code/t2/templates.php:216
+#: code/t2/templates.php:330
+#: code/t2/templates.php:361
+#: code/t2/templates.php:379
+#: code/t2/templates.php:396
 msgid "total down votes for article"
 msgstr "totale voti sfavorevoli per l'articolo"
 
-#: code/t2/templates.php:348
+#: code/t2/templates.php:231
+msgid "Widget Blog Rating"
+msgstr "Widget valutazione blog"
+
+#: code/t2/templates.php:238
+#: code/t2/templates.php:327
+#: code/t2/templates.php:358
+msgid "article percentage rating"
+msgstr "percentuale valutazione articolo"
+
+#: code/t2/templates.php:243
+msgid "Widget Comments Rating"
+msgstr "Widget valutazione commenti"
+
+#: code/t2/templates.php:249
+msgid "comment contents"
+msgstr "contenuti commento"
+
+#: code/t2/templates.php:250
+msgid "url to comment"
+msgstr "URL commento"
+
+#: code/t2/templates.php:252
+msgid "post id"
+msgstr "ID articolo"
+
+#: code/t2/templates.php:254
+msgid "comment id"
+msgstr "ID commento"
+
+#: code/t2/templates.php:255
+msgid "name of the comments author"
+msgstr "nome autore commenti"
+
+#: code/t2/templates.php:256
+msgid "authors url"
+msgstr "URL autori"
+
+#: code/t2/templates.php:257
+msgid "authors avatar"
+msgstr "avatar autori"
+
+#: code/t2/templates.php:266
+msgid "Standard Review Rating Block"
+msgstr "Blocco standard valutazione revisione"
+
+#: code/t2/templates.php:275
+msgid "Comments Review Rating Block"
+msgstr "Blocco valutazione revisione commenti"
+
+#: code/t2/templates.php:282
+msgid "Multi Review Rating Block"
+msgstr "Blocco valutazione revisioni multiple"
+
+#: code/t2/templates.php:291
+msgid "Aggregated Comments Review Rating"
+msgstr "Valutazione revisione commenti aggregati"
+
+#: code/t2/templates.php:301
+msgid "Multi Review Editor"
+msgstr "Editor revisione multipla"
+
+#: code/t2/templates.php:308
+msgid "Multi Rating Comment Integration"
+msgstr "Integrazione commenti revisione multipla"
+
+#: code/t2/templates.php:315
+msgid "Multi Rating Comment Integration Result"
+msgstr "Risultato integrazione commenti revisione multipla"
+
+#: code/t2/templates.php:323
+msgid "Thumbs Article Ratings Text"
+msgstr "Testo thumb valutazioni articolo "
+
+#: code/t2/templates.php:350
 msgid "Thumbs Article Rating Block"
 msgstr "Blocco Thumb valutazione"
 
-#: code/t2/templates.php:350
-#: code/t2/templates.php:387
+#: code/t2/templates.php:352
+#: code/t2/templates.php:389
 msgid "thumb down image style"
 msgstr "stile immagine thumb giù"
 
-#: code/t2/templates.php:351
-#: code/t2/templates.php:388
+#: code/t2/templates.php:353
+#: code/t2/templates.php:390
 msgid "thumb up image style"
 msgstr "stule immagine thumb su"
 
-#: code/t2/templates.php:366
-#: code/t2/templates.php:403
+#: code/t2/templates.php:368
+#: code/t2/templates.php:405
 msgid "Inactive"
 msgstr "Inattivo"
 
-#: code/t2/templates.php:367
-#: code/t2/templates.php:404
+#: code/t2/templates.php:369
+#: code/t2/templates.php:406
 msgid "Active"
 msgstr "Attivo"
 
-#: code/t2/templates.php:370
+#: code/t2/templates.php:372
 msgid "Thumbs Comment Ratings Text"
 msgstr "Testo thumb valutazione commento"
 
-#: code/t2/templates.php:374
-#: code/t2/templates.php:391
+#: code/t2/templates.php:376
+#: code/t2/templates.php:393
 msgid "comment percentage rating"
 msgstr "percentuale valutazione commento"
 
-#: code/t2/templates.php:385
+#: code/t2/templates.php:387
 msgid "Thumbs Comment Rating Block"
 msgstr "Blocco thumb valutazione commento"
 
@@ -1286,7 +1288,7 @@ msgid "Multi Sets"
 msgstr "Impostazioni multiple"
 
 #: code/class.php:689
-#: code/class.php:926
+#: code/class.php:920
 #: options/builder.php:8
 #: options/settings.php:37
 #: tinymce3/panels/articlesrater.php:11
@@ -1347,44 +1349,44 @@ msgstr "Strumenti"
 msgid "Setup"
 msgstr "Setup"
 
-#: code/class.php:998
-#: code/class.php:1001
+#: code/class.php:992
+#: code/class.php:995
 msgid "Latest"
 msgstr "Recenti"
 
-#: code/class.php:1576
+#: code/class.php:1570
 msgid "articles records from log table removed."
 msgstr "i dati degli articoli sono stati rimossi dalla tabella del registro."
 
-#: code/class.php:1578
+#: code/class.php:1572
 msgid "comments records from log table removed."
 msgstr "i dati dei commenti sono stati rimossi dalla tabella del registro."
 
-#: code/class.php:1582
+#: code/class.php:1576
 msgid "articles records from trends log table removed."
 msgstr "i dati degli articoli sono stati rimossi dalla tabella del registro tendenze."
 
-#: code/class.php:1584
+#: code/class.php:1578
 msgid "comments records from trends log table removed."
 msgstr "i dati dei commenti sono stati rimossi dalla tabella del registro tendenze."
 
-#: code/class.php:1588
+#: code/class.php:1582
 msgid "dead articles records from articles table."
 msgstr "i dati degli articoli inesistenti sono stati rimossi dalla tabella degli articoli."
 
-#: code/class.php:1590
+#: code/class.php:1584
 msgid "post revisions records from articles table."
 msgstr "i dati delle revisioni articoli sono stati rimossi dalla tabella degli articoli."
 
-#: code/class.php:1592
+#: code/class.php:1586
 msgid "dead comments records from comments table."
 msgstr "i dati dei commenti inesistenti sono stati rimossi dalla tabella dei commenti."
 
-#: code/class.php:1596
+#: code/class.php:1590
 msgid "dead articles records from multi ratings tables."
 msgstr "i dati degli articoli sono stati rimossi dalla tabella delle valutazioni multiple."
 
-#: code/class.php:1598
+#: code/class.php:1592
 msgid "post revisions records from multi ratings tables."
 msgstr "i dati della revisione articolo sono stati rimossi dalla tabella delle valutazioni multiple."
 
@@ -1413,9 +1415,9 @@ msgstr "Tutte le sezioni"
 #: options/articles.php:122
 #: options/users.php:59
 #: options/voters.php:129
-#: tinymce3/panels/filter.php:62
+#: tinymce3/panels/filter.php:64
 #: widgets/rating/part_filter.php:87
-#: widgets/rating_28/part_filter.php:97
+#: widgets/rating_28/part_filter.php:99
 msgid "ID"
 msgstr "ID"
 
@@ -1695,7 +1697,7 @@ msgstr "Limitazione"
 #: options/elements/articles_options.php:131
 #: options/multis/results_post.php:223
 #: options/categories.php:186
-#: tinymce3/panels/filter.php:94
+#: tinymce3/panels/filter.php:96
 msgid "Date"
 msgstr "Data"
 
@@ -1886,11 +1888,11 @@ msgstr "Voti"
 #: options/settings/settings_multis.php:10
 #: options/settings/settings_thumbs_articles.php:1
 #: options/settings/settings_thumbs_comments.php:1
-#: tinymce3/panels/filter.php:60
+#: tinymce3/panels/filter.php:62
 #: widgets/comments/part_filter.php:46
 #: widgets/comments_28/part_filter.php:46
 #: widgets/rating/part_filter.php:85
-#: widgets/rating_28/part_filter.php:95
+#: widgets/rating_28/part_filter.php:97
 msgid "Rating"
 msgstr "Valutazione"
 
@@ -1953,9 +1955,9 @@ msgstr "Tutti"
 #: options/settings/settings_articles.php:184
 #: options/settings/settings_comments.php:198
 #: options/comments.php:82
-#: tinymce3/panels/filter.php:64
+#: tinymce3/panels/filter.php:66
 #: widgets/rating/part_filter.php:89
-#: widgets/rating_28/part_filter.php:99
+#: widgets/rating_28/part_filter.php:101
 msgid "Review"
 msgstr "Revisione"
 
@@ -2517,13 +2519,13 @@ msgid "Search Posts"
 msgstr "Ricerca articoli"
 
 #: options/multis/results_post.php:114
-#: tinymce3/panels/filter.php:63
+#: tinymce3/panels/filter.php:65
 #: widgets/comments/part_basic.php:2
 #: widgets/comments_28/part_basic.php:2
 #: widgets/rating/part_basic.php:2
 #: widgets/rating/part_filter.php:88
 #: widgets/rating_28/part_basic.php:2
-#: widgets/rating_28/part_filter.php:98
+#: widgets/rating_28/part_filter.php:100
 #: widgets/top/part_basic.php:2
 #: widgets/top_28/part_basic.php:2
 msgid "Title"
@@ -3650,7 +3652,7 @@ msgid "Shortcode/Functions"
 msgstr "Shortcode/Funzioni"
 
 #: options/categories.php:62
-#: tinymce3/panels/filter.php:29
+#: tinymce3/panels/filter.php:31
 msgid "Category"
 msgstr "Categoria"
 
@@ -4028,23 +4030,23 @@ msgid "Include Articles"
 msgstr "Inserisci in"
 
 #: tinymce3/panels/blograting.php:12
-#: tinymce3/panels/filter.php:13
+#: tinymce3/panels/filter.php:15
 msgid "Posts And Pages"
 msgstr "Articoli e pagine"
 
 #: tinymce3/panels/blograting.php:13
-#: tinymce3/panels/filter.php:14
+#: tinymce3/panels/filter.php:16
 #: widgets/rating/part_filter.php:17
-#: widgets/rating_28/part_filter.php:26
+#: widgets/rating_28/part_filter.php:28
 #: widgets/top/part_filter.php:17
 #: widgets/top_28/part_filter.php:17
 msgid "Posts Only"
 msgstr "Solo articoli"
 
 #: tinymce3/panels/blograting.php:14
-#: tinymce3/panels/filter.php:15
+#: tinymce3/panels/filter.php:17
 #: widgets/rating/part_filter.php:18
-#: widgets/rating_28/part_filter.php:27
+#: widgets/rating_28/part_filter.php:29
 #: widgets/top/part_filter.php:18
 #: widgets/top_28/part_filter.php:18
 msgid "Pages Only"
@@ -4060,7 +4062,7 @@ msgstr "Mostra i voti di"
 
 #: tinymce3/panels/blograting.php:21
 #: tinymce3/panels/commentsaggr.php:16
-#: tinymce3/panels/filter.php:23
+#: tinymce3/panels/filter.php:25
 #: widgets/comments/part_basic.php:16
 #: widgets/comments/part_filter.php:16
 #: widgets/comments_28/part_basic.php:16
@@ -4068,7 +4070,7 @@ msgstr "Mostra i voti di"
 #: widgets/rating/part_basic.php:15
 #: widgets/rating/part_filter.php:27
 #: widgets/rating_28/part_basic.php:16
-#: widgets/rating_28/part_filter.php:37
+#: widgets/rating_28/part_filter.php:39
 #: widgets/top/part_basic.php:16
 #: widgets/top/part_filter.php:27
 #: widgets/top_28/part_basic.php:16
@@ -4078,7 +4080,7 @@ msgstr "Tutti"
 
 #: tinymce3/panels/blograting.php:23
 #: tinymce3/panels/commentsaggr.php:18
-#: tinymce3/panels/filter.php:25
+#: tinymce3/panels/filter.php:27
 #: widgets/comments/part_basic.php:18
 #: widgets/comments/part_filter.php:18
 #: widgets/comments_28/part_basic.php:18
@@ -4086,7 +4088,7 @@ msgstr "Tutti"
 #: widgets/rating/part_basic.php:17
 #: widgets/rating/part_filter.php:29
 #: widgets/rating_28/part_basic.php:18
-#: widgets/rating_28/part_filter.php:39
+#: widgets/rating_28/part_filter.php:41
 #: widgets/top/part_basic.php:18
 #: widgets/top/part_filter.php:29
 #: widgets/top_28/part_basic.php:18
@@ -4110,145 +4112,145 @@ msgstr "Calcola i voti da"
 msgid "Basic"
 msgstr "Base"
 
-#: tinymce3/panels/filter.php:4
-#: widgets/rating/part_filter.php:13
-msgid "Include articles"
-msgstr "Includi articoli"
+#: tinymce3/panels/filter.php:5
+#: widgets/rating_28/part_filter.php:14
+msgid "Include post types"
+msgstr "Includi i post"
 
-#: tinymce3/panels/filter.php:8
-#: widgets/rating_28/part_filter.php:17
-msgid "(all)"
-msgstr "(tutto)"
+#: tinymce3/panels/filter.php:6
+#: widgets/rating_28/part_filter.php:15
+msgid "Select one or more."
+msgstr "Seleziona 1 o più."
 
-#: tinymce3/panels/filter.php:21
+#: tinymce3/panels/filter.php:23
 #: widgets/rating/part_filter.php:24
-#: widgets/rating_28/part_filter.php:34
+#: widgets/rating_28/part_filter.php:36
 msgid "Display votes from"
 msgstr "Mostra i voti da"
 
-#: tinymce3/panels/filter.php:33
+#: tinymce3/panels/filter.php:35
 #: widgets/rating/part_filter.php:52
-#: widgets/rating_28/part_filter.php:62
+#: widgets/rating_28/part_filter.php:64
 msgid "Minimum votes"
 msgstr "Minimo voti"
 
-#: tinymce3/panels/filter.php:37
+#: tinymce3/panels/filter.php:39
 msgid "Excerpt words"
 msgstr "Numero max parole per il riassunto"
 
-#: tinymce3/panels/filter.php:44
+#: tinymce3/panels/filter.php:46
 msgid "Grouping Specific"
 msgstr "Raggruppamento specifico"
 
-#: tinymce3/panels/filter.php:47
+#: tinymce3/panels/filter.php:49
 #: widgets/rating/part_filter.php:65
-#: widgets/rating_28/part_filter.php:75
+#: widgets/rating_28/part_filter.php:77
 msgid "Minimum posts count"
 msgstr "Conteggio minimo articoli"
 
-#: tinymce3/panels/filter.php:54
+#: tinymce3/panels/filter.php:56
 msgid "Sorting"
 msgstr "Disposizione"
 
-#: tinymce3/panels/filter.php:57
+#: tinymce3/panels/filter.php:59
 msgid "Column"
 msgstr "Colonna"
 
-#: tinymce3/panels/filter.php:61
+#: tinymce3/panels/filter.php:63
 #: widgets/comments/part_filter.php:47
 #: widgets/comments_28/part_filter.php:47
 #: widgets/rating/part_filter.php:86
-#: widgets/rating_28/part_filter.php:96
+#: widgets/rating_28/part_filter.php:98
 msgid "Total Votes"
 msgstr "Totale voti"
 
-#: tinymce3/panels/filter.php:65
+#: tinymce3/panels/filter.php:67
 #: widgets/rating/part_filter.php:90
-#: widgets/rating_28/part_filter.php:100
+#: widgets/rating_28/part_filter.php:102
 msgid "Count"
 msgstr "Calcolo"
 
-#: tinymce3/panels/filter.php:66
+#: tinymce3/panels/filter.php:68
 #: widgets/rating/part_filter.php:91
-#: widgets/rating_28/part_filter.php:101
+#: widgets/rating_28/part_filter.php:103
 msgid "Bayesian Rating"
 msgstr "Valutazione bayesiana"
 
-#: tinymce3/panels/filter.php:71
+#: tinymce3/panels/filter.php:73
 msgid "Order"
 msgstr "Ordine"
 
-#: tinymce3/panels/filter.php:74
+#: tinymce3/panels/filter.php:76
 #: widgets/comments/part_filter.php:57
 #: widgets/comments_28/part_filter.php:57
 #: widgets/rating/part_filter.php:100
-#: widgets/rating_28/part_filter.php:110
+#: widgets/rating_28/part_filter.php:112
 msgid "Descending"
 msgstr "Decrescente"
 
-#: tinymce3/panels/filter.php:75
+#: tinymce3/panels/filter.php:77
 #: widgets/comments/part_filter.php:58
 #: widgets/comments_28/part_filter.php:58
 #: widgets/rating/part_filter.php:101
-#: widgets/rating_28/part_filter.php:111
+#: widgets/rating_28/part_filter.php:113
 msgid "Ascending"
 msgstr "Ascendente"
 
-#: tinymce3/panels/filter.php:83
+#: tinymce3/panels/filter.php:85
 msgid "Last Voted"
 msgstr "Votati di recente"
 
-#: tinymce3/panels/filter.php:84
+#: tinymce3/panels/filter.php:86
 #: widgets/rating/part_filter.php:146
-#: widgets/rating_28/part_filter.php:156
+#: widgets/rating_28/part_filter.php:158
 msgid "Use only articles voted for in last # days."
 msgstr "Utilizza solo gli articoli votati negli ultimi x giorni"
 
-#: tinymce3/panels/filter.php:87
+#: tinymce3/panels/filter.php:89
 #: widgets/comments/part_filter.php:77
 #: widgets/comments_28/part_filter.php:77
 #: widgets/rating/part_filter.php:151
-#: widgets/rating_28/part_filter.php:161
+#: widgets/rating_28/part_filter.php:163
 msgid "Enter 0 for all"
 msgstr "Imposta a 0 per tutti"
 
-#: tinymce3/panels/filter.php:97
+#: tinymce3/panels/filter.php:99
 msgid "Publish Date"
 msgstr "Data pubblicazione"
 
-#: tinymce3/panels/filter.php:100
+#: tinymce3/panels/filter.php:102
 #: widgets/rating/part_filter.php:168
-#: widgets/rating_28/part_filter.php:178
+#: widgets/rating_28/part_filter.php:180
 msgid "Last # days"
 msgstr "Ultimi x giorni"
 
-#: tinymce3/panels/filter.php:101
+#: tinymce3/panels/filter.php:103
 #: widgets/rating/part_filter.php:169
-#: widgets/rating_28/part_filter.php:179
+#: widgets/rating_28/part_filter.php:181
 msgid "Exact month"
 msgstr "Mese esatto"
 
-#: tinymce3/panels/filter.php:102
+#: tinymce3/panels/filter.php:104
 #: widgets/rating/part_filter.php:170
-#: widgets/rating_28/part_filter.php:180
+#: widgets/rating_28/part_filter.php:182
 msgid "Date range"
 msgstr "Intervallo date"
 
-#: tinymce3/panels/filter.php:110
+#: tinymce3/panels/filter.php:112
 #: widgets/rating/part_filter.php:179
-#: widgets/rating_28/part_filter.php:189
+#: widgets/rating_28/part_filter.php:191
 msgid "Number Of Days"
 msgstr "Numero di giorni"
 
-#: tinymce3/panels/filter.php:120
+#: tinymce3/panels/filter.php:122
 #: widgets/rating/part_filter.php:190
-#: widgets/rating_28/part_filter.php:200
+#: widgets/rating_28/part_filter.php:202
 msgid "Month"
 msgstr "Mese"
 
-#: tinymce3/panels/filter.php:130
+#: tinymce3/panels/filter.php:132
 #: widgets/rating/part_filter.php:201
-#: widgets/rating_28/part_filter.php:211
+#: widgets/rating_28/part_filter.php:213
 msgid "Range"
 msgstr "Periodo"
 
@@ -4388,20 +4390,20 @@ msgstr "Occultamento"
 
 #: tinymce3/panels/general.php:133
 #: widgets/rating/part_filter.php:108
-#: widgets/rating_28/part_filter.php:118
+#: widgets/rating_28/part_filter.php:120
 msgid "Bayesian minumum votes required."
 msgstr "Numero min voti per calcolo probabilità (bayesiana)."
 
 #: tinymce3/panels/general.php:134
 #: widgets/comments_28/part_filter.php:65
 #: widgets/rating/part_filter.php:114
-#: widgets/rating_28/part_filter.php:124
+#: widgets/rating_28/part_filter.php:126
 msgid "Hide articles with no recorded votes."
 msgstr "Non mostrare gli articoli senza voti."
 
 #: tinymce3/panels/general.php:135
 #: widgets/rating/part_filter.php:120
-#: widgets/rating_28/part_filter.php:130
+#: widgets/rating_28/part_filter.php:132
 msgid "Hide articles with no review values."
 msgstr "Non mostrare gli articoli senza valutazione."
 
@@ -4591,60 +4593,64 @@ msgstr "Utilizza solo i commenti votati negli ultimi x giorni."
 msgid "Avatar"
 msgstr "Avatar"
 
+#: widgets/rating/part_filter.php:13
+msgid "Include articles"
+msgstr "Includi articoli"
+
 #: widgets/rating/part_filter.php:16
-#: widgets/rating_28/part_filter.php:25
+#: widgets/rating_28/part_filter.php:27
 #: widgets/top/part_filter.php:16
 #: widgets/top_28/part_filter.php:16
 msgid "Posts & Pages"
 msgstr "Articoli e pagine"
 
 #: widgets/rating/part_filter.php:35
-#: widgets/rating_28/part_filter.php:45
+#: widgets/rating_28/part_filter.php:47
 msgid "Number of posts"
 msgstr "Numero di articoli"
 
 #: widgets/rating/part_filter.php:42
-#: widgets/rating_28/part_filter.php:52
+#: widgets/rating_28/part_filter.php:54
 msgid "Maximal character length for title"
 msgstr "Numero massimo di caratteri per la lunghezza del titolo"
 
 #: widgets/rating/part_filter.php:47
-#: widgets/rating_28/part_filter.php:57
+#: widgets/rating_28/part_filter.php:59
 msgid "Number of words for excerpt"
 msgstr "Numero massimo di parole per il riassunto"
 
 #: widgets/rating/part_filter.php:72
-#: widgets/rating_28/part_filter.php:82
+#: widgets/rating_28/part_filter.php:84
 msgid "This filter will be used only with grouping options."
 msgstr "Questo filtro sarà utilizzabile solo per le opzioni raggruppamento "
 
 #: widgets/rating/part_filter.php:82
-#: widgets/rating_28/part_filter.php:92
+#: widgets/rating_28/part_filter.php:94
 msgid "Sorting column"
 msgstr "Modalità di ordinamento"
 
 #: widgets/rating/part_filter.php:97
-#: widgets/rating_28/part_filter.php:107
+#: widgets/rating_28/part_filter.php:109
 msgid "Sorting order"
 msgstr "Modalità di ordinamento"
 
 #: widgets/rating/part_filter.php:131
-#: widgets/rating_28/part_filter.php:141
+#: widgets/rating_28/part_filter.php:143
 msgid "Article Category"
 msgstr "Categoria articolo"
 
 #: widgets/rating/part_filter.php:139
-#: widgets/rating_28/part_filter.php:149
+#: widgets/rating_28/part_filter.php:151
 msgid "Only selected category, no subcategories."
 msgstr "Solo le categorie selezionate, non le categorie figlie."
 
 #: widgets/rating/part_filter.php:164
-#: widgets/rating_28/part_filter.php:174
+#: widgets/rating_28/part_filter.php:176
 msgid "Article Publish Date"
 msgstr "Data pubblicazione articolo"
 
 #: widgets/rating/part_filter.php:167
-#: widgets/rating_28/part_filter.php:177
+#: widgets/rating_28/part_filter.php:179
 msgid "Any date"
 msgstr "Ogni data"
 
@@ -4678,9 +4684,8 @@ msgstr "Revisiona dimensione"
 msgid "Thumbs Size"
 msgstr "Dimensione thumb"
 
-#: widgets/rating_28/part_filter.php:13
-msgid "Include post types"
-msgstr "Includi i post"
+#~ msgid "(all)"
+#~ msgstr "(tutto)"
 
 #~ msgid "Page"
 #~ msgstr "Pagina"

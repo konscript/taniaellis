@@ -25,6 +25,20 @@ if (isset($_GET["ex"])) {
 
     switch($export_type) {
         case "user":
+            $values = array("us" => array("min", "nor"), "de" => array("article", "comment"));
+
+            foreach ($get_data as $key => $value) {
+                if (isset($values[$key])) {
+                    if (!in_array($value, $values[$key])) {
+                        die("invalid_request");
+                    }
+                } else if ($key != "ex") {
+                    if ($value !== "on") {
+                        die("invalid_request");
+                    }
+                }
+            }
+
             header('Content-type: text/csv');
             header('Content-Disposition: attachment; filename="gdsr_export_'.$export_name.'.csv"');
             $sql = GDSRExport::export_users($_GET["us"], $_GET["de"], $get_data);

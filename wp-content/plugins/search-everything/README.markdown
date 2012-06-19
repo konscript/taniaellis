@@ -16,6 +16,7 @@ What it does:
 Search Everything increases the ability of the default Wordpress Search, options included:
 
 * Search Highlighting
+* Search By Author
 * Search Every Page
 * Search Every Tag
 * Search Custom Taxonomies ( new )
@@ -29,6 +30,11 @@ Search Everything increases the ability of the default Wordpress Search, options
 * Search Every Custom Field (metadata)
 * Exclude Posts from search
 * Exclude Categories from search
+
+
+Search Everything Plus
+============
+Premium version coming soon, get notified on updates [here](http://wpsearchplugin.com/get-notified/ "Get updates").
 
 
 Installation

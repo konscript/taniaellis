@@ -72,7 +72,6 @@ function wp_gdsr_debug_clean() {
 /**
  * Renders small 80x15 powered by GD Star Rating button.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param bool $echo echo results or return it as a string
  * @return string html with rendered contents
  */
@@ -86,7 +85,6 @@ function wp_gdsr_render_powered_by($echo = true) {
 /**
  * Makes rating blocks readonly regardless of other settings.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param bool $standard standard ratings will be read only
  * @param bool $multis multi ratings will be read only
  */
@@ -99,7 +97,6 @@ function wp_gdsr_integration_readonly($standard = false, $multis = false) {
 /**
  * Renders multi rating review header elements css and javascript.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param bool $echo echo results or return it as a string
  * @return string html with rendered contents
  */
@@ -122,14 +119,14 @@ function gd_get_multi_set($id = 0) {
         $set->object = unserialize($set->object);
         $set->weight = unserialize($set->weight);
         return $set;
+    } else {
+        return null;
     }
-    else return null;
 }
 
 /**
  * Get the array with objects with user votes.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param int $user_id ID of the user to get data for
  * @param int $limit number of votes to get
  * @param array $filter variables to determine data to be retrieved
@@ -143,9 +140,8 @@ function gdsr_get_users_votes($user_id, $limit = 100, $filter = array()) {
 /**
  * Get multi set id based on global and categoires rules.
  *
- * @global GDStarRating $gdsr main rating class instance
- * @global object $post post data
  * @param int $post_id post to get review for
+ * @return object multi set for the post
  */
 function gdsr_get_multi_set($post_id = 0) {
     global $gdsr;
@@ -163,7 +159,7 @@ if (!function_exists("is_msie6")) {
      * @return bool true if the browser is IE6
      */
     function is_msie6() {
-        $agent = $_SERVER['HTTP_USER_AGENT'];
+        $agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
         if (preg_match("/msie/i", $agent) && !preg_match("/opera/i", $agent)) {
             $val = explode(" ", stristr($agent, "msie"));
             $version = substr($val[1], 0, 1);

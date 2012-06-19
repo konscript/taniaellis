@@ -2,8 +2,8 @@
 /*
 Plugin Name: HTML Page Sitemap
 Plugin URI: http://www.pluginspodcast.com/plugins/html-page-sitemap/
-Description: <a href="http://www.pluginspodcast.com/plugins/html-page-sitemap/" target="_blank">HTML Page Sitemap</a> Adds an HTML (Not XML) sitemap of your blog pages (not posts) by entering the shortcode [html-sitemap]. A plugin from <a href="http://www.pluginspodcast.com/" target="_blank">Plugins: The WordPress Plugins Podcast</a>.
-Version: 1.1.1
+Description: <a href="http://www.pluginspodcast.com/plugins/html-page-sitemap/" target="_blank">HTML Page Sitemap</a> Adds an HTML (Not XML) sitemap of your blog pages (not posts) by entering the shortcode [html_sitemap]. A plugin from <a href="http://www.pluginspodcast.com/" target="_blank">Plugins: The WordPress Plugins Podcast</a>.
+Version: 1.1.2
 Author: Angelo Mandato
 Author URI: http://www.pluginspodcast.com/
 Change Log:
@@ -12,7 +12,7 @@ Change Log:
 Contributors:
 	Angelo Mandato, CIO RawVoice and host of the PluginsPodcast.com - Plugin author
 	
-Copyright 2009=2010 Angelo Mandato, host of the Plugins Podcast (http://www.pluginspodcast.com)
+Copyright 2009-2012 Angelo Mandato, host of the Plugins Podcast (http://www.pluginspodcast.com)
 
 License: GPL (http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)
 */
@@ -51,6 +51,8 @@ function html_sitemap_shortcode_handler( $args, $content = null )
 	return '<ul>'. $html .'</ul>';
 }
 
-add_shortcode('html-sitemap', 'html_sitemap_shortcode_handler');
+add_shortcode('html-sitemap', 'html_sitemap_shortcode_handler'); // This is no longer recommended as any plugin that creates their own shortcode starting with 'html' will also get the handler call
+add_shortcode('htmlsitemap', 'html_sitemap_shortcode_handler');
+add_shortcode('html_sitemap', 'html_sitemap_shortcode_handler');
 
 ?>

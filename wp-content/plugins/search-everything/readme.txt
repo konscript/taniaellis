@@ -2,9 +2,9 @@
 Contributors: dancameron, sproutventure
 Donate link: http://bit.ly/plugin-donations
 Tags: search, search highlight, tag search, category search, category exclusion, comment search, page search, admin, seo, post filter
-Requires at least: 2.1
+Requires at least: 3
 Tested up to: 3.3
-Stable tag: 6.7
+Stable tag: 6.9.3.1
 
 Increases Wordpress' default search functionality in three easy steps.
 
@@ -56,11 +56,11 @@ Read the installation guide.
 
 = Where is feature x? =
 
-[Github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues") Label it as a "feature-request"
+[github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues"). Label it as a "feature-request"
 
 = It *still* doesn't work (and you're certain there's a bug) =
 
-[Github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues")
+[github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues")
 
 = What Translations are included? =
 
@@ -90,8 +90,8 @@ Read the installation guide.
 
 == Help ==
 
-Fork this plugin on github and send me requests to commit your changes upstream.
+Send me your pull requests on [github](https://github.com/sproutventure/search-everything-wordpress-plugin "github")
 
 == Support ==
 
-Use the WordPress forums.
+[github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues")

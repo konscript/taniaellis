@@ -1,10 +1,10 @@
 === GD Star Rating ===
-Contributors: gdragon
-Version: 1.9.10
+Contributors: GDragoN
+Version: 1.9.18
 Donate link: http://www.dev4press.com/plugins/gd-star-rating/
-Tags: vote, ratings, cache, integration, post, page, widget, thumb, rating, star, gdragon, ajax, templates, trends, comments, review, multi, wpmu
+Tags: vote, ratings, post, page, widget, thumb, rating, star, gdragon, ajax, cache, integration, templates, trends, comments, review, multi, wpmu, network
 Requires at least: 2.8
-Tested up to: 3.2.0
+Tested up to: 3.4
 Stable tag: trunk
 
 Plugin allows you to set up advanced rating and review system for post types and comments in your blog using single, multi and thumbs ratings.
@@ -28,20 +28,11 @@ Plugin is provided for free, and that is not going to change. But support is not
 [Features](http://www.dev4press.com/plugins/gd-star-rating/features/) |
 [Twitter](http://twitter.com/milangd)
 
-= Plugin Reference =
-[Functions](http://info.dev4press.com/gd-star-rating/functions.html) |
-[WP Query](http://info.dev4press.com/gd-star-rating/wpquery.html) |
-[Actions & Filters](http://info.dev4press.com/gd-star-rating/filters.html) |
-[Database Layout](http://code.google.com/p/gd-star-rating/wiki/DatabaseTablesFormat) |
-[Translations](http://info.dev4press.com/gd-star-rating/languages.html)
-
 = Using the Plugin =
 [Tutorials](http://www.gdstarrating.com/category/tutorials/) |
 [Advanced](http://www.gdstarrating.com/category/tutorials/advanced/) |
 [User Guide](http://www.gdstarrating.com/downloads/user-guide/) |
-[Issue Tracker](http://tracker.gdstarrating.com/) |
-[Forum](http://forum.gdragon.info/viewforum.php?f=9) |
-[Source](http://code.google.com/p/gd-star-rating/)
+[Database Layout](http://code.google.com/p/gd-star-rating/wiki/DatabaseTablesFormat) |
 
 == Installation ==
 = Minimal Requirements =
@@ -141,7 +132,7 @@ This is not a bug, but a well-known excerpt problem More details on that and the
 Yes. Plugin supports all cache plugins and can load ratings using ajax to keep them current and to avoid ratings to be cached. To enable this feature, you need to activate it on the plugins Settings panel, tab Features, and option Cache Support. You can use this option even if you don't use cache plugins. Instead of showing ratings with the page, plugin will render loading message that will be replaced with rating block once the page is fully loaded.
 
 = Which cache plugin is recommended? =
-I recommend using W3 Total Cache plugin: http://wordpress.org/extend/plugins/w3-total-cache/. It's already set to work with GD Star Rating.
+I recommend using W3 Total Cache plugin: http://WordPress.org/extend/plugins/w3-total-cache/. It's already set to work with GD Star Rating.
 
 = After upgrade plugin is not rendering stars, and only a loading message appears. =
 This is caused by the cache plugins support enabled that causes rating block to be loaded after the page is ready. To disable this feature, you need to deactivate it on the plugins Settings panel, tab Features, option Cache Support.
@@ -179,14 +170,54 @@ I can't guarantee that plugin will work on every WordPress setup. In 99.9% of th
 7. Example multi rating block
 
 == Upgrade Notice ==
-= 1.9.9 =
-Minor changes and improvements to the templates system. Fixed missing default parameters for rating shortcode. Fixed JSONP callback function printed without checking for validity (thanks to Julio from www.boiteaweb.fr). Fixed very rare memory leak caused by loading of templates definitions.
+= 1.9.18 =
+Some extra information for the upcoming GD Star Rating 2.0. Fixed problem with changing the query with sorting for ratings.
 
 == Changelog ==
+= 1.9.18 =
+* Some extra information for the upcoming GD Star Rating 2.0
+* Fixed problem with changing the query with sorting for ratings
+
+= 1.9.17 =
+* Fixed potential vulnerability for the t2 templates panel editor
+* Fixed several warnings during the creation of new template
+
+= 1.9.16 =
+* Additional arguments for some of the rendering functions
+* Several new actions and filters for ajax and rendering ( thanks to Galen Wright-Watson: http://sublimitywebdesign.com/ )
+* Static directive added to functions in some classes ( thanks to Galen Wright-Watson )
+* Conditional load of debug version of gdsr.js ( thanks to Galen Wright-Watson )
+* Fixed several potential undefined warnings ( thanks to Galen Wright-Watson )
+* Fixed replaced deprecated wp_specialchars function ( thanks to Galen Wright-Watson )
+* Fixed replaced deprecated fetch_rss function ( thanks to Galen Wright-Watson )
+
+= 1.9.15 =
+* Using user roles and capabilities instead of user levels
+* Information panel for upcoming GDSR 2.0
+* Fixed several deprecated warnings caused by use of user levels
+* Fixed query parameter issue with the main CSS file ( thanks to Emil Sirbu: http://trafictube.ro )
+
+= 1.9.14 =
+* Added filters for rating values before saving to database
+* Fixed votes keyword used for Google rich snippets integration
+
+= 1.9.13 =
+* Changes to some of the rendering functions
+
+= 1.9.12 =
+* Plugin is tested with WordPress 3.3, no problems were found
+* Removed some obsolete website links from info files
+* Several minor changes and cleanup of the public functions
+* Fixed validity data check could generate warnings in the gdsr.css.php
+
+= 1.9.11 =
+* Minor changes to filters attached to posts
+* Fixed export script SQL injection exploit ( thanks to Miroslav Stampar for reporting, http://about.me/stamparm )
+
 = 1.9.10 =
 * Minor changes and improvements to the templates system
 * Fixed missing default parameters for rating shortcode
-* Fixed JSONP callback function printed without checking for validity (thanks to Julio from www.boiteaweb.fr)
+* Fixed JSONP callback function printed without checking for validity ( thanks to Julio from http://www.boiteaweb.fr )
 * Fixed very rare memory leak caused by loading of templates definitions
 
 = 1.9.9 =
@@ -248,111 +279,3 @@ Minor changes and improvements to the templates system. Fixed missing default pa
 = 1.9.0 =
 * Google Rich Snippets support for RDF and Microdata formats
 * Improved templates for Google Rich Snippets
-
-= 1.8.9 =
-* More options for google rich snippet
-* Added robots nofollow/noindex for plugin ajax handler
-* Added info on using the gdsr-config.php file
-* Fixed enqueue of js and css for non plugin admin pages
-* Some minor problems with js on admin pages
-
-= 1.8.8 =
-* Fixed invalid header order for export data to csv
-* Fixed invalid default rules for post meta box thumbs
-* Fixed minor problem with loading js datepicker translation
-
-= 1.8.7 =
-* Fixed comment text fails validation due to filter order
-* Fixed URL to the datepicker translation file
-
-= 1.8.6 =
-* Changed JSON response for votes to be jquery 1.4 compatible
-
-= 1.8.5 =
-* Added some new tags for T2 rating blocks
-* Additional CSS classes for rating blocks
-* Several functions improved
-* Proper use of thumbs voting rules
-* Few minor bugs fixes
-
-= 1.8.4 =
-* Global rules tool changed and improved
-* Fixed some integration problems
-* Cache cleanup can fail in some cases
-
-= 1.8.3 =
-* New improved and packed main JS ratings file
-* Replaced noticed WordPress depracted functions
-* Several more php notices fixed
-
-= 1.8.2 =
-* Few new functions and updates to comment integration
-* Improvements in main CSS file
-* Several fixes and changes
-
-= 1.8.1 =
-* Updated several translations
-* Override thumbs no votes percentage not used
-* Minor WP 2.9 issues with datepicker loading
-* Several important fixes and changes
-
-= 1.8.0 MMX =
-* Setting for default percentage value
-* Rewritten multi editor functions
-* Several important fixes and changes
-
-= 1.7.9 =
-* Control output for search engine bots
-* Few fixes and imporovements
-
-= 1.7.8 =
-* Few more tags added into templates
-* Several rendering and other minor issues fixed
-
-= 1.7.7 =
-* Belorussian translation
-* Broken loading of js breaks some admin pages
-
-= 1.7.6 =
-* Rewritten taxonomy based calculation
-* Improved JS and CSS loading for admin pages, JS moved to footer
-* Removed old charts code and dashboard chart widget
-* Some warnings and minor bugs fixed
-
-= 1.7.5 =
-* Integration function for Google Rich Snippets
-* Several more bugs fixed
-
-= 1.7.4 =
-* Permanently solved famous excerpt problem
-* Fully implemented google rich snippets support
-* Controls for google rich snippets integration
-* New templates import and export
-* Loaders optimizations for main CSS file
-* Several more bugs fixed
-
-= 1.7.3 =
-* More code optimizations
-* New config file options
-* Several bugs fixed
-
-= 1.7.2 =
-* Fixed few critical bugs in rating rendering
-* Several more bugs in widgets and javascript
-* More PHP warnings and notices fixed
-
-= 1.7.1 =
-* Major code reorganization, optimization, speed up and less memory usage
-* Redesign for some plugins panels
-* Many multi review and rating bugs bugs fixed
-* Several more problems and notices solved
-
-= 1.7.0 =
-* Removed support for WordPress 2.6.x
-* Many more new filters for results and rendering
-* Cache plugins support for multis ratings
-* Improved category based comment integration
-* Expanded shortcodes and builder elements
-* JavaScript code refactored
-* Many more changes and improvements
-* Number of bugs fixed

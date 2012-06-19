@@ -1,25 +1,64 @@
+<div class="wrap"><h2 class="gdptlogopage">GD Star Rating: T2 <?php _e("Template Editor", "gd-star-rating"); ?></h2>
+
 <?php
 
-if ($id == 0) $section = $_POST["tpl_section"];
-else {
-    $tpl = wp_gdtpl_get_template($id);
-
-    $section = $tpl->section;
-    $elements = unserialize($tpl->elements);
-    $dependencies = unserialize($tpl->dependencies);
+$section = '';
+$all_sections = array();
+$raw_sections = $tpls->list_sections();
+foreach ($raw_sections as $value) {
+    $all_sections[] = $value['code'];
 }
 
-if ($mode == "copy") {
+if ($id == 0) {
+    $section = $_POST['tpl_section'];
+    $section = substr($section, 0, 3);
+
+    $tpl = new stdClass();
+    $tpl->section = $section;
+    $tpl->preinstalled = 0;
+    $tpl->default = 0;
+    $tpl->name = 'New Template';
+    $tpl->description = '';
+} else {
+    $tpl = wp_gdtpl_get_template($id);
+
+    if (is_object($tpl)) {
+        $section = $tpl->section;
+        $elements = unserialize($tpl->elements);
+        $dependencies = unserialize($tpl->dependencies);
+    }
+}
+
+if (!in_array($section, $all_sections)) {
+    echo '<h3>'.__("Your request is not valid.").'</h3>';
+} else {
+
+if ($mode == 'copy') {
     $id = 0;
-    $tpl->name = "New Template";
-    $tpl->description = "";
-} else if ($mode == "edit" && $tpl->preinstalled == "1") $id = 0;
+    $tpl->name = 'New Template';
+    $tpl->description = '';
+} else if ($mode == 'edit' && $tpl->preinstalled == "1") {
+    $id = 0;
+}
 
 $template = $tpls->get_list($section);
 
+if (!isset($tpl->elements)) {
+    $elements = array();
+    foreach ($template->parts as $part) {
+        $elements[$part->code] = '';
+    }
+}
+
+if (!isset($tpl->dependencies)) {
+    $dependencies = array();
+    foreach ($template->tpls as $part) {
+        $dependencies[$part->code] = 0;
+    }
+}
+
 ?>
 
-<div class="wrap"><h2 class="gdptlogopage">GD Star Rating: T2 <?php _e("Template Editor", "gd-star-rating"); ?></h2>
 <form method="post">
 <input type="hidden" name="gdsr_save_tpl" value="" />
 <input type="hidden" name="tpl_section" value="<?php echo $section ?>" />
@@ -65,8 +104,8 @@ $template = $tpls->get_list($section);
 $lines = count($template->parts) - 1;
 foreach ($template->parts as $p) {
     echo '<p class="tpl-edit-name">'.$p->name.":</p>";
-    if ($p->size == "single") echo '<input type="text" name="tpl_element['.$p->code.']" value="'.wp_specialchars($elements[$p->code]).'" style="width: 500px" /><br />';
-    else echo '<textarea rows="6" style="width: 500px" name="tpl_element['.$p->code.']">'.wp_specialchars($elements[$p->code]).'</textarea><br />';
+    if ($p->size == "single") echo '<input type="text" name="tpl_element['.$p->code.']" value="'.esc_attr($elements[$p->code]).'" style="width: 500px" /><br />';
+    else echo '<textarea rows="6" style="width: 500px" name="tpl_element['.$p->code.']">'.esc_html($elements[$p->code]).'</textarea><br />';
     if ($p->description != "") echo '<strong>'.__("Description", "gd-star-rating").':</strong><br />';
     echo '<strong>'.__("Allowed elements", "gd-star-rating").':</strong> ';
     if (is_array($p->elements)) {
@@ -113,4 +152,7 @@ foreach ($template->elements as $el) {
 </tr></table>
 </div>
 </form>
+
+<?php } ?>
+
 </div>

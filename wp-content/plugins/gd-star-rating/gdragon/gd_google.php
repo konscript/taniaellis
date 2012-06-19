@@ -58,7 +58,7 @@ if (!class_exists('gdGoogleRichSnippetsGDSR')) {
                     $tpl.= '<span class="item"><span class="fn">%TITLE%</span></span>, ';
                     $tpl.= '<span class="rating">';
                         $tpl.= '<span class="rating">%RATING%%</span>';
-                        $tpl.= ' %WORD_BASEDON% <span class="count">%VOTES%</span> %WORD_VOTES% ';
+                        $tpl.= ' %WORD_BASEDON% <span class="votes">%VOTES%</span> %WORD_VOTES% ';
                         $tpl.= '<span class="summary">%REVIEW_EXCERPT%</span>';
                     $tpl.= '</span>';
                 $tpl.= '</span>';
@@ -67,7 +67,7 @@ if (!class_exists('gdGoogleRichSnippetsGDSR')) {
                     $tpl.= '<span itemprop="itemreviewed"><span class="fn">%TITLE%</span></span>, ';
                     $tpl.= '<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">';
                         $tpl.= '<span itemprop="rating">%RATING%%</span>';
-                        $tpl.= ' %WORD_BASEDON% <span itemprop="count">%VOTES%</span> %WORD_VOTES% ';
+                        $tpl.= ' %WORD_BASEDON% <span itemprop="votes">%VOTES%</span> %WORD_VOTES% ';
                     $tpl.= '</span>';
                 $tpl.= '</span>';
             } else if ($this->snippet_type == "rdf") {
@@ -78,7 +78,7 @@ if (!class_exists('gdGoogleRichSnippetsGDSR')) {
                             $tpl.= '<span property="v:rating">%RATING%%</span>';
                         $tpl.= '</span>';
                     $tpl.= '</span>';
-                    $tpl.= ' %WORD_BASEDON% <span property="v:count">%VOTES%</span> %WORD_VOTES% ';
+                    $tpl.= ' %WORD_BASEDON% <span property="v:votes">%VOTES%</span> %WORD_VOTES% ';
                     $tpl.= '<span property="v:summary">%REVIEW_EXCERPT%</span>';
                 $tpl.= '</div>';
             }
@@ -116,7 +116,7 @@ if (!class_exists('gdGoogleRichSnippetsGDSR')) {
                     $tpl.= '<span class="rating">';
                         $tpl.= '<span class="average">%RATING%</span> %WORD_OUTOF% ';
                         $tpl.= '<span class="best">%MAX_RATING%</span>';
-                        $tpl.= ' %WORD_BASEDON% <span class="count">%VOTES%</span> %WORD_VOTES% ';
+                        $tpl.= ' %WORD_BASEDON% <span class="votes">%VOTES%</span> %WORD_VOTES% ';
                         $tpl.= '<span class="summary">%REVIEW_EXCERPT%</span>';
                     $tpl.= '</span>';
                 $tpl.= '</span>';
@@ -126,7 +126,7 @@ if (!class_exists('gdGoogleRichSnippetsGDSR')) {
                     $tpl.= '<span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">';
                         $tpl.= '<span itemprop="average">%RATING%</span> %WORD_OUTOF% ';
                         $tpl.= '<span itemprop="best">%MAX_RATING%</span>';
-                        $tpl.= ' %WORD_BASEDON% <span itemprop="count">%VOTES%</span> %WORD_VOTES% ';
+                        $tpl.= ' %WORD_BASEDON% <span itemprop="votes">%VOTES%</span> %WORD_VOTES% ';
                     $tpl.= '</span>';
                 $tpl.= '</span>';
             } else if ($this->snippet_type == "rdf") {
@@ -138,7 +138,7 @@ if (!class_exists('gdGoogleRichSnippetsGDSR')) {
                             $tpl.= '<span property="v:best">%MAX_RATING%</span>';
                         $tpl.= '</span>';
                     $tpl.= '</span>';
-                    $tpl.= ' %WORD_BASEDON% <span property="v:count">%VOTES%</span> %WORD_VOTES% ';
+                    $tpl.= ' %WORD_BASEDON% <span property="v:votes">%VOTES%</span> %WORD_VOTES% ';
                     $tpl.= '<span property="v:summary">%REVIEW_EXCERPT%</span>';
                 $tpl.= '</div>';
             }

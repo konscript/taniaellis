@@ -13,6 +13,8 @@ class gdsrVotes {
         $ua = $this->g->o["save_user_agent"] == 1 ? $_SERVER["HTTP_USER_AGENT"] : "";
         $user = is_object($userdata) ? $userdata->ID : 0;
 
+        $vote = apply_filters("gdsr_vote_thumb_article_value", $vote, $id);
+
 wp_gdsr_dump("VOTE_THUMB", "[POST: ".$id."] --".$vote."-- [".$user."] ".$unit_width."px");
 
         $allow_vote = $vote == "up" || $vote == "dw";
@@ -58,6 +60,8 @@ wp_gdsr_dump("VOTE_THUMB", "[POST: ".$id."] --".$vote."-- [".$user."] ".$unit_wi
         $ip = $_SERVER["REMOTE_ADDR"];
         $ua = $this->g->o["save_user_agent"] == 1 ? $_SERVER["HTTP_USER_AGENT"] : "";
         $user = is_object($userdata) ? $userdata->ID : 0;
+
+        $vote = apply_filters("gdsr_vote_thumb_comment_value", $vote, $id);
 
 wp_gdsr_dump("VOTE THUMB", "[CMM: ".$id."] --".$vote."-- [".$user."] ".$unit_width."px");
 
@@ -110,9 +114,11 @@ wp_gdsr_dump("VOTE THUMB", "[CMM: ".$id."] --".$vote."-- [".$user."] ".$unit_wid
         $data = GDSRDatabase::get_post_data($post_id);
         $set = gd_get_multi_set($set_id);
 
-wp_gdsr_dump("VOTE_MUR", "[POST: ".$post_id."|SET: ".$set_id."] --".$votes."-- [".$user."]");
-
         $values = explode("X", $votes);
+        $values = apply_filters("gdsr_vote_rating_multis_value", $values, $post_id, $set_id);
+
+wp_gdsr_dump("VOTE_MUR", "[POST: ".$post_id."|SET: ".$set_id."] --".join("X", $values)."-- [".$user."]");
+
         $allow_vote = true;
         foreach ($values as $v) {
             if ($v > $set->stars) {
@@ -154,6 +160,8 @@ wp_gdsr_dump("VOTE_MUR", "[POST: ".$post_id."|SET: ".$set_id."] --".$votes."-- [
         $ip = $_SERVER["REMOTE_ADDR"];
         $ua = $this->g->o["save_user_agent"] == 1 ? $_SERVER["HTTP_USER_AGENT"] : "";
         $user = is_object($userdata) ? $userdata->ID : 0;
+
+        $votes = apply_filters("gdsr_vote_rating_article_value", $votes, $id);
         $vote_value = $votes;
 
 wp_gdsr_dump("VOTE", "[POST: ".$id."] --".$votes."-- [".$user."] ".$unit_width."px");
@@ -204,6 +212,8 @@ wp_gdsr_dump("VOTE", "[POST: ".$id."] --".$votes."-- [".$user."] ".$unit_width."
         $ip = $_SERVER["REMOTE_ADDR"];
         if ($this->g->o["save_user_agent"] == 1) $ua = $_SERVER["HTTP_USER_AGENT"];
         else $ua = "";
+
+        $votes = apply_filters("gdsr_vote_rating_comment_value", $votes, $id);
         $vote_value = $votes;
 
 wp_gdsr_dump("VOTE_CMM", "[CMM: ".$id."] --".$votes."-- [".$user."] ".$unit_width."px");

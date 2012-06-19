@@ -2,7 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 /* 
 * +--------------------------------------------------------------------------+
-* | Copyright (c) 2008-2009 Add This, LLC                                    |
+* | Copyright (c) 2008-2012 Add This, LLC                                    |
 * +--------------------------------------------------------------------------+
 * | This program is free software; you can redistribute it and/or modify     |
 * | it under the terms of the GNU General Public License as published by     |
@@ -19,21 +19,34 @@
 * | Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA |
 * +--------------------------------------------------------------------------+
 */
-if (!defined('ADDTHIS_INIT')) define('ADDTHIS_INIT', 1);
-else return;
-
 /**
 * Plugin Name: AddThis Social Bookmarking Widget
 * Plugin URI: http://www.addthis.com
 * Description: Help your visitor promote your site! The AddThis Social Bookmarking Widget allows any visitor to bookmark your site easily with many popular services. Sign up for an AddThis.com account to see how your visitors are sharing your content--which services they're using for sharing, which content is shared the most, and more. It's all free--even the pretty charts and graphs.
-* Version: 2.2.1
+* Version: 2.4.1
 *
 * Author: The AddThis Team
 * Author URI: http://www.addthis.com/blog
 */
 
-define( 'addthis_style_default' , 'small_toolbox_with_share');
-define( 'ADDTHIS_PLUGIN_VERSION', '2.2.1');
+if (!defined('ADDTHIS_INIT')) define('ADDTHIS_INIT', 1);
+else return;
+
+
+// Setup our shared resources early 
+add_action('init', 'addthis_early', 1);
+function addthis_early(){
+    global $addthis_addjs;
+    if (! isset($addthis_addjs)){
+        require('includes/addthis_addjs.php');
+        $addthis_options = get_option('addthis_settings');
+        $addthis_addjs = new AddThis_addjs($addthis_options);
+    }
+}
+
+
+define( 'addthis_style_default' , 'fb_tw_p1_sc');
+define( 'ADDTHIS_PLUGIN_VERSION', '2.4.1');
 
 $addthis_settings = array();
 $addthis_settings['isdropdown'] = 'true';
@@ -58,25 +71,28 @@ $addthis_styles = array(
                     );
 $addthis_new_styles = array(
 
-    'small_toolbox' => array( 'src' =>  '<div class="addthis_toolbox addthis_default_style addthis_" %s ><a class="addthis_button_preferred_1"></a><a class="addthis_button_preferred_2"></a><a class="addthis_button_preferred_3"></a><a class="addthis_button_preferred_4"></a><a class="addthis_button_compact"></a></div>', 'img' => 'toolbox-small.png', 'name' => 'Small Toolbox', 'above' => 'hidden ', 'below' => ''
+    'fb_tw_p1_sc' => array( 'src' => '<div class="addthis_toolbox addthis_default_style " %s  ><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_button_google_plusone" g:plusone:size="medium"></a><a class="addthis_counter addthis_pill_style"></a></div>' , 'img' => 'fb-tw-p1-sc.jpg' , 'name' => 'Like, Tweet, +1, Share', 'above' => '', 'below' => ''
+    ), // facebook tweet plus 1 share counter
+    'large_toolbox' => array( 'src' =>  '<div class="addthis_toolbox addthis_default_style addthis_32x32_style" %s ><a class="addthis_button_preferred_1"></a><a class="addthis_button_preferred_2"></a><a class="addthis_button_preferred_3"></a><a class="addthis_button_preferred_4"></a><a class="addthis_button_compact"></a></div>', 'img' => 'toolbox-large.png', 'name' => 'Large Toolbox', 'above' => 'hidden ', 'below' => 'hidden'
     ), // 32x32
-    'plus_one_share_counter' => array( 'src' => '<div class="addthis_toolbox addthis_default_style" %s ><a class="addthis_button_google_plusone" g:plusone:size="medium" ></a><a class="addthis_counter addthis_pill_style"></a></div>', 'img' => 'plusone-share.gif', 'name' => 'Plus One and Share Counter', 'above'=> 'hidden', 'below'=>'hidden'), // +1
-    'small_toolbox_with_share' => array( 'src' =>  '<div class="addthis_toolbox addthis_default_style " %s ><a href="//addthis.com/bookmark.php?v=250&amp;username=xa-4d2b47597ad291fb" class="addthis_button_compact">Share</a><span class="addthis_separator">|</span><a class="addthis_button_preferred_1"></a><a class="addthis_button_preferred_2"></a><a class="addthis_button_preferred_3"></a><a class="addthis_button_preferred_4"></a></div>', 'img' => 'small-toolbox.jpg', 'name' => 'Small Toolbox with Share first', 'above' => '', 'below' => 'hidden' 
+    'small_toolbox' => array( 'src' =>  '<div class="addthis_toolbox addthis_default_style addthis_" %s ><a class="addthis_button_preferred_1"></a><a class="addthis_button_preferred_2"></a><a class="addthis_button_preferred_3"></a><a class="addthis_button_preferred_4"></a><a class="addthis_button_compact"></a></div>', 'img' => 'toolbox-small.png', 'name' => 'Small Toolbox', 'above' => 'hidden ', 'below' => '' 
+    ), // 32x32
+    'plus_one_share_counter' => array( 'src' => '<div class="addthis_toolbox addthis_default_style" %s ><a class="addthis_button_google_plusone" g:plusone:size="medium" ></a><a class="addthis_counter addthis_pill_style"></a></div>', 'img' => 'plusone-share.gif', 'name' => 'Plus One and Share Counter', 'above'=> 'hidden', 'below'=>'hidden' , 'defaultHide' => true 
+    ), // +1
+    'small_toolbox_with_share' => array( 'src' =>  '<div class="addthis_toolbox addthis_default_style " %s ><a href="//addthis.com/bookmark.php?v=250&amp;username=xa-4d2b47597ad291fb" class="addthis_button_compact">Share</a><span class="addthis_separator">|</span><a class="addthis_button_preferred_1"></a><a class="addthis_button_preferred_2"></a><a class="addthis_button_preferred_3"></a><a class="addthis_button_preferred_4"></a></div>', 'img' => 'small-toolbox.jpg', 'name' => 'Small Toolbox with Share first', 'above' => '', 'below' => 'hidden' , 'defaultHide' => true
     ), // Plus sign share | four buttons
-    'large_toolbox' => array( 'src' =>  '<div class="addthis_toolbox addthis_default_style addthis_32x32_style" %s ><a class="addthis_button_preferred_1"></a><a class="addthis_button_preferred_2"></a><a class="addthis_button_preferred_3"></a><a class="addthis_button_preferred_4"></a><a class="addthis_button_compact"></a></div>', 'img' => 'toolbox-large.png', 'name' => 'Large Toolbox', 'above' => 'hidden ', 'below' => ''
-    ), // 32x32
-    'fb_tw_sc' => array( 'src' => '<div class="addthis_toolbox addthis_default_style " %s  ><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_counter addthis_pill_style"></a></div>' , 'img' => 'fb-tw-sc.jpg' , 'name' => 'Like, Tweet, Counter', 'above' => '', 'below' => 'hidden'
+    'fb_tw_sc' => array( 'src' => '<div class="addthis_toolbox addthis_default_style " %s  ><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_counter addthis_pill_style"></a></div>' , 'img' => 'fb-tw-sc.jpg' , 'name' => 'Like, Tweet, Counter', 'above' => 'hidden', 'below' => 'hidden', 'defaultHide' => true
     ), // facebook tweet share counter
-    'simple_button' => array('src' => '<div class="addthis_toolbox addthis_default_style " %s><a href="//addthis.com/bookmark.php?v=250&amp;username=xa-4d2b47f81ddfbdce" class="addthis_button_compact">Share</a></div>', 'img' => 'share.jpg', 'name' => 'Share Button', 'above' => 'hidden ', 'below' => 'hidden'
+    'simple_button' => array('src' => '<div class="addthis_toolbox addthis_default_style " %s><a href="//addthis.com/bookmark.php?v=250&amp;username=xa-4d2b47f81ddfbdce" class="addthis_button_compact">Share</a></div>', 'img' => 'share.jpg', 'name' => 'Share Button', 'above' => 'hidden ', 'below' => 'hidden', 'defaultHide' => true
     ), // Plus sign share
     'button' => array( 'src' => '<div><a class="addthis_button" href="//addthis.com/bookmark.php?v=250" %s><img src="//cache.addthis.com/cachefly/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a></div>', 'img' => 'button.jpg', 'name' => 'Classic Share Button', 'above' => 'hidden ', 'below' => 'hidden'
     ), // classic
-    'share_counter' => array( 'src' => '<div class="addthis_toolbox addthis_default_style " %s  ><a class="addthis_counter"></a></div>', 'img' => 'share_counter.png', 'name' => 'Share Counter', 'above' => 'hidden ', 'below' => 'hidden' 
+    'share_counter' => array( 'src' => '<div class="addthis_toolbox addthis_default_style " %s  ><a class="addthis_counter"></a></div>', 'img' => 'share_counter.png', 'name' => 'Share Counter', 'above' => 'hidden ', 'below' => 'hidden' , 'defaultHide' => true
     ),
 );
 
 
-add_filter('the_title', 'at_title_check');
+//add_filter('the_title', 'at_title_check');
 function at_title_check($title)
 {
     
@@ -119,6 +135,8 @@ function addthis_script_to_content($content)
  * Converts our old many options in to one beautiful array
  *
  */
+
+ // Caution:  Using this filter to disable upgrades may have unexpected consiquences.  
 if ( apply_filters( 'at_do_options_upgrades', '__return_true') || apply_filters( 'addthis_do_options_upgrades', '__return_true')   )
 {
     function addthis_options_200()
@@ -219,6 +237,26 @@ if ( apply_filters( 'at_do_options_upgrades', '__return_true') || apply_filters(
         update_option( 'addthis_settings', $options); 
 
     }
+
+    function addthis_options_240()
+    {
+        $options = get_option('addthis_settings'); 
+
+        // Add An option for the AT Version
+        $options['atversion'] = '250';
+
+        //$options['wpfooter'] = false;
+        update_option( 'addthis_settings', $options); 
+
+    }
+}
+
+function addthis_add_for_check_footer() {
+
+}
+
+function addthis_check_footer() {
+
 }
 
 
@@ -227,9 +265,8 @@ if ( apply_filters( 'at_do_options_upgrades', '__return_true') || apply_filters(
 */
 function cuid()
 {
-    $mt  = dechex(mt_rand(0,min(0xffffffff,mt_getrandmax())));
-    $now = dechex(time());
-    $cuid =  $now . str_pad($mt, 8, '0', STR_PAD_LEFT);
+    $base = home_url();
+    $cuid = hash_hmac('md5', $base, 'addthis'); 
     return $cuid;
 } 
 
@@ -378,7 +415,7 @@ function addthis_admin_notices(){
     if ($options == false && ! get_user_meta($user_id, 'addthis_ignore_notices'))
     {
         echo '<div class="updated addthis_setup_nag"><p>'; 
-        printf(__('Setup the AddThis plugin so you can start having your users share your content around the web<br /> <a href="%1$s">Setup options</a> | <a href="%2$s" id="php_below_min_nag-no">Ignore this notice</a>'), 
+        printf(__('Configure the AddThis plugin to enable users to share your content around the web.<br /> <a href="%1$s">Configuration options</a> | <a href="%2$s" id="php_below_min_nag-no">Ignore this notice</a>'), 
             admin_url('options-general.php?page=' .  basename(__FILE__) ),
             '?addthis_nag_ignore=0'); 
         echo "</p></div>";
@@ -437,11 +474,15 @@ add_action('wp_ajax_at_show_dashboard_widget', 'addthis_render_dashboard_widget'
 * @see js/addthis.css
 */
 function addthis_render_dashboard_widget() {
-   if (! current_user_can('manage_options'))
-   {
-       _e( 'Cheatin&#8217; uh?' );
-       exit;
-   }
+    if( current_user_can('manage_options') || apply_filter('addthis_show_dashboard', __return_false() ) )
+    {
+        // we're good
+    }
+    else
+    {
+        _e( 'Cheatin&#8217; uh?' );
+        exit;
+    }
    $_services = array(
         'netvibes'     => 'Netvibes',
         'google'       => 'Google Reader',
@@ -724,7 +765,7 @@ die();
 */
 function addthis_dashboard_init() {
     $options = get_option('addthis_settings');
-    if (isset($options['addthis_show_stats']) && $options['addthis_show_stats'] == true && isset($options['username']) && isset($options['password']) && ! empty($options['username']) && ! empty($options['password'])  )
+    if (isset($options['addthis_show_stats']) && $options['addthis_show_stats'] == true && isset($options['username']) && isset($options['password']) && ! empty($options['username']) && ! empty($options['password']) && (current_user_can('manage_options') || apply_filters('addthis_show_dashboard', __return_false() ) ) )
         wp_add_dashboard_widget('dashboard_addthis', 'AddThis', 'addthis_render_dashboard_widget_holder');   
 } 
 
@@ -794,6 +835,19 @@ if ( isset($data['addthis_profile']) )
 if ( isset($data['addthis_password']) )
     $options['password'] = sanitize_text_field($data['addthis_password']);
 
+if ( isset($data['username']) )
+ $options['username'] = sanitize_text_field($data['username']);
+
+if ( isset($data['profile']) )
+ $options['profile'] = sanitize_text_field($data['profile']);
+
+if ( isset($data['password']) )
+    $options['password'] = sanitize_text_field($data['password']);
+
+if ( isset($data['wpfooter']))
+    $options['wpfooter'] = (bool) $data['wpfooter'];
+
+
 if (! isset($data['above']) ){
 }
 elseif ( isset ($data['show_above']) )
@@ -852,9 +906,11 @@ elseif ($data['below'] == 'custom_string')
 }
 
 
+if (isset($data['addthis_copytrackingremove']) && $data['addthis_copytrackingremove'] == true)
+    unset($data['addthis_copytracking1']);
 
 // All the checkbox fields
-foreach (array('addthis_show_stats', 'addthis_append_data', 'addthis_showonhome', 'addthis_showonpages', 'addthis_showonarchives', 'addthis_showoncats', 'addthis_showonexcerpts', 'addthis_addressbar','addthis_508' ) as $field)
+foreach (array('addthis_show_stats', 'addthis_append_data', 'addthis_showonhome', 'addthis_showonpages', 'addthis_showonarchives', 'addthis_showoncats', 'addthis_showonexcerpts', 'addthis_addressbar','addthis_508','addthis_copytracking2' ) as $field)
 {
     if ( isset($data[$field]) &&  $data[$field] == true)
         $options[$field] = true; 
@@ -862,6 +918,8 @@ foreach (array('addthis_show_stats', 'addthis_append_data', 'addthis_showonhome'
         $options[$field] = false;
 
 }
+if ( isset ($data['data_ga_property']) && strlen($data['data_ga_property']) != 0)
+    $options['data_ga_property'] = sanitize_text_field($data['data_ga_property']);
 
 //[addthis_twitter_template]
 if ( isset ($data['addthis_twitter_template']) && strlen($data['addthis_twitter_template'])  != 0  )
@@ -942,8 +1000,8 @@ function addthis_add_content_filters()
         $options = get_option('addthis_settings');
    
     if ( ! empty( $options) ){
-        if ($options['addthis_showonexcerpts'] == true )
-            add_filter('get_the_excerpt', 'addthis_display_social_widget_excerpt');
+        if ( isset($options['addthis_showonexcerpts']) &&  $options['addthis_showonexcerpts'] == true )
+            add_filter('get_the_excerpt', 'addthis_display_social_widget_excerpt', 11);
         
         add_filter('the_content', 'addthis_display_social_widget', 15);
     }
@@ -991,9 +1049,20 @@ function addthis_init()
         // Upgrade to 210 from 200
         if ( isset($options['username']) && ! isset($options['profile']) )
             addthis_options_210();
+
+        // Upgrade to 240 and add at 300
+        if ( ! isset($options['atversion']) )
+            addthis_options_240();
     }
     add_action( 'addthis_widget', 'addthis_print_widget', 10, 3);
     
+
+
+}
+
+function addthis_set_addthis_settings()
+{
+    global $addthis_settings;
     $product = get_option('addthis_product');
 
 
@@ -1068,16 +1137,28 @@ function addthis_remove_tag($content, $text = '')
         add_filter('the_content', 'addthis_display_social_widget', 15);
 
         $text = str_replace(']]>', ']]&gt;', $text);
-        $text = strip_tags($text);
+       
+        // 3.3 and earlier
+        if (! function_exists('wp_trim_words'))
+            $text = strip_tags($text);
         $excerpt_length = apply_filters('excerpt_length', 55); 
         $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-        $words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-        if ( count($words) > $excerpt_length ) {
-            array_pop($words);
-            $text = implode(' ', $words);
-            $text = $text . $excerpt_more;
-        } else {
-            $text = implode(' ', $words);
+
+        // 3.3 and later
+        if (function_exists('wp_trim_words'))
+        {
+            $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+        }
+        else
+        {
+            $words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+            if ( count($words) > $excerpt_length ) {
+                array_pop($words);
+                $text = implode(' ', $words);
+                $text = $text . $excerpt_more;
+            } else {
+                $text = implode(' ', $words);
+            }
         }
         if ($options['addthis_showonexcerpts'] == false)
             return $text;
@@ -1287,15 +1368,23 @@ function addthis_display_social_widget($content, $filtered = true, $below_excerp
 
 }
 
+add_action('init', 'addthis_register_script_in_addjs', 20);
 
-add_action('wp_footer', 'addthis_output_script');
+function addthis_register_script_in_addjs(){
+    global $addthis_addjs;
+    $script = addthis_output_script(true, true);
+    $addthis_addjs->addToScript($script);
+}
+
+
+//add_action('wp_footer', 'addthis_output_script');
 
 /**
  * Check to see if our Javascript has been outputted yet.  If it hasn't, return it.  Else, return false.
  *
  * @return mixed
 */
-function addthis_output_script($return = false )
+function addthis_output_script($return = false, $justConfig = false )
 {
     global $addthis_settings;
 
@@ -1306,7 +1395,7 @@ function addthis_output_script($return = false )
     
     $script = "\n<!-- AddThis Button Begin -->\n"
              .'<script type="text/javascript">'
-             ."var addthis_product = 'wpp-261';\n";
+             ."var addthis_product = 'wpp-264';\n";
 
 
     $pub = (isset($options['profile'])) ? $options['profile'] : false ;
@@ -1314,21 +1403,40 @@ function addthis_output_script($return = false )
         $pub = 'wp-'.cuid();
     }
     $pub = urlencode($pub);
-
    
     $addthis_config = array();
+    $addthis_share = array();
 
     if ( isset($options['addthis_append_data']) &&  $options['addthis_append_data'] == true)
         $addthis_config["data_track_clickback"] = true;
     else
         $addthis_config["data_track_clickback"] = false;
+    
+    if ( isset($options['data_ga_property']) ){
+        $addthis_config['data_ga_property'] = $options['data_ga_property'];
+        $addthis_config['data_ga_social'] = true;
+    }
 
-    /*/
     if ( isset($options['addthis_addressbar']) &&  $options['addthis_addressbar'] == true)
         $addthis_config["data_track_addressbar"] = true;
     else
         $addthis_config["data_track_addressbar"] = false;
-    //*/
+
+    // Opt in
+    if ( isset($options['addthis_copytracking2']) && $options['addthis_copytracking2'] == true)
+        $addthis_config['data_track_textcopy'] = true;
+    else
+        $addthis_config['data_track_textcopy'] = false;
+
+    // Old opt out
+    if ( isset($options['addthis_copytracking1']) && $options['addthis_copytracking1'] == true)
+        $addthis_config['data_track_textcopy'] = false;
+    // Opt in
+    else if ( isset($options['addthis_copytracking2']) && $options['addthis_copytracking2'] == true)
+        $addthis_config['data_track_textcopy'] = true;
+    else
+        $addthis_config['data_track_textcopy'] = false;
+
 
     if ( isset($options['addthis_language']) && strlen($options['addthis_language']) == 2)
         $addthis_config['ui_language'] = $options['addthis_language'];
@@ -1364,12 +1472,44 @@ function addthis_output_script($return = false )
         $addthis_share['shorteners']['bitly']['login'] = esc_js($options['addthis_bitly_login']);
         $addthis_share['shorteners']['bitly']['apiKey'] = esc_js($options['addthis_bitly_key']);
     }
+
+    if ($justConfig)
+    {
+        $return = '';
+        if ( isset( $options['addthis_share_json'] ) && $options['addthis_share_json'] != '')
+            $return .= 'if (typeof(addthis_share) == "undefined"){ addthis_share = ' . $options['addthis_share_json'] . ';}';
+        else
+        {
+            $share = apply_filters('addthis_share_js_var', $addthis_share );
+            if (! empty($share) )
+                $return .= 'if (typeof(addthis_share) == "undefined"){ addthis_share = ' . json_encode( apply_filters('addthis_share_js_var', $addthis_share ) ) .';}';
+
+        }
+        $return .= "\n";
+
+        if (isset($options['addthis_options']) && strlen($options['addthis_options']) != 0)
+            $return .= 'var addthis_options = "'.$options['addthis_options'].'";';
+
+        $return .= "\n";
+        if ( isset( $options['addthis_config_json'] ) &&   $options['addthis_config_json'] != '')
+            $return .= 'var addthis_config = '. $options['addthis_config_json'] .';';
+        elseif (! empty ($addthis_config) )
+            $return .= 'var addthis_config = '. json_encode($addthis_config) .';';
+
+        $return .= "\n";
+
+
+        return $return;
+
+    }
+
+
     if ( isset( $options['addthis_share_json'] ) && $options['addthis_share_json'] != '')
         $script .= 'if (typeof(addthis_share) == "undefined"){ addthis_share = ' . $options['addthis_share_json'] . ';}';
-    elseif (isset($addthis_share))
+    else
         $script .= 'if (typeof(addthis_share) == "undefined"){ addthis_share = ' . json_encode( apply_filters('addthis_share_js_var', $addthis_share ) ) .';}';
     $script .= '</script>';
-
+            
 
     $script .= '<script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid='.$pub.'"></script>';
     
@@ -1387,6 +1527,7 @@ function addthis_output_script($return = false )
 */
 function addthis_social_widget($content, $onSidebar = false, $url = null, $title = null)
 {
+    addthis_set_addthis_settings();
     global $addthis_settings;
 
     // add nothing to RSS feed or search results; control adding to static/archive/category pages
@@ -1538,8 +1679,8 @@ function addthis_admin_menu()
         'password'  => '',
         'style'     => addthis_style_default ,
         'location'  => 'below',
-        'below'     => 'large_toolbox',
-        'above'     => 'fb_tw_sc',
+        'below'     => 'fb_tw_p1_sc',
+        'above'     => 'fb_tw_p1_sc',
         'addthis_show_stats' => true,
         'addthis_append_data'=> true,
         'addthis_showonhome'  => true,
@@ -1547,6 +1688,8 @@ function addthis_admin_menu()
         'addthis_showonarchives'  => true,
         'addthis_showoncats' => true,
         'addthis_addressbar' => false,
+        'addthis_copytracking1' => false,
+        'addthis_copytracking2' => false,
         'addthis_brand'     => '',
         'toolbox'   => '',
         'addthis_language'  => '',
@@ -1566,6 +1709,7 @@ function addthis_admin_menu()
         'below_custom_string' => '',
         'addthis_twitter_template' => '',
         'addthis_508' => '',
+        'data_ga_property' => '',
         'addthis_bitly_login' => '',
         'addthis_bitly_key' => '',
         'addthis_config_json' => '',
@@ -1624,133 +1768,172 @@ function addthis_plugin_options_php4() {
         </ul>
         <div class='clear'>&nbsp;</div> 
         <div id="tabs-1">
-    <table class="form-table">
-        <tbody>
-        <?php _addthis_choose_icons('above', $options ); ?>
-        <?php _addthis_choose_icons('below', $options ); ?>
-    <tr valign="top">
-        <td colspan="2"><?php _e('Enter a profile, username and password to discover how your content is being shared, and how your most influential audience members are bringing traffic back to your site. Learn what interests them – and to what degree – and how thoses interests are driving sharing. <a href="//addthis.com/features" target="_blank">Click here for more information on the benefits of register</a>.<a href="//www.addthis.com/help/faq#accounts" target="_blank">Click here for more information on usernames and profiles</a>   ', 'addthis_trans_domain');?> </td>
-    </tr>
-    <tr valign="top">
-        <th scope="row"><?php _e("AddThis profile id:", 'addthis_trans_domain' ); ?></th>
-        <td><input id="addthis_profile"  type="text" name="addthis_settings[addthis_profile]" value="<?php echo $profile; ?>" autofill='off' autocomplete='off'  /></td>
-    </tr>
-    <tr valign="top">
-        <th scope="row"><?php _e("AddThis username:", 'addthis_trans_domain' ); ?></th>
-        <td><input id="addthis_username"  type="text" name="addthis_settings[addthis_username]" value="<?php echo $username; ?>" autofill='off' autocomplete='off'  /></td>
-    </tr>
-    <tr id="password_row" >
-        <th scope="row"><?php _e("AddThis password:", 'addthis_trans_domain' ); ?><br/><span style="font-size:10px">(required for displaying stats)</span></th>
-        <td><input id="addthis_password" type="password" name="addthis_settings[addthis_password]" value="<?php echo $password; ?>" autocomplete='off' autofill='off'  /></td>
-    </tr>
-    </tbody>
-</table>
-  <div class='clear'>&nbsp;</div>  
-   </div>
+			<table class="form-table">
+				<tbody>
+				<?php _addthis_choose_icons('above', $options ); ?>
+				<?php _addthis_choose_icons('below', $options ); ?>
+				</tbody>
+			</table>
+			
+			<br/>
+			
+			<div style="margin-left:5px;">
+				<?php _e("<h3><a href='https://www.addthis.com/register?profile=wpp' target='_blank'>Register</a> for free in-depth analytics reports and better understand your site's social traffic.</h3>", 'addthis_trans_domain');?>
+			</div>
+			<table class="form-table" style="width:400px;">
+				<tbody>
+					<tr valign="top">
+						<td><?php _e("AddThis profile ID:", 'addthis_trans_domain' ); ?></td>
+						<td><input id="addthis_profile"  type="text" name="addthis_settings[addthis_profile]" value="<?php echo $profile; ?>" autofill='off' autocomplete='off'  /></td>
+					</tr>
+					<tr valign="top">
+						<td><?php _e("AddThis email / username:", 'addthis_trans_domain' ); ?></td>
+						<td><input id="addthis_username"  type="text" name="addthis_settings[addthis_username]" value="<?php echo $username; ?>" autofill='off' autocomplete='off'  /></td>
+					</tr>
+					<tr id="password_row" >
+						<td><?php _e("AddThis password:", 'addthis_trans_domain' ); ?><br/><span style="font-size:10px">(required for displaying stats)</span></td>
+						<td><input id="addthis_password" type="password" name="addthis_settings[addthis_password]" value="<?php echo $password; ?>" autocomplete='off' autofill='off'  /></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class='clear'>&nbsp;</div>  
+			<br/>
+		</div>
+		
         <div id="tabs-2">
-    <table class="form-table">
-        <tr>
-            <th scope="row"><?php _e("Show stats in admin dashboard:", 'addthis_trans_domain' ); ?></th>
-            <td><input type="checkbox" name="addthis_settings[addthis_show_stats]" value="true" <?php echo ($addthis_show_stats == true ? 'checked="checked"' : ''); ?>/></td>
-        </tr>
-        <tr>
-            <th scope="row"><?php _e("Track <a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">clickbacks</a>:", 'addthis_trans_domain' ); ?></th>
-            <td><input type="checkbox" name="addthis_settings[addthis_append_data]" value="true" <?php echo $addthis_append_data == true ? 'checked="checked"' : ''; ?>/></td>
-        </tr>
-        <tr>
-            <th scope="row"><?php _e("Track Address Bar Shares", 'addthis_trans_domain' ); ?></th>
-            <td><input type="checkbox" name="addthis_settings[addthis_addressbar]" value="true" <?php echo ($addthis_addressbar  == true ? 'checked="checked"' : ''); ?>/></td>
-        </tr>
-        <tr>
-            <th scope="row"><?php _e("Show on homepage:", 'addthis_trans_domain' ); ?></th>
-            <td><input type="checkbox" name="addthis_settings[addthis_showonhome]" value="true" <?php echo ($addthis_showonhome  == true ? 'checked="checked"' : ''); ?>/></td>
-        </tr>
-        <tr>
-            <th scope="row"><?php _e("Show on <a href=\"//codex.wordpress.org/Pages\" target=\"blank\">pages</a>:", 'addthis_trans_domain' ); ?></th>
-            <td><input type="checkbox" name="addthis_settings[addthis_showonpages]" value="true" <?php echo ( $addthis_showonpages  == true ? 'checked="checked"' : ''); ?>/></td>
-        </tr>
-        <tr>
-            <th scope="row"><?php _e("Show in archives:", 'addthis_trans_domain' ); ?></th>
-            <td><input type="checkbox" name="addthis_settings[addthis_showonarchives]" value="true" <?php echo ($addthis_showonarchives  == true ? 'checked="checked"' : ''); ?>/></td>
-        </tr>
-        <tr>
-            <th scope="row"><?php _e("Show in categories:", 'addthis_trans_domain' ); ?></th>
-            <td><input type="checkbox" name="addthis_settings[addthis_showoncats]" value="true" <?php echo ( $addthis_showoncats == true ? 'checked="checked"' : ''); ?>/></td>
-        </tr>
-        <tr>
-            <th scope="row"><?php _e("Show on excerpts:", 'addthis_trans_domain' ); ?></th>
-            <td><input type="checkbox" name="addthis_settings[addthis_showonexcerpts]" value="true" <?php echo ( $addthis_showonexcerpts == true ? 'checked="checked"' : ''); ?>/></td>
-        </tr>
-        <tr>
-            <th scope="row"><?php _e("Enable Enhanced Accessibility", 'addthis_trans_domain' ); ?></th>
-            <td><input type="checkbox" name="addthis_settings[addthis_508]" value="true" <?php echo ( $addthis_508 == true ? 'checked="checked"' : ''); ?>/></td>
-        </tr>
-        <tr valign="top">
-            <td colspan="2"></td>
-        </tr>
-        <tr valign="top">
-            <td colspan="2">For more details on the following options, see <a href="//addthis.com/customization">our customization docs</a>.</td>
-        </tr>
-        <tr valign="top">
-            <th scope="row"><?php _e("Custom service list:", 'addthis_trans_domain' ); ?><br /><span class='description'><?php _e(
-            'Important: AddThis optimizes your list of services based on popularity and language, and personalizes the list for each user. You may decrease sharing by over-riding these features.'
-            , 'addthis_trans_domain') ?>
-            </span></th>
-              <td><input size='60' type="text" name="addthis_settings[addthis_options]" value="<?php echo $addthis_options; ?>" /><br />
-              <span class='description'><?php _e('Enter a comma-separated list of <a href="//addthis.com/services/list">service codes</a>', 'addthis_trans_domain' ); ?></span>
-              </td>  
-        </tr>
-        <tr valign="top">
-            <th scope="row"><?php _e("Brand:", 'addthis_trans_domain' ); ?></th>
-            <td><input type="text" name="addthis_settings[addthis_brand]" value="<?php echo $addthis_brand; ?>" /></td>
-        </tr>
-        <tr valign="top">
-            <th scope="row"><?php _e("<a href='http://www.addthis.com/help/client-api#configuration-sharing-templates'>Twitter Template</a>( not for tweet button) :", 'addthis_trans_domain' ); ?></th>
-            <td><input type="text" name="addthis_settings[addthis_twitter_template]" value="<?php echo $addthis_twitter_template; ?>" /></td>
-        </tr>
-        <tr valign="top">
-            <th scope="row"><?php _e("Bitly Login", 'addthis_trans_domain' ); ?></th>
-            <td><input type="text" name="addthis_settings[addthis_bitly_login]" value="<?php echo $addthis_bitly_login; ?>" /></td>
-        </tr>
-        <tr valign="top">
-            <th scope="row"><?php _e("Bitly Key", 'addthis_trans_domain' ); ?></th>
-            <td><input type="text" name="addthis_settings[addthis_bitly_key]" value="<?php echo $addthis_bitly_key; ?>" /></td>
-        </tr>
-        <tr valign="top">
-            <th scope="row"><?php _e("Language:", 'addthis_trans_domain' ); ?></th>
-            <td>
-                <select name="addthis_settings[addthis_language]">
-                <?php
-                    $curlng = $addthis_language;
-                    foreach ($addthis_languages as $lng=>$name)
-                    {
-                        echo "<option value=\"$lng\"". ($lng == $curlng ? " selected='selected'":""). ">$name</option>";
-                    }
-                ?>
-                </select>
-            </td>
-        </tr>
-        <tr valign="top">
-            <th scope="row"><?php _e("Header background:", 'addthis_trans_domain' ); ?></th>
-            <td><input type="text" name="addthis_settings[addthis_header_background]" value="<?php echo $addthis_header_background; ?>" /></td>
-        </tr>
-        <tr valign="top">
-            <th scope="row"><?php _e("Header color:", 'addthis_trans_domain' ); ?></th>
-            <td><input type="text" name="addthis_settings[addthis_header_color]" value="<?php echo $addthis_header_color; ?>" /></td>
-        </tr>
-        <tr valign="top">
-            <th scope="row"><?php _e("addthis_config values (json format):", 'addthis_trans_domain' ); ?></th>
-            <td><textarea rows='3' cols='40' type="text" name="addthis_settings[addthis_config_json]"  /><?php echo $addthis_config_json; ?></textarea></td>
-        </tr>
-        <tr valign="top">
-            <th scope="row"><?php _e("addthis_share values (json format):", 'addthis_trans_domain' ); ?></th>
-            <td><textarea rows='3' cols='40' type="text" name="addthis_settings[addthis_share_json]"  /><?php echo $addthis_share_json; ?></textarea></td>
-        </tr>
-    </table>
-<div class='clear'>&nbsp;</div>
-    </div>
+			<table class="form-table">
+                <tr>
+                    <th><h2>Show AddThis on &hellip;</h2></th> 
+
+                </tr>
+					<th scope="row"><?php _e("homepage:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="checkbox" name="addthis_settings[addthis_showonhome]" value="true" <?php echo ($addthis_showonhome  == true ? 'checked="checked"' : ''); ?>/></td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e("<a href=\"//codex.wordpress.org/Pages\" target=\"blank\">pages</a>:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="checkbox" name="addthis_settings[addthis_showonpages]" value="true" <?php echo ( $addthis_showonpages  == true ? 'checked="checked"' : ''); ?>/></td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e("archives:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="checkbox" name="addthis_settings[addthis_showonarchives]" value="true" <?php echo ($addthis_showonarchives  == true ? 'checked="checked"' : ''); ?>/></td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e("categories:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="checkbox" name="addthis_settings[addthis_showoncats]" value="true" <?php echo ( $addthis_showoncats == true ? 'checked="checked"' : ''); ?>/></td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e("excerpts:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="checkbox" name="addthis_settings[addthis_showonexcerpts]" value="true" <?php echo ( $addthis_showonexcerpts == true ? 'checked="checked"' : ''); ?>/></td>
+				</tr>
+                <tr>
+                    <th><h2>Have AddThis track &hellip;</h2></th> 
+                </tr>
+				<tr>
+					<th scope="row"><?php _e("<a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">clickbacks</a>:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="checkbox" name="addthis_settings[addthis_append_data]" value="true" <?php echo $addthis_append_data == true ? 'checked="checked"' : ''; ?>/></td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e("address bar shares:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="checkbox" name="addthis_settings[addthis_addressbar]" value="true" <?php echo ($addthis_addressbar  == true ? 'checked="checked"' : ''); ?>/></td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e("copied text:", 'addthis_trans_domain' ); ?></th>
+                    <?php  if (isset( $addthis_copytracking1 ) &&  $addthis_copytracking1 == true){
+                            echo "<input type='hidden' name='addthis_settings[addthis_copytrackingremove' value='true'/>";   
+                             $addthis_copytracking2 = false;
+                    }?>
+<!--					<td><input type="checkbox" name="addthis_settings[addthis_copytracking1]" value="true" <?php echo ( $addthis_copytracking1 == true ? 'checked="checked"' : ''); ?>/></td> -->
+					<td><input type="checkbox" name="addthis_settings[addthis_copytracking2]" value="true" <?php echo ( $addthis_copytracking2 == true ? 'checked="checked"' : ''); ?>/></td>
+				</tr>
+                <tr>
+                    <th><h2>Display Options</h2></th>
+                </tr>
+				<tr valign="top">
+					<td colspan="2">For more details on the following options, see <a href="//addthis.com/customization">our customization documentation</a>.</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e("Custom service list:", 'addthis_trans_domain' ); ?><br /><span class='description'><?php _e(
+					'Important: AddThis optimizes displayed services based on popularity and language, and personalizes the list for each user. You may decrease sharing by overriding these features.'
+					, 'addthis_trans_domain') ?>
+					</span></th>
+					  <td><input size='60' type="text" name="addthis_settings[addthis_options]" value="<?php echo $addthis_options; ?>" /><br />
+					  <span class='description'><?php _e('Enter a comma-separated list of <a href="//addthis.com/services/list">service codes</a>', 'addthis_trans_domain' ); ?></span>
+					  </td>  
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e("Brand:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="text" name="addthis_settings[addthis_brand]" value="<?php echo $addthis_brand; ?>" /></td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e("<a href='http://www.addthis.com/help/client-api#configuration-sharing-templates'>Twitter Template:</a><br/><span class='description'>(not for tweet button)</span>", 'addthis_trans_domain' ); ?></th>
+					<td><input type="text" name="addthis_settings[addthis_twitter_template]" value="<?php echo $addthis_twitter_template; ?>" /></td>
+				</tr>
+
+				<tr valign="top">
+					<th scope="row"><?php _e("Language:", 'addthis_trans_domain' ); ?></th>
+					<td>
+						<select name="addthis_settings[addthis_language]">
+						<?php
+							$curlng = $addthis_language;
+							foreach ($addthis_languages as $lng=>$name)
+							{
+								echo "<option value=\"$lng\"". ($lng == $curlng ? " selected='selected'":""). ">$name</option>";
+							}
+						?>
+						</select>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e("Header background:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="text" name="addthis_settings[addthis_header_background]" value="<?php echo $addthis_header_background; ?>" /></td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e("Header color:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="text" name="addthis_settings[addthis_header_color]" value="<?php echo $addthis_header_color; ?>" /></td>
+				</tr>
+
+                <tr>
+                    <th><h2>Additional Options</h2></th>
+                </tr>
+				<tr>
+					<th scope="row"><?php _e("Show analytics in admin dashboard:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="checkbox" name="addthis_settings[addthis_show_stats]" value="true" <?php echo ($addthis_show_stats == true ? 'checked="checked"' : ''); ?>/></td>
+				</tr>
+				<tr>
+				<tr>
+					<th scope="row"><?php _e("Enable enhanced accessibility:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="checkbox" name="addthis_settings[addthis_508]" value="true" <?php echo ( $addthis_508 == true ? 'checked="checked"' : ''); ?>/></td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e("Google Analytics property ID:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="text" name="addthis_settings[data_ga_property]" value="<?php echo $data_ga_property ?>"/></td>
+				</tr>
+
+				<tr valign="top">
+					<td colspan="2"></td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e("Bitly login:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="text" name="addthis_settings[addthis_bitly_login]" value="<?php echo $addthis_bitly_login; ?>" /></td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e("Bitly key:", 'addthis_trans_domain' ); ?></th>
+					<td><input type="text" name="addthis_settings[addthis_bitly_key]" value="<?php echo $addthis_bitly_key; ?>" /></td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e("addthis_config values:<br/><span class=\"description\">(json format)</span>", 'addthis_trans_domain' ); ?></th>
+					<td><textarea rows='3' cols='40' type="text" name="addthis_settings[addthis_config_json]"  /><?php echo $addthis_config_json; ?></textarea></td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e("addthis_share values:<br/><span class=\"description\">(json format)</span>", 'addthis_trans_domain' ); ?></th>
+					<td><textarea rows='3' cols='40' type="text" name="addthis_settings[addthis_share_json]"  /><?php echo $addthis_share_json; ?></textarea></td>
+				</tr>
+			</table>
+			<div class='clear'>&nbsp;</div>
+		</div>
     </div>
     <div class="clear">&nbsp;</div>
+	
     <p class="submit">
     <?php
     // Build Preview Link
@@ -1762,9 +1945,9 @@ function addthis_plugin_options_php4() {
          $preview_link = htmlspecialchars( add_query_arg( array( 'preview' => 1, 'template' => $template, 'stylesheet' => $stylesheet, 'preview_iframe' => true, 'TB_iframe' => 'true' ), $preview_link ) );
 
 
-    ?>
-    <a href="<?php echo $preview_link; ?>" class="thickbox thickbox-preview" id="preview" ><?php _e('Preview'); ?></a>
-    <input type="submit" name="Submit" value="<?php _e('Save Changes') ?>" />
+    ?>    
+		<input type="submit" name="Submit" value="<?php _e('Save Changes') ?>" />
+		<a href="<?php echo $preview_link; ?>" class="thickbox thickbox-preview" id="preview" ><?php _e('Preview'); ?></a>
     </p>
 
     </form>

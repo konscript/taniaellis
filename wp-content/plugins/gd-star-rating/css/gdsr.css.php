@@ -33,9 +33,11 @@ function get_class_head($head, $element) {
 if (!isset($inclusion)) {
     $base_url_local = "../";
     $base_url_extra = "../../../gd-star-rating/";
+
     $t = isset($_GET["t"]) && !empty($_GET["t"]) && is_string($_GET["t"]) ? urldecode($_GET["t"]) : 0;
-    $q = isset($_GET["s"]) && !empty($_GET["t"]) && is_string($_GET["s"]) ? urldecode($_GET["s"]) : "";
+    $q = isset($_GET["s"]) && !empty($_GET["s"]) && is_string($_GET["s"]) ? urldecode($_GET["s"]) : "";
     $opacity = isset($_GET["o"]) && !empty($_GET["o"]) && is_string($_GET["o"]) ? urldecode($_GET["o"]) : "off";
+
     @ob_start("ob_gzhandler");
     header("Content-Type: text/css");
 
@@ -48,6 +50,7 @@ if (!isset($inclusion)) {
 
         if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
             $head_mod = strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']);
+
             if ($head_mod >= $t) {
                 if (php_sapi_name() == 'CGI') {
                     Header("Status: 304 Not Modified");
@@ -61,6 +64,8 @@ if (!isset($inclusion)) {
 }
 
 $raw = explode("#", $q);
+if (!is_array($raw) || count($raw) < 3) exit;
+
 $raw_blocks = split_by_length($raw[0], 3);
 $sizes = split_by_length($raw[1], 2);
 $thumb_sizes = split_by_length($raw[2], 2);
@@ -256,10 +261,12 @@ if (count($thumb_sets) > 0 && count($thumb_sizes)) {
 <?php
 
 foreach ($loaders as $l) {
-    $loader = $load_base[$l["folder"]];
-    $url = $base_url_local."gfx/loader/".$l["folder"].".gif";
-    echo sprintf(".loader.%s { background: url(%s) no-repeat left; padding-left: %spx; }\r\n", $l["folder"], $url, $loader[0]);
-    echo sprintf(".loader.%s.width { width: %spx; }\r\n", $l["folder"], $loader[1]);
+    if (isset($load_base[$l["folder"]])) {
+        $loader = $load_base[$l["folder"]];
+        $url = $base_url_local."gfx/loader/".$l["folder"].".gif";
+        echo sprintf(".loader.%s { background: url(%s) no-repeat left; padding-left: %spx; }\r\n", $l["folder"], $url, $loader[0]);
+        echo sprintf(".loader.%s.width { width: %spx; }\r\n", $l["folder"], $loader[1]);
+    }
 }
 
 ?>

@@ -1371,6 +1371,7 @@ class gdsrAdmFunc {
             if ($gfx->imported)
                 $data->stars[] = $gfx;
         }
+
         if (is_dir(STARRATING_XTRA_PATH."stars/")) {
             $stars_folders = gdFunctionsGDSR::get_folders(STARRATING_XTRA_PATH."stars/");
             foreach ($stars_folders as $f) {
@@ -1386,6 +1387,7 @@ class gdsrAdmFunc {
             if ($gfx->imported)
                 $data->trend[] = $gfx;
         }
+
         if (is_dir(STARRATING_XTRA_PATH."trends/")) {
             $trend_folders = gdFunctionsGDSR::get_folders(STARRATING_XTRA_PATH."trends/");
             foreach ($trend_folders as $f) {
@@ -1401,6 +1403,7 @@ class gdsrAdmFunc {
             if ($gfx->imported)
                 $data->thumbs[] = $gfx;
         }
+
         if (is_dir(STARRATING_XTRA_PATH."thumbs/")) {
             $thumbs_folders = gdFunctionsGDSR::get_folders(STARRATING_XTRA_PATH."thumbs/");
             foreach ($thumbs_folders as $f) {
@@ -1456,10 +1459,16 @@ class gdsrAdmFunc {
             $general["preinstalled"] = '0';
             $tpl_input = $_POST["tpl_element"];
             $elements = array();
-            foreach ($tpl_input as $key => $value)
+
+            foreach ($tpl_input as $key => $value) {
                 $elements[$key] = stripslashes(htmlentities($value, ENT_QUOTES, STARRATING_ENCODING));
-            if ($general["id"] == 0) $general["id"] = gdTemplateDB::add_template($general, $elements);
-            else gdTemplateDB::edit_template($general, $elements);
+            }
+
+            if ($general["id"] == 0) {
+                $general["id"] = gdTemplateDB::add_template($general, $elements);
+            } else {
+                gdTemplateDB::edit_template($general, $elements);
+            }
 
             if (isset($_POST["tpl_dep_rewrite"])) gdTemplateDB::rewrite_dependencies($general["section"], $general["id"]);
             if (isset($_POST["tpl_default_rewrite"])) gdTemplateDB::rewrite_defaults($general["section"], $general["id"]);

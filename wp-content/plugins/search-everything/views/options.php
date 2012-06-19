@@ -2,7 +2,7 @@
 
 Class se_admin {
 
-	var $version = '6.6';
+	var $version = '6.9';
 
 	function se_admin() {
 
@@ -18,51 +18,55 @@ Class se_admin {
         }
 
 	function se_add_options_panel() {
-		add_options_page('Search', 'Search Everything', 7, 'extend_search', array(&$this, 'se_option_page'));
+		global $wp_version;
+		$cap = version_compare('2.0', $wp_version, '<') ? 'publish_posts' : 7;
+		add_options_page('Search', 'Search Everything', $cap, 'extend_search', array(&$this, 'se_option_page'));
 	}
 
 	//build admin interface
-	function se_option_page() 
+	function se_option_page()
 	{
 		global $wpdb, $table_prefix, $wp_version;
-			
+
 			$new_options = array(
-				'se_exclude_categories'			=> $_POST["exclude_categories"],
-				'se_exclude_categories_list'	=> $_POST["exclude_categories_list"],
-				'se_exclude_posts'				=> $_POST["exclude_posts"],
-				'se_exclude_posts_list'			=> $_POST["exclude_posts_list"],
-				'se_use_page_search'			=> $_POST["search_pages"],
-				'se_use_comment_search'			=> $_POST["search_comments"],
-				'se_use_tag_search'				=> $_POST["search_tags"],
-				'se_use_tax_search'				=> $_POST["search_taxonomies"],
-				'se_use_category_search'		=> $_POST["search_categories"],
-				'se_approved_comments_only'		=> $_POST["appvd_comments"],
-				'se_approved_pages_only'		=> $_POST["appvd_pages"],
-				'se_use_excerpt_search'			=> $_POST["search_excerpt"],
-				'se_use_draft_search'			=> $_POST["search_drafts"],
-				'se_use_attachment_search'		=> $_POST["search_attachments"],
-				'se_use_authors'				=> $_POST["search_authors"],
-				'se_use_cmt_authors'			=> $_POST["search_cmt_authors"],
-				'se_use_metadata_search'		=> $_POST["search_metadata"],
-				'se_use_highlight'				=> $_POST["search_highlight"],
-				'se_highlight_color'			=> $_POST["highlight_color"],
-				'se_highlight_style'			=> $_POST["highlight_style"]
+				'se_exclude_categories'			=> (isset($_POST['exclude_categories']) && !empty($_POST['exclude_categories'])) ? $_POST['exclude_categories'] : '',
+				'se_exclude_categories_list'	=> (isset($_POST['exclude_categories_list']) && !empty($_POST['exclude_categories_list'])) ? $_POST['exclude_categories_list'] : '',
+				'se_exclude_posts'				=> (isset($_POST['exclude_posts'])) ? $_POST['exclude_posts'] : '',
+				'se_exclude_posts_list'			=> (isset($_POST['exclude_posts_list']) && !empty($_POST['exclude_posts_list'])) ? $_POST['exclude_posts_list'] : '',
+				'se_use_page_search'			=> (isset($_POST['search_pages']) && $_POST['search_pages'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_comment_search'			=> (isset($_POST['search_comments']) && $_POST['search_comments'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_tag_search'				=> (isset($_POST['search_tags']) && $_POST['search_tags'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_tax_search'				=> (isset($_POST['search_taxonomies']) && $_POST['search_taxonomies'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_category_search'		=> (isset($_POST['search_categories']) && $_POST['search_categories'] == 'Yes') ? 'Yes' : 'No',
+				'se_approved_comments_only'		=> (isset($_POST['appvd_comments']) && $_POST['appvd_comments'] == 'Yes') ? 'Yes' : 'No',
+				'se_approved_pages_only'		=> (isset($_POST['appvd_pages']) && $_POST['appvd_pages'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_excerpt_search'			=> (isset($_POST['search_excerpt']) && $_POST['search_excerpt'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_draft_search'			=> (isset($_POST['search_drafts']) && $_POST['search_drafts'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_attachment_search'		=> (isset($_POST['search_attachments']) && $_POST['search_attachments'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_authors'				=> (isset($_POST['search_authors']) && $_POST['search_authors'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_cmt_authors'			=> (isset($_POST['search_cmt_authors']) && $_POST['search_cmt_authors'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_metadata_search'		=> (isset($_POST['search_metadata']) && $_POST['search_metadata'] == 'Yes') ? 'Yes' : 'No',
+				'se_use_highlight'				=> (isset($_POST['search_highlight']) && $_POST['search_highlight'] == 'Yes') ? 'Yes' : 'No',
+				'se_highlight_color'			=> (isset($_POST['highlight_color'])) ? $_POST['highlight_color'] : '',
+				'se_highlight_style'			=> (isset($_POST['highlight_style'])) ? $_POST['highlight_style'] : ''
 
 			);
-			
-		if($_POST['action'] == "save") 
+
+		if(isset($_POST['action']) && $_POST['action'] == "save")
 		{
 			echo "<div class=\"updated fade\" id=\"limitcatsupdatenotice\"><p>" . __('Your default search settings have been <strong>updated</strong> by Search Everything. </p><p> What are you waiting for? Go check out the new search results!', 'SearchEverything') . "</p></div>";
 			update_option("se_options", $new_options);
 
 		}
-		
-		if($_POST['action'] == "reset") 
-		{ 
+
+		if(isset($_POST['action']) && $_POST['action'] == "reset")
+		{
 			echo "<div class=\"updated fade\" id=\"limitcatsupdatenotice\"><p>" . __('Your default search settings have been <strong>updated</strong> by Search Everything. </p><p> What are you waiting for? Go check out the new search results!', 'SearchEverything') . "</p></div>";
 			delete_option("se_options", $new_options);
 		}
-		
+
+		// Announce SE+
+		echo "<div class=\"updated fade\" id=\"seplusnotice\"><p>" . __('<strong>Search Everything Plus</strong> is being developed and it\'s going to be awesome! <a href="http://wpsearchplugin.com/get-notified/">Signup now</a> and get notified when it\'s available.', 'SearchEverything') . "</p></div>";
 
 		$options = get_option('se_options');
 
@@ -71,13 +75,13 @@ Class se_admin {
 	<div class="wrap">
 		<h2><?php _e('Search Everything Version:', 'SearchEverything'); ?> <?php echo $this->version; ?></h2>
 			<form method="post">
-		
+
 				<div style="float: right; margin-bottom:10px; padding:0; " id="top-update" class="submit">
 					<input type="hidden" name="action" value="save" />
 					<input type="submit" value="<?php _e('Update Options', 'SearchEverything') ?>" />
 				</div>
 
-				
+
 				<table style="margin-bottom: 20px;"></table>
 				<table class="widefat fixed">
 					<thead>
@@ -89,23 +93,23 @@ Class se_admin {
 					<?php
 					// Show options for 2.5 and below
 					if ($wp_version <= '2.5') : ?>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc"><?php _e('Search every page','SearchEverything'); ?>:<br/><small></small></td>
 				        <td class="forminp">
 				            <select id="search_pages" name="search_pages">
-				                <option<?php if ($options['se_use_page_search'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_page_search'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_use_page_search'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_page_search'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
-							
+
 				        </td>
 				    </tr>
-					
-					<tr class="mainrow"> 
+
+					<tr class="mainrow">
 				        <td class="titledesc">&nbsp;&nbsp;&nbsp;<?php _e('Search approved pages only','SearchEverything'); ?>:</td>
 				        <td class="forminp">
 				            <select id="appvd_pages" name="appvd_pages">
-				                <option<?php if ($options['se_approved_pages_only'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_approved_pages_only'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_approved_pages_only'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_approved_pages_only'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
 							<br/><small></small>
 				        </td>
@@ -114,12 +118,12 @@ Class se_admin {
 					<?php
 					// Show tags only for WP 2.3+
 					if ($wp_version >= '2.3') : ?>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc"><?php _e('Search every tag name','SearchEverything'); ?>:</td>
 				        <td class="forminp">
 				            <select id="search_tags" name="search_tags" >
-				                <option<?php if ($options['se_use_tag_search'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_tag_search'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_use_tag_search'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_tag_search'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
 							<br/><small></small>
 				        </td>
@@ -128,12 +132,12 @@ Class se_admin {
 					<?php
 					// Show taxonomies only for WP 2.3+
 					if ($wp_version >= '2.3') : ?>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 						<td class="titledesc"><?php _e('Search custom taxonomies','SearchEverything'); ?>:</td>
 						<td class="forminp">
 							<select id="search_tags" name="search_taxonomies" >
-								<option<?php if ($options['se_use_tax_search'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_tax_search'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+								<option<?php selected($options['se_use_tax_search'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_tax_search'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 							</select>
 							<br/><small></small>
 						</td>
@@ -146,49 +150,49 @@ Class se_admin {
 				        <td class="titledesc"><?php _e('Search every category name and description','SearchEverything'); ?>:</td>
 				        <td class="forminp">
 				            <select id="search_categories" name="search_categories">
-				                <option<?php if ($options['se_use_category_search'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_category_search'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_use_category_search'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_category_search'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
 							<br/><small></small>
 				        </td>
 				    </tr>
 					<?php endif; ?>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc"><?php _e('Search every comment','SearchEverything'); ?>:</td>
 				        <td class="forminp">
 				            <select name="search_comments" id="search_comments">
-				                <option<?php if ($options['se_use_comment_search'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_comment_search'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_use_comment_search'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_comment_search'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
 							<br/><small></small>
 				        </td>
 				    </tr>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc">&nbsp;&nbsp;&nbsp;<?php _e('Search comment authors','SearchEverything'); ?>:</td>
 				        <td class="forminp">
 				            <select id="search_cmt_authors" name="search_cmt_authors">
-				                <option<?php if ($options['se_use_cmt_authors'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_cmt_authors'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_use_cmt_authors'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_cmt_authors'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
 							<br/><small></small>
 				        </td>
 				    </tr>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc">&nbsp;&nbsp;&nbsp;<?php _e('Search approved comments only','SearchEverything'); ?>:</td>
 				        <td class="forminp">
 				            <select id="appvd_comments" name="appvd_comments">
-				                <option<?php if ($options['se_approved_comments_only'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_approved_comments_only'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_approved_comments_only'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_approved_comments_only'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
 							<br/><small></small>
 				        </td>
 				    </tr>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc"><?php _e('Search every excerpt','SearchEverything'); ?>:</td>
 				        <td class="forminp">
 				            <select id="search_excerpt" name="search_excerpt">
-				                <option<?php if ($options['se_use_excerpt_search'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_excerpt_search'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_use_excerpt_search'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_excerpt_search'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
 							<br/><small></small>
 				        </td>
@@ -196,70 +200,67 @@ Class se_admin {
 					<?php
 					// Show categories only for WP 2.5+
 					if ($wp_version >= '2.5') : ?>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc"><?php _e('Search every draft','SearchEverything'); ?>:</td>
 				        <td class="forminp">
 				            <select id="search_drafts" name="search_drafts">
-				                <option<?php if ($options['se_use_draft_search'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_draft_search'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_use_draft_search'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_draft_search'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
 							<br/><small></small>
 				        </td>
 				    </tr>
 					<?php endif; ?>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc"><?php _e('Search every attachment','SearchEverything'); ?>:<br/><small><?php _e('(post type = attachment)','SearchEverything'); ?></small></td>
 				        <td class="forminp">
 				            <select id="search_attachments" name="search_attachments">
-				                <option<?php if ($options['se_use_attachment_search'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_attachment_search'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_use_attachment_search'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_attachment_search'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
 							<br/><small></small>
 				        </td>
 				    </tr>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc"><?php _e('Search every custom field','SearchEverything'); ?>:<br/><small><?php _e('(metadata)','SearchEverything'); ?></small></td>
 				        <td class="forminp">
 				            <select id="search_metadata" name="search_metadata">
-				                <option<?php if ($options['se_use_metadata_search'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_metadata_search'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_use_metadata_search'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_metadata_search'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
-							
+
 				        </td>
 				    </tr>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc"><?php _e('Search every author','SearchEverything'); ?>:</td>
 				        <td class="forminp">
-							<?php if ($wp_version <= '2.8'): ?>
 				            <select id="search_authors" name="search_authors">
-				                <option<?php if ($options['se_use_authors'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_authors'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>	
+				                <option<?php selected($options['se_use_authors'],'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_authors'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
-							<?php endif; ?>
-							<small><?php if ($wp_version >= '2.8') { _e('This is disabled for WP 2.8+. I\'d appreciate the help if you have a fix.', 'SearchEverything');} ?></small>
 				        </td>
 				    </tr>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 				        <td class="titledesc"><?php _e('Highlight Search Terms','SearchEverything'); ?>:</td>
 				        <td class="forminp">
 				            <select id="search_highlight" name="search_highlight">
-				                <option<?php if ($options['se_use_highlight'] == 'No') { echo ' selected="selected"'; } ?> value="No">&nbsp;&nbsp;</option>
-								<option<?php if ($options['se_use_highlight'] == 'Yes') { echo ' selected="selected"'; } ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
+				                <option<?php selected($options['se_use_highlight'], 'No'); ?> value="No">&nbsp;&nbsp;</option>
+								<option<?php selected($options['se_use_highlight'], 'Yes'); ?> value="Yes"><?php _e('Yes', 'SearchEverything'); ?></option>
 				            </select>
 							<br/><small></small>
 				        </td>
 				    </tr>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 					    <td class="titledesc">&nbsp;&nbsp;&nbsp;<?php _e('Highlight Background Color','SearchEverything'); ?>:</td>
 					    <td class="forminp">
 					        <input type="text" id="highlight_color" name="highlight_color" value="<?php echo $options['se_highlight_color'];?>" />
 						    <br/><small><?php _e('Examples:<br/>\'#FFF984\' or \'red\'','SearchEverything'); ?></small>
 					    </td>
 					</tr>
-				
+
 				</table>
 				<table style="margin-bottom: 20px;"></table>
-					
+
 				<table class="widefat">
 					<thead>
 						<tr class="title">
@@ -267,22 +268,22 @@ Class se_admin {
 							<th scope="col" class="manage-column"></th>
 						</tr>
 					</thead>
-				
-					<tr class="mainrow"> 
+
+					<tr class="mainrow">
 					    <td class="titledesc"><?php _e('Exclude some post or page IDs','SearchEverything'); ?>:</td>
 					    <td class="forminp">
 					        <input type="text" id="exclude_posts_list" name="exclude_posts_list" value="<?php echo $options['se_exclude_posts_list'];?>" />
 						    <br/><small><?php _e('Comma separated Post IDs (example: 1, 5, 9)','SearchEverything'); ?></small>
 					    </td>
 					</tr>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 					    <td class="titledesc"><?php _e('Exclude Categories','SearchEverything'); ?>:</td>
 					    <td class="forminp">
 					        <input type="text" id="exclude_categories_list" name="exclude_categories_list" value="<?php echo $options['se_exclude_categories_list'];?>" />
 						    <br/><small><?php _e('Comma separated category IDs (example: 1, 4)','SearchEverything'); ?></small>
 					    </td>
 					</tr>
-					<tr class="mainrow"> 
+					<tr class="mainrow">
 					    <td class="titledesc"><?php _e('Full Highlight Style','SearchEverything'); ?>:</td>
 					    <td class="forminp">
 					        <small><?php _e('Important: \'Highlight Background Color\' must be blank to use this advanced styling.', 'SearchEverything') ?></small><br/>
@@ -313,7 +314,7 @@ Class se_admin {
 <div style="clear: both;"></div>
 
 	<small><?php _e('Find a bug?', 'SearchEverything') ?> <a href="https://core.sproutventure.com/projects/search-everything/issues" target="blank"><?php _e('Post it as a new issue','SearchEverything')?></a>.</small>
-</div>			
+</div>
 
 				<table style="margin-bottom: 20px;"></table>
 				<table class="widefat">
@@ -323,22 +324,22 @@ Class se_admin {
 							<th scope="col" class="manage-column"></th>
 						</tr>
 					</thead>
-				
-					<tr class="mainrow"> 
+
+					<tr class="mainrow">
 						<td class="thanks">
 							<p><?php _e('Use this search form to run a live search test.', 'SearchEverything'); ?></p>
 						</td>
 						<td>
-							<form method="get" id="searchform" action="<?php bloginfo('home'); ?>">
+							<form method="get" id="searchform" action="<?php bloginfo($cap = version_compare('2.2', $wp_version, '<') ? 'url' : 'home'); ?>">
 							<p class="srch submit">
-								<input type="text" class="srch-txt" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" size="30" />
+								<input type="text" class="srch-txt" value="<?php echo (isset($S)) ? wp_specialchars($s, 1) : ''; ?>" name="s" id="s" size="30" />
 								<input type="submit" class="SE5_btn" id="searchsubmit" value="<?php _e('Run Test Search', 'SearchEverything'); ?>" />
 							</p>
 			      			</form>
 						</td>
 					</tr>
 				</table>
-				
+
 				<table style="margin-bottom: 20px;"></table>
 				<table class="widefat">
 					<thead>
@@ -348,21 +349,15 @@ Class se_admin {
 							<th scope="col" class="manage-column"><?php _e('Localization Support', 'SearchEverything'); ?></th>
 						</tr>
 					</thead>
-				
-					<tr class="mainrow"> 
+
+					<tr class="mainrow">
 					    <td class="thanks">
 						<p><strong><?php _e('LOCALIZATION SUPPORT:', 'SearchEverything'); ?></strong><br/><?php _e('Version 6 was a major update and a few areas need new localization support. If you can help send me your translations by posting them as a new issue, ', 'SearchEverything') ?><a href="https://github.com/sproutventure/search-everything-wordpress-plugin/issues?sort=created&direction=desc&state=open&page=1" target="blank"><strong><?php _e('here','SearchEverything')?></strong></a>.</p>
 						<p><strong><?php _e('Thank You!', 'SearchEverything'); ?></strong><br/><?php _e('The development of Search Everything since Version one has primarily come from the WordPress community, I&#8217;m grateful for their dedicated and continued support.', 'SearchEverything'); ?></p>
 						</td>
 				        <td>
 							<ul class="SE_lists">
-								<li><a href="#"><strong>EricLe Bail</strong></a> (<a href="https://core.sproutventure.com/projects/search-everything/issues" target="blank">#690, #285, #272, #49, #44 and #60</a>)</li>
-								<li><a href="#">Gary Traffanstedt</a> (<a href="https://core.sproutventure.com/projects/search-everything/issues" target="blank">#43</a>)</li>
-								<li><a href="http://codium.co.nz"  target="blank">Matias Gertel</a></li>
-								<li><a href="http://striderweb.com/" target="blank">Stephen Rider</a></li>
-								<li><a href="http://chrismeller.com/" target="blank">Chris Meller</a></li>
-								<li><a href="http://kinrowan.net/" target="blank">Cori Schlegel</a></li>
-								<li><?php _e('and many more...', 'SearchEverything'); ?><a href="https://core.sproutventure.com/projects/search-everything/issues" target="blank"><?php _e('how about you?', 'SearchEverything'); ?></a></li>
+								<li><a href="https://github.com/ninnypants"><strong>Tyrel Kelsey</strong></a></li>
 							</ul>
 					    </td>
 						<td>
@@ -387,7 +382,7 @@ Class se_admin {
 								<li><a href="#">Baris Unver (TR)</a></li>
 							</ul>
 					    </td>
-						
+
 					</tr>
 				</table>
 			</div>
@@ -411,4 +406,3 @@ Class se_admin {
 	}
 
 }
-?>

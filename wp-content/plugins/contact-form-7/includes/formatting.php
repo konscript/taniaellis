@@ -47,10 +47,12 @@ function wpcf7_autop( $pee, $br = 1 ) {
 
 function wpcf7_strip_quote( $text ) {
 	$text = trim( $text );
+
 	if ( preg_match( '/^"(.*)"$/', $text, $matches ) )
 		$text = $matches[1];
 	elseif ( preg_match( "/^'(.*)'$/", $text, $matches ) )
 		$text = $matches[1];
+
 	return $text;
 }
 
@@ -60,11 +62,37 @@ function wpcf7_strip_quote_deep( $arr ) {
 
 	if ( is_array( $arr ) ) {
 		$result = array();
-		foreach ( $arr as $key => $text ) {
-			$result[$key] = wpcf7_strip_quote( $text );
-		}
+
+		foreach ( $arr as $key => $text )
+			$result[$key] = wpcf7_strip_quote_deep( $text );
+
 		return $result;
 	}
+}
+
+function wpcf7_normalize_newline( $text, $to = "\n" ) {
+	if ( ! is_string( $text ) )
+		return $text;
+
+	$nls = array( "\r\n", "\r", "\n" );
+
+	if ( ! in_array( $to, $nls ) )
+		return $text;
+
+	return str_replace( $nls, $to, $text );
+}
+
+function wpcf7_normalize_newline_deep( $arr, $to = "\n" ) {
+	if ( is_array( $arr ) ) {
+		$result = array();
+
+		foreach ( $arr as $key => $text )
+			$result[$key] = wpcf7_normalize_newline_deep( $text, $to );
+
+		return $result;
+	}
+
+	return wpcf7_normalize_newline( $arr, $to );
 }
 
 function wpcf7_canonicalize( $text ) {
@@ -83,6 +111,11 @@ function wpcf7_is_name( $string ) {
 	// hyphens ("-"), underscores ("_"), colons (":"), and periods (".").
 
 	return preg_match( '/^[A-Za-z][-A-Za-z0-9_:.]*$/', $string );
+}
+
+function wpcf7_sanitize_unit_tag( $tag ) {
+	$tag = preg_replace( '/[^A-Za-z0-9_-]/', '', $tag );
+	return $tag;
 }
 
 ?>

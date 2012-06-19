@@ -19,7 +19,6 @@ function wp_gdsr_render_comment_aggregation($post_id = 0, $template_id = 0, $sho
 /**
  * Integrate multi rating result into the comment. Must be within valid comments loop.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param int $comment_id id of the comment
  * @param int $multi_set_id id of the multi rating set to use
  * @param int $template_id id of the template to use
@@ -43,7 +42,6 @@ function wp_gdsr_comment_integrate_multi_result($comment_id, $multi_set_id = 0, 
 /**
  * Integrate average multi rating result into the comment.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param int $comment_id id of the comment
  * @param int $multi_set_id id of the multi rating set to use
  * @param int $template_id id of the template to use
@@ -64,7 +62,6 @@ function wp_gdsr_comment_integrate_multi_result_average($comment_id, $multi_set_
 /**
  * Integrate standard rating result into the comment. Must be within valid comments loop.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param int $comment_id id of the comment
  * @param string $stars_set set to use for rendering
  * @param int $stars_size set size to use for rendering
@@ -82,7 +79,6 @@ function wp_gdsr_comment_integrate_standard_result($comment_id, $stars_set = "",
 /**
  * Get integrate standard rating result into the comment. Must be within valid comments loop.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param int $comment_id id of the comment
  * @param bool $echo echo results or return it as a string
  * @return string rating value
@@ -97,7 +93,6 @@ function wp_gdsr_get_comment_integrate_standard_result($comment_id, $echo = true
 /**
  * Integrate multi set post rating into the comment form.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param int $multi_set_id id of the multi rating set to use
  * @param int $template_id id of the template to use
  * @param int $value inital value for the review
@@ -118,7 +113,6 @@ function wp_gdsr_comment_integrate_multi_rating($multi_set_id = 0, $template_id 
 /**
  * Integrate standard post rating into the comment form.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param int $value inital value for the review
  * @param string $stars_set set to use for rendering
  * @param int $stars_size set size to use for rendering
@@ -141,9 +135,6 @@ function wp_gdsr_comment_integrate_standard_rating($value = 0, $stars_set = "", 
 /**
  * Renders the rating thumbs for article. This function call must be within the post loop.
  *
- * @global object $post post data
- * @global object $userdata user data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $template_id standard rating block template id
  * @param bool $read_only render block as a read only, voting not allowed
  * @param string $stars_set set to use for rendering
@@ -163,9 +154,6 @@ function wp_gdsr_render_article_thumbs($template_id = 0, $read_only = false, $st
 /**
  * Renders the rating stars for article. This function call must be within the post loop.
  *
- * @global object $post post data
- * @global object $userdata user data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $template_id standard rating block template id
  * @param bool $read_only render block as a read only, voting not allowed
  * @param string $stars_set set to use for rendering
@@ -186,9 +174,6 @@ function wp_gdsr_render_article($template_id = 0, $read_only = false, $stars_set
 /**
  * Manual render of comment thumbs rating. This function call must be within the comment loop.
  *
- * @global object $post post data
- * @global object $userdata user data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $template_id standard rating block template id
  * @param bool $read_only render block as a read only, voting not allowed
  * @param string $stars_set set to use for rendering
@@ -206,10 +191,6 @@ function wp_gdsr_render_comment_thumbs($template_id = 0, $read_only = false, $st
 /**
  * Manual render of comment rating. This function call must be within the comment loop.
  *
- * @global object $comment comment data
- * @global object $post post data
- * @global object $userdata user data
- * @global GDStarRating $gdsr main rating class instance
  * @param bool $read_only render block as a read only, voting not allowed
  * @param string $stars_set set to use for rendering
  * @param int $stars_size set size to use for rendering
@@ -227,9 +208,6 @@ function wp_gdsr_render_comment($template_id = 0, $read_only = false, $stars_set
 /**
  * Renders multi rating block. This function call must be withing the post loop.
  *
- * @global object $post post data
- * @global object $userdata user data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $multi_set_id id of the multi rating set to use
  * @param int $post_id id of the post rating will be attributed to
  * @param int $template_id id of the template to use
@@ -257,7 +235,6 @@ function wp_gdsr_render_multi($multi_set_id = 0, $template_id = 0, $read_only = 
 /**
  * Renders stars for comment review used in the comment form for the comment author to place it's review rating.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param int $value inital value for the review
  * @param string $stars_set set to use for rendering
  * @param int $stars_size set size to use for rendering
@@ -275,8 +252,6 @@ function wp_gdsr_new_comment_review($value = 0, $stars_set = "", $stars_size = 0
 /**
  * Renders multi rating review editor block.
  *
- * @global object $post post data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $post_id id of the post rating will be attributed to
  * @param bool $echo echo results or return it as a string
  * @param array $settings override settings for rendering the block
@@ -294,8 +269,6 @@ function wp_gdsr_multi_review_editor($multi_set_id = 0, $post_id = 0, $template_
 /**
  * Renders multi rating review for a post.
  *
- * @global object $post post data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $post_id id of the post rating will be attributed to
  * @param int $template_id id of the template to use [RMB]
  * @param string $stars_set set to use for rendering
@@ -319,20 +292,23 @@ function wp_gdsr_show_multi_review($multi_set_id = 0, $template_id = 0, $post_id
 /**
  * Renders single rating stars image with average rating for the multi rating review.
  *
- * @global object $post post data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $set_id id of the multi rating set
  * @param int $post_id id of the post rating will be attributed to
  * @param string $show what data to use: total, visitors or users votes only
+ * @param string $avg_stars_set set to use for rendering of average element
+ * @param int $avg_stars_size set size to use for rendering of average element
+ * @param string $avg_stars_set_ie6 set to use for rendering in ie6 of average element
  * @param bool $echo echo results or return it as a string
  * @return string html with rendered contents
  */
-function wp_gdsr_multi_rating_average($multi_set_id = 0, $post_id = 0, $show = "total", $echo = true) {
+function wp_gdsr_multi_rating_average($multi_set_id = 0, $post_id = 0, $show = "total", $avg_stars_set = "", $avg_stars_size = 0, $avg_stars_set_ie6 = "", $echo = true) {
     global $gdsr, $post;
     if ($post_id == 0) $post_id = $post->ID;
 
     $multi_set_id = $multi_set_id == 0 ? gdsr_get_multi_set($post_id) : $multi_set_id;
-    $rating = $gdsr->get_multi_average_rendered($post_id, array("id" => $multi_set_id, "show" => $show, "render" => "rating"));
+    $rating = $gdsr->get_multi_average_rendered($post_id, array(
+        "id" => $multi_set_id, "show" => $show, "render" => "rating",
+        "style" => $avg_stars_set, "size" => $avg_stars_size, "style_ie6" => $avg_stars_set_ie6));
     if ($echo) echo $rating;
     else return $rating;
 }
@@ -340,8 +316,6 @@ function wp_gdsr_multi_rating_average($multi_set_id = 0, $post_id = 0, $show = "
 /**
  * Renders single rating stars image with average rating for the multi rating review.
  *
- * @global object $post post data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $set_id id of the multi rating set
  * @param int $post_id id of the post rating will be attributed to
  * @param bool $echo echo results or return it as a string
@@ -360,7 +334,6 @@ function wp_gdsr_multi_review_average($multi_set_id = 0, $post_id = 0, $echo = t
 /**
  * Renders standard review for a post.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param int $post_id post to get review for
  * @param int $template_id id of the template to use
  * @param bool $echo echo results or return it as a string
@@ -433,8 +406,6 @@ function wp_gdsr_render_comments_rating_widget($widget = array(), $echo = true) 
 /**
  * Shows stars with review rating of a comment.
  *
- * @global object $comment comment data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $comment_id ID for the comment to display rating from. If this is set to 0, than it must be used within the comment loop, and id of current comment will be used.
  * @param bool $use_default set to true tell this function to render stars using default settings for stars set on settings panel, false tells to use $size and $style parameters.
  * @param int $size size of the stars to render, must be valid value: 12, 20, 30, 46
@@ -453,8 +424,6 @@ function wp_gdsr_show_comment_review($comment_id = 0, $use_default = true, $size
 /**
  * Shows review rating for the post with stars
  *
- * @global object $post post data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $post_id ID for the article to display rating from. If this is set to 0, than it must be used within the loop, and id of current article will be used.
  * @param bool $use_default set to true tell this function to render stars using default settings for stars set on settings panel, false tells to use $size and $style parameters.
  * @param int $size size of the stars to render, must be valid value: 12, 20, 30, 46
@@ -473,8 +442,6 @@ function wp_gdsr_show_article_review($post_id = 0, $use_default = true, $size = 
 /**
  * Shows multis review rating for the post with stars
  *
- * @global object $post post data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $multi_id id of the multi rating set
  * @param int $post_id ID for the article to display rating from. If this is set to 0, than it must be used within the loop, and id of current article will be used.
  * @param bool $use_default set to true tell this function to render stars using default settings for stars set on settings panel, false tells to use $size and $style parameters.
@@ -494,8 +461,6 @@ function wp_gdsr_show_multis_review($multi_id, $post_id = 0, $use_default = true
 /**
  * Shows rating for the post with stars
  *
- * @global object $post post data
- * @global GDStarRating $gdsr main rating class instance
  * @param int $post_id ID for the article to display rating from. If this is set to 0, than it must be used within the loop, and id of current article will be used.
  * @param bool $use_default set to true tell this function to render stars using default settings for stars set on settings panel, false tells to use $size and $style parameters.
  * @param int $size size of the stars to render, must be valid value: 12, 20, 30, 46
@@ -514,7 +479,6 @@ function wp_gdsr_show_article_rating($post_id = 0, $use_default = true, $size = 
 /**
  * Returns object with multi ratings data for any taxonomy.
  *
- * @global GDStarRating $gdsr main rating class instance
  * @param string $taxonomy name of the taxonomy (slug name)
  * @param string $term full name of the term belonging to taxonomy
  * @param int $multi_id id of the multi rating set
