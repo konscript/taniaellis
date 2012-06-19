@@ -34,11 +34,13 @@ class TE_PopularPostsWidget extends WP_Widget {
 		echo $before_widget;
 		
 		
-		$in_context = (is_category() && $instance['contextAware']) ? true : false;
+		$in_context = ($instance['contextAware']) ? true : false;
+		
+		$ppp = ($instance['postCount']) ? $instance['postCount'] : 3;
 
 		$q_args = array(
 				'post_type'					=> $instance['postType'],
-        'posts_per_page'    => 3,
+        'posts_per_page'    => $ppp,
 				'gdsr_sort'					=> 'rating',
 				'gdsr_order'				=> 'desc',
 				'sort_order'				=> 'desc',
@@ -46,7 +48,10 @@ class TE_PopularPostsWidget extends WP_Widget {
     );
 
 		if($in_context)
-			$q_args['category__in'] = getCurrentCatID();
+		{
+			$q_args['category'] = getCurrentCatID();
+		}
+		
  		
 		query_posts( $q_args );
 
@@ -109,6 +114,7 @@ class TE_PopularPostsWidget extends WP_Widget {
 		$instance['titleB']					= strip_tags($new_instance['titleB']);
 		$instance['postType']				= strip_tags($new_instance['postType']);
 		$instance['contextAware']		= strip_tags($new_instance['contextAware']);
+		$instance['postCount']			= strip_tags($new_instance['postCount']);
 		
 		return $instance;
 	}
@@ -119,6 +125,7 @@ class TE_PopularPostsWidget extends WP_Widget {
 			'titleB'					=> '',
 			'postType'				=> 'post',
 			'contextAware'		=> 'true',
+			'postCount'			=> 3,
 		);
 		
 		foreach($defaults as $key => $value) {
@@ -150,6 +157,17 @@ class TE_PopularPostsWidget extends WP_Widget {
 				name="<?php echo $titleB_name; ?>"
 				value="<?php echo $titleB; ?>" />
 		</p>
+		
+		<p>
+			<label for="<?php echo $postCount_id; ?>">Number of posts:</label><br />
+			<input 
+				type="text"
+				size="2"
+				id="<?php echo $postCount_id; ?>"
+				name="<?php echo $postCount_name; ?>"
+				value="<?php echo $postCount; ?>" />
+		</p>
+		
 		<p>
 			<label for="<?php echo $postType_id; ?>">Type:</label><br />
 			<select 
