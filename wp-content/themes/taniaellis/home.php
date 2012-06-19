@@ -73,7 +73,6 @@ Template Name: Home
       <?php
         $box_title_line_1 = get_post_meta($post->ID, 'te_home-box-text-title-line-1', true);
         $box_title_line_2 = get_post_meta($post->ID, 'te_home-box-text-title-line-2', true);
-        
       ?>
 
 			<div class="box" id="box-frontpage">
