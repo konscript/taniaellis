@@ -91,7 +91,7 @@ Template Name: Home
           $box_link_text = get_post_meta($post->ID, 'te_home-box-text-link-text', true);
         ?>
         <?php $bonus_sticker = get_post_meta($post->ID, 'te_home-box-text-bonus-sticker', true); ?>
-        <?php $sticker_url = get_post_meta($post->ID, 'te_home-box-text-bonus-sticker-image', true); echo $sticker_url; ?>
+        <?php $sticker_url = get_post_meta($post->ID, 'te_home-box-text-bonus-sticker-image', true); ?>
         
         <?php if($bonus_sticker == 'on' && $sticker_url): ?>
 				  <img src="<?php echo $sticker_url; ?>" alt="" class="bonus-sticker" />
