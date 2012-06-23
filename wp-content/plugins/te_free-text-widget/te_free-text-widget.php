@@ -59,15 +59,12 @@ class TE_FreeTextWidget extends WP_Widget {
 					<?php if($imageURL != "") : ?>
 			      <div class="thumb-wrapper">
 			        <div class="thumb-container">
-								<a href="<?php the_permalink(); ?>">
-									
-									<?php 
-									
-									$aid = get_attachment_id_from_src($imageURL);
-									$size = $layout;
-									echo wp_get_attachment_image($aid, "post-$size-thumbnail", false, array('class' => 'featured-image'));
-									?>
-								</a>
+								<?php 
+								
+								$aid = get_attachment_id_from_src($imageURL);
+								$size = $layout;
+								echo wp_get_attachment_image($aid, "post-$size-thumbnail", false, array('class' => 'featured-image'));
+								?>
 			        </div>
 			      </div>
 			    <?php endif; ?>
@@ -80,7 +77,7 @@ class TE_FreeTextWidget extends WP_Widget {
 					<?php endif; ?>
 					
 					<?php if(!empty($header)) : ?>
-						<a class="title" href="<?php echo $link; ?>"><?php echo $header; ?></a>
+						<h2 class="title"><?php echo $header; ?></h2>
 					<?php endif; ?>
 					
 					<p class="excerpt"><?php echo nl2br($text); ?></p>

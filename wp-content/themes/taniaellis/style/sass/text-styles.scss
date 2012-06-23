@@ -828,9 +828,9 @@ html>body {
 				text-decoration: none;
 				text-transform: uppercase;
 				
-				&:hover {
-					text-decoration: underline;
-				}
+			}
+			a.title:hover {
+				text-decoration: underline;
 			}
 		
 			.excerpt {
