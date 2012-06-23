@@ -18,8 +18,6 @@
         
         if($byline)
           echo $byline;
-        else
-          echo "By " . get_the_author();
       ?>
 		</span>
 		
