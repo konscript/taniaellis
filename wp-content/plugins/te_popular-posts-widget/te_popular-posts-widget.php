@@ -24,7 +24,7 @@ class TE_PopularPostsWidget extends WP_Widget {
 	}
 	
 	function widget($args, $instance) {
-		global $post;
+		global $post, $wp_query;
 
 		extract($args);
 		
@@ -35,6 +35,7 @@ class TE_PopularPostsWidget extends WP_Widget {
 		
 		
 		$in_context = ($instance['contextAware']) ? true : false;
+		$is_article = ($wp_query->query_vars['te_article-category']) ? true : false;
 		
 		$ppp = ($instance['postCount']) ? $instance['postCount'] : 3;
 
@@ -49,7 +50,14 @@ class TE_PopularPostsWidget extends WP_Widget {
 
 		if($in_context)
 		{
-			$q_args['category'] = getCurrentCatID();
+			if($is_article)
+			{
+				$q_args['te_article-category'] = $wp_query->query_vars['te_article-category'];
+			}
+			else
+			{
+				$q_args['category'] = getCurrentCatID();
+			}
 		}
 		
  		
